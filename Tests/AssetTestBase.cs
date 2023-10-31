@@ -5,6 +5,7 @@ using CodeSmile.Editor;
 using Helper;
 using NUnit.Framework;
 using System;
+using Asset = CodeSmile.Editor.Asset;
 using Object = UnityEngine.Object;
 
 namespace DefaultNamespace
@@ -15,7 +16,7 @@ namespace DefaultNamespace
 
 		private readonly TestAssets m_TestAssets = new();
 
-		public AssetTestBase() => AssetDB.CreateFolder(ExamplePath);
+		public AssetTestBase() => Asset.Path.Create(ExamplePath);
 
 		[TearDown] public void TearDown() => Assert.DoesNotThrow(m_TestAssets.Dispose);
 

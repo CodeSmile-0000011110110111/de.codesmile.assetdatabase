@@ -1,8 +1,8 @@
 {
   "name": "com.codesmile.assetdb",
-  "displayName": "CodeSmile's Easy AssetDatabase",
-  "description": "Simplify working with assets.",
-  "version": "0.0.1",
+  "displayName": "EasyAssetDatabase",
+  "description": "Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use.",
+  "version": "0.1.0",
   "unity": "2021.3",
   "author": {
     "name": "Steffen Itterheim (CodeSmile)",

@@ -8,32 +8,32 @@ using System;
 using UnityEditor;
 using UnityEngine.Windows;
 
-public class CreateFolder : AssetTestBase
+public class CreateFolderTests : AssetTestBase
 {
 	[Test] public void CreateFolder_NullPath_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => AssetDB.CreateFolder(null));
+		Assert.Throws<ArgumentNullException>(() => Asset.Path.Create(null));
 
 	[Test] public void CreateFolder_EmptyPath_Throws() =>
-		Assert.Throws<ArgumentException>(() => AssetDB.CreateFolder(String.Empty));
+		Assert.Throws<ArgumentException>(() => Asset.Path.Create(String.Empty));
 
 	[Test] public void CreateFolder_WhitespacePath_Throws() =>
-		Assert.Throws<ArgumentException>(() => AssetDB.CreateFolder("  "));
+		Assert.Throws<ArgumentException>(() => Asset.Path.Create("  "));
 
 	[Test] public void CreateFolder_AssetsPath_Exists()
 	{
-		var folderGuid = AssetDB.CreateFolder("Assets");
+		var folderGuid = Asset.Path.Create("Assets");
 
 		Assert.AreEqual(AssetDatabase.GUIDToAssetPath(folderGuid), "Assets");
 	}
 
 	[Test] public void CreateFolder_PathWithTrailingSeparator_ReturnsEmptyGuid() =>
-		Assert.True(AssetDB.CreateFolder("Assets/").Empty());
+		Assert.True(Asset.Path.Create("Assets/").Empty());
 
 	[Test] public void CreateFolderRecursive_NotExistingSubFolder_GetsCreated()
 	{
 		var folder = "-create_subfolder_test-";
 		var path = $"Assets/{folder}";
-		var folderGuid = AssetDB.CreateFolder(path);
+		var folderGuid = Asset.Path.Create(path);
 
 		Assert.AreEqual(AssetDatabase.GUIDToAssetPath(folderGuid), path);
 		Assert.True(Directory.Exists(path));
@@ -45,7 +45,7 @@ public class CreateFolder : AssetTestBase
 	{
 		var folder = "-create_subfolder_test-";
 		var path = $"Assets/{folder}/{folder}/{folder}";
-		var folderGuid = AssetDB.CreateFolder(path);
+		var folderGuid = Asset.Path.Create(path);
 
 		Assert.AreEqual(AssetDatabase.GUIDToAssetPath(folderGuid), path);
 		Assert.True(Directory.Exists(path));
