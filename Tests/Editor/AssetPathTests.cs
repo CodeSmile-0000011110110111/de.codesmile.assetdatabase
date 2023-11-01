@@ -120,8 +120,11 @@ public class AssetPathTests
 	{
 		var assetPath = new AssetPath(Application.dataPath);
 		Assert.True(assetPath.Equals(assetPath));
+
+#pragma warning disable 1718 // did you maybe not want to compare x with itself? Yes, I meant to!
 		Assert.True(assetPath == assetPath);
 		Assert.False(assetPath != assetPath);
+#pragma warning restore 1718
 	}
 
 	[Test] public void AssetPath_Equality_EqualToOther()

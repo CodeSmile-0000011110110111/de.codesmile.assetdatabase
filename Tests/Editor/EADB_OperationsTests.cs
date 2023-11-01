@@ -6,10 +6,10 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 
-public class EADB_DatabaseTests
+public class EADB_OperationsTests
 {
 	[Test] public void BatchEditing_ThrowsException_Rethrows() =>
-		Assert.Throws<RankException>(() => Asset.DB.BatchEditing(() => throw new RankException()));
+		Assert.Throws<RankException>(() => Asset.BatchEditing(() => throw new RankException()));
 
-	[Test] public void BatchEditing_NullAction_DoesNothing() => Assert.DoesNotThrow(() => Asset.DB.BatchEditing(null));
+	[Test] public void BatchEditing_NullAction_DoesNothing() => Assert.DoesNotThrow(() => Asset.BatchEditing(null));
 }

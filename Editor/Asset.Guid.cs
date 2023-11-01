@@ -19,5 +19,7 @@ namespace CodeSmile.Editor
 					? AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets
 					: AssetPathToGUIDOptions.OnlyExistingAssets));
 		}
+
+
 	}
 }

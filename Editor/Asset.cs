@@ -17,86 +17,64 @@ namespace CodeSmile.Editor
 		/// <param name="path">The relative asset path with filename and extension.</param>
 		/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
 		/// <returns></returns>
-		public static Object Create(Object obj, String path, Boolean overwriteExisting = false)
+		public static Object Create(Object obj, AssetPath assetPath, Boolean overwriteExisting = false)
 		{
-			var assetPath = Path.ToLogical(path);
-
-			if (overwriteExisting == false)
-				assetPath = AssetDatabase.GenerateUniqueAssetPath(assetPath);
-
-			AssetDatabase.CreateAsset(obj, assetPath);
+			AssetDatabase.CreateAsset(obj, overwriteExisting ? assetPath : assetPath.UniquePath);
 			return obj;
 		}
 
+		public static Object Create(Object obj, String path, Boolean overwriteExisting = false) =>
+			Create(obj, (AssetPath)path, overwriteExisting);
+
 		// import, (can) move, trash, rename, copy, delete
 		// load, save, open
+
+		/// <summary>
+		///     Speed up mass asset editing (create, modify, delete, import, etc).
+		///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
+		///     This can significantly speed up mass asset editing tasks where you work with individual assets
+		///     in a loop.
+		///     Internally calls Start/StopAssetEditing and Disallow/AllowAutoRefresh in a try/finally
+		///     block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
+		/// </summary>
+		/// <param name="assetEditingAction"></param>
+		public static void BatchEditing(Action assetEditingAction)
+		{
+			try
+			{
+				Database.DisallowAutoRefresh();
+				Database.StartAssetEditing();
+
+				assetEditingAction?.Invoke();
+			}
+			finally
+			{
+				Database.StopAssetEditing();
+				Database.AllowAutoRefresh();
+			}
+		}
 
 		public static class Labels {}
 		public static class SubAsset {}
 		public static class Meta {}
 		public static class Load {}
 
-		public static class DB
+		public static class VersionControl
 		{
-			/// <summary>
-			///     Speed up mass asset editing by using the supplied callback action.
-			///     Within the callback, the AssetDatabase does neither	import nor auto refresh assets.
-			///     This can significantly speed up mass asset editing.
-			///     Internally calls Start/StopAssetEditing and Disallow/AllowAutoRefresh in a try/finally
-			///     block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
-			/// </summary>
-			/// <param name="batchAssetEditing"></param>
-			public static void BatchEditing(Action batchAssetEditing)
-			{
-				try
-				{
-					AssetDatabase.DisallowAutoRefresh();
-					AssetDatabase.StartAssetEditing();
+			/*
+CanOpenAssetInEditor
+CanOpenForEdit
+IsMetaFileOpenForEdit
+IsOpenForEdit
+MakeEditable
+			 */
+		}
 
-					batchAssetEditing?.Invoke();
-				}
-				finally
-				{
-					AssetDatabase.StopAssetEditing();
-					AssetDatabase.AllowAutoRefresh();
-				}
-			}
-
-			public static class Package
-			{
-				//Import
-				//Export
-			}
-
-			public static class VCS // VersionControl
-			{
-				/*
-	CanOpenAssetInEditor
-	CanOpenForEdit
-	IsMetaFileOpenForEdit
-	IsOpenForEdit
-	MakeEditable
-				 */
-			}
-
-			public static class CacheServer
-			{
-				/*
-	RefreshSettings
-	CanConnectToCacheServer
-	CloseCacheServerConnection
-	GetCacheServerAddress
-	GetCacheServerEnableDownload
-	GetCacheServerEnableUpload
-	GetCacheServerNamespacePrefix
-	GetCacheServerPort
-	GetCurrentCacheServerIp
-	IsCacheServerEnabled
-	IsConnectedToCacheServer
-	ResetCacheServerReconnectTimer
-	WriteImportSettingsIfDirty
-				 */
-			}
+		// separate class
+		public static class Package
+		{
+			//Import
+			//Export
 		}
 
 		public static class Importer
@@ -125,6 +103,41 @@ GetUnusedAssetBundleNames
 RemoveAssetBundleName
 RemoveUnusedAssetBundleNames
 			 */
+		}
+
+		public static class Database
+		{
+			public static void AllowAutoRefresh() => AssetDatabase.AllowAutoRefresh();
+			public static void DisallowAutoRefresh() => AssetDatabase.DisallowAutoRefresh();
+
+			/// <summary>
+			///     Internal on purpose: use Asset.BatchEditing(Action) instead
+			/// </summary>
+			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
+
+			/// <summary>
+			///     Internal on purpose: use Asset.BatchEditing(Action) instead
+			/// </summary>
+			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
+
+			public static class CacheServer
+			{
+				/*
+	RefreshSettings
+	CanConnectToCacheServer
+	CloseCacheServerConnection
+	GetCacheServerAddress
+	GetCacheServerEnableDownload
+	GetCacheServerEnableUpload
+	GetCacheServerNamespacePrefix
+	GetCacheServerPort
+	GetCurrentCacheServerIp
+	IsCacheServerEnabled
+	IsConnectedToCacheServer
+	ResetCacheServerReconnectTimer
+	WriteImportSettingsIfDirty
+				 */
+			}
 		}
 	}
 }

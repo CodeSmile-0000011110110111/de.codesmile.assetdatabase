@@ -3,6 +3,7 @@
 
 using System;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 using Object = System.Object;
 
@@ -10,7 +11,7 @@ namespace CodeSmile.Editor
 {
 	/// <summary>
 	///     Represents a relative path to an asset file in the project.
-	///		Instances are implicitly and explicitly convertible to/from string.
+	///     Instances are implicitly and explicitly convertible to/from string.
 	///     All path separators are forward slashes for compatibility with Windows, Mac, Linux.
 	///     Leading and trailing path separators are trimmed.
 	///     Instances can be initialized with a relative or full (absolute) path, or a relative/full path
@@ -21,6 +22,13 @@ namespace CodeSmile.Editor
 		public const String DefaultExtension = "asset";
 
 		private readonly String m_RelativePath = String.Empty;
+
+		/// <summary>
+		///     Creates and returns the relative asset path. The file name may be appeneded with a number to ensure
+		///     the path does not point to an existing asset file.
+		///     See also: Project Settings => Editor => Numbering Scheme
+		/// </summary>
+		public String UniquePath => AssetDatabase.GenerateUniqueAssetPath(m_RelativePath);
 
 		/// <summary>
 		///     Creates and returns the full path, with forward slashes as separators.
