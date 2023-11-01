@@ -1,6 +1,6 @@
 {
     "name": "CodeSmile.Editor.Tests.AssetDB",
-    "rootNamespace": "",
+    "rootNamespace": "CodeSmile",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",

@@ -1,14 +1,14 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using CodeSmile.Editor;
-using DefaultNamespace;
+using Helper;
 using NUnit.Framework;
 using System;
 using UnityEditor;
 using UnityEngine.Windows;
+using Asset = CodeSmile.Editor.Asset;
 
-public class CreateFolderTests : AssetTestBase
+public class EADB_FolderCreateTests : AssetTestBase
 {
 	[Test] public void CreateFolder_NullPath_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => Asset.Path.Create(null));

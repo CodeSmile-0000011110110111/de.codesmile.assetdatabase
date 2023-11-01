@@ -13,8 +13,10 @@ namespace CodeSmile.Editor
 {
 	public static partial class Asset
 	{
-		public static partial class Path
+		public static class Path
 		{
+			public const String DefaultAssetExtension = "asset";
+
 			/// <summary>
 			///     Creates all folder(s) of the supplied path recursively, as needed.
 			///     Differences to AssetDatabase.CreateFolder():
@@ -45,8 +47,6 @@ namespace CodeSmile.Editor
 				}
 				return pathGuid;
 			}
-
-			public const String DefaultAssetExtension = "asset";
 
 			/// <summary>
 			///     Combines a path to a folder in the project with a filename and extension to form a valid path string
@@ -129,7 +129,6 @@ namespace CodeSmile.Editor
 				var startsWithAssets = normalizedPath.ToLower().StartsWith("assets");
 				return startsWithAssets && (normalizedPath.Length <= 6 || IsPathSeparator(normalizedPath[6]));
 			}
-
 
 			// GetMainAssetType (path, guid)
 			// getsubfolders

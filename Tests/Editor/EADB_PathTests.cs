@@ -1,13 +1,14 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using CodeSmile;
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using UnityEditor;
 using UnityEngine;
 
-public class AssetPathTests
+public class EADB_PathTests
 {
 	[TestCase("Assets", "file name")]
 	[TestCase("Assets/", "file name")]

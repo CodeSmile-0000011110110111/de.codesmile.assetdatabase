@@ -1,16 +1,13 @@
 // Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using CodeSmile.Editor;
-using DefaultNamespace;
 using Helper;
 using NUnit.Framework;
 using System;
 using UnityEditor;
 using Asset = CodeSmile.Editor.Asset;
-using Object = UnityEngine.Object;
 
-public class CreateAssetTests : AssetTestBase
+public class EADB_AssetCreateTests : AssetTestBase
 {
 	[Test] public void Create_NullPath_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => Asset.Create(Instantiate.ExampleSO(), null));
