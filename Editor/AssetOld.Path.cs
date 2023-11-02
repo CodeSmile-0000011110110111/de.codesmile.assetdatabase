@@ -11,8 +11,9 @@ using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
-	public static partial class Asset
+	public static partial class AssetOld
 	{
+		/*
 		public static class Path
 		{
 			public const String DefaultAssetExtension = "asset";
@@ -103,7 +104,7 @@ namespace CodeSmile.Editor
 			public static String ToRelative(String fullPath)
 			{
 				ThrowIfNullOrWhitespace(fullPath, nameof(fullPath));
-				var normalizedPath = fullPath.NormalizePathSeparators();
+				var normalizedPath = fullPath.ToForwardSlashes();
 
 				if (IsRelative(normalizedPath))
 					return normalizedPath.TrimStart('/');
@@ -125,7 +126,7 @@ namespace CodeSmile.Editor
 
 				// path must start with "Assets" and it's either just "Assets" (length == 6) or if the path is longer
 				// it must be followed by a path separator, eg "Assets/"
-				var normalizedPath = path.NormalizePathSeparators().TrimStart('/');
+				var normalizedPath = path.ToForwardSlashes().TrimStart('/');
 				var startsWithAssets = normalizedPath.ToLower().StartsWith("assets");
 				return startsWithAssets && (normalizedPath.Length <= 6 || IsPathSeparator(normalizedPath[6]));
 			}
@@ -160,5 +161,6 @@ namespace CodeSmile.Editor
 
 			private static Boolean IsPathSeparator(Char c) => c.Equals('/') || c.Equals('\\');
 		}
+	*/
 	}
 }

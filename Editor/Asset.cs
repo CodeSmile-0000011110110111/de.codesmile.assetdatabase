@@ -7,137 +7,175 @@ using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
-	public static partial class Asset
+	public sealed partial class Asset
 	{
-		/// <summary>
-		///     Creates a new asset file. Defaults to generating a unique filename in case there is an
-		///     existing asset file with the same path.	Can overwrite existing files if specified.
-		/// </summary>
-		/// <param name="obj">The object to save as an asset file.</param>
-		/// <param name="path">The relative asset path with filename and extension.</param>
-		/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
-		/// <returns></returns>
-		public static Object Create(Object obj, AssetPath assetPath, Boolean overwriteExisting = false)
+		private GUID m_AssetGuid;
+		private AssetPath m_AssetPath;
+		private Object m_MainObject;
+		private Object[] m_AssetObjects;
+
+		public Object MainObject => m_MainObject;
+		public AssetPath AssetPath => m_AssetPath;
+		public GUID AssetGuid => m_AssetGuid.Empty() ? m_AssetGuid = Guid.Get(m_AssetPath) : m_AssetGuid;
+
+		// public Type MainObjectType => m_MainObject != null ? m_MainObject.GetType() :
+		// 	m_Path != null ? AssetDatabase.GetMainAssetTypeAtPath(m_Path) :
+		// 	AssetDatabase.GetMainAssetTypeFromGUID(m_Guid);
+
+		public Boolean IsAsset => Database.Contains(m_MainObject);
+		public Boolean IsForeignAsset => Status.IsForeignAsset(m_MainObject);
+		public Boolean IsNativeAsset => Status.IsNativeAsset(m_MainObject);
+		public Boolean IsSubAsset => Status.IsSubAsset(m_MainObject);
+		public Boolean IsMainAsset => Status.IsMainAsset(m_MainObject);
+		public Boolean IsLoaded => Status.IsLoaded(m_AssetPath);
+
+		// Create => remains a static method
+
+		// TODO: this could operate on the main or any of the sub assets
+
+		// disallow default ctor
+
+		// assumes there is an asset at this path
+		// throws if no asset at this path
+		// TODO: check file exists, but do not load object
+
+		// object is an existing asset object reference
+		// throws if object is not an asset
+		// TODO: check asset exists
+
+		// object is created as asset at the given path
+		// throws if object is null
+		// TODO: check object not null
+
+		// object is an existing asset object reference
+
+		// ----------------
+		// Copy => SaveAs
+		public Boolean SaveAs(AssetPath destinationPath, Boolean overwriteExisting = false)
 		{
-			AssetDatabase.CreateAsset(obj, overwriteExisting ? assetPath : assetPath.UniquePath);
-			return obj;
+			// TODO: check that asset is created/exists
+
+			var newPath = GetTargetPath(destinationPath, overwriteExisting);
+			var success = SaveAs(m_AssetPath, newPath);
+			if (success)
+				SetMainObjectAndPath(newPath);
+
+			return success;
 		}
 
-		public static Object Create(Object obj, String path, Boolean overwriteExisting = false) =>
-			Create(obj, (AssetPath)path, overwriteExisting);
-
-		// import, (can) move, trash, rename, copy, delete
-		// load, save, open
-
-		/// <summary>
-		///     Speed up mass asset editing (create, modify, delete, import, etc).
-		///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
-		///     This can significantly speed up mass asset editing tasks where you work with individual assets
-		///     in a loop.
-		///     Internally calls Start/StopAssetEditing and Disallow/AllowAutoRefresh in a try/finally
-		///     block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
-		/// </summary>
-		/// <param name="assetEditingAction"></param>
-		public static void BatchEditing(Action assetEditingAction)
+		public Asset Duplicate(AssetPath destinationPath, Boolean overwriteExisting = false)
 		{
-			try
+			// TODO: check that asset is created/exists
+
+			var newPath = GetTargetPath(destinationPath, overwriteExisting);
+			return SaveAs(m_AssetPath, newPath) ? new Asset(newPath) : null;
+		}
+
+		public void Save() =>
+			// TODO: guid overload, check null
+			AssetDatabase.SaveAssetIfDirty(m_MainObject);
+
+		public void Delete()
+		{
+			// TODO: check that asset is created/exists
+			// TODO: what to do with the deleted object? object remains, i assume. need to null path
+		}
+
+		public void Import()
+		{
+			// TODO: check that path is valid
+		}
+
+		public Boolean Rename(AssetPath destinationPath, out String errorMessage)
+		{
+			// TODO: if return string empty, move was successful
+			// what to do with error message?
+			errorMessage = "";
+			return errorMessage.Equals(String.Empty);
+		}
+
+		public Boolean Move(AssetPath destinationPath, out String errorMessage)
+		{
+			// TODO: if return string empty, move was successful
+			// what to do with error message?
+			errorMessage = "";
+			return errorMessage.Equals(String.Empty);
+		}
+
+		public Boolean CanMove(AssetPath destinationPath, out String errorMessage)
+		{
+			errorMessage = "";
+			return errorMessage.Equals(String.Empty);
+		}
+
+		public Boolean OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+			// TODO: overload for object and instanceId
+			// TODO: check null
+			AssetDatabase.OpenAsset(MainObject, lineNumber, columnNumber);
+
+		public Boolean Trash()
+		{
+			var didTrash = AssetDatabase.MoveAssetToTrash(m_AssetPath);
+			// TODO: update state
+			return didTrash;
+		}
+
+		public T Load<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_AssetPath));
+		public Object[] LoadAll() => SelectAndAssignMainObject(LoadAll(m_AssetPath));
+		public Object[] LoadOnlyVisible() => SelectAndAssignMainObject(LoadOnlyVisible(m_AssetPath));
+
+		public Object LoadMainAsync(Action<Object> onLoadComplete)
+		{
+			// TODO: use coroutine to load async
+			Object obj = null;
+			onLoadComplete?.Invoke(obj);
+			return null;
+		}
+
+		public Object LoadAsync(Int32 fileId, Action<Object> onLoadComplete)
+		{
+			// TODO: use coroutine to load async
+			Object obj = null;
+			onLoadComplete?.Invoke(obj);
+			return null;
+		}
+
+		// TODO: this could operate on the main or any of the sub assets
+		public void AddObject(Object obj)
+		{
+			// TODO: check obj not null, not same as main
+			if (m_MainObject != null)
+				AssetDatabase.AddObjectToAsset(obj, m_MainObject);
+			else
+				AssetDatabase.AddObjectToAsset(obj, m_AssetPath);
+		}
+
+		public void RemoveObject(Object obj) {}
+
+		public void SetMainObjectAndImport(Object obj)
+		{
+			m_MainObject = obj;
+			AssetDatabase.SetMainObject(m_MainObject, m_AssetPath);
+			Import();
+		}
+
+		private Object[] SelectAndAssignMainObject(Object[] objects)
+		{
+			m_AssetObjects = objects;
+
+			if (m_MainObject == null)
 			{
-				Database.DisallowAutoRefresh();
-				Database.StartAssetEditing();
-
-				assetEditingAction?.Invoke();
+				foreach (var obj in objects)
+				{
+					if (AssetDatabase.IsMainAsset(obj))
+					{
+						m_MainObject = obj;
+						break;
+					}
+				}
 			}
-			finally
-			{
-				Database.StopAssetEditing();
-				Database.AllowAutoRefresh();
-			}
-		}
 
-		public static class Labels {}
-		public static class SubAsset {}
-		public static class Meta {}
-		public static class Load {}
-
-		public static class VersionControl
-		{
-			/*
-CanOpenAssetInEditor
-CanOpenForEdit
-IsMetaFileOpenForEdit
-IsOpenForEdit
-MakeEditable
-			 */
-		}
-
-		// separate class
-		public static class Package
-		{
-			//Import
-			//Export
-		}
-
-		public static class Importer
-		{
-			/*
-ClearImporterOverride
-GetAvailableImporters
-GetDefaultImporter
-GetImporterOverride
-GetImporterType
-GetImporterTypes
-SetImporterOverride
-			 */
-		}
-
-		public static class Bundle
-		{
-			/*
-GetAllAssetBundleNames
-GetAssetBundleDependencies
-GetAssetPathsFromAssetBundle
-GetAssetPathsFromAssetBundleAndAssetName
-GetImplicitAssetBundleName
-GetImplicitAssetBundleVariantName
-GetUnusedAssetBundleNames
-RemoveAssetBundleName
-RemoveUnusedAssetBundleNames
-			 */
-		}
-
-		public static class Database
-		{
-			public static void AllowAutoRefresh() => AssetDatabase.AllowAutoRefresh();
-			public static void DisallowAutoRefresh() => AssetDatabase.DisallowAutoRefresh();
-
-			/// <summary>
-			///     Internal on purpose: use Asset.BatchEditing(Action) instead
-			/// </summary>
-			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
-
-			/// <summary>
-			///     Internal on purpose: use Asset.BatchEditing(Action) instead
-			/// </summary>
-			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
-
-			public static class CacheServer
-			{
-				/*
-	RefreshSettings
-	CanConnectToCacheServer
-	CloseCacheServerConnection
-	GetCacheServerAddress
-	GetCacheServerEnableDownload
-	GetCacheServerEnableUpload
-	GetCacheServerNamespacePrefix
-	GetCacheServerPort
-	GetCurrentCacheServerIp
-	IsCacheServerEnabled
-	IsConnectedToCacheServer
-	ResetCacheServerReconnectTimer
-	WriteImportSettingsIfDirty
-				 */
-			}
+			return objects;
 		}
 	}
 }

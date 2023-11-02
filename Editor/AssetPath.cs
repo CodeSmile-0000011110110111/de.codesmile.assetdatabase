@@ -28,12 +28,29 @@ namespace CodeSmile.Editor
 		///     the path does not point to an existing asset file.
 		///     See also: Project Settings => Editor => Numbering Scheme
 		/// </summary>
-		public String UniquePath => AssetDatabase.GenerateUniqueAssetPath(m_RelativePath);
+		public AssetPath UniquePath => (AssetPath)AssetDatabase.GenerateUniqueAssetPath(m_RelativePath);
 
 		/// <summary>
 		///     Creates and returns the full path, with forward slashes as separators.
 		/// </summary>
-		public String FullPath => Path.GetFullPath(m_RelativePath).NormalizePathSeparators();
+		public String FullPath => Path.GetFullPath(m_RelativePath).ToForwardSlashes();
+		public String FolderPath
+		{
+			get
+			{
+				if (Directory.Exists(m_RelativePath))
+					return m_RelativePath;
+
+				return Path.GetDirectoryName(m_RelativePath).ToForwardSlashes();
+			}
+		}
+
+		public Boolean FileExists => File.Exists(Path.GetFullPath(m_RelativePath));
+		public Boolean FolderExists => Asset.Path.FolderExists(this);
+
+		public static String FullProjectPath => FullAssetsPath.Substring(0, FullAssetsPath.Length - 6);
+		public static String FullAssetsPath => Application.dataPath;
+		public static String FullPackagesPath => $"{FullProjectPath}/Packages";
 
 		/// <summary>
 		///     Implicit conversion to string (relative asset path). Same as ToString().
@@ -72,49 +89,25 @@ namespace CodeSmile.Editor
 
 		private static String ToRelative(String fullOrRelativePath)
 		{
-			var relativePath = fullOrRelativePath;
-			if (IsRelative(fullOrRelativePath) == false)
-			{
-				ThrowIfNotAProjectPath(fullOrRelativePath, fullOrRelativePath);
-				relativePath = fullOrRelativePath.Substring(Application.dataPath.Length - 6);
-			}
+			if (IsRelative(fullOrRelativePath))
+				return fullOrRelativePath.Trim('/');
 
-			return relativePath.Trim('/');
+			ThrowIf.NotAProjectPath(fullOrRelativePath, fullOrRelativePath);
+			return MakeRelative(fullOrRelativePath);
 		}
 
-		private static Boolean IsRelative(String normalizedPath)
+		private static Boolean IsRelative(String path)
 		{
-			// path must start with "Assets" and it's either just "Assets" (length == 6) or if the path is longer
-			// it must be followed by a path separator, eg "Assets/.."
-			normalizedPath = normalizedPath.TrimStart('/');
-			var startsWithAssets = normalizedPath.ToLower().StartsWith("assets");
-			return startsWithAssets && (normalizedPath.Length <= 6 || normalizedPath[6].Equals('/'));
+			// path must start with "Assets" or "Packages/"
+			// it may also be just "Assets" (length == 6), otherwise a path separator must follow: "Assets/.."
+			path = path.TrimStart('/').ToLower();
+			var startsWithAssets = path.StartsWith("assets");
+			var startsWithPackages = path.StartsWith("packages/");
+			return startsWithAssets && (path.Length <= 6 || path[6].Equals('/')) || startsWithPackages;
 		}
 
-		private static void ThrowIfNotAProjectPath(String normalizedPath, String fullPath)
-		{
-			var dataPath = Application.dataPath;
-			if (normalizedPath.StartsWith(dataPath) == false)
-			{
-				throw new ArgumentException(
-					$"not a project path: '{fullPath}' - should start with: {dataPath.Substring(0, dataPath.Length - 6)}");
-			}
-		}
-
-		private static void ThrowIfNullOrWhitespace(String param, String paramName)
-		{
-			if (param == null)
-				throw new ArgumentNullException($"{paramName} is null");
-			if (String.IsNullOrWhiteSpace(param))
-				throw new ArgumentException($"{paramName} is empty or whitespace");
-		}
-
-		private static void ThrowIfContainsPathSeparators(String fileName, String paramName)
-		{
-			var normalized = fileName.NormalizePathSeparators();
-			if (normalized.Contains('/'))
-				throw new ArgumentException("filename contains path separators", paramName);
-		}
+		private static String MakeRelative(String fullOrRelativePath) =>
+			fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
 
 		/// <summary>
 		///     Creates an asset path pointing to the 'Assets' root folder.
@@ -133,8 +126,8 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		public AssetPath(String fullOrRelativePath)
 		{
-			ThrowIfNullOrWhitespace(fullOrRelativePath, nameof(fullOrRelativePath));
-			m_RelativePath = ToRelative(fullOrRelativePath.NormalizePathSeparators());
+			ThrowIf.NullOrWhitespace(fullOrRelativePath, nameof(fullOrRelativePath));
+			m_RelativePath = ToRelative(fullOrRelativePath.ToForwardSlashes());
 		}
 
 		/// <summary>
@@ -156,12 +149,12 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentException"></exception>
 		public AssetPath(String directory, String fileName, String extension = DefaultExtension)
 		{
-			ThrowIfNullOrWhitespace(directory, nameof(directory));
-			ThrowIfNullOrWhitespace(fileName, nameof(fileName));
-			ThrowIfNullOrWhitespace(extension, nameof(extension));
-			ThrowIfContainsPathSeparators(fileName, nameof(fileName));
+			ThrowIf.NullOrWhitespace(directory, nameof(directory));
+			ThrowIf.NullOrWhitespace(fileName, nameof(fileName));
+			ThrowIf.NullOrWhitespace(extension, nameof(extension));
+			ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));
 
-			var relativeDir = ToRelative(directory.NormalizePathSeparators());
+			var relativeDir = ToRelative(directory.ToForwardSlashes());
 			m_RelativePath = $"{relativeDir}/{fileName}.{extension.TrimStart('.').ToLower()}";
 		}
 
@@ -176,6 +169,12 @@ namespace CodeSmile.Editor
 		}
 
 		public Boolean Equals(String other) => m_RelativePath.Equals(new AssetPath(other).m_RelativePath);
+
+		/// <summary>
+		///     Creates the path's folders recursively.
+		/// </summary>
+		public void CreateDirectories() => Asset.Path.CreateFolders(this);
+
 		public override Boolean Equals(Object obj) => Equals(obj as AssetPath);
 
 		public override Int32 GetHashCode() => m_RelativePath.GetHashCode();

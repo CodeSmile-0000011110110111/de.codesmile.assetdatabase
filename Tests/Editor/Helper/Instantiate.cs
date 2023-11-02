@@ -3,17 +3,14 @@
 
 using UnityEngine;
 
-namespace Helper
+public static class Instantiate
 {
-	public static class Instantiate
+	public static ScriptableObject ExampleSO()
 	{
-		public static ScriptableObject ExampleSO()
-		{
-			var so = ScriptableObject.CreateInstance<ExampleSO>();
-			so.AssemblyName = so.GetType().AssemblyQualifiedName;
-			so.InstanceId = so.GetInstanceID();
-			so.ObjectReference = so;
-			return so;
-		}
+		var so = ScriptableObject.CreateInstance<ExampleSO>();
+		so.AssemblyName = so.GetType().AssemblyQualifiedName;
+		so.InstanceId = so.GetInstanceID();
+		so.ObjectReference = so;
+		return so;
 	}
 }

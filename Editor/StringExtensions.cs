@@ -10,6 +10,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns></returns>
-		public static String NormalizePathSeparators(this String path) => path.Replace('\\', '/');
+		public static String ToForwardSlashes(this String path) => path.Replace('\\', '/');
 	}
 }

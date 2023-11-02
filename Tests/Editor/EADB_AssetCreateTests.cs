@@ -2,11 +2,9 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmile.Editor;
-using Helper;
 using NUnit.Framework;
 using System;
 using UnityEditor;
-using Asset = CodeSmile.Editor.Asset;
 
 public class EADB_AssetCreateTests : AssetTestBase
 {
@@ -15,9 +13,9 @@ public class EADB_AssetCreateTests : AssetTestBase
 		var obj = Instantiate.ExampleSO();
 		obj.name = $"New {nameof(ExampleSO)}";
 
-		var asset = DeleteAfterTest(Asset.Create(obj, (AssetPath)$"{ExamplePath}/{obj.name}.asset"));
+		var asset = DeleteAfterTest(AssetOld.Create(obj, (AssetPath)$"{ExamplePath}/{obj.name}.asset"));
 
-		Assert.That(Helper.Asset.FileExists(asset));
+		Assert.That(AssetHelper.FileExists(asset));
 	}
 
 	[Test] public void Create_NewAssetWithStringPath_DidCreate()
@@ -25,9 +23,9 @@ public class EADB_AssetCreateTests : AssetTestBase
 		var obj = Instantiate.ExampleSO();
 		obj.name = $"New {nameof(ExampleSO)}";
 
-		var asset = DeleteAfterTest(Asset.Create(obj, $"{ExamplePath}/{obj.name}.asset"));
+		var asset = DeleteAfterTest(AssetOld.Create(obj, $"{ExamplePath}/{obj.name}.asset"));
 
-		Assert.That(Helper.Asset.FileExists(asset));
+		Assert.That(AssetHelper.FileExists(asset));
 	}
 
 	[Test] public void Create_TwiceWithSameName_CreatesTwoAssets()
@@ -36,11 +34,11 @@ public class EADB_AssetCreateTests : AssetTestBase
 		var obj2 = Instantiate.ExampleSO();
 
 		var path = new AssetPath(ExamplePath, nameof(ExampleSO));
-		var asset1 = DeleteAfterTest(Asset.Create(obj1, path));
-		var asset2 = DeleteAfterTest(Asset.Create(obj2, path));
+		var asset1 = DeleteAfterTest(AssetOld.Create(obj1, path));
+		var asset2 = DeleteAfterTest(AssetOld.Create(obj2, path));
 
-		Assert.That(Helper.Asset.FileExists(asset1));
-		Assert.That(Helper.Asset.FileExists(asset2));
+		Assert.That(AssetHelper.FileExists(asset1));
+		Assert.That(AssetHelper.FileExists(asset2));
 	}
 
 	[Test] public void Create_ReplaceExisting_DidReplace()
@@ -49,9 +47,9 @@ public class EADB_AssetCreateTests : AssetTestBase
 		obj.name = $"New {nameof(ExampleSO)}";
 
 		var path = new AssetPath(ExamplePath, obj.name);
-		var asset = DeleteAfterTest(Asset.Create(obj, path, true));
+		var asset = DeleteAfterTest(AssetOld.Create(obj, path, true));
 
-		Assert.That(Helper.Asset.FileExists(asset));
+		Assert.That(AssetHelper.FileExists(asset));
 	}
 
 	[Test] public void Create_TwiceWithSameName_DidReplaceExisting()
@@ -60,12 +58,12 @@ public class EADB_AssetCreateTests : AssetTestBase
 		var obj2 = Instantiate.ExampleSO();
 
 		var path = new AssetPath(ExamplePath, nameof(ExampleSO));
-		var asset1 = DeleteAfterTest(Asset.Create(obj1, path, true));
-		var asset2 = DeleteAfterTest(Asset.Create(obj2, path, true));
+		var asset1 = DeleteAfterTest(AssetOld.Create(obj1, path, true));
+		var asset2 = DeleteAfterTest(AssetOld.Create(obj2, path, true));
 
 		Assert.That(String.IsNullOrEmpty(AssetDatabase.GetAssetPath(obj1)));
 		Assert.That(path == AssetDatabase.GetAssetPath(obj2));
-		Assert.That(Helper.Asset.FileExists(asset1) == false);
-		Assert.That(Helper.Asset.FileExists(asset2));
+		Assert.That(AssetHelper.FileExists(asset1) == false);
+		Assert.That(AssetHelper.FileExists(asset2));
 	}
 }

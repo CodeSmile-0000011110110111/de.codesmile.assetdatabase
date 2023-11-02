@@ -5,13 +5,10 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Helper
+public class ExampleSO : ScriptableObject
 {
-	public class ExampleSO : ScriptableObject
-	{
-		public String AssemblyName;
-		public Int32 InstanceId;
-		public Single FloatValue;
-		public Object ObjectReference;
-	}
+	public String AssemblyName;
+	public Int32 InstanceId;
+	public Single FloatValue;
+	public Object ObjectReference;
 }

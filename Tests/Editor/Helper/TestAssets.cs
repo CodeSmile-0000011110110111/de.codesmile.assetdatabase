@@ -6,37 +6,34 @@ using System.Collections.Generic;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace Helper
+public sealed class TestAssets : IDisposable
 {
-	public sealed class TestAssets : IDisposable
+	private readonly HashSet<Object> m_TestAssets = new();
+
+	public void Dispose() => DeleteTempAssets();
+
+	private void DeleteTempAssets()
 	{
-		private readonly HashSet<Object> m_TestAssets = new();
-
-		public void Dispose() => DeleteTempAssets();
-
-		private void DeleteTempAssets()
+		if (m_TestAssets != null)
 		{
-			if (m_TestAssets != null)
+			foreach (var asset in m_TestAssets)
 			{
-				foreach (var asset in m_TestAssets)
-				{
-					var path = AssetDatabase.GetAssetPath(asset);
-					if (string.IsNullOrEmpty(path))
-						continue;
-					
-					AssetDatabase.DeleteAsset(path);
-				}
+				var path = AssetDatabase.GetAssetPath(asset);
+				if (String.IsNullOrEmpty(path))
+					continue;
 
-				m_TestAssets.Clear();
+				AssetDatabase.DeleteAsset(path);
 			}
-		}
 
-		public void Add(Object asset)
-		{
-			if (asset == null)
-				throw new ArgumentNullException(nameof(asset), "cannot add null asset");
-
-			m_TestAssets.Add(asset);
+			m_TestAssets.Clear();
 		}
+	}
+
+	public void Add(Object asset)
+	{
+		if (asset == null)
+			throw new ArgumentNullException(nameof(asset), "cannot add null asset");
+
+		m_TestAssets.Add(asset);
 	}
 }

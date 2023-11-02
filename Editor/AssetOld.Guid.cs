@@ -7,9 +7,9 @@ using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
-	public static partial class Asset
+	public static partial class AssetOld
 	{
-		public static class Guid
+		/*public static class Guid
 		{
 			public static GUID Get(Object obj) => AssetDatabase.GUIDFromAssetPath(Path.Get(obj));
 			public static GUID Get(String path) => AssetDatabase.GUIDFromAssetPath(Path.ToRelative(path));
@@ -18,7 +18,7 @@ namespace CodeSmile.Editor
 				AssetDatabase.AssetPathToGUID(Path.ToRelative(path), includeRecentlyDeleted
 					? AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets
 					: AssetPathToGUIDOptions.OnlyExistingAssets));
-		}
+		}*/
 
 
 	}
