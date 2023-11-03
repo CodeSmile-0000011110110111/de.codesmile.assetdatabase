@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmile.Editor;
+using CodeSmile.Editor.old;
 using NUnit.Framework;
 using System;
 using UnityEditor;

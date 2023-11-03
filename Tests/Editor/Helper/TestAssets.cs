@@ -1,31 +1,25 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using CodeSmile.Editor;
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using Object = UnityEngine.Object;
 
 public sealed class TestAssets : IDisposable
 {
-	private readonly HashSet<Object> m_TestAssets = new();
+	private readonly HashSet<Object> m_AssetObjects = new();
 
 	public void Dispose() => DeleteTempAssets();
 
 	private void DeleteTempAssets()
 	{
-		if (m_TestAssets != null)
+		if (m_AssetObjects != null)
 		{
-			foreach (var asset in m_TestAssets)
-			{
-				var path = AssetDatabase.GetAssetPath(asset);
-				if (String.IsNullOrEmpty(path))
-					continue;
+			foreach (var obj in m_AssetObjects)
+				Asset.Delete(obj);
 
-				AssetDatabase.DeleteAsset(path);
-			}
-
-			m_TestAssets.Clear();
+			m_AssetObjects.Clear();
 		}
 	}
 
@@ -34,6 +28,6 @@ public sealed class TestAssets : IDisposable
 		if (asset == null)
 			throw new ArgumentNullException(nameof(asset), "cannot add null asset");
 
-		m_TestAssets.Add(asset);
+		m_AssetObjects.Add(asset);
 	}
 }

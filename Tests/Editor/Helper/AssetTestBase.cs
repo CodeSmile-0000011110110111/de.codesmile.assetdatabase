@@ -10,10 +10,12 @@ using Object = UnityEngine.Object;
 
 public abstract class AssetTestBase
 {
+	protected const String TestSubFolderPath = "Assets/subfolder";
 	protected const String TestSubFoldersPath = "Assets/sub/fol/der";
+	protected const String TestAssetFileName = "°CodeSmile-UnitTestAsset°.asset";
 	protected readonly AssetPath ExamplePath = new("Assets/Examples/");
-	protected readonly AssetPath TestAssetPath = new("Assets/test.asset");
-	protected const String TestSubFolderPath = ("Assets/subfolder");
+	protected readonly AssetPath TestAssetPath = new($"Assets/{TestAssetFileName}");
+	protected readonly AssetPath TestSubFoldersAssetPath = new($"{TestSubFoldersPath}/{TestAssetFileName}");
 
 	private readonly TestAssets m_TestAssets = new();
 
@@ -22,10 +24,11 @@ public abstract class AssetTestBase
 	[TearDown] public void TearDown()
 	{
 		Assert.DoesNotThrow(m_TestAssets.Dispose);
-		AssetDatabase.DeleteAsset(TestSubFolderPath);
-		AssetDatabase.DeleteAsset(TestSubFoldersPath);
-		AssetDatabase.DeleteAsset(Path.GetDirectoryName(TestSubFoldersPath));
-		AssetDatabase.DeleteAsset(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
+
+		Asset.Delete(TestSubFolderPath);
+		Asset.Delete(TestSubFoldersPath);
+		Asset.Delete(Path.GetDirectoryName(TestSubFoldersPath));
+		Asset.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
 	}
 
 	protected Object DeleteAfterTest(Object asset)
@@ -41,5 +44,8 @@ public abstract class AssetTestBase
 		return guid;
 	}
 
-	protected Object CreateTestAsset(String path) => DeleteAfterTest(AssetOld.Create(Instantiate.ExampleSO(), path));
+	protected Object CreateTestAsset() => CreateTestAsset(TestAssetPath);
+
+	protected Object CreateTestAsset(String path) =>
+		DeleteAfterTest(Asset.Create(Instantiate.ExampleSO(), path).MainObject);
 }

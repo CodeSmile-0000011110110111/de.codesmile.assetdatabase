@@ -3,7 +3,6 @@
 
 using System;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 using Object = System.Object;
 
@@ -24,29 +23,70 @@ namespace CodeSmile.Editor
 		private readonly String m_RelativePath = String.Empty;
 
 		/// <summary>
-		///     Creates and returns the relative asset path. The file name may be appeneded with a number to ensure
-		///     the path does not point to an existing asset file.
+		///     Returns the path either unaltered or with a numbering to make the file unique if an asset file
+		///     already exists at the path. Does not alter path if it does not exist or points to a folder.
 		///     See also: Project Settings => Editor => Numbering Scheme
 		/// </summary>
-		public AssetPath UniquePath => (AssetPath)AssetDatabase.GenerateUniqueAssetPath(m_RelativePath);
+		public AssetPath UniqueFilePath => Asset.Path.UniquifyFileNameIfAssetExists(this);
 
 		/// <summary>
 		///     Creates and returns the full path, with forward slashes as separators.
 		/// </summary>
 		public String FullPath => Path.GetFullPath(m_RelativePath).ToForwardSlashes();
+
+		/// <summary>
+		///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
+		///     CAUTION: The path must exist! If not, throws an exception.
+		/// </summary>
+		/// <exception cref="InvalidOperationException">if the path does not exist</exception>
 		public String FolderPath
 		{
 			get
 			{
+				// existing directory? return that
 				if (Directory.Exists(m_RelativePath))
 					return m_RelativePath;
 
-				return Path.GetDirectoryName(m_RelativePath).ToForwardSlashes();
+				// existing file? return folder path
+				if (File.Exists(m_RelativePath))
+					return ToFolderPath();
+
+				throw new InvalidOperationException("unable to determine if file or folder because path" +
+				                                    $" '{m_RelativePath}' does not exist");
 			}
 		}
 
-		public Boolean FileExists => File.Exists(Path.GetFullPath(m_RelativePath));
-		public Boolean FolderExists => Asset.Path.FolderExists(this);
+		/// <summary>
+		///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
+		///     If the path does not exist and it ends with an extension (has a dot) then it is assumed a file path,
+		///     otherwise a folder path is assumed (Unity does not support assets without file extensions).
+		///
+		///     This may be incorrect if the path is to a folder where the last folder has a dot in its name.
+		/// </summary>
+		public String FolderPathAssumptive
+		{
+			get
+			{
+				// existing directory? return that
+				if (Directory.Exists(m_RelativePath))
+					return m_RelativePath;
+
+				// existing file? return folder path
+				if (File.Exists(m_RelativePath))
+					return ToFolderPath();
+
+				// if it has an extension, assume it's a file (could also be a folder but alas ...)
+				if (Path.HasExtension(m_RelativePath))
+					return ToFolderPath();
+
+				return m_RelativePath;
+			}
+		}
+
+		/// <summary>
+		///     Returns true if the path exists, be it file or folder. Returns false if the path does not exist.
+		/// </summary>
+		public Boolean Exists => Asset.Path.FileExists(this) || Asset.Path.FolderExists(this);
 
 		public static String FullProjectPath => FullAssetsPath.Substring(0, FullAssetsPath.Length - 6);
 		public static String FullAssetsPath => Application.dataPath;
@@ -55,7 +95,8 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Implicit conversion to string (relative asset path). Same as ToString().
 		/// </summary>
-		public static implicit operator String(AssetPath assetPath) => assetPath.m_RelativePath;
+		public static implicit operator String(AssetPath assetPath) =>
+			assetPath != null ? assetPath.m_RelativePath : null;
 
 		/// <summary>
 		///     Explicit creation of an AssetPath instance initialized with a string path (full or relative).
@@ -170,10 +211,7 @@ namespace CodeSmile.Editor
 
 		public Boolean Equals(String other) => m_RelativePath.Equals(new AssetPath(other).m_RelativePath);
 
-		/// <summary>
-		///     Creates the path's folders recursively.
-		/// </summary>
-		public void CreateDirectories() => Asset.Path.CreateFolders(this);
+		internal String ToFolderPath() => Path.GetDirectoryName(m_RelativePath).ToForwardSlashes();
 
 		public override Boolean Equals(Object obj) => Equals(obj as AssetPath);
 

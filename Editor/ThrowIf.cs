@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
-	public static class ThrowIf
+	internal static class ThrowIf
 	{
 		public static void ArgumentIsNull(object arg, String argName)
 		{
@@ -16,10 +16,16 @@ namespace CodeSmile.Editor
 				throw new ArgumentNullException(argName);
 		}
 
-		public static void FileDoesNotExist(AssetPath assetPath)
+		public static void FileOrFolderDoesNotExist(AssetPath assetPath)
 		{
-			if (assetPath.FileExists == false)
-				throw new FileNotFoundException($"file does not exist: '{assetPath}'");
+			if ((Asset.Path.FileExists(assetPath) || Asset.Path.FolderExists(assetPath)) == false)
+				throw new FileNotFoundException($"file/folder does not exist: '{assetPath}'");
+		}
+
+		public static void IsExistingAsset(Object obj)
+		{
+			if (AssetDatabase.Contains(obj))
+				throw new ArgumentException($"object already is an asset file: {obj}");
 		}
 
 		public static void NotAnAsset(Object obj)

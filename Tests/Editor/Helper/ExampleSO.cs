@@ -7,8 +7,8 @@ using Object = UnityEngine.Object;
 
 public class ExampleSO : ScriptableObject
 {
+	public Object ObjectReference;
 	public String AssemblyName;
 	public Int32 InstanceId;
 	public Single FloatValue;
-	public Object ObjectReference;
 }

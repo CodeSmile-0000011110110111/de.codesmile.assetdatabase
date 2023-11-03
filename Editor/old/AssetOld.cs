@@ -3,10 +3,9 @@
 
 using System;
 using UnityEditor;
-using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmile.Editor.old
 {
 	public static partial class AssetOld
 	{
@@ -20,7 +19,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		public static Object Create(Object obj, AssetPath assetPath, Boolean overwriteExisting = false)
 		{
-			AssetDatabase.CreateAsset(obj, overwriteExisting ? assetPath : assetPath.UniquePath);
+			AssetDatabase.CreateAsset(obj, overwriteExisting ? assetPath : assetPath.UniqueFilePath);
 			return obj;
 		}
 
