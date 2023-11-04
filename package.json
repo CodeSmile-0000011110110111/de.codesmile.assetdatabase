@@ -1,11 +1,12 @@
 {
-  "name": "com.codesmile.assetdb",
-  "displayName": "EasyAssetDatabase",
-  "description": "Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use.",
-  "version": "0.1.0",
+  "name": "de.codesmile.unityeditor.assetdatabase",
+  "displayName": "CodeSmile AssetDatabase",
+  "description": "User-friendly AssetDatabase API that's easy to read and hard to misuse.\nDesign goals: consistent, concise, comprehensible, convenient, complete, tested.",
+  "version": "0.1.1",
   "unity": "2021.3",
+  "unityRelease": "3f1",
   "author": {
-    "name": "Steffen Itterheim (CodeSmile)",
+    "name": "Steffen Itterheim aka 'CodeSmile' (Unity MVP, Self-Employed)",
     "email": "steffen@steffenitterheim.de",
     "url": "https://codesmile.de"
   },
@@ -15,6 +16,5 @@
   "dependencies": {
     "com.unity.test-framework": "1.3.0"
   },
-  "relatedPackages": {},
-  "unityRelease": "4f1"
+  "relatedPackages": {}
 }
