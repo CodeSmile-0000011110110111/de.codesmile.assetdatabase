@@ -4,13 +4,12 @@
 using System;
 using System.IO;
 using UnityEditor;
-using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
 	internal static class ThrowIf
 	{
-		public static void ArgumentIsNull(object arg, String argName)
+		public static void ArgumentIsNull(Object arg, String argName)
 		{
 			if (arg == null)
 				throw new ArgumentNullException(argName);
@@ -22,13 +21,13 @@ namespace CodeSmile.Editor
 				throw new FileNotFoundException($"file/folder does not exist: '{assetPath}'");
 		}
 
-		public static void IsExistingAsset(Object obj)
+		public static void IsExistingAsset(UnityEngine.Object obj)
 		{
 			if (AssetDatabase.Contains(obj))
 				throw new ArgumentException($"object already is an asset file: {obj}");
 		}
 
-		public static void NotAnAsset(Object obj)
+		public static void NotAnAsset(UnityEngine.Object obj)
 		{
 			if (AssetDatabase.Contains(obj) == false)
 				throw new ArgumentException($"object is not an asset file: {obj}");

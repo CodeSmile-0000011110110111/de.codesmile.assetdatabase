@@ -8,6 +8,7 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
+		public static Boolean Exists(Object obj) => Database.Contains(obj);
 
 		/// <summary>
 		///     Speed up mass asset editing (create, modify, delete, import, etc).

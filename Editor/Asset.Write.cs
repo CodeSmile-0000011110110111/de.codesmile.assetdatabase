@@ -36,14 +36,31 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="path"></param>
-		public static void Delete(String path)
+		/// <param name="assetPath"></param>
+		public static void Delete(AssetPath assetPath)
 		{
-			if (AssetPath.FileExists(path) || AssetPath.FolderExists(path))
-				AssetDatabase.DeleteAsset(path);
+			if (assetPath != null && assetPath.Exists)
+				AssetDatabase.DeleteAsset(assetPath);
 		}
+		//
+		// public Boolean Trash()
+		// {
+		// 	var didTrash = AssetDatabase.MoveAssetToTrash(m_AssetPath);
+		// 	// TODO: update state
+		// 	return didTrash;
+		// }
+		//
 
-		public static void Delete(AssetPath assetPath) => Delete((String)assetPath);
+		/// <summary>
+		///     Deletes the asset file. Does nothing if there is no file at the given path.
+		/// </summary>
+		/// <param name="path"></param>
+		public static void Delete(String path) => Delete((AssetPath)path);
+
+		/// <summary>
+		///     Deletes the asset. Does nothing if the object is not an asset.
+		/// </summary>
+		/// <param name="path"></param>
 		public static void Delete(Object obj) => Delete(AssetPath.Get(obj));
 
 		public static Boolean SaveAs(AssetPath sourcePath, AssetPath destPath, Boolean overwriteExisting = false)
@@ -53,16 +70,61 @@ namespace CodeSmile.Editor
 			return AssetDatabase.CopyAsset(sourcePath, newPath);
 		}
 
-		internal static Object CreateFoldersAndAsset(Object obj, AssetPath assetPath, Boolean overwriteExisting)
-		{
-			// TODO: more error handling, eg invalid extension, StreamingAssets path
-			var newPath = GetNewAssetPath(assetPath, overwriteExisting);
-			AssetPath.CreateFolders(newPath);
-			AssetDatabase.CreateAsset(obj, newPath);
-			return obj;
-		}
+		// ----------------
+		// Copy => SaveAs
+		// public Boolean SaveAs(AssetPath destinationPath, Boolean overwriteExisting = false)
+		// {
+		// 	// TODO: check that asset is created/exists
+		//
+		// 	var newPath = GetTargetPath(destinationPath, overwriteExisting);
+		// 	var success = SaveAs(m_AssetPath, newPath);
+		// 	if (success)
+		// 		SetMainObjectAndPath(newPath);
+		//
+		// 	return success;
+		// }
+		//
+		// public Asset Duplicate(AssetPath destinationPath, Boolean overwriteExisting = false)
+		// {
+		// 	// TODO: check that asset is created/exists
+		//
+		// 	var newPath = GetTargetPath(destinationPath, overwriteExisting);
+		// 	return SaveAs(m_AssetPath, newPath) ? new Asset(newPath) : null;
+		// }
+		//
+		// public void Save()
+		// {
+		// 	// TODO: guid overload, check null
+		// 	AssetDatabase.SaveAssetIfDirty(m_MainObject);
+		// }
+		//
+		// public void Delete()
+		// {
+		// 	// TODO: check that asset is created/exists
+		// 	// TODO: what to do with the deleted object? object remains, i assume. need to null path
+		// }
 
-		private static AssetPath GetNewAssetPath(AssetPath destPath, Boolean overwriteExisting) =>
-			overwriteExisting ? destPath : destPath.UniqueFilePath;
+		//
+		// public Boolean Rename(AssetPath destinationPath, out String errorMessage)
+		// {
+		// 	// TODO: if return string empty, move was successful
+		// 	// what to do with error message?
+		// 	errorMessage = "";
+		// 	return errorMessage.Equals(String.Empty);
+		// }
+		//
+		// public Boolean Move(AssetPath destinationPath, out String errorMessage)
+		// {
+		// 	// TODO: if return string empty, move was successful
+		// 	// what to do with error message?
+		// 	errorMessage = "";
+		// 	return errorMessage.Equals(String.Empty);
+		// }
+		//
+		// public Boolean CanMove(AssetPath destinationPath, out String errorMessage)
+		// {
+		// 	errorMessage = "";
+		// 	return errorMessage.Equals(String.Empty);
+		// }
 	}
 }

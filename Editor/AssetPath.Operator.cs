@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using UnityEditor;
 
 namespace CodeSmile.Editor
 {
@@ -19,7 +18,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="fullOrRelativePath"></param>
 		/// <returns></returns>
-		public static explicit operator AssetPath(String fullOrRelativePath) => new(fullOrRelativePath);
+		public static explicit operator AssetPath(String fullOrRelativePath) =>
+			fullOrRelativePath != null ? new AssetPath(fullOrRelativePath) : null;
 
 		public static Boolean operator ==(AssetPath ap1, AssetPath ap2)
 		{
@@ -41,6 +41,5 @@ namespace CodeSmile.Editor
 		public static Boolean operator !=(AssetPath ap1, Object other) => !(ap1 == other);
 		public static Boolean operator ==(Object other, AssetPath ap2) => ap2 == other;
 		public static Boolean operator !=(Object other, AssetPath ap2) => !(ap2 == other);
-
 	}
 }

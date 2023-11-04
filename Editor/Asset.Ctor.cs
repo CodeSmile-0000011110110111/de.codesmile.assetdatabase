@@ -9,6 +9,15 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
+		internal static Object CreateFoldersAndAsset(Object obj, AssetPath assetPath, Boolean overwriteExisting)
+		{
+			// TODO: more error handling, eg invalid extension, StreamingAssets path
+			var newPath = GetNewAssetPath(assetPath, overwriteExisting);
+			AssetPath.CreateFolders(newPath);
+			AssetDatabase.CreateAsset(obj, newPath);
+			return obj;
+		}
+
 		private Asset() {} // Hidden parameterless ctor
 
 		/// <summary>

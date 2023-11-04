@@ -41,5 +41,16 @@ namespace CodeSmile.Editor
 		// 	onLoadComplete?.Invoke(obj);
 		// 	return null;
 		// }
+
+		//
+		// public Boolean OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+		// 	// TODO: overload for object and instanceId
+		// 	// TODO: check null
+		// 	AssetDatabase.OpenAsset(MainObject, lineNumber, columnNumber);
+		//
+		// public void Import()
+		// {
+		// 	// TODO: check that path is valid
+		// }
 	}
 }

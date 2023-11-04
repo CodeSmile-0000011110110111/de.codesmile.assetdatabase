@@ -3,9 +3,18 @@
 
 using CodeSmile.Editor;
 using NUnit.Framework;
+using System;
+using Object = UnityEngine.Object;
 
 public class AssetDeleteTests : AssetTestBase
 {
+	[Test] public void Delete_Null_DoesNotThrow()
+	{
+		Asset.Delete((String)null);
+		Asset.Delete((AssetPath)null);
+		Asset.Delete((Object)null);
+	}
+
 	[Test] public void Delete_ExistingAssetObject_FileDeleted()
 	{
 		var asset = CreateTestAsset(TestAssetPath);

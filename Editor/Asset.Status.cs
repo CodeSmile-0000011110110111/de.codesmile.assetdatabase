@@ -3,7 +3,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -11,11 +10,11 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		public static class Status
+		/// <summary>
+		///     Query the status of an asset.
+		/// </summary>
+		public static class Status // class needed: there are non-static methods of the same name
 		{
-			[ExcludeFromCodeCoverage]
-			public static Boolean IsAsset(Object obj) => AssetDatabase.Contains(obj);
-
 			[ExcludeFromCodeCoverage]
 			public static Boolean IsForeignAsset(Object obj) => AssetDatabase.IsForeignAsset(obj);
 

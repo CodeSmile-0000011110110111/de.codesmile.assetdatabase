@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using UnityEditor;
 
 namespace CodeSmile.Editor
 {
@@ -21,6 +20,5 @@ namespace CodeSmile.Editor
 		public Boolean Equals(String other) => m_RelativePath.Equals(new AssetPath(other).m_RelativePath);
 		public override Boolean Equals(Object obj) => Equals(obj as AssetPath);
 		public override Int32 GetHashCode() => m_RelativePath.GetHashCode();
-
 	}
 }

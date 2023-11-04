@@ -138,6 +138,5 @@ namespace CodeSmile.Editor
 			var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
 			return (AssetPath)(String.IsNullOrEmpty(uniquePath) ? path : uniquePath);
 		}
-
 	}
 }

@@ -10,13 +10,15 @@ public class AssetDatabaseTests : AssetTestBase
 
 	[Test] public void DatabaseContains_NotAnAsset_False()
 	{
-		var so = Instantiate.ExampleSO();
-		Assert.IsFalse(Asset.Database.Contains(so));
+		var obj = Instantiate.ExampleSO();
+		Assert.IsFalse(Asset.Database.Contains(obj));
+		Assert.IsFalse(Asset.Exists(obj));
 	}
 
 	[Test] public void DatabaseContains_ExistingAsset_True()
 	{
 		var obj = CreateTestAsset(TestAssetPath);
 		Assert.IsTrue(Asset.Database.Contains(obj));
+		Assert.IsTrue(Asset.Exists(obj));
 	}
 }

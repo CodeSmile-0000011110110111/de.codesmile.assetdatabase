@@ -16,6 +16,26 @@ namespace CodeSmile.Editor
 				errorMessage = AssetDatabase.ExtractAsset(subAsset, extractedAssetPath);
 				return errorMessage.Equals(String.Empty);
 			}
+
+			//
+			// // TODO: this could operate on the main or any of the sub assets
+			// public void AddObject(Object obj)
+			// {
+			// 	// TODO: check obj not null, not same as main
+			// 	if (m_MainObject != null)
+			// 		AssetDatabase.AddObjectToAsset(obj, m_MainObject);
+			// 	else
+			// 		AssetDatabase.AddObjectToAsset(obj, m_AssetPath);
+			// }
+			//
+			// public void RemoveObject(Object obj) {}
+			//
+			// public void SetMainObject(Object obj)
+			// {
+			// 	m_MainObject = obj;
+			// 	AssetDatabase.SetMainObject(m_MainObject, m_AssetPath);
+			// 	Import();
+			// }
 		}
 	}
 }
