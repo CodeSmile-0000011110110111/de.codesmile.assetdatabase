@@ -1,7 +1,7 @@
 {
   "name": "de.codesmile.unityeditor.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
-  "description": "User-friendly AssetDatabase API that's easy to read and hard to misuse.\nDesign goals: consistent, concise, comprehensible, convenient, complete, tested.",
+  "description": "User-friendly AssetDatabase API that's easy to read and hard to misuse.\n\nDesign goals: C7T => consistent, concise, clear, comprehensible, convenient, complete, clarity, tested.\n\nCompatible with Unity 2021.3.3f1. Earlier versions not compatible due to use of C# 9 features.",
   "version": "0.1.1",
   "unity": "2021.3",
   "unityRelease": "3f1",
@@ -14,7 +14,7 @@
   "documentationUrl": "https://codesmile.de",
   "licensesUrl": "https://codesmile.de",
   "dependencies": {
-    "com.unity.test-framework": "1.3.0"
+    "com.unity.test-framework": "1.3.9"
   },
   "relatedPackages": {}
 }

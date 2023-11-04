@@ -19,8 +19,6 @@ public abstract class AssetTestBase
 
 	private readonly TestAssets m_TestAssets = new();
 
-	public AssetTestBase() => Asset.Path.CreateFolders(ExamplePath);
-
 	[TearDown] public void TearDown()
 	{
 		Assert.DoesNotThrow(m_TestAssets.Dispose);
