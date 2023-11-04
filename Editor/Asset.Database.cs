@@ -29,17 +29,17 @@ namespace CodeSmile.Editor
 			///     <p>
 			///         Since Refresh() 'traditionally' gets called way too many times needlessly a more descriptive name
 			///         was chosen to reflect what this method does. I even considered naming it 100% accurately as:
-			///         ImportExternallyModifiedAssetsAndUnloadUnusedAssets()
+			///         ImportExternallyModifiedAndUnloadUnusedAssets()
 			///     </p>
 			///     <p>
 			///         CAUTION: Calling this needlessly may have an adverse effect on editor performance, since it calls
-			///         Resources.UnloadUnusedAssets internally and if some resources are used frequently, Unity will have
-			///         to reload them from disk. UnloadUnusedAssets also discards any unsaved objects not marked as 'dirty'
+			///         Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as 'dirty'
 			///         that are only referenced by scripts, leading to potential loss of unsaved data.
+			///         <see cref="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html" />
 			///     </p>
 			/// </summary>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage] public static void ImportExternallyModifiedAssets(ImportAssetOptions options =
+			[ExcludeFromCodeCoverage] public static void ImportAll(ImportAssetOptions options =
 				ImportAssetOptions.Default) => AssetDatabase.Refresh(options);
 
 			/// <summary>
@@ -61,13 +61,13 @@ namespace CodeSmile.Editor
 			///     <see cref="Asset.BatchEditing" />
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			/// </summary>
-			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
+			[ExcludeFromCodeCoverage] internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			/// <summary>
 			///     <see cref="Asset.BatchEditing" />
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			/// </summary>
-			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
+			[ExcludeFromCodeCoverage] internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			// SaveAll
 

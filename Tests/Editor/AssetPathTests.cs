@@ -201,7 +201,7 @@ public class AssetPathTests : AssetTestBase
 
 		Assert.False(folderGuid.Empty());
 		// we test for "assumptive" folder because some test cases include paths to a non-existing file
-		Assert.AreEqual(((AssetPath)assetPath.FolderPathAssumptive).Guid, folderGuid);
+		Assert.AreEqual(assetPath.FolderPathAssumptive.Guid, folderGuid);
 		Assert.True(AssetPath.FolderExists(assetPath.FolderPathAssumptive));
 	}
 

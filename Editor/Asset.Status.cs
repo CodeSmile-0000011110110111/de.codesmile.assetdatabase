@@ -11,6 +11,13 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
+		///     Returns true if the asset exists in the Database. Convenient shortcut for Asset.Database.Contains().
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>False if the object is null or not in the database.</returns>
+		public static Boolean Exists(Object obj) => Database.Contains(obj);
+
+		/// <summary>
 		///     Query the status of an asset.
 		/// </summary>
 		public static class Status // class needed: there are non-static methods of the same name

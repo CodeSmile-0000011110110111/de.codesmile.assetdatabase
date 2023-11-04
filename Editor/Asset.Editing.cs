@@ -2,14 +2,12 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using Object = UnityEngine.Object;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		public static Boolean Exists(Object obj) => Database.Contains(obj);
-
 		/// <summary>
 		///     Speed up mass asset editing (create, modify, delete, import, etc).
 		///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
@@ -17,9 +15,10 @@ namespace CodeSmile.Editor
 		///     in a loop.
 		///     Internally calls Start/StopAssetEditing in a try/finally block so that exceptions will
 		///     not cause the AssetDatabase to remain stopped indefinitely.
+		///     <seealso cref="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html" />
 		/// </summary>
 		/// <param name="assetEditingAction"></param>
-		public static void BatchEditing(Action assetEditingAction)
+		[ExcludeFromCodeCoverage] public static void BatchEditing(Action assetEditingAction)
 		{
 			ThrowIf.ArgumentIsNull(assetEditingAction, nameof(assetEditingAction));
 

@@ -11,7 +11,6 @@ using System;
 
 public class AssetStaticTests : AssetTestBase
 {
-
 	[Test] public void BatchEditing_NullAction_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => Asset.BatchEditing(null));
 

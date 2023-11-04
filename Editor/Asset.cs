@@ -3,7 +3,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using UnityEditor;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -30,23 +29,11 @@ namespace CodeSmile.Editor
 		private static AssetPath GetNewAssetPath(AssetPath destPath, Boolean overwriteExisting) =>
 			overwriteExisting ? destPath : destPath.UniqueFilePath;
 
-		private Object[] SelectAndAssignMainObject(Object[] objects)
+		private void InvalidateInstance()
 		{
-			m_AssetObjects = objects;
-
-			if (m_MainObject == null)
-			{
-				foreach (var obj in objects)
-				{
-					if (AssetDatabase.IsMainAsset(obj))
-					{
-						m_MainObject = obj;
-						break;
-					}
-				}
-			}
-
-			return objects;
+			m_Path = null;
+			m_MainObject = null;
+			m_AssetObjects = null;
 		}
 	}
 }

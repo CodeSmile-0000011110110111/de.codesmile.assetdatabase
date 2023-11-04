@@ -4,7 +4,9 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -18,10 +20,12 @@ public abstract class AssetTestBase
 	protected readonly AssetPath TestSubFoldersAssetPath = new($"{TestSubFoldersPath}/{TestAssetFileName}");
 
 	private readonly TestAssets m_TestAssets = new();
+	private readonly List<AssetPath> m_TestFilePaths = new();
 
 	[TearDown] public void TearDown()
 	{
 		Assert.DoesNotThrow(m_TestAssets.Dispose);
+		DeleteTestFiles();
 
 		Asset.Delete(TestSubFolderPath);
 		Asset.Delete(TestSubFoldersPath);
@@ -29,11 +33,45 @@ public abstract class AssetTestBase
 		Asset.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
 	}
 
+	private void DeleteTestFiles()
+	{
+		var didDelete = false;
+		foreach (var filePath in m_TestFilePaths)
+		{
+			if (filePath != null && File.Exists(filePath))
+			{
+				didDelete = true;
+				File.Delete(filePath);
+
+				var metaFilePath = filePath + ".meta";
+				if (File.Exists(metaFilePath))
+					File.Delete(metaFilePath);
+			}
+		}
+		m_TestFilePaths.Clear();
+
+		if (didDelete)
+			Asset.Database.ImportAll(ImportAssetOptions.ForceUpdate);
+	}
+
+	protected AssetPath DeleteFileAfterTest(AssetPath filePath)
+	{
+		m_TestFilePaths.Add(filePath);
+		return filePath;
+	}
+
+	protected string DeleteFileAfterTest(string filePath)
+	{
+		m_TestFilePaths.Add((AssetPath)filePath);
+		return filePath;
+	}
+
 	protected Asset DeleteAfterTest(Asset asset)
 	{
 		m_TestAssets.Add(asset.MainObject);
 		return asset;
 	}
+
 	protected Object DeleteAfterTest(Object assetObject)
 	{
 		m_TestAssets.Add(assetObject);

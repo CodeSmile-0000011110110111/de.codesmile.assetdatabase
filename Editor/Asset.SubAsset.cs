@@ -9,6 +9,25 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
+		// private Object[] SelectAndAssignMainObject(Object[] objects)
+		// {
+		// 	m_AssetObjects = objects;
+		//
+		// 	if (m_MainObject == null)
+		// 	{
+		// 		foreach (var obj in objects)
+		// 		{
+		// 			if (AssetDatabase.IsMainAsset(obj))
+		// 			{
+		// 				m_MainObject = obj;
+		// 				break;
+		// 			}
+		// 		}
+		// 	}
+		//
+		// 	return objects;
+		// }
+
 		public static class SubAsset
 		{
 			public static Boolean Extract(Object subAsset, AssetPath extractedAssetPath, out String errorMessage)

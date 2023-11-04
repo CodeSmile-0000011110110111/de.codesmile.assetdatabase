@@ -54,7 +54,6 @@ namespace CodeSmile.Editor.old
 			}
 		}
 
-
 		public static class Labels {}
 		public static class SubAsset {}
 		public static class Meta {}

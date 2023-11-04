@@ -1,8 +1,9 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using System;
 using UnityEditor;
-using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -12,8 +13,6 @@ namespace CodeSmile.Editor
 
 		public static T LoadMain<T>(AssetPath assetPath) where T : Object =>
 			(T)AssetDatabase.LoadMainAssetAtPath(assetPath);
-
-		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_Path));
 
 		// public static T LoadFirst<T>(AssetPath assetPath) where T : Object =>
 		// 	AssetDatabase.LoadAssetAtPath<T>(assetPath);
@@ -52,5 +51,25 @@ namespace CodeSmile.Editor
 		// {
 		// 	// TODO: check that path is valid
 		// }
+
+		/// <summary>
+		///     Imports a file at a given path that was created or modified 'externally', ie not via Asset(Database) methods.
+		///     For example, any file/folder modified via System.IO.File.Write*() methods or through batch scripts.
+		///     Note: If the path does not exist, this method does nothing.
+		///     You will need to call Asset.Database.ImportAll() if you want to get rid of an externally deleted file
+		///     that still exists in the AssetDatabase.
+		/// </summary>
+		/// <param name="assetPath"></param>
+		/// <param name="options"></param>
+		public static void Import(AssetPath assetPath, ImportAssetOptions options = ImportAssetOptions.Default)
+		{
+			if (assetPath == null || assetPath.Exists)
+				AssetDatabase.ImportAsset(assetPath, options);
+		}
+
+		public static void Import(String path, ImportAssetOptions options = ImportAssetOptions.Default) =>
+			Import((AssetPath)path, options);
+
+		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_Path));
 	}
 }

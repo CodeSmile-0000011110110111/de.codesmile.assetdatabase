@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -18,7 +19,7 @@ namespace CodeSmile.Editor
 			return obj;
 		}
 
-		private Asset() {} // Hidden parameterless ctor
+		[ExcludeFromCodeCoverage] private Asset() {} // Hidden parameterless ctor
 
 		/// <summary>
 		///     Returns an instance by creating (saving) the object as an asset file at the given path.
@@ -93,10 +94,11 @@ namespace CodeSmile.Editor
 		private void SetMainObjectAndPath(AssetPath assetPath)
 		{
 			ThrowIf.ArgumentIsNull(assetPath, nameof(assetPath));
-			ThrowIf.FileOrFolderDoesNotExist(assetPath);
+			ThrowIf.DoesNotExist(assetPath);
 
 			m_Path = assetPath;
 			m_MainObject = LoadMain<Object>();
+			ThrowIf.NotAnAssetAtPath(m_MainObject, m_Path);
 		}
 
 		private void SetMainObjectAndPath(Object obj)
