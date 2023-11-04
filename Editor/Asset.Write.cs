@@ -39,7 +39,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		public static void Delete(String path)
 		{
-			if (FileExists(path) || AssetPath.FolderExists(path))
+			if (AssetPath.FileExists(path) || AssetPath.FolderExists(path))
 				AssetDatabase.DeleteAsset(path);
 		}
 

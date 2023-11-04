@@ -31,8 +31,8 @@ public class AssetCtorTests : AssetTestBase
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath));
 
-		Assert.True(Asset.FileExists(testPath));
-		Assert.True(Asset.FileExists(expectedPath));
+		Assert.True(AssetPath.FileExists(testPath));
+		Assert.True(AssetPath.FileExists(expectedPath));
 		Assert.AreEqual(expectedPath, newAsset.Path);
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}
@@ -46,8 +46,8 @@ public class AssetCtorTests : AssetTestBase
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath, true));
 
-		Assert.True(Asset.FileExists(testPath));
-		Assert.False(Asset.FileExists(expectedPath));
+		Assert.True(AssetPath.FileExists(testPath));
+		Assert.False(AssetPath.FileExists(expectedPath));
 		Assert.AreEqual(testPath, newAsset.Path);
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}

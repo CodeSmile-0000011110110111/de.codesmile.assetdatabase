@@ -11,15 +11,6 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => Status.IsForeignAsset(m_MainObject);
-		[ExcludeFromCodeCoverage] public Boolean IsNativeAsset => Status.IsNativeAsset(m_MainObject);
-		[ExcludeFromCodeCoverage] public Boolean IsSubAsset => Status.IsSubAsset(m_MainObject);
-		[ExcludeFromCodeCoverage] public Boolean IsMainAsset => Status.IsMainAsset(m_MainObject);
-		[ExcludeFromCodeCoverage] public Boolean IsLoaded => Status.IsLoaded(m_MainObject);
-
-		public static Boolean FileExists(AssetPath assetPath) => FileExists((String)assetPath);
-		public static Boolean FileExists(String path) => File.Exists(path);
-
 		public static class Status
 		{
 			[ExcludeFromCodeCoverage]
