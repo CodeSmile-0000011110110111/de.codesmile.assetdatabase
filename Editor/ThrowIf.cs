@@ -18,7 +18,7 @@ namespace CodeSmile.Editor
 
 		public static void FileOrFolderDoesNotExist(AssetPath assetPath)
 		{
-			if ((Asset.Path.FileExists(assetPath) || Asset.Path.FolderExists(assetPath)) == false)
+			if ((AssetPath.FileExists(assetPath) || AssetPath.FolderExists(assetPath)) == false)
 				throw new FileNotFoundException($"file/folder does not exist: '{assetPath}'");
 		}
 

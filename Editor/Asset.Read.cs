@@ -8,12 +8,12 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(Path.Get(guid));
+		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(AssetPath.Get(guid));
 
 		public static T LoadMain<T>(AssetPath assetPath) where T : Object =>
 			(T)AssetDatabase.LoadMainAssetAtPath(assetPath);
 
-		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_AssetPath));
+		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_Path));
 
 		// public static T LoadFirst<T>(AssetPath assetPath) where T : Object =>
 		// 	AssetDatabase.LoadAssetAtPath<T>(assetPath);

@@ -29,17 +29,22 @@ public abstract class AssetTestBase
 		Asset.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
 	}
 
-	protected Object DeleteAfterTest(Object asset)
+	protected Asset DeleteAfterTest(Asset asset)
 	{
-		m_TestAssets.Add(asset);
+		m_TestAssets.Add(asset.MainObject);
 		return asset;
 	}
-
-	protected GUID DeleteAfterTest(GUID guid)
+	protected Object DeleteAfterTest(Object assetObject)
 	{
-		var obj = Asset.LoadMain<Object>(guid);
+		m_TestAssets.Add(assetObject);
+		return assetObject;
+	}
+
+	protected GUID DeleteAfterTest(GUID assetGuid)
+	{
+		var obj = Asset.LoadMain<Object>(assetGuid);
 		m_TestAssets.Add(obj);
-		return guid;
+		return assetGuid;
 	}
 
 	protected Object CreateTestAsset() => CreateTestAsset(TestAssetPath);

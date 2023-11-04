@@ -1,27 +1,23 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using System;
 using UnityEditor;
-using Object = UnityEngine.Object;
+using UnityEngine;
 
 namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		private AssetPath m_AssetPath;
+		private AssetPath m_Path;
 		private Object m_MainObject;
 		private Object[] m_AssetObjects;
 
 		public Object MainObject => m_MainObject;
-		public AssetPath AssetPath => m_AssetPath;
-		public GUID AssetGuid => Guid.Get(m_AssetPath);
+		public AssetPath Path => m_Path;
 
 		// public Type MainObjectType => m_MainObject != null ? m_MainObject.GetType() :
 		// 	m_Path != null ? AssetDatabase.GetMainAssetTypeAtPath(m_Path) :
 		// 	AssetDatabase.GetMainAssetTypeFromGUID(m_Guid);
-
-
 
 		// ----------------
 		// Copy => SaveAs

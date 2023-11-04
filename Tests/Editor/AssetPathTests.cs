@@ -45,7 +45,7 @@ public class AssetPathTests : AssetTestBase
 
 	[Test] public void AssetPath_ExistingFilePath_ExistsIsTrue()
 	{
-		var filePath = Asset.Path.Get(CreateTestAsset());
+		var filePath = AssetPath.Get(CreateTestAsset());
 		Assert.IsTrue(new AssetPath(filePath).Exists);
 	}
 
@@ -163,7 +163,7 @@ public class AssetPathTests : AssetTestBase
 	[Test] public void FolderPath_WithValidSubFoldersPath_SameAsInput()
 	{
 		var testPath = TestSubFoldersPath;
-		Asset.Path.CreateFolders(testPath);
+		AssetPath.CreateFolders(testPath);
 
 		var assetPath = new AssetPath(testPath);
 
@@ -184,7 +184,7 @@ public class AssetPathTests : AssetTestBase
 	}
 
 	[Test] public void CreateFolders_NullPath_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
+		Assert.Throws<ArgumentNullException>(() => AssetPath.CreateFolders(null));
 
 	[TestCase("Assets")]
 	[TestCase(TestSubFoldersPath)]
@@ -194,37 +194,37 @@ public class AssetPathTests : AssetTestBase
 	{
 		// create the folder first
 		var assetPath = (AssetPath)dirPath;
-		Asset.Path.CreateFolders(assetPath);
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
+		AssetPath.CreateFolders(assetPath);
+		Assert.True(AssetPath.FolderExists(assetPath.FolderPathAssumptive));
 
-		var folderGuid = Asset.Path.CreateFolders(assetPath);
+		var folderGuid = AssetPath.CreateFolders(assetPath);
 
 		Assert.False(folderGuid.Empty());
 		// we test for "assumptive" folder because some test cases include paths to a non-existing file
-		Assert.AreEqual(Asset.Guid.Get(assetPath.FolderPathAssumptive), folderGuid);
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
+		Assert.AreEqual(((AssetPath)assetPath.FolderPathAssumptive).Guid, folderGuid);
+		Assert.True(AssetPath.FolderExists(assetPath.FolderPathAssumptive));
 	}
 
 	[Test] public void CreateFolders_ValidFilePath_FolderExists()
 	{
 		var dirPath = TestSubFolderPath;
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders((AssetPath)(dirPath + "/some.file")));
+		var folderGuid = DeleteAfterTest(AssetPath.CreateFolders((AssetPath)(dirPath + "/some.file")));
 
 		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(Asset.Guid.Get(dirPath), folderGuid);
-		Assert.True(Asset.Path.FolderExists((AssetPath)dirPath));
+		Assert.AreEqual(((AssetPath)dirPath).Guid, folderGuid);
+		Assert.True(AssetPath.FolderExists((AssetPath)dirPath));
 	}
 
 	[Test] public void CreateFolders_CreateAllFoldersRecursive_FolderExists()
 	{
 		var dirPath = TestSubFoldersPath;
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders((AssetPath)(dirPath + "/some.file")));
+		var folderGuid = DeleteAfterTest(AssetPath.CreateFolders((AssetPath)(dirPath + "/some.file")));
 
 		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(Asset.Guid.Get(dirPath), folderGuid);
-		Assert.True(Asset.Path.FolderExists((AssetPath)dirPath));
+		Assert.AreEqual(((AssetPath)dirPath).Guid, folderGuid);
+		Assert.True(AssetPath.FolderExists((AssetPath)dirPath));
 	}
 
 	[Test] public void CreateFolders_CreateOnlySomeFoldersRecursive_FolderExists()
@@ -235,15 +235,15 @@ public class AssetPathTests : AssetTestBase
 		var splitPath = dirPath.Split('/');
 		var alreadyExistingFolder = $"{splitPath[0]}/{splitPath[1]}";
 
-		Asset.Path.CreateFolders((AssetPath)alreadyExistingFolder);
+		AssetPath.CreateFolders((AssetPath)alreadyExistingFolder);
 		AssetDatabase.ImportAsset(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
 		//AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
-		Assert.True(Asset.Path.FolderExists(alreadyExistingFolder));
+		Assert.True(AssetPath.FolderExists(alreadyExistingFolder));
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders((AssetPath)(dirPath + "/some.file")));
+		var folderGuid = DeleteAfterTest(AssetPath.CreateFolders((AssetPath)(dirPath + "/some.file")));
 
 		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(Asset.Guid.Get(dirPath), folderGuid);
-		Assert.True(Asset.Path.FolderExists((AssetPath)dirPath));
+		Assert.AreEqual(((AssetPath)dirPath).Guid, folderGuid);
+		Assert.True(AssetPath.FolderExists((AssetPath)dirPath));
 	}
 }

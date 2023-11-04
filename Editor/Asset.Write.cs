@@ -39,17 +39,17 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		public static void Delete(String path)
 		{
-			if (FileExists(path) || Path.FolderExists(path))
+			if (FileExists(path) || AssetPath.FolderExists(path))
 				AssetDatabase.DeleteAsset(path);
 		}
 
 		public static void Delete(AssetPath assetPath) => Delete((String)assetPath);
-		public static void Delete(Object obj) => Delete(Path.Get(obj));
+		public static void Delete(Object obj) => Delete(AssetPath.Get(obj));
 
 		public static Boolean SaveAs(AssetPath sourcePath, AssetPath destPath, Boolean overwriteExisting = false)
 		{
 			var newPath = GetNewAssetPath(destPath, overwriteExisting);
-			Path.CreateFolders(newPath);
+			AssetPath.CreateFolders(newPath);
 			return AssetDatabase.CopyAsset(sourcePath, newPath);
 		}
 
@@ -57,7 +57,7 @@ namespace CodeSmile.Editor
 		{
 			// TODO: more error handling, eg invalid extension, StreamingAssets path
 			var newPath = GetNewAssetPath(assetPath, overwriteExisting);
-			Path.CreateFolders(newPath);
+			AssetPath.CreateFolders(newPath);
 			AssetDatabase.CreateAsset(obj, newPath);
 			return obj;
 		}

@@ -86,7 +86,7 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(assetPath, nameof(assetPath));
 			ThrowIf.FileOrFolderDoesNotExist(assetPath);
 
-			m_AssetPath = assetPath;
+			m_Path = assetPath;
 			m_MainObject = LoadMain<Object>();
 		}
 
@@ -96,7 +96,7 @@ namespace CodeSmile.Editor
 			ThrowIf.NotAnAsset(obj);
 
 			m_MainObject = obj;
-			m_AssetPath = (AssetPath)AssetDatabase.GetAssetPath(obj);
+			m_Path = (AssetPath)AssetDatabase.GetAssetPath(obj);
 		}
 
 		private void SetMainObjectAndPath(GUID guid)
