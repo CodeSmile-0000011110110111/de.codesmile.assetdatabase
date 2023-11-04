@@ -1,5 +1,5 @@
 {
-    "name": "CodeSmile.Editor.AssetDB",
+    "name": "CodeSmile.Editor.AssetDatabase",
     "rootNamespace": "CodeSmile.Editor",
     "references": [
         "GUID:a808e0ec243849068b66d17ce16d406a"

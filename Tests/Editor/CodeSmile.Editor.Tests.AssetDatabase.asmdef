@@ -1,10 +1,11 @@
 {
-    "name": "CodeSmile.Editor.Tests.AssetDB",
+    "name": "CodeSmile.Editor.Tests.AssetDatabase",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "CodeSmile.Editor.AssetDB"
+        "CodeSmile.Editor.AssetDB",
+        "CodeSmile.Editor.AssetDatabase"
     ],
     "includePlatforms": [
         "Editor"

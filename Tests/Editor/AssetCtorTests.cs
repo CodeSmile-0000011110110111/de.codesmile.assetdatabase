@@ -16,13 +16,26 @@ public class AssetCtorTests : AssetTestBase
 	[Test] public void AssetCtorCreate_NullPath_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset(Instantiate.ExampleSO(), (String)null));
 
-	[Test] public void AssetCtorCreate_ObjectIsExistingAsset_Throws()
+	[Test] public void AssetCtorCreate_ObjectAlreadyAnAsset_Throws()
 	{
 		var existing = CreateTestAsset(TestAssetPath);
 		Assert.Throws<ArgumentException>(() => new Asset(existing, (String)TestAssetPath));
 	}
 
-	[Test] public void AssetCtorCreate_NonAssetObjectAndValidPath_CreatesAsset()
+	[Test] public void AssetCtorCreate_AssetExistsNoOverwrite_CreatesAssetWithUniqueName()
+	{
+		var existing = CreateTestAsset(TestAssetPath);
+		Assert.Throws<ArgumentException>(() => new Asset(existing, (String)TestAssetPath));
+		Assert.Fail();
+	}
+	[Test] public void AssetCtorCreate_AssetExistsShouldOverwrite_ReplacesExistingAsset()
+	{
+		var existing = CreateTestAsset(TestAssetPath);
+		Assert.Throws<ArgumentException>(() => new Asset(existing, (String)TestAssetPath));
+		Assert.Fail();
+	}
+
+	[Test] public void AssetCtorCreate_ObjectNotAnAssetAndValidPath_CreatesAsset()
 	{
 		var obj = DeleteAfterTest(Instantiate.ExampleSO());
 
@@ -31,7 +44,7 @@ public class AssetCtorTests : AssetTestBase
 		Assert.True(AssetHelper.FileExists(TestAssetPath));
 	}
 
-	[Test] public void AssetCtorCreate_WithNotExistingSubFoldersPath_CreatesFoldersAndAsset()
+	[Test] public void AssetCtorCreate_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
 	{
 		var obj = DeleteAfterTest(Instantiate.ExampleSO());
 
