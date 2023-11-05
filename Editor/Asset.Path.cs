@@ -10,12 +10,24 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Represents a relative path to an asset file in the project.
-		///     Instances are implicitly and explicitly convertible to/from string.
-		///     All path separators are forward slashes for compatibility with Windows, Mac, Linux.
-		///     Leading and trailing path separators are trimmed.
-		///     Instances can be initialized with a relative or full (absolute) path, or a relative/full path
-		///     to a directory plus a filename and optional extension (default: 'asset').
+		/// <p>
+		///     Represents a relative path to an asset file or folder under either 'Assets' or 'Packages'.
+		///     Instances can be initialized with a relative or full (absolute) path, internally it will be converted
+		///		to a relative path. Use the FullPath property to get the full (absolute) path.
+		/// </p>
+		/// <p>
+		///     All path separators are converted to forward slashes for compatibility with Windows, Mac, Linux.
+		///     Leading and trailing path separators are trimmed: "\Assets\folder\" => "Assets/folder"
+		/// </p>
+		/// <p>
+		///     Instances are implicitly and explicitly convertible to/from string:
+		/// <example>string strPath = (string)new Asset.Path("Assets/MyFolder/My.file");</example>
+		/// <example>Asset.Path assetPath = (Asset.Path)"Assets/MyFolder/My.file";</example>
+		/// </p>
+		/// <p>
+		///		Ideally you should pass in a string and henceforth work with the Asset.Path instance,
+		///		since path sanitation occurs every time an Asset.Path instance is created.
+		/// </p>
 		/// </summary>
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
