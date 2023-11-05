@@ -58,7 +58,7 @@ public class AssetCtorTests : AssetTestBase
 
 		new Asset(obj, (String)TestAssetPath);
 
-		Assert.True(AssetHelper.FileExists(TestAssetPath));
+		Assert.True(TestAssetPath.ExistsInFileSystem);
 	}
 
 	[Test] public void AssetCtorCreate_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
@@ -67,7 +67,7 @@ public class AssetCtorTests : AssetTestBase
 
 		new Asset(obj, (String)TestSubFoldersAssetPath);
 
-		Assert.True(AssetHelper.FileExists(TestSubFoldersAssetPath));
+		Assert.True(TestSubFoldersAssetPath.ExistsInFileSystem);
 	}
 
 	[Test] public void AssetCtorPath_Null_Throws() =>

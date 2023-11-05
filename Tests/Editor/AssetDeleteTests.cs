@@ -17,22 +17,26 @@ public class AssetDeleteTests : AssetTestBase
 
 	[Test] public void DeleteStatic_ExistingAssetObject_FileDeleted()
 	{
-		var asset = CreateTestAsset(TestAssetPath);
-		Assert.True(AssetHelper.FileExists(asset));
+		var obj = CreateTestAsset(TestAssetPath);
+		Assert.True(TestAssetPath.ExistsInFileSystem);
+		Assert.True(Asset.Exists(obj));
 
-		Asset.Delete(asset);
+		Asset.Delete(obj);
 
-		Assert.False(AssetHelper.FileExists(asset));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.False(Asset.Exists(obj));
 	}
 
 	[Test] public void DeleteStatic_ExistingAssetPath_FileDeleted()
 	{
-		var asset = CreateTestAsset(TestAssetPath);
-		Assert.True(AssetHelper.FileExists(asset));
+		var obj = CreateTestAsset(TestAssetPath);
+		Assert.True(TestAssetPath.ExistsInFileSystem);
+		Assert.True(Asset.Exists(obj));
 
 		Asset.Delete(TestAssetPath);
 
-		Assert.False(AssetHelper.FileExists(asset));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.False(Asset.Exists(obj));
 	}
 
 	[Test] public void Delete_ExistingAssetObject_FileDeleted()
@@ -43,7 +47,8 @@ public class AssetDeleteTests : AssetTestBase
 
 		Assert.NotNull(deletedObj);
 		Assert.False(Asset.Exists(deletedObj));
-		Assert.False(AssetHelper.FileExists(TestAssetPath));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.Null(asset.Delete());
 	}
 
 	[Test] public void TrashStatic_Null_DoesNotThrow()
@@ -55,22 +60,26 @@ public class AssetDeleteTests : AssetTestBase
 
 	[Test] public void TrashStatic_ExistingAssetObject_FileDeleted()
 	{
-		var asset = CreateTestAsset(TestAssetPath);
-		Assert.True(AssetHelper.FileExists(asset));
+		var obj = CreateTestAsset(TestAssetPath);
+		Assert.True(TestAssetPath.ExistsInFileSystem);
+		Assert.True(Asset.Exists(obj));
 
-		Asset.Trash(asset);
+		Asset.Trash(obj);
 
-		Assert.False(AssetHelper.FileExists(asset));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.False(Asset.Exists(obj));
 	}
 
 	[Test] public void TrashStatic_ExistingAssetPath_FileDeleted()
 	{
-		var asset = CreateTestAsset(TestAssetPath);
-		Assert.True(AssetHelper.FileExists(asset));
+		var obj = CreateTestAsset(TestAssetPath);
+		Assert.True(TestAssetPath.ExistsInFileSystem);
+		Assert.True(Asset.Exists(obj));
 
 		Asset.Trash(TestAssetPath);
 
-		Assert.False(AssetHelper.FileExists(asset));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.False(Asset.Exists(obj));
 	}
 
 	[Test] public void Trash_ExistingAssetObject_FileDeleted()
@@ -81,6 +90,7 @@ public class AssetDeleteTests : AssetTestBase
 
 		Assert.NotNull(deletedObj);
 		Assert.False(Asset.Exists(deletedObj));
-		Assert.False(AssetHelper.FileExists(TestAssetPath));
+		Assert.False(TestAssetPath.ExistsInFileSystem);
+		Assert.Null(asset.Trash());
 	}
 }

@@ -15,7 +15,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		public static void Delete(Path path)
 		{
-			if (path != null && path.ExistsInFileSystem)
+			if (path != null && path.Exists)
 				AssetDatabase.DeleteAsset(path);
 		}
 
@@ -38,7 +38,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		public static void Trash(Path path)
 		{
-			if (path != null && path.ExistsInFileSystem)
+			if (path != null && path.Exists)
 				AssetDatabase.MoveAssetToTrash(path);
 		}
 

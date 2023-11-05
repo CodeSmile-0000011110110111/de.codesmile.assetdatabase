@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
 
@@ -9,6 +10,7 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
+		[ExcludeFromCodeCoverage]
 		internal static class ThrowIf
 		{
 			public static void ArgumentIsNull(Object arg, String argName)
@@ -17,7 +19,7 @@ namespace CodeSmile.Editor
 					throw new ArgumentNullException(argName);
 			}
 
-			public static void DoesNotExist(Path path)
+			public static void DoesNotExistInFileSystem(Path path)
 			{
 				if (path.ExistsInFileSystem == false)
 					throw new FileNotFoundException($"file/folder does not exist: '{path}'");
@@ -61,7 +63,7 @@ namespace CodeSmile.Editor
 
 			public static void GenericTypeNotAssignableFromAssetType<T>(Path path) where T : UnityEngine.Object
 			{
-				var assetType = GetMainAssetType(path);
+				var assetType = GetMainType(path);
 				if (typeof(T).IsAssignableFrom(assetType) == false)
 					throw new ArgumentException($"'{typeof(T)}' not assignable from asset type '{assetType}'");
 			}

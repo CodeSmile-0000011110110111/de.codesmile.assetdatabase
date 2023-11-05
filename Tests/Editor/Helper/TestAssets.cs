@@ -4,6 +4,7 @@
 using CodeSmile.Editor;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Object = UnityEngine.Object;
 
 public sealed class TestAssets : IDisposable
@@ -23,6 +24,7 @@ public sealed class TestAssets : IDisposable
 		}
 	}
 
+	[ExcludeFromCodeCoverage]
 	public void Add(Object asset)
 	{
 		if (asset == null)

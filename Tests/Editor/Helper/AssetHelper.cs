@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 public static class AssetHelper
 {
-	public static Boolean FileExists(Object asset) => FileExists(Asset.Path.Get(asset));
-	public static Boolean FileExists(Asset.Path path) => FileExists((String)path);
-	public static Boolean FileExists(String path) => File.Exists(path);
+	// public static Boolean FileExists(Object asset) => Asset.Path.Get(asset).ExistsInFileSystem;
+	// public static Boolean FileExists(Asset.Path path) => FileExists((String)path);
+	// public static Boolean FileExists(String path) => File.Exists(path);
 }

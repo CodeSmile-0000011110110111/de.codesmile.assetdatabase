@@ -5,6 +5,7 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
 using Object = UnityEngine.Object;
@@ -31,6 +32,7 @@ public abstract class AssetTestBase
 		Asset.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
 	}
 
+	[ExcludeFromCodeCoverage]
 	private void DeleteTestFiles()
 	{
 		var didDelete = false;
@@ -52,6 +54,7 @@ public abstract class AssetTestBase
 			Asset.Database.ImportAll(ImportAssetOptions.ForceUpdate);
 	}
 
+	[ExcludeFromCodeCoverage]
 	protected Asset.Path DeleteFileAfterTest(Asset.Path filePath)
 	{
 		m_TestFilePaths.Add(filePath);

@@ -55,7 +55,7 @@ public class AssetLoadTests : AssetTestBase
 		DeleteAfterTest(new Asset(testPath));
 	}
 
-	[Test] public void LoadMain_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/doesnot.exist"));
+	[Test] public void LoadMain_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
 
 	[Test] public void LoadMain_ExistingPath_Succeeds()
 	{
@@ -77,6 +77,6 @@ public class AssetLoadTests : AssetTestBase
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
 		Assert.AreEqual(obj.GetType(), loaded.GetType());
-		Assert.AreEqual(obj.GetType(),  Asset.GetMainAssetType((string)TestAssetPath));
+		Assert.AreEqual(obj.GetType(),  Asset.GetMainType((string)TestAssetPath));
 	}
 }

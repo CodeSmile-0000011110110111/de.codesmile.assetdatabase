@@ -85,7 +85,7 @@ namespace CodeSmile.Editor
 		private void SetMainObjectAndPath(Path path)
 		{
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.DoesNotExist(path);
+			ThrowIf.DoesNotExistInFileSystem(path);
 
 			m_AssetPath = path;
 			m_MainObject = LoadMain<Object>();

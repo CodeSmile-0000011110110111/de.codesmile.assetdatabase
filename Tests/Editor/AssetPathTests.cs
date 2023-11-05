@@ -4,6 +4,7 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 
@@ -36,20 +37,21 @@ public class AssetPathTests : AssetTestBase
 	public void AssetPath_RelativePathDoesNotStartWithAssets_Throws(String inputPath) =>
 		Assert.Throws<ArgumentException>(() => new Asset.Path(inputPath));
 
-	[Test] public void AssetPath_NotExistingFolderPath_ExistsIsFalse() =>
+	[Test] public void AssetPathExists_NotExistingFolderPath_False() =>
+		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").Exists);
+	[Test] public void AssetPathExists_ExistingFolderPath_True() => Assert.IsTrue(new Asset.Path("Assets").Exists);
+	[Test] public void AssetPathExists_NotExistingFilePath_False() =>
+		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").Exists);
+	[Test] public void AssetPathExists_ExistingFilePath_True() =>
+		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).Exists);
+	[Test] public void AssetPathExistsInFileSystem_NotExistingFolderPath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").ExistsInFileSystem);
-
-	[Test] public void AssetPath_ExistingFolderPath_ExistsIsTrue() =>
+	[Test] public void AssetPathExistsInFileSystem_ExistingFolderPath_True() =>
 		Assert.IsTrue(new Asset.Path("Assets").ExistsInFileSystem);
-
-	[Test] public void AssetPath_NotExistingFilePath_ExistsIsFalse() =>
+	[Test] public void AssetPathExistsInFileSystem_NotExistingFilePath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").ExistsInFileSystem);
-
-	[Test] public void AssetPath_ExistingFilePath_ExistsIsTrue()
-	{
-		var filePath = Asset.Path.Get(CreateTestAsset());
-		Assert.IsTrue(new Asset.Path(filePath).ExistsInFileSystem);
-	}
+	[Test] public void AssetPathExistsInFileSystem_ExistingFilePath_True() =>
+		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).ExistsInFileSystem);
 
 	[TestCase("Assets", "Assets")]
 	[TestCase("assets", "assets")]
@@ -173,6 +175,7 @@ public class AssetPathTests : AssetTestBase
 		Assert.AreEqual(guid, assetPath.Guid);
 	}
 
+	[ExcludeFromCodeCoverage]
 	[Test] public void FolderPath_WithNonExistingPath_Throws()
 	{
 		var folderPath = "Assets/path/to/folder";
