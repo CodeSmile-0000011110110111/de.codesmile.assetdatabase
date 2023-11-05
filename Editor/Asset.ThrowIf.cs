@@ -17,10 +17,10 @@ namespace CodeSmile.Editor
 					throw new ArgumentNullException(argName);
 			}
 
-			public static void DoesNotExist(AssetPath assetPath)
+			public static void DoesNotExist(Path path)
 			{
-				if (assetPath.Exists == false)
-					throw new FileNotFoundException($"file/folder does not exist: '{assetPath}'");
+				if (path.Exists == false)
+					throw new FileNotFoundException($"file/folder does not exist: '{path}'");
 			}
 
 			public static void IsExistingAsset(UnityEngine.Object obj)
@@ -29,7 +29,7 @@ namespace CodeSmile.Editor
 					throw new ArgumentException($"object already is an asset file: {obj}");
 			}
 
-			public static void NotAnAssetAtPath(UnityEngine.Object obj, AssetPath path)
+			public static void NotAnAssetAtPath(UnityEngine.Object obj, Path path)
 			{
 				if (Database.Contains(obj) == false)
 					throw new ArgumentException("path does not exist or not imported", path);
@@ -43,11 +43,9 @@ namespace CodeSmile.Editor
 
 			public static void NotAnAsset(GUID guid)
 			{
-				if (AssetPath.Get(guid) == null)
+				if (Path.Get(guid) == null)
 					throw new ArgumentException($"guid {guid} is not an asset file");
 			}
-
-
 		}
 	}
 }

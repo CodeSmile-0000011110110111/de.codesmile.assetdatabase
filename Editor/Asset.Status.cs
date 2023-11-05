@@ -35,10 +35,10 @@ namespace CodeSmile.Editor
 			public static Boolean IsMainAsset(Object obj) => AssetDatabase.IsMainAsset(obj);
 
 			[ExcludeFromCodeCoverage]
-			public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(AssetPath.Get(obj));
+			public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(Path.Get(obj));
 
 			[ExcludeFromCodeCoverage]
-			public static Boolean IsLoaded(AssetPath assetPath) => AssetDatabase.IsMainAssetAtPathLoaded(assetPath);
+			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 		}
 	}
 }

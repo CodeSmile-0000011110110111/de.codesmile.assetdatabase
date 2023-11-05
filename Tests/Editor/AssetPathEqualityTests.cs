@@ -10,7 +10,7 @@ public class AssetPathEqualityTests
 {
 	[Test] public void AssetPath_Equality_EqualToSelf()
 	{
-		var assetPath = new AssetPath(Application.dataPath);
+		var assetPath = new Asset.Path(Application.dataPath);
 		Assert.True(assetPath.Equals(assetPath));
 
 #pragma warning disable 1718 // did you maybe not want to compare x with itself? Yes, I meant to!
@@ -21,58 +21,58 @@ public class AssetPathEqualityTests
 
 	[Test] public void AssetPath_Equality_EqualToOther()
 	{
-		Assert.True(new AssetPath("\\Assets\\folder").Equals(new AssetPath("Assets/folder/")));
-		Assert.True(new AssetPath(Application.dataPath + "\\") == new AssetPath(Application.dataPath));
+		Assert.True(new Asset.Path("\\Assets\\folder").Equals(new Asset.Path("Assets/folder/")));
+		Assert.True(new Asset.Path(Application.dataPath + "\\") == new Asset.Path(Application.dataPath));
 	}
 
 	[Test] public void AssetPath_Equality_NotEqualToOther()
 	{
-		Assert.True(new AssetPath(Application.dataPath + "/file.ext") != new AssetPath(Application.dataPath));
-		Assert.False(new AssetPath(Application.dataPath + "/file.ext").Equals(new AssetPath(Application.dataPath)));
+		Assert.True(new Asset.Path(Application.dataPath + "/file.ext") != new Asset.Path(Application.dataPath));
+		Assert.False(new Asset.Path(Application.dataPath + "/file.ext").Equals(new Asset.Path(Application.dataPath)));
 	}
 
 	[Test] public void AssetPath_Equality_EqualToString()
 	{
-		Assert.True("Assets".Equals(new AssetPath(Application.dataPath)));
-		Assert.True("Assets" == new AssetPath(Application.dataPath));
-		Assert.True("Assets/file.ext".Equals(new AssetPath(Application.dataPath + "/file.ext")));
-		Assert.True("Assets/file.ext" == new AssetPath(Application.dataPath + "/file.ext"));
-		Assert.True(new AssetPath(Application.dataPath + "/file.ext").Equals("Assets\\file.ext"));
-		Assert.True(new AssetPath(Application.dataPath + "/file.ext") == "Assets/file.ext");
+		Assert.True("Assets".Equals(new Asset.Path(Application.dataPath)));
+		Assert.True("Assets" == new Asset.Path(Application.dataPath));
+		Assert.True("Assets/file.ext".Equals(new Asset.Path(Application.dataPath + "/file.ext")));
+		Assert.True("Assets/file.ext" == new Asset.Path(Application.dataPath + "/file.ext"));
+		Assert.True(new Asset.Path(Application.dataPath + "/file.ext").Equals("Assets\\file.ext"));
+		Assert.True(new Asset.Path(Application.dataPath + "/file.ext") == "Assets/file.ext");
 	}
 
 	[Test] public void AssetPath_Equality_NotEqualToString()
 	{
-		Assert.AreNotEqual(Application.dataPath, new AssetPath(Application.dataPath + "/file.ext"));
-		Assert.AreNotEqual(null, new AssetPath(Application.dataPath + "/file.ext"));
+		Assert.AreNotEqual(Application.dataPath, new Asset.Path(Application.dataPath + "/file.ext"));
+		Assert.AreNotEqual(null, new Asset.Path(Application.dataPath + "/file.ext"));
 	}
 
 	[Test] public void AssetPath_Equality_EqualToObject()
 	{
-		Assert.True(new AssetPath("\\Assets\\folder").Equals((Object)new AssetPath("Assets/folder/")));
-		Assert.True(new AssetPath(Application.dataPath + "\\") == (Object)new AssetPath(Application.dataPath));
-		Assert.True((Object)new AssetPath(Application.dataPath + "\\") == new AssetPath(Application.dataPath));
+		Assert.True(new Asset.Path("\\Assets\\folder").Equals((Object)new Asset.Path("Assets/folder/")));
+		Assert.True(new Asset.Path(Application.dataPath + "\\") == (Object)new Asset.Path(Application.dataPath));
+		Assert.True((Object)new Asset.Path(Application.dataPath + "\\") == new Asset.Path(Application.dataPath));
 	}
 
 	[Test] public void AssetPath_Equality_NotEqualToObject()
 	{
-		Assert.True(new AssetPath(Application.dataPath + "/file.ext") != (Object)new AssetPath(Application.dataPath));
-		Assert.True((Object)new AssetPath(Application.dataPath + "/file.ext") != new AssetPath(Application.dataPath));
-		Assert.False(new AssetPath(Application.dataPath + "/f.x").Equals((Object)new AssetPath(Application.dataPath)));
+		Assert.True(new Asset.Path(Application.dataPath + "/file.ext") != (Object)new Asset.Path(Application.dataPath));
+		Assert.True((Object)new Asset.Path(Application.dataPath + "/file.ext") != new Asset.Path(Application.dataPath));
+		Assert.False(new Asset.Path(Application.dataPath + "/f.x").Equals((Object)new Asset.Path(Application.dataPath)));
 	}
 
 	[Test] public void AssetPath_Equality_NotEqualToNull()
 	{
-		Assert.True(null != new AssetPath(Application.dataPath));
-		Assert.True(new AssetPath(Application.dataPath) != null);
-		Assert.False(null == new AssetPath(Application.dataPath));
-		Assert.False(new AssetPath(Application.dataPath) == null);
-		Assert.False(new AssetPath(Application.dataPath + "/file.ext").Equals(null));
+		Assert.True(null != new Asset.Path(Application.dataPath));
+		Assert.True(new Asset.Path(Application.dataPath) != null);
+		Assert.False(null == new Asset.Path(Application.dataPath));
+		Assert.False(new Asset.Path(Application.dataPath) == null);
+		Assert.False(new Asset.Path(Application.dataPath + "/file.ext").Equals(null));
 	}
 
 	[Test] public void AssetPath_GetHashCode_SameAsToStringHashCode()
 	{
-		var assetPath = new AssetPath(Application.dataPath);
+		var assetPath = new Asset.Path(Application.dataPath);
 		Assert.AreEqual(assetPath.GetHashCode(), assetPath.ToString().GetHashCode());
 	}
 }

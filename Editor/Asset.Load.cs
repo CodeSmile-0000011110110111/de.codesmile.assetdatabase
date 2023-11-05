@@ -9,10 +9,9 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(AssetPath.Get(guid));
+		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(Path.Get(guid));
 
-		public static T LoadMain<T>(AssetPath assetPath) where T : Object =>
-			(T)AssetDatabase.LoadMainAssetAtPath(assetPath);
+		public static T LoadMain<T>(Path path) where T : Object => (T)AssetDatabase.LoadMainAssetAtPath(path);
 
 		// public static T LoadFirst<T>(AssetPath assetPath) where T : Object =>
 		// 	AssetDatabase.LoadAssetAtPath<T>(assetPath);
@@ -59,17 +58,17 @@ namespace CodeSmile.Editor
 		///     You will need to call Asset.Database.ImportAll() if you want to get rid of an externally deleted file
 		///     that still exists in the AssetDatabase.
 		/// </summary>
-		/// <param name="assetPath"></param>
+		/// <param name="pathtPath"></param>
 		/// <param name="options"></param>
-		public static void Import(AssetPath assetPath, ImportAssetOptions options = ImportAssetOptions.Default)
+		public static void Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 		{
-			if (assetPath == null || assetPath.Exists)
-				AssetDatabase.ImportAsset(assetPath, options);
+			if (path == null || path.Exists)
+				AssetDatabase.ImportAsset(path, options);
 		}
 
 		public static void Import(String path, ImportAssetOptions options = ImportAssetOptions.Default) =>
-			Import((AssetPath)path, options);
+			Import((Path)path, options);
 
-		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_Path));
+		public T LoadMain<T>() where T : Object => (T)(m_MainObject = LoadMain<T>(m_AssetPath));
 	}
 }

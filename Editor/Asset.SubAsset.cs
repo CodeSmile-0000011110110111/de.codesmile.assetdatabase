@@ -30,9 +30,9 @@ namespace CodeSmile.Editor
 
 		public static class SubAsset
 		{
-			public static Boolean Extract(Object subAsset, AssetPath extractedAssetPath, out String errorMessage)
+			public static Boolean Extract(Object subAsset, Path extractedPath, out String errorMessage)
 			{
-				errorMessage = AssetDatabase.ExtractAsset(subAsset, extractedAssetPath);
+				errorMessage = AssetDatabase.ExtractAsset(subAsset, extractedPath);
 				return errorMessage.Equals(String.Empty);
 			}
 

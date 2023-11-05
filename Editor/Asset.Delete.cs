@@ -12,34 +12,34 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="assetPath"></param>
-		public static void Delete(AssetPath assetPath)
+		/// <param name="pathtPath"></param>
+		public static void Delete(Path path)
 		{
-			if (assetPath != null && assetPath.Exists)
-				AssetDatabase.DeleteAsset(assetPath);
+			if (path != null && path.Exists)
+				AssetDatabase.DeleteAsset(path);
 		}
 
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
 		/// <param name="path"></param>
-		public static void Delete(String path) => Delete((AssetPath)path);
+		public static void Delete(String path) => Delete((Path)path);
 
 		/// <summary>
 		///     Deletes the asset. Does nothing if the object is not an asset.
 		/// </summary>
 		/// <param name="path"></param>
-		public static void Delete(Object obj) => Delete(AssetPath.Get(obj));
+		public static void Delete(Object obj) => Delete(Path.Get(obj));
 
 		/// <summary>
 		///     Moves the asset file to the OS trash (same as Delete, but recoverable).
 		///     Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="assetPath"></param>
-		public static void Trash(AssetPath assetPath)
+		/// <param name="pathtPath"></param>
+		public static void Trash(Path path)
 		{
-			if (assetPath != null && assetPath.Exists)
-				AssetDatabase.MoveAssetToTrash(assetPath);
+			if (path != null && path.Exists)
+				AssetDatabase.MoveAssetToTrash(path);
 		}
 
 		/// <summary>
@@ -47,14 +47,14 @@ namespace CodeSmile.Editor
 		///     Does nothing if there is no file at the given path.
 		/// </summary>
 		/// <param name="path"></param>
-		public static void Trash(String path) => Trash((AssetPath)path);
+		public static void Trash(String path) => Trash((Path)path);
 
 		/// <summary>
 		///     Moves the asset to the OS trash (same as Delete, but recoverable).
 		///     Does nothing if the object is not an asset.
 		/// </summary>
 		/// <param name="obj"></param>
-		public static void Trash(Object obj) => Trash(AssetPath.Get(obj));
+		public static void Trash(Object obj) => Trash(Path.Get(obj));
 
 		/// <summary>
 		///     Deletes the asset.
@@ -64,7 +64,7 @@ namespace CodeSmile.Editor
 		public Object Delete()
 		{
 			var mainObject = m_MainObject;
-			Delete(m_Path);
+			Delete(m_AssetPath);
 			InvalidateInstance();
 
 			return mainObject;
@@ -78,7 +78,7 @@ namespace CodeSmile.Editor
 		public Object Trash()
 		{
 			var mainObject = m_MainObject;
-			Trash(m_Path);
+			Trash(m_AssetPath);
 			InvalidateInstance();
 
 			return mainObject;

@@ -9,12 +9,12 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		private AssetPath m_Path;
+		private Path m_AssetPath;
 		private Object m_MainObject;
 		private Object[] m_AssetObjects;
 
 		public Object MainObject => m_MainObject;
-		public AssetPath Path => m_Path;
+		public Path AssetPath => m_AssetPath;
 
 		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => Status.IsForeignAsset(m_MainObject);
 		[ExcludeFromCodeCoverage] public Boolean IsNativeAsset => Status.IsNativeAsset(m_MainObject);
@@ -26,12 +26,12 @@ namespace CodeSmile.Editor
 		// 	m_Path != null ? AssetDatabase.GetMainAssetTypeAtPath(m_Path) :
 		// 	AssetDatabase.GetMainAssetTypeFromGUID(m_Guid);
 
-		private static AssetPath GetNewAssetPath(AssetPath destPath, Boolean overwriteExisting) =>
+		private static Path GetNewAssetPath(Path destPath, Boolean overwriteExisting) =>
 			overwriteExisting ? destPath : destPath.UniqueFilePath;
 
 		private void InvalidateInstance()
 		{
-			m_Path = null;
+			m_AssetPath = null;
 			m_MainObject = null;
 			m_AssetObjects = null;
 		}

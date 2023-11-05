@@ -8,10 +8,10 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		public static Boolean SaveAs(AssetPath sourcePath, AssetPath destPath, Boolean overwriteExisting = false)
+		public static Boolean SaveAs(Path sourcePath, Path destPath, Boolean overwriteExisting = false)
 		{
 			var newPath = GetNewAssetPath(destPath, overwriteExisting);
-			AssetPath.CreateFolders(newPath);
+			Path.CreateFolders(newPath);
 			return AssetDatabase.CopyAsset(sourcePath, newPath);
 		}
 

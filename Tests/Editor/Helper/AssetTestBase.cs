@@ -15,12 +15,11 @@ public abstract class AssetTestBase
 	protected const String TestSubFolderPath = "Assets/subfolder";
 	protected const String TestSubFoldersPath = "Assets/sub/fol/der";
 	protected const String TestAssetFileName = "°CodeSmile-UnitTestAsset°.asset";
-	protected readonly AssetPath ExamplePath = new("Assets/Examples/");
-	protected readonly AssetPath TestAssetPath = new($"Assets/{TestAssetFileName}");
-	protected readonly AssetPath TestSubFoldersAssetPath = new($"{TestSubFoldersPath}/{TestAssetFileName}");
+	protected readonly Asset.Path TestAssetPath = new($"Assets/{TestAssetFileName}");
+	protected readonly Asset.Path TestSubFoldersAssetPath = new($"{TestSubFoldersPath}/{TestAssetFileName}");
 
 	private readonly TestAssets m_TestAssets = new();
-	private readonly List<AssetPath> m_TestFilePaths = new();
+	private readonly List<Asset.Path> m_TestFilePaths = new();
 
 	[TearDown] public void TearDown()
 	{
@@ -54,7 +53,7 @@ public abstract class AssetTestBase
 			Asset.Database.ImportAll(ImportAssetOptions.ForceUpdate);
 	}
 
-	protected AssetPath DeleteFileAfterTest(AssetPath filePath)
+	protected Asset.Path DeleteFileAfterTest(Asset.Path filePath)
 	{
 		m_TestFilePaths.Add(filePath);
 		return filePath;
@@ -62,7 +61,7 @@ public abstract class AssetTestBase
 
 	protected string DeleteFileAfterTest(string filePath)
 	{
-		m_TestFilePaths.Add((AssetPath)filePath);
+		m_TestFilePaths.Add((Asset.Path)filePath);
 		return filePath;
 	}
 

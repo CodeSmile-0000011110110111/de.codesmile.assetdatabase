@@ -11,7 +11,7 @@ public class AssetDeleteTests : AssetTestBase
 	[Test] public void DeleteStatic_Null_DoesNotThrow()
 	{
 		Asset.Delete((String)null);
-		Asset.Delete((AssetPath)null);
+		Asset.Delete((Asset.Path)null);
 		Asset.Delete((Object)null);
 	}
 
@@ -49,7 +49,7 @@ public class AssetDeleteTests : AssetTestBase
 	[Test] public void TrashStatic_Null_DoesNotThrow()
 	{
 		Asset.Trash((String)null);
-		Asset.Trash((AssetPath)null);
+		Asset.Trash((Asset.Path)null);
 		Asset.Trash((Object)null);
 	}
 

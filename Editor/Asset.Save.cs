@@ -14,11 +14,11 @@ namespace CodeSmile.Editor
 		///     Can overwrite existing files, if specified.
 		/// </summary>
 		/// <param name="obj">The object to save as an asset file.</param>
-		/// <param name="assetPath">The relative asset path with filename and extension.</param>
+		/// <param name="pathtPath">The relative asset path with filename and extension.</param>
 		/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
 		/// <returns></returns>
-		public static Asset Create(Object obj, AssetPath assetPath, Boolean overwriteExisting = false) =>
-			new(CreateFoldersAndAsset(obj, assetPath, overwriteExisting));
+		public static Asset Create(Object obj, Path path, Boolean overwriteExisting = false) =>
+			new(CreateFoldersAndAsset(obj, path, overwriteExisting));
 
 		/// <summary>
 		///     Creates (saves) a new asset file at the target path. Also creates all non-existing folders in the path.
@@ -30,7 +30,7 @@ namespace CodeSmile.Editor
 		/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
 		/// <returns></returns>
 		public static Asset Create(Object obj, String path, Boolean overwriteExisting = false) =>
-			Create(obj, (AssetPath)path, overwriteExisting);
+			Create(obj, (Path)path, overwriteExisting);
 
 		//
 		// public void Save()

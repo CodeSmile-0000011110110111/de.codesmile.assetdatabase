@@ -26,14 +26,14 @@ public class AssetCtorTests : AssetTestBase
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAsset(testPath);
-		var expectedPath = AssetPath.UniquifyFilename(testPath);
+		var expectedPath = Asset.Path.UniquifyFilename(testPath);
 		var newObject = Instantiate.ExampleSO();
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath));
 
-		Assert.True(AssetPath.FileExists(testPath));
-		Assert.True(AssetPath.FileExists(expectedPath));
-		Assert.AreEqual(expectedPath, newAsset.Path);
+		Assert.True(Asset.Path.FileExists(testPath));
+		Assert.True(Asset.Path.FileExists(expectedPath));
+		Assert.AreEqual(expectedPath, newAsset.AssetPath);
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}
 
@@ -41,14 +41,14 @@ public class AssetCtorTests : AssetTestBase
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAsset(testPath);
-		var expectedPath = AssetPath.UniquifyFilename(testPath);
+		var expectedPath = Asset.Path.UniquifyFilename(testPath);
 		var newObject = Instantiate.ExampleSO();
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath, true));
 
-		Assert.True(AssetPath.FileExists(testPath));
-		Assert.False(AssetPath.FileExists(expectedPath));
-		Assert.AreEqual(testPath, newAsset.Path);
+		Assert.True(Asset.Path.FileExists(testPath));
+		Assert.False(Asset.Path.FileExists(expectedPath));
+		Assert.AreEqual(testPath, newAsset.AssetPath);
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}
 
@@ -71,7 +71,7 @@ public class AssetCtorTests : AssetTestBase
 	}
 
 	[Test] public void AssetCtorPath_Null_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => new Asset((AssetPath)null));
+		Assert.Throws<ArgumentNullException>(() => new Asset((Asset.Path)null));
 
 	[Test] public void AssetCtorPath_NotExistingPath_Throws() =>
 		Assert.Throws<FileNotFoundException>(() => new Asset("Assets/does not.exist"));
@@ -82,9 +82,9 @@ public class AssetCtorTests : AssetTestBase
 
 		var asset = new Asset(TestAssetPath);
 
-		Assert.True(asset.Path == TestAssetPath);
+		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.Path.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
+		Assert.AreEqual(asset.AssetPath.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
 	}
 
 	[Test] public void AssetCtorObject_Null_Throws() =>
@@ -99,9 +99,9 @@ public class AssetCtorTests : AssetTestBase
 
 		var asset = new Asset(assetObject);
 
-		Assert.True(asset.Path == TestAssetPath);
+		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.Path.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
+		Assert.AreEqual(asset.AssetPath.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
 	}
 
 	[Test] public void AssetCtorGuid_EmptyGuid_Throws() =>
@@ -117,9 +117,9 @@ public class AssetCtorTests : AssetTestBase
 
 		var asset = new Asset(guid);
 
-		Assert.True(asset.Path == TestAssetPath);
+		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.True(asset.Path.Guid.Equals(guid));
+		Assert.True(asset.AssetPath.Guid.Equals(guid));
 	}
 
 	[Test] public void AssetCtorGuid_ExistingFolder_Succeeds()
@@ -128,9 +128,9 @@ public class AssetCtorTests : AssetTestBase
 
 		var asset = new Asset(guid);
 
-		Assert.True(asset.Path == "Assets");
+		Assert.True(asset.AssetPath == "Assets");
 		Assert.NotNull(asset.MainObject);
 		Assert.AreEqual(asset.MainObject.GetType(), typeof(DefaultAsset));
-		Assert.True(asset.Path.Guid.Equals(guid));
+		Assert.True(asset.AssetPath.Guid.Equals(guid));
 	}
 }
