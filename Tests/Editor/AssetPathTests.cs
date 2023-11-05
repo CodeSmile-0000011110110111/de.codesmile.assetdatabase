@@ -21,7 +21,8 @@ public class AssetPathTests : AssetTestBase
 		new Action<Asset.Path>(assetPath => Assert.AreEqual("Assets", assetPath)).Invoke((Asset.Path)"Assets");
 	}
 
-	[Test] public void AssetPath_NullString_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
+	[Test] public void AssetPath_NullString_Throws() =>
+		Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
 
 	[Test] public void AssetPath_EmptyString_Throws() =>
 		Assert.Throws<ArgumentException>(() => new Asset.Path(String.Empty));
@@ -36,17 +37,18 @@ public class AssetPathTests : AssetTestBase
 		Assert.Throws<ArgumentException>(() => new Asset.Path(inputPath));
 
 	[Test] public void AssetPath_NotExistingFolderPath_ExistsIsFalse() =>
-		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").Exists);
+		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").ExistsInFileSystem);
 
-	[Test] public void AssetPath_ExistingFolderPath_ExistsIsTrue() => Assert.IsTrue(new Asset.Path("Assets").Exists);
+	[Test] public void AssetPath_ExistingFolderPath_ExistsIsTrue() =>
+		Assert.IsTrue(new Asset.Path("Assets").ExistsInFileSystem);
 
 	[Test] public void AssetPath_NotExistingFilePath_ExistsIsFalse() =>
-		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").Exists);
+		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").ExistsInFileSystem);
 
 	[Test] public void AssetPath_ExistingFilePath_ExistsIsTrue()
 	{
 		var filePath = Asset.Path.Get(CreateTestAsset());
-		Assert.IsTrue(new Asset.Path(filePath).Exists);
+		Assert.IsTrue(new Asset.Path(filePath).ExistsInFileSystem);
 	}
 
 	[TestCase("Assets", "Assets")]
@@ -157,17 +159,18 @@ public class AssetPathTests : AssetTestBase
 
 		var assetPath = new Asset.Path(testPath);
 
-		Assert.AreEqual(AssetTestBase.TestSubFoldersPath, assetPath.FolderPath);
+		Assert.AreEqual(TestSubFoldersPath, assetPath.FolderPath);
 	}
 
 	[Test] public void FolderPath_WithValidSubFoldersPath_SameAsInput()
 	{
-		var testPath = AssetTestBase.TestSubFoldersPath;
-		Asset.Path.CreateFolders(testPath);
+		var testPath = TestSubFoldersPath;
+		var guid = Asset.Path.CreateFolders(testPath);
 
 		var assetPath = new Asset.Path(testPath);
 
 		Assert.AreEqual(testPath, assetPath.FolderPath);
+		Assert.AreEqual(guid, assetPath.Guid);
 	}
 
 	[Test] public void FolderPath_WithNonExistingPath_Throws()
@@ -187,9 +190,9 @@ public class AssetPathTests : AssetTestBase
 		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
 
 	[TestCase("Assets")]
-	[TestCase(AssetTestBase.TestSubFoldersPath)]
+	[TestCase(TestSubFoldersPath)]
 	[TestCase("Assets/some.file")]
-	[TestCase(AssetTestBase.TestSubFoldersPath + "/fn.ext")]
+	[TestCase(TestSubFoldersPath + "/fn.ext")]
 	public void CreateFolders_ExistingFolder_ReturnsExistingFolderGuid(String dirPath)
 	{
 		// create the folder first
@@ -218,7 +221,7 @@ public class AssetPathTests : AssetTestBase
 
 	[Test] public void CreateFolders_CreateAllFoldersRecursive_FolderExists()
 	{
-		var dirPath = AssetTestBase.TestSubFoldersPath;
+		var dirPath = TestSubFoldersPath;
 
 		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders((Asset.Path)(dirPath + "/some.file")));
 
@@ -229,15 +232,13 @@ public class AssetPathTests : AssetTestBase
 
 	[Test] public void CreateFolders_CreateOnlySomeFoldersRecursive_FolderExists()
 	{
-		var dirPath = AssetTestBase.TestSubFoldersPath;
-
 		// have topmost folder already created
+		var dirPath = TestSubFoldersPath;
 		var splitPath = dirPath.Split('/');
 		var alreadyExistingFolder = $"{splitPath[0]}/{splitPath[1]}";
 
 		Asset.Path.CreateFolders((Asset.Path)alreadyExistingFolder);
-		AssetDatabase.ImportAsset(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
-		//AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
+		Asset.Import(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
 		Assert.True(Asset.Path.FolderExists(alreadyExistingFolder));
 
 		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders((Asset.Path)(dirPath + "/some.file")));

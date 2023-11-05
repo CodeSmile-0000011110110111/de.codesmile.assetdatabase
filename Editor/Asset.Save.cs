@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using UnityEditor;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -14,11 +15,14 @@ namespace CodeSmile.Editor
 		///     Can overwrite existing files, if specified.
 		/// </summary>
 		/// <param name="obj">The object to save as an asset file.</param>
-		/// <param name="pathtPath">The relative asset path with filename and extension.</param>
+		/// <param name="path">The relative asset path with filename and extension.</param>
 		/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
 		/// <returns></returns>
-		public static Asset Create(Object obj, Path path, Boolean overwriteExisting = false) =>
-			new(CreateFoldersAndAsset(obj, path, overwriteExisting));
+		public static Asset Create(Object obj, Path path, Boolean overwriteExisting = false)
+		{
+			Path.CreateFolders(path);
+			return new Asset(CreateAsset(obj, path, overwriteExisting));
+		}
 
 		/// <summary>
 		///     Creates (saves) a new asset file at the target path. Also creates all non-existing folders in the path.
@@ -31,6 +35,17 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		public static Asset Create(Object obj, String path, Boolean overwriteExisting = false) =>
 			Create(obj, (Path)path, overwriteExisting);
+
+		private static Object CreateAsset(Object obj, Path path, Boolean overwriteExisting)
+		{
+			// TODO: more error handling:
+			// invalid extension
+			// StreamingAssets path
+
+			var newPath = Path.GetOverwriteOrUnique(path, overwriteExisting);
+			AssetDatabase.CreateAsset(obj, newPath);
+			return obj;
+		}
 
 		//
 		// public void Save()

@@ -19,32 +19,51 @@ namespace CodeSmile.Editor
 
 			public static void DoesNotExist(Path path)
 			{
-				if (path.Exists == false)
+				if (path.ExistsInFileSystem == false)
 					throw new FileNotFoundException($"file/folder does not exist: '{path}'");
 			}
 
-			public static void IsExistingAsset(UnityEngine.Object obj)
+			public static void ExistingAsset(UnityEngine.Object obj)
 			{
 				if (Database.Contains(obj))
 					throw new ArgumentException($"object already is an asset file: {obj}");
 			}
 
-			public static void NotAnAssetAtPath(UnityEngine.Object obj, Path path)
+			public static void AssetPathNotInDatabase(Path path)
 			{
-				if (Database.Contains(obj) == false)
-					throw new ArgumentException("path does not exist or not imported", path);
+				if (path.Exists == false)
+					throw new ArgumentException($"path does not exist or not imported: {path}");
 			}
 
-			public static void NotAnAsset(UnityEngine.Object obj)
+			public static void AssetObjectNotInDatabase(UnityEngine.Object obj, Path path)
 			{
 				if (Database.Contains(obj) == false)
-					throw new ArgumentException($"object is not an asset file: {obj}");
+					throw new ArgumentException($"path does not exist or not imported: {path}");
 			}
 
-			public static void NotAnAsset(GUID guid)
+			public static void AssetObjectNotInDatabase(UnityEngine.Object obj)
+			{
+				if (Database.Contains(obj) == false)
+					throw new ArgumentException($"object is not an asset: {obj}");
+			}
+
+			public static void NotAnAssetGuid(GUID guid)
 			{
 				if (Path.Get(guid) == null)
-					throw new ArgumentException($"guid {guid} is not an asset file");
+					throw new ArgumentException($"guid is not an asset: {guid}");
+			}
+
+			public static void AssetDeleted(Asset asset)
+			{
+				if (asset.IsDeleted)
+					throw new InvalidOperationException("asset has been deleted");
+			}
+
+			public static void GenericTypeNotAssignableFromAssetType<T>(Path path) where T : UnityEngine.Object
+			{
+				var assetType = GetMainAssetType(path);
+				if (typeof(T).IsAssignableFrom(assetType) == false)
+					throw new ArgumentException($"'{typeof(T)}' not assignable from asset type '{assetType}'");
 			}
 		}
 	}

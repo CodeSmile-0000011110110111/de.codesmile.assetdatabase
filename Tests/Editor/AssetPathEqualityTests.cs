@@ -58,7 +58,8 @@ public class AssetPathEqualityTests
 	{
 		Assert.True(new Asset.Path(Application.dataPath + "/file.ext") != (Object)new Asset.Path(Application.dataPath));
 		Assert.True((Object)new Asset.Path(Application.dataPath + "/file.ext") != new Asset.Path(Application.dataPath));
-		Assert.False(new Asset.Path(Application.dataPath + "/f.x").Equals((Object)new Asset.Path(Application.dataPath)));
+		Assert.False(
+			new Asset.Path(Application.dataPath + "/f.x").Equals((Object)new Asset.Path(Application.dataPath)));
 	}
 
 	[Test] public void AssetPath_Equality_NotEqualToNull()

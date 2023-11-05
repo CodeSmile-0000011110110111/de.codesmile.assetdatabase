@@ -84,7 +84,7 @@ public class AssetCtorTests : AssetTestBase
 
 		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.AssetPath.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
+		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
 	[Test] public void AssetCtorObject_Null_Throws() =>
@@ -101,7 +101,7 @@ public class AssetCtorTests : AssetTestBase
 
 		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.AssetPath.Guid, AssetDatabase.GUIDFromAssetPath(TestAssetPath));
+		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
 	[Test] public void AssetCtorGuid_EmptyGuid_Throws() =>
@@ -113,7 +113,7 @@ public class AssetCtorTests : AssetTestBase
 	[Test] public void AssetCtorGuid_ExistingAsset_Succeeds()
 	{
 		var assetObject = CreateTestAsset(TestAssetPath);
-		var guid = AssetDatabase.GUIDFromAssetPath(TestAssetPath);
+		var guid = Asset.Path.GetGuid(TestAssetPath);
 
 		var asset = new Asset(guid);
 
@@ -124,7 +124,7 @@ public class AssetCtorTests : AssetTestBase
 
 	[Test] public void AssetCtorGuid_ExistingFolder_Succeeds()
 	{
-		var guid = AssetDatabase.GUIDFromAssetPath("Assets");
+		var guid = Asset.Path.GetGuid("Assets");
 
 		var asset = new Asset(guid);
 

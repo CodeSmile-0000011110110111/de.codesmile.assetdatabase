@@ -6,7 +6,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -59,7 +58,7 @@ public abstract class AssetTestBase
 		return filePath;
 	}
 
-	protected string DeleteFileAfterTest(string filePath)
+	protected String DeleteFileAfterTest(String filePath)
 	{
 		m_TestFilePaths.Add((Asset.Path)filePath);
 		return filePath;

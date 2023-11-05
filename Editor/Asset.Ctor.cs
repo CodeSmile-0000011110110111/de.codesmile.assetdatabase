@@ -5,25 +5,11 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 
 namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		internal static Object CreateFoldersAndAsset(Object obj, Path path, Boolean overwriteExisting)
-		{
-			// TODO: more error handling, eg invalid extension, StreamingAssets path
-			var newPath = GetNewAssetPath(path, overwriteExisting);
-			Path.CreateFolders(newPath);
-			AssetDatabase.CreateAsset(obj, newPath);
-
-			var value1 = Random.Range(1f, 22f);
-			var value2 = Random.Range(1, 22);
-
-			return obj;
-		}
-
 		[ExcludeFromCodeCoverage] private Asset() {} // Hidden parameterless ctor
 
 		/// <summary>
@@ -31,7 +17,7 @@ namespace CodeSmile.Editor
 		///     The object must not already be an asset. If it is an asset you must use the ctor without a path.
 		/// </summary>
 		/// <param name="obj">The object to create/save as asset file.</param>
-		/// <param name="pathtPath">The path to the asset file. It must have a valid asset extension.</param>
+		/// <param name="path">The path to the asset file. It must have a valid asset extension.</param>
 		/// <param name="overwriteExisting">
 		///     If true, will overwrite any existing asset file at the location. Otherwise may generate
 		///     a uniquely numbered file name.
@@ -43,9 +29,9 @@ namespace CodeSmile.Editor
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.IsExistingAsset(obj);
+			ThrowIf.ExistingAsset(obj);
 
-			CreateFoldersAndAsset(obj, path, overwriteExisting);
+			Create(obj, path, overwriteExisting);
 			SetMainObjectAndPath(obj);
 		}
 
@@ -68,7 +54,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns an instance from a path to an existing asset.
 		/// </summary>
-		/// <param name="pathtPath"></param>
+		/// <param name="path"></param>
 		/// <exception cref="ArgumentNullException">If the assetPath is null.</exception>
 		/// <exception cref="FileNotFoundException">If the assetPath does not point to an existing asset file.</exception>
 		public Asset(Path path) => SetMainObjectAndPath(path);
@@ -103,13 +89,13 @@ namespace CodeSmile.Editor
 
 			m_AssetPath = path;
 			m_MainObject = LoadMain<Object>();
-			ThrowIf.NotAnAssetAtPath(m_MainObject, m_AssetPath);
+			ThrowIf.AssetObjectNotInDatabase(m_MainObject, m_AssetPath);
 		}
 
 		private void SetMainObjectAndPath(Object obj)
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
-			ThrowIf.NotAnAsset(obj);
+			ThrowIf.AssetObjectNotInDatabase(obj);
 
 			m_MainObject = obj;
 			m_AssetPath = (Path)AssetDatabase.GetAssetPath(obj);
@@ -117,7 +103,7 @@ namespace CodeSmile.Editor
 
 		private void SetMainObjectAndPath(GUID guid)
 		{
-			ThrowIf.NotAnAsset(guid);
+			ThrowIf.NotAnAssetGuid(guid);
 
 			SetMainObjectAndPath((Path)AssetDatabase.GUIDToAssetPath(guid));
 		}

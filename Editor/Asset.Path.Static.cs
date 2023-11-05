@@ -51,7 +51,7 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Tests if the given file exists.
 			/// </summary>
-			/// <param name="pathtPath"></param>
+			/// <param name="path"></param>
 			/// <returns></returns>
 			public static Boolean FileExists(Path path) => FileExists((String)path);
 
@@ -65,7 +65,7 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
 			/// </summary>
-			/// <param name="pathtPath">path to a file or folder</param>
+			/// <param name="path">path to a file or folder</param>
 			/// <returns>true if the folder exists</returns>
 			public static Boolean FolderExists(Path path) => FolderExists((String)path);
 
@@ -80,7 +80,7 @@ namespace CodeSmile.Editor
 			///     Creates the folders in the path recursively. Path may point to a file, but only folders
 			///     will be created.
 			/// </summary>
-			/// <param name="pathtPath">path to a file or folder</param>
+			/// <param name="path">path to a file or folder</param>
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
 			public static GUID CreateFolders(Path path)
 			{
@@ -123,7 +123,7 @@ namespace CodeSmile.Editor
 			///     See also: Project Settings => Editor => Numbering Scheme
 			///     Note: 'Uniquify' is a proper english verb, it means "to make unique".
 			/// </summary>
-			/// <param name="pathtPath"></param>
+			/// <param name="path"></param>
 			/// <returns></returns>
 			public static Path UniquifyFilename(Path path) => UniquifyFilename((String)path);
 

@@ -12,10 +12,10 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="pathtPath"></param>
+		/// <param name="path"></param>
 		public static void Delete(Path path)
 		{
-			if (path != null && path.Exists)
+			if (path != null && path.ExistsInFileSystem)
 				AssetDatabase.DeleteAsset(path);
 		}
 
@@ -35,10 +35,10 @@ namespace CodeSmile.Editor
 		///     Moves the asset file to the OS trash (same as Delete, but recoverable).
 		///     Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="pathtPath"></param>
+		/// <param name="path"></param>
 		public static void Trash(Path path)
 		{
-			if (path != null && path.Exists)
+			if (path != null && path.ExistsInFileSystem)
 				AssetDatabase.MoveAssetToTrash(path);
 		}
 
@@ -64,9 +64,11 @@ namespace CodeSmile.Editor
 		public Object Delete()
 		{
 			var mainObject = m_MainObject;
-			Delete(m_AssetPath);
-			InvalidateInstance();
-
+			if (IsDeleted == false)
+			{
+				Delete(m_AssetPath);
+				InvalidateInstance();
+			}
 			return mainObject;
 		}
 
@@ -78,9 +80,11 @@ namespace CodeSmile.Editor
 		public Object Trash()
 		{
 			var mainObject = m_MainObject;
-			Trash(m_AssetPath);
-			InvalidateInstance();
-
+			if (IsDeleted == false)
+			{
+				Trash(m_AssetPath);
+				InvalidateInstance();
+			}
 			return mainObject;
 		}
 	}

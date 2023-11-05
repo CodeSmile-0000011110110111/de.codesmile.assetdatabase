@@ -10,24 +10,24 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		/// <p>
-		///     Represents a relative path to an asset file or folder under either 'Assets' or 'Packages'.
-		///     Instances can be initialized with a relative or full (absolute) path, internally it will be converted
-		///		to a relative path. Use the FullPath property to get the full (absolute) path.
-		/// </p>
-		/// <p>
-		///     All path separators are converted to forward slashes for compatibility with Windows, Mac, Linux.
-		///     Leading and trailing path separators are trimmed: "\Assets\folder\" => "Assets/folder"
-		/// </p>
-		/// <p>
-		///     Instances are implicitly and explicitly convertible to/from string:
-		/// <example>string strPath = (string)new Asset.Path("Assets/MyFolder/My.file");</example>
-		/// <example>Asset.Path assetPath = (Asset.Path)"Assets/MyFolder/My.file";</example>
-		/// </p>
-		/// <p>
-		///		Ideally you should pass in a string and henceforth work with the Asset.Path instance,
-		///		since path sanitation occurs every time an Asset.Path instance is created.
-		/// </p>
+		///     <p>
+		///         Represents a relative path to an asset file or folder under either 'Assets' or 'Packages'.
+		///         Instances can be initialized with a relative or full (absolute) path, internally it will be converted
+		///         to a relative path. Use the FullPath property to get the full (absolute) path.
+		///     </p>
+		///     <p>
+		///         All path separators are converted to forward slashes for compatibility with Windows, Mac, Linux.
+		///         Leading and trailing path separators are trimmed: "\Assets\folder\" => "Assets/folder"
+		///     </p>
+		///     <p>
+		///         Instances are implicitly and explicitly convertible to/from string:
+		///         <example>string strPath = (string)new Asset.Path("Assets/MyFolder/My.file");</example>
+		///         <example>Asset.Path assetPath = (Asset.Path)"Assets/MyFolder/My.file";</example>
+		///     </p>
+		///     <p>
+		///         Ideally you should pass in a string and henceforth work with the Asset.Path instance,
+		///         since path sanitation occurs every time an Asset.Path instance is created.
+		///     </p>
 		/// </summary>
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
@@ -97,12 +97,59 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns true if the path exists, be it file or folder. Returns false if the path does not exist.
+			///     Returns true if the path exists in the file system, be it file or folder.
+			///     Returns false if the path does not exist.
+			///     NOTE: This solely checks for physical existance, a new asset at that path may still not 'exist'
+			///     in the database until it has been imported.
+			///     <see cref="Exists" />
 			/// </summary>
-			public Boolean Exists => FileExists(this) || FolderExists(this);
+			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
-			public GUID Guid =>
-				new(AssetDatabase.AssetPathToGUID(m_RelativePath, AssetPathToGUIDOptions.OnlyExistingAssets));
+			/// <summary>
+			///     Returns true if the path exists in the AssetDatabase.
+			///     NOTE: This may still return true for asset files that have been deleted externally.
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			public Boolean Exists
+			{
+				get
+				{
+#if UNITY_2023_1_OR_NEWER
+					return AssetDatabase.AssetPathExists(m_RelativePath);
+#else
+					return Guid.Empty() == false;
+#endif
+				}
+			}
+
+			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			/// <returns></returns>
+			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
+
+			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="options"></param>
+			/// <returns></returns>
+			public static GUID GetGuid(Path path,
+				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
+				new(AssetDatabase.AssetPathToGUID(path, options));
+
+			public static GUID GetGuid(String path,
+				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
+				GetGuid((Path)path);
+
+			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
+				overwriteExisting ? destPath : destPath.UniqueFilePath;
 
 			private static String ToRelative(String fullOrRelativePath)
 			{

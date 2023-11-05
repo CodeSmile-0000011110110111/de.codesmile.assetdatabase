@@ -17,6 +17,9 @@ namespace CodeSmile.Editor
 		/// <returns>False if the object is null or not in the database.</returns>
 		public static Boolean Exists(Object obj) => Database.Contains(obj);
 
+		public static Type GetMainAssetType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
+		public static Type GetMainAssetType(String path) => GetMainAssetType((Path)path);
+
 		/// <summary>
 		///     Query the status of an asset.
 		/// </summary>

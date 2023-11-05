@@ -5,6 +5,8 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using System.IO;
+using UnityEditor;
+using Object = UnityEngine.Object;
 
 public class AssetLoadTests : AssetTestBase
 {
@@ -51,5 +53,30 @@ public class AssetLoadTests : AssetTestBase
 
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		DeleteAfterTest(new Asset(testPath));
+	}
+
+	[Test] public void LoadMain_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/doesnot.exist"));
+
+	[Test] public void LoadMain_ExistingPath_Succeeds()
+	{
+		var obj = CreateTestAsset(TestAssetPath);
+		var loaded = Asset.LoadMain<Object>(TestAssetPath);
+		Assert.NotNull(loaded);
+		Assert.AreEqual(obj, loaded);
+		Assert.AreEqual(obj.GetType(), loaded.GetType());
+	}
+
+	[Test] public void LoadMain_NotExistingGuid_IsNull() => Assert.Null(Asset.LoadMain<Object>(new GUID()));
+
+	[Test] public void LoadMain_ExistingGuid_Succeeds()
+	{
+		var obj = CreateTestAsset(TestAssetPath);
+
+		var loaded = Asset.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
+
+		Assert.NotNull(loaded);
+		Assert.AreEqual(obj, loaded);
+		Assert.AreEqual(obj.GetType(), loaded.GetType());
+		Assert.AreEqual(obj.GetType(),  Asset.GetMainAssetType((string)TestAssetPath));
 	}
 }
