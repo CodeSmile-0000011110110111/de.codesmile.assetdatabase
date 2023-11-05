@@ -17,6 +17,7 @@ namespace CodeSmile.Editor
 	/// </summary>
 	public partial class AssetPath : IEquatable<AssetPath>, IEquatable<String>
 	{
+
 		public const String DefaultExtension = "asset";
 
 		private readonly String m_RelativePath = String.Empty;

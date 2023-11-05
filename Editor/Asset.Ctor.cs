@@ -16,6 +16,21 @@ namespace CodeSmile.Editor
 			var newPath = GetNewAssetPath(assetPath, overwriteExisting);
 			AssetPath.CreateFolders(newPath);
 			AssetDatabase.CreateAsset(obj, newPath);
+
+
+
+
+
+
+
+
+
+			var value1 = UnityEngine.Random.Range(1f, 22f);
+			var value2 = UnityEngine.Random.Range(1, 22);
+
+
+
+
 			return obj;
 		}
 
