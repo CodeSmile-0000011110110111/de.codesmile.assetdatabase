@@ -11,12 +11,11 @@ I sincerely hope you understand my reasons for applying the Commons Clause.
 Please contact me if you wish to license the software under different terms.
 
 - Steffen aka CodeSmile
-E-Mail : steffen@steffenitterheim.de
-Discord: https://discord.gg/JN3Jz8qkeV
+- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
 
 ==============================================================================
-                                                     https://commonsclause.com
-The Commons Clause.
+
+[The Commons Clause.](https://commonsclause.com)
 
 “Commons Clause” License Condition v1.0
 
@@ -35,16 +34,15 @@ whose value derives, entirely or substantially, from the functionality of the
 Software. Any license notice or attribution required by the License must also 
 include this Commons Clause License Condition notice.
 
-Software: de.codesmile.editor.assetdatabase
-https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase
+Software: [de.codesmile.editor.assetdatabase](https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase)
 
 License: MIT License (full License text below)
 
 Licensor: Steffen Itterheim (CodeSmile)
 
 ==============================================================================
-                                     https://en.wikipedia.org/wiki/MIT_License
-MIT License
+
+[MIT License](https://en.wikipedia.org/wiki/MIT_License)
 
 Copyright (c) 2023 Steffen Itterheim (CodeSmile)
 
