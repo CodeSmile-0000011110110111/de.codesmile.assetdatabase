@@ -3,8 +3,9 @@
 
 using CodeSmile.Editor;
 using NUnit.Framework;
+using System;
 
 public class AssetStatusTests : AssetTestBase
 {
-	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.GetMainType((string)TestAssetPath));
+	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.GetMainType((String)TestAssetPath));
 }

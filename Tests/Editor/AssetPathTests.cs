@@ -39,17 +39,24 @@ public class AssetPathTests : AssetTestBase
 
 	[Test] public void AssetPathExists_NotExistingFolderPath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").Exists);
+
 	[Test] public void AssetPathExists_ExistingFolderPath_True() => Assert.IsTrue(new Asset.Path("Assets").Exists);
+
 	[Test] public void AssetPathExists_NotExistingFilePath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").Exists);
+
 	[Test] public void AssetPathExists_ExistingFilePath_True() =>
 		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).Exists);
+
 	[Test] public void AssetPathExistsInFileSystem_NotExistingFolderPath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").ExistsInFileSystem);
+
 	[Test] public void AssetPathExistsInFileSystem_ExistingFolderPath_True() =>
 		Assert.IsTrue(new Asset.Path("Assets").ExistsInFileSystem);
+
 	[Test] public void AssetPathExistsInFileSystem_NotExistingFilePath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").ExistsInFileSystem);
+
 	[Test] public void AssetPathExistsInFileSystem_ExistingFilePath_True() =>
 		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).ExistsInFileSystem);
 

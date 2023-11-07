@@ -32,14 +32,14 @@ namespace CodeSmile.Editor
 		public static Boolean Exists(Object obj) => Database.Contains(obj);
 
 		/// <summary>
-		/// Returns the type of the main asset at the path.
+		///     Returns the type of the main asset at the path.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
-		/// Returns the type of the main asset at the path.
+		///     Returns the type of the main asset at the path.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>

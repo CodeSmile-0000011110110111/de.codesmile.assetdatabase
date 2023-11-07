@@ -77,6 +77,6 @@ public class AssetLoadTests : AssetTestBase
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
 		Assert.AreEqual(obj.GetType(), loaded.GetType());
-		Assert.AreEqual(obj.GetType(),  Asset.GetMainType((string)TestAssetPath));
+		Assert.AreEqual(obj.GetType(), Asset.GetMainType((String)TestAssetPath));
 	}
 }
