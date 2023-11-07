@@ -1,20 +1,18 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-// BatchEditing causes the progress bar after test to hang for a long time / indefinitely
-
-#define TESTS_DISABLED_UNTIL_ISSUE_59630_RESOLVED
+#define DISABLED_UNTIL_ISSUE_59630_RESOLVED
 
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 
-public class AssetStaticTests : AssetTestBase
+public class AssetBatchEditingTests : AssetTestBase
 {
 	[Test] public void BatchEditing_NullAction_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => Asset.BatchEditing(null));
 
-#if !TESTS_DISABLED_UNTIL_ISSUE_59630_RESOLVED
+#if !DISABLED_UNTIL_ISSUE_59630_RESOLVED // Start/StopAssetEditing causes TestRunner to hang
 	[Test] public void BatchEditing_ValidAction_GetsInvoked()
 	{
 		var didInvokeAction = false;

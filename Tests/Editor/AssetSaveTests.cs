@@ -7,11 +7,11 @@ using System;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-public class AssetLoadTests : AssetTestBase
+public class AssetSaveTests : AssetTestBase
 {
-	[Test] public void LoadMainStatic_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
+	[Test] public void StaticSave_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
 
-	[Test] public void LoadMainStatic_ExistingPath_Succeeds()
+	[Test] public void LoadMain_ExistingPath_Succeeds()
 	{
 		var obj = CreateTestAsset(TestAssetPath);
 		var loaded = Asset.LoadMain<Object>(TestAssetPath);
@@ -20,9 +20,9 @@ public class AssetLoadTests : AssetTestBase
 		Assert.AreEqual(obj.GetType(), loaded.GetType());
 	}
 
-	[Test] public void LoadMainStatic_NotExistingGuid_IsNull() => Assert.Null(Asset.LoadMain<Object>(new GUID()));
+	[Test] public void LoadMain_NotExistingGuid_IsNull() => Assert.Null(Asset.LoadMain<Object>(new GUID()));
 
-	[Test] public void LoadMainStatic_ExistingGuid_Succeeds()
+	[Test] public void LoadMain_ExistingGuid_Succeeds()
 	{
 		var obj = CreateTestAsset(TestAssetPath);
 

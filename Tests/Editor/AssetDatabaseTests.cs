@@ -6,19 +6,14 @@ using NUnit.Framework;
 
 public class AssetDatabaseTests : AssetTestBase
 {
-	[Test] public void DatabaseContains_NullAsset_False() => Assert.IsFalse(Asset.Database.Contains(null));
+	[Test] public void Contains_NullAsset_False() => Assert.IsFalse(Asset.Database.Contains(null));
 
-	[Test] public void DatabaseContains_NotAnAsset_False()
-	{
-		var obj = Instantiate.ExampleSO();
-		Assert.IsFalse(Asset.Database.Contains(obj));
-		Assert.IsFalse(Asset.Exists(obj));
-	}
+	[Test] public void Contains_NotAnAsset_False() => Assert.IsFalse(Asset.Database.Contains(Instantiate.ExampleSO()));
 
-	[Test] public void DatabaseContains_ExistingAsset_True()
-	{
-		var obj = CreateTestAsset(TestAssetPath);
-		Assert.IsTrue(Asset.Database.Contains(obj));
-		Assert.IsTrue(Asset.Exists(obj));
-	}
+	[Test] public void Contains_ExistingAsset_True() =>
+		Assert.IsTrue(Asset.Database.Contains(CreateTestAsset(TestAssetPath)));
+
+	[Test] public void Exists_NotAnAsset_False() => Assert.IsFalse(Asset.Exists(Instantiate.ExampleSO()));
+
+	[Test] public void Exists_ExistingAsset_True() => Assert.IsTrue(Asset.Exists(CreateTestAsset(TestAssetPath)));
 }

@@ -40,24 +40,6 @@ namespace CodeSmile.Editor
 		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(Path.Get(guid));
 
 		/// <summary>
-		///     Imports a file at a given path that was created or modified 'externally', ie not via Asset(Database) methods.
-		///     For example, any file/folder modified via System.IO.File.Write*() methods or through batch scripts.
-		///     Note: If the path does not exist, this method does nothing.
-		///     You will need to call Asset.Database.ImportAll() if you want to get rid of an externally deleted file
-		///     that still exists in the AssetDatabase.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <param name="options"></param>
-		public static void Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
-		{
-			if (path != null && path.ExistsInFileSystem)
-				AssetDatabase.ImportAsset(path, options);
-		}
-
-		public static void Import(String path, ImportAssetOptions options = ImportAssetOptions.Default) =>
-			Import((Path)path, options);
-
-		/// <summary>
 		///     Private on purpose: the main object is automatically loaded when instantiating an Asset class.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>

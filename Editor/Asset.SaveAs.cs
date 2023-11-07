@@ -10,6 +10,10 @@ namespace CodeSmile.Editor
 	{
 		public static Boolean SaveAs(Path sourcePath, Path destPath, Boolean overwriteExisting = false)
 		{
+			//ThrowIf.AssetDeleted(this);
+			ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
+			ThrowIf.ArgumentIsNull(destPath, nameof(destPath));
+
 			var newPath = Path.GetOverwriteOrUnique(destPath, overwriteExisting);
 			Path.CreateFolders(newPath);
 			return AssetDatabase.CopyAsset(sourcePath, newPath);

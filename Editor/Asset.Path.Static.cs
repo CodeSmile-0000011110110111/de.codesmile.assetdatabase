@@ -14,10 +14,6 @@ namespace CodeSmile.Editor
 		public partial class Path
 		{
 			/// <summary>
-			///     Returns the path to the project's root folder.
-			/// </summary>
-			public static String FullProjectPath => FullAssetsPath.Substring(0, FullAssetsPath.Length - 6);
-			/// <summary>
 			///     Returns the path to the project's 'Assets' subfolder.
 			/// </summary>
 			public static String FullAssetsPath => Application.dataPath;
@@ -25,6 +21,10 @@ namespace CodeSmile.Editor
 			///     Returns the path to the project's 'Packages' subfolder.
 			/// </summary>
 			public static String FullPackagesPath => $"{FullProjectPath}/Packages";
+			/// <summary>
+			///     Returns the path to the project's root folder.
+			/// </summary>
+			public static String FullProjectPath => FullAssetsPath.Substring(0, Application.dataPath.Length - 6);
 
 			/// <summary>
 			///     Gets the path of an asset file.
@@ -91,14 +91,14 @@ namespace CodeSmile.Editor
 					return folderPath.Guid;
 
 				var folderNames = ((String)folderPath).Split(new[] { '/' });
-				var folderGuid = GuidForStringPath(folderNames[0]); // first is "Assets"
+				var folderGuid = GuidForExistingPath(folderNames[0]); // first is "Assets"
 				var partialPath = folderNames[0];
 				for (var i = 1; i < folderNames.Length; i++)
 				{
 					partialPath += $"/{folderNames[i]}";
 					if (FolderExists(partialPath))
 					{
-						folderGuid = GuidForStringPath(partialPath);
+						folderGuid = GuidForExistingPath(partialPath);
 						continue;
 					}
 
@@ -140,6 +140,9 @@ namespace CodeSmile.Editor
 				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
 				return (Path)(String.IsNullOrEmpty(uniquePath) ? path : uniquePath);
 			}
+
+			private static GUID GuidForExistingPath(String path) =>
+				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
 		}
 	}
 }

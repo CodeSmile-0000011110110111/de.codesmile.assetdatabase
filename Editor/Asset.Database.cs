@@ -21,53 +21,34 @@ namespace CodeSmile.Editor
 			public static Boolean Contains(Object obj) => obj ? AssetDatabase.Contains(obj) : false;
 
 			/// <summary>
-			///     <p>
-			///         Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally.
-			///         External is defined as 'any file modification operation not done through the AssetDatabase', for
-			///         example by using System.IO methods or by running scripts and other external tools.
-			///     </p>
-			///     <p>
-			///         Since Refresh() 'traditionally' gets called way too many times needlessly a more descriptive name
-			///         was chosen to reflect what this method does. I even considered naming it 100% accurately as:
-			///         ImportExternallyModifiedAndUnloadUnusedAssets()
-			///     </p>
-			///     <p>
-			///         CAUTION: Calling this needlessly may have an adverse effect on editor performance, since it calls
-			///         Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as 'dirty'
-			///         that are only referenced by scripts, leading to potential loss of unsaved data.
-			///         <see cref="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html" />
-			///     </p>
-			/// </summary>
-			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage] public static void ImportAll(ImportAssetOptions options =
-				ImportAssetOptions.Default) => AssetDatabase.Refresh(options);
-
-			/// <summary>
 			///     Will stop Unity from automatically importing assets. Must be called in pair with DisallowAutoRefresh.
 			///     Multiple calls must be matched with an equal number of calls to DisallowAutoRefresh since internally
 			///     this is using a counter that needs to return to 0 before auto refresh is going to be enabled again.
 			///     Note: Has no effect if Preferences => Asset Pipeline => Auto Refresh is disabled to begin with.
 			///     Same as AssetDatabase.AllowAutoRefresh().
+			///     <see cref="DisallowAutoRefresh" />
 			/// </summary>
-			[ExcludeFromCodeCoverage] public static void AllowAutoRefresh() => AssetDatabase.AllowAutoRefresh();
+			[ExcludeFromCodeCoverage] // untestable
+			public static void AllowAutoRefresh() => AssetDatabase.AllowAutoRefresh();
 
 			/// <summary>
-			///     <see cref="AllowAutoRefresh" />
 			///     Same as AssetDatabase.DisallowAutoRefresh().
+			///     <see cref="AllowAutoRefresh" />
 			/// </summary>
-			[ExcludeFromCodeCoverage] public static void DisallowAutoRefresh() => AssetDatabase.DisallowAutoRefresh();
+			[ExcludeFromCodeCoverage] // untestable
+			public static void DisallowAutoRefresh() => AssetDatabase.DisallowAutoRefresh();
 
 			/// <summary>
-			///     <see cref="Asset.BatchEditing" />
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
+			///     <see cref="Asset.BatchEditing" />
 			/// </summary>
-			[ExcludeFromCodeCoverage] internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
+			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			/// <summary>
-			///     <see cref="Asset.BatchEditing" />
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
+			///     <see cref="Asset.BatchEditing" />
 			/// </summary>
-			[ExcludeFromCodeCoverage] internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
+			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			// SaveAll
 

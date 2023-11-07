@@ -36,6 +36,15 @@ namespace CodeSmile.Editor
 			private readonly String m_RelativePath = String.Empty;
 
 			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			/// <returns></returns>
+			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
+
+			/// <summary>
 			///     Returns the path either unaltered or with a numbering to make the file unique if an asset file
 			///     already exists at the path. Does not alter path if it does not exist or points to a folder.
 			///     See also: Project Settings => Editor => Numbering Scheme
@@ -97,15 +106,6 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns true if the path exists in the file system, be it file or folder.
-			///     Returns false if the path does not exist.
-			///     NOTE: This solely checks for physical existance, a new asset at that path may still not 'exist'
-			///     in the database until it has been imported.
-			///     <see cref="Exists" />
-			/// </summary>
-			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
-
-			/// <summary>
 			///     Returns true if the path exists in the AssetDatabase.
 			///     NOTE: This may still return true for asset files that have been deleted externally.
 			///     <see cref="ExistsInFileSystem" />
@@ -123,30 +123,13 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns the GUID for the path.
-			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     Returns true if the path exists in the file system, be it file or folder.
+			///     Returns false if the path does not exist.
+			///     NOTE: This solely checks for physical existance, a new asset at that path may still not 'exist'
+			///     in the database until it has been imported.
 			///     <see cref="Exists" />
-			///     <see cref="ExistsInFileSystem" />
 			/// </summary>
-			/// <returns></returns>
-			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
-
-			/// <summary>
-			///     Returns the GUID for the path.
-			///     Returns an empty GUID if the asset at the path does not exist in the database.
-			///     <see cref="Exists" />
-			///     <see cref="ExistsInFileSystem" />
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="options"></param>
-			/// <returns></returns>
-			public static GUID GetGuid(Path path,
-				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
-				new(AssetDatabase.AssetPathToGUID(path, options));
-
-			public static GUID GetGuid(String path,
-				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
-				GetGuid((Path)path);
+			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
 			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
 				overwriteExisting ? destPath : destPath.UniqueFilePath;
@@ -172,9 +155,6 @@ namespace CodeSmile.Editor
 
 			private static String MakeRelative(String fullOrRelativePath) =>
 				fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
-
-			private static GUID GuidForStringPath(String path) =>
-				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
 
 			private Path ToFolderPath() => new(System.IO.Path.GetDirectoryName(m_RelativePath));
 
