@@ -30,7 +30,11 @@ namespace CodeSmile.Editor
 		///     Saves any changes to the object to disk.
 		/// </summary>
 		/// <param name="guid"></param>
-		public static void Save(GUID guid) => AssetDatabase.SaveAssetIfDirty(guid);
+		public static void Save(GUID guid)
+		{
+			ThrowIf.NotAnAssetGuid(guid);
+			AssetDatabase.SaveAssetIfDirty(guid);
+		}
 
 		/// <summary>
 		///     <p>
@@ -49,6 +53,7 @@ namespace CodeSmile.Editor
 		private static Object SaveInternal(Object obj, Boolean forceSave = false)
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
+			ThrowIf.NotInDatabase(obj);
 
 			if (forceSave)
 				EditorUtility.SetDirty(obj);
@@ -76,5 +81,10 @@ namespace CodeSmile.Editor
 			ThrowIf.AssetDeleted(this);
 			ForceSave(m_MainObject);
 		}
+
+		/// <summary>
+		///     Marks the main object as dirty.
+		/// </summary>
+		public void SetMainObjectDirty() => EditorUtility.SetDirty(m_MainObject);
 	}
 }

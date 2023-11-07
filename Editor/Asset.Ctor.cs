@@ -89,13 +89,13 @@ namespace CodeSmile.Editor
 
 			m_AssetPath = path;
 			m_MainObject = LoadMain<Object>();
-			ThrowIf.AssetObjectNotInDatabase(m_MainObject, m_AssetPath);
+			ThrowIf.NotInDatabase(m_MainObject, m_AssetPath);
 		}
 
 		private void SetMainObjectAndPath(Object obj)
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
-			ThrowIf.AssetObjectNotInDatabase(obj);
+			ThrowIf.NotInDatabase(obj);
 
 			m_MainObject = obj;
 			m_AssetPath = (Path)AssetDatabase.GetAssetPath(obj);

@@ -1,12 +1,14 @@
 # EasyAssetDatabase
 
-Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. It's also fully tested.
+Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. It's
+also fully tested.
 
 ## Quick Introduction
 
-You can work either with Asset instances or the static Asset.Database API: 
+You can work either with Asset instances or the static Asset.Database API:
 
 ### Asset Instance Methods
+
 ```
 // Create new asset of a UnityEngine.Object instance (default extension: ".asset"):
 Asset objAsset = new Asset(obj, "Assets/Data/MySOAsset.asset");
@@ -32,6 +34,7 @@ objAsset = null;
 ```
 
 ### Static Asset Methods
+
 ```
 // Create new asset of a UnityEngine.Object instance:
 MySO assetSO = Asset.Create<MySO>(obj, "Assets/Data/MySOAsset.asset");

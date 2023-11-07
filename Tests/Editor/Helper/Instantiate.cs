@@ -8,9 +8,9 @@ public static class Instantiate
 	public static ScriptableObject ExampleSO()
 	{
 		var so = ScriptableObject.CreateInstance<ExampleSO>();
-		so.AssemblyName = so.GetType().AssemblyQualifiedName;
+		so.Text = so.GetType().AssemblyQualifiedName;
 		so.InstanceId = so.GetInstanceID();
-		so.ObjectReference = so;
+		so.Ref = so;
 		return so;
 	}
 }

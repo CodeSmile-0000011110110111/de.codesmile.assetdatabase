@@ -42,12 +42,14 @@ namespace CodeSmile.Editor
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			///     <see cref="Asset.BatchEditing" />
 			/// </summary>
+			[ExcludeFromCodeCoverage]
 			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			/// <summary>
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			///     <see cref="Asset.BatchEditing" />
 			/// </summary>
+			[ExcludeFromCodeCoverage]
 			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			// SaveAll

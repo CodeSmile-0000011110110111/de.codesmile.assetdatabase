@@ -17,7 +17,7 @@ public class AssetTrashTests : AssetTestBase
 
 	[Test] public void TrashStatic_ExistingAssetObject_FileDeleted()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
+		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
 		Assert.True(Asset.Exists(obj));
 
@@ -29,7 +29,7 @@ public class AssetTrashTests : AssetTestBase
 
 	[Test] public void TrashStatic_ExistingAssetPath_FileDeleted()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
+		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
 		Assert.True(Asset.Exists(obj));
 
@@ -41,7 +41,7 @@ public class AssetTrashTests : AssetTestBase
 
 	[Test] public void Trash_ExistingAssetObject_FileDeleted()
 	{
-		var asset = new Asset(CreateTestAsset(TestAssetPath));
+		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
 
 		var deletedObj = asset.Trash();
 

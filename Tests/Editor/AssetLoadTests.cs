@@ -14,7 +14,7 @@ public class AssetLoadTests : AssetTestBase
 
 	[Test] public void LoadMainStatic_ExistingPath_Succeeds()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
+		var obj = CreateTestAssetObject(TestAssetPath);
 		var loaded = Asset.LoadMain<Object>(TestAssetPath);
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -25,7 +25,7 @@ public class AssetLoadTests : AssetTestBase
 
 	[Test] public void LoadMainStatic_ExistingGuid_Succeeds()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
+		var obj = CreateTestAssetObject(TestAssetPath);
 
 		var loaded = Asset.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
 

@@ -5,32 +5,68 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using UnityEditor;
-using Object = UnityEngine.Object;
 
 public class AssetSaveTests : AssetTestBase
 {
-	[Test] public void StaticSave_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
+	[Test] public void SaveObjectStatic_Null_Throws() => Assert.Throws<ArgumentNullException>(() => Asset.Save(null));
 
-	[Test] public void LoadMain_ExistingPath_Succeeds()
+	[Test] public void SaveObjectStatic_NotAnAsset_Throws()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
-		var loaded = Asset.LoadMain<Object>(TestAssetPath);
-		Assert.NotNull(loaded);
-		Assert.AreEqual(obj, loaded);
-		Assert.AreEqual(obj.GetType(), loaded.GetType());
+		var obj = Instantiate.ExampleSO();
+		Assert.Throws<ArgumentException>(() => Asset.Save(obj));
 	}
 
-	[Test] public void LoadMain_NotExistingGuid_IsNull() => Assert.Null(Asset.LoadMain<Object>(new GUID()));
-
-	[Test] public void LoadMain_ExistingGuid_Succeeds()
+	[Test] public void Save_ModifiedAssetWithoutDirty_FileSizeUnchanged()
 	{
-		var obj = CreateTestAsset(TestAssetPath);
+		var soAsset = CreateTestAsset(TestAssetPath);
+		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
-		var loaded = Asset.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
+		// changing the field does not 'dirty' the object, thus won't save it
+		(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
+		soAsset.Save();
 
-		Assert.NotNull(loaded);
-		Assert.AreEqual(obj, loaded);
-		Assert.AreEqual(obj.GetType(), loaded.GetType());
-		Assert.AreEqual(obj.GetType(), Asset.GetMainType((String)TestAssetPath));
+		// change hasn't been 'saved'
+		Assert.AreEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+	}
+
+	[Test] public void ForceSave_ModifiedAsset_FileSizeChanged()
+	{
+		var soAsset = CreateTestAsset(TestAssetPath);
+		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+
+		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
+		soAsset.ForceSave(); // ForceSave dirties the object before saving
+
+		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+	}
+
+	[Test] public void SaveAllStatic_ModifiedAsset_FileSizeChanged()
+	{
+		var soAsset = CreateTestAsset(TestAssetPath);
+		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+
+		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
+		soAsset.SetMainObjectDirty(); // dirty it manually because SaveAll has no 'force' variant
+		Asset.SaveAll();
+
+		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+	}
+
+	[Test] public void SaveGuidStatic_Empty_Throws() => Assert.Throws<ArgumentException>(() => Asset.Save(new GUID()));
+
+	[Test] public void SaveGuidStatic_NotAnAsset_Throws() =>
+		Assert.Throws<ArgumentException>(() => Asset.Save(GUID.Generate()));
+
+	[Test] public void SaveGuidStatic_ModifiedAsset_FileSizeChanged()
+	{
+		var soAsset = CreateTestAsset(TestAssetPath);
+		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+
+		// changing the field does not 'dirty' the object, thus won't save it
+		(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
+		soAsset.SetMainObjectDirty();
+		Asset.Save(soAsset.Guid);
+
+		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
 	}
 }

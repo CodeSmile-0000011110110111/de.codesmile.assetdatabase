@@ -86,8 +86,13 @@ public abstract class AssetTestBase
 		return assetGuid;
 	}
 
-	protected Object CreateTestAsset() => CreateTestAsset(TestAssetPath);
+	protected Object CreateTestAssetObject() => CreateTestAssetObject(TestAssetPath);
 
-	protected Object CreateTestAsset(String path) =>
+	protected Object CreateTestAssetObject(String path) =>
 		DeleteAfterTest(Asset.Create(Instantiate.ExampleSO(), path).MainObject);
+
+	protected Asset CreateTestAsset() => CreateTestAsset(TestAssetPath);
+
+	protected Asset CreateTestAsset(String path) =>
+		new(DeleteAfterTest(Asset.Create(Instantiate.ExampleSO(), path).MainObject));
 }

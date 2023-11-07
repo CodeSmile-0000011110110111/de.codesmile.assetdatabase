@@ -37,13 +37,13 @@ namespace CodeSmile.Editor
 					throw new ArgumentException($"path does not exist or not imported: {path}");
 			}
 
-			public static void AssetObjectNotInDatabase(UnityEngine.Object obj, Path path)
+			public static void NotInDatabase(UnityEngine.Object obj, Path path)
 			{
 				if (Database.Contains(obj) == false)
 					throw new ArgumentException($"path does not exist or not imported: {path}");
 			}
 
-			public static void AssetObjectNotInDatabase(UnityEngine.Object obj)
+			public static void NotInDatabase(UnityEngine.Object obj)
 			{
 				if (Database.Contains(obj) == false)
 					throw new ArgumentException($"object is not an asset: {obj}");

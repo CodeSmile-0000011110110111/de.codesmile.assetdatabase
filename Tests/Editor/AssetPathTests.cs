@@ -45,7 +45,7 @@ public class AssetPathTests : AssetTestBase
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").Exists);
 
 	[Test] public void AssetPathExists_ExistingFilePath_True() =>
-		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).Exists);
+		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAssetObject())).Exists);
 
 	[Test] public void AssetPathExistsInFileSystem_NotExistingFolderPath_False() =>
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist").ExistsInFileSystem);
@@ -57,7 +57,7 @@ public class AssetPathTests : AssetTestBase
 		Assert.IsFalse(new Asset.Path("Assets/doesnotexist.file").ExistsInFileSystem);
 
 	[Test] public void AssetPathExistsInFileSystem_ExistingFilePath_True() =>
-		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAsset())).ExistsInFileSystem);
+		Assert.IsTrue(new Asset.Path(Asset.Path.Get(CreateTestAssetObject())).ExistsInFileSystem);
 
 	[TestCase("Assets", "Assets")]
 	[TestCase("assets", "assets")]
@@ -163,7 +163,7 @@ public class AssetPathTests : AssetTestBase
 	[Test] public void FolderPath_WithValidSubFoldersFilePath_ReturnsFolderOfTheFile()
 	{
 		var testPath = TestSubFoldersAssetPath;
-		CreateTestAsset(testPath);
+		CreateTestAssetObject(testPath);
 
 		var assetPath = new Asset.Path(testPath);
 

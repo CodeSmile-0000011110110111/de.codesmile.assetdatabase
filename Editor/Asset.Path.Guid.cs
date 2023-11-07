@@ -16,6 +16,15 @@ namespace CodeSmile.Editor
 			///     <see cref="Exists" />
 			///     <see cref="ExistsInFileSystem" />
 			/// </summary>
+			/// <returns></returns>
+			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
+
+			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
 			/// <param name="path"></param>
 			/// <param name="options"></param>
 			/// <returns></returns>

@@ -11,9 +11,9 @@ public class AssetDatabaseTests : AssetTestBase
 	[Test] public void Contains_NotAnAsset_False() => Assert.IsFalse(Asset.Database.Contains(Instantiate.ExampleSO()));
 
 	[Test] public void Contains_ExistingAsset_True() =>
-		Assert.IsTrue(Asset.Database.Contains(CreateTestAsset(TestAssetPath)));
+		Assert.IsTrue(Asset.Database.Contains(CreateTestAssetObject(TestAssetPath)));
 
 	[Test] public void Exists_NotAnAsset_False() => Assert.IsFalse(Asset.Exists(Instantiate.ExampleSO()));
 
-	[Test] public void Exists_ExistingAsset_True() => Assert.IsTrue(Asset.Exists(CreateTestAsset(TestAssetPath)));
+	[Test] public void Exists_ExistingAsset_True() => Assert.IsTrue(Asset.Exists(CreateTestAssetObject(TestAssetPath)));
 }

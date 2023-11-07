@@ -15,14 +15,14 @@ public class AssetCreateTests : AssetTestBase
 
 	[Test] public void CtorCreate_ObjectAlreadyAnAsset_Throws()
 	{
-		var existing = CreateTestAsset(TestAssetPath);
+		var existing = CreateTestAssetObject(TestAssetPath);
 		Assert.Throws<ArgumentException>(() => new Asset(existing, (String)TestAssetPath));
 	}
 
 	[Test] public void CtorCreate_AssetExistsNoOverwrite_CreatesAssetWithUniqueName()
 	{
 		var testPath = TestAssetPath;
-		var existing = CreateTestAsset(testPath);
+		var existing = CreateTestAssetObject(testPath);
 		var expectedPath = Asset.Path.UniquifyFilename(testPath);
 		var newObject = Instantiate.ExampleSO();
 
@@ -37,7 +37,7 @@ public class AssetCreateTests : AssetTestBase
 	[Test] public void CtorCreate_AssetExistsShouldOverwrite_ReplacesExistingAsset()
 	{
 		var testPath = TestAssetPath;
-		var existing = CreateTestAsset(testPath);
+		var existing = CreateTestAssetObject(testPath);
 		var expectedPath = Asset.Path.UniquifyFilename(testPath);
 		var newObject = Instantiate.ExampleSO();
 

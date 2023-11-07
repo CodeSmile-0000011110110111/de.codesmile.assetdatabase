@@ -1,6 +1,7 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using UnityEditor;
 using UnityEngine;
 
 namespace CodeSmile.Editor
@@ -9,16 +10,17 @@ namespace CodeSmile.Editor
 	{
 		private Path m_AssetPath;
 		private Object m_MainObject;
-		private Object[] m_AssetObjects;
+		//private Object[] m_AssetObjects;
 
 		public Object MainObject => m_MainObject;
 		public Path AssetPath => m_AssetPath;
+		public GUID Guid => Path.GetGuid(m_AssetPath);
 
 		private void InvalidateInstance()
 		{
 			m_AssetPath = null;
 			m_MainObject = null;
-			m_AssetObjects = null;
+			//m_AssetObjects = null;
 		}
 	}
 }

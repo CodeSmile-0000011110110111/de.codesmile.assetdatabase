@@ -2,6 +2,8 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using UnityEditor;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -29,37 +31,27 @@ namespace CodeSmile.Editor
 		/// </summary>
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
-			public const String DefaultExtension = "asset";
-
-			private readonly String m_RelativePath = String.Empty;
-
-			private static String ToRelative(String fullOrRelativePath)
+			/// <summary>
+			///     Gets the path of an asset file.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
+			public static Path Get(Object obj)
 			{
-				if (IsRelative(fullOrRelativePath))
-					return fullOrRelativePath.Trim('/');
-
-				ThrowIf.NotAProjectPath(fullOrRelativePath, fullOrRelativePath);
-				return MakeRelative(fullOrRelativePath);
+				var path = AssetDatabase.GetAssetPath(obj);
+				return String.IsNullOrEmpty(path) ? null : (Path)path;
 			}
-
-			private static Boolean IsRelative(String path)
-			{
-				// path must start with "Assets" or "Packages/"
-				// it may also be just "Assets" (length == 6), otherwise a path separator must follow: "Assets/.."
-				path = path.TrimStart('/').ToLower();
-				var startsWithAssets = path.StartsWith("assets");
-				var startsWithPackages = path.StartsWith("packages/");
-				return startsWithAssets && (path.Length <= 6 || path[6].Equals('/')) || startsWithPackages;
-			}
-
-			private static String MakeRelative(String fullOrRelativePath) =>
-				fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
 
 			/// <summary>
-			///     Returns the relative path as string. Same as implicit string conversion.
+			///     Gets the path of an asset file.
 			/// </summary>
-			/// <returns></returns>
-			public override String ToString() => m_RelativePath;
+			/// <param name="guid"></param>
+			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
+			public static Path Get(GUID guid)
+			{
+				var path = AssetDatabase.GUIDToAssetPath(guid);
+				return String.IsNullOrEmpty(path) ? null : (Path)path;
+			}
 		}
 	}
 }

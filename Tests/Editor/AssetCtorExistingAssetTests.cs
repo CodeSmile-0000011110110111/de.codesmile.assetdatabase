@@ -18,7 +18,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 	[Test] public void CtorPath_ExistingPath_Succeeds()
 	{
-		var assetObject = CreateTestAsset(TestAssetPath);
+		var assetObject = CreateTestAssetObject(TestAssetPath);
 
 		var asset = new Asset(TestAssetPath);
 
@@ -34,7 +34,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 	[Test] public void CtorObject_ExistingAsset_Succeeds()
 	{
-		var assetObject = CreateTestAsset(TestAssetPath);
+		var assetObject = CreateTestAssetObject(TestAssetPath);
 
 		var asset = new Asset(assetObject);
 
@@ -50,7 +50,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 	[Test] public void CtorGuid_ExistingAsset_Succeeds()
 	{
-		var assetObject = CreateTestAsset(TestAssetPath);
+		var assetObject = CreateTestAssetObject(TestAssetPath);
 		var guid = Asset.Path.GetGuid(TestAssetPath);
 
 		var asset = new Asset(guid);
