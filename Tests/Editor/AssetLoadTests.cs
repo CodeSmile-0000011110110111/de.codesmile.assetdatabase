@@ -9,7 +9,8 @@ using Object = UnityEngine.Object;
 
 public class AssetLoadTests : AssetTestBase
 {
-	[Test] public void LoadMainStatic_NotExistingPath_IsNull() => Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
+	[Test] public void LoadMainStatic_NotExistingPath_IsNull() =>
+		Assert.Null(Asset.LoadMain<Object>("Assets/exist.not"));
 
 	[Test] public void LoadMainStatic_ExistingPath_Succeeds()
 	{

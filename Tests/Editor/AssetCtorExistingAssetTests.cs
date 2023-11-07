@@ -27,8 +27,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
-	[Test] public void CtorObject_Null_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => new Asset((Object)null));
+	[Test] public void CtorObject_Null_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset((Object)null));
 
 	[Test] public void CtorObject_NotAnAsset_Throws() =>
 		Assert.Throws<ArgumentException>(() => new Asset(Instantiate.ExampleSO()));
@@ -44,8 +43,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
-	[Test] public void CtorGuid_EmptyGuid_Throws() =>
-		Assert.Throws<ArgumentException>(() => new Asset(new GUID()));
+	[Test] public void CtorGuid_EmptyGuid_Throws() => Assert.Throws<ArgumentException>(() => new Asset(new GUID()));
 
 	[Test] public void CtorGuid_NotAnAsset_Throws() =>
 		Assert.Throws<ArgumentException>(() => new Asset(GUID.Generate()));
