@@ -55,13 +55,13 @@ public abstract class AssetTestBase
 	}
 
 	[ExcludeFromCodeCoverage]
-	protected Asset.Path DeleteFileAfterTest(Asset.Path filePath)
+	protected Asset.Path DeleteAfterTest(Asset.Path filePath)
 	{
 		m_TestFilePaths.Add(filePath);
 		return filePath;
 	}
 
-	protected String DeleteFileAfterTest(String filePath)
+	protected String DeleteAfterTest(String filePath)
 	{
 		m_TestFilePaths.Add((Asset.Path)filePath);
 		return filePath;

@@ -10,7 +10,7 @@ public class AssetImportTests : AssetTestBase
 {
 	[Test] public void ImportStatic_SystemIOCreatedFile_ExistsInDatabase()
 	{
-		var testPath = DeleteFileAfterTest("Assets/file.txt");
+		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath, "<for no eyes only>");
 		Assert.Throws<ArgumentException>(() => new Asset(testPath));
 
@@ -22,7 +22,7 @@ public class AssetImportTests : AssetTestBase
 
 	[Test] public void ImportAllStatic_SystemIODeletedFile_AssetObjectLifetimeAsExpected()
 	{
-		var testPath = DeleteFileAfterTest("Assets/file.txt");
+		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath, "<for no eyes only>");
 		Asset.Import(testPath);
 		Assert.DoesNotThrow(() => new Asset(testPath));
@@ -42,7 +42,7 @@ public class AssetImportTests : AssetTestBase
 
 	[Test] public void ImportAllStatic_SystemIOCreatedFile_ExistsInDatabase()
 	{
-		var testPath = DeleteFileAfterTest("Assets/file.txt");
+		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath,
 			"This used to be called Refresh(), ya know? You should prefer Import() of a given path though.");
 		Assert.Throws<ArgumentException>(() => new Asset(testPath));

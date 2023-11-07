@@ -1,10 +1,6 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using System;
-using UnityEditor;
-using Object = UnityEngine.Object;
-
 namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
@@ -30,11 +26,11 @@ namespace CodeSmile.Editor
 
 		public static class SubAsset
 		{
-			public static Boolean Extract(Object subAsset, Path extractedPath, out String errorMessage)
-			{
-				errorMessage = AssetDatabase.ExtractAsset(subAsset, extractedPath);
-				return errorMessage.Equals(String.Empty);
-			}
+			// public static Boolean Extract(Object subAsset, Path extractedPath, out String errorMessage)
+			// {
+			// 	errorMessage = AssetDatabase.ExtractAsset(subAsset, extractedPath);
+			// 	return errorMessage.Equals(String.Empty);
+			// }
 
 			//
 			// // TODO: this could operate on the main or any of the sub assets

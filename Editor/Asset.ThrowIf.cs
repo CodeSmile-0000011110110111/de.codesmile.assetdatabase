@@ -67,6 +67,15 @@ namespace CodeSmile.Editor
 				if (typeof(T).IsAssignableFrom(assetType) == false)
 					throw new ArgumentException($"'{typeof(T)}' not assignable from asset type '{assetType}'");
 			}
+
+			public static void OverwritingSamePath(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
+			{
+				if (overwriteExisting && sourcePath.Equals(destinationPath))
+				{
+					throw new ArgumentException(
+						$"destination path must not equal source if overwrite is specified: {destinationPath}");
+				}
+			}
 		}
 	}
 }
