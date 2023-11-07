@@ -8,7 +8,7 @@ using System.IO;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-public class AssetCtorExistingAssetTests : AssetTestBase
+public class AssetCtorExistingTests : AssetTestBase
 {
 	[Test] public void CtorPath_Null_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset((Asset.Path)null));
@@ -24,7 +24,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
+		Assert.AreEqual(asset.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
 	[Test] public void CtorObject_Null_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset((Object)null));
@@ -40,7 +40,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.AreEqual(asset.AssetPath.Guid, Asset.Path.GetGuid(TestAssetPath));
+		Assert.AreEqual(asset.Guid, Asset.Path.GetGuid(TestAssetPath));
 	}
 
 	[Test] public void CtorGuid_EmptyGuid_Throws() => Assert.Throws<ArgumentException>(() => new Asset(new GUID()));
@@ -57,7 +57,7 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 
 		Assert.True(asset.AssetPath == TestAssetPath);
 		Assert.AreEqual(asset.MainObject, assetObject);
-		Assert.True(asset.AssetPath.Guid.Equals(guid));
+		Assert.True(asset.Guid.Equals(guid));
 	}
 
 	[Test] public void CtorGuid_ExistingFolder_Succeeds()
@@ -69,6 +69,6 @@ public class AssetCtorExistingAssetTests : AssetTestBase
 		Assert.True(asset.AssetPath == "Assets");
 		Assert.NotNull(asset.MainObject);
 		Assert.AreEqual(asset.MainObject.GetType(), typeof(DefaultAsset));
-		Assert.True(asset.AssetPath.Guid.Equals(guid));
+		Assert.True(asset.Guid.Equals(guid));
 	}
 }

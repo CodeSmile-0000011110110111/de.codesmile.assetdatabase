@@ -5,7 +5,7 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 
-public class AssetCreateTests : AssetTestBase
+public class AssetCtorCreateTests : AssetTestBase
 {
 	[Test] public void CtorCreate_NullObject_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset(null, (String)TestAssetPath));
