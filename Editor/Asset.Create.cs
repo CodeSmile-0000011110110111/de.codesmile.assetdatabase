@@ -20,7 +20,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		public static Asset Create(Object obj, Path path, Boolean overwriteExisting = false)
 		{
-			Path.CreateFolders(path);
+			path.CreateFolders();
 			CreateAssetInternal(obj, path, overwriteExisting);
 			return new Asset(obj);
 		}

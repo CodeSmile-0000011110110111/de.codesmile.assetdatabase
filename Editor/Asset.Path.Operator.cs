@@ -12,14 +12,16 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Implicit conversion to string (relative asset path). Same as ToString().
 			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
 			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
 
 			/// <summary>
-			///     Explicit creation of an AssetPath instance initialized with a string path (full or relative).
+			///     Implicit conversion of an AssetPath instance from a string path (full or relative).
 			/// </summary>
 			/// <param name="fullOrRelativePath"></param>
 			/// <returns></returns>
-			public static explicit operator Path(String fullOrRelativePath) =>
+			public static implicit operator Path(String fullOrRelativePath) =>
 				fullOrRelativePath != null ? new Path(fullOrRelativePath) : null;
 
 			public static Boolean operator ==(Path ap1, Path ap2)

@@ -32,7 +32,7 @@ namespace CodeSmile.Editor
 			ThrowIf.ExistingAsset(obj);
 
 			Create(obj, path, overwriteExisting);
-			SetMainObjectAndPath(obj);
+			SetMainObjectAndAssetPath(obj);
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <exception cref="ArgumentNullException">If the assetPath is null.</exception>
 		/// <exception cref="FileNotFoundException">If the assetPath does not point to an existing asset file.</exception>
-		public Asset(Path path) => SetMainObjectAndPath(path);
+		public Asset(Path path) => SetMainObjectAndAssetPath(path);
 
 		/// <summary>
 		///     Returns an instance from a path to an existing asset.
@@ -73,16 +73,16 @@ namespace CodeSmile.Editor
 		/// <param name="obj"></param>
 		/// <exception cref="ArgumentNullException">If the object is null.</exception>
 		/// <exception cref="ArgumentException">If the object is not an asset reference.</exception>
-		public Asset(Object obj) => SetMainObjectAndPath(obj);
+		public Asset(Object obj) => SetMainObjectAndAssetPath(obj);
 
 		/// <summary>
 		///     Returns an instance from an existing asset's GUID.
 		/// </summary>
 		/// <param name="assetGuid"></param>
 		/// <exception cref="ArgumentException">If the GUID is not in the AssetDatabase (not an asset).</exception>
-		public Asset(GUID assetGuid) => SetMainObjectAndPath(assetGuid);
+		public Asset(GUID assetGuid) => SetMainObjectAndAssetPath(assetGuid);
 
-		private void SetMainObjectAndPath(Path path)
+		private void SetMainObjectAndAssetPath(Path path)
 		{
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.DoesNotExistInFileSystem(path);
@@ -92,7 +92,7 @@ namespace CodeSmile.Editor
 			ThrowIf.NotInDatabase(m_MainObject, m_AssetPath);
 		}
 
-		private void SetMainObjectAndPath(Object obj)
+		private void SetMainObjectAndAssetPath(Object obj)
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
 			ThrowIf.NotInDatabase(obj);
@@ -101,11 +101,13 @@ namespace CodeSmile.Editor
 			m_AssetPath = (Path)AssetDatabase.GetAssetPath(obj);
 		}
 
-		private void SetMainObjectAndPath(GUID guid)
+		private void SetMainObjectAndAssetPath(GUID guid)
 		{
 			ThrowIf.NotAnAssetGuid(guid);
 
-			SetMainObjectAndPath((Path)AssetDatabase.GUIDToAssetPath(guid));
+			SetMainObjectAndAssetPath((Path)AssetDatabase.GUIDToAssetPath(guid));
 		}
+
+		private void SetAssetPathFromObject() => m_AssetPath = Path.Get(m_MainObject);
 	}
 }

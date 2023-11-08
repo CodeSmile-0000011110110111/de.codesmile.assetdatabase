@@ -4,6 +4,7 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
+using Object = UnityEngine.Object;
 
 public class AssetCtorCreateTests : AssetTestBase
 {
@@ -51,7 +52,7 @@ public class AssetCtorCreateTests : AssetTestBase
 
 	[Test] public void CtorCreate_ObjectNotAnAssetAndValidPath_CreatesAsset()
 	{
-		var obj = DeleteAfterTest(Instantiate.ExampleSO());
+		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
 		new Asset(obj, (String)TestAssetPath);
 
@@ -60,7 +61,7 @@ public class AssetCtorCreateTests : AssetTestBase
 
 	[Test] public void CtorCreate_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
 	{
-		var obj = DeleteAfterTest(Instantiate.ExampleSO());
+		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
 		new Asset(obj, (String)TestSubFoldersAssetPath);
 

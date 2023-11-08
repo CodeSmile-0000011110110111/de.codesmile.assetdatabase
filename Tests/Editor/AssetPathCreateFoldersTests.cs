@@ -9,7 +9,7 @@ using UnityEditor;
 public class AssetPathCreateFoldersTests : AssetTestBase
 {
 	[Test] public void CreateFolders_NullPath_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
+		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders((Asset.Path)null));
 
 	[TestCase("Assets")]
 	[TestCase(TestSubFoldersPath)]
@@ -19,10 +19,10 @@ public class AssetPathCreateFoldersTests : AssetTestBase
 	{
 		// create the folder first
 		var assetPath = (Asset.Path)dirPath;
-		Asset.Path.CreateFolders(assetPath);
+		assetPath.CreateFolders();
 		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
 
-		var folderGuid = Asset.Path.CreateFolders(assetPath);
+		var folderGuid = assetPath.CreateFolders();
 
 		Assert.False(folderGuid.Empty());
 		// we test for "assumptive" folder because some test cases include paths to a non-existing file

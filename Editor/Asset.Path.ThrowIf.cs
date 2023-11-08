@@ -18,11 +18,11 @@ namespace CodeSmile.Editor
 						throw new ArgumentNullException(argName);
 				}
 
-				public static void NotAProjectPath(String normalizedPath, String fullPath)
+				public static void NotAProjectPath(String fullPath)
 				{
 					var rootPath = FullProjectPath;
-					if (normalizedPath.StartsWith(rootPath) == false)
-						throw new ArgumentException($"not a project path: '{fullPath}' - must start with: {rootPath}");
+					if (fullPath.StartsWith(rootPath) == false)
+						throw new ArgumentException($"invalid relative or project path: '{fullPath}' - relative paths must start with 'Assets', full paths must include the project's root directory");
 				}
 
 				public static void NullOrWhitespace(String param, String paramName)

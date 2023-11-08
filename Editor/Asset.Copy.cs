@@ -27,23 +27,9 @@ namespace CodeSmile.Editor
 			ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);
 
 			var newPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
-			Path.CreateFolders(newPath);
+			newPath.CreateFolders();
 			return AssetDatabase.CopyAsset(sourcePath, newPath);
 		}
-
-		/// <summary>
-		///     Makes a copy of the source asset and saves it in the destination.
-		///     Will create destination path folders if necessary.
-		/// </summary>
-		/// <param name="sourcePath">the source asset to copy from</param>
-		/// <param name="destinationPath">the destination path the copy is saved</param>
-		/// <param name="overwriteExisting">
-		///     True if an existing destination asset should be replaced. False if a unique filename
-		///     should be generated.
-		/// </param>
-		/// <returns>True if copying succeeded, false if it failed.</returns>
-		public static Boolean Copy(String sourcePath, String destinationPath, Boolean overwriteExisting = false) =>
-			Copy((Path)sourcePath, (Path)destinationPath, overwriteExisting);
 
 		/// <summary>
 		///     Makes a copy of the asset.

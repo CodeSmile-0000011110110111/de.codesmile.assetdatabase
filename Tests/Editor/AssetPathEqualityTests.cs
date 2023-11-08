@@ -68,7 +68,7 @@ public class AssetPathEqualityTests
 		Assert.True(new Asset.Path(Application.dataPath) != null);
 		Assert.False(null == new Asset.Path(Application.dataPath));
 		Assert.False(new Asset.Path(Application.dataPath) == null);
-		Assert.False(new Asset.Path(Application.dataPath + "/file.ext").Equals(null));
+		Assert.False(new Asset.Path(Application.dataPath + "/file.ext").Equals((Asset.Path)null));
 	}
 
 	[Test] public void AssetPath_GetHashCode_SameAsToStringHashCode()

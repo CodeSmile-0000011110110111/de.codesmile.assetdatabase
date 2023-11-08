@@ -196,4 +196,20 @@ public class AssetPathTests : AssetTestBase
 			var fp = path.FolderPath;
 		});
 	}
+
+	[TestCase("Assets", "", "Assets")]
+	[TestCase("Assets/Folder",  "nope", "Assets/nope")]
+	[TestCase("Assets/Folder.ext/file", "name", "Assets/Folder.ext/name")]
+	[TestCase("Assets/Folder/File.ext", "New","Assets/Folder/New")]
+	[TestCase("Assets/Folder/File.ext", "New.thing","Assets/Folder/New.thing")]
+	[TestCase("Assets/Folder/File.ext", "Very/Path/Folders.ext/New.thing","Assets/Folder/New.thing")]
+	public void Rename_VariousCases_AsExpected(string input, string newFileName, string expected)
+	{
+		var path = (Asset.Path)input;
+
+		var success = path.Rename(newFileName);
+
+		Assert.AreEqual(expected, path);
+		Assert.True(string.IsNullOrEmpty(newFileName) ? success == false : success);
+	}
 }
