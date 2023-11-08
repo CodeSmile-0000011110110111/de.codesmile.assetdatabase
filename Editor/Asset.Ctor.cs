@@ -36,36 +36,12 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Returns an instance by creating (saving) the object as an asset file at the given path.
-		///     The object must not already be an asset. If it is an asset you must use the ctor without a path.
-		/// </summary>
-		/// <param name="obj">The object to create/save as asset file.</param>
-		/// <param name="path">The path to the asset file. It must have a valid asset extension.</param>
-		/// <param name="overwriteExisting">
-		///     If true, will overwrite any existing asset file at the location. Otherwise may generate
-		///     a uniquely numbered file name.
-		/// </param>
-		/// <exception cref="ArgumentNullException">If the object is null.</exception>
-		/// <exception cref="ArgumentNullException">If the assetPath is null.</exception>
-		/// <exception cref="ArgumentException">If the object already is an asset.</exception>
-		public Asset(Object obj, String path, Boolean overwriteExisting = false) :
-			this(obj, (Path)path, overwriteExisting) {}
-
-		/// <summary>
 		///     Returns an instance from a path to an existing asset.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <exception cref="ArgumentNullException">If the assetPath is null.</exception>
 		/// <exception cref="FileNotFoundException">If the assetPath does not point to an existing asset file.</exception>
 		public Asset(Path path) => SetMainObjectAndAssetPath(path);
-
-		/// <summary>
-		///     Returns an instance from a path to an existing asset.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <exception cref="ArgumentNullException">If the assetPath is null.</exception>
-		/// <exception cref="FileNotFoundException">If the assetPath does not point to an existing asset file.</exception>
-		public Asset(String path) : this(new Path(path)) {}
 
 		/// <summary>
 		///     Returns an instance from an existing asset reference.

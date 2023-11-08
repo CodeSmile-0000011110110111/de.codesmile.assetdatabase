@@ -16,12 +16,6 @@ namespace CodeSmile.Editor
 		public static Boolean Delete(Path path) => path != null && path.Exists && AssetDatabase.DeleteAsset(path);
 
 		/// <summary>
-		///     Deletes the asset file. Does nothing if there is no file at the given path.
-		/// </summary>
-		/// <param name="path"></param>
-		public static Boolean Delete(String path) => Delete((Path)path);
-
-		/// <summary>
 		///     Deletes the asset. Does nothing if the object is not an asset.
 		/// </summary>
 		/// <param name="path"></param>

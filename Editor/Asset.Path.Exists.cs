@@ -42,28 +42,14 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Boolean FileExists(Path path) => FileExists((String)path);
-
-			/// <summary>
-			///     Tests if the given file exists.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static Boolean FileExists(String path) => File.Exists(path);
+			public static Boolean FileExists(Path path) => File.Exists(path.m_RelativePath);
 
 			/// <summary>
 			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
 			/// </summary>
 			/// <param name="path">path to a file or folder</param>
 			/// <returns>true if the folder exists</returns>
-			public static Boolean FolderExists(Path path) => FolderExists((String)path);
-
-			/// <summary>
-			///     Returns true if the folder exists. Also works with paths pointing to a file.
-			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>true if the folder exists</returns>
-			public static Boolean FolderExists(String path) => path != null ? AssetDatabase.IsValidFolder(path) : false;
+			public static Boolean FolderExists(Path path) => path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
 		}
 	}
 }

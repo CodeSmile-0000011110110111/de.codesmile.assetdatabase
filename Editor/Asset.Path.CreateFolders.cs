@@ -43,14 +43,6 @@ namespace CodeSmile.Editor
 				return folderGuid;
 			}
 
-			/// <summary>
-			///     Creates the folders in the path recursively. Path may point to a file, but only folders
-			///     will be created.
-			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
-			public static GUID CreateFolders(String path) => CreateFolders((Path)path);
-
 			private static GUID GuidForExistingPath(String path) =>
 				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
 
@@ -60,7 +52,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path">path to a file or folder</param>
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
-			public GUID CreateFolders() => CreateFolders(m_RelativePath);
+			public GUID CreateFolders() => CreateFolders(this);
 
 			private Path ToFolderPath() => new(System.IO.Path.GetDirectoryName(m_RelativePath));
 		}

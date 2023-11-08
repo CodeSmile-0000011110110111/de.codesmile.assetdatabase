@@ -19,10 +19,9 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Implicit conversion of an AssetPath instance from a string path (full or relative).
 			/// </summary>
-			/// <param name="fullOrRelativePath"></param>
+			/// <param name="path"></param>
 			/// <returns></returns>
-			public static implicit operator Path(String fullOrRelativePath) =>
-				fullOrRelativePath != null ? new Path(fullOrRelativePath) : null;
+			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
 
 			public static Boolean operator ==(Path ap1, Path ap2)
 			{

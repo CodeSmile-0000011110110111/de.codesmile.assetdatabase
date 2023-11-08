@@ -39,13 +39,6 @@ namespace CodeSmile.Editor
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
-		///     Returns the type of the main asset at the path.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>the type of the asset or null if the path does not exist</returns>
-		public static Type GetMainType(String path) => GetMainType((Path)path);
-
-		/// <summary>
 		///     Query the status of an asset.
 		/// </summary>
 		public static class Status // class needed: there are non-static methods of the same name

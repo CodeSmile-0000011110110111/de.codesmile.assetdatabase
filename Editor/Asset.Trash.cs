@@ -18,14 +18,6 @@ namespace CodeSmile.Editor
 		public static Boolean Trash(Path path) => path != null && path.Exists && AssetDatabase.MoveAssetToTrash(path);
 
 		/// <summary>
-		///     Moves the asset file to the OS trash (same as Delete, but recoverable).
-		///     Does nothing if there is no file at the given path.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>True if successfully trashed</returns>
-		public static Boolean Trash(String path) => Trash((Path)path);
-
-		/// <summary>
 		///     Moves the asset to the OS trash (same as Delete, but recoverable).
 		///     Does nothing if the object is not an asset.
 		/// </summary>

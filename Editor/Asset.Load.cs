@@ -20,16 +20,6 @@ namespace CodeSmile.Editor
 		public static T LoadMain<T>(Path path) where T : Object => (T)AssetDatabase.LoadMainAssetAtPath(path);
 
 		/// <summary>
-		///     Loads the main asset object at the path.
-		///     Commonly this is the only object of the asset, but there are assets that
-		///     consist of multiple objects such as Mesh assets that may contain for example animations and materials.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <typeparam name="T"></typeparam>
-		/// <returns>The asset object or null if the path does not exist or the asset is not imported.</returns>
-		public static T LoadMain<T>(String path) where T : Object => LoadMain<T>((Path)path);
-
-		/// <summary>
 		///     Loads the main asset object for the guid.
 		///     Commonly this is the only object of the asset, but there are assets that
 		///     consist of multiple objects such as Mesh assets that may contain for example animations and materials.
