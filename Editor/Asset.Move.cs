@@ -18,6 +18,13 @@ namespace CodeSmile.Editor
 		                                                                        destinationPath != null &&
 		                                                                        Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));
 
+		/// <summary>
+		///     Moves an asset from source to destination path. Any non-existing folders in destination path
+		///     will be created.
+		/// </summary>
+		/// <param name="sourcePath"></param>
+		/// <param name="destinationPath"></param>
+		/// <returns>True if the move was successful.</returns>
 		public static Boolean Move(Path sourcePath, Path destinationPath)
 		{
 			if (sourcePath == null || destinationPath == null)
@@ -34,6 +41,13 @@ namespace CodeSmile.Editor
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
 		public Boolean CanMove(Path destinationPath) => CanMove(m_AssetPath, destinationPath);
 
+		/// <summary>
+		///     Moves asset to destination path. Any non-existing folders in destination path
+		///     will be created. AssetPath property is updated accordingly.
+		/// </summary>
+		/// <param name="sourcePath"></param>
+		/// <param name="destinationPath"></param>
+		/// <returns>True if the move was successful.</returns>
 		public Boolean Move(Path destinationPath)
 		{
 			if (Move(m_AssetPath, destinationPath))

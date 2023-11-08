@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEngine;
 
@@ -39,15 +40,16 @@ namespace CodeSmile.Editor
 			///     Returns the extension of the file path.
 			/// </summary>
 			/// <value>The extension with a leading dot (eg '.txt') or an empty string.</value>
-			public String Extension => System.IO.Path.GetExtension(m_RelativePath);
+			[ExcludeFromCodeCoverage] public String Extension => System.IO.Path.GetExtension(m_RelativePath);
 			/// <summary>
 			///     Returns the file name with extension.
 			/// </summary>
-			public String FileName => System.IO.Path.GetFileName(m_RelativePath);
+			[ExcludeFromCodeCoverage] public String FileName => System.IO.Path.GetFileName(m_RelativePath);
 			/// <summary>
 			///     Returns the file name without extension.
 			/// </summary>
-			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
+			[ExcludeFromCodeCoverage] public String FileNameWithoutExtension =>
+				System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
 			/// <summary>
 			///     Returns the directory name.
 			/// </summary>

@@ -11,6 +11,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Renames an asset's file or folder name.
 		///     NOTE: Cannot be used to change a file's extension. Use Move instead.
+		///     <see cref="Move" />
 		/// </summary>
 		/// <param name="assetPath">The path to the file or folder to rename.</param>
 		/// <param name="newFileName">
@@ -34,6 +35,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Renames an asset's file or folder name.
 		///     NOTE: Cannot be used to change a file's extension. Use Move instead.
+		///     <see cref="Move" />
 		/// </summary>
 		/// <param name="newFileName">
 		///     The new name of the file or folder, without extension. You may pass in a

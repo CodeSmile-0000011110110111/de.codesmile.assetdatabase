@@ -44,6 +44,7 @@ public class AssetDeleteTests : AssetTestBase
 		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
 
 		var deletedObj = asset.Delete();
+		asset.Delete(); // delete again should not do anything
 
 		Assert.NotNull(deletedObj);
 		Assert.False(Asset.Exists(deletedObj));
