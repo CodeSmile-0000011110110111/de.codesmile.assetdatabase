@@ -29,7 +29,7 @@ namespace CodeSmile.Editor
 		{
 			var asset = CreateTestAsset(TestAssetPath);
 
-			var canMove = asset.CanMove((Asset.Path)destPath);
+			var canMove = asset.CanMove(destPath);
 
 			Assert.AreEqual(expectedCanMove, canMove);
 		}
@@ -52,7 +52,7 @@ namespace CodeSmile.Editor
 			var destPath = "Assets/subfolder/now with a different.extension";
 			var asset = CreateTestAsset(TestAssetPath);
 
-			var didMove = asset.Move((Asset.Path)destPath);
+			var didMove = asset.Move(destPath);
 
 			Assert.AreEqual(String.Empty, Asset.LastErrorMessage);
 			Assert.True(didMove);

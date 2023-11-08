@@ -22,7 +22,8 @@ namespace CodeSmile.Editor
 				{
 					var rootPath = FullProjectPath;
 					if (fullPath.StartsWith(rootPath) == false)
-						throw new ArgumentException($"invalid relative or project path: '{fullPath}' - relative paths must start with 'Assets', full paths must include the project's root directory");
+						throw new ArgumentException(
+							$"invalid relative or project path: '{fullPath}' - relative paths must start with 'Assets', full paths must include the project's root directory");
 				}
 
 				public static void NullOrWhitespace(String param, String paramName)

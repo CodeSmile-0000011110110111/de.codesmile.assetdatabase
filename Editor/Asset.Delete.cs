@@ -28,7 +28,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns>
 		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
-		///		Returns null if the object wasn't deleted.
+		///     Returns null if the object wasn't deleted.
 		/// </returns>
 		public Object Delete()
 		{

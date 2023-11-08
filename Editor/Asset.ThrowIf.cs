@@ -76,7 +76,6 @@ namespace CodeSmile.Editor
 						$"destination path must not equal source if overwrite is specified: {destinationPath}");
 				}
 			}
-
 		}
 	}
 }

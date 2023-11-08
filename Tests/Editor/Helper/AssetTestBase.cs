@@ -63,7 +63,7 @@ public abstract class AssetTestBase
 
 	protected String DeleteAfterTest(String filePath)
 	{
-		m_TestFilePaths.Add((Asset.Path)filePath);
+		m_TestFilePaths.Add(filePath);
 		return filePath;
 	}
 

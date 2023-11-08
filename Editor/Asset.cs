@@ -37,13 +37,13 @@ namespace CodeSmile.Editor
 		public static String LastErrorMessage => s_ErrorMessage;
 
 		/// <summary>
-		/// Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
+		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
 		/// </summary>
 		/// <param name="asset"></param>
 		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
 
 		/// <summary>
-		/// Implicit conversion of UnityEngine.Object to an asset instance.
+		///     Implicit conversion of UnityEngine.Object to an asset instance.
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>

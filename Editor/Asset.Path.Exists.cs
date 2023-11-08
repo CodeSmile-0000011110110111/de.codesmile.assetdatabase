@@ -49,7 +49,8 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path">path to a file or folder</param>
 			/// <returns>true if the folder exists</returns>
-			public static Boolean FolderExists(Path path) => path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
+			public static Boolean FolderExists(Path path) =>
+				path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
 		}
 	}
 }

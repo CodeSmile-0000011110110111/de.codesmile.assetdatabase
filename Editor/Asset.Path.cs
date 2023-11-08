@@ -41,15 +41,15 @@ namespace CodeSmile.Editor
 			/// <value>The extension with a leading dot (eg '.txt') or an empty string.</value>
 			public String Extension => System.IO.Path.GetExtension(m_RelativePath);
 			/// <summary>
-			/// Returns the file name with extension.
+			///     Returns the file name with extension.
 			/// </summary>
 			public String FileName => System.IO.Path.GetFileName(m_RelativePath);
 			/// <summary>
-			/// Returns the file name without extension.
+			///     Returns the file name without extension.
 			/// </summary>
 			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
 			/// <summary>
-			/// Returns the directory name.
+			///     Returns the directory name.
 			/// </summary>
 			public String DirectoryName => System.IO.Path.GetDirectoryName(m_RelativePath).ToForwardSlashes();
 

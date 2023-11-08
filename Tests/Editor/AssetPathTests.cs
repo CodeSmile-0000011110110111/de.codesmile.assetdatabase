@@ -18,7 +18,7 @@ public class AssetPathTests : AssetTestBase
 	[Test] public void AssetPath_DefaultCtor_ExplicitConversionEqualsAssetsString()
 	{
 		Assert.AreEqual("Assets", (String)new Asset.Path());
-		new Action<Asset.Path>(assetPath => Assert.AreEqual("Assets", assetPath)).Invoke((Asset.Path)"Assets");
+		new Action<Asset.Path>(assetPath => Assert.AreEqual("Assets", assetPath)).Invoke("Assets");
 	}
 
 	[Test] public void AssetPath_NullString_Throws() =>
@@ -198,18 +198,18 @@ public class AssetPathTests : AssetTestBase
 	}
 
 	[TestCase("Assets", "", "Assets")]
-	[TestCase("Assets/Folder",  "nope", "Assets/nope")]
+	[TestCase("Assets/Folder", "nope", "Assets/nope")]
 	[TestCase("Assets/Folder.ext/file", "name", "Assets/Folder.ext/name")]
-	[TestCase("Assets/Folder/File.ext", "New","Assets/Folder/New")]
-	[TestCase("Assets/Folder/File.ext", "New.thing","Assets/Folder/New.thing")]
-	[TestCase("Assets/Folder/File.ext", "Very/Path/Folders.ext/New.thing","Assets/Folder/New.thing")]
-	public void Rename_VariousCases_AsExpected(string input, string newFileName, string expected)
+	[TestCase("Assets/Folder/File.ext", "New", "Assets/Folder/New")]
+	[TestCase("Assets/Folder/File.ext", "New.thing", "Assets/Folder/New.thing")]
+	[TestCase("Assets/Folder/File.ext", "Very/Path/Folders.ext/New.thing", "Assets/Folder/New.thing")]
+	public void Rename_VariousCases_AsExpected(String input, String newFileName, String expected)
 	{
 		var path = (Asset.Path)input;
 
 		var success = path.Rename(newFileName);
 
 		Assert.AreEqual(expected, path);
-		Assert.True(string.IsNullOrEmpty(newFileName) ? success == false : success);
+		Assert.True(String.IsNullOrEmpty(newFileName) ? success == false : success);
 	}
 }
