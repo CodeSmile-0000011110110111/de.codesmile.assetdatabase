@@ -35,7 +35,8 @@ GUID guid = objAsset.Guid;
 
 // Save modifications to the object:
 (objAsset as MyScriptableObject).BobbyBrown = "My teeth is shiny!";
-objAsset.ForceSave(); // calls SetDirty on the object before saving (not for Bobby, but the script-only modification of the property requires SetDirty) 
+objAsset.ForceSave(); // calls SetDirty on the object before saving
+// (dirty is not for Bobby but the script-only property change requires SetDirty) 
 
 // save object if it was marked dirty, otherwise skips serialization
 objAsset.Save();
