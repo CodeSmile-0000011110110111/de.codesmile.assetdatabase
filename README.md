@@ -60,17 +60,33 @@ There's a whole lot more and it's all as simple as that PLUS extra error checkin
 Here it's guaranteed:
 ```
 Asset.BatchEditing(() => {
-    // your complex, mass asset editing code ...
+    // your complex, mass asset editing code safely wrapped in try/finally ...
 });
 ```
 
 ## Notable changes / additions
 
-You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes, and has checks for file existance, methods to create the folders in a path, rename the file, and more.
+### Asset.Path
+You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to create the folders in a path, rename the file, and more more more ...
 
-Path operations are often at the heart of working with the AssetDatabase. It demanded a class of its own to handle all the various quirks and common oversights.
+Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW this happened to you too, right? 
+
+Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one single backslash.
 
 The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.
+
+```
+Asset.Path assetPath = "Assets/subfolder/myfile.asset"; // implicit conversion
+Asset.Path assetPath = "myfile.asset"; // ERROR: missing 'Assets'
+Asset.Path assetPath = "Assets/subf?lder/my|file.asset"; // ERROR: illegal chars
+
+string strPath = assetPath; // implicit conversion
+
+strPath = "C:\\Users\\Urso Clever\\Desktop\\MyPorject\\Assets\\myfile.asset";
+AssetDatabase.CreateAsset(obj, strPath); // ERROR: used an absolute path, stupid!
+
+Asset.Create(obj, strPath); // this just works - it's magic, maaagic!
+```
 
 ### Where is Refresh() ?
 
