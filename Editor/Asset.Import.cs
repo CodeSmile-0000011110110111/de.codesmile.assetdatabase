@@ -22,29 +22,6 @@ namespace CodeSmile.Editor
 				AssetDatabase.ImportAsset(path, options);
 		}
 
-		/// <summary>
-		///     <p>
-		///         Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally.
-		///         External is defined as 'any file modification operation not done through the AssetDatabase', for
-		///         example by using System.IO methods or by running scripts and other external tools.
-		///     </p>
-		///     <p>
-		///         Since Refresh() 'traditionally' gets called way too many times needlessly a more descriptive name
-		///         was chosen to reflect what this method does. I even considered naming it 100% accurately as:
-		///         ImportExternallyModifiedAndUnloadUnusedAssets()
-		///     </p>
-		///     <p>
-		///         CAUTION: Calling this may have an adverse effect on editor performance, since it calls
-		///         Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as
-		///         'dirty' that are only referenced by scripts, leading to potential loss of unsaved data.
-		///         <see cref="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html" />
-		///     </p>
-		///     <see cref="Asset.Import(Path, ImportAssetOptions)" />
-		/// </summary>
-		/// <param name="options"></param>
-		public static void ImportAll(ImportAssetOptions options = ImportAssetOptions.Default) =>
-			AssetDatabase.Refresh(options);
-
 		// NOTE: there is no Import() instance method since the Asset instance's object is guaranteed to be imported
 	}
 }

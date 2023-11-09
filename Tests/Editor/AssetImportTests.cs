@@ -34,7 +34,7 @@ public class AssetImportTests : AssetTestBase
 		Asset.Import(testPath); // Import() does nothing if the path doesn't exist
 		Assert.True(Asset.Database.Contains(asset.MainObject)); // it's still in the database
 
-		Asset.ImportAll();
+		Asset.Database.ImportAll();
 
 		Assert.False(Asset.Database.Contains(asset.MainObject)); // now it's gone
 	}
@@ -47,7 +47,7 @@ public class AssetImportTests : AssetTestBase
 		File.WriteAllText(testPath, "test file contents are irrelevant");
 		Assert.Throws<AssetLoadException>(() => new Asset(testPath)); // throws, asset not in database
 
-		Asset.ImportAll();
+		Asset.Database.ImportAll();
 
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		DeleteAfterTest(new Asset(testPath));

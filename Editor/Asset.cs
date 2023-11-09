@@ -2,7 +2,10 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEditor;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -19,14 +22,54 @@ namespace CodeSmile.Editor
 		///     Returns the asset's main object.
 		/// </summary>
 		public Object MainObject => m_MainObject;
+
+		/// <summary>
+		///     Returns the type of the main asset.
+		/// </summary>
+		public Type Type => MainType(m_AssetPath);
+
 		/// <summary>
 		///     Returns the path to the asset (file or folder).
 		/// </summary>
 		public Path AssetPath => m_AssetPath;
+
 		/// <summary>
 		///     Returns the asset's GUID.
 		/// </summary>
 		public GUID Guid => Path.GetGuid(m_AssetPath);
+
+		/// <summary>
+		///     Returns true after the asset has been deleted.
+		///     <p>
+		///         <see cref="Delete(CodeSmile.Editor.Asset.Path)" /> - <see cref="Trash(CodeSmile.Editor.Asset.Path)" />
+		///     </p>
+		/// </summary>
+		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
+
+		/// <summary>
+		///         Returns whether this is a foreign asset.
+		/// </summary>
+		/// <see cref="IsForeign" />
+		/// <see cref="IsNative" />
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => IsForeign(m_MainObject);
+		/// <summary>
+		///         Returns whether this is a native asset.
+		/// </summary>
+		/// <see cref="IsNative" />
+		/// <see cref="IsForeign" />
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public Boolean IsNativeAsset => IsNative(m_MainObject);
+
+		/// <summary>
+		///     Returns the icon texture associated with the asset type.
+		/// </summary>
+		[ExcludeFromCodeCoverage] public Texture Icon => GetIcon(m_AssetPath);
+
+		/// <summary>
+		/// Returns the assets dependencies recursively. Returns paths to the dependent assets.
+		/// </summary>
+		public string[] Dependencies => GetDependencies(m_AssetPath, true);
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
@@ -62,6 +105,101 @@ namespace CodeSmile.Editor
 		public String LastErrorMessage => GetLastErrorMessage();
 
 		/// <summary>
+		///     Returns the icon associated with the asset type.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
+
+		/// <summary>
+		///     <p>
+		///         Returns whether this is a foreign asset.
+		///     </p>
+		///     <p>
+		///         A foreign asset is any type of file that Unity doesn't use
+		///         directly but rather maintains cached versions of it in the Library folder. For example, a .png image
+		///         is a foreign asset, there is no editor inside Unity for it, and the representation of the .png depends
+		///         on the asset's settings and build platform (eg compression, max size, etc).
+		///         Other foreign assets: scenes (.unity), prefabs, assembly definitions.
+		///     </p>
+		/// </summary>
+		/// <see cref="IsNative" />
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsForeign(Object obj) => AssetDatabase.IsForeignAsset(obj);
+
+		/// <summary>
+		///     Returns whether this is a native asset. Native assets are serialized directly by Unity, such as materials.
+		///     Note that scenes, prefabs and assembly definitions are considered foreign assets.
+		/// </summary>
+		/// <see cref="IsForeign" />
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsNative(Object obj) => AssetDatabase.IsNativeAsset(obj);
+
+		/// <summary>
+		///     Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
+
+		/// <summary>
+		///     Returns whether this object is the asset's 'main' object.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
+
+		/// <summary>
+		///     Returns whether this object's main asset is loaded.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
+		public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(Path.Get(obj));
+
+		/// <summary>
+		///     Returns whether this path's main asset is loaded.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
+		public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
+
+		/// <summary>
+		///     Returns the type of the main asset at the path.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns>the type of the asset or null if the path does not exist</returns>
+		public static Type MainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
+
+		/// <summary>
+		///     Returns true if the asset exists in the Database. Convenient shortcut for Asset.Database.Contains().
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>False if the object is null or not in the database.</returns>
+		public static Boolean Exists(Object obj) => Database.Contains(obj);
+
+		/// <summary>
+		/// Returns the dependencies of the asset at the given path. Returns paths to dependent assets.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <param name="recursive"></param>
+		/// <returns></returns>
+		public static String[] GetDependencies(Path path, Boolean recursive = false) =>
+			AssetDatabase.GetDependencies(path, recursive);
+
+		/// <summary>
+		/// Returns the dependencies of the assets at the given paths. Returns paths to dependent assets.
+		/// </summary>
+		/// <param name="paths"></param>
+		/// <param name="recursive"></param>
+		/// <returns></returns>
+		public static String[] GetDependencies(Path[] paths, Boolean recursive = false) =>
+			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), recursive);
+
+		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a message,
 		///     for example Move and Rename.
 		///     <see cref="Rename" />
@@ -86,7 +224,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
-		public T Get<T>() where T : Object => m_MainObject as T;
+		[ExcludeFromCodeCoverage] public T Get<T>() where T : Object => m_MainObject as T;
 
 		private void InvalidateInstance()
 		{

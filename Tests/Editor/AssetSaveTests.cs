@@ -47,7 +47,7 @@ public class AssetSaveTests : AssetTestBase
 
 		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
 		soAsset.SetMainObjectDirty(); // dirty it manually because SaveAll has no 'force' variant
-		Asset.SaveAll();
+		Asset.Database.SaveAll();
 
 		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
 	}
