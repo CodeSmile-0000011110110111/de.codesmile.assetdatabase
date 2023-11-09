@@ -29,12 +29,6 @@ namespace CodeSmile.Editor
 		public GUID Guid => Path.GetGuid(m_AssetPath);
 
 		/// <summary>
-		///     Returns the last error message from some file operations that return a Boolean,
-		///     for example: Move, Rename, Copy
-		/// </summary>
-		public String LastErrorMessage => GetLastErrorMessage();
-
-		/// <summary>
 		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
 		/// </summary>
 		/// <param name="asset">The main object of the asset.</param>
@@ -62,6 +56,12 @@ namespace CodeSmile.Editor
 		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
 		/// <summary>
+		///     Returns the last error message from some file operations that return a Boolean,
+		///     for example: Move, Rename, Copy
+		/// </summary>
+		public String LastErrorMessage => GetLastErrorMessage();
+
+		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a message,
 		///     for example Move and Rename.
 		///     <see cref="Rename" />
@@ -77,6 +77,16 @@ namespace CodeSmile.Editor
 			SetLastErrorMessage(possibleErrorMessage);
 			return String.IsNullOrEmpty(GetLastErrorMessage());
 		}
+
+		/// <summary>
+		///     Returns MainObject cast to T, or null. But recommended usage is:
+		///     <p>
+		///         MyType t = asset as MyType;
+		///     </p>
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
+		public T Get<T>() where T : Object => m_MainObject as T;
 
 		private void InvalidateInstance()
 		{

@@ -1,6 +1,6 @@
-# CodeSmile's AssetDatabase
+# CodeSmile AssetDatabase
 
-Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. Fully tested.
+Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. 100% covered by tests.
 
 ## Quick Introduction
 
@@ -27,10 +27,11 @@ Asset guidAsset = guid; // implicit conversion
 Asset existingAsset = new Asset(obj);
 Asset existingAsset = obj; // implicit conversion
 
-// Get the asset's path and object:
+// Get the asset's path, object and guid:
 Asset.Path path = objAsset.AssetPath;
 UnityEngine.Object obj = objAsset.MainObject;
-var mySO = (MyScriptableObject)objAsset; // implicit conversion + cast
+var mySO = objAsset as MyScriptableObject; // implicit conversion + cast
+GUID guid = objAsset.Guid;
 
 // Save modifications to the object:
 (objAsset as MyScriptableObject).BobbyBrown = "My teeth is shiny!";
@@ -62,18 +63,25 @@ Asset.BatchEditing(() => {
 });
 ```
 
+## Notable changes / additions
+
 You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes, and has checks for file existance, methods to create the folders in a path, rename the file, and more.
 
 Path operations are often at the heart of working with the AssetDatabase. It demanded a class of its own to handle all the various quirks and common oversights.
 
+The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.
+
 ### Where is Refresh() ?
 
-Oh, don't get me started. Something ain't quite right? Use AssetDatabase.Refresh(). [OMG WTF!](https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/)
+Oh, don't get me started. Something ain't quite right? Add another AssetDatabase.Refresh(). [OMG WTF!](https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/)
 
 I always wanted this method renamed. Initially I considered the true and honest name: `ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()`
 
 But I decided to just call it: `ImportAll()`
-It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical 'refresh'. It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.
+
+It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical 'refresh'. 
+
+It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.
 
 # Why the GPL 3.0 license?
 
