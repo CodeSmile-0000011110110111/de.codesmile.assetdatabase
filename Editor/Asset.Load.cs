@@ -16,7 +16,20 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>The asset object or null if the path does not exist or the asset is not imported.</returns>
-		public static T LoadMain<T>(Path path) where T : Object => (T)AssetDatabase.LoadMainAssetAtPath(path);
+		public static T LoadMain<T>(Path path) where T : Object
+		{
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+			ThrowIf.DoesNotExistInFileSystem(path);
+
+			var assetType = MainType(path);
+			ThrowIf.AssetNotImported(path, assetType);
+			ThrowIf.AssetTypeMismatch<T>(path, assetType);
+
+			var obj = (T)AssetDatabase.LoadMainAssetAtPath(path);
+			ThrowIf.AssetLoadReturnedNull(obj, path); // this may not be necessary but just to be sure
+
+			return obj;
+		}
 
 		/// <summary>
 		///     Loads the main asset object for the guid.
@@ -26,7 +39,11 @@ namespace CodeSmile.Editor
 		/// <param name="guid"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>The asset object or null if the guid is not an asset guid.</returns>
-		public static T LoadMain<T>(GUID guid) where T : Object => LoadMain<T>(Path.Get(guid));
+		public static T LoadMain<T>(GUID guid) where T : Object
+		{
+			ThrowIf.NotAnAssetGuid(guid);
+			return LoadMain<T>(Path.Get(guid));
+		}
 
 		/// <summary>
 		///     Private on purpose: the main object is automatically loaded when instantiating an Asset class.

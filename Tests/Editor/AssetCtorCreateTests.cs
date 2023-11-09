@@ -8,19 +8,19 @@ using Object = UnityEngine.Object;
 
 public class AssetCtorCreateTests : AssetTestBase
 {
-	[Test] public void CtorCreate_NullObject_Throws() =>
+	[Test] public void CreateCtor_NullObject_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset(null, (String)TestAssetPath));
 
-	[Test] public void CtorCreate_NullPath_Throws() =>
+	[Test] public void CreateCtor_NullPath_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset(Instantiate.ExampleSO(), (String)null));
 
-	[Test] public void CtorCreate_ObjectAlreadyAnAsset_Throws()
+	[Test] public void CreateCtor_ObjectAlreadyAnAsset_Throws()
 	{
 		var existing = CreateTestAssetObject(TestAssetPath);
 		Assert.Throws<ArgumentException>(() => new Asset(existing, (String)TestAssetPath));
 	}
 
-	[Test] public void CtorCreate_AssetExistsNoOverwrite_CreatesAssetWithUniqueName()
+	[Test] public void CreateCtor_AssetExistsNoOverwrite_CreatesAssetWithUniqueName()
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAssetObject(testPath);
@@ -35,7 +35,7 @@ public class AssetCtorCreateTests : AssetTestBase
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}
 
-	[Test] public void CtorCreate_AssetExistsShouldOverwrite_ReplacesExistingAsset()
+	[Test] public void CreateCtor_AssetExistsShouldOverwrite_ReplacesExistingAsset()
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAssetObject(testPath);
@@ -50,21 +50,30 @@ public class AssetCtorCreateTests : AssetTestBase
 		Assert.AreNotEqual(existing, newAsset.MainObject);
 	}
 
-	[Test] public void CtorCreate_ObjectNotAnAssetAndValidPath_CreatesAsset()
+	[Test] public void CreateCtor_ObjectNotAnAssetAndValidPath_CreatesAsset()
 	{
 		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
 		new Asset(obj, (String)TestAssetPath);
 
-		Assert.True(TestAssetPath.ExistsInFileSystem);
+		Assert.True(TestAssetPath.Exists);
 	}
 
-	[Test] public void CtorCreate_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
+	[Test] public void CreateCtor_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
 	{
 		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
 		new Asset(obj, (String)TestSubFoldersAssetPath);
 
-		Assert.True(TestSubFoldersAssetPath.ExistsInFileSystem);
+		Assert.True(TestSubFoldersAssetPath.Exists);
+	}
+
+	[Test] public void CreateStatic_ObjectNotAnAssetAndValidPath_CreatesAsset()
+	{
+		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
+
+		Asset.Create(obj, (String)TestAssetPath);
+
+		Assert.True(TestAssetPath.Exists);
 	}
 }

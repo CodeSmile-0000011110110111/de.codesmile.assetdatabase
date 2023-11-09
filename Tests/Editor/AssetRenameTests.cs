@@ -8,6 +8,18 @@ namespace CodeSmile.Editor
 {
 	public class AssetRenameTests : AssetTestBase
 	{
+		[Test] public void RenameStatic_NullPaths_False()
+		{
+			Assert.False(Asset.Move(null, "Assets/moved.asset"));
+			Assert.False(Asset.Move("Assets/not ex.ist", null));
+		}
+
+		[Test] public void Rename_NullPath_False()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			Assert.False(asset.Rename(null));
+		}
+
 		[Test] public void RenameStatic_ExistingFile_DidRename()
 		{
 			var asset = CreateTestAsset(TestAssetPath);

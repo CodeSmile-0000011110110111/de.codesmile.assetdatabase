@@ -10,7 +10,6 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		[ExcludeFromCodeCoverage]
 		internal static class ThrowIf
 		{
 			public static void ArgumentIsNull(Object arg, String argName)
@@ -22,7 +21,7 @@ namespace CodeSmile.Editor
 			public static void DoesNotExistInFileSystem(Path path)
 			{
 				if (path.ExistsInFileSystem == false)
-					throw new FileNotFoundException($"file/folder does not exist: '{path}'");
+					throw new FileNotFoundException($"path does not exist: '{path}'");
 			}
 
 			public static void ExistingAsset(UnityEngine.Object obj)
@@ -34,12 +33,6 @@ namespace CodeSmile.Editor
 			public static void AssetPathNotInDatabase(Path path)
 			{
 				if (path.Exists == false)
-					throw new ArgumentException($"path does not exist or not imported: {path}");
-			}
-
-			public static void NotInDatabase(UnityEngine.Object obj, Path path)
-			{
-				if (Database.Contains(obj) == false)
 					throw new ArgumentException($"path does not exist or not imported: {path}");
 			}
 
@@ -61,19 +54,46 @@ namespace CodeSmile.Editor
 					throw new InvalidOperationException("asset has been deleted");
 			}
 
-			public static void GenericTypeNotAssignableFromAssetType<T>(Path path) where T : UnityEngine.Object
-			{
-				var assetType = GetMainType(path);
-				if (typeof(T).IsAssignableFrom(assetType) == false)
-					throw new ArgumentException($"'{typeof(T)}' not assignable from asset type '{assetType}'");
-			}
-
 			public static void OverwritingSamePath(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
 			{
 				if (overwriteExisting && sourcePath.Equals(destinationPath))
 				{
 					throw new ArgumentException(
 						$"destination path must not equal source if overwrite is specified: {destinationPath}");
+				}
+			}
+
+			public static void AssetNotImported(Path path, Type assetType)
+			{
+				if (assetType == null)
+				{
+					// path exists in file system yet ADB does not know its type - missing Import() ?
+					throw new AssetLoadException("cannot load asset - file exists but asset type is null, " +
+					                             $"most likely the asset has not been imported; path: {path}");
+				}
+			}
+
+			public static void AssetTypeMismatch<T>(Path path, Type assetType) where T : UnityEngine.Object
+			{
+				if (typeof(T).IsAssignableFrom(assetType) == false)
+				{
+					// types just don't match
+					throw new AssetLoadException($"cannot load asset, type mismatch: {typeof(T)} " +
+					                             $"not assignable from asset type: {assetType.FullName}; path: {path}");
+				}
+			}
+
+			[ExcludeFromCodeCoverage]
+			public static void AssetLoadReturnedNull(Object obj, Path path)
+			{
+				if (obj == null)
+				{
+					// path exists + type is known, yet load throws null?
+					// Probably ADB or asset in invalid state ...
+					throw new AssetLoadException("asset load returned null - this can occur if the AssetDatabase " +
+					                             "is currently initializing (eg static ctor) or when importing an asset " +
+					                             "async or while ADB is 'paused', or some other reason (please report); " +
+					                             $"path: {path}");
 				}
 			}
 		}

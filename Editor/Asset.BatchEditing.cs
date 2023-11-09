@@ -3,6 +3,7 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace CodeSmile.Editor
 {
@@ -26,6 +27,11 @@ namespace CodeSmile.Editor
 			{
 				Database.StartAssetEditing();
 				assetEditingAction.Invoke();
+			}
+			catch (Exception ex)
+			{
+				Debug.LogError($"Exception during BatchEditing: {ex.Message}");
+				throw ex; // re-throw to caller
 			}
 			finally
 			{

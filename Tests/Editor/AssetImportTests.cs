@@ -3,7 +3,6 @@
 
 using CodeSmile.Editor;
 using NUnit.Framework;
-using System;
 using System.IO;
 
 public class AssetImportTests : AssetTestBase
@@ -12,7 +11,7 @@ public class AssetImportTests : AssetTestBase
 	{
 		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath, "<for no eyes only>");
-		Assert.Throws<ArgumentException>(() => new Asset(testPath));
+		Assert.Throws<AssetLoadException>(() => new Asset(testPath));
 
 		Asset.Import(testPath);
 
@@ -43,9 +42,10 @@ public class AssetImportTests : AssetTestBase
 	[Test] public void ImportAllStatic_SystemIOCreatedFile_ExistsInDatabase()
 	{
 		var testPath = DeleteAfterTest("Assets/file.txt");
-		File.WriteAllText(testPath,
-			"This used to be called Refresh(), ya know? You should prefer Import() of a given path though.");
-		Assert.Throws<ArgumentException>(() => new Asset(testPath));
+		Assert.Throws<FileNotFoundException>(() => new Asset(testPath)); // throws, file does not exist
+
+		File.WriteAllText(testPath, "test file contents are irrelevant");
+		Assert.Throws<AssetLoadException>(() => new Asset(testPath)); // throws, asset not in database
 
 		Asset.ImportAll();
 

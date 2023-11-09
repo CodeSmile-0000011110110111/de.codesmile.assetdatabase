@@ -8,6 +8,12 @@ namespace CodeSmile.Editor
 {
 	public class AssetMoveTests : AssetTestBase
 	{
+		[Test] public void CanMoveStatic_NullPaths_False()
+		{
+			Assert.False(Asset.CanMove(null, "Assets/moved.asset"));
+			Assert.False(Asset.CanMove("Assets/not ex.ist", null));
+		}
+
 		[Test] public void CanMoveStatic_NonExistingFile_False() =>
 			Assert.False(Asset.CanMove("Assets/file does not exist.asset", "Assets/moved.asset"));
 
@@ -34,6 +40,12 @@ namespace CodeSmile.Editor
 			Assert.AreEqual(expectedCanMove, canMove);
 		}
 
+		[Test] public void MoveStatic_NullPaths_False()
+		{
+			Assert.False(Asset.Move(null, "Assets/moved.asset"));
+			Assert.False(Asset.Move("Assets/not ex.ist", null));
+		}
+
 		[Test] public void MoveStatic_FileToNonExistingFolderAndChangeExtension_Succeeds()
 		{
 			var destPath = "Assets/subfolder/now with a different.extension";
@@ -45,6 +57,12 @@ namespace CodeSmile.Editor
 			Assert.True(didMove);
 			Assert.AreEqual(destPath, Asset.Path.Get(asset.MainObject));
 			Assert.True(((Asset.Path)destPath).Exists);
+		}
+
+		[Test] public void Move_NullPath_False()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			Assert.False(asset.Move(null));
 		}
 
 		[Test] public void Move_FileToNonExistingFolderAndChangeExtension_Succeeds()

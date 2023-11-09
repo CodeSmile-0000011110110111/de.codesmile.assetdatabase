@@ -14,9 +14,13 @@ namespace CodeSmile.Editor
 		/// <param name="sourcePath">The path to an existing asset.</param>
 		/// <param name="destinationPath">The path where to move the asset to. Can have a different extension.</param>
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
-		public static Boolean CanMove(Path sourcePath, Path destinationPath) => sourcePath != null &&
-		                                                                        destinationPath != null &&
-		                                                                        Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));
+		public static Boolean CanMove(Path sourcePath, Path destinationPath)
+		{
+			if (sourcePath == null || destinationPath == null)
+				return false;
+
+			return Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));
+		}
 
 		/// <summary>
 		///     Moves an asset from source to destination path. Any non-existing folders in destination path

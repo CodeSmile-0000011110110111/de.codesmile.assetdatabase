@@ -51,4 +51,12 @@ public class AssetDeleteTests : AssetTestBase
 		Assert.False(TestAssetPath.ExistsInFileSystem);
 		Assert.Null(asset.Delete());
 	}
+
+	[Test] public void Delete_SaveAfterDelete_Throws()
+	{
+		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
+		asset.Delete();
+
+		Assert.Throws<InvalidOperationException>(() => asset.Save());
+	}
 }

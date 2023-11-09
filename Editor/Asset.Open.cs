@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -16,6 +17,7 @@ namespace CodeSmile.Editor
 		/// <param name="obj"></param>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
+		[ExcludeFromCodeCoverage]
 		public static void OpenInDefaultApplication(Object obj, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 			AssetDatabase.OpenAsset(obj, lineNumber, columnNumber);
 
@@ -26,6 +28,7 @@ namespace CodeSmile.Editor
 		/// <param name="obj"></param>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
+		[ExcludeFromCodeCoverage]
 		public static void OpenInDefaultApplication(Int32 instanceId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 			AssetDatabase.OpenAsset(instanceId, lineNumber, columnNumber);
 
@@ -36,6 +39,7 @@ namespace CodeSmile.Editor
 		/// <param name="obj"></param>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
+		[ExcludeFromCodeCoverage]
 		public static void OpenInDefaultApplication(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 			OpenInDefaultApplication(LoadMain<Object>(path), lineNumber, columnNumber);
 
@@ -46,6 +50,7 @@ namespace CodeSmile.Editor
 		/// <param name="obj"></param>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
+		[ExcludeFromCodeCoverage]
 		public void OpenInDefaultApplication(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 			OpenInDefaultApplication(m_MainObject, lineNumber, columnNumber);
 	}
