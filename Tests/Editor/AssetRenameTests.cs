@@ -27,7 +27,7 @@ namespace CodeSmile.Editor
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
 			var success = Asset.Rename((String)asset.AssetPath, newPath);
 
-			Assert.IsEmpty(Asset.LastErrorMessage);
+			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
 			Assert.AreEqual(newPath, Asset.Path.Get(asset.MainObject));
 			Assert.IsTrue(newPath.Exists);
@@ -41,7 +41,7 @@ namespace CodeSmile.Editor
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
 			var success = asset.Rename(newPath);
 
-			Assert.IsEmpty(Asset.LastErrorMessage);
+			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
 			Assert.AreEqual(newPath, asset.AssetPath);
 			Assert.AreEqual(newPath, Asset.Path.Get(asset.MainObject));
@@ -56,7 +56,7 @@ namespace CodeSmile.Editor
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.ext");
 			var success = asset.Rename(newPath);
 
-			Assert.IsEmpty(Asset.LastErrorMessage);
+			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
 			Assert.AreEqual("Assets/NewName.ext.asset", asset.AssetPath);
 		}
@@ -69,7 +69,7 @@ namespace CodeSmile.Editor
 			var asset = DeleteAfterTest(new Asset(assetPath));
 			var success = asset.Rename("PONG");
 
-			Assert.IsEmpty(Asset.LastErrorMessage);
+			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
 			Assert.AreEqual(asset.AssetPath, "Assets/subfolder/PONG");
 		}

@@ -4,6 +4,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace CodeSmile.Editor
@@ -35,6 +37,62 @@ namespace CodeSmile.Editor
 			public const String DefaultExtension = "asset";
 
 			private String m_RelativePath = String.Empty;
+
+			/// <summary>
+			///     Returns true if the path is valid: contains no illegal characters and isn't too long.
+			///     If this returns false, Asset.GetLastErrorMessage() contains detailed information.
+			///     <see cref="Asset.GetLastErrorMessage()" />
+			/// </summary>
+			public Boolean IsValid
+			{
+				get
+				{
+					var isValid = true;
+
+					try
+					{
+						// these will throw if they contain illegal chars
+						System.IO.Path.GetFileName(m_RelativePath);
+						var dirName = System.IO.Path.GetDirectoryName(m_RelativePath);
+
+						// test for remaining two invalid path chars
+						isValid = dirName.Any(c => c == '*' || c == '?') == false;
+					}
+					catch (Exception ex)
+					{
+						SetLastErrorMessage($"{ex.Message}; path: {m_RelativePath}");
+						isValid = false;
+					}
+
+					return isValid;
+				}
+			}
+
+			/// <summary>
+			///     Returns true if the path exists in the AssetDatabase.
+			///     NOTE: This may still return true for asset files that have been deleted externally.
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			public Boolean Exists
+			{
+				get
+				{
+#if UNITY_2023_1_OR_NEWER
+					return AssetDatabase.AssetPathExists(m_RelativePath);
+#else
+					return Guid.Empty() == false;
+#endif
+				}
+			}
+
+			/// <summary>
+			///     Returns true if the path exists in the file system, be it file or folder.
+			///     Returns false if the path does not exist.
+			///     NOTE: This solely checks for physical existance, a new asset at that path may still not 'exist'
+			///     in the database until it has been imported.
+			///     <see cref="Exists" />
+			/// </summary>
+			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
 			/// <summary>
 			///     Returns the extension of the file path.
@@ -106,21 +164,40 @@ namespace CodeSmile.Editor
 			{
 				get
 				{
-					// existing directory? return that
-					if (Directory.Exists(m_RelativePath))
-						return this;
+					try
+					{
+						// existing directory? return that
+						if (Directory.Exists(m_RelativePath))
+							return this;
 
-					// existing file? return folder path
-					if (File.Exists(m_RelativePath))
-						return ToFolderPath();
+						// existing file? return folder path
+						if (File.Exists(m_RelativePath))
+							return ToFolderPath();
 
-					// if it has an extension, assume it's a file (could also be a folder but alas ...)
-					if (System.IO.Path.HasExtension(m_RelativePath))
-						return ToFolderPath();
+						// if it has an extension, assume it's a file (could also be a folder but alas ...)
+						if (System.IO.Path.HasExtension(m_RelativePath))
+							return ToFolderPath();
+					}
+					catch (Exception ex) {}
 
 					return this;
 				}
 			}
+
+			/// <summary>
+			///     Tests if the given file exists.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean FileExists(Path path) => File.Exists(path.m_RelativePath);
+
+			/// <summary>
+			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
+			/// </summary>
+			/// <param name="path">path to a file or folder</param>
+			/// <returns>true if the folder exists</returns>
+			public static Boolean FolderExists(Path path) =>
+				path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
 
 			private static String ToRelative(String fullOrRelativePath)
 			{

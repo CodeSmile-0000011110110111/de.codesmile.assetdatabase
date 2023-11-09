@@ -212,4 +212,13 @@ public class AssetPathTests : AssetTestBase
 		Assert.AreEqual(expected, path);
 		Assert.True(String.IsNullOrEmpty(newFileName) ? success == false : success);
 	}
+
+	[TestCase("Assets", true)]
+	[TestCase("Assets/some/folder/with.file", true)]
+	[TestCase("Assets/illegal path char */folder", false)]
+	[TestCase("Assets/illegal path char ?/folder", false)]
+	[TestCase("Assets/<illegal path char>/folder", false)]
+	[TestCase("Assets/illegal file name |.asset", false)]
+	public void IsValid_VariousCases_AsExpected(String input, Boolean expectedValid) =>
+		Assert.AreEqual(expectedValid, ((Asset.Path)input).IsValid);
 }

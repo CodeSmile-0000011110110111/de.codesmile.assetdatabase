@@ -29,12 +29,10 @@ namespace CodeSmile.Editor
 		public GUID Guid => Path.GetGuid(m_AssetPath);
 
 		/// <summary>
-		///     Returns the last error message returned by some methods that provide such a message,
-		///     for example Move and Rename.
-		///     <see cref="Rename" />
-		///     <see cref="Move" />
+		///     Returns the last error message from some file operations that return a Boolean,
+		///     for example: Move, Rename, Copy
 		/// </summary>
-		public static String LastErrorMessage => s_ErrorMessage;
+		public String LastErrorMessage => GetLastErrorMessage();
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
@@ -63,10 +61,21 @@ namespace CodeSmile.Editor
 		/// <returns>An asset instance or null if guid is empty.</returns>
 		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
+		/// <summary>
+		///     Returns the last error message returned by some methods that provide such a message,
+		///     for example Move and Rename.
+		///     <see cref="Rename" />
+		///     <see cref="Move" />
+		/// </summary>
+		public static String GetLastErrorMessage() => s_ErrorMessage;
+
+		private static void SetLastErrorMessage(String message) =>
+			s_ErrorMessage = message != null ? message : String.Empty;
+
 		private static Boolean Succeeded(String possibleErrorMessage)
 		{
-			s_ErrorMessage = possibleErrorMessage != null ? possibleErrorMessage : String.Empty;
-			return String.IsNullOrEmpty(s_ErrorMessage);
+			SetLastErrorMessage(possibleErrorMessage);
+			return String.IsNullOrEmpty(GetLastErrorMessage());
 		}
 
 		private void InvalidateInstance()

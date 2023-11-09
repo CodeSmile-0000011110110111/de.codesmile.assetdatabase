@@ -53,7 +53,7 @@ namespace CodeSmile.Editor
 
 			var didMove = Asset.Move(TestAssetPath, destPath);
 
-			Assert.AreEqual(String.Empty, Asset.LastErrorMessage);
+			Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());
 			Assert.True(didMove);
 			Assert.AreEqual(destPath, Asset.Path.Get(asset.MainObject));
 			Assert.True(((Asset.Path)destPath).Exists);
@@ -72,7 +72,7 @@ namespace CodeSmile.Editor
 
 			var didMove = asset.Move(destPath);
 
-			Assert.AreEqual(String.Empty, Asset.LastErrorMessage);
+			Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());
 			Assert.True(didMove);
 			Assert.AreEqual(destPath, asset.AssetPath);
 			Assert.True(asset.AssetPath.Exists);

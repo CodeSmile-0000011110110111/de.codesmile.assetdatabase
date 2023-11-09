@@ -3,6 +3,7 @@
 
 using CodeSmile.Editor;
 using NUnit.Framework;
+using System;
 
 public class AssetDatabaseTests : AssetTestBase
 {
@@ -16,4 +17,6 @@ public class AssetDatabaseTests : AssetTestBase
 	[Test] public void Exists_NotAnAsset_False() => Assert.IsFalse(Asset.Exists(Instantiate.ExampleSO()));
 
 	[Test] public void Exists_ExistingAsset_True() => Assert.IsTrue(Asset.Exists(CreateTestAssetObject(TestAssetPath)));
+
+	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.MainType((String)TestAssetPath));
 }

@@ -28,7 +28,16 @@ namespace CodeSmile.Editor
 				return false;
 
 			// also accept full paths .. because, why not?
-			newFileName = System.IO.Path.GetFileName(newFileName);
+			try
+			{
+				newFileName = System.IO.Path.GetFileName(newFileName); // throws on illegal chars
+			}
+			catch (Exception e)
+			{
+				SetLastErrorMessage(e.Message);
+				return false;
+			}
+
 			return Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));
 		}
 

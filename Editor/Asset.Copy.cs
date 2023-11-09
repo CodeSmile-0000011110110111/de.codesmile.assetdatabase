@@ -26,9 +26,15 @@ namespace CodeSmile.Editor
 			ThrowIf.AssetPathNotInDatabase(sourcePath);
 			ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);
 
-			var newPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
-			newPath.CreateFolders();
-			return AssetDatabase.CopyAsset(sourcePath, newPath);
+			var newDestPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
+			if (newDestPath.IsValid == false)
+				return false;
+
+			newDestPath.CreateFolders(); // CanMove fails if the path doesn't exist
+			if (CanMove(sourcePath, newDestPath) == false) // this provides us with a LastErrorMessage
+				return false;
+
+			return AssetDatabase.CopyAsset(sourcePath, newDestPath);
 		}
 
 		/// <summary>

@@ -12,9 +12,9 @@ namespace CodeSmile.Editor
 	{
 		internal static class ThrowIf
 		{
-			public static void ArgumentIsNull(Object arg, String argName)
+			public static void ArgumentIsNull(Object obj, String argName)
 			{
-				if (arg == null)
+				if (obj == null)
 					throw new ArgumentNullException(argName);
 			}
 
@@ -95,6 +95,39 @@ namespace CodeSmile.Editor
 					                             "async or while ADB is 'paused', or some other reason (please report); " +
 					                             $"path: {path}");
 				}
+			}
+
+			public static void PathIsNotValid(Path destinationPath)
+			{
+				if (destinationPath == null)
+					throw new ArgumentNullException(nameof(destinationPath));
+				if (destinationPath.IsValid == false)
+					throw new ArgumentException($"destination path is invalid: {GetLastErrorMessage()}");
+			}
+
+			public static void NotAProjectPath(String fullPath)
+			{
+				var rootPath = Path.FullProjectPath;
+				if (fullPath.StartsWith(rootPath) == false)
+				{
+					throw new ArgumentException(
+						$"invalid relative or project path: '{fullPath}' - relative paths must start with 'Assets', full paths must include the project's root directory");
+				}
+			}
+
+			public static void NullOrWhitespace(String param, String paramName)
+			{
+				if (param == null)
+					throw new ArgumentNullException($"{paramName} is null");
+				if (String.IsNullOrWhiteSpace(param))
+					throw new ArgumentException($"{paramName} is empty or whitespace");
+			}
+
+			public static void ContainsPathSeparators(String fileName, String paramName)
+			{
+				var normalized = fileName.ToForwardSlashes();
+				if (normalized.Contains('/'))
+					throw new ArgumentException($"filename contains path separators: '{fileName}'", paramName);
 			}
 		}
 	}

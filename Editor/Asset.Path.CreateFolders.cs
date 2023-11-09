@@ -18,7 +18,7 @@ namespace CodeSmile.Editor
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
 			public static GUID CreateFolders(Path path)
 			{
-				ThrowIf.ArgumentIsNull(path, nameof(path));
+				ThrowIf.PathIsNotValid(path);
 
 				var folderPath = path.FolderPathAssumptive;
 				if (FileExists(path) || FolderExists(folderPath))
