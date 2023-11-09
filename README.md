@@ -94,7 +94,7 @@ Oh, don't get me started. Something ain't quite right? Add another AssetDatabase
 
 I always wanted this method renamed. Initially I considered the true and honest name: `ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()`
 
-But I decided to just call it: `ImportAll()`
+But I decided to just call it: `Asset.Database.ImportAll()`
 
 It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical 'refresh'. 
 
