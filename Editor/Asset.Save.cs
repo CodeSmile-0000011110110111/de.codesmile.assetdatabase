@@ -36,6 +36,20 @@ namespace CodeSmile.Editor
 			AssetDatabase.SaveAssetIfDirty(guid);
 		}
 
+		/// <summary>
+		///     <p>
+		///         Saves all unsaved (dirty) objects.
+		///     </p>
+		///     <p>
+		///         CAUTION: Consider that the user may NOT want to have unsaved assets 'randomly' saved!
+		///         If you work with specific object(s) already it is in the user's best interest if you use
+		///         Asset.Save(obj) instead. Also consider using Asset.BatchEditing(Action) in that case.
+		///     </p>
+		///     <see cref="Asset.Save(Object)" />
+		///     <see cref="Asset.BatchEditing(System.Action)" />
+		/// </summary>
+		public static void SaveAll() => AssetDatabase.SaveAssets();
+
 		private static Object SaveInternal(Object obj, Boolean forceSave = false)
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));

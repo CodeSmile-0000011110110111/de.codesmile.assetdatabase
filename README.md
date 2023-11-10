@@ -1,10 +1,12 @@
 # CodeSmile AssetDatabase
 
-Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. 100% covered by tests.
+Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. 100%
+covered by tests.
 
 ## Quick Introduction
 
-You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The API offers both explicit and some implicit operations.
+You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The
+API offers both explicit and some implicit operations.
 
 ### Working with Assets the way it was meant to be :)
 
@@ -55,9 +57,11 @@ objAsset.Delete(); // also: objAsset.Trash()
 objAsset = null;
 ```
 
-There's a whole lot more and it's all as simple as that PLUS extra error checking and safety. For instance, batch editing ... yeah, you know you HAVE to wrap it in try/finally but how often did you NOT do it?
+There's a whole lot more and it's all as simple as that PLUS extra error checking and safety. For instance, batch
+editing ... yeah, you know you HAVE to wrap it in try/finally but how often did you NOT do it?
 
 Here it's guaranteed:
+
 ```
 Asset.BatchEditing(() => {
     // your complex, mass asset editing code safely wrapped in try/finally ...
@@ -67,13 +71,21 @@ Asset.BatchEditing(() => {
 ## Notable changes / additions
 
 ### Asset.Path
-You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to create the folders in a path, rename the file, and more more more ...
 
-Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW this happened to you too, right? 
+You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid,
+relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to
+create the folders in a path, rename the file, and more more more ...
 
-Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one single backslash.
+Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton
+of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW
+this happened to you too, right?
 
-The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.
+Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters
+and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one
+single backslash.
+
+The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and
+sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.
 
 ```
 Asset.Path assetPath = "Assets/subfolder/myfile.asset"; // implicit conversion
@@ -90,13 +102,16 @@ Asset.Create(obj, strPath); // this just works - it's magic, maaagic!
 
 ### Where is Refresh() ?
 
-Oh, don't get me started. Something ain't quite right? Add another AssetDatabase.Refresh(). [OMG WTF!](https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/)
+Oh, don't get me started. Something ain't quite right? Add another
+AssetDatabase.Refresh(). [OMG WTF!](https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/)
 
-I always wanted this method renamed. Initially I considered the true and honest name: `ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()`
+I always wanted this method renamed. Initially I considered the true and honest
+name: `ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()`
 
 But I decided to just call it: `Asset.Database.ImportAll()`
 
-It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical 'refresh'. 
+It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical '
+refresh'.
 
 It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.
 

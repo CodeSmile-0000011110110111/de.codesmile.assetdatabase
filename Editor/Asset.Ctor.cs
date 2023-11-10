@@ -29,7 +29,7 @@ namespace CodeSmile.Editor
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.ExistingAsset(obj);
+			ThrowIf.AlreadyInDatabase(obj);
 
 			Create(obj, path, overwriteExisting);
 			SetMainObjectAndAssetPath(obj);

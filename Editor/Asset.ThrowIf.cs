@@ -24,9 +24,9 @@ namespace CodeSmile.Editor
 					throw new FileNotFoundException($"path does not exist: '{path}'");
 			}
 
-			public static void ExistingAsset(UnityEngine.Object obj)
+			public static void AlreadyInDatabase(UnityEngine.Object obj)
 			{
-				if (Database.Contains(obj))
+				if (IsImported(obj))
 					throw new ArgumentException($"object already is an asset file: {obj}");
 			}
 
@@ -38,7 +38,7 @@ namespace CodeSmile.Editor
 
 			public static void NotInDatabase(UnityEngine.Object obj)
 			{
-				if (Database.Contains(obj) == false)
+				if (IsImported(obj) == false)
 					throw new ArgumentException($"object is not an asset: {obj}");
 			}
 

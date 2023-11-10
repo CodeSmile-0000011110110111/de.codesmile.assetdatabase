@@ -19,24 +19,24 @@ public class AssetTrashTests : AssetTestBase
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
-		Assert.True(Asset.Exists(obj));
+		Assert.True(Asset.IsImported(obj));
 
 		Asset.Trash(obj);
 
 		Assert.False(TestAssetPath.ExistsInFileSystem);
-		Assert.False(Asset.Exists(obj));
+		Assert.False(Asset.IsImported(obj));
 	}
 
 	[Test] public void TrashStatic_ExistingAssetPath_FileDeleted()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
-		Assert.True(Asset.Exists(obj));
+		Assert.True(Asset.IsImported(obj));
 
 		Asset.Trash(TestAssetPath);
 
 		Assert.False(TestAssetPath.ExistsInFileSystem);
-		Assert.False(Asset.Exists(obj));
+		Assert.False(Asset.IsImported(obj));
 	}
 
 	[Test] public void Trash_ExistingAssetObject_FileDeleted()
@@ -47,7 +47,7 @@ public class AssetTrashTests : AssetTestBase
 		asset.Trash(); // should not do anything
 
 		Assert.NotNull(deletedObj);
-		Assert.False(Asset.Exists(deletedObj));
+		Assert.False(Asset.IsImported(deletedObj));
 		Assert.False(TestAssetPath.ExistsInFileSystem);
 		Assert.Null(asset.Trash());
 	}

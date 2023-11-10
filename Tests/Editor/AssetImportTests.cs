@@ -30,13 +30,13 @@ public class AssetImportTests : AssetTestBase
 		// 'externally' delete the file and it's meta
 		File.Delete(testPath);
 		File.Delete(testPath + ".meta");
-		Assert.True(Asset.Database.Contains(asset.MainObject)); // deleted, but still in the database
+		Assert.True(Asset.IsImported(asset.MainObject)); // deleted, but still in the database
 		Asset.Import(testPath); // Import() does nothing if the path doesn't exist
-		Assert.True(Asset.Database.Contains(asset.MainObject)); // it's still in the database
+		Assert.True(Asset.IsImported(asset.MainObject)); // it's still in the database
 
-		Asset.Database.ImportAll();
+		Asset.ImportAll();
 
-		Assert.False(Asset.Database.Contains(asset.MainObject)); // now it's gone
+		Assert.False(Asset.IsImported(asset.MainObject)); // now it's gone
 	}
 
 	[Test] public void ImportAllStatic_SystemIOCreatedFile_ExistsInDatabase()
@@ -47,7 +47,7 @@ public class AssetImportTests : AssetTestBase
 		File.WriteAllText(testPath, "test file contents are irrelevant");
 		Assert.Throws<AssetLoadException>(() => new Asset(testPath)); // throws, asset not in database
 
-		Asset.Database.ImportAll();
+		Asset.ImportAll();
 
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		DeleteAfterTest(new Asset(testPath));

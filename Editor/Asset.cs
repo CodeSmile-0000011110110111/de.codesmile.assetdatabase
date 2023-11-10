@@ -47,14 +47,14 @@ namespace CodeSmile.Editor
 		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
 
 		/// <summary>
-		///         Returns whether this is a foreign asset.
+		///     Returns whether this is a foreign asset.
 		/// </summary>
 		/// <see cref="IsForeign" />
 		/// <see cref="IsNative" />
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => IsForeign(m_MainObject);
 		/// <summary>
-		///         Returns whether this is a native asset.
+		///     Returns whether this is a native asset.
 		/// </summary>
 		/// <see cref="IsNative" />
 		/// <see cref="IsForeign" />
@@ -67,9 +67,9 @@ namespace CodeSmile.Editor
 		[ExcludeFromCodeCoverage] public Texture Icon => GetIcon(m_AssetPath);
 
 		/// <summary>
-		/// Returns the assets dependencies recursively. Returns paths to the dependent assets.
+		///     Returns the assets dependencies recursively. Returns paths to the dependent assets.
 		/// </summary>
-		public string[] Dependencies => GetDependencies(m_AssetPath, true);
+		public String[] Dependencies => GetDependencies(m_AssetPath, true);
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
@@ -105,11 +105,34 @@ namespace CodeSmile.Editor
 		public String LastErrorMessage => GetLastErrorMessage();
 
 		/// <summary>
+		///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
+		///     the asset file exists then you need to Import() the asset.
+		///     Unlike AssetDatabase, will not throw a NullRef if you pass null.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
+		public static Boolean IsImported(Object obj) => obj ? AssetDatabase.Contains(obj) : false;
+
+		/// <summary>
 		///     Returns the icon associated with the asset type.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage] public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
+
+		/// <summary>
+		///     Returns whether this object is the asset's 'main' object.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
+
+		/// <summary>
+		///     Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
 
 		/// <summary>
 		///     <p>
@@ -138,20 +161,6 @@ namespace CodeSmile.Editor
 		[ExcludeFromCodeCoverage] public static Boolean IsNative(Object obj) => AssetDatabase.IsNativeAsset(obj);
 
 		/// <summary>
-		///     Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
-
-		/// <summary>
-		///     Returns whether this object is the asset's 'main' object.
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
-
-		/// <summary>
 		///     Returns whether this object's main asset is loaded.
 		/// </summary>
 		/// <param name="obj"></param>
@@ -168,22 +177,14 @@ namespace CodeSmile.Editor
 		public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 		/// <summary>
-		///     Returns true if the asset exists in the Database. Convenient shortcut for Asset.Database.Contains().
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns>False if the object is null or not in the database.</returns>
-		public static Boolean Exists(Object obj) => Database.Contains(obj);
-
-		/// <summary>
 		///     Returns the type of the main asset at the path.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>
 		public static Type MainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
-
 		/// <summary>
-		/// Returns the dependencies of the asset at the given path. Returns paths to dependent assets.
+		///     Returns the dependencies of the asset at the given path. Returns paths to dependent assets.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <param name="recursive"></param>
@@ -192,7 +193,7 @@ namespace CodeSmile.Editor
 			AssetDatabase.GetDependencies(path, recursive);
 
 		/// <summary>
-		/// Returns the dependencies of the assets at the given paths. Returns paths to dependent assets.
+		///     Returns the dependencies of the assets at the given paths. Returns paths to dependent assets.
 		/// </summary>
 		/// <param name="paths"></param>
 		/// <param name="recursive"></param>
