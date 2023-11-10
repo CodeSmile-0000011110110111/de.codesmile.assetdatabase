@@ -178,7 +178,7 @@ namespace CodeSmile.Editor
 						if (System.IO.Path.HasExtension(m_RelativePath))
 							return ToFolderPath();
 					}
-					catch (Exception ex) {}
+					catch (Exception) {}
 
 					return this;
 				}

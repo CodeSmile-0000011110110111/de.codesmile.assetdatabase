@@ -48,9 +48,17 @@ namespace CodeSmile.Editor
 		{
 			ThrowIf.AssetDeleted(this);
 
-			var newPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
+			// get the expected copy's path first
+			var pathToCopy = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
+
 			var success = Copy(m_AssetPath, destinationPath);
-			return success ? new Asset(newPath) : null;
+			return success ? new Asset(pathToCopy) : null;
 		}
+
+		/// <summary>
+		///     Creates a duplicate of the asset with a new, unique file name.
+		/// </summary>
+		/// <returns>The asset instance of the duplicate.</returns>
+		public Asset Duplicate() => Copy(m_AssetPath);
 	}
 }

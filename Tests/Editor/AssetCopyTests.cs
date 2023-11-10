@@ -53,7 +53,7 @@ public class AssetCopyTests : AssetTestBase
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		var destPath = (Asset.Path)"Assets/subfolder/copy.asset";
+		var destPath = DeleteAfterTest((Asset.Path)"Assets/subfolder/copy.asset");
 		var didCopy = Asset.Copy(asset.AssetPath, destPath);
 		//Debug.Log(asset.LastErrorMessage);
 
@@ -65,8 +65,7 @@ public class AssetCopyTests : AssetTestBase
 	[Test] public void CopyStatic_OntoItselfNoOverwrite_CreatesCopy()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
-		var expectedCopyPath = Asset.Path.UniquifyFilename(asset.AssetPath);
-		DeleteAfterTest(expectedCopyPath);
+		var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFilename(asset.AssetPath));
 
 		var success = Asset.Copy(asset.AssetPath, (String)asset.AssetPath);
 
@@ -78,10 +77,19 @@ public class AssetCopyTests : AssetTestBase
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		var assetCopy = asset.Copy(asset.AssetPath);
-		DeleteAfterTest(assetCopy);
+		var assetCopy = DeleteAfterTest(asset.Copy(asset.AssetPath));
 
 		Assert.NotNull(assetCopy);
 		Assert.AreNotEqual(asset, assetCopy);
+	}
+
+	[Test] public void Duplicate_CreatesDuplicate()
+	{
+		var asset = CreateTestAsset(TestAssetPath);
+
+		var assetDupe = DeleteAfterTest(asset.Duplicate());
+
+		Assert.NotNull(assetDupe);
+		Assert.AreNotEqual(asset, assetDupe);
 	}
 }
