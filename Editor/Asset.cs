@@ -39,6 +39,11 @@ namespace CodeSmile.Editor
 		public GUID Guid => Path.GetGuid(m_AssetPath);
 
 		/// <summary>
+		///     Returns the local FileID of the asset.
+		/// </summary>
+		public Int64 LocalFileId => GetLocalFileId(m_MainObject);
+
+		/// <summary>
 		///     Returns true after the asset has been deleted.
 		///     <p>
 		///         <see cref="Delete(CodeSmile.Editor.Asset.Path)" /> - <see cref="Trash(CodeSmile.Editor.Asset.Path)" />
@@ -103,6 +108,14 @@ namespace CodeSmile.Editor
 		///     for example: Move, Rename, Copy
 		/// </summary>
 		public String LastErrorMessage => GetLastErrorMessage();
+
+		/// <summary>
+		///     Returns the local FileID of the object.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>The local fileID or 0 on failure.</returns>
+		public static Int64 GetLocalFileId(Object obj) =>
+			AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out var localId) ? localId : 0;
 
 		/// <summary>
 		///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know

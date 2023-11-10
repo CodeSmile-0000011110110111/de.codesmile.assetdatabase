@@ -43,6 +43,14 @@ namespace CodeSmile.Editor
 			private String m_RelativePath = String.Empty;
 
 			/// <summary>
+			/// Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
+			/// </summary>
+			public void OpenFolder()
+			{
+				Application.OpenURL( System.IO.Path.GetFullPath(FolderPathAssumptive));
+			}
+
+			/// <summary>
 			///     Returns true if the path is valid: contains no illegal characters and isn't too long.
 			///     If this returns false, Asset.GetLastErrorMessage() contains detailed information.
 			///     <see cref="Asset.GetLastErrorMessage()" />

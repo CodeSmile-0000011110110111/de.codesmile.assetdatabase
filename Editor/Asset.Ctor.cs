@@ -64,7 +64,7 @@ namespace CodeSmile.Editor
 			ThrowIf.DoesNotExistInFileSystem(path);
 
 			m_AssetPath = path;
-			m_MainObject = LoadMain<Object>();
+			m_MainObject = Load<Object>();
 		}
 
 		private void SetMainObjectAndAssetPath(Object obj)

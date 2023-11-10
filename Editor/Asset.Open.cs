@@ -41,7 +41,7 @@ namespace CodeSmile.Editor
 		/// <param name="columnNumber"></param>
 		[ExcludeFromCodeCoverage]
 		public static void OpenInDefaultApplication(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
-			OpenInDefaultApplication(LoadMain<Object>(path), lineNumber, columnNumber);
+			OpenInDefaultApplication(Load<Object>(path), lineNumber, columnNumber);
 
 		/// <summary>
 		///     Opens the asset in the default (associated) application.

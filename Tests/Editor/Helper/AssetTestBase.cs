@@ -24,6 +24,8 @@ public abstract class AssetTestBase
 	[TearDown] public void TearDown()
 	{
 		Assert.DoesNotThrow(m_TestAssets.Dispose);
+
+		DeleteAfterTest(TestAssetPath); // always try to delete the test asset
 		DeleteTestFiles();
 
 		Asset.Delete(TestSubFolderPath);
@@ -81,7 +83,7 @@ public abstract class AssetTestBase
 
 	protected GUID DeleteAfterTest(GUID assetGuid)
 	{
-		var obj = Asset.LoadMain<Object>(assetGuid);
+		var obj = Asset.Load<Object>(assetGuid);
 		m_TestAssets.Add(obj);
 		return assetGuid;
 	}
