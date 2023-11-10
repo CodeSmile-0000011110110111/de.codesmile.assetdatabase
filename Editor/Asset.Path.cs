@@ -36,6 +36,10 @@ namespace CodeSmile.Editor
 		{
 			public const String DefaultExtension = "asset";
 
+			// all are lowercase
+			private static readonly String[] s_AllowedAssetSubfolders =
+				{ "assets", "library", "logs", "packages", "projectsettings", "temp", "usersettings" };
+
 			private String m_RelativePath = String.Empty;
 
 			/// <summary>
@@ -214,9 +218,18 @@ namespace CodeSmile.Editor
 				// path must start with "Assets" or "Packages/"
 				// it may also be just "Assets" (length == 6), otherwise a path separator must follow: "Assets/.."
 				path = path.TrimStart('/').ToLower();
-				var startsWithAssets = path.StartsWith("assets");
-				var startsWithPackages = path.StartsWith("packages/");
-				return startsWithAssets && (path.Length <= 6 || path[6].Equals('/')) || startsWithPackages;
+
+				// test if the relative path starts with one of the recognized (allowed) subfolders
+				foreach (var allowedSubfolder in s_AllowedAssetSubfolders)
+				{
+					var doesStartsWith = path.StartsWith(allowedSubfolder);
+					var subfolderLength = allowedSubfolder.Length;
+					var lengthMatches = path.Length == subfolderLength;
+					if (doesStartsWith && (lengthMatches || path[subfolderLength].Equals('/')))
+						return true;
+				}
+
+				return false;
 			}
 
 			private static String MakeRelative(String fullOrRelativePath) =>

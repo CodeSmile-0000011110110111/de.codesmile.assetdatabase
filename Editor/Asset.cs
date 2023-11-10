@@ -168,18 +168,19 @@ namespace CodeSmile.Editor
 		public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 		/// <summary>
+		///     Returns true if the asset exists in the Database. Convenient shortcut for Asset.Database.Contains().
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>False if the object is null or not in the database.</returns>
+		public static Boolean Exists(Object obj) => Database.Contains(obj);
+
+		/// <summary>
 		///     Returns the type of the main asset at the path.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>
 		public static Type MainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
-		/// <summary>
-		///     Returns true if the asset exists in the Database. Convenient shortcut for Asset.Database.Contains().
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns>False if the object is null or not in the database.</returns>
-		public static Boolean Exists(Object obj) => Database.Contains(obj);
 
 		/// <summary>
 		/// Returns the dependencies of the asset at the given path. Returns paths to dependent assets.
