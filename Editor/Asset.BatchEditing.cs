@@ -14,9 +14,8 @@ namespace CodeSmile.Editor
 		///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
 		///     This can significantly speed up mass asset editing tasks where you work with individual assets
 		///     in a loop.
-		///     Internally calls Start/StopAssetEditing in a try/finally block so that exceptions will
-		///     not cause the AssetDatabase to remain stopped indefinitely.
-		///     <seealso cref="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html" />
+		///     Internally calls <a href="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html">Start/StopAssetEditing</a>
+		///     in a try/finally block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
 		/// </summary>
 		/// <param name="assetEditingAction"></param>
 		[ExcludeFromCodeCoverage]
