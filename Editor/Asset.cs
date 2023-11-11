@@ -44,6 +44,15 @@ namespace CodeSmile.Editor
 		public Int64 LocalFileId => GetLocalFileId(m_MainObject);
 
 		/// <summary>
+		///     Sets or gets the labels associated with the asset.
+		/// </summary>
+		public String[] Labels
+		{
+			get => GetLabels(m_MainObject);
+			set => SetLabels(m_MainObject, value);
+		}
+
+		/// <summary>
 		///     Returns true after the asset has been deleted.
 		///     <p>
 		///         <see cref="Delete(CodeSmile.Editor.Asset.Path)" /> - <see cref="Trash(CodeSmile.Editor.Asset.Path)" />

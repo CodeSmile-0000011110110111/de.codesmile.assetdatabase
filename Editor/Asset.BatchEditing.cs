@@ -19,7 +19,8 @@ namespace CodeSmile.Editor
 		///     <seealso cref="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html" />
 		/// </summary>
 		/// <param name="assetEditingAction"></param>
-		[ExcludeFromCodeCoverage] public static void BatchEditing(Action assetEditingAction)
+		[ExcludeFromCodeCoverage]
+		public static void BatchEditing(Action assetEditingAction, Boolean rethrowExceptions = false)
 		{
 			ThrowIf.ArgumentIsNull(assetEditingAction, nameof(assetEditingAction));
 
@@ -31,7 +32,9 @@ namespace CodeSmile.Editor
 			catch (Exception ex)
 			{
 				Debug.LogError($"Exception during BatchEditing: {ex.Message}");
-				throw ex; // re-throw to caller
+
+				if (rethrowExceptions)
+					throw ex; // re-throw to caller
 			}
 			finally
 			{
