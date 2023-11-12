@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['toforwardslashes_0',['ToForwardSlashes',['../class_code_smile_1_1_editor_1_1_string_extensions.html#a7e28ef973139e57c1271fcc18730c2be',1,'CodeSmile::Editor::StringExtensions']]],
-  ['tostring_1',['ToString',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3eeb7945d8781f1065683f6cbd13ff95',1,'CodeSmile::Editor::Asset::Path']]],
-  ['trash_2',['Trash',['../class_code_smile_1_1_editor_1_1_asset.html#ad5a4c473332e34a2db92fbdb0857fea6',1,'CodeSmile.Editor.Asset.Trash(Path path)'],['../class_code_smile_1_1_editor_1_1_asset.html#a6c5eca6af753accf720ed7e98f1ec7d5',1,'CodeSmile.Editor.Asset.Trash(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777',1,'CodeSmile.Editor.Asset.Trash()']]],
-  ['trashmany_3',['TrashMany',['../class_code_smile_1_1_editor_1_1_asset.html#aba19ddfac9fe1d3e11f941fbf9a61ca2',1,'CodeSmile.Editor.Asset.TrashMany(IEnumerable&lt; Path &gt; paths)'],['../class_code_smile_1_1_editor_1_1_asset.html#a7bef2e7c350e0fdbacfaf8e21d01748f',1,'CodeSmile.Editor.Asset.TrashMany(IEnumerable&lt; String &gt; paths)']]]
+  ['save_0',['Save',['../class_code_smile_1_1_editor_1_1_asset.html#a9f28e44a3e441ecd4e4a5d958cf0ad12',1,'CodeSmile.Editor.Asset.Save(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a090fb654cfbffa2e4d6969c954634b0d',1,'CodeSmile.Editor.Asset.Save(GUID guid)'],['../class_code_smile_1_1_editor_1_1_asset.html#a796eba9055efb8d7239cc4f64536819a',1,'CodeSmile.Editor.Asset.Save()']]],
+  ['saveall_1',['SaveAll',['../class_code_smile_1_1_editor_1_1_asset.html#a2b037f503a36a546759c962024c48883',1,'CodeSmile::Editor::Asset']]],
+  ['setlabels_2',['SetLabels',['../class_code_smile_1_1_editor_1_1_asset.html#abdf3469d41ab0f49810ea2ac65be8a57',1,'CodeSmile::Editor::Asset']]],
+  ['setmainobject_3',['SetMainObject',['../class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b',1,'CodeSmile.Editor.Asset.SetMainObject(Object subObject, Path path)'],['../class_code_smile_1_1_editor_1_1_asset.html#aa1b1e811d41c7f1e8d56770220612e82',1,'CodeSmile.Editor.Asset.SetMainObject(Object subObject, Object assetObject)']]],
+  ['setmainobjectdirty_4',['SetMainObjectDirty',['../class_code_smile_1_1_editor_1_1_asset.html#a78d4987e0256a03703721825d53e14ef',1,'CodeSmile::Editor::Asset']]]
 ];
