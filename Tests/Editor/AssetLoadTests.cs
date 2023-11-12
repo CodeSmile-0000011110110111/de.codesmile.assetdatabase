@@ -12,14 +12,27 @@ using Object = UnityEngine.Object;
 
 public class AssetLoadTests : AssetTestBase
 {
+	[Test] public void LoadStatic_NotExistingPath_Throws() => Assert.IsNull(Asset.Load<Object>("Assets/exist.not"));
+
+	[Test] public void LoadStatic_ExistingPath_Succeeds()
+	{
+		var obj = CreateTestAssetObject(TestAssetPath);
+
+		var loaded = Asset.Load<Object>(TestAssetPath);
+
+		Assert.NotNull(loaded);
+		Assert.AreEqual(obj, loaded);
+		Assert.AreEqual(obj.GetType(), loaded.GetType());
+	}
+
 	[Test] public void LoadMainStatic_NotExistingPath_Throws() =>
-		Assert.Throws<FileNotFoundException>(() => Asset.Load<Object>("Assets/exist.not"));
+		Assert.Throws<FileNotFoundException>(() => Asset.LoadMain<Object>("Assets/exist.not"));
 
 	[Test] public void LoadMainStatic_ExistingPath_Succeeds()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 
-		var loaded = Asset.Load<Object>(TestAssetPath);
+		var loaded = Asset.LoadMain<Object>(TestAssetPath);
 
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -41,15 +54,23 @@ public class AssetLoadTests : AssetTestBase
 		Assert.AreEqual(obj.GetType(), Asset.GetMainType((String)TestAssetPath));
 	}
 
-	[Test] public void LoadMainStatic_TypeMismatch_Throws()
+	[Test] public void LoadMainStatic_TypeMismatch_ReturnsNull()
 	{
 		CreateTestAssetObject(TestAssetPath);
 
 		// a Material is not assignable from ExampleSO (ScriptableObject) => wrong type
-		Assert.Throws<AssetLoadException>(() => Asset.Load<Material>(TestAssetPath));
+		Assert.Null(Asset.LoadMain<Material>(TestAssetPath));
 	}
 
-	[Test] public void LoadMainStatic_AssetDatabasePaused_Throws()
+	[Test] public void LoadStatic_TypeMismatch_ReturnsNull()
+	{
+		CreateTestAssetObject(TestAssetPath);
+
+		// a Material is not assignable from ExampleSO (ScriptableObject) => wrong type
+		Assert.Null(Asset.Load<Material>(TestAssetPath));
+	}
+
+	[Test] public void LoadMainStatic_AssetDatabasePaused_ReturnsNull()
 	{
 		CreateTestAssetObject(TestAssetPath);
 
@@ -62,7 +83,7 @@ public class AssetLoadTests : AssetTestBase
 			// import while ADB is 'paused' is not possible!
 			// this will make the asset 'unloadable' => Load returns null
 			Asset.Import(TestAssetPath, ImportAssetOptions.ForceUpdate);
-			Assert.Throws<AssetLoadException>(() => Asset.Load<Object>(TestAssetPath));
+			Assert.Null(Asset.LoadMain<Object>(TestAssetPath));
 		}
 		finally
 		{
@@ -104,5 +125,18 @@ public class AssetLoadTests : AssetTestBase
 		Assert.True(TestAssetPath.Exists);
 	}
 
-	// Load, LoadAll, LoadAllVisible
+	[Test] public void AddObject_SetSubObjectAsMain_LoadSucceeds()
+	{
+		var asset = CreateTestAsset(TestAssetPath);
+		var subObject = Instantiate.DifferentExampleSO();
+		asset.AddObject(subObject);
+
+		// check if the main object gets loaded after changing it
+		asset.MainObject = subObject;
+		var differentExampleSo = asset.Load<DifferentExampleSO>();
+
+		Assert.AreEqual(subObject, differentExampleSo);
+		Assert.AreEqual(subObject, asset.MainObject);
+		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
+	}
 }

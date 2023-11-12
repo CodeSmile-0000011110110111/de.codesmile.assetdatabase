@@ -1,8 +1,9 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using System;
 using UnityEditor;
-using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -10,9 +11,10 @@ namespace CodeSmile.Editor
 	{
 		/// <summary>
 		///     Loads the main asset object at the path.
-		///     Commonly this is the only object of the asset, but there are assets that
-		///     consist of multiple objects such as Mesh assets that may contain for example animations and materials.
+		///     Commonly this is the only object of the asset, but there are assets that consist of multiple
+		///     objects. For example Mesh assets often contain sub objects like animations and materials.
 		/// </summary>
+		/// <see cref="Load{T}(CodeSmile.Editor.Asset.Path)" />
 		/// <param name="path"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>The asset object or null if the path does not exist or the asset is not imported.</returns>
@@ -21,16 +23,7 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.DoesNotExistInFileSystem(path);
 
-			var assetType = GetMainType(path);
-			ThrowIf.AssetNotImported(path, assetType);
-			ThrowIf.AssetTypeMismatch<T>(path, assetType);
-
-			var obj = AssetDatabase.LoadMainAssetAtPath(path) as T;
-
-			// just to be sure we catch early some possible edge cases where ADB cannot load objects
-			ThrowIf.AssetLoadReturnedNull(obj, path);
-
-			return obj;
+			return AssetDatabase.LoadMainAssetAtPath(path) as T;
 		}
 
 		/// <summary>
@@ -44,7 +37,8 @@ namespace CodeSmile.Editor
 		public static T LoadMain<T>(GUID guid) where T : Object
 		{
 			ThrowIf.NotAnAssetGuid(guid);
-			return Load<T>(Path.Get(guid));
+
+			return LoadMain<T>(Path.Get(guid));
 		}
 
 		/// <summary>
@@ -58,7 +52,7 @@ namespace CodeSmile.Editor
 		public static T LoadOrCreate<T>(Path path, System.Func<Object> getInstance) where T : Object
 		{
 			if (path.Exists)
-				return Load<T>(path);
+				return LoadMain<T>(path);
 
 			var obj = getInstance.Invoke() as T;
 			Create(obj, path);
@@ -66,31 +60,38 @@ namespace CodeSmile.Editor
 			return obj;
 		}
 
-		public static T Load<T>(Path path) where T : Object
-		{
-			var obj = AssetDatabase.LoadAssetAtPath<T>(path);
-
-			// just to be sure we catch early some possible edge cases where ADB cannot load objects
-			ThrowIf.AssetLoadReturnedNull(obj, path);
-
-			return obj;
-		}
-
-		public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
-
-		public static Object[] LoadAllVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
-
 		/// <summary>
-		///     Private on purpose: the main object is automatically loaded when instantiating an Asset class.
+		///     Loads the first visible object of the given type from the asset at path. This usually is the main
+		///     object but it could be any other visible sub-object, depending on the type.
 		/// </summary>
+		/// <see cref="LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
+		/// <param name="path"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
-		private T LoadMain<T>() where T : Object => m_AssetPath != null ? (T)(m_MainObject = Load<T>(m_AssetPath)) : null;
+		public static T Load<T>(Path path) where T : Object => AssetDatabase.LoadAssetAtPath<T>(path);
 
+		/// <summary>
+		///     Loads all objects of an asset.
+		///     NOTE: Whether the main object is included in this list depends on the type of asset,
+		///     and whether onlyVisible is true. (Details still unclear - please ask!)
+		/// </summary>
+		/// <param name="path"></param>
+		/// <param name="onlyVisible">If true, only objects visible in the project view are returned.</param>
+		/// <returns></returns>
+		public static Object[] LoadSubObjects(Path path, Boolean onlyVisible = false) => onlyVisible
+			? AssetDatabase.LoadAllAssetRepresentationsAtPath(path)
+			: AssetDatabase.LoadAllAssetsAtPath(path);
+
+		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
+		private T LoadMain<T>() where T : Object =>
+			m_AssetPath != null ? (T)(m_MainObject = Load<T>(m_AssetPath)) : null;
+
+		/// <summary>
+		///     Loads the first object of the given type from the asset.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
 		public T Load<T>() where T : Object => Load<T>(m_AssetPath);
-
-		private Object[] LoadAll() => LoadAll(m_AssetPath);
-
-		private Object[] LoadAllVisible() => LoadAllVisible(m_AssetPath);
 	}
 }

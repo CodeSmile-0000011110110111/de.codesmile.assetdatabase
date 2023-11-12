@@ -13,4 +13,13 @@ public static class Instantiate
 		so.Ref = so;
 		return so;
 	}
+
+	public static ScriptableObject DifferentExampleSO()
+	{
+		var so = ScriptableObject.CreateInstance<DifferentExampleSO>();
+		so.Text = so.GetType().AssemblyQualifiedName;
+		so.InstanceId = so.GetInstanceID();
+		so.Ref = so;
+		return so;
+	}
 }

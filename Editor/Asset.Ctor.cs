@@ -65,6 +65,8 @@ namespace CodeSmile.Editor
 
 			m_AssetPath = path;
 			m_MainObject = LoadMain<Object>();
+
+			ThrowIf.AssetLoadReturnedNull(m_MainObject, m_AssetPath);
 		}
 
 		private void SetMainObjectAndAssetPath(Object obj)

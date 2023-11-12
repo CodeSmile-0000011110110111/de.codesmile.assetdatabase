@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using UnityEditor;
 using UnityEngine.TestTools;
+using Object = UnityEngine.Object;
 
 public class AssetLabelsTests : AssetTestBase
 {
@@ -51,7 +52,7 @@ public class AssetLabelsTests : AssetTestBase
 		yield return null;
 
 		{
-			var asset = (Asset)Asset.Load<UnityEngine.Object>(TestAssetPath);
+			var asset = (Asset)Asset.Load<Object>(TestAssetPath);
 			Assert.AreEqual(3, asset.Labels.Length);
 			Assert.Contains("one", asset.Labels);
 			Assert.Contains("two", asset.Labels);

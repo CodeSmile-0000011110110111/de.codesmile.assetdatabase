@@ -54,22 +54,14 @@ namespace CodeSmile.Editor
 			AssetDatabase.RemoveObjectFromAsset(subObject);
 		}
 
-		public static void SetMainObject(Object obj)
+		public static void SetMainObject(Object obj, Path path)
 		{
-			// m_MainObject = obj;
-			// AssetDatabase.SetMainObject(m_MainObject, m_AssetPath);
-			// Import();
+			AssetDatabase.SetMainObject(obj, path);
+			Import(path);
 		}
 
-		public void AddObject(Object subObject)
-		{
-			AddObjectToAsset(subObject, m_MainObject);
-		}
+		public void AddObject(Object subObject) => AddObjectToAsset(subObject, m_MainObject);
 
-		public void RemoveObject(Object subObject)
-		{
-			RemoveObjectFromAsset(subObject);
-		}
-
+		public void RemoveObject(Object subObject) => RemoveObjectFromAsset(subObject);
 	}
 }

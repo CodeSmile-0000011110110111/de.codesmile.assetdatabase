@@ -94,8 +94,8 @@ namespace CodeSmile.Editor
 					// Probably ADB or asset in invalid state ...
 					throw new AssetLoadException("asset load returned null - this can occur if the AssetDatabase " +
 					                             "is currently initializing (eg static ctor) or when importing an asset " +
-					                             "async or while ADB is 'paused', or some other reason (please report); " +
-					                             $"path: {path}");
+					                             "async or while ADB is 'paused', or if the type does not math, or " +
+					                             $"some other reason (please report); path: {path}");
 				}
 			}
 

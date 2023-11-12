@@ -12,7 +12,7 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		private static String s_ErrorMessage = String.Empty;
+		private static String s_LastErrorMessage = String.Empty;
 
 		private Path m_AssetPath;
 		private Object m_MainObject;
@@ -20,17 +20,27 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the asset's main object.
 		/// </summary>
-		public Object MainObject => m_MainObject;
+		public Object MainObject
+		{
+			get => m_MainObject;
+			set
+			{
+				SetMainObject(value, m_AssetPath);
+				m_MainObject = value;
+			}
+		}
 
 		/// <summary>
-		/// Loads and returns all objects the asset is comprised of.
+		///     Loads and returns all sub objects the asset is comprised of.
+		///     NOTE: Whether the main object is included in this list depends on the type of asset.
 		/// </summary>
-		public Object[] AllObjects => LoadAll();
+		public Object[] SubObjects => LoadSubObjects(m_AssetPath);
 
 		/// <summary>
-		/// Loads and returns only those asset objects that are shown in the project view.
+		///     Loads and returns only those asset objects that are shown in the project view.
+		///     NOTE: Does NOT include the main asset!
 		/// </summary>
-		public Object[] VisibleObjects => LoadAllVisible();
+		public Object[] VisibleSubObjects => LoadSubObjects(m_AssetPath, true);
 
 		/// <summary>
 		///     Returns the type of the main asset.
@@ -238,10 +248,10 @@ namespace CodeSmile.Editor
 		///     <see cref="Rename" />
 		///     <see cref="Move" />
 		/// </summary>
-		public static String GetLastErrorMessage() => s_ErrorMessage;
+		public static String GetLastErrorMessage() => s_LastErrorMessage;
 
 		private static void SetLastErrorMessage(String message) =>
-			s_ErrorMessage = message != null ? message : String.Empty;
+			s_LastErrorMessage = message != null ? message : String.Empty;
 
 		private static Boolean Succeeded(String possibleErrorMessage)
 		{
