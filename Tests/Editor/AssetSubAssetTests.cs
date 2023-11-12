@@ -99,7 +99,6 @@ public class AssetSubAssetTests : AssetTestBase
 		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
 	}
 
-
 	[Test] public void AddObject_SetNonAssetObjectAsMain_Throws()
 	{
 		var asset = CreateTestAsset(TestAssetPath);

@@ -124,5 +124,4 @@ public class AssetLoadTests : AssetTestBase
 		Assert.True(didRunCallback);
 		Assert.True(TestAssetPath.Exists);
 	}
-
 }

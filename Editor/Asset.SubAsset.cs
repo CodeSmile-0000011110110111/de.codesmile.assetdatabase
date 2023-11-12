@@ -75,8 +75,16 @@ namespace CodeSmile.Editor
 		public static void SetMainObject(Object subObject, Object assetObject) =>
 			SetMainObject(subObject, Path.Get(assetObject));
 
+		/// <summary>
+		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
+		/// </summary>
+		/// <param name="subObject"></param>
 		public void AddObject(Object subObject) => AddObjectToAsset(subObject, m_MainObject);
 
+		/// <summary>
+		///     Removes an object from the asset's sub-objects.
+		/// </summary>
+		/// <param name="subObject"></param>
 		public void RemoveObject(Object subObject) => RemoveObjectFromAsset(subObject);
 	}
 }
