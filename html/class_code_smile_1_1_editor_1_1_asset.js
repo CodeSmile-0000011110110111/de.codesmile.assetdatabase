@@ -39,6 +39,7 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "GetLabels", "class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0", null ],
     [ "GetLastErrorMessage", "class_code_smile_1_1_editor_1_1_asset.html#ac175e86600249f976510ecfd3279a2a1", null ],
     [ "GetLocalFileId", "class_code_smile_1_1_editor_1_1_asset.html#a17bb22f4a8874b605f035e944edfff5d", null ],
+    [ "GetMainType", "class_code_smile_1_1_editor_1_1_asset.html#a7e64cd59ce715783551782ef3c8d1615", null ],
     [ "Import", "class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80", null ],
     [ "ImportAll", "class_code_smile_1_1_editor_1_1_asset.html#a59698b1b5df688727eb0a8e01742cb06", null ],
     [ "IsForeign", "class_code_smile_1_1_editor_1_1_asset.html#a91eb959072257d36a867da3d5ab28e39", null ],
@@ -51,7 +52,6 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#a059991b67e2e8bde731280f7ffa6edd3", null ],
     [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#ad5af5f543799e7b1c96edfd6eeea1e55", null ],
     [ "LoadOrCreate< T >", "class_code_smile_1_1_editor_1_1_asset.html#a577d5e45742abb4682c2febe5a9f2200", null ],
-    [ "MainType", "class_code_smile_1_1_editor_1_1_asset.html#a5250ce14adb37469916694080df04db1", null ],
     [ "Move", "class_code_smile_1_1_editor_1_1_asset.html#a98afa23dd6fd0f2c5f08f8004b894c2c", null ],
     [ "Move", "class_code_smile_1_1_editor_1_1_asset.html#ab43f85e953915359a552bf3b2e304908", null ],
     [ "OpenInDefaultApplication", "class_code_smile_1_1_editor_1_1_asset.html#a75efed07af1a60520691e474c4185942", null ],
@@ -76,8 +76,8 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "TrashMany", "class_code_smile_1_1_editor_1_1_asset.html#aba19ddfac9fe1d3e11f941fbf9a61ca2", null ],
     [ "TrashMany", "class_code_smile_1_1_editor_1_1_asset.html#a7bef2e7c350e0fdbacfaf8e21d01748f", null ],
     [ "AssetPath", "class_code_smile_1_1_editor_1_1_asset.html#a1edde6ce83da160f94eb4a5846d7af3c", null ],
-    [ "DeleteFailedPaths", "class_code_smile_1_1_editor_1_1_asset.html#a2217ead061a72b7f18c2c396ccbfed28", null ],
     [ "Dependencies", "class_code_smile_1_1_editor_1_1_asset.html#a75fc9897dda5806819a13fd7b060f1ff", null ],
+    [ "FailedToDeletePaths", "class_code_smile_1_1_editor_1_1_asset.html#a02d2215d51838b1cd36b6301c143f46c", null ],
     [ "Guid", "class_code_smile_1_1_editor_1_1_asset.html#a1161ae5e57c6b875f97e1ce7aeb5c2f7", null ],
     [ "Icon", "class_code_smile_1_1_editor_1_1_asset.html#a42e19fd29efe3df32cffdf2837f01758", null ],
     [ "IsDeleted", "class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928", null ],
@@ -87,5 +87,5 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "LastErrorMessage", "class_code_smile_1_1_editor_1_1_asset.html#a40a9691d7ae6b7e4fdbbf5f0d502c2eb", null ],
     [ "LocalFileId", "class_code_smile_1_1_editor_1_1_asset.html#a615000f2c07ebba22ba0093e298692a7", null ],
     [ "MainObject", "class_code_smile_1_1_editor_1_1_asset.html#aa5f15533193c9207a0313f1660808fa1", null ],
-    [ "Type", "class_code_smile_1_1_editor_1_1_asset.html#a34754e4568e58da7f5ca0d8586da6ce9", null ]
+    [ "MainType", "class_code_smile_1_1_editor_1_1_asset.html#a290e24cac93cf9eb60f6dba8bc71a917", null ]
 ];

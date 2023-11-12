@@ -8,5 +8,6 @@ var searchData=
   ['getlabels_5',['GetLabels',['../class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0',1,'CodeSmile.Editor.Asset.GetLabels(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a4adafb1ae8505616347e99cf66637e72',1,'CodeSmile.Editor.Asset.GetLabels(GUID guid)']]],
   ['getlasterrormessage_6',['GetLastErrorMessage',['../class_code_smile_1_1_editor_1_1_asset.html#ac175e86600249f976510ecfd3279a2a1',1,'CodeSmile::Editor::Asset']]],
   ['getlocalfileid_7',['GetLocalFileId',['../class_code_smile_1_1_editor_1_1_asset.html#a17bb22f4a8874b605f035e944edfff5d',1,'CodeSmile::Editor::Asset']]],
-  ['guid_8',['Guid',['../class_code_smile_1_1_editor_1_1_asset.html#a1161ae5e57c6b875f97e1ce7aeb5c2f7',1,'CodeSmile.Editor.Asset.Guid()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592',1,'CodeSmile.Editor.Asset.Path.Guid()']]]
+  ['getmaintype_8',['GetMainType',['../class_code_smile_1_1_editor_1_1_asset.html#a7e64cd59ce715783551782ef3c8d1615',1,'CodeSmile::Editor::Asset']]],
+  ['guid_9',['Guid',['../class_code_smile_1_1_editor_1_1_asset.html#a1161ae5e57c6b875f97e1ce7aeb5c2f7',1,'CodeSmile.Editor.Asset.Guid()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592',1,'CodeSmile.Editor.Asset.Path.Guid()']]]
 ];
