@@ -2,7 +2,6 @@ var class_code_smile_1_1_editor_1_1_asset =
 [
     [ "Database", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html", "class_code_smile_1_1_editor_1_1_asset_1_1_database" ],
     [ "Path", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html", "class_code_smile_1_1_editor_1_1_asset_1_1_path" ],
-    [ "SubAsset", "class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html", null ],
     [ "Asset", "class_code_smile_1_1_editor_1_1_asset.html#a99d154f2e897d81c73e55d2e2d404658", null ],
     [ "Asset", "class_code_smile_1_1_editor_1_1_asset.html#a5f11dab49ef2c78aaae5751ffb6d2c14", null ],
     [ "Asset", "class_code_smile_1_1_editor_1_1_asset.html#ac9119ab0c039d6438e38d258ac8ef792", null ],
@@ -49,9 +48,12 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "IsMain", "class_code_smile_1_1_editor_1_1_asset.html#ad68e16cfd0453dda5fb65e3590ebb6d4", null ],
     [ "IsNative", "class_code_smile_1_1_editor_1_1_asset.html#a2d0489bb8ad8663fb0fc56460a1e64a8", null ],
     [ "IsSub", "class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8", null ],
-    [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#a059991b67e2e8bde731280f7ffa6edd3", null ],
+    [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#a34189275d622e3a864bc6dd7755704e7", null ],
     [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#ad5af5f543799e7b1c96edfd6eeea1e55", null ],
+    [ "LoadMain< T >", "class_code_smile_1_1_editor_1_1_asset.html#abb2b3f9b84800bc55ccdd20d8c5abbde", null ],
+    [ "LoadMain< T >", "class_code_smile_1_1_editor_1_1_asset.html#ade67e902dd652bd89167381640d3ab83", null ],
     [ "LoadOrCreate< T >", "class_code_smile_1_1_editor_1_1_asset.html#a577d5e45742abb4682c2febe5a9f2200", null ],
+    [ "LoadSubObjects", "class_code_smile_1_1_editor_1_1_asset.html#a43e6dc5f2b208d2da2a72ea25be90ff1", null ],
     [ "Move", "class_code_smile_1_1_editor_1_1_asset.html#a98afa23dd6fd0f2c5f08f8004b894c2c", null ],
     [ "Move", "class_code_smile_1_1_editor_1_1_asset.html#ab43f85e953915359a552bf3b2e304908", null ],
     [ "OpenInDefaultApplication", "class_code_smile_1_1_editor_1_1_asset.html#a75efed07af1a60520691e474c4185942", null ],
@@ -87,5 +89,7 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "LastErrorMessage", "class_code_smile_1_1_editor_1_1_asset.html#a40a9691d7ae6b7e4fdbbf5f0d502c2eb", null ],
     [ "LocalFileId", "class_code_smile_1_1_editor_1_1_asset.html#a615000f2c07ebba22ba0093e298692a7", null ],
     [ "MainObject", "class_code_smile_1_1_editor_1_1_asset.html#aa5f15533193c9207a0313f1660808fa1", null ],
-    [ "MainType", "class_code_smile_1_1_editor_1_1_asset.html#a290e24cac93cf9eb60f6dba8bc71a917", null ]
+    [ "MainType", "class_code_smile_1_1_editor_1_1_asset.html#a290e24cac93cf9eb60f6dba8bc71a917", null ],
+    [ "SubObjects", "class_code_smile_1_1_editor_1_1_asset.html#aab0eb3c4088f0735e1ebd666b166b9f0", null ],
+    [ "VisibleSubObjects", "class_code_smile_1_1_editor_1_1_asset.html#a6ea21198053f305260eb7256134954b1", null ]
 ];
