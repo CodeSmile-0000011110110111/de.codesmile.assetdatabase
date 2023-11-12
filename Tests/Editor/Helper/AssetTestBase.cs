@@ -83,7 +83,7 @@ public abstract class AssetTestBase
 
 	protected GUID DeleteAfterTest(GUID assetGuid)
 	{
-		var obj = Asset.Load<Object>(assetGuid);
+		var obj = Asset.LoadMain<Object>(assetGuid);
 		m_TestAssets.Add(obj);
 		return assetGuid;
 	}

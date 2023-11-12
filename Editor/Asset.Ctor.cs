@@ -29,7 +29,7 @@ namespace CodeSmile.Editor
 		{
 			ThrowIf.ArgumentIsNull(obj, nameof(obj));
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.AlreadyInDatabase(obj);
+			ThrowIf.AlreadyAnAsset(obj);
 
 			Create(obj, path, overwriteExisting);
 			SetMainObjectAndAssetPath(obj);
@@ -64,7 +64,7 @@ namespace CodeSmile.Editor
 			ThrowIf.DoesNotExistInFileSystem(path);
 
 			m_AssetPath = path;
-			m_MainObject = Load<Object>();
+			m_MainObject = LoadMain<Object>();
 		}
 
 		private void SetMainObjectAndAssetPath(Object obj)

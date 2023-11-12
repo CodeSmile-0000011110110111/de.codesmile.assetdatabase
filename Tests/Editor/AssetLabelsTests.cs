@@ -3,6 +3,10 @@
 
 using CodeSmile.Editor;
 using NUnit.Framework;
+using System;
+using System.Collections;
+using UnityEditor;
+using UnityEngine.TestTools;
 
 public class AssetLabelsTests : AssetTestBase
 {
@@ -27,6 +31,32 @@ public class AssetLabelsTests : AssetTestBase
 		Assert.Contains("one", asset.Labels);
 		Assert.Contains("two", asset.Labels);
 		Assert.Contains("three", asset.Labels);
+	}
+
+	[UnityTest] public IEnumerator Labels_SetAndReload_ReturnsSetLabels()
+	{
+		var labels = new[] { "one", "two", "three" };
+
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			asset.Labels = labels;
+			asset = null;
+		}
+
+		yield return null;
+
+		GC.Collect(0, GCCollectionMode.Forced);
+		Asset.ImportAll(ImportAssetOptions.ForceUpdate);
+
+		yield return null;
+
+		{
+			var asset = (Asset)Asset.Load<UnityEngine.Object>(TestAssetPath);
+			Assert.AreEqual(3, asset.Labels.Length);
+			Assert.Contains("one", asset.Labels);
+			Assert.Contains("two", asset.Labels);
+			Assert.Contains("three", asset.Labels);
+		}
 	}
 
 	[Test] public void GetLabels_ByGuid_ReturnsSetLabels()

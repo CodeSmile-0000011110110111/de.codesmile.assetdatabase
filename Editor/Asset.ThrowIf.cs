@@ -5,6 +5,8 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
+using UnityEngine;
+using Object = System.Object;
 
 namespace CodeSmile.Editor
 {
@@ -24,7 +26,7 @@ namespace CodeSmile.Editor
 					throw new FileNotFoundException($"path does not exist: '{path}'");
 			}
 
-			public static void AlreadyInDatabase(UnityEngine.Object obj)
+			public static void AlreadyAnAsset(UnityEngine.Object obj)
 			{
 				if (IsImported(obj))
 					throw new ArgumentException($"object already is an asset file: {obj}");
@@ -126,6 +128,19 @@ namespace CodeSmile.Editor
 				var normalized = fileName.ToForwardSlashes();
 				if (normalized.Contains('/'))
 					throw new ArgumentException($"filename contains path separators: '{fileName}'", paramName);
+			}
+
+			public static void SubObjectIsGameObject(UnityEngine.Object subObject)
+			{
+				if (subObject is GameObject go)
+					throw new ArgumentException($"sub assets must not be of type GameObject: {subObject}");
+			}
+
+			public static void NotAnAssetWithAssetExtension(UnityEngine.Object assetObject)
+			{
+				var path = Path.Get(assetObject);
+				if (path.Extension.Equals(".asset") == false)
+					throw new ArgumentException("sub assets only supported with '.asset' extension: {path}");
 			}
 		}
 	}

@@ -16,7 +16,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>The asset object or null if the path does not exist or the asset is not imported.</returns>
-		public static T Load<T>(Path path) where T : Object
+		public static T LoadMain<T>(Path path) where T : Object
 		{
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.DoesNotExistInFileSystem(path);
@@ -25,8 +25,10 @@ namespace CodeSmile.Editor
 			ThrowIf.AssetNotImported(path, assetType);
 			ThrowIf.AssetTypeMismatch<T>(path, assetType);
 
-			var obj = (T)AssetDatabase.LoadMainAssetAtPath(path);
-			ThrowIf.AssetLoadReturnedNull(obj, path); // this may not be necessary but just to be sure
+			var obj = AssetDatabase.LoadMainAssetAtPath(path) as T;
+
+			// just to be sure we catch early some possible edge cases where ADB cannot load objects
+			ThrowIf.AssetLoadReturnedNull(obj, path);
 
 			return obj;
 		}
@@ -39,7 +41,7 @@ namespace CodeSmile.Editor
 		/// <param name="guid"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>The asset object or null if the guid is not an asset guid.</returns>
-		public static T Load<T>(GUID guid) where T : Object
+		public static T LoadMain<T>(GUID guid) where T : Object
 		{
 			ThrowIf.NotAnAssetGuid(guid);
 			return Load<T>(Path.Get(guid));
@@ -64,49 +66,31 @@ namespace CodeSmile.Editor
 			return obj;
 		}
 
+		public static T Load<T>(Path path) where T : Object
+		{
+			var obj = AssetDatabase.LoadAssetAtPath<T>(path);
+
+			// just to be sure we catch early some possible edge cases where ADB cannot load objects
+			ThrowIf.AssetLoadReturnedNull(obj, path);
+
+			return obj;
+		}
+
+		public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
+
+		public static Object[] LoadAllVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
+
 		/// <summary>
 		///     Private on purpose: the main object is automatically loaded when instantiating an Asset class.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
-		private T Load<T>() where T : Object => m_AssetPath != null ? (T)(m_MainObject = Load<T>(m_AssetPath)) : null;
+		private T LoadMain<T>() where T : Object => m_AssetPath != null ? (T)(m_MainObject = Load<T>(m_AssetPath)) : null;
 
-		// public static T LoadFirst<T>(AssetPath assetPath) where T : Object =>
-		// 	AssetDatabase.LoadAssetAtPath<T>(assetPath);
-		//
-		// public static Object[] LoadAll(AssetPath assetPath) => AssetDatabase.LoadAllAssetsAtPath(assetPath);
-		//
-		// public static Object[] LoadOnlyVisible(AssetPath assetPath) =>
-		// 	AssetDatabase.LoadAllAssetRepresentationsAtPath(assetPath);
+		public T Load<T>() where T : Object => Load<T>(m_AssetPath);
 
-		// public Object[] LoadAll() => SelectAndAssignMainObject(LoadAll(m_AssetPath));
-		// public Object[] LoadOnlyVisible() => SelectAndAssignMainObject(LoadOnlyVisible(m_AssetPath));
-		//
-		// public Object LoadMainAsync(Action<Object> onLoadComplete)
-		// {
-		// 	// TODO: use coroutine to load async
-		// 	Object obj = null;
-		// 	onLoadComplete?.Invoke(obj);
-		// 	return null;
-		// }
-		//
-		// public Object LoadAsync(Int32 fileId, Action<Object> onLoadComplete)
-		// {
-		// 	// TODO: use coroutine to load async
-		// 	Object obj = null;
-		// 	onLoadComplete?.Invoke(obj);
-		// 	return null;
-		// }
+		private Object[] LoadAll() => LoadAll(m_AssetPath);
 
-		//
-		// public Boolean OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
-		// 	// TODO: overload for object and instanceId
-		// 	// TODO: check null
-		// 	AssetDatabase.OpenAsset(MainObject, lineNumber, columnNumber);
-		//
-		// public void Import()
-		// {
-		// 	// TODO: check that path is valid
-		// }
+		private Object[] LoadAllVisible() => LoadAllVisible(m_AssetPath);
 	}
 }

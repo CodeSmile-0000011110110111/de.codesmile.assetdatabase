@@ -27,13 +27,13 @@ public class AssetLoadTests : AssetTestBase
 	}
 
 	[Test] public void LoadMainStatic_NotExistingGuid_Throws() =>
-		Assert.Throws<ArgumentException>(() => Asset.Load<Object>(new GUID()));
+		Assert.Throws<ArgumentException>(() => Asset.LoadMain<Object>(new GUID()));
 
 	[Test] public void LoadMainStatic_ExistingGuid_Succeeds()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 
-		var loaded = Asset.Load<Object>(Asset.Path.GetGuid((String)TestAssetPath));
+		var loaded = Asset.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
 
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -103,4 +103,6 @@ public class AssetLoadTests : AssetTestBase
 		Assert.True(didRunCallback);
 		Assert.True(TestAssetPath.Exists);
 	}
+
+	// Load, LoadAll, LoadAllVisible
 }

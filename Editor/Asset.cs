@@ -16,12 +16,21 @@ namespace CodeSmile.Editor
 
 		private Path m_AssetPath;
 		private Object m_MainObject;
-		//private Object[] m_AssetObjects;
 
 		/// <summary>
 		///     Returns the asset's main object.
 		/// </summary>
 		public Object MainObject => m_MainObject;
+
+		/// <summary>
+		/// Loads and returns all objects the asset is comprised of.
+		/// </summary>
+		public Object[] AllObjects => LoadAll();
+
+		/// <summary>
+		/// Loads and returns only those asset objects that are shown in the project view.
+		/// </summary>
+		public Object[] VisibleObjects => LoadAllVisible();
 
 		/// <summary>
 		///     Returns the type of the main asset.
