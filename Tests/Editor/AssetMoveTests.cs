@@ -52,6 +52,7 @@ namespace CodeSmile.Editor
 			var asset = CreateTestAsset(TestAssetPath);
 
 			var didMove = Asset.Move(TestAssetPath, destPath);
+			asset = new Asset(destPath); // original asset is no longer valid since we used the static method
 
 			Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());
 			Assert.True(didMove);

@@ -32,6 +32,7 @@ namespace CodeSmile.Editor
 
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
 			var success = Asset.Rename((String)asset.AssetPath, "NewName");
+			asset = new Asset(newPath); // original asset no longer valid, we used the static Rename method
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
