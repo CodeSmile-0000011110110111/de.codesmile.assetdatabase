@@ -7,7 +7,6 @@ using Object = UnityEngine.Object;
 
 public class DifferentExampleSO : ScriptableObject
 {
-	public Object Ref;
 	public String Text;
 	public Int32 InstanceId;
 	public Single FloatValue;

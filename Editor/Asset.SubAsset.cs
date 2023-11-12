@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -9,25 +10,15 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		// private Object[] SelectAndAssignMainObject(Object[] objects)
-		// {
-		// 	m_AssetObjects = objects;
-		//
-		// 	if (m_MainObject == null)
-		// 	{
-		// 		foreach (var obj in objects)
-		// 		{
-		// 			if (AssetDatabase.IsMainAsset(obj))
-		// 			{
-		// 				m_MainObject = obj;
-		// 				break;
-		// 			}
-		// 		}
-		// 	}
-		//
-		// 	return objects;
-		// }
-
+		/// <summary>
+		///     Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset
+		///     and dragging it outside the containing asset in the project view.
+		///     Note: This only works with visible sub objects.
+		/// </summary>
+		/// <param name="subObject"></param>
+		/// <param name="destinationPath"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
 		public static Boolean ExtractObject(Object subObject, Path destinationPath)
 		{
 			ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
@@ -36,6 +27,11 @@ namespace CodeSmile.Editor
 			return Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));
 		}
 
+		/// <summary>
+		///     Adds an object as sub-object to the asset object.
+		/// </summary>
+		/// <param name="subObject"></param>
+		/// <param name="assetObject"></param>
 		public static void AddObjectToAsset(Object subObject, Object assetObject)
 		{
 			ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
@@ -47,6 +43,10 @@ namespace CodeSmile.Editor
 			AssetDatabase.AddObjectToAsset(subObject, assetObject);
 		}
 
+		/// <summary>
+		///     Removes an object as sub-object from whatever asset it is contained in.
+		/// </summary>
+		/// <param name="subObject"></param>
 		public static void RemoveObjectFromAsset(Object subObject)
 		{
 			ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
@@ -54,11 +54,26 @@ namespace CodeSmile.Editor
 			AssetDatabase.RemoveObjectFromAsset(subObject);
 		}
 
-		public static void SetMainObject(Object obj, Path path)
+		/// <summary>
+		///     Sets (changes) an asset's 'main' object.
+		///     Note: The subObject must already be a sub object of the targeted asset.
+		/// </summary>
+		/// <param name="subObject"></param>
+		/// <param name="path"></param>
+		public static void SetMainObject(Object subObject, Path path)
 		{
-			AssetDatabase.SetMainObject(obj, path);
+			AssetDatabase.SetMainObject(subObject, path);
 			Import(path);
 		}
+
+		/// <summary>
+		///     Sets (changes) an asset's 'main' object.
+		///     Note: The subObject must already be a sub object of the targeted asset.
+		/// </summary>
+		/// <param name="subObject"></param>
+		/// <param name="assetObject"></param>
+		public static void SetMainObject(Object subObject, Object assetObject) =>
+			SetMainObject(subObject, Path.Get(assetObject));
 
 		public void AddObject(Object subObject) => AddObjectToAsset(subObject, m_MainObject);
 

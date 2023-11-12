@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
 
@@ -67,5 +68,43 @@ public class AssetSubAssetTests : AssetTestBase
 		var asset = CreateTestAsset(TestAssetPath);
 
 		Assert.AreEqual(0, asset.VisibleSubObjects.Length);
+	}
+
+	[Test] public void AddObject_SetSubObjectAsMain_LoadSucceeds()
+	{
+		var asset = CreateTestAsset(TestAssetPath);
+		var subObject = Instantiate.DifferentExampleSO();
+		asset.AddObject(subObject);
+
+		// check if the main object gets loaded after changing it
+		asset.MainObject = subObject;
+		var differentExampleSo = asset.Load<DifferentExampleSO>();
+
+		Assert.AreEqual(subObject, differentExampleSo);
+		Assert.AreEqual(subObject, asset.MainObject);
+		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
+	}
+
+	[Test] public void SetMainObjectStatic_SetSubObjectAsMain_LoadSucceeds()
+	{
+		var asset = CreateTestAsset(TestAssetPath);
+		var subObject = Instantiate.DifferentExampleSO();
+		asset.AddObject(subObject);
+
+		Asset.SetMainObject(subObject, asset);
+		var differentExampleSo = Asset.LoadMain<Object>(asset.AssetPath);
+
+		Assert.AreEqual(subObject, differentExampleSo);
+		Assert.AreEqual(subObject, asset.MainObject);
+		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
+	}
+
+
+	[Test] public void AddObject_SetNonAssetObjectAsMain_Throws()
+	{
+		var asset = CreateTestAsset(TestAssetPath);
+		var subObject = Instantiate.DifferentExampleSO();
+
+		Assert.Throws<UnityException>(() => asset.MainObject = subObject);
 	}
 }

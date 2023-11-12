@@ -125,18 +125,4 @@ public class AssetLoadTests : AssetTestBase
 		Assert.True(TestAssetPath.Exists);
 	}
 
-	[Test] public void AddObject_SetSubObjectAsMain_LoadSucceeds()
-	{
-		var asset = CreateTestAsset(TestAssetPath);
-		var subObject = Instantiate.DifferentExampleSO();
-		asset.AddObject(subObject);
-
-		// check if the main object gets loaded after changing it
-		asset.MainObject = subObject;
-		var differentExampleSo = asset.Load<DifferentExampleSO>();
-
-		Assert.AreEqual(subObject, differentExampleSo);
-		Assert.AreEqual(subObject, asset.MainObject);
-		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
-	}
 }

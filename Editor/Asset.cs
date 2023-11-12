@@ -22,7 +22,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		public Object MainObject
 		{
-			get => m_MainObject;
+			get => m_MainObject = LoadMain<Object>();
 			set
 			{
 				SetMainObject(value, m_AssetPath);
