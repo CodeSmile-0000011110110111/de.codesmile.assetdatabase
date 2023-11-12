@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['releasefilehandles_0',['ReleaseFileHandles',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#af41fed76f381121698b04cce1ea7f24a',1,'CodeSmile::Editor::Asset::Database']]],
-  ['rename_1',['Rename',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3f9b8979f721130c874d42b665e3e0cf',1,'CodeSmile.Editor.Asset.Path.Rename()'],['../class_code_smile_1_1_editor_1_1_asset.html#a328f14a0c05eb1dde1bf0c40375d0fb1',1,'CodeSmile.Editor.Asset.Rename(Path assetPath, String newFileName)'],['../class_code_smile_1_1_editor_1_1_asset.html#a9a9e35eca234f519cbd7461ce0abff4f',1,'CodeSmile.Editor.Asset.Rename(String newFileName)']]]
+  ['path_0',['Path',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a8cc29261520e3a8dd7c24901138cb29d',1,'CodeSmile.Editor.Asset.Path.Path(String fullOrRelativePath)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#adf2b750897ce01c176b6b60243462842',1,'CodeSmile.Editor.Asset.Path.Path(String directory, String fileName, String extension=DefaultExtension)']]]
 ];

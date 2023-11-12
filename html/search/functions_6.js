@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['import_0',['Import',['../class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80',1,'CodeSmile::Editor::Asset']]],
-  ['importall_1',['ImportAll',['../class_code_smile_1_1_editor_1_1_asset.html#a59698b1b5df688727eb0a8e01742cb06',1,'CodeSmile::Editor::Asset']]],
-  ['isforeign_2',['IsForeign',['../class_code_smile_1_1_editor_1_1_asset.html#a91eb959072257d36a867da3d5ab28e39',1,'CodeSmile::Editor::Asset']]],
-  ['isimported_3',['IsImported',['../class_code_smile_1_1_editor_1_1_asset.html#ad20a010fbffb329e75018e90853ef08f',1,'CodeSmile::Editor::Asset']]],
-  ['isloaded_4',['IsLoaded',['../class_code_smile_1_1_editor_1_1_asset.html#a1e075bee85d0da50febd9b52b4833d53',1,'CodeSmile.Editor.Asset.IsLoaded(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#ac748be7f1451f78ca85f6ea027c65ae9',1,'CodeSmile.Editor.Asset.IsLoaded(Path path)']]],
-  ['ismain_5',['IsMain',['../class_code_smile_1_1_editor_1_1_asset.html#ad68e16cfd0453dda5fb65e3590ebb6d4',1,'CodeSmile::Editor::Asset']]],
-  ['isnative_6',['IsNative',['../class_code_smile_1_1_editor_1_1_asset.html#a2d0489bb8ad8663fb0fc56460a1e64a8',1,'CodeSmile::Editor::Asset']]],
-  ['issub_7',['IsSub',['../class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8',1,'CodeSmile::Editor::Asset']]],
-  ['isvalid_8',['IsValid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acb35e1fe136e67589534574f90ed270a',1,'CodeSmile::Editor::Asset::Path']]]
+  ['get_0',['Get',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce',1,'CodeSmile.Editor.Asset.Path.Get(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ab438c7de9e569da5b7f6e3aeffe69672',1,'CodeSmile.Editor.Asset.Path.Get(GUID guid)']]],
+  ['get_3c_20t_20_3e_1',['Get&lt; T &gt;',['../class_code_smile_1_1_editor_1_1_asset.html#aca23cc23e4125a3382542bba4f9daaa5',1,'CodeSmile::Editor::Asset']]],
+  ['getdependencies_2',['GetDependencies',['../class_code_smile_1_1_editor_1_1_asset.html#ae0f8cc7ffc89970e27909f0e1c65df0d',1,'CodeSmile.Editor.Asset.GetDependencies(Path path, Boolean recursive=false)'],['../class_code_smile_1_1_editor_1_1_asset.html#a6bafbc71895c02f02d586e42240f5c08',1,'CodeSmile.Editor.Asset.GetDependencies(Path[] paths, Boolean recursive=false)']]],
+  ['getguid_3',['GetGuid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af505db78833a2e6f25bdfa8a90e8a5c5',1,'CodeSmile::Editor::Asset::Path']]],
+  ['geticon_4',['GetIcon',['../class_code_smile_1_1_editor_1_1_asset.html#a151dae36faecffecf9b857cab7c35d5a',1,'CodeSmile::Editor::Asset']]],
+  ['getlabels_5',['GetLabels',['../class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0',1,'CodeSmile.Editor.Asset.GetLabels(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a4adafb1ae8505616347e99cf66637e72',1,'CodeSmile.Editor.Asset.GetLabels(GUID guid)']]],
+  ['getlasterrormessage_6',['GetLastErrorMessage',['../class_code_smile_1_1_editor_1_1_asset.html#ac175e86600249f976510ecfd3279a2a1',1,'CodeSmile::Editor::Asset']]],
+  ['getlocalfileid_7',['GetLocalFileId',['../class_code_smile_1_1_editor_1_1_asset.html#a17bb22f4a8874b605f035e944edfff5d',1,'CodeSmile::Editor::Asset']]],
+  ['getmaintype_8',['GetMainType',['../class_code_smile_1_1_editor_1_1_asset.html#a7e64cd59ce715783551782ef3c8d1615',1,'CodeSmile::Editor::Asset']]]
 ];
