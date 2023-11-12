@@ -9,17 +9,8 @@ using UnityEngine;
 
 public class AssetPathTests : AssetTestBase
 {
-	[Test] public void AssetPath_DefaultCtor_EqualsAssetsString() =>
-		Assert.AreEqual("Assets", new Asset.Path().ToString());
-
-	[Test] public void AssetPath_DefaultCtor_ImplicitConversionEqualsAssetsString() =>
-		Assert.AreEqual("Assets", new Asset.Path());
-
-	[Test] public void AssetPath_DefaultCtor_ExplicitConversionEqualsAssetsString()
-	{
-		Assert.AreEqual("Assets", (String)new Asset.Path());
-		new Action<Asset.Path>(assetPath => Assert.AreEqual("Assets", assetPath)).Invoke("Assets");
-	}
+	[Test] public void AssetPath_ExplicitConversion_StringEquals() =>
+		Assert.AreEqual(TestAssetPath, (String)new Asset.Path(TestAssetPath));
 
 	[Test] public void AssetPath_NullString_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
@@ -219,6 +210,24 @@ public class AssetPathTests : AssetTestBase
 	[TestCase("Assets/illegal path char ?/folder", false)]
 	[TestCase("Assets/<illegal path char>/folder", false)]
 	[TestCase("Assets/illegal file name |.asset", false)]
-	public void IsValid_VariousCases_AsExpected(String input, Boolean expectedValid) =>
-		Assert.AreEqual(expectedValid, ((Asset.Path)input).IsValid);
+	public void IsValidStatic_VariousCases_AsExpected(String input, Boolean expectedValid) =>
+		Assert.AreEqual(expectedValid, Asset.Path.IsValid(input));
+
+	[TestCase("Assets/invalid ? filename.asset")]
+	[TestCase("Assets/invalid < filename.asset")]
+	[TestCase("Assets/invalid > filename.asset")]
+	[TestCase("Assets/invalid : filename.asset")]
+	[TestCase("Assets/invalid * filename.asset")]
+	[TestCase("Assets/invalid | filename.asset")]
+	[TestCase("Assets/invalid ? foldername/some.asset")]
+	[TestCase("Assets/invalid < foldername/some.asset")]
+	[TestCase("Assets/invalid > foldername/some.asset")]
+	[TestCase("Assets/invalid : foldername/some.asset")]
+	[TestCase("Assets/invalid * foldername/some.asset")]
+	[TestCase("Assets/invalid | foldername/some.asset")]
+	public void IsValidStatic_IllegalChars_FalseAndCtorThrows(String illegalPath)
+	{
+		Assert.False(Asset.Path.IsValid(illegalPath));
+		Assert.Throws<ArgumentException>(() => new Asset.Path(illegalPath));
+	}
 }

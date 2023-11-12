@@ -3,6 +3,5 @@ var searchData=
   ['icon_0',['Icon',['../class_code_smile_1_1_editor_1_1_asset.html#a42e19fd29efe3df32cffdf2837f01758',1,'CodeSmile::Editor::Asset']]],
   ['isdeleted_1',['IsDeleted',['../class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928',1,'CodeSmile::Editor::Asset']]],
   ['isforeignasset_2',['IsForeignAsset',['../class_code_smile_1_1_editor_1_1_asset.html#ac0987b9b2e192199fef358b794e45b71',1,'CodeSmile::Editor::Asset']]],
-  ['isnativeasset_3',['IsNativeAsset',['../class_code_smile_1_1_editor_1_1_asset.html#ad8252fd41d5d1e6677a1dfeb17dc7e5b',1,'CodeSmile::Editor::Asset']]],
-  ['isvalid_4',['IsValid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a43ef63bbb6f3dcbf5139538b1a163aed',1,'CodeSmile::Editor::Asset::Path']]]
+  ['isnativeasset_3',['IsNativeAsset',['../class_code_smile_1_1_editor_1_1_asset.html#ad8252fd41d5d1e6677a1dfeb17dc7e5b',1,'CodeSmile::Editor::Asset']]]
 ];

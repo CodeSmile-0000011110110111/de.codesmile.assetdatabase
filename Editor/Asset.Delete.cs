@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEditor;
 using Object = UnityEngine.Object;
@@ -11,7 +12,7 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		private static List<String> s_DeleteFailedPaths = new();
+		private static List<String> s_FailedToDeletePaths = new();
 
 		/// <summary>
 		///     The paths that failed to be deleted or trashed. Is an empty list if no failure occured on the
@@ -20,7 +21,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		/// <see cref="TrashMany(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 		/// <see cref="DeleteMany(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
-		public static IList<String> DeleteFailedPaths => s_DeleteFailedPaths;
+		[ExcludeFromCodeCoverage] public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
@@ -50,7 +51,8 @@ namespace CodeSmile.Editor
 		///     True if all assets where deleted, false if one or more failed to delete whose paths
 		///     you can access via the Asset.Database.DeleteFailedPaths property.
 		/// </returns>
-		/// <see cref="DeleteFailedPaths" />
+		/// <see cref="FailedToDeletePaths" />
+		[ExcludeFromCodeCoverage]
 		public static Boolean DeleteMany(IEnumerable<Path> paths) => DeleteMany(paths.Cast<String>());
 
 		/// <summary>
@@ -61,9 +63,10 @@ namespace CodeSmile.Editor
 		///     True if all assets where deleted, false if one or more failed to delete whose paths
 		///     you can access via the Asset.Database.DeleteFailedPaths property.
 		/// </returns>
-		/// <see cref="DeleteFailedPaths" />
+		/// <see cref="FailedToDeletePaths" />
+		[ExcludeFromCodeCoverage]
 		public static Boolean DeleteMany(IEnumerable<String> paths) =>
-			AssetDatabase.DeleteAssets(paths.ToArray(), s_DeleteFailedPaths = new List<String>());
+			AssetDatabase.DeleteAssets(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
 		/// <summary>
 		///     Moves the asset file to the OS trash (same as Delete, but recoverable).
@@ -89,7 +92,8 @@ namespace CodeSmile.Editor
 		///     True if all assets where trashed, false if one or more failed to trash whose paths
 		///     you can access via the Asset.Database.DeleteFailedPaths property.
 		/// </returns>
-		/// <see cref="DeleteFailedPaths" />
+		/// <see cref="FailedToDeletePaths" />
+		[ExcludeFromCodeCoverage]
 		public static Boolean TrashMany(IEnumerable<Path> paths) => TrashMany(paths.Cast<String>());
 
 		/// <summary>
@@ -100,9 +104,10 @@ namespace CodeSmile.Editor
 		///     True if all assets where trashed, false if one or more failed to trash whose paths
 		///     you can access via the Asset.Database.DeleteFailedPaths property.
 		/// </returns>
-		/// <see cref="DeleteFailedPaths" />
+		/// <see cref="FailedToDeletePaths" />
+		[ExcludeFromCodeCoverage]
 		public static Boolean TrashMany(IEnumerable<String> paths) =>
-			AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_DeleteFailedPaths = new List<String>());
+			AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
 		/// <summary>
 		///     Deletes the asset.

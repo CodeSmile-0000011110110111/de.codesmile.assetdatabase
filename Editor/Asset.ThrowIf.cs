@@ -97,12 +97,10 @@ namespace CodeSmile.Editor
 				}
 			}
 
-			public static void PathIsNotValid(Path destinationPath)
+			public static void PathIsNotValid(String path)
 			{
-				if (destinationPath == null)
-					throw new ArgumentNullException(nameof(destinationPath));
-				if (destinationPath.IsValid == false)
-					throw new ArgumentException($"destination path is invalid: {GetLastErrorMessage()}");
+				if (Path.IsValid(path) == false)
+					throw new ArgumentException($"invalid path: {GetLastErrorMessage()}");
 			}
 
 			public static void NotAProjectPath(String fullPath)

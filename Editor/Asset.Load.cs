@@ -21,7 +21,7 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.DoesNotExistInFileSystem(path);
 
-			var assetType = MainType(path);
+			var assetType = GetMainType(path);
 			ThrowIf.AssetNotImported(path, assetType);
 			ThrowIf.AssetTypeMismatch<T>(path, assetType);
 

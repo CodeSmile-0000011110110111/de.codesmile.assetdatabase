@@ -43,36 +43,6 @@ namespace CodeSmile.Editor
 			private String m_RelativePath = String.Empty;
 
 			/// <summary>
-			///     Returns true if the path is valid: contains no illegal characters and isn't too long.
-			///     If this returns false, Asset.GetLastErrorMessage() contains detailed information.
-			///     <see cref="Asset.GetLastErrorMessage()" />
-			/// </summary>
-			public Boolean IsValid
-			{
-				get
-				{
-					var isValid = true;
-
-					try
-					{
-						// these will throw if they contain illegal chars
-						System.IO.Path.GetFileName(m_RelativePath);
-						var dirName = System.IO.Path.GetDirectoryName(m_RelativePath);
-
-						// test for remaining two invalid path chars
-						isValid = dirName.Any(c => c == '*' || c == '?') == false;
-					}
-					catch (Exception ex)
-					{
-						SetLastErrorMessage($"{ex.Message}; path: {m_RelativePath}");
-						isValid = false;
-					}
-
-					return isValid;
-				}
-			}
-
-			/// <summary>
 			///     Returns true if the path exists in the AssetDatabase.
 			///     NOTE: This may still return true for asset files that have been deleted externally.
 			///     <see cref="ExistsInFileSystem" />
@@ -164,6 +134,7 @@ namespace CodeSmile.Editor
 			///     CAUTION: This may incorrectly assume a file if the path's last folder contains a dot. In this case
 			///     it returns the second to last folder in the path.
 			/// </summary>
+			[ExcludeFromCodeCoverage]
 			public Path FolderPathAssumptive
 			{
 				get
@@ -189,6 +160,42 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
+			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
+			///     characters and it isn't too long.
+			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
+			///     <see cref="Asset.GetLastErrorMessage()" />
+			/// </summary>
+			public static Boolean IsValid(String path)
+			{
+				var isValid = true;
+
+				try
+				{
+					// System.IO will throw for most illegal chars, plus some extra checks
+					var fileName = System.IO.Path.GetFileName(path);
+					var folderName = System.IO.Path.GetDirectoryName(path);
+
+					// check folder name for some chars that System.IO allows in GetDirectoryName
+					var testIllegalChars = new Func<Char, Boolean>(c => c == '*' || c == '?' || c == ':');
+					isValid = folderName.Any(testIllegalChars) == false;
+
+					if (isValid)
+					{
+						// check filename for some chars that System.IO allows in GetFileName
+						fileName = path.Substring(folderName.Length, path.Length - folderName.Length);
+						isValid = fileName.Any(testIllegalChars) == false;
+					}
+				}
+				catch (Exception ex)
+				{
+					SetLastErrorMessage($"{ex.Message} => \"{path}\"");
+					isValid = false;
+				}
+
+				return isValid;
+			}
+
+			/// <summary>
 			///     Tests if the given file exists.
 			/// </summary>
 			/// <param name="path"></param>
@@ -205,21 +212,25 @@ namespace CodeSmile.Editor
 
 			private static String ToRelative(String fullOrRelativePath)
 			{
-				if (IsRelative(fullOrRelativePath))
-					return fullOrRelativePath.Trim('/');
+				var relativePath = fullOrRelativePath;
+				if (IsRelative(relativePath) == false)
+				{
+					ThrowIf.NotAProjectPath(fullOrRelativePath);
+					relativePath = MakeRelative(fullOrRelativePath);
+				}
 
-				var fullPath = fullOrRelativePath;
-				ThrowIf.NotAProjectPath(fullPath);
-				return MakeRelative(fullPath);
+				relativePath = relativePath.Trim('/');
+
+				ThrowIf.PathIsNotValid(relativePath);
+				return relativePath;
 			}
 
 			private static Boolean IsRelative(String path)
 			{
-				// path must start with "Assets" or "Packages/"
-				// it may also be just "Assets" (length == 6), otherwise a path separator must follow: "Assets/.."
 				path = path.TrimStart('/').ToLower();
 
-				// test if the relative path starts with one of the recognized (allowed) subfolders
+				// path must start with given project root subfolder names (eg 'Assets', 'Packages', 'Library' ..)
+				// and bei either just the subfolder (length equals) or be followed by a path separator
 				foreach (var allowedSubfolder in s_AllowedAssetSubfolders)
 				{
 					var doesStartsWith = path.StartsWith(allowedSubfolder);
@@ -238,6 +249,7 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
 			/// </summary>
+			[ExcludeFromCodeCoverage]
 			public void OpenFolder() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPathAssumptive));
 
 			/// <summary>

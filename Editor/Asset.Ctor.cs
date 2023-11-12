@@ -10,7 +10,7 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		[ExcludeFromCodeCoverage] private Asset() {} // Hidden parameterless ctor
+		[ExcludeFromCodeCoverage] private Asset() {} // disallowed parameterless ctor
 
 		/// <summary>
 		///     Returns an instance by creating (saving) the object as an asset file at the given path.

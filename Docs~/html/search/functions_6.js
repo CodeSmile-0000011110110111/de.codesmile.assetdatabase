@@ -7,5 +7,6 @@ var searchData=
   ['isloaded_4',['IsLoaded',['../class_code_smile_1_1_editor_1_1_asset.html#a1e075bee85d0da50febd9b52b4833d53',1,'CodeSmile.Editor.Asset.IsLoaded(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#ac748be7f1451f78ca85f6ea027c65ae9',1,'CodeSmile.Editor.Asset.IsLoaded(Path path)']]],
   ['ismain_5',['IsMain',['../class_code_smile_1_1_editor_1_1_asset.html#ad68e16cfd0453dda5fb65e3590ebb6d4',1,'CodeSmile::Editor::Asset']]],
   ['isnative_6',['IsNative',['../class_code_smile_1_1_editor_1_1_asset.html#a2d0489bb8ad8663fb0fc56460a1e64a8',1,'CodeSmile::Editor::Asset']]],
-  ['issub_7',['IsSub',['../class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8',1,'CodeSmile::Editor::Asset']]]
+  ['issub_7',['IsSub',['../class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8',1,'CodeSmile::Editor::Asset']]],
+  ['isvalid_8',['IsValid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acb35e1fe136e67589534574f90ed270a',1,'CodeSmile::Editor::Asset::Path']]]
 ];

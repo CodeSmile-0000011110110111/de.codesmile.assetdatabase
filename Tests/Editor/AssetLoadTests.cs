@@ -4,6 +4,7 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -37,7 +38,7 @@ public class AssetLoadTests : AssetTestBase
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
 		Assert.AreEqual(obj.GetType(), loaded.GetType());
-		Assert.AreEqual(obj.GetType(), Asset.MainType((String)TestAssetPath));
+		Assert.AreEqual(obj.GetType(), Asset.GetMainType((String)TestAssetPath));
 	}
 
 	[Test] public void LoadMainStatic_TypeMismatch_Throws()
@@ -69,6 +70,7 @@ public class AssetLoadTests : AssetTestBase
 		}
 	}
 
+	[ExcludeFromCodeCoverage]
 	[Test] public void LoadOrCreate_ExistingPath_DoesNotRunCallback()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);

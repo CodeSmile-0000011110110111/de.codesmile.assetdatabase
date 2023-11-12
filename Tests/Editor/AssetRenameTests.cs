@@ -20,12 +20,18 @@ namespace CodeSmile.Editor
 			Assert.False(asset.Rename(null));
 		}
 
+		[Test] public void Rename_PathInsteadOfFileName_False()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			Assert.False(asset.Rename("Assets/renamed.asset")); // cannot use a path
+		}
+
 		[Test] public void RenameStatic_ExistingFile_DidRename()
 		{
 			var asset = CreateTestAsset(TestAssetPath);
 
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
-			var success = Asset.Rename((String)asset.AssetPath, newPath);
+			var success = Asset.Rename((String)asset.AssetPath, "NewName");
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
@@ -39,7 +45,7 @@ namespace CodeSmile.Editor
 			var asset = CreateTestAsset(TestAssetPath);
 
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
-			var success = asset.Rename(newPath);
+			var success = asset.Rename("NewName");
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);
@@ -54,7 +60,7 @@ namespace CodeSmile.Editor
 			var asset = CreateTestAsset(TestAssetPath);
 
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.ext");
-			var success = asset.Rename(newPath);
+			var success = asset.Rename("NewName.ext");
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());
 			Assert.IsTrue(success);

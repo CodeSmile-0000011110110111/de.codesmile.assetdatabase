@@ -26,7 +26,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the type of the main asset.
 		/// </summary>
-		public Type Type => MainType(m_AssetPath);
+		[ExcludeFromCodeCoverage] public Type MainType => GetMainType(m_AssetPath);
 
 		/// <summary>
 		///     Returns the path to the asset (file or folder).
@@ -41,7 +41,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the local FileID of the asset.
 		/// </summary>
-		public Int64 LocalFileId => GetLocalFileId(m_MainObject);
+		[ExcludeFromCodeCoverage] public Int64 LocalFileId => GetLocalFileId(m_MainObject);
 
 		/// <summary>
 		///     Sets or gets the labels associated with the asset.
@@ -123,7 +123,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns>The local fileID or 0 on failure.</returns>
-		public static Int64 GetLocalFileId(Object obj) =>
+		[ExcludeFromCodeCoverage] public static Int64 GetLocalFileId(Object obj) =>
 			AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out var localId) ? localId : 0;
 
 		/// <summary>
@@ -203,7 +203,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>
-		public static Type MainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
+		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
 		///     Returns the dependencies of the asset at the given path. Returns paths to dependent assets.

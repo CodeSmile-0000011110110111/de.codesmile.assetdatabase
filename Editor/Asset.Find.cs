@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEditor;
 
@@ -18,6 +19,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		/// <see cref="FindGuids" />
 		/// <see cref="FindPaths" />
+		[ExcludeFromCodeCoverage]
 		public static String[] Find(String filter, String[] searchInFolders = null) => searchInFolders == null
 			? AssetDatabase.FindAssets(filter)
 			: AssetDatabase.FindAssets(filter, searchInFolders);
@@ -30,6 +32,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		/// <see cref="Find" />
 		/// <see cref="FindGuids" />
+		[ExcludeFromCodeCoverage]
 		public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
 			Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
 
@@ -41,6 +44,7 @@ namespace CodeSmile.Editor
 		/// <returns></returns>
 		/// <see cref="Find" />
 		/// <see cref="FindPaths" />
+		[ExcludeFromCodeCoverage]
 		public static GUID[] FindGuids(String filter, String[] searchInFolders = null) =>
 			Find(filter, searchInFolders).Select(guid => new GUID(guid)).ToArray();
 	}

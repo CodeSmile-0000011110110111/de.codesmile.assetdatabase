@@ -19,5 +19,5 @@ public class AssetDatabaseTests : AssetTestBase
 	[Test] public void Exists_ExistingAsset_True() =>
 		Assert.IsTrue(Asset.IsImported(CreateTestAssetObject(TestAssetPath)));
 
-	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.MainType((String)TestAssetPath));
+	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.GetMainType((String)TestAssetPath));
 }

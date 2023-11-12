@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CodeSmile.Editor
 {
@@ -9,10 +10,7 @@ namespace CodeSmile.Editor
 	{
 		public partial class Path
 		{
-			/// <summary>
-			///     Creates an asset path pointing to the 'Assets' folder.
-			/// </summary>
-			public Path() : this("Assets") {}
+			[ExcludeFromCodeCoverage] private Path() {} // disallowed parameterless ctor
 
 			/// <summary>
 			///     Creates an asset path from either a full or relative path.

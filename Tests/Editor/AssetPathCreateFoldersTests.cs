@@ -30,6 +30,18 @@ public class AssetPathCreateFoldersTests : AssetTestBase
 		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
 	}
 
+	[Test] public void CreateFolders_InvalidPath_Throws()
+	{
+		var path = "Asset/this * is ? illagel/file.asset";
+		Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
+	}
+
+	[Test] public void CreateFolders_InvalidFileName_Throws()
+	{
+		var path = "Asset/subfolder/you < are | not : allowed * to do > this.asset";
+		Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
+	}
+
 	[Test] public void CreateFolders_ValidFilePath_FolderExists()
 	{
 		var dirPath = TestSubFolderPath;

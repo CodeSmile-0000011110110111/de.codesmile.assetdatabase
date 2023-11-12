@@ -17,7 +17,7 @@ namespace CodeSmile.Editor
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
 		public static Boolean CanMove(Path sourcePath, Path destinationPath)
 		{
-			if (sourcePath == null || destinationPath == null || destinationPath.IsValid == false)
+			if (sourcePath == null || destinationPath == null)
 				return false;
 
 			return Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));
@@ -32,10 +32,7 @@ namespace CodeSmile.Editor
 		/// <returns>True if the move was successful.</returns>
 		public static Boolean Move(Path sourcePath, Path destinationPath)
 		{
-			if (sourcePath == null || destinationPath == null || destinationPath.IsValid == false)
-				return false;
-
-			if (destinationPath.IsValid == false)
+			if (sourcePath == null || destinationPath == null)
 				return false;
 
 			destinationPath.CreateFolders();

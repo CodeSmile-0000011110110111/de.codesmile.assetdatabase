@@ -27,14 +27,11 @@ namespace CodeSmile.Editor
 			ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);
 
 			var newDestPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
-			if (newDestPath.IsValid == false)
-				return false;
+			newDestPath.CreateFolders();
 
-			newDestPath.CreateFolders(); // CanMove fails if the path doesn't exist
-			if (CanMove(sourcePath, newDestPath) == false) // this provides us with a LastErrorMessage
-				return false;
-
-			return AssetDatabase.CopyAsset(sourcePath, newDestPath);
+			var success = AssetDatabase.CopyAsset(sourcePath, newDestPath);
+			SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {newDestPath}");
+			return success;
 		}
 
 		/// <summary>

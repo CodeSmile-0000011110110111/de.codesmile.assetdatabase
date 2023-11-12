@@ -15,8 +15,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="assetPath">The path to the file or folder to rename.</param>
 		/// <param name="newFileName">
-		///     The new name of the file or folder, without extension. You may pass in a
-		///     full path, in this case only the file or folder name of that path is used.
+		///     The new name of the file or folder, without extension.
 		/// </param>
 		/// <returns>
 		///     True if the rename succeeded, false otherwise.
@@ -27,17 +26,6 @@ namespace CodeSmile.Editor
 			if (assetPath == null || newFileName == null)
 				return false;
 
-			// also accept full paths .. because, why not?
-			try
-			{
-				newFileName = System.IO.Path.GetFileName(newFileName); // throws on illegal chars
-			}
-			catch (Exception e)
-			{
-				SetLastErrorMessage(e.Message);
-				return false;
-			}
-
 			return Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));
 		}
 
@@ -47,8 +35,7 @@ namespace CodeSmile.Editor
 		///     <see cref="Move" />
 		/// </summary>
 		/// <param name="newFileName">
-		///     The new name of the file or folder, without extension. You may pass in a
-		///     full path, in this case only the file or folder name of that path is used.
+		///     The new name of the file or folder, without extension.
 		/// </param>
 		/// <returns>
 		///     True if the rename succeeded. The AssetPath property will be updated accordingly.

@@ -23,32 +23,6 @@ public class AssetCopyTests : AssetTestBase
 		Assert.Throws<ArgumentException>(() => Asset.Copy(asset.AssetPath, asset.AssetPath, true));
 	}
 
-	[Test] public void CopyStatic_ToInvalidFileName_FalseWithErrorMessage()
-	{
-		var asset = CreateTestAsset(TestAssetPath);
-
-		var destPath = (Asset.Path)"Assets/subfolder/<*:|?>.file";
-		var didCopy = Asset.Copy(asset.AssetPath, destPath);
-		//Debug.Log(asset.LastErrorMessage);
-
-		Assert.False(didCopy);
-		Assert.False(destPath.Exists);
-		Assert.AreNotEqual(String.Empty, asset.LastErrorMessage);
-	}
-
-	[Test] public void CopyStatic_ToInvalidFolderName_FalseWithErrorMessage()
-	{
-		var asset = CreateTestAsset(TestAssetPath);
-
-		var destPath = (Asset.Path)"Assets/<*:|?>/copy.asset";
-		var didCopy = Asset.Copy(asset.AssetPath, destPath);
-		//Debug.Log(asset.LastErrorMessage);
-
-		Assert.False(didCopy);
-		Assert.False(destPath.Exists);
-		Assert.AreNotEqual(String.Empty, asset.LastErrorMessage);
-	}
-
 	[Test] public void CopyStatic_ToNotExistingFolder_Succeeds()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
