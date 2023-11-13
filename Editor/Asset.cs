@@ -142,8 +142,13 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns>The local fileID or 0 on failure.</returns>
-		[ExcludeFromCodeCoverage] public static Int64 GetLocalFileId(Object obj) =>
-			AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out var localId) ? localId : 0;
+		[ExcludeFromCodeCoverage] public static Int64 GetLocalFileId(Object obj)
+		{
+			// force Rider to not clean this up to 'var' because Unity 2021 has both long and int variants
+			// of the TryGetGUID.. method and thus cause compile error due to 'call is ambiguous between'
+			var localId = Int64.MinValue;
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
+		}
 
 		/// <summary>
 		///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
@@ -230,6 +235,7 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <param name="recursive"></param>
 		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
 		public static String[] GetDependencies(Path path, Boolean recursive = false) =>
 			AssetDatabase.GetDependencies(path, recursive);
 
@@ -239,6 +245,7 @@ namespace CodeSmile.Editor
 		/// <param name="paths"></param>
 		/// <param name="recursive"></param>
 		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
 		public static String[] GetDependencies(Path[] paths, Boolean recursive = false) =>
 			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), recursive);
 
