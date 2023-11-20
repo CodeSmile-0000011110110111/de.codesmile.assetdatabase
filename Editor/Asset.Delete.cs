@@ -19,29 +19,27 @@ namespace CodeSmile.Editor
 		///     last call to DeleteMany or TrashMany.
 		/// </summary>
 		/// <returns></returns>
-		/// <see cref="TrashMany(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
-		/// <see cref="DeleteMany(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
+		/// <see cref="Trash(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
+		/// <see cref="Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 		[ExcludeFromCodeCoverage] public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
 		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
-		/// <param name="moveToTrash">If true, file will be moved to OS trashcan (recoverable delete).</param>
 		/// <param name="path"></param>
-		public static Boolean Delete(Path path, Boolean moveToTrash = false)
+		public static Boolean Delete(Path path)
 		{
 			if (path == null || path.Exists == false)
 				return false;
 
-			return moveToTrash ? AssetDatabase.MoveAssetToTrash(path) : AssetDatabase.DeleteAsset(path);
+			return AssetDatabase.DeleteAsset(path);
 		}
 
 		/// <summary>
 		///     Deletes the asset. Does nothing if the object is not an asset.
 		/// </summary>
-		/// <param name="moveToTrash">If true, file will be moved to OS trashcan (recoverable delete).</param>
 		/// <param name="path"></param>
-		public static Boolean Delete(Object obj, Boolean moveToTrash = false) => Delete(Path.Get(obj), moveToTrash);
+		public static Boolean Delete(Object obj) => Delete(Path.Get(obj));
 
 		/// <summary>
 		///     Tries to delete all the given assets.
@@ -53,7 +51,7 @@ namespace CodeSmile.Editor
 		/// </returns>
 		/// <see cref="FailedToDeletePaths" />
 		[ExcludeFromCodeCoverage]
-		public static Boolean DeleteMany(IEnumerable<Path> paths) => DeleteMany(paths.Cast<String>());
+		public static Boolean Delete(IEnumerable<Path> paths) => Delete(paths.Cast<String>());
 
 		/// <summary>
 		///     Tries to delete all the given assets.
@@ -65,7 +63,7 @@ namespace CodeSmile.Editor
 		/// </returns>
 		/// <see cref="FailedToDeletePaths" />
 		[ExcludeFromCodeCoverage]
-		public static Boolean DeleteMany(IEnumerable<String> paths) =>
+		public static Boolean Delete(IEnumerable<String> paths) =>
 			AssetDatabase.DeleteAssets(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
 		/// <summary>
@@ -94,7 +92,7 @@ namespace CodeSmile.Editor
 		/// </returns>
 		/// <see cref="FailedToDeletePaths" />
 		[ExcludeFromCodeCoverage]
-		public static Boolean TrashMany(IEnumerable<Path> paths) => TrashMany(paths.Cast<String>());
+		public static Boolean Trash(IEnumerable<Path> paths) => Trash(paths.Cast<String>());
 
 		/// <summary>
 		///     Tries to move all the given assets to the OS trash.
@@ -106,7 +104,7 @@ namespace CodeSmile.Editor
 		/// </returns>
 		/// <see cref="FailedToDeletePaths" />
 		[ExcludeFromCodeCoverage]
-		public static Boolean TrashMany(IEnumerable<String> paths) =>
+		public static Boolean Trash(IEnumerable<String> paths) =>
 			AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
 		/// <summary>
@@ -114,15 +112,15 @@ namespace CodeSmile.Editor
 		///     Does not Destroy the object.
 		///     CAUTION: The asset instance should be discarded afterwards.
 		/// </summary>
-		/// <param name="moveToTrash">If true, file will be moved to OS trashcan (recoverable delete).</param>
 		/// <returns>
 		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
 		///     Returns null if the object wasn't deleted.
 		/// </returns>
-		public Object Delete(Boolean moveToTrash = false)
+		/// <see cref="Trash(CodeSmile.Editor.Asset.Path)" />
+		public Object Delete()
 		{
 			var mainObject = m_MainObject;
-			if (IsDeleted == false && Delete(m_AssetPath, moveToTrash))
+			if (IsDeleted == false && Delete(m_AssetPath))
 				InvalidateInstance();
 
 			return mainObject;
@@ -137,6 +135,7 @@ namespace CodeSmile.Editor
 		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
 		///     Returns null if the object wasn't trashed.
 		/// </returns>
+		/// <see cref="Delete(CodeSmile.Editor.Asset.Path)" />
 		public Object Trash()
 		{
 			var mainObject = m_MainObject;

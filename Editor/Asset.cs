@@ -34,13 +34,13 @@ namespace CodeSmile.Editor
 		///     Loads and returns all sub objects the asset is comprised of.
 		///     NOTE: Whether the main object is included in this list depends on the type of asset.
 		/// </summary>
-		public Object[] SubObjects => LoadSubObjects(m_AssetPath);
+		public Object[] SubAssets => LoadAllSubAssets(m_AssetPath);
 
 		/// <summary>
 		///     Loads and returns only those asset objects that are shown in the project view.
 		///     NOTE: Does NOT include the main asset!
 		/// </summary>
-		public Object[] VisibleSubObjects => LoadSubObjects(m_AssetPath, true);
+		public Object[] VisibleSubAssets => LoadVisibleSubAssets(m_AssetPath);
 
 		/// <summary>
 		///     Returns the type of the main asset.
@@ -100,9 +100,14 @@ namespace CodeSmile.Editor
 		[ExcludeFromCodeCoverage] public Texture Icon => GetIcon(m_AssetPath);
 
 		/// <summary>
-		///     Returns the assets dependencies recursively. Returns paths to the dependent assets.
+		///     Returns the assets direct dependencies. Returns paths to the dependent assets.
 		/// </summary>
-		public String[] Dependencies => GetDependencies(m_AssetPath, true);
+		public String[] DirectDependencies => GetDirectDependencies(m_AssetPath);
+
+		/// <summary>
+		///     Returns the assets direct and indirect dependencies. Returns paths to the dependent assets.
+		/// </summary>
+		public String[] Dependencies => GetAllDependencies(m_AssetPath);
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
@@ -230,24 +235,38 @@ namespace CodeSmile.Editor
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
-		///     Returns the dependencies of the asset at the given path. Returns paths to dependent assets.
+		///     Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets.
 		/// </summary>
 		/// <param name="path"></param>
-		/// <param name="recursive"></param>
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage]
-		public static String[] GetDependencies(Path path, Boolean recursive = false) =>
-			AssetDatabase.GetDependencies(path, recursive);
+		public static String[] GetDirectDependencies(Path path) => AssetDatabase.GetDependencies(path, false);
 
 		/// <summary>
-		///     Returns the dependencies of the assets at the given paths. Returns paths to dependent assets.
+		///     Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.
 		/// </summary>
 		/// <param name="paths"></param>
-		/// <param name="recursive"></param>
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage]
-		public static String[] GetDependencies(Path[] paths, Boolean recursive = false) =>
-			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), recursive);
+		public static String[] GetDirectDependencies(Path[] paths) =>
+			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), false);
+
+		/// <summary>
+		///     Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
+		public static String[] GetAllDependencies(Path path) => AssetDatabase.GetDependencies(path, true);
+
+		/// <summary>
+		///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
+		/// </summary>
+		/// <param name="paths"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage]
+		public static String[] GetAllDependencies(Path[] paths) =>
+			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), true);
 
 		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a message,

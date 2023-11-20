@@ -84,7 +84,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Removes an object from the asset's sub-objects.
 		/// </summary>
-		/// <param name="subObject"></param>
+		/// <param name="subObject"></param>W
 		public void RemoveObject(Object subObject) => RemoveObjectFromAsset(subObject);
 	}
 }

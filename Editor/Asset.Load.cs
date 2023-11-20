@@ -1,9 +1,8 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using System;
 using UnityEditor;
-using Object = UnityEngine.Object;
+using UnityEngine;
 
 namespace CodeSmile.Editor
 {
@@ -76,11 +75,17 @@ namespace CodeSmile.Editor
 		///     and whether onlyVisible is true. (Details still unclear - please ask!)
 		/// </summary>
 		/// <param name="path"></param>
-		/// <param name="onlyVisible">If true, only objects visible in the project view are returned.</param>
 		/// <returns></returns>
-		public static Object[] LoadSubObjects(Path path, Boolean onlyVisible = false) => onlyVisible
-			? AssetDatabase.LoadAllAssetRepresentationsAtPath(path)
-			: AssetDatabase.LoadAllAssetsAtPath(path);
+		public static Object[] LoadAllSubAssets(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
+
+		/// <summary>
+		///     Loads only the visible (representation) objects of an asset.
+		///     NOTE: Whether the main object is included in this list depends on the type of asset,
+		///     and whether onlyVisible is true. (Details still unclear - please ask!)
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public static Object[] LoadVisibleSubAssets(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
 
 		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
 		private T LoadMain<T>() where T : Object =>

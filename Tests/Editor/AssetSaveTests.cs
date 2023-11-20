@@ -46,7 +46,7 @@ public class AssetSaveTests : AssetTestBase
 		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
 		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
-		soAsset.SetMainObjectDirty(); // dirty it manually because SaveAll has no 'force' variant
+		soAsset.SetDirty(); // dirty it manually because SaveAll has no 'force' variant
 		Asset.SaveAll();
 
 		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
@@ -64,7 +64,7 @@ public class AssetSaveTests : AssetTestBase
 
 		// changing the field does not 'dirty' the object, thus won't save it
 		(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
-		soAsset.SetMainObjectDirty();
+		soAsset.SetDirty();
 		Asset.Save(soAsset.Guid);
 
 		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));

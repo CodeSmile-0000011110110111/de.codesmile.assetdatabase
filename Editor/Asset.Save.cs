@@ -85,6 +85,6 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Marks the main object as dirty.
 		/// </summary>
-		public void SetMainObjectDirty() => EditorUtility.SetDirty(m_MainObject);
+		public void SetDirty() => EditorUtility.SetDirty(m_MainObject);
 	}
 }

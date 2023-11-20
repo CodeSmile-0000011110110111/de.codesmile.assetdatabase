@@ -124,11 +124,6 @@ namespace CodeSmile.Editor
 				 */
 			}
 
-			public static class Labels {}
-			public static class SubAsset {}
-			public static class Meta {}
-			public static class Load {}
-
 			public static class VersionControl
 			{
 				/*
@@ -157,21 +152,6 @@ namespace CodeSmile.Editor
 	GetImporterType
 	GetImporterTypes
 	SetImporterOverride
-				 */
-			}
-
-			public static class Bundle
-			{
-				/*
-	GetAllAssetBundleNames
-	GetAssetBundleDependencies
-	GetAssetPathsFromAssetBundle
-	GetAssetPathsFromAssetBundleAndAssetName
-	GetImplicitAssetBundleName
-	GetImplicitAssetBundleVariantName
-	GetUnusedAssetBundleNames
-	RemoveAssetBundleName
-	RemoveUnusedAssetBundleNames
 				 */
 			}
 		}

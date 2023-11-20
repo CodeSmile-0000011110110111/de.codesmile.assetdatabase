@@ -23,8 +23,8 @@ public class AssetSubAssetTests : AssetTestBase
 			var asset = CreateTestAsset(TestAssetPath);
 			asset.AddObject(subObject);
 
-			Assert.AreEqual(2, asset.SubObjects.Length);
-			Assert.Contains(subObject, asset.SubObjects);
+			Assert.AreEqual(2, asset.SubAssets.Length);
+			Assert.Contains(subObject, asset.SubAssets);
 
 			asset = null;
 		}
@@ -38,9 +38,9 @@ public class AssetSubAssetTests : AssetTestBase
 
 		{
 			var asset = (Asset)Asset.Load<Object>(TestAssetPath);
-			Assert.AreEqual(2, asset.SubObjects.Length);
-			Assert.AreEqual(0, asset.VisibleSubObjects.Length);
-			Assert.Contains(subObject, asset.SubObjects);
+			Assert.AreEqual(2, asset.SubAssets.Length);
+			Assert.AreEqual(0, asset.VisibleSubAssets.Length);
+			Assert.Contains(subObject, asset.SubAssets);
 		}
 	}
 
@@ -49,25 +49,25 @@ public class AssetSubAssetTests : AssetTestBase
 		var subObject = Instantiate.ExampleSO();
 		var asset = CreateTestAsset(TestAssetPath);
 		asset.AddObject(subObject);
-		Assert.AreEqual(2, asset.SubObjects.Length);
+		Assert.AreEqual(2, asset.SubAssets.Length);
 
 		asset.RemoveObject(subObject);
 
-		Assert.AreEqual(1, asset.SubObjects.Length);
+		Assert.AreEqual(1, asset.SubAssets.Length);
 	}
 
 	[Test] public void AllObjects_SingleAsset_ReturnsOne()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		Assert.AreEqual(1, asset.SubObjects.Length);
+		Assert.AreEqual(1, asset.SubAssets.Length);
 	}
 
 	[Test] public void VisibleObjects_SingleAsset_ReturnsZero()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		Assert.AreEqual(0, asset.VisibleSubObjects.Length);
+		Assert.AreEqual(0, asset.VisibleSubAssets.Length);
 	}
 
 	[Test] public void AddObject_SetSubObjectAsMain_LoadSucceeds()
