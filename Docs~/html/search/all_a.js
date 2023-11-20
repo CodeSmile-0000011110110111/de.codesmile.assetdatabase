@@ -5,5 +5,7 @@ var searchData=
   ['operator_20asset_2',['operator Asset',['../class_code_smile_1_1_editor_1_1_asset.html#a24218995519a37a552be70a9570ab050',1,'CodeSmile.Editor.Asset.operator Asset(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#ab4ccdcc9dcf31ae1763093d115ec405e',1,'CodeSmile.Editor.Asset.operator Asset(Path path)'],['../class_code_smile_1_1_editor_1_1_asset.html#a2742313dcf3b8cb2cbc6c5689cf262fe',1,'CodeSmile.Editor.Asset.operator Asset(GUID guid)']]],
   ['operator_20object_3',['operator Object',['../class_code_smile_1_1_editor_1_1_asset.html#af1e4f184e2b3b531eb0bc198e1a872a8',1,'CodeSmile::Editor::Asset']]],
   ['operator_20path_4',['operator Path',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a4c42ba5b99ade3bde6831389744facd6',1,'CodeSmile::Editor::Asset::Path']]],
-  ['operator_20string_5',['operator String',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a59c71a2a21ea4a18a206d316c453b44c',1,'CodeSmile::Editor::Asset::Path']]]
+  ['operator_20string_5',['operator String',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a59c71a2a21ea4a18a206d316c453b44c',1,'CodeSmile::Editor::Asset::Path']]],
+  ['owningbundle_6',['OwningBundle',['../class_code_smile_1_1_editor_1_1_asset.html#a530cf1f8e3711f5a79e17ea7e8287155',1,'CodeSmile::Editor::Asset']]],
+  ['owningbundlevariant_7',['OwningBundleVariant',['../class_code_smile_1_1_editor_1_1_asset.html#af6af9d6020e714968abef76b87b15fd4',1,'CodeSmile::Editor::Asset']]]
 ];

@@ -3,7 +3,7 @@ var searchData=
   ['icon_0',['Icon',['../class_code_smile_1_1_editor_1_1_asset.html#a42e19fd29efe3df32cffdf2837f01758',1,'CodeSmile::Editor::Asset']]],
   ['import_1',['Import',['../class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80',1,'CodeSmile::Editor::Asset']]],
   ['importall_2',['ImportAll',['../class_code_smile_1_1_editor_1_1_asset.html#a59698b1b5df688727eb0a8e01742cb06',1,'CodeSmile::Editor::Asset']]],
-  ['importer_3',['Importer',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_importer.html',1,'CodeSmile::Editor::Asset::Database']]],
+  ['importer_3',['Importer',['../class_code_smile_1_1_editor_1_1_asset_1_1_importer.html',1,'CodeSmile::Editor::Asset']]],
   ['isdeleted_4',['IsDeleted',['../class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928',1,'CodeSmile::Editor::Asset']]],
   ['isforeign_5',['IsForeign',['../class_code_smile_1_1_editor_1_1_asset.html#a91eb959072257d36a867da3d5ab28e39',1,'CodeSmile::Editor::Asset']]],
   ['isforeignasset_6',['IsForeignAsset',['../class_code_smile_1_1_editor_1_1_asset.html#ac0987b9b2e192199fef358b794e45b71',1,'CodeSmile::Editor::Asset']]],

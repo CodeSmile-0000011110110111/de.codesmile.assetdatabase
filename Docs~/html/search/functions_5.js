@@ -5,7 +5,8 @@ var searchData=
   ['findguids_2',['FindGuids',['../class_code_smile_1_1_editor_1_1_asset.html#a957869afab7b634b4839c58650081b94',1,'CodeSmile::Editor::Asset']]],
   ['findpaths_3',['FindPaths',['../class_code_smile_1_1_editor_1_1_asset.html#ad70594864b8e099b6d4ef6bf0c24f27b',1,'CodeSmile::Editor::Asset']]],
   ['folderexists_4',['FolderExists',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e',1,'CodeSmile::Editor::Asset::Path']]],
-  ['forcereserialize_5',['ForceReserialize',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd',1,'CodeSmile::Editor::Asset::Database']]],
-  ['forcereserializeall_6',['ForceReserializeAll',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a3320d5cd1681aaf5a02e877dc36954d5',1,'CodeSmile::Editor::Asset::Database']]],
-  ['forcesave_7',['ForceSave',['../class_code_smile_1_1_editor_1_1_asset.html#a0b7c2386a06cf9f407a8a152af382002',1,'CodeSmile.Editor.Asset.ForceSave(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#abeb8f051ae05988e40bb28605feee111',1,'CodeSmile.Editor.Asset.ForceSave()']]]
+  ['forceremove_5',['ForceRemove',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a63ae3e57297fa7dd52524919d70993a5',1,'CodeSmile::Editor::Asset::Bundle']]],
+  ['forcereserialize_6',['ForceReserialize',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd',1,'CodeSmile::Editor::Asset::Database']]],
+  ['forcereserializeall_7',['ForceReserializeAll',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a3320d5cd1681aaf5a02e877dc36954d5',1,'CodeSmile::Editor::Asset::Database']]],
+  ['forcesave_8',['ForceSave',['../class_code_smile_1_1_editor_1_1_asset.html#a0b7c2386a06cf9f407a8a152af382002',1,'CodeSmile.Editor.Asset.ForceSave(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#abeb8f051ae05988e40bb28605feee111',1,'CodeSmile.Editor.Asset.ForceSave()']]]
 ];
