@@ -26,7 +26,7 @@ namespace CodeSmile.Editor
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
-		/// Groups all asset bundle functionality.
+		///     Groups all asset bundle functionality.
 		/// </summary>
 		public static class Bundle
 		{

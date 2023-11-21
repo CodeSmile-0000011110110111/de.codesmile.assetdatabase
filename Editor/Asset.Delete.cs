@@ -24,6 +24,14 @@ namespace CodeSmile.Editor
 		[ExcludeFromCodeCoverage] public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
 		/// <summary>
+		///     Returns true after the asset has been deleted.
+		///     <p>
+		///         <see cref="Delete(CodeSmile.Editor.Asset.Path)" /> - <see cref="Trash(CodeSmile.Editor.Asset.Path)" />
+		///     </p>
+		/// </summary>
+		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
+
+		/// <summary>
 		///     Deletes the asset file. Does nothing if there is no file at the given path.
 		/// </summary>
 		/// <param name="path"></param>
@@ -143,6 +151,12 @@ namespace CodeSmile.Editor
 				InvalidateInstance();
 
 			return mainObject;
+		}
+
+		private void InvalidateInstance()
+		{
+			m_AssetPath = null;
+			m_MainObject = null;
 		}
 	}
 }

@@ -34,14 +34,14 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		/// Returns true if the asset's default AssetImporter type has been overridden.
+		///     Returns true if the asset's default AssetImporter type has been overridden.
 		/// </summary>
-		/// <see cref="ActiveImporter"/>
-		/// <see cref="DefaultImporter"/>
-		/// <see cref="SetActiveImporter{T}"/>
-		/// <see cref="SetActiveImporterToDefault"/>
+		/// <see cref="ActiveImporter" />
+		/// <see cref="DefaultImporter" />
+		/// <see cref="SetActiveImporter{T}" />
+		/// <see cref="SetActiveImporterToDefault" />
 		[ExcludeFromCodeCoverage]
-		public bool IsImporterOverridden => ActiveImporter != DefaultImporter;
+		public Boolean IsImporterOverridden => ActiveImporter != DefaultImporter;
 
 		/// <summary>
 		///     Sets the active AssetImporter type for this asset.
