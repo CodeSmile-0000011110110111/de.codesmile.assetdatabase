@@ -42,6 +42,9 @@ namespace CodeSmile.Editor
 		/// </summary>
 		public void ClearLabels() => Label.ClearAll(m_MainObject);
 
+		/// <summary>
+		/// Groups all asset label methods.
+		/// </summary>
 		public static class Label
 		{
 			/// <summary>

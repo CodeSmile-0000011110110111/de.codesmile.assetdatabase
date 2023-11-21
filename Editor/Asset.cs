@@ -38,7 +38,7 @@ namespace CodeSmile.Editor
 			get => m_MainObject = LoadMain<Object>();
 			set
 			{
-				SetMainObject(value, m_AssetPath);
+				SubAsset.SetMain(value, m_AssetPath);
 				m_MainObject = value;
 			}
 		}

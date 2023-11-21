@@ -91,7 +91,7 @@ public class AssetSubAssetTests : AssetTestBase
 		var subObject = Instantiate.DifferentExampleSO();
 		asset.AddObject(subObject);
 
-		Asset.SetMainObject(subObject, asset);
+		Asset.SubAsset.SetMain(subObject, asset);
 		var differentExampleSo = Asset.LoadMain<Object>(asset.AssetPath);
 
 		Assert.AreEqual(subObject, differentExampleSo);
