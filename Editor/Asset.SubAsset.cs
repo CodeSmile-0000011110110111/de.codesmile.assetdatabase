@@ -11,6 +11,18 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
+		///     Loads and returns all sub objects the asset is comprised of.
+		///     NOTE: Whether the main object is included in this list depends on the type of asset.
+		/// </summary>
+		public Object[] SubAssets => LoadAllSubAssets(m_AssetPath);
+
+		/// <summary>
+		///     Loads and returns only those asset objects that are shown in the project view.
+		///     NOTE: Does NOT include the main asset!
+		/// </summary>
+		public Object[] VisibleSubAssets => LoadVisibleSubAssets(m_AssetPath);
+
+		/// <summary>
 		///     Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset
 		///     and dragging it outside the containing asset in the project view.
 		///     Note: This only works with visible sub objects.
@@ -84,7 +96,8 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Removes an object from the asset's sub-objects.
 		/// </summary>
-		/// <param name="subObject"></param>W
+		/// <param name="subObject"></param>
+		/// W
 		public void RemoveObject(Object subObject) => RemoveObjectFromAsset(subObject);
 	}
 }

@@ -44,18 +44,6 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Loads and returns all sub objects the asset is comprised of.
-		///     NOTE: Whether the main object is included in this list depends on the type of asset.
-		/// </summary>
-		public Object[] SubAssets => LoadAllSubAssets(m_AssetPath);
-
-		/// <summary>
-		///     Loads and returns only those asset objects that are shown in the project view.
-		///     NOTE: Does NOT include the main asset!
-		/// </summary>
-		public Object[] VisibleSubAssets => LoadVisibleSubAssets(m_AssetPath);
-
-		/// <summary>
 		///     Returns the type of the main asset.
 		/// </summary>
 		[ExcludeFromCodeCoverage] public Type MainType => GetMainType(m_AssetPath);
@@ -75,14 +63,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		[ExcludeFromCodeCoverage] public Int64 LocalFileId => GetLocalFileId(m_MainObject);
 
-		/// <summary>
-		///     Sets or gets the labels associated with the asset.
-		/// </summary>
-		public String[] Labels
-		{
-			get => GetLabels(m_MainObject);
-			set => SetLabels(m_MainObject, value);
-		}
 
 		/// <summary>
 		///     Returns true after the asset has been deleted.

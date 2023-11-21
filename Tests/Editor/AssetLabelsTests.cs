@@ -66,7 +66,7 @@ public class AssetLabelsTests : AssetTestBase
 		var labels = new[] { "one", "two", "three" };
 		asset.Labels = labels;
 
-		var returnedLabels = Asset.GetLabels(asset.Guid);
+		var returnedLabels = Asset.Label.GetAll(asset.Guid);
 
 		Assert.AreEqual(3, returnedLabels.Length);
 		Assert.Contains("one", returnedLabels);
