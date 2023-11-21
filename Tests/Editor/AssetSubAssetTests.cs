@@ -32,7 +32,7 @@ public class AssetSubAssetTests : AssetTestBase
 		yield return null;
 
 		GC.Collect(0, GCCollectionMode.Forced);
-		Asset.File.ImportAll(ImportAssetOptions.ForceUpdate);
+		Asset.Database.ImportAll(ImportAssetOptions.ForceUpdate);
 
 		yield return null;
 

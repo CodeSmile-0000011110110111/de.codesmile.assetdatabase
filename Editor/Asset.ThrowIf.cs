@@ -13,7 +13,7 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		/// Contains error- and sanity-checking methods for the entire Asset group of classes.
+		///     Contains error- and sanity-checking methods for the entire Asset group of classes.
 		/// </summary>
 		internal static class ThrowIf
 		{

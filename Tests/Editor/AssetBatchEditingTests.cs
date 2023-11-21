@@ -10,7 +10,7 @@ using System;
 public class AssetBatchEditingTests : AssetTestBase
 {
 	[Test] public void BatchEditing_NullAction_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => Asset.BatchEditing(null));
+		Assert.Throws<ArgumentNullException>(() => Asset.File.BatchEditing(null));
 
 #if !DISABLED_UNTIL_ISSUE_59630_RESOLVED // Start/StopAssetEditing causes TestRunner to hang
 	[Test] public void BatchEditing_ValidAction_GetsInvoked()

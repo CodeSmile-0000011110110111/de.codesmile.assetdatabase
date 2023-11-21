@@ -53,7 +53,7 @@ public abstract class AssetTestBase
 		m_TestFilePaths.Clear();
 
 		if (didDelete)
-			Asset.File.ImportAll(ImportAssetOptions.ForceUpdate);
+			Asset.Database.ImportAll(ImportAssetOptions.ForceUpdate);
 	}
 
 	[ExcludeFromCodeCoverage]

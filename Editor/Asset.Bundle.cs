@@ -27,7 +27,7 @@ namespace CodeSmile.Editor
 
 		/// <summary>
 		///     Groups all asset bundle related functionality.
-		///		Note: Unity recommends Addressables over Bundles!
+		///     Note: Unity recommends Addressables over Bundles!
 		/// </summary>
 		public static class Bundle
 		{

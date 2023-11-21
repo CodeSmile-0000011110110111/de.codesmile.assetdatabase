@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using UnityEditor;
 
 namespace CodeSmile.Editor
@@ -87,6 +86,13 @@ namespace CodeSmile.Editor
 				ForceReserialize(Path.ToStrings(paths), options);
 			}
 
+			/// <summary>
+			///     Forces reserializing the assets as the given paths.
+			///     This loads the assets, upgrades them to their current serialization version, and then writes them
+			///     back to disk.
+			///     Note: this can potentially change a lot of files in version control. It should be done cautiously.
+			/// </summary>
+			/// <see cref="ForceReserialize()" />
 			[ExcludeFromCodeCoverage]
 			public static void ForceReserialize(IEnumerable<String> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)
@@ -96,15 +102,48 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
+			///     Saves all unsaved (dirty) objects.
+			///     CAUTION: Consider that the user may NOT want to have unsaved assets 'randomly' saved!
+			///     If you work with specific object(s) (which you do most of the time, right?) it is in your (user's)
+			///     best interest if you use Asset.Save(obj) instead.
+			///     Also consider using BatchEditing(Action) in that case.
+			/// </summary>
+			/// <see cref="Asset.Save" />
+			/// <see cref="Asset.ForceSave" />
+			/// <see cref="Asset.File.BatchEditing" />
+			public static void SaveAll() => AssetDatabase.SaveAssets();
+
+			/// <summary>
+			///     Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally.
+			///     External is defined as 'any file modification operation not done through the AssetDatabase', for
+			///     example by using System.IO methods or by running scripts and other external tools.
+			///     <p>
+			///         Note: the 100% accurate name for this method would have to be:
+			///         ImportAllExternallyModifiedAssetsAndAlsoUnloadUnusedAssets()
+			///     </p>
+			///     <p>
+			///         CAUTION: Calling this may have an adverse effect on editor performance. In addition to scanning
+			///         for changed files it also calls Resources.UnloadUnusedAssets internally and it also discards any
+			///         unsaved objects not marked as 'dirty' that are only referenced by scripts, leading to potential
+			///         loss of unsaved data.
+			///         <see cref="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html" />
+			///     </p>
+			///     <see cref="File.Import" />
+			/// </summary>
+			/// <param name="options"></param>
+			public static void ImportAll(ImportAssetOptions options = ImportAssetOptions.Default) =>
+				AssetDatabase.Refresh(options);
+
+			/// <summary>
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
-			///     <see cref="Asset.BatchEditing" />
+			///     <see cref="File.BatchEditing" />
 			/// </summary>
 			[ExcludeFromCodeCoverage]
 			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			/// <summary>
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
-			///     <see cref="Asset.BatchEditing" />
+			///     <see cref="File.BatchEditing" />
 			/// </summary>
 			[ExcludeFromCodeCoverage]
 			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();

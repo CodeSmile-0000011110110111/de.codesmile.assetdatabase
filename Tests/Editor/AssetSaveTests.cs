@@ -8,7 +8,8 @@ using UnityEditor;
 
 public class AssetSaveTests : AssetTestBase
 {
-	[Test] public void SaveObjectStatic_Null_Throws() => Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
+	[Test] public void SaveObjectStatic_Null_Throws() =>
+		Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
 
 	[Test] public void SaveObjectStatic_NotAnAsset_Throws()
 	{
@@ -47,12 +48,13 @@ public class AssetSaveTests : AssetTestBase
 
 		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
 		soAsset.SetDirty(); // dirty it manually because SaveAll has no 'force' variant
-		Asset.File.SaveAll();
+		Asset.Database.SaveAll();
 
 		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
 	}
 
-	[Test] public void SaveGuidStatic_Empty_Throws() => Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
+	[Test] public void SaveGuidStatic_Empty_Throws() =>
+		Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
 
 	[Test] public void SaveGuidStatic_NotAnAsset_Throws() =>
 		Assert.Throws<ArgumentException>(() => Asset.File.Save(GUID.Generate()));

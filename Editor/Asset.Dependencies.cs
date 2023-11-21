@@ -3,7 +3,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using UnityEditor;
 
 namespace CodeSmile.Editor
@@ -56,8 +55,7 @@ namespace CodeSmile.Editor
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetAll(Path[] paths) =>
-				AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
+			public static String[] GetAll(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
 		}
 	}
 }

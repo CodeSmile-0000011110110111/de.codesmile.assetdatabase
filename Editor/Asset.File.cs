@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEditor;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -179,11 +180,11 @@ namespace CodeSmile.Editor
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
 		[ExcludeFromCodeCoverage]
-		public void Open(Int32 lineNumber = -1, Int32 columnNumber = -1)
+		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1)
 		{
 			ThrowIf.AssetDeleted(this);
 
-			File.Open(m_MainObject, lineNumber, columnNumber);
+			File.OpenExternal(m_MainObject, lineNumber, columnNumber);
 		}
 
 		/// <summary>
@@ -234,6 +235,9 @@ namespace CodeSmile.Editor
 			m_MainObject = null;
 		}
 
+		/// <summary>
+		///     Groups file related operations.
+		/// </summary>
 		public static class File
 		{
 			private static List<String> s_FailedToDeletePaths = new();
@@ -305,21 +309,6 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     <p>
-			///         Saves all unsaved (dirty) objects.
-			///     </p>
-			///     <p>
-			///         CAUTION: Consider that the user may NOT want to have unsaved assets 'randomly' saved!
-			///         If you work with specific object(s) already it is in the user's best interest if you use
-			///         Asset.Save(obj) instead. Also consider using Asset.BatchEditing(Action) in that case.
-			///     </p>
-			/// </summary>
-			/// <see cref="Asset.Save" />
-			/// <see cref="Asset.ForceSave" />
-			/// <see cref="Asset.BatchEditing" />
-			public static void SaveAll() => AssetDatabase.SaveAssets();
-
-			/// <summary>
 			///     Imports a file at a given path that was created or modified 'externally', ie not via Asset(Database) methods.
 			///     For example, any file/folder modified via System.IO.File.Write*() methods or through batch scripts.
 			///     Note: If the path does not exist, this method does nothing.
@@ -333,29 +322,6 @@ namespace CodeSmile.Editor
 				if (path != null && path.ExistsInFileSystem)
 					AssetDatabase.ImportAsset(path, options);
 			}
-
-			/// <summary>
-			///     <p>
-			///         Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally.
-			///         External is defined as 'any file modification operation not done through the AssetDatabase', for
-			///         example by using System.IO methods or by running scripts and other external tools.
-			///     </p>
-			///     <p>
-			///         Since Refresh() 'traditionally' gets called way too many times needlessly a more descriptive name
-			///         was chosen to reflect what this method does. I even considered naming it 100% accurately as:
-			///         ImportExternallyModifiedAndUnloadUnusedAssets()
-			///     </p>
-			///     <p>
-			///         CAUTION: Calling this may have an adverse effect on editor performance, since it calls
-			///         Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as
-			///         'dirty' that are only referenced by scripts, leading to potential loss of unsaved data.
-			///         <see cref="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html" />
-			///     </p>
-			///     <see cref="File.Import" />
-			/// </summary>
-			/// <param name="options"></param>
-			public static void ImportAll(ImportAssetOptions options = ImportAssetOptions.Default) =>
-				AssetDatabase.Refresh(options);
 
 			/// <summary>
 			///     Loads the main asset object at the path.
@@ -535,18 +501,7 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns true if the given object is a can opener. Wait, what? :)
-			///     To be precise: it returns true if the instance Id is for an asset object (file on disk) and the
-			///     type of the asset (its extension) has a associated application registered with the operating system.
-			/// </summary>
-			/// <param name="instanceId"></param>
-			/// <returns></returns>
-			public static Boolean CanOpen(Int32 instanceId) => AssetDatabase.CanOpenAssetInEditor(instanceId);
-
-			/// <summary>
-			///     Returns true if the given object is a can opener. Wait, what? :)
-			///     To be precise: it returns true if the instance Id is for an asset object (file on disk) and the
-			///     type of the asset (its extension) has a associated application registered with the operating system.
+			///     Returns true if the given object can be opened (edited) by the Unity editor.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
@@ -554,8 +509,15 @@ namespace CodeSmile.Editor
 			{
 				ThrowIf.ArgumentIsNull(obj, nameof(obj));
 
-				return CanOpen(obj.GetInstanceID());
+				return CanOpenInEditor(obj.GetInstanceID());
 			}
+
+			/// <summary>
+			///     Returns true if the given object can be opened (edited) by the Unity editor.
+			/// </summary>
+			/// <param name="instanceId"></param>
+			/// <returns></returns>
+			public static Boolean CanOpenInEditor(Int32 instanceId) => AssetDatabase.CanOpenAssetInEditor(instanceId);
 
 			/// <summary>
 			///     Opens the asset in the default (associated) application.
@@ -565,7 +527,7 @@ namespace CodeSmile.Editor
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
 			[ExcludeFromCodeCoverage]
-			public static void Open(Object obj, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+			public static void OpenExternal(Object obj, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(obj, lineNumber, columnNumber);
 
 			/// <summary>
@@ -576,7 +538,7 @@ namespace CodeSmile.Editor
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
 			[ExcludeFromCodeCoverage]
-			public static void Open(Int32 instanceId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+			public static void OpenExternal(Int32 instanceId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(instanceId, lineNumber, columnNumber);
 
 			/// <summary>
@@ -587,8 +549,8 @@ namespace CodeSmile.Editor
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
 			[ExcludeFromCodeCoverage]
-			public static void Open(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
-				Open(Load<Object>(path), lineNumber, columnNumber);
+			public static void OpenExternal(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+				OpenExternal(Load<Object>(path), lineNumber, columnNumber);
 
 			/// <summary>
 			///     Deletes the asset file. Does nothing if there is no file at the given path.
@@ -674,6 +636,38 @@ namespace CodeSmile.Editor
 			[ExcludeFromCodeCoverage]
 			public static Boolean Trash(IEnumerable<String> paths) =>
 				AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
+
+			/// <summary>
+			///     Speed up mass asset editing (create, modify, delete, import, etc).
+			///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
+			///     This can significantly speed up mass asset editing tasks where you work with individual assets
+			///     in a loop.
+			///     Internally calls <a href="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html">Start/StopAssetEditing</a>
+			///     in a try/finally block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
+			/// </summary>
+			/// <param name="massAssetFileEditAction"></param>
+			[ExcludeFromCodeCoverage]
+			public static void BatchEditing(Action massAssetFileEditAction, Boolean rethrowExceptions = false)
+			{
+				ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));
+
+				try
+				{
+					Database.StartAssetEditing();
+					massAssetFileEditAction.Invoke();
+				}
+				catch (Exception ex)
+				{
+					Debug.LogError($"Exception during BatchEditing: {ex.Message}");
+
+					if (rethrowExceptions)
+						throw ex; // re-throw to caller
+				}
+				finally
+				{
+					Database.StopAssetEditing();
+				}
+			}
 
 			private static void CreateAssetInternal(Object obj, Path path, Boolean overwriteExisting)
 			{

@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
@@ -85,39 +84,6 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <returns>the type of the asset or null if the path does not exist</returns>
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
-
-		/// <summary>
-		///     Speed up mass asset editing (create, modify, delete, import, etc).
-		///     Within the callback action, the AssetDatabase does neither import nor auto-refresh assets.
-		///     This can significantly speed up mass asset editing tasks where you work with individual assets
-		///     in a loop.
-		///     Internally calls <a href="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html">Start/StopAssetEditing</a>
-		///     in a try/finally block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
-		/// </summary>
-		/// <param name="assetEditingAction"></param>
-		[ExcludeFromCodeCoverage]
-		public static void BatchEditing(Action assetEditingAction, Boolean rethrowExceptions = false)
-		{
-			ThrowIf.ArgumentIsNull(assetEditingAction, nameof(assetEditingAction));
-
-			try
-			{
-				Database.StartAssetEditing();
-				assetEditingAction.Invoke();
-			}
-			catch (Exception ex)
-			{
-				Debug.LogError($"Exception during BatchEditing: {ex.Message}");
-
-				if (rethrowExceptions)
-					throw ex; // re-throw to caller
-			}
-			finally
-			{
-				Database.StopAssetEditing();
-			}
-		}
-
 
 		/// <summary>
 		///     Returns MainObject cast to T, or null. But recommended usage is:

@@ -316,11 +316,11 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			/// Converts a collection of Path instances to a string array.
+			///     Converts a collection of Path instances to a string array.
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
-			public static string[] ToStrings(IEnumerable<Path> paths) => paths.Cast<string>().ToArray();
+			public static String[] ToStrings(IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
 
 			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
 				overwriteExisting ? destPath : destPath.UniqueFilePath;
