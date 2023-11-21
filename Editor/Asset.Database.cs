@@ -11,6 +11,10 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
+		/// <summary>
+		/// Groups all asset database functionality. Turns out there isn't actually that much that is
+		/// 'database' related after all. Most of the tasks are in fact operations on an asset itself.
+		/// </summary>
 		public static class Database
 		{
 			/// <summary>
@@ -133,19 +137,6 @@ CanOpenForEdit
 IsMetaFileOpenForEdit
 IsOpenForEdit
 MakeEditable
-			 */
-		}
-
-		public static class Importer
-		{
-			/*
-ClearImporterOverride
-GetAvailableImporters
-GetDefaultImporter
-GetImporterOverride
-GetImporterType
-GetImporterTypes
-SetImporterOverride
 			 */
 		}
 	}
