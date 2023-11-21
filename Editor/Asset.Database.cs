@@ -128,16 +128,5 @@ namespace CodeSmile.Editor
 				 */
 			}
 		}
-
-		public static class VersionControl
-		{
-			/*
-CanOpenAssetInEditor
-CanOpenForEdit
-IsMetaFileOpenForEdit
-IsOpenForEdit
-MakeEditable
-			 */
-		}
 	}
 }

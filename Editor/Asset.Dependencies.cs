@@ -13,45 +13,51 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the assets direct dependencies. Returns paths to the dependent assets.
 		/// </summary>
-		public String[] DirectDependencies => GetDirectDependencies(m_AssetPath);
+		public String[] DirectDependencies => Dependencies.GetDirectDependencies(m_AssetPath);
 
 		/// <summary>
 		///     Returns the assets direct and indirect dependencies. Returns paths to the dependent assets.
 		/// </summary>
-		public String[] Dependencies => GetAllDependencies(m_AssetPath);
+		public String[] AllDependencies => Dependencies.GetAllDependencies(m_AssetPath);
 
 		/// <summary>
-		///     Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets.
+		///     Groups all dependency related functionality.
 		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage]
-		public static String[] GetDirectDependencies(Path path) => AssetDatabase.GetDependencies(path, false);
+		public static class Dependencies
+		{
+			/// <summary>
+			///     Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static String[] GetDirectDependencies(Path path) => AssetDatabase.GetDependencies(path, false);
 
-		/// <summary>
-		///     Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.
-		/// </summary>
-		/// <param name="paths"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage]
-		public static String[] GetDirectDependencies(Path[] paths) =>
-			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), false);
+			/// <summary>
+			///     Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.
+			/// </summary>
+			/// <param name="paths"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static String[] GetDirectDependencies(Path[] paths) =>
+				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), false);
 
-		/// <summary>
-		///     Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage]
-		public static String[] GetAllDependencies(Path path) => AssetDatabase.GetDependencies(path, true);
+			/// <summary>
+			///     Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static String[] GetAllDependencies(Path path) => AssetDatabase.GetDependencies(path, true);
 
-		/// <summary>
-		///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
-		/// </summary>
-		/// <param name="paths"></param>
-		/// <returns></returns>
-		[ExcludeFromCodeCoverage]
-		public static String[] GetAllDependencies(Path[] paths) =>
-			AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), true);
+			/// <summary>
+			///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
+			/// </summary>
+			/// <param name="paths"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static String[] GetAllDependencies(Path[] paths) =>
+				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), true);
+		}
 	}
 }

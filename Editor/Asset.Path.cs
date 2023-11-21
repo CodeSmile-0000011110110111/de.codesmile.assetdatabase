@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -26,6 +27,15 @@ namespace CodeSmile.Editor
 				{ "assets", "library", "logs", "packages", "projectsettings", "temp", "usersettings" };
 
 			private String m_RelativePath = String.Empty;
+
+			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			/// <returns></returns>
+			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
 
 			/// <summary>
 			///     Returns true if the path exists in the AssetDatabase.
@@ -145,6 +155,48 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
+			///     Returns the path either unaltered or with a numbering to make the file unique if an asset file
+			///     already exists at the path. Does not alter path if it does not exist or points to a folder.
+			///     See also: Project Settings => Editor => Numbering Scheme
+			/// </summary>
+			public Path UniqueFilePath => UniquifyFilename(this);
+
+			/// <summary>
+			///     Gets the path of an asset file.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
+			public static Path Get(Object obj)
+			{
+				var path = AssetDatabase.GetAssetPath(obj);
+				return String.IsNullOrEmpty(path) ? null : (Path)path;
+			}
+
+			/// <summary>
+			///     Gets the path of an asset file.
+			/// </summary>
+			/// <param name="guid"></param>
+			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
+			public static Path Get(GUID guid)
+			{
+				var path = AssetDatabase.GUIDToAssetPath(guid);
+				return String.IsNullOrEmpty(path) ? null : (Path)path;
+			}
+
+			/// <summary>
+			///     Returns the GUID for the path.
+			///     Returns an empty GUID if the asset at the path does not exist in the database.
+			///     <see cref="Exists" />
+			///     <see cref="ExistsInFileSystem" />
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="options"></param>
+			/// <returns></returns>
+			public static GUID GetGuid(Path path,
+				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
+				new(AssetDatabase.AssetPathToGUID(path, options));
+
+			/// <summary>
 			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
 			///     characters and it isn't too long.
 			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
@@ -195,6 +247,57 @@ namespace CodeSmile.Editor
 			public static Boolean FolderExists(Path path) =>
 				path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
 
+			/// <summary>
+			///     Creates the folders in the path recursively. Path may point to a file, but only folders
+			///     will be created.
+			/// </summary>
+			/// <param name="path">path to a file or folder</param>
+			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
+			public static GUID CreateFolders(Path path)
+			{
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+				ThrowIf.PathIsNotValid(path);
+
+				var folderPath = path.FolderPathAssumptive;
+				if (FileExists(path) || FolderExists(folderPath))
+					return folderPath.Guid;
+
+				var folderNames = ((String)folderPath).Split(new[] { '/' });
+				var folderGuid = GuidForExistingPath(folderNames[0]); // first is "Assets"
+				var partialPath = folderNames[0];
+				for (var i = 1; i < folderNames.Length; i++)
+				{
+					partialPath += $"/{folderNames[i]}";
+					if (FolderExists(partialPath))
+					{
+						folderGuid = GuidForExistingPath(partialPath);
+						continue;
+					}
+
+					var guidString = AssetDatabase.CreateFolder(Get(folderGuid), folderNames[i]);
+					folderGuid = new GUID(guidString);
+				}
+
+				return folderGuid;
+			}
+
+			/// <summary>
+			///     Returns the path either unaltered or with a numbering to make the file unique.
+			///     This is only done if an asset file exists at the path. It does not alter folder paths.
+			///     See also: Project Settings => Editor => Numbering Scheme
+			///     Note: 'Uniquify' is a proper english verb, it means "to make unique".
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Path UniquifyFilename(Path path)
+			{
+				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
+				return String.IsNullOrEmpty(uniquePath) ? path : uniquePath;
+			}
+
+			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
+				overwriteExisting ? destPath : destPath.UniqueFilePath;
+
 			private static String ToRelative(String fullOrRelativePath)
 			{
 				var relativePath = fullOrRelativePath;
@@ -231,11 +334,38 @@ namespace CodeSmile.Editor
 			private static String MakeRelative(String fullOrRelativePath) =>
 				fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
 
+			private static GUID GuidForExistingPath(String path) =>
+				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
+
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
 			/// </summary>
 			[ExcludeFromCodeCoverage]
 			public void OpenFolder() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPathAssumptive));
+
+			/// <summary>
+			///     Renames the file or folder with a new name.
+			/// </summary>
+			/// <param name="newFileOrFolderName"></param>
+			/// <returns>True if rename succeeded, false otherwise.</returns>
+			public Boolean Rename(String newFileOrFolderName)
+			{
+				if (String.IsNullOrEmpty(newFileOrFolderName))
+					return false;
+
+				m_RelativePath = $"{DirectoryName}/{System.IO.Path.GetFileName(newFileOrFolderName)}";
+				return true;
+			}
+
+			/// <summary>
+			///     Creates the folders in the path recursively. Path may point to a file but only folders
+			///     will be created.
+			/// </summary>
+			/// <param name="path">path to a file or folder</param>
+			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
+			public GUID CreateFolders() => CreateFolders(this);
+
+			private Path ToFolderPath() => new(System.IO.Path.GetDirectoryName(m_RelativePath));
 
 			/// <summary>
 			///     Returns the relative path as string. Same as implicit string conversion.
