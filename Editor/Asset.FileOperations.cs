@@ -23,6 +23,14 @@ namespace CodeSmile.Editor
 	// Delete
 	// Trash
 
+	public sealed partial class Asset
+	{
+		public static class File
+		{
+
+		}
+	}
+
 	// Create methods
 	public sealed partial class Asset
 	{

@@ -13,12 +13,12 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the assets direct dependencies. Returns paths to the dependent assets.
 		/// </summary>
-		public String[] DirectDependencies => Dependencies.GetDirectDependencies(m_AssetPath);
+		public String[] DirectDependencies => Dependencies.GetDirect(m_AssetPath);
 
 		/// <summary>
 		///     Returns the assets direct and indirect dependencies. Returns paths to the dependent assets.
 		/// </summary>
-		public String[] AllDependencies => Dependencies.GetAllDependencies(m_AssetPath);
+		public String[] AllDependencies => Dependencies.GetAll(m_AssetPath);
 
 		/// <summary>
 		///     Groups all dependency related functionality.
@@ -31,7 +31,7 @@ namespace CodeSmile.Editor
 			/// <param name="path"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetDirectDependencies(Path path) => AssetDatabase.GetDependencies(path, false);
+			public static String[] GetDirect(Path path) => AssetDatabase.GetDependencies(path, false);
 
 			/// <summary>
 			///     Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.
@@ -39,7 +39,7 @@ namespace CodeSmile.Editor
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetDirectDependencies(Path[] paths) =>
+			public static String[] GetDirect(Path[] paths) =>
 				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), false);
 
 			/// <summary>
@@ -48,7 +48,7 @@ namespace CodeSmile.Editor
 			/// <param name="path"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetAllDependencies(Path path) => AssetDatabase.GetDependencies(path, true);
+			public static String[] GetAll(Path path) => AssetDatabase.GetDependencies(path, true);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
@@ -56,7 +56,7 @@ namespace CodeSmile.Editor
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetAllDependencies(Path[] paths) =>
+			public static String[] GetAll(Path[] paths) =>
 				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), true);
 		}
 	}

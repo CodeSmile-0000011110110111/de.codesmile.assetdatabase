@@ -114,7 +114,7 @@ namespace CodeSmile.Editor
 						return this;
 
 					// existing file? return folder path
-					if (File.Exists(m_RelativePath))
+					if (System.IO.File.Exists(m_RelativePath))
 						return ToFolderPath();
 
 					throw new InvalidOperationException("unable to determine if file or folder because path" +
@@ -141,7 +141,7 @@ namespace CodeSmile.Editor
 							return this;
 
 						// existing file? return folder path
-						if (File.Exists(m_RelativePath))
+						if (System.IO.File.Exists(m_RelativePath))
 							return ToFolderPath();
 
 						// if it has an extension, assume it's a file (could also be a folder but alas ...)
@@ -237,7 +237,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Boolean FileExists(Path path) => File.Exists(path.m_RelativePath);
+			public static Boolean FileExists(Path path) => System.IO.File.Exists(path.m_RelativePath);
 
 			/// <summary>
 			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
