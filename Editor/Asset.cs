@@ -14,10 +14,6 @@ namespace CodeSmile.Editor
 	///     and more error checking.
 	///     Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset
 	///     is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject).
-	///     In addition Asset.Path takes care of all path (folder and file) handling business and ensures
-	///     properly formed paths.
-	///     Static subclasses group only marginally related AssetDatabase functionality such as Package, Bundle,
-	///     VersionControl, CacheServer.
 	/// </summary>
 	public sealed partial class Asset
 	{

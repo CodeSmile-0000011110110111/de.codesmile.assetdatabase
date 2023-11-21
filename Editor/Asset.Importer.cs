@@ -63,7 +63,7 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Groups all asset importer functionality.
+		///     Groups all AssetImporter related functionality.
 		/// </summary>
 		public static class Importer
 		{

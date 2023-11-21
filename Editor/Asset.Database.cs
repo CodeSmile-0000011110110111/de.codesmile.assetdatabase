@@ -13,7 +13,7 @@ namespace CodeSmile.Editor
 	{
 		/// <summary>
 		///     Groups all asset database functionality. Turns out there isn't actually that much that is
-		///     'database' related after all. Most of the tasks are in fact operations on an asset itself.
+		///     'database' related after all.
 		/// </summary>
 		public static class Database
 		{

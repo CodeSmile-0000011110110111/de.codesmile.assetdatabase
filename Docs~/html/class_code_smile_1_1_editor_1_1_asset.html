@@ -101,30 +101,31 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset.
 </div><!--header-->
 <div class="contents">
 
-<p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject). In addition Asset.Path takes care of all path (folder and file) handling business and ensures properly formed paths. Static subclasses group only marginally related AssetDatabase functionality such as Package, Bundle, VersionControl, CacheServer.  
+<p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject).  
  <a href="class_code_smile_1_1_editor_1_1_asset.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html">Bundle</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset bundle functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset bundle related functionality. Note: Unity recommends Addressables over Bundles!  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html">Database</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all. Most of the tasks are in fact operations on an asset itself.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html">Importer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset importer functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all AssetImporter related functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html">Label</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset label methods.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset label related static methods.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html">Package</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset package functionality. Note that 'asset package' refers to .unitypackage files only. This does not contain PackageManager functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups asset package import/export functionality, eg files with '.unitypackage' extension. Does not contain PackageManager functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'. Implicitly converts to/from string. Guards against inconsistencies, eg invalid paths, illegal characters, etc. Provides quick access to File I/O tasks such as getting a file's folder, extension, full path, existance, etc.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html">SubAsset</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all SubAsset related methods. An asset may contain multiple UnityEngine.Object instances as sub assets.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all SubAsset related functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>ThrowIf</b></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,7 +450,7 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <tr class="separator:a36a4db1479db98a85290d7995f408f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject). In addition Asset.Path takes care of all path (folder and file) handling business and ensures properly formed paths. Static subclasses group only marginally related AssetDatabase functionality such as Package, Bundle, VersionControl, CacheServer. </p>
+<div class="textblock"><p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a99d154f2e897d81c73e55d2e2d404658" name="a99d154f2e897d81c73e55d2e2d404658"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99d154f2e897d81c73e55d2e2d404658">&#9670;&#160;</a></span>Asset() <span class="overload">[1/4]</span></h2>
@@ -1773,13 +1774,13 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The local fileID or 0 on failure.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
-<div class="line"><span class="lineno">   72</span>            <span class="comment">// variable is to force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int</span></div>
-<div class="line"><span class="lineno">   73</span>            <span class="comment">// variants of the TryGetGUID* method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
-<div class="line"><span class="lineno">   74</span>            var localId = Int64.MinValue;</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
-<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            <span class="comment">// variable is to force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int</span></div>
+<div class="line"><span class="lineno">   69</span>            <span class="comment">// variants of the TryGetGUID* method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
+<div class="line"><span class="lineno">   70</span>            var localId = Int64.MinValue;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3650,14 +3651,14 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Returns the asset's main object. </p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>        {</div>
-<div class="line"><span class="lineno">   32</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
-<div class="line"><span class="lineno">   33</span>            <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   34</span>            {</div>
-<div class="line"><span class="lineno">   35</span>                SubAsset.SetMain(value, m_AssetPath);</div>
-<div class="line"><span class="lineno">   36</span>                m_MainObject = value;</div>
-<div class="line"><span class="lineno">   37</span>            }</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
+<div class="line"><span class="lineno">   29</span>            <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   30</span>            {</div>
+<div class="line"><span class="lineno">   31</span>                SubAsset.SetMain(value, m_AssetPath);</div>
+<div class="line"><span class="lineno">   32</span>                m_MainObject = value;</div>
+<div class="line"><span class="lineno">   33</span>            }</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

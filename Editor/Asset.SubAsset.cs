@@ -36,8 +36,7 @@ namespace CodeSmile.Editor
 		public void RemoveObject(Object subObject) => SubAsset.Remove(subObject);
 
 		/// <summary>
-		///     Groups all SubAsset related methods. An asset may contain multiple UnityEngine.Object instances
-		///     as sub assets.
+		///     Groups all SubAsset related functionality.
 		/// </summary>
 		public static class SubAsset
 		{

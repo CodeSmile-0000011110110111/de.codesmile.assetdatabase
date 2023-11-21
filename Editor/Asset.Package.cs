@@ -24,8 +24,8 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Groups all asset package functionality. Note that 'asset package' refers to .unitypackage files only.
-		///     This does not contain PackageManager functionality.
+		///     Groups asset package import/export functionality, eg files with '.unitypackage' extension.
+		///     Does not contain PackageManager functionality.
 		/// </summary>
 		public static class Package
 		{

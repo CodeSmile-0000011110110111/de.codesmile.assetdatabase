@@ -26,7 +26,8 @@ namespace CodeSmile.Editor
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
-		///     Groups all asset bundle functionality.
+		///     Groups all asset bundle related functionality.
+		///		Note: Unity recommends Addressables over Bundles!
 		/// </summary>
 		public static class Bundle
 		{
