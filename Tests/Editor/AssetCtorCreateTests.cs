@@ -72,7 +72,7 @@ public class AssetCtorCreateTests : AssetTestBase
 	{
 		var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
-		Asset.Create(obj, (String)TestAssetPath);
+		Asset.File.Create(obj, (String)TestAssetPath);
 
 		Assert.True(TestAssetPath.Exists);
 	}

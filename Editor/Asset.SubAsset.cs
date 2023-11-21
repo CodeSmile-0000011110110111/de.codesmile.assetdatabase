@@ -14,13 +14,13 @@ namespace CodeSmile.Editor
 		///     Loads and returns all sub objects the asset is comprised of.
 		///     NOTE: Whether the main object is included in this list depends on the type of asset.
 		/// </summary>
-		public Object[] SubAssets => LoadAllSubAssets(m_AssetPath);
+		public Object[] SubAssets => SubAsset.LoadAll(m_AssetPath);
 
 		/// <summary>
 		///     Loads and returns only those asset objects that are shown in the project view.
 		///     NOTE: Does NOT include the main asset!
 		/// </summary>
-		public Object[] VisibleSubAssets => LoadVisibleSubAssets(m_AssetPath);
+		public Object[] VisibleSubAssets => SubAsset.LoadVisible(m_AssetPath);
 
 		/// <summary>
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
@@ -93,7 +93,7 @@ namespace CodeSmile.Editor
 			public static void SetMain(Object subObject, Path path)
 			{
 				AssetDatabase.SetMainObject(subObject, path);
-				Import(path);
+				File.Import(path);
 			}
 
 			/// <summary>
@@ -104,6 +104,24 @@ namespace CodeSmile.Editor
 			/// <param name="assetObject"></param>
 			public static void SetMain(Object subObject, Object assetObject) =>
 				SetMain(subObject, Path.Get(assetObject));
+
+			/// <summary>
+			///     Loads all sub-asset objects of an asset.
+			///     NOTE: Whether the main object is included in this list depends on the type of asset,
+			///     and whether onlyVisible is true. (Details still unclear - please ask!)
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
+
+			/// <summary>
+			///     Loads only the visible (representation) sub-asset objects of an asset.
+			///     NOTE: Whether the main object is included in this list depends on the type of asset,
+			///     and whether onlyVisible is true. (Details still unclear - please ask!)
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Object[] LoadVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
 		}
 	}
 }

@@ -12,13 +12,13 @@ using Object = UnityEngine.Object;
 
 public class AssetLoadTests : AssetTestBase
 {
-	[Test] public void LoadStatic_NotExistingPath_Throws() => Assert.IsNull(Asset.Load<Object>("Assets/exist.not"));
+	[Test] public void LoadStatic_NotExistingPath_Throws() => Assert.IsNull(Asset.File.Load<Object>("Assets/exist.not"));
 
 	[Test] public void LoadStatic_ExistingPath_Succeeds()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 
-		var loaded = Asset.Load<Object>(TestAssetPath);
+		var loaded = Asset.File.Load<Object>(TestAssetPath);
 
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -26,13 +26,13 @@ public class AssetLoadTests : AssetTestBase
 	}
 
 	[Test] public void LoadMainStatic_NotExistingPath_Throws() =>
-		Assert.Throws<FileNotFoundException>(() => Asset.LoadMain<Object>("Assets/exist.not"));
+		Assert.Throws<FileNotFoundException>(() => Asset.File.LoadMain<Object>("Assets/exist.not"));
 
 	[Test] public void LoadMainStatic_ExistingPath_Succeeds()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 
-		var loaded = Asset.LoadMain<Object>(TestAssetPath);
+		var loaded = Asset.File.LoadMain<Object>(TestAssetPath);
 
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -40,13 +40,13 @@ public class AssetLoadTests : AssetTestBase
 	}
 
 	[Test] public void LoadMainStatic_NotExistingGuid_Throws() =>
-		Assert.Throws<ArgumentException>(() => Asset.LoadMain<Object>(new GUID()));
+		Assert.Throws<ArgumentException>(() => Asset.File.LoadMain<Object>(new GUID()));
 
 	[Test] public void LoadMainStatic_ExistingGuid_Succeeds()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 
-		var loaded = Asset.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
+		var loaded = Asset.File.LoadMain<Object>(Asset.Path.GetGuid((String)TestAssetPath));
 
 		Assert.NotNull(loaded);
 		Assert.AreEqual(obj, loaded);
@@ -59,7 +59,7 @@ public class AssetLoadTests : AssetTestBase
 		CreateTestAssetObject(TestAssetPath);
 
 		// a Material is not assignable from ExampleSO (ScriptableObject) => wrong type
-		Assert.Null(Asset.LoadMain<Material>(TestAssetPath));
+		Assert.Null(Asset.File.LoadMain<Material>(TestAssetPath));
 	}
 
 	[Test] public void LoadStatic_TypeMismatch_ReturnsNull()
@@ -67,7 +67,7 @@ public class AssetLoadTests : AssetTestBase
 		CreateTestAssetObject(TestAssetPath);
 
 		// a Material is not assignable from ExampleSO (ScriptableObject) => wrong type
-		Assert.Null(Asset.Load<Material>(TestAssetPath));
+		Assert.Null(Asset.File.Load<Material>(TestAssetPath));
 	}
 
 	[Test] public void LoadMainStatic_AssetDatabasePaused_ReturnsNull()
@@ -82,8 +82,8 @@ public class AssetLoadTests : AssetTestBase
 
 			// import while ADB is 'paused' is not possible!
 			// this will make the asset 'unloadable' => Load returns null
-			Asset.Import(TestAssetPath, ImportAssetOptions.ForceUpdate);
-			Assert.Null(Asset.LoadMain<Object>(TestAssetPath));
+			Asset.File.Import(TestAssetPath, ImportAssetOptions.ForceUpdate);
+			Assert.Null(Asset.File.LoadMain<Object>(TestAssetPath));
 		}
 		finally
 		{
@@ -97,7 +97,7 @@ public class AssetLoadTests : AssetTestBase
 		var obj = CreateTestAssetObject(TestAssetPath);
 
 		// using the CreateOrLoad alias that routes to LoadOrCreate
-		var loaded = Asset.CreateOrLoad<ExampleSO>(TestAssetPath, () =>
+		var loaded = Asset.File.CreateOrLoad<ExampleSO>(TestAssetPath, () =>
 		{
 			// should not run
 			Assert.Fail();
@@ -114,7 +114,7 @@ public class AssetLoadTests : AssetTestBase
 		Assert.False(TestAssetPath.Exists);
 
 		// using the CreateOrLoad alias that routes to LoadOrCreate
-		var loaded = Asset.CreateOrLoad<ExampleSO>(TestAssetPath, () =>
+		var loaded = Asset.File.CreateOrLoad<ExampleSO>(TestAssetPath, () =>
 		{
 			didRunCallback = true;
 			return Instantiate.ExampleSO();

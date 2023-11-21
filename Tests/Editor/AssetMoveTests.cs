@@ -10,12 +10,12 @@ namespace CodeSmile.Editor
 	{
 		[Test] public void CanMoveStatic_NullPaths_False()
 		{
-			Assert.False(Asset.CanMove(null, "Assets/moved.asset"));
-			Assert.False(Asset.CanMove("Assets/not ex.ist", null));
+			Assert.False(Asset.File.CanMove(null, "Assets/moved.asset"));
+			Assert.False(Asset.File.CanMove("Assets/not ex.ist", null));
 		}
 
 		[Test] public void CanMoveStatic_NonExistingFile_False() =>
-			Assert.False(Asset.CanMove("Assets/file does not exist.asset", "Assets/moved.asset"));
+			Assert.False(Asset.File.CanMove("Assets/file does not exist.asset", "Assets/moved.asset"));
 
 		[TestCase("Assets", false)]
 		[TestCase("Assets/other.asset", true)]
@@ -24,7 +24,7 @@ namespace CodeSmile.Editor
 		{
 			CreateTestAsset(TestAssetPath);
 
-			var canMove = Asset.CanMove(TestAssetPath, destPath);
+			var canMove = Asset.File.CanMove(TestAssetPath, destPath);
 
 			Assert.AreEqual(expectedCanMove, canMove);
 		}
@@ -42,8 +42,8 @@ namespace CodeSmile.Editor
 
 		[Test] public void MoveStatic_NullPaths_False()
 		{
-			Assert.False(Asset.Move(null, "Assets/moved.asset"));
-			Assert.False(Asset.Move("Assets/not ex.ist", null));
+			Assert.False(Asset.File.Move(null, "Assets/moved.asset"));
+			Assert.False(Asset.File.Move("Assets/not ex.ist", null));
 		}
 
 		[Test] public void MoveStatic_FileToNonExistingFolderAndChangeExtension_Succeeds()
@@ -51,7 +51,7 @@ namespace CodeSmile.Editor
 			var destPath = "Assets/subfolder/now with a different.extension";
 			var asset = CreateTestAsset(TestAssetPath);
 
-			var didMove = Asset.Move(TestAssetPath, destPath);
+			var didMove = Asset.File.Move(TestAssetPath, destPath);
 			asset = new Asset(destPath); // original asset is no longer valid since we used the static method
 
 			Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());

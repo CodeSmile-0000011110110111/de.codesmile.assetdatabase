@@ -47,12 +47,12 @@ public class AssetLabelsTests : AssetTestBase
 		yield return null;
 
 		GC.Collect(0, GCCollectionMode.Forced);
-		Asset.ImportAll(ImportAssetOptions.ForceUpdate);
+		Asset.File.ImportAll(ImportAssetOptions.ForceUpdate);
 
 		yield return null;
 
 		{
-			var asset = (Asset)Asset.Load<Object>(TestAssetPath);
+			var asset = (Asset)Asset.File.Load<Object>(TestAssetPath);
 			Assert.AreEqual(3, asset.Labels.Length);
 			Assert.Contains("one", asset.Labels);
 			Assert.Contains("two", asset.Labels);

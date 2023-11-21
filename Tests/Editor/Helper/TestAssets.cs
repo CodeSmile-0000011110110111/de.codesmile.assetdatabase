@@ -18,7 +18,7 @@ public sealed class TestAssets : IDisposable
 		if (m_AssetObjects != null)
 		{
 			foreach (var obj in m_AssetObjects)
-				Asset.Delete(obj);
+				Asset.File.Delete(obj);
 
 			m_AssetObjects.Clear();
 		}

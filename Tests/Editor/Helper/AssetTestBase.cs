@@ -28,10 +28,10 @@ public abstract class AssetTestBase
 		DeleteAfterTest(TestAssetPath); // always try to delete the test asset
 		DeleteTestFiles();
 
-		Asset.Delete(TestSubFolderPath);
-		Asset.Delete(TestSubFoldersPath);
-		Asset.Delete(Path.GetDirectoryName(TestSubFoldersPath));
-		Asset.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
+		Asset.File.Delete(TestSubFolderPath);
+		Asset.File.Delete(TestSubFoldersPath);
+		Asset.File.Delete(Path.GetDirectoryName(TestSubFoldersPath));
+		Asset.File.Delete(Path.GetDirectoryName(Path.GetDirectoryName(TestSubFoldersPath)));
 	}
 
 	[ExcludeFromCodeCoverage]
@@ -53,7 +53,7 @@ public abstract class AssetTestBase
 		m_TestFilePaths.Clear();
 
 		if (didDelete)
-			Asset.ImportAll(ImportAssetOptions.ForceUpdate);
+			Asset.File.ImportAll(ImportAssetOptions.ForceUpdate);
 	}
 
 	[ExcludeFromCodeCoverage]
@@ -83,7 +83,7 @@ public abstract class AssetTestBase
 
 	protected GUID DeleteAfterTest(GUID assetGuid)
 	{
-		var obj = Asset.LoadMain<Object>(assetGuid);
+		var obj = Asset.File.LoadMain<Object>(assetGuid);
 		m_TestAssets.Add(obj);
 		return assetGuid;
 	}
@@ -91,8 +91,8 @@ public abstract class AssetTestBase
 	protected Object CreateTestAssetObject() => CreateTestAssetObject(TestAssetPath);
 
 	protected Object CreateTestAssetObject(String path) =>
-		DeleteAfterTest(Asset.Create(Instantiate.ExampleSO(), path).MainObject);
+		DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path).MainObject);
 
 	protected Asset CreateTestAsset(String path) =>
-		new(DeleteAfterTest(Asset.Create(Instantiate.ExampleSO(), path).MainObject));
+		new(DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path).MainObject));
 }

@@ -11,6 +11,15 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
+		///     Returns true after the asset has been deleted.
+		///     <p>
+		///         <see cref="File.Delete(CodeSmile.Editor.Asset.Path)" /> -
+		///         <see cref="File.Trash(CodeSmile.Editor.Asset.Path)" />
+		///     </p>
+		/// </summary>
+		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
+
+		/// <summary>
 		///     Returns whether this is a foreign asset.
 		/// </summary>
 		/// <see cref="IsForeign" />

@@ -72,7 +72,7 @@ public class AssetPathCreateFoldersTests : AssetTestBase
 		var alreadyExistingFolder = $"{splitPath[0]}/{splitPath[1]}";
 
 		Asset.Path.CreateFolders(alreadyExistingFolder);
-		Asset.Import(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
+		Asset.File.Import(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
 		Assert.True(Asset.Path.FolderExists(alreadyExistingFolder));
 
 		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));

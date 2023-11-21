@@ -9,18 +9,18 @@ public class AssetCopyTests : AssetTestBase
 {
 	[Test] public void CopyStatic_NullPath_Throws()
 	{
-		Assert.Throws<ArgumentNullException>(() => Asset.Copy(null, "Assets"));
-		Assert.Throws<ArgumentNullException>(() => Asset.Copy("Assets", null));
+		Assert.Throws<ArgumentNullException>(() => Asset.File.Copy(null, "Assets"));
+		Assert.Throws<ArgumentNullException>(() => Asset.File.Copy("Assets", null));
 	}
 
 	[Test] public void CopyStatic_MissingSourcePath_Throws() =>
-		Assert.Throws<ArgumentException>(() => Asset.Copy(TestAssetPath, TestAssetPath));
+		Assert.Throws<ArgumentException>(() => Asset.File.Copy(TestAssetPath, TestAssetPath));
 
 	[Test] public void CopyStatic_OntoItselfOverwrite_Throws()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		Assert.Throws<ArgumentException>(() => Asset.Copy(asset.AssetPath, asset.AssetPath, true));
+		Assert.Throws<ArgumentException>(() => Asset.File.Copy(asset.AssetPath, asset.AssetPath, true));
 	}
 
 	[Test] public void CopyStatic_ToNotExistingFolder_Succeeds()
@@ -28,7 +28,7 @@ public class AssetCopyTests : AssetTestBase
 		var asset = CreateTestAsset(TestAssetPath);
 
 		var destPath = DeleteAfterTest((Asset.Path)"Assets/subfolder/copy.asset");
-		var didCopy = Asset.Copy(asset.AssetPath, destPath);
+		var didCopy = Asset.File.Copy(asset.AssetPath, destPath);
 		//Debug.Log(asset.LastErrorMessage);
 
 		Assert.True(didCopy);
@@ -41,7 +41,7 @@ public class AssetCopyTests : AssetTestBase
 		var asset = CreateTestAsset(TestAssetPath);
 		var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFilename(asset.AssetPath));
 
-		var success = Asset.Copy(asset.AssetPath, (String)asset.AssetPath);
+		var success = Asset.File.Copy(asset.AssetPath, (String)asset.AssetPath);
 
 		Assert.True(success);
 		Assert.True(expectedCopyPath.Exists);

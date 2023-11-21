@@ -32,12 +32,12 @@ public class AssetSubAssetTests : AssetTestBase
 		yield return null;
 
 		GC.Collect(0, GCCollectionMode.Forced);
-		Asset.ImportAll(ImportAssetOptions.ForceUpdate);
+		Asset.File.ImportAll(ImportAssetOptions.ForceUpdate);
 
 		yield return null;
 
 		{
-			var asset = (Asset)Asset.Load<Object>(TestAssetPath);
+			var asset = (Asset)Asset.File.Load<Object>(TestAssetPath);
 			Assert.AreEqual(2, asset.SubAssets.Length);
 			Assert.AreEqual(0, asset.VisibleSubAssets.Length);
 			Assert.Contains(subObject, asset.SubAssets);
@@ -82,7 +82,7 @@ public class AssetSubAssetTests : AssetTestBase
 
 		Assert.AreEqual(subObject, differentExampleSo);
 		Assert.AreEqual(subObject, asset.MainObject);
-		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
+		Assert.AreEqual(subObject, Asset.File.LoadMain<DifferentExampleSO>(asset.AssetPath));
 	}
 
 	[Test] public void SetMainObjectStatic_SetSubObjectAsMain_LoadSucceeds()
@@ -92,11 +92,11 @@ public class AssetSubAssetTests : AssetTestBase
 		asset.AddObject(subObject);
 
 		Asset.SubAsset.SetMain(subObject, asset);
-		var differentExampleSo = Asset.LoadMain<Object>(asset.AssetPath);
+		var differentExampleSo = Asset.File.LoadMain<Object>(asset.AssetPath);
 
 		Assert.AreEqual(subObject, differentExampleSo);
 		Assert.AreEqual(subObject, asset.MainObject);
-		Assert.AreEqual(subObject, Asset.LoadMain<DifferentExampleSO>(asset.AssetPath));
+		Assert.AreEqual(subObject, Asset.File.LoadMain<DifferentExampleSO>(asset.AssetPath));
 	}
 
 	[Test] public void AddObject_SetNonAssetObjectAsMain_Throws()

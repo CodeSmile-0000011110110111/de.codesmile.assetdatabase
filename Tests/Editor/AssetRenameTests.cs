@@ -10,8 +10,8 @@ namespace CodeSmile.Editor
 	{
 		[Test] public void RenameStatic_NullPaths_False()
 		{
-			Assert.False(Asset.Move(null, "Assets/moved.asset"));
-			Assert.False(Asset.Move("Assets/not ex.ist", null));
+			Assert.False(Asset.File.Move(null, "Assets/moved.asset"));
+			Assert.False(Asset.File.Move("Assets/not ex.ist", null));
 		}
 
 		[Test] public void Rename_NullPath_False()
@@ -31,7 +31,7 @@ namespace CodeSmile.Editor
 			var asset = CreateTestAsset(TestAssetPath);
 
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.asset");
-			var success = Asset.Rename((String)asset.AssetPath, "NewName");
+			var success = Asset.File.Rename((String)asset.AssetPath, "NewName");
 			asset = new Asset(newPath); // original asset no longer valid, we used the static Rename method
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());

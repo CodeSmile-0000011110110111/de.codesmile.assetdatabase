@@ -13,7 +13,7 @@ public class AssetImportTests : AssetTestBase
 		File.WriteAllText(testPath, "<for no eyes only>");
 		Assert.Throws<AssetLoadException>(() => new Asset(testPath));
 
-		Asset.Import(testPath);
+		Asset.File.Import(testPath);
 
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		DeleteAfterTest(new Asset(testPath));
@@ -23,7 +23,7 @@ public class AssetImportTests : AssetTestBase
 	{
 		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath, "<for no eyes only>");
-		Asset.Import(testPath);
+		Asset.File.Import(testPath);
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		var asset = new Asset(testPath);
 
@@ -31,10 +31,10 @@ public class AssetImportTests : AssetTestBase
 		File.Delete(testPath);
 		File.Delete(testPath + ".meta");
 		Assert.True(Asset.IsImported(asset.MainObject)); // deleted, but still in the database
-		Asset.Import(testPath); // Import() does nothing if the path doesn't exist
+		Asset.File.Import(testPath); // Import() does nothing if the path doesn't exist
 		Assert.True(Asset.IsImported(asset.MainObject)); // it's still in the database
 
-		Asset.ImportAll();
+		Asset.File.ImportAll();
 
 		Assert.False(Asset.IsImported(asset.MainObject)); // now it's gone
 	}
@@ -47,7 +47,7 @@ public class AssetImportTests : AssetTestBase
 		File.WriteAllText(testPath, "test file contents are irrelevant");
 		Assert.Throws<AssetLoadException>(() => new Asset(testPath)); // throws, asset not in database
 
-		Asset.ImportAll();
+		Asset.File.ImportAll();
 
 		Assert.DoesNotThrow(() => new Asset(testPath));
 		DeleteAfterTest(new Asset(testPath));

@@ -31,7 +31,7 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.AlreadyAnAsset(obj);
 
-			Create(obj, path, overwriteExisting);
+			File.Create(obj, path, overwriteExisting);
 			SetMainObjectAndAssetPath(obj);
 		}
 
