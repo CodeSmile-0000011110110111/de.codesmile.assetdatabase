@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -100,18 +100,31 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset.
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject). In addition Asset.Path takes care of all path (folder and file) handling business and ensures properly formed paths. Static subclasses group only marginally related AssetDatabase functionality such as Package, Bundle, VersionControl, CacheServer.  
+ <a href="class_code_smile_1_1_editor_1_1_asset.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html">Bundle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset bundle functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html">Database</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all. Most of the tasks are in fact operations on an asset itself.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html">Importer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset importer functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html">Label</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset label methods.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html">Package</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset package functionality. Note that 'asset package' refers to .unitypackage files only. This does not contain PackageManager functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html">SubAsset</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all SubAsset related methods. An asset may contain multiple UnityEngine.Object instances as sub assets.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>ThrowIf</b></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +170,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ClearLabels</b> ()</t
 <tr class="memitem:a62dfa40650a91dfeef6751d04d05e7f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a62dfa40650a91dfeef6751d04d05e7f0">Duplicate</a> ()</td></tr>
 <tr class="memdesc:a62dfa40650a91dfeef6751d04d05e7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a duplicate of the asset with a new, unique file name.  <br /></td></tr>
 <tr class="separator:a62dfa40650a91dfeef6751d04d05e7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf04a006f9bcaa207f5a95ce92954118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#acf04a006f9bcaa207f5a95ce92954118">ExportPackage</a> (String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
+<tr class="memdesc:acf04a006f9bcaa207f5a95ce92954118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports this asset and its dependencies as a .unitypackage.  <br /></td></tr>
+<tr class="separator:acf04a006f9bcaa207f5a95ce92954118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeb8f051ae05988e40bb28605feee111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#abeb8f051ae05988e40bb28605feee111">ForceSave</a> ()</td></tr>
 <tr class="memdesc:abeb8f051ae05988e40bb28605feee111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the object to be written to disk, whether it is dirty or not. Save()  <br /></td></tr>
 <tr class="separator:abeb8f051ae05988e40bb28605feee111"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,34 +197,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ClearLabels</b> ()</t
 <tr class="memitem:a796eba9055efb8d7239cc4f64536819a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a796eba9055efb8d7239cc4f64536819a">Save</a> ()</td></tr>
 <tr class="memdesc:a796eba9055efb8d7239cc4f64536819a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves any changes to the object to disk if it is marked as dirty. ForceSave()  <br /></td></tr>
 <tr class="separator:a796eba9055efb8d7239cc4f64536819a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa6bf24ba0ab652b7290420e1fdbc2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#abaa6bf24ba0ab652b7290420e1fdbc2c">SetActiveImporter&lt; T &gt;</a> ()</td></tr>
+<tr class="memdesc:abaa6bf24ba0ab652b7290420e1fdbc2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active AssetImporter type for this asset.  <br /></td></tr>
+<tr class="separator:abaa6bf24ba0ab652b7290420e1fdbc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f0ebec39f0b273e96ecef9b68acebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac2f0ebec39f0b273e96ecef9b68acebc">SetActiveImporterToDefault</a> ()</td></tr>
+<tr class="memdesc:ac2f0ebec39f0b273e96ecef9b68acebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the active AssetImporter type to the default type, if necessary.  <br /></td></tr>
+<tr class="separator:ac2f0ebec39f0b273e96ecef9b68acebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f103139b12c34e9465b09a5751c7615"><td class="memItemLeft" align="right" valign="top"><a id="a2f103139b12c34e9465b09a5751c7615" name="a2f103139b12c34e9465b09a5751c7615"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDirty</b> ()</td></tr>
 <tr class="memdesc:a2f103139b12c34e9465b09a5751c7615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the main object as dirty. <br /></td></tr>
 <tr class="separator:a2f103139b12c34e9465b09a5751c7615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a68d03b678dfa9d1d84371bd21b4b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a96a68d03b678dfa9d1d84371bd21b4b8">SetLabels</a> (String[] labels)</td></tr>
+<tr class="memdesc:a96a68d03b678dfa9d1d84371bd21b4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the asset's labels, replacing all existing labels.  <br /></td></tr>
+<tr class="separator:a96a68d03b678dfa9d1d84371bd21b4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330f7aa6d806b7014f05db94f36af777"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">Trash</a> ()</td></tr>
 <tr class="memdesc:a330f7aa6d806b7014f05db94f36af777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the asset to the OS trash (same as Delete, but recoverable). Does not Destroy the object. CAUTION: The asset instance should be discarded afterwards.  <br /></td></tr>
 <tr class="separator:a330f7aa6d806b7014f05db94f36af777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4495c88cbf24b8e25e76b474be14232a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a4495c88cbf24b8e25e76b474be14232a">AddLabel</a> (Object obj, String label)</td></tr>
-<tr class="memdesc:a4495c88cbf24b8e25e76b474be14232a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a label to an asset's list of labels. Note: this is less efficient than SetLabels. It is provided as a convenience to add a few labels without having to do the conversion to List, then add a label, then ToArray() the list. This is what is done internally.  <br /></td></tr>
-<tr class="separator:a4495c88cbf24b8e25e76b474be14232a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f2dd93347849dfc7dcdd774c8c1ce8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aa2f2dd93347849dfc7dcdd774c8c1ce8">AddLabels</a> (Object obj, String[] labels)</td></tr>
-<tr class="memdesc:aa2f2dd93347849dfc7dcdd774c8c1ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds several labels to an asset's list of labels.  <br /></td></tr>
-<tr class="separator:aa2f2dd93347849dfc7dcdd774c8c1ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89d4af983e261120d05aef1364bbe645"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a89d4af983e261120d05aef1364bbe645">AddObjectToAsset</a> (Object subObject, Object assetObject)</td></tr>
-<tr class="memdesc:a89d4af983e261120d05aef1364bbe645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object as sub-object to the asset object.  <br /></td></tr>
-<tr class="separator:a89d4af983e261120d05aef1364bbe645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfa6b18a8316b03c7028e8810fcc7d58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#abfa6b18a8316b03c7028e8810fcc7d58">BatchEditing</a> (Action assetEditingAction, Boolean rethrowExceptions=false)</td></tr>
 <tr class="memdesc:abfa6b18a8316b03c7028e8810fcc7d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed up mass asset editing (create, modify, delete, import, etc). Within the callback action, the AssetDatabase does neither import nor auto-refresh assets. This can significantly speed up mass asset editing tasks where you work with individual assets in a loop. Internally calls <a href="https://docs.unity3d.com/Manual/AssetDatabaseBatching.html">Start/StopAssetEditing</a> in a try/finally block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.  <br /></td></tr>
 <tr class="separator:abfa6b18a8316b03c7028e8810fcc7d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39e63e0c5189b70d63db8177ae53663a"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a39e63e0c5189b70d63db8177ae53663a">CanMove</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> sourcePath, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> destinationPath)</td></tr>
 <tr class="memdesc:a39e63e0c5189b70d63db8177ae53663a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if a Move operation will be successful without actually moving the asset. Note: Returns false if any of the folders to destinationPath do not exist.  <br /></td></tr>
 <tr class="separator:a39e63e0c5189b70d63db8177ae53663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a681bb62e3f53a5f14625cca65a223856"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a681bb62e3f53a5f14625cca65a223856">ClearLabels</a> (Object obj)</td></tr>
-<tr class="memdesc:a681bb62e3f53a5f14625cca65a223856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all labels of an asset.  <br /></td></tr>
-<tr class="separator:a681bb62e3f53a5f14625cca65a223856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96f36c2744f1b086f7fc80f8d6c0a190"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a96f36c2744f1b086f7fc80f8d6c0a190">Copy</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> sourcePath, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> destinationPath, Boolean overwriteExisting=false)</td></tr>
 <tr class="memdesc:a96f36c2744f1b086f7fc80f8d6c0a190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a copy of the source asset and saves it in the destination. Will create destination path folders if necessary.  <br /></td></tr>
 <tr class="separator:a96f36c2744f1b086f7fc80f8d6c0a190"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,9 +243,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac39618342b0e18b9d49888170f91bc42"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac39618342b0e18b9d49888170f91bc42">Delete</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:ac39618342b0e18b9d49888170f91bc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the asset file. Does nothing if there is no file at the given path.  <br /></td></tr>
 <tr class="separator:ac39618342b0e18b9d49888170f91bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f9332201d0826bd1a0143c0b012e89b"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a5f9332201d0826bd1a0143c0b012e89b">ExtractObject</a> (Object subObject, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> destinationPath)</td></tr>
-<tr class="memdesc:a5f9332201d0826bd1a0143c0b012e89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset and dragging it outside the containing asset in the project view. Note: This only works with visible sub objects.  <br /></td></tr>
-<tr class="separator:a5f9332201d0826bd1a0143c0b012e89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca79c7d65d850937e8a05e47417219a9"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aca79c7d65d850937e8a05e47417219a9">Find</a> (String filter, String[] searchInFolders=null)</td></tr>
 <tr class="memdesc:aca79c7d65d850937e8a05e47417219a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the assets by the given filter criteria. Returns an array of string GUIDs for compatibility reasons.  <br /></td></tr>
 <tr class="separator:aca79c7d65d850937e8a05e47417219a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,12 +270,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a151dae36faecffecf9b857cab7c35d5a"><td class="memItemLeft" align="right" valign="top">static Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a151dae36faecffecf9b857cab7c35d5a">GetIcon</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a151dae36faecffecf9b857cab7c35d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the icon associated with the asset type.  <br /></td></tr>
 <tr class="separator:a151dae36faecffecf9b857cab7c35d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4adafb1ae8505616347e99cf66637e72"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a4adafb1ae8505616347e99cf66637e72">GetLabels</a> (GUID guid)</td></tr>
-<tr class="memdesc:a4adafb1ae8505616347e99cf66637e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's labels.  <br /></td></tr>
-<tr class="separator:a4adafb1ae8505616347e99cf66637e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78e8e90268cc39dc3cff79fb33d4bdb0"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">GetLabels</a> (Object obj)</td></tr>
-<tr class="memdesc:a78e8e90268cc39dc3cff79fb33d4bdb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's labels.  <br /></td></tr>
-<tr class="separator:a78e8e90268cc39dc3cff79fb33d4bdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac175e86600249f976510ecfd3279a2a1"><td class="memItemLeft" align="right" valign="top"><a id="ac175e86600249f976510ecfd3279a2a1" name="ac175e86600249f976510ecfd3279a2a1"></a>
 static String&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastErrorMessage</b> ()</td></tr>
 <tr class="memdesc:ac175e86600249f976510ecfd3279a2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last error message returned by some methods that provide such a message, for example Move and Rename. Rename Move <br /></td></tr>
@@ -343,9 +347,6 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastError
 <tr class="memitem:af1e4f184e2b3b531eb0bc198e1a872a8"><td class="memItemLeft" align="right" valign="top">static implicit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#af1e4f184e2b3b531eb0bc198e1a872a8">operator Object</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a> asset)</td></tr>
 <tr class="memdesc:af1e4f184e2b3b531eb0bc198e1a872a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion to UnityEngine.Object by returning the asset's MainObject.  <br /></td></tr>
 <tr class="separator:af1e4f184e2b3b531eb0bc198e1a872a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedc43f93595e063bbfca913b127884fd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aedc43f93595e063bbfca913b127884fd">RemoveObjectFromAsset</a> (Object subObject)</td></tr>
-<tr class="memdesc:aedc43f93595e063bbfca913b127884fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an object as sub-object from whatever asset it is contained in.  <br /></td></tr>
-<tr class="separator:aedc43f93595e063bbfca913b127884fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a328f14a0c05eb1dde1bf0c40375d0fb1"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a328f14a0c05eb1dde1bf0c40375d0fb1">Rename</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> assetPath, String newFileName)</td></tr>
 <tr class="memdesc:a328f14a0c05eb1dde1bf0c40375d0fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames an asset's file or folder name. NOTE: Cannot be used to change a file's extension. Use Move instead. Move  <br /></td></tr>
 <tr class="separator:a328f14a0c05eb1dde1bf0c40375d0fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -357,15 +358,6 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastError
 <tr class="separator:a9f28e44a3e441ecd4e4a5d958cf0ad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b037f503a36a546759c962024c48883"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a2b037f503a36a546759c962024c48883">SaveAll</a> ()</td></tr>
 <tr class="separator:a2b037f503a36a546759c962024c48883"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf3469d41ab0f49810ea2ac65be8a57"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#abdf3469d41ab0f49810ea2ac65be8a57">SetLabels</a> (Object obj, String[] labels)</td></tr>
-<tr class="memdesc:abdf3469d41ab0f49810ea2ac65be8a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an asset's labels.  <br /></td></tr>
-<tr class="separator:abdf3469d41ab0f49810ea2ac65be8a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b1e811d41c7f1e8d56770220612e82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aa1b1e811d41c7f1e8d56770220612e82">SetMainObject</a> (Object subObject, Object assetObject)</td></tr>
-<tr class="memdesc:aa1b1e811d41c7f1e8d56770220612e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset.  <br /></td></tr>
-<tr class="separator:aa1b1e811d41c7f1e8d56770220612e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75c476f66fe4c4f7feb4bad3502b173b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b">SetMainObject</a> (Object subObject, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:a75c476f66fe4c4f7feb4bad3502b173b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset.  <br /></td></tr>
-<tr class="separator:a75c476f66fe4c4f7feb4bad3502b173b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5baefad388e44e6141aec55849a54ca9"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a5baefad388e44e6141aec55849a54ca9">Trash</a> (IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt; paths)</td></tr>
 <tr class="memdesc:a5baefad388e44e6141aec55849a54ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to move all the given assets to the OS trash.  <br /></td></tr>
 <tr class="separator:a5baefad388e44e6141aec55849a54ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,10 +373,17 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastError
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a3367ea4e4ca27be0494d5ea1281eee17"><td class="memItemLeft" align="right" valign="top">Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a3367ea4e4ca27be0494d5ea1281eee17">ActiveImporter</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3367ea4e4ca27be0494d5ea1281eee17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the importer was overridden.  <br /></td></tr>
+<tr class="separator:a3367ea4e4ca27be0494d5ea1281eee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1edde6ce83da160f94eb4a5846d7af3c"><td class="memItemLeft" align="right" valign="top"><a id="a1edde6ce83da160f94eb4a5846d7af3c" name="a1edde6ce83da160f94eb4a5846d7af3c"></a>
 <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AssetPath</b><code> [get]</code></td></tr>
 <tr class="memdesc:a1edde6ce83da160f94eb4a5846d7af3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the asset (file or folder). <br /></td></tr>
 <tr class="separator:a1edde6ce83da160f94eb4a5846d7af3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a668a0e0339854647017cc856c7281fea"><td class="memItemLeft" align="right" valign="top"><a id="a668a0e0339854647017cc856c7281fea" name="a668a0e0339854647017cc856c7281fea"></a>
+Type&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultImporter</b><code> [get]</code></td></tr>
+<tr class="memdesc:a668a0e0339854647017cc856c7281fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the default AssetImporter type for this asset. <br /></td></tr>
+<tr class="separator:a668a0e0339854647017cc856c7281fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75fc9897dda5806819a13fd7b060f1ff"><td class="memItemLeft" align="right" valign="top"><a id="a75fc9897dda5806819a13fd7b060f1ff" name="a75fc9897dda5806819a13fd7b060f1ff"></a>
 String[]&#160;</td><td class="memItemRight" valign="bottom"><b>Dependencies</b><code> [get]</code></td></tr>
 <tr class="memdesc:a75fc9897dda5806819a13fd7b060f1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the assets direct and indirect dependencies. Returns paths to the dependent assets. <br /></td></tr>
@@ -410,6 +409,9 @@ Texture&#160;</td><td class="memItemRight" valign="bottom"><b>Icon</b><code> [ge
 <tr class="memitem:ac0987b9b2e192199fef358b794e45b71"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac0987b9b2e192199fef358b794e45b71">IsForeignAsset</a><code> [get]</code></td></tr>
 <tr class="memdesc:ac0987b9b2e192199fef358b794e45b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this is a foreign asset.  <br /></td></tr>
 <tr class="separator:ac0987b9b2e192199fef358b794e45b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e1908198602985c8ce901526aeb2dc"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aa4e1908198602985c8ce901526aeb2dc">IsImporterOverridden</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa4e1908198602985c8ce901526aeb2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the asset's default AssetImporter type has been overridden.  <br /></td></tr>
+<tr class="separator:aa4e1908198602985c8ce901526aeb2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ad8252fd41d5d1e6677a1dfeb17dc7e5b">IsNativeAsset</a><code> [get]</code></td></tr>
 <tr class="memdesc:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this is a native asset.  <br /></td></tr>
 <tr class="separator:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -446,7 +448,9 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <tr class="memdesc:a36a4db1479db98a85290d7995f408f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads and returns only those asset objects that are shown in the project view. NOTE: Does NOT include the main asset! <br /></td></tr>
 <tr class="separator:a36a4db1479db98a85290d7995f408f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Replacement implementation for Unity's <em>massive</em> AssetDatabase class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with UnityEngine.Object. In fact, Asset is essentially a wrapper around the asset's UnityEngine.Object (see: MainObject). In addition Asset.Path takes care of all path (folder and file) handling business and ensures properly formed paths. Static subclasses group only marginally related AssetDatabase functionality such as Package, Bundle, VersionControl, CacheServer. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a99d154f2e897d81c73e55d2e2d404658" name="a99d154f2e897d81c73e55d2e2d404658"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99d154f2e897d81c73e55d2e2d404658">&#9670;&#160;</a></span>Asset() <span class="overload">[1/4]</span></h2>
 
@@ -609,61 +613,8 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4495c88cbf24b8e25e76b474be14232a" name="a4495c88cbf24b8e25e76b474be14232a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4495c88cbf24b8e25e76b474be14232a">&#9670;&#160;</a></span>AddLabel() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.AddLabel </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>label</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds a label to an asset's list of labels. Note: this is less efficient than SetLabels. It is provided as a convenience to add a few labels without having to do the conversion to List, then add a label, then ToArray() the list. This is what is done internally. </p>
-<p>AddLabels </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">label</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>        {</div>
-<div class="line"><span class="lineno">   45</span>            var existingLabels = <span class="keyword">new</span> List&lt;String&gt;(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">GetLabels</a>(obj));</div>
-<div class="line"><span class="lineno">   46</span>            existingLabels.Add(label);</div>
-<div class="line"><span class="lineno">   47</span>            AssetDatabase.SetLabels(obj, existingLabels.ToArray());</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a78e8e90268cc39dc3cff79fb33d4bdb0"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">CodeSmile.Editor.Asset.GetLabels</a></div><div class="ttdeci">static String[] GetLabels(Object obj)</div><div class="ttdoc">Returns an asset's labels.</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">CodeSmile.Editor.Asset.GetLabels()</a>.</p>
-
-</div>
-</div>
 <a id="a63cad4e89f7d8ee17e674a2ac5425e0b" name="a63cad4e89f7d8ee17e674a2ac5425e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63cad4e89f7d8ee17e674a2ac5425e0b">&#9670;&#160;</a></span>AddLabel() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cad4e89f7d8ee17e674a2ac5425e0b">&#9670;&#160;</a></span>AddLabel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -688,60 +639,8 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="aa2f2dd93347849dfc7dcdd774c8c1ce8" name="aa2f2dd93347849dfc7dcdd774c8c1ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f2dd93347849dfc7dcdd774c8c1ce8">&#9670;&#160;</a></span>AddLabels() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.AddLabels </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>labels</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds several labels to an asset's list of labels. </p>
-<p>AddLabel </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">labels</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>        {</div>
-<div class="line"><span class="lineno">   58</span>            var existingLabels = <span class="keyword">new</span> List&lt;String&gt;(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">GetLabels</a>(obj));</div>
-<div class="line"><span class="lineno">   59</span>            existingLabels.AddRange(labels);</div>
-<div class="line"><span class="lineno">   60</span>            AssetDatabase.SetLabels(obj, existingLabels.ToArray());</div>
-<div class="line"><span class="lineno">   61</span>        }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">CodeSmile.Editor.Asset.GetLabels()</a>.</p>
-
-</div>
-</div>
 <a id="a754b4d74dc843f9cff1e8c06612e919b" name="a754b4d74dc843f9cff1e8c06612e919b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a754b4d74dc843f9cff1e8c06612e919b">&#9670;&#160;</a></span>AddLabels() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a754b4d74dc843f9cff1e8c06612e919b">&#9670;&#160;</a></span>AddLabels()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -790,60 +689,6 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
   </dd>
 </dl>
 
-</div>
-</div>
-<a id="a89d4af983e261120d05aef1364bbe645" name="a89d4af983e261120d05aef1364bbe645"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89d4af983e261120d05aef1364bbe645">&#9670;&#160;</a></span>AddObjectToAsset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.AddObjectToAsset </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>subObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>assetObject</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds an object as sub-object to the asset object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">subObject</td><td></td></tr>
-    <tr><td class="paramname">assetObject</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>        {</div>
-<div class="line"><span class="lineno">   37</span>            ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   38</span>            ThrowIf.SubObjectIsGameObject(subObject);</div>
-<div class="line"><span class="lineno">   39</span>            ThrowIf.AlreadyAnAsset(subObject);</div>
-<div class="line"><span class="lineno">   40</span>            ThrowIf.ArgumentIsNull(assetObject, nameof(assetObject));</div>
-<div class="line"><span class="lineno">   41</span>            ThrowIf.NotAnAssetWithAssetExtension(assetObject);</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>            AssetDatabase.AddObjectToAsset(subObject, assetObject);</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="abfa6b18a8316b03c7028e8810fcc7d58" name="abfa6b18a8316b03c7028e8810fcc7d58"></a>
@@ -987,40 +832,6 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <div class="line"><span class="lineno">   23</span>            <span class="keywordflow">return</span> Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));</div>
 <div class="line"><span class="lineno">   24</span>        }</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a681bb62e3f53a5f14625cca65a223856" name="a681bb62e3f53a5f14625cca65a223856"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681bb62e3f53a5f14625cca65a223856">&#9670;&#160;</a></span>ClearLabels()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.ClearLabels </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clears all labels of an asset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 </div>
 </div>
 <a id="a7054969aa4c2c6d837f6a7c4d6f4e279" name="a7054969aa4c2c6d837f6a7c4d6f4e279"></a>
@@ -1286,15 +1097,15 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <p>Deletes the asset. Does not Destroy the object. CAUTION: The asset instance should be discarded afterwards. </p>
 <dl class="section return"><dt>Returns</dt><dd>If successful, returns the former MainObject - it is still valid but it is no longer an asset. Returns null if the object wasn't deleted. </dd></dl>
 <p>Trash(CodeSmile.Editor.Asset.Path) </p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>        {</div>
-<div class="line"><span class="lineno">  122</span>            var mainObject = m_MainObject;</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">IsDeleted</a> == <span class="keyword">false</span> &amp;&amp; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#ab30819608f3e4fd47a613e80589f3e87">Delete</a>(m_AssetPath))</div>
-<div class="line"><span class="lineno">  124</span>                InvalidateInstance();</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">return</span> mainObject;</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a7ed1b523513e8720edcadae24621c928"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">CodeSmile.Editor.Asset.IsDeleted</a></div><div class="ttdeci">Boolean IsDeleted</div><div class="ttdoc">Returns true after the asset has been deleted.</div><div class="ttdef"><b>Definition:</b> Asset.cs:80</div></div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_ab30819608f3e4fd47a613e80589f3e87"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#ab30819608f3e4fd47a613e80589f3e87">CodeSmile.Editor.Asset.Delete</a></div><div class="ttdeci">Object Delete()</div><div class="ttdoc">Deletes the asset. Does not Destroy the object. CAUTION: The asset instance should be discarded after...</div><div class="ttdef"><b>Definition:</b> Asset.Delete.cs:120</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>            var mainObject = m_MainObject;</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">IsDeleted</a> == <span class="keyword">false</span> &amp;&amp; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#ab30819608f3e4fd47a613e80589f3e87">Delete</a>(m_AssetPath))</div>
+<div class="line"><span class="lineno">  132</span>                InvalidateInstance();</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">return</span> mainObject;</div>
+<div class="line"><span class="lineno">  135</span>        }</div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a7ed1b523513e8720edcadae24621c928"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">CodeSmile.Editor.Asset.IsDeleted</a></div><div class="ttdeci">Boolean IsDeleted</div><div class="ttdoc">Returns true after the asset has been deleted.</div><div class="ttdef"><b>Definition:</b> Asset.Delete.cs:32</div></div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_ab30819608f3e4fd47a613e80589f3e87"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#ab30819608f3e4fd47a613e80589f3e87">CodeSmile.Editor.Asset.Delete</a></div><div class="ttdeci">Object Delete()</div><div class="ttdoc">Deletes the asset. Does not Destroy the object. CAUTION: The asset instance should be discarded after...</div><div class="ttdef"><b>Definition:</b> Asset.Delete.cs:128</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ab30819608f3e4fd47a613e80589f3e87">CodeSmile.Editor.Asset.Delete()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">CodeSmile.Editor.Asset.IsDeleted</a>.</p>
 
@@ -1439,12 +1250,12 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>        {</div>
-<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   33</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
+<div class="line"><span class="lineno">   44</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ae39d2cba9c43048e14ac086f7cb1178a">CodeSmile.Editor.Asset.Path.Exists</a>.</p>
 
@@ -1470,26 +1281,23 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="a5f9332201d0826bd1a0143c0b012e89b" name="a5f9332201d0826bd1a0143c0b012e89b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f9332201d0826bd1a0143c0b012e89b">&#9670;&#160;</a></span>ExtractObject()</h2>
+<a id="acf04a006f9bcaa207f5a95ce92954118" name="acf04a006f9bcaa207f5a95ce92954118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf04a006f9bcaa207f5a95ce92954118">&#9670;&#160;</a></span>ExportPackage()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.ExtractObject </td>
+          <td class="memname">void CodeSmile.Editor.Asset.ExportPackage </td>
           <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>subObject</em>, </td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>packagePath</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>destinationPath</em>&#160;</td>
+          <td class="paramtype">ExportPackageOptions&#160;</td>
+          <td class="paramname"><em>options</em> = <code>ExportPackageOptions::Default</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1497,29 +1305,24 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset and dragging it outside the containing asset in the project view. Note: This only works with visible sub objects. </p>
+<p>Exports this asset and its dependencies as a .unitypackage. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">subObject</td><td></td></tr>
-    <tr><td class="paramname">destinationPath</td><td></td></tr>
+    <tr><td class="paramname">packagePath</td><td></td></tr>
+    <tr><td class="paramname">options</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   25</span>            ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">return</span> Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));</div>
-<div class="line"><span class="lineno">   28</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>            Package.Export(m_AssetPath, packagePath, options);</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#ab052a04b0c1d5ea854f5cb8a226e2ac3">CodeSmile.Editor.Asset.Package.Export()</a>.</p>
+
 </div>
 </div>
 <a id="aca79c7d65d850937e8a05e47417219a9" name="aca79c7d65d850937e8a05e47417219a9"></a>
@@ -1938,78 +1741,6 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="a4adafb1ae8505616347e99cf66637e72" name="a4adafb1ae8505616347e99cf66637e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4adafb1ae8505616347e99cf66637e72">&#9670;&#160;</a></span>GetLabels() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] CodeSmile.Editor.Asset.GetLabels </td>
-          <td>(</td>
-          <td class="paramtype">GUID&#160;</td>
-          <td class="paramname"><em>guid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns an asset's labels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a78e8e90268cc39dc3cff79fb33d4bdb0" name="a78e8e90268cc39dc3cff79fb33d4bdb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e8e90268cc39dc3cff79fb33d4bdb0">&#9670;&#160;</a></span>GetLabels() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] CodeSmile.Editor.Asset.GetLabels </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns an asset's labels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a4495c88cbf24b8e25e76b474be14232a">CodeSmile.Editor.Asset.AddLabel()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aa2f2dd93347849dfc7dcdd774c8c1ce8">CodeSmile.Editor.Asset.AddLabels()</a>.</p>
-
-</div>
-</div>
 <a id="a17bb22f4a8874b605f035e944edfff5d" name="a17bb22f4a8874b605f035e944edfff5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17bb22f4a8874b605f035e944edfff5d">&#9670;&#160;</a></span>GetLocalFileId()</h2>
 
@@ -2042,12 +1773,13 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The local fileID or 0 on failure.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>        {</div>
-<div class="line"><span class="lineno">  152</span>            <span class="comment">// force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int variants</span></div>
-<div class="line"><span class="lineno">  153</span>            <span class="comment">// of the TryGetGUID.. method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
-<div class="line"><span class="lineno">  154</span>            var localId = Int64.MinValue;</div>
-<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">// variable is to force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int</span></div>
+<div class="line"><span class="lineno">   73</span>            <span class="comment">// variants of the TryGetGUID* method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
+<div class="line"><span class="lineno">   74</span>            var localId = Int64.MinValue;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2135,7 +1867,7 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a76047691f5fe8289a43efe77c4f735f1">CodeSmile.Editor.Asset.Path.ExistsInFileSystem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b">CodeSmile.Editor.Asset.SetMainObject()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#adef8e04e1c77b01ca51338d3c7b63fe2">CodeSmile.Editor.Asset.SubAsset.SetMain()</a>.</p>
 
 </div>
 </div>
@@ -3225,45 +2957,6 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="aedc43f93595e063bbfca913b127884fd" name="aedc43f93595e063bbfca913b127884fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedc43f93595e063bbfca913b127884fd">&#9670;&#160;</a></span>RemoveObjectFromAsset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.RemoveObjectFromAsset </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>subObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes an object as sub-object from whatever asset it is contained in. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">subObject</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>            AssetDatabase.RemoveObjectFromAsset(subObject);</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a328f14a0c05eb1dde1bf0c40375d0fb1" name="a328f14a0c05eb1dde1bf0c40375d0fb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a328f14a0c05eb1dde1bf0c40375d0fb1">&#9670;&#160;</a></span>Rename() <span class="overload">[1/2]</span></h2>
 
@@ -3485,145 +3178,90 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="abdf3469d41ab0f49810ea2ac65be8a57" name="abdf3469d41ab0f49810ea2ac65be8a57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdf3469d41ab0f49810ea2ac65be8a57">&#9670;&#160;</a></span>SetLabels()</h2>
+<a id="abaa6bf24ba0ab652b7290420e1fdbc2c" name="abaa6bf24ba0ab652b7290420e1fdbc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa6bf24ba0ab652b7290420e1fdbc2c">&#9670;&#160;</a></span>SetActiveImporter&lt; T &gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.SetLabels </td>
+          <td class="memname">void CodeSmile.Editor.Asset.SetActiveImporter&lt; T &gt; </td>
           <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>labels</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Sets an asset's labels. </p>
+<p>Sets the active AssetImporter type for this asset. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>SetActiveImporterToDefault ActiveImporter </p>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>AssetImporter</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Importer.SetOverride&lt;T&gt;</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>m_AssetPath</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+</div>
+</div>
+<a id="ac2f0ebec39f0b273e96ecef9b68acebc" name="ac2f0ebec39f0b273e96ecef9b68acebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f0ebec39f0b273e96ecef9b68acebc">&#9670;&#160;</a></span>SetActiveImporterToDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeSmile.Editor.Asset.SetActiveImporterToDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the active AssetImporter type to the default type, if necessary. </p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">if</span> (Importer.IsOverridden(m_AssetPath))</div>
+<div class="line"><span class="lineno">   62</span>                Importer.ClearOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#ad07d83c9e9dd67e9170b702cfc43d40c">CodeSmile.Editor.Asset.Importer.ClearOverride()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aa8bd9c0989728fa2397ced1f52288b66">CodeSmile.Editor.Asset.Importer.IsOverridden()</a>.</p>
+
+</div>
+</div>
+<a id="a96a68d03b678dfa9d1d84371bd21b4b8" name="a96a68d03b678dfa9d1d84371bd21b4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a68d03b678dfa9d1d84371bd21b4b8">&#9670;&#160;</a></span>SetLabels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeSmile.Editor.Asset.SetLabels </td>
+          <td>(</td>
+          <td class="paramtype">String[]&#160;</td>
+          <td class="paramname"><em>labels</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the asset's labels, replacing all existing labels. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
     <tr><td class="paramname">labels</td><td></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aa1b1e811d41c7f1e8d56770220612e82" name="aa1b1e811d41c7f1e8d56770220612e82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1b1e811d41c7f1e8d56770220612e82">&#9670;&#160;</a></span>SetMainObject() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.SetMainObject </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>subObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>assetObject</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">subObject</td><td></td></tr>
-    <tr><td class="paramname">assetObject</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a75c476f66fe4c4f7feb4bad3502b173b" name="a75c476f66fe4c4f7feb4bad3502b173b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75c476f66fe4c4f7feb4bad3502b173b">&#9670;&#160;</a></span>SetMainObject() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void CodeSmile.Editor.Asset.SetMainObject </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>subObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">subObject</td><td></td></tr>
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>        {</div>
-<div class="line"><span class="lineno">   65</span>            AssetDatabase.SetMainObject(subObject, path);</div>
-<div class="line"><span class="lineno">   66</span>            <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80">Import</a>(path);</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a117664c1b8cf27e8533a5c9f90142d80"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80">CodeSmile.Editor.Asset.Import</a></div><div class="ttdeci">static void Import(Path path, ImportAssetOptions options=ImportAssetOptions.Default)</div><div class="ttdoc">Imports a file at a given path that was created or modified 'externally', ie not via Asset(Database) ...</div><div class="ttdef"><b>Definition:</b> Asset.Import.cs:19</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a117664c1b8cf27e8533a5c9f90142d80">CodeSmile.Editor.Asset.Import()</a>.</p>
 
 </div>
 </div>
@@ -3645,14 +3283,14 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <p>Moves the asset to the OS trash (same as Delete, but recoverable). Does not Destroy the object. CAUTION: The asset instance should be discarded afterwards. </p>
 <dl class="section return"><dt>Returns</dt><dd>If successful, returns the former MainObject - it is still valid but it is no longer an asset. Returns null if the object wasn't trashed. </dd></dl>
 <p>Delete(CodeSmile.Editor.Asset.Path) </p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>        {</div>
-<div class="line"><span class="lineno">  141</span>            var mainObject = m_MainObject;</div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">IsDeleted</a> == <span class="keyword">false</span> &amp;&amp; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">Trash</a>(m_AssetPath))</div>
-<div class="line"><span class="lineno">  143</span>                InvalidateInstance();</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">return</span> mainObject;</div>
-<div class="line"><span class="lineno">  146</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a330f7aa6d806b7014f05db94f36af777"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">CodeSmile.Editor.Asset.Trash</a></div><div class="ttdeci">Object Trash()</div><div class="ttdoc">Moves the asset to the OS trash (same as Delete, but recoverable). Does not Destroy the object....</div><div class="ttdef"><b>Definition:</b> Asset.Delete.cs:139</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>        {</div>
+<div class="line"><span class="lineno">  149</span>            var mainObject = m_MainObject;</div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">IsDeleted</a> == <span class="keyword">false</span> &amp;&amp; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">Trash</a>(m_AssetPath))</div>
+<div class="line"><span class="lineno">  151</span>                InvalidateInstance();</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">return</span> mainObject;</div>
+<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a330f7aa6d806b7014f05db94f36af777"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">CodeSmile.Editor.Asset.Trash</a></div><div class="ttdeci">Object Trash()</div><div class="ttdoc">Moves the asset to the OS trash (same as Delete, but recoverable). Does not Destroy the object....</div><div class="ttdef"><b>Definition:</b> Asset.Delete.cs:147</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a7ed1b523513e8720edcadae24621c928">CodeSmile.Editor.Asset.IsDeleted</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a330f7aa6d806b7014f05db94f36af777">CodeSmile.Editor.Asset.Trash()</a>.</p>
 
@@ -3803,6 +3441,38 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a3367ea4e4ca27be0494d5ea1281eee17" name="a3367ea4e4ca27be0494d5ea1281eee17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3367ea4e4ca27be0494d5ea1281eee17">&#9670;&#160;</a></span>ActiveImporter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Type CodeSmile.Editor.Asset.ActiveImporter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the importer was overridden. </p>
+<p>SetActiveImporter&lt;T&gt; SetActiveImporterToDefault DefaultImporter </p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>        {</div>
+<div class="line"><span class="lineno">   29</span>            <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   30</span>            {</div>
+<div class="line"><span class="lineno">   31</span>                var overridden = Importer.GetOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">   32</span>                <span class="keywordflow">return</span> overridden != <span class="keyword">null</span> ? overridden : Importer.GetDefault(m_AssetPath);</div>
+<div class="line"><span class="lineno">   33</span>            }</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a02d2215d51838b1cd36b6301c143f46c" name="a02d2215d51838b1cd36b6301c143f46c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02d2215d51838b1cd36b6301c143f46c">&#9670;&#160;</a></span>FailedToDeletePaths</h2>
 
@@ -3881,6 +3551,31 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
+<a id="aa4e1908198602985c8ce901526aeb2dc" name="aa4e1908198602985c8ce901526aeb2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e1908198602985c8ce901526aeb2dc">&#9670;&#160;</a></span>IsImporterOverridden</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Boolean CodeSmile.Editor.Asset.IsImporterOverridden</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the asset's default AssetImporter type has been overridden. </p>
+<p>ActiveImporter DefaultImporter SetActiveImporter&lt;T&gt; SetActiveImporterToDefault </p>
+
+</div>
+</div>
 <a id="ad8252fd41d5d1e6677a1dfeb17dc7e5b" name="ad8252fd41d5d1e6677a1dfeb17dc7e5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8252fd41d5d1e6677a1dfeb17dc7e5b">&#9670;&#160;</a></span>IsNativeAsset</h2>
 
@@ -3927,11 +3622,10 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Sets or gets the labels associated with the asset. </p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>        {</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keyword">get</span> =&gt; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a78e8e90268cc39dc3cff79fb33d4bdb0">GetLabels</a>(m_MainObject);</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keyword">set</span> =&gt; <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#abdf3469d41ab0f49810ea2ac65be8a57">SetLabels</a>(m_MainObject, value);</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_abdf3469d41ab0f49810ea2ac65be8a57"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#abdf3469d41ab0f49810ea2ac65be8a57">CodeSmile.Editor.Asset.SetLabels</a></div><div class="ttdeci">static void SetLabels(Object obj, String[] labels)</div><div class="ttdoc">Sets an asset's labels.</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keyword">get</span> =&gt; Label.GetAll(m_MainObject);</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keyword">set</span> =&gt; Label.SetAll(m_MainObject, value);</div>
+<div class="line"><span class="lineno">   20</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3956,15 +3650,14 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Returns the asset's main object. </p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>        {</div>
-<div class="line"><span class="lineno">   25</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
-<div class="line"><span class="lineno">   26</span>            <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   27</span>            {</div>
-<div class="line"><span class="lineno">   28</span>                <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b">SetMainObject</a>(value, m_AssetPath);</div>
-<div class="line"><span class="lineno">   29</span>                m_MainObject = value;</div>
-<div class="line"><span class="lineno">   30</span>            }</div>
-<div class="line"><span class="lineno">   31</span>        }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a75c476f66fe4c4f7feb4bad3502b173b"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b">CodeSmile.Editor.Asset.SetMainObject</a></div><div class="ttdeci">static void SetMainObject(Object subObject, Path path)</div><div class="ttdoc">Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targ...</div><div class="ttdef"><b>Definition:</b> Asset.SubAsset.cs:63</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   34</span>            {</div>
+<div class="line"><span class="lineno">   35</span>                SubAsset.SetMain(value, m_AssetPath);</div>
+<div class="line"><span class="lineno">   36</span>                m_MainObject = value;</div>
+<div class="line"><span class="lineno">   37</span>            }</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4035,18 +3728,24 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <li>Editor/Asset.Bundle.cs</li>
 <li>Editor/Asset.cs</li>
 <li>Editor/Asset.Delete.cs</li>
+<li>Editor/Asset.Dependencies.cs</li>
+<li>Editor/Asset.Error.cs</li>
+<li>Editor/Asset.Importer.cs</li>
+<li>Editor/Asset.Labels.cs</li>
+<li>Editor/Asset.Status.cs</li>
+<li>Editor/Asset.SubAsset.cs</li>
 <li>Editor/Asset.Copy.cs</li>
 <li>Editor/Asset.Create.cs</li>
 <li>Editor/Asset.Ctor.cs</li>
 <li>Editor/Asset.Find.cs</li>
 <li>Editor/Asset.Import.cs</li>
-<li>Editor/Asset.Labels.cs</li>
 <li>Editor/Asset.Load.cs</li>
 <li>Editor/Asset.Move.cs</li>
 <li>Editor/Asset.Open.cs</li>
+<li>Editor/Asset.Operator.cs</li>
+<li>Editor/Asset.Package.cs</li>
 <li>Editor/Asset.Rename.cs</li>
 <li>Editor/Asset.Save.cs</li>
-<li>Editor/Asset.SubAsset.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

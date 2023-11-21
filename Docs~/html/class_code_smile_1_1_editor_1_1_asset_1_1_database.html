@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset.Database Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all. Most of the tasks are in fact operations on an asset itself.  
+ <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -138,7 +141,9 @@ static Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>DirectoryMo
 <tr class="memdesc:a60239fddd834643383cba7ffa62ccd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether directory monitoring is enabled in Preferences, or disabled due to symlinks. <br /></td></tr>
 <tr class="separator:a60239fddd834643383cba7ffa62ccd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all. Most of the tasks are in fact operations on an asset itself. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a80dd790542208401de88889ba2f7b0bd" name="a80dd790542208401de88889ba2f7b0bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80dd790542208401de88889ba2f7b0bd">&#9670;&#160;</a></span>ForceReserialize() <span class="overload">[1/2]</span></h2>
 
@@ -175,11 +180,11 @@ static Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>DirectoryMo
 
 <p>Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
 <p>ForceReserialize() </p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>            {</div>
-<div class="line"><span class="lineno">   82</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
-<div class="line"><span class="lineno">   83</span>                <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">ForceReserialize</a>(paths.Cast&lt;String&gt;().ToArray(), options);</div>
-<div class="line"><span class="lineno">   84</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_database_html_a80dd790542208401de88889ba2f7b0bd"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">CodeSmile.Editor.Asset.Database.ForceReserialize</a></div><div class="ttdeci">static void ForceReserialize(IEnumerable&lt; Path &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</div><div class="ttdoc">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur...</div><div class="ttdef"><b>Definition:</b> Asset.Database.cs:79</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>            {</div>
+<div class="line"><span class="lineno">   86</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
+<div class="line"><span class="lineno">   87</span>                <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">ForceReserialize</a>(paths.Cast&lt;String&gt;().ToArray(), options);</div>
+<div class="line"><span class="lineno">   88</span>            }</div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_database_html_a80dd790542208401de88889ba2f7b0bd"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">CodeSmile.Editor.Asset.Database.ForceReserialize</a></div><div class="ttdeci">static void ForceReserialize(IEnumerable&lt; Path &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</div><div class="ttdoc">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur...</div><div class="ttdef"><b>Definition:</b> Asset.Database.cs:83</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">CodeSmile.Editor.Asset.Database.ForceReserialize()</a>.</p>
 
@@ -220,10 +225,10 @@ static Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>DirectoryMo
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   89</span>            {</div>
-<div class="line"><span class="lineno">   90</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
-<div class="line"><span class="lineno">   91</span>                AssetDatabase.ForceReserializeAssets(paths, options);</div>
-<div class="line"><span class="lineno">   92</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>            {</div>
+<div class="line"><span class="lineno">   94</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
+<div class="line"><span class="lineno">   95</span>                AssetDatabase.ForceReserializeAssets(paths, options);</div>
+<div class="line"><span class="lineno">   96</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,14 +282,14 @@ static Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>DirectoryMo
 </div><div class="memdoc">
 
 <p>Gets or sets the desired worker count. Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated. </p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>            {</div>
-<div class="line"><span class="lineno">   22</span>                <span class="keyword">get</span> =&gt; AssetDatabase.DesiredWorkerCount;</div>
-<div class="line"><span class="lineno">   23</span>                <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   24</span>                {</div>
-<div class="line"><span class="lineno">   25</span>                    AssetDatabase.DesiredWorkerCount = value;</div>
-<div class="line"><span class="lineno">   26</span>                    AssetDatabase.ForceToDesiredWorkerCount();</div>
-<div class="line"><span class="lineno">   27</span>                }</div>
-<div class="line"><span class="lineno">   28</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>            {</div>
+<div class="line"><span class="lineno">   26</span>                <span class="keyword">get</span> =&gt; AssetDatabase.DesiredWorkerCount;</div>
+<div class="line"><span class="lineno">   27</span>                <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   28</span>                {</div>
+<div class="line"><span class="lineno">   29</span>                    AssetDatabase.DesiredWorkerCount = value;</div>
+<div class="line"><span class="lineno">   30</span>                    AssetDatabase.ForceToDesiredWorkerCount();</div>
+<div class="line"><span class="lineno">   31</span>                }</div>
+<div class="line"><span class="lineno">   32</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

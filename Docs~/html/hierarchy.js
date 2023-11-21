@@ -9,8 +9,10 @@ var hierarchy =
       [ "CodeSmile.Editor.Asset.Path", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html", null ]
     ] ],
     [ "CodeSmile.Editor.Asset.Importer", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html", null ],
+    [ "CodeSmile.Editor.Asset.Label", "class_code_smile_1_1_editor_1_1_asset_1_1_label.html", null ],
     [ "CodeSmile.Editor.Asset.Package", "class_code_smile_1_1_editor_1_1_asset_1_1_package.html", null ],
     [ "CodeSmile.Editor.StringExtensions", "class_code_smile_1_1_editor_1_1_string_extensions.html", null ],
+    [ "CodeSmile.Editor.Asset.SubAsset", "class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html", null ],
     [ "UnityException", null, [
       [ "CodeSmile.Editor.AssetLoadException", "class_code_smile_1_1_editor_1_1_asset_load_exception.html", null ]
     ] ],

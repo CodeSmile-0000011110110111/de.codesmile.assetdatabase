@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -91,11 +91,456 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="class_code_smile_1_1_editor_1_1_asset_1_1_importer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset.Importer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Groups all asset importer functionality.  
+ <a href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad07d83c9e9dd67e9170b702cfc43d40c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#ad07d83c9e9dd67e9170b702cfc43d40c">ClearOverride</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:ad07d83c9e9dd67e9170b702cfc43d40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears an asset's importer override for the specified asset.  <br /></td></tr>
+<tr class="separator:ad07d83c9e9dd67e9170b702cfc43d40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf49df711d9fde062d06d9d252a6673a"><td class="memItemLeft" align="right" valign="top">static Type[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#acf49df711d9fde062d06d9d252a6673a">GetAvailable</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:acf49df711d9fde062d06d9d252a6673a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter types available for a given asset, eg those that handle assets of the given type.  <br /></td></tr>
+<tr class="separator:acf49df711d9fde062d06d9d252a6673a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63db39913a5cb5170ed49803f300a6c3"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a63db39913a5cb5170ed49803f300a6c3">GetDefault</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a63db39913a5cb5170ed49803f300a6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's default importer type.  <br /></td></tr>
+<tr class="separator:a63db39913a5cb5170ed49803f300a6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e28ab22b111f5faf8c663a9b0e4906e"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a6e28ab22b111f5faf8c663a9b0e4906e">GetOverride</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a6e28ab22b111f5faf8c663a9b0e4906e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's overridden importer type.  <br /></td></tr>
+<tr class="separator:a6e28ab22b111f5faf8c663a9b0e4906e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0295e9322ea72e098eea1b5181db07ef"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a0295e9322ea72e098eea1b5181db07ef">GetType</a> (GUID guid)</td></tr>
+<tr class="memdesc:a0295e9322ea72e098eea1b5181db07ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter type used for the given asset.  <br /></td></tr>
+<tr class="separator:a0295e9322ea72e098eea1b5181db07ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4052e3c29e06907eb30554cfaae710"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a1f4052e3c29e06907eb30554cfaae710">GetType</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a1f4052e3c29e06907eb30554cfaae710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter type used for the given asset.  <br /></td></tr>
+<tr class="separator:a1f4052e3c29e06907eb30554cfaae710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9455008b7b7f452604875ff07132f4aa"><td class="memItemLeft" align="right" valign="top">static Type[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a9455008b7b7f452604875ff07132f4aa">GetTypes</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] paths)</td></tr>
+<tr class="memdesc:a9455008b7b7f452604875ff07132f4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter types used for the given assets.  <br /></td></tr>
+<tr class="separator:a9455008b7b7f452604875ff07132f4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670417ccfb622e3c19d70855f4604167"><td class="memItemLeft" align="right" valign="top">static Type[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a670417ccfb622e3c19d70855f4604167">GetTypes</a> (ReadOnlySpan&lt; GUID &gt; guids)</td></tr>
+<tr class="memdesc:a670417ccfb622e3c19d70855f4604167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter types used for the given assets.  <br /></td></tr>
+<tr class="separator:a670417ccfb622e3c19d70855f4604167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03daabfe39d7ea9c7fe1f34bfb637e6"><td class="memItemLeft" align="right" valign="top">static Type[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#af03daabfe39d7ea9c7fe1f34bfb637e6">GetTypes</a> (String[] paths)</td></tr>
+<tr class="memdesc:af03daabfe39d7ea9c7fe1f34bfb637e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the AssetImporter types used for the given assets.  <br /></td></tr>
+<tr class="separator:af03daabfe39d7ea9c7fe1f34bfb637e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8bd9c0989728fa2397ced1f52288b66"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aa8bd9c0989728fa2397ced1f52288b66">IsOverridden</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:aa8bd9c0989728fa2397ced1f52288b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the AssetImporter type for this asset has been overridden.  <br /></td></tr>
+<tr class="separator:aa8bd9c0989728fa2397ced1f52288b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a585dd126c4b16e96adbb7f6b665be3ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a585dd126c4b16e96adbb7f6b665be3ac">SetOverride&lt; T &gt;</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a585dd126c4b16e96adbb7f6b665be3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an asset's importer override to the specified AssetImporter type.  <br /></td></tr>
+<tr class="separator:a585dd126c4b16e96adbb7f6b665be3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Groups all asset importer functionality. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad07d83c9e9dd67e9170b702cfc43d40c" name="ad07d83c9e9dd67e9170b702cfc43d40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad07d83c9e9dd67e9170b702cfc43d40c">&#9670;&#160;</a></span>ClearOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Importer.ClearOverride </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears an asset's importer override for the specified asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac2f0ebec39f0b273e96ecef9b68acebc">CodeSmile.Editor.Asset.SetActiveImporterToDefault()</a>.</p>
+
+</div>
+</div>
+<a id="acf49df711d9fde062d06d9d252a6673a" name="acf49df711d9fde062d06d9d252a6673a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf49df711d9fde062d06d9d252a6673a">&#9670;&#160;</a></span>GetAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type[] CodeSmile.Editor.Asset.Importer.GetAvailable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter types available for a given asset, eg those that handle assets of the given type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a63db39913a5cb5170ed49803f300a6c3" name="a63db39913a5cb5170ed49803f300a6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63db39913a5cb5170ed49803f300a6c3">&#9670;&#160;</a></span>GetDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type CodeSmile.Editor.Asset.Importer.GetDefault </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an asset's default importer type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a6e28ab22b111f5faf8c663a9b0e4906e" name="a6e28ab22b111f5faf8c663a9b0e4906e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e28ab22b111f5faf8c663a9b0e4906e">&#9670;&#160;</a></span>GetOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type CodeSmile.Editor.Asset.Importer.GetOverride </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an asset's overridden importer type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the AssetImporter type or null if there is no overridden importer</dd></dl>
+
+</div>
+</div>
+<a id="a0295e9322ea72e098eea1b5181db07ef" name="a0295e9322ea72e098eea1b5181db07ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0295e9322ea72e098eea1b5181db07ef">&#9670;&#160;</a></span>GetType() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type CodeSmile.Editor.Asset.Importer.GetType </td>
+          <td>(</td>
+          <td class="paramtype">GUID&#160;</td>
+          <td class="paramname"><em>guid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter type used for the given asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a1f4052e3c29e06907eb30554cfaae710" name="a1f4052e3c29e06907eb30554cfaae710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4052e3c29e06907eb30554cfaae710">&#9670;&#160;</a></span>GetType() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type CodeSmile.Editor.Asset.Importer.GetType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter type used for the given asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9455008b7b7f452604875ff07132f4aa" name="a9455008b7b7f452604875ff07132f4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9455008b7b7f452604875ff07132f4aa">&#9670;&#160;</a></span>GetTypes() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type[] CodeSmile.Editor.Asset.Importer.GetTypes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[]&#160;</td>
+          <td class="paramname"><em>paths</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter types used for the given assets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a670417ccfb622e3c19d70855f4604167" name="a670417ccfb622e3c19d70855f4604167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670417ccfb622e3c19d70855f4604167">&#9670;&#160;</a></span>GetTypes() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type[] CodeSmile.Editor.Asset.Importer.GetTypes </td>
+          <td>(</td>
+          <td class="paramtype">ReadOnlySpan&lt; GUID &gt;&#160;</td>
+          <td class="paramname"><em>guids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter types used for the given assets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guids</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="af03daabfe39d7ea9c7fe1f34bfb637e6" name="af03daabfe39d7ea9c7fe1f34bfb637e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03daabfe39d7ea9c7fe1f34bfb637e6">&#9670;&#160;</a></span>GetTypes() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type[] CodeSmile.Editor.Asset.Importer.GetTypes </td>
+          <td>(</td>
+          <td class="paramtype">String[]&#160;</td>
+          <td class="paramname"><em>paths</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the AssetImporter types used for the given assets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aa8bd9c0989728fa2397ced1f52288b66" name="aa8bd9c0989728fa2397ced1f52288b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8bd9c0989728fa2397ced1f52288b66">&#9670;&#160;</a></span>IsOverridden()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Boolean CodeSmile.Editor.Asset.Importer.IsOverridden </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the AssetImporter type for this asset has been overridden. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac2f0ebec39f0b273e96ecef9b68acebc">CodeSmile.Editor.Asset.SetActiveImporterToDefault()</a>.</p>
+
+</div>
+</div>
+<a id="a585dd126c4b16e96adbb7f6b665be3ac" name="a585dd126c4b16e96adbb7f6b665be3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585dd126c4b16e96adbb7f6b665be3ac">&#9670;&#160;</a></span>SetOverride&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Importer.SetOverride&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets an asset's importer override to the specified AssetImporter type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>AssetImporter</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>AssetDatabase.SetImporterOverride&lt;T&gt;</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>path</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Editor/Asset.Database.cs</li>
+<li>Editor/Asset.Importer.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

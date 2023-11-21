@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -91,11 +91,287 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="class_code_smile_1_1_editor_1_1_asset_1_1_package-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset.Package Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Groups all asset package functionality. Note that 'asset package' refers to .unitypackage files only. This does not contain PackageManager functionality.  
+ <a href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab052a04b0c1d5ea854f5cb8a226e2ac3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#ab052a04b0c1d5ea854f5cb8a226e2ac3">Export</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> assetPath, String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
+<tr class="memdesc:ab052a04b0c1d5ea854f5cb8a226e2ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the asset and its dependencies to the packagePath file.  <br /></td></tr>
+<tr class="separator:ab052a04b0c1d5ea854f5cb8a226e2ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89342ae1999481a6c5e89c1f89f9d9d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#a89342ae1999481a6c5e89c1f89f9d9d8">Export</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] assetPaths, String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
+<tr class="memdesc:a89342ae1999481a6c5e89c1f89f9d9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports multiple assets and their dependencies to the packagePath file.  <br /></td></tr>
+<tr class="separator:a89342ae1999481a6c5e89c1f89f9d9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08c86885bedb2db8932a6c56b73cfcb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#af08c86885bedb2db8932a6c56b73cfcb">Export</a> (String[] assetPaths, String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
+<tr class="memdesc:af08c86885bedb2db8932a6c56b73cfcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports multiple assets and their dependencies to the packagePath file.  <br /></td></tr>
+<tr class="separator:af08c86885bedb2db8932a6c56b73cfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1245d30fb105b64417bdff4acc41f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#abe1245d30fb105b64417bdff4acc41f2">Import</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> packagePath)</td></tr>
+<tr class="memdesc:abe1245d30fb105b64417bdff4acc41f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Silently imports a .unitypackage file at the given path. Note: This is not used for importing Package Manager packages!  <br /></td></tr>
+<tr class="separator:abe1245d30fb105b64417bdff4acc41f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd202459b2e015029e858fe6c5492687"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#afd202459b2e015029e858fe6c5492687">ImportInteractive</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> packagePath)</td></tr>
+<tr class="memdesc:afd202459b2e015029e858fe6c5492687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports a .unitypackage file at the given path. Shows the import package dialogue to the user before import. Note: This is not used for importing Package Manager packages!  <br /></td></tr>
+<tr class="separator:afd202459b2e015029e858fe6c5492687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Groups all asset package functionality. Note that 'asset package' refers to .unitypackage files only. This does not contain PackageManager functionality. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab052a04b0c1d5ea854f5cb8a226e2ac3" name="ab052a04b0c1d5ea854f5cb8a226e2ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab052a04b0c1d5ea854f5cb8a226e2ac3">&#9670;&#160;</a></span>Export() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Package.Export </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>assetPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>packagePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExportPackageOptions&#160;</td>
+          <td class="paramname"><em>options</em> = <code>ExportPackageOptions::Default</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exports the asset and its dependencies to the packagePath file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assetPath</td><td></td></tr>
+    <tr><td class="paramname">packagePath</td><td>path to file with the .unitypackage extension</td></tr>
+    <tr><td class="paramname">options</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>            {</div>
+<div class="line"><span class="lineno">   71</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                AssetDatabase.ExportPackage(assetPath, packagePath, options);</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#acf04a006f9bcaa207f5a95ce92954118">CodeSmile.Editor.Asset.ExportPackage()</a>.</p>
+
+</div>
+</div>
+<a id="a89342ae1999481a6c5e89c1f89f9d9d8" name="a89342ae1999481a6c5e89c1f89f9d9d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89342ae1999481a6c5e89c1f89f9d9d8">&#9670;&#160;</a></span>Export() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Package.Export </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[]&#160;</td>
+          <td class="paramname"><em>assetPaths</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>packagePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExportPackageOptions&#160;</td>
+          <td class="paramname"><em>options</em> = <code>ExportPackageOptions.Default</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exports multiple assets and their dependencies to the packagePath file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assetPaths</td><td></td></tr>
+    <tr><td class="paramname">packagePath</td><td></td></tr>
+    <tr><td class="paramname">options</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af08c86885bedb2db8932a6c56b73cfcb" name="af08c86885bedb2db8932a6c56b73cfcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08c86885bedb2db8932a6c56b73cfcb">&#9670;&#160;</a></span>Export() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Package.Export </td>
+          <td>(</td>
+          <td class="paramtype">String[]&#160;</td>
+          <td class="paramname"><em>assetPaths</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>packagePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExportPackageOptions&#160;</td>
+          <td class="paramname"><em>options</em> = <code>ExportPackageOptions::Default</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exports multiple assets and their dependencies to the packagePath file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assetPaths</td><td></td></tr>
+    <tr><td class="paramname">packagePath</td><td></td></tr>
+    <tr><td class="paramname">options</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>            {</div>
+<div class="line"><span class="lineno">   97</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>                AssetDatabase.ExportPackage(assetPaths, packagePath, options);</div>
+<div class="line"><span class="lineno">  100</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe1245d30fb105b64417bdff4acc41f2" name="abe1245d30fb105b64417bdff4acc41f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe1245d30fb105b64417bdff4acc41f2">&#9670;&#160;</a></span>Import()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Package.Import </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>packagePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Silently imports a .unitypackage file at the given path. Note: This is not used for importing Package Manager packages! </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packagePath</td><td>path to file with the .unitypackage extension</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>ImportInteractive </p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>            {</div>
+<div class="line"><span class="lineno">   41</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   44</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd202459b2e015029e858fe6c5492687" name="afd202459b2e015029e858fe6c5492687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd202459b2e015029e858fe6c5492687">&#9670;&#160;</a></span>ImportInteractive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.Package.ImportInteractive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>packagePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Imports a .unitypackage file at the given path. Shows the import package dialogue to the user before import. Note: This is not used for importing Package Manager packages! </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packagePath</td><td>path to file with the .unitypackage extension</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Import </p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>            {</div>
+<div class="line"><span class="lineno">   56</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   59</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Editor/Asset.Database.cs</li>
+<li>Editor/Asset.Package.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

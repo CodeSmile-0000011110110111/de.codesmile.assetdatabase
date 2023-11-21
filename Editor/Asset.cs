@@ -69,9 +69,10 @@ namespace CodeSmile.Editor
 		/// <returns>The local fileID or 0 on failure.</returns>
 		[ExcludeFromCodeCoverage] public static Int64 GetLocalFileId(Object obj)
 		{
-			// force Rider to not clean this up to 'var' because Unity 2021 has both long and int variants
-			// of the TryGetGUID.. method and thus cause compile error due to 'call is ambiguous between'
+			// variable is to force Rider to not clean this up to 'var' because Unity 2021 has both long and int
+			// variants of the TryGetGUID* method and thus cause compile error due to 'call is ambiguous between'
 			var localId = Int64.MinValue;
+
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
 		}
 

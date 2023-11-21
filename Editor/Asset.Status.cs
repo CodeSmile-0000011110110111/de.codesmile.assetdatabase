@@ -17,7 +17,7 @@ namespace CodeSmile.Editor
 		/// <see cref="IsNative" />
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => IsForeign(m_MainObject);
-		
+
 		/// <summary>
 		///     Returns whether this is a native asset.
 		/// </summary>
