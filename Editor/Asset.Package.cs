@@ -82,7 +82,7 @@ namespace CodeSmile.Editor
 			[ExcludeFromCodeCoverage]
 			public static void Export(Path[] assetPaths, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default) =>
-				Export(assetPaths.Cast<String>().ToArray(), packagePath, options);
+				Export(Path.ToStrings(assetPaths), packagePath, options);
 
 			/// <summary>
 			///     Exports multiple assets and their dependencies to the packagePath file.

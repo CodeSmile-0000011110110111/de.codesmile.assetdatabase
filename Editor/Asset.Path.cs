@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -294,6 +295,32 @@ namespace CodeSmile.Editor
 				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
 				return String.IsNullOrEmpty(uniquePath) ? path : uniquePath;
 			}
+
+			/// <summary>
+			///     Converts an array of objects to their asset paths.
+			///     The returned array has the same size.
+			///     Note that some items may be null if the input was null or not an asset.
+			/// </summary>
+			/// <param name="objects"></param>
+			/// <returns></returns>
+			public static String[] ToAssetPaths(Object[] objects)
+			{
+				ThrowIf.ArgumentIsNull(objects, nameof(objects));
+
+				var objectCount = objects.Length;
+				var paths = new String[objectCount];
+				for (var i = 0; i < objectCount; i++)
+					paths[i] = Get(objects[i]);
+
+				return paths;
+			}
+
+			/// <summary>
+			/// Converts a collection of Path instances to a string array.
+			/// </summary>
+			/// <param name="paths"></param>
+			/// <returns></returns>
+			public static string[] ToStrings(IEnumerable<Path> paths) => paths.Cast<string>().ToArray();
 
 			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
 				overwriteExisting ? destPath : destPath.UniqueFilePath;

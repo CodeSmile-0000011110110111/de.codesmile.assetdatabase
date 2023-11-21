@@ -130,7 +130,7 @@ namespace CodeSmile.Editor
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type[] GetTypes(Path[] paths) => GetTypes(paths.Cast<String>().ToArray());
+			public static Type[] GetTypes(Path[] paths) => GetTypes(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Gets the AssetImporter types used for the given assets.

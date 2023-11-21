@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
@@ -116,6 +117,7 @@ namespace CodeSmile.Editor
 				Database.StopAssetEditing();
 			}
 		}
+
 
 		/// <summary>
 		///     Returns MainObject cast to T, or null. But recommended usage is:

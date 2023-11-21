@@ -40,7 +40,7 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static String[] GetDirect(Path[] paths) =>
-				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), false);
+				AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.
@@ -57,7 +57,7 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static String[] GetAll(Path[] paths) =>
-				AssetDatabase.GetDependencies(paths.Cast<String>().ToArray(), true);
+				AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
 		}
 	}
 }

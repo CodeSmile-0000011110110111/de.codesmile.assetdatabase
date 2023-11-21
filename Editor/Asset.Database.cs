@@ -84,7 +84,7 @@ namespace CodeSmile.Editor
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)
 			{
 				ThrowIf.ArgumentIsNull(paths, nameof(paths));
-				ForceReserialize(paths.Cast<String>().ToArray(), options);
+				ForceReserialize(Path.ToStrings(paths), options);
 			}
 
 			[ExcludeFromCodeCoverage]
