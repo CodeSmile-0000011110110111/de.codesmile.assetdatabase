@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['save_0',['Save',['../class_code_smile_1_1_editor_1_1_asset.html#a9f28e44a3e441ecd4e4a5d958cf0ad12',1,'CodeSmile.Editor.Asset.Save(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a090fb654cfbffa2e4d6969c954634b0d',1,'CodeSmile.Editor.Asset.Save(GUID guid)'],['../class_code_smile_1_1_editor_1_1_asset.html#a796eba9055efb8d7239cc4f64536819a',1,'CodeSmile.Editor.Asset.Save()']]],
-  ['saveall_1',['SaveAll',['../class_code_smile_1_1_editor_1_1_asset.html#a2b037f503a36a546759c962024c48883',1,'CodeSmile::Editor::Asset']]],
+  ['save_0',['Save',['../class_code_smile_1_1_editor_1_1_asset.html#a796eba9055efb8d7239cc4f64536819a',1,'CodeSmile.Editor.Asset.Save()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a46ce92ced1cfb5a0b29ac9794394b829',1,'CodeSmile.Editor.Asset.File.Save(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a08993c1aa6a1cab57fafffc78df6b630',1,'CodeSmile.Editor.Asset.File.Save(GUID guid)']]],
+  ['saveall_1',['SaveAll',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a3082ee560c9e00be8313332d83639dc0',1,'CodeSmile::Editor::Asset::Database']]],
   ['setactiveimporter_3c_20t_20_3e_2',['SetActiveImporter&lt; T &gt;',['../class_code_smile_1_1_editor_1_1_asset.html#abaa6bf24ba0ab652b7290420e1fdbc2c',1,'CodeSmile::Editor::Asset']]],
   ['setactiveimportertodefault_3',['SetActiveImporterToDefault',['../class_code_smile_1_1_editor_1_1_asset.html#ac2f0ebec39f0b273e96ecef9b68acebc',1,'CodeSmile::Editor::Asset']]],
   ['setall_4',['SetAll',['../class_code_smile_1_1_editor_1_1_asset_1_1_label.html#ad5512604b7f5feb2267531a3a01c9d21',1,'CodeSmile::Editor::Asset::Label']]],

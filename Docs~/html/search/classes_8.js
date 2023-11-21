@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['versioncontrol_0',['VersionControl',['../class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html',1,'CodeSmile::Editor::Asset']]]
+  ['stringextensions_0',['StringExtensions',['../class_code_smile_1_1_editor_1_1_string_extensions.html',1,'CodeSmile::Editor']]],
+  ['subasset_1',['SubAsset',['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html',1,'CodeSmile::Editor::Asset']]]
 ];
