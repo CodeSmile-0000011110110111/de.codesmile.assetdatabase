@@ -142,6 +142,12 @@ namespace CodeSmile.Editor
 				if (path.Extension.Equals(".asset") == false)
 					throw new ArgumentException("sub assets only supported with '.asset' extension: {path}");
 			}
+
+			public static void ExtensionIsNotUnityPackage(Path path)
+			{
+				if (path.Extension.ToLower().Equals(".unitypackage") == false)
+					throw new ArgumentException($"file does not have .unitypackage extension: {path}");
+			}
 		}
 	}
 }

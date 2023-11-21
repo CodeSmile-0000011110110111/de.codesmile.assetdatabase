@@ -136,31 +136,6 @@ MakeEditable
 			 */
 		}
 
-		// separate class
-		public static class Package
-		{
-			/*[ExcludeFromCodeCoverage]
-			public static void Import(Path path)
-			{
-				AssetDatabase.ImportPackage(path, false);
-			}
-			[ExcludeFromCodeCoverage]
-			public static void ImportInteractive(Path path)
-			{
-				AssetDatabase.ImportPackage(path, true);
-			}
-			[ExcludeFromCodeCoverage]
-			public static void Export(Path assetPath, string packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
-			{
-				AssetDatabase.ExportPackage(assetPath, packagePath, options);
-			}
-			[ExcludeFromCodeCoverage]
-			public static void Export(Path[] assetPaths, string packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
-			{
-				AssetDatabase.ExportPackage(assetPaths.Cast<string>().ToArray(), packagePath, options);
-			}*/
-		}
-
 		public static class Importer
 		{
 			/*
