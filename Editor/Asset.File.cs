@@ -165,6 +165,13 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
+		///     Returns true if the asset can be opened (edited) by the Unity Editor itself.
+		/// </summary>
+		/// <example>True: materials, .unity (scene) and .asset files. False: audio clips, scripts, reflection probes.</example>
+		/// <returns></returns>
+		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
+
+		/// <summary>
 		///     Opens the asset in the default (associated) application.
 		///     Optional line and column numbers can be specified for text files and applications that support this.
 		/// </summary>
@@ -525,6 +532,29 @@ namespace CodeSmile.Editor
 					return false;
 
 				return Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));
+			}
+
+			/// <summary>
+			///     Returns true if the given object is a can opener. Wait, what? :)
+			///     To be precise: it returns true if the instance Id is for an asset object (file on disk) and the
+			///     type of the asset (its extension) has a associated application registered with the operating system.
+			/// </summary>
+			/// <param name="instanceId"></param>
+			/// <returns></returns>
+			public static Boolean CanOpen(Int32 instanceId) => AssetDatabase.CanOpenAssetInEditor(instanceId);
+
+			/// <summary>
+			///     Returns true if the given object is a can opener. Wait, what? :)
+			///     To be precise: it returns true if the instance Id is for an asset object (file on disk) and the
+			///     type of the asset (its extension) has a associated application registered with the operating system.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public static Boolean CanOpenInEditor(Object obj)
+			{
+				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+
+				return CanOpen(obj.GetInstanceID());
 			}
 
 			/// <summary>
