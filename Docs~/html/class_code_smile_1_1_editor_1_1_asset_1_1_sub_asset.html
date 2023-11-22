@@ -110,10 +110,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a37a70d4ecb48fa9594c7ad80d25314fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset and dragging it outside the containing asset in the project view. Note: This only works with visible sub objects.  <br /></td></tr>
 <tr class="separator:a37a70d4ecb48fa9594c7ad80d25314fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="memItemLeft" align="right" valign="top">static Object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a55eac78b9e61acfb5871ca5a7c2d3253">LoadAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!)  <br /></td></tr>
+<tr class="memdesc:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console).  <br /></td></tr>
 <tr class="separator:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e620b52d37c460b893eb677f3328656"><td class="memItemLeft" align="right" valign="top">static Object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a9e620b52d37c460b893eb677f3328656">LoadVisible</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:a9e620b52d37c460b893eb677f3328656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!)  <br /></td></tr>
+<tr class="memdesc:a9e620b52d37c460b893eb677f3328656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console).  <br /></td></tr>
 <tr class="separator:a9e620b52d37c460b893eb677f3328656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3881714d0a8ee2d3683d30b696644ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#ae3881714d0a8ee2d3683d30b696644ac">Remove</a> (Object subObject)</td></tr>
 <tr class="memdesc:ae3881714d0a8ee2d3683d30b696644ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an object as sub-object from whatever asset it is contained in.  <br /></td></tr>
@@ -258,7 +258,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) </p>
+<p>Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -293,7 +293,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) </p>
+<p>Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>

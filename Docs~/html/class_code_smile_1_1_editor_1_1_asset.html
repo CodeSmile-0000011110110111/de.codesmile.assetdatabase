@@ -112,8 +112,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html">Database</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependencies.html">Dependencies</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all dependency related functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_dependencies.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html">Dependency</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all dependency related functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html">File</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups file related operations.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#details">More...</a><br /></td></tr>
@@ -278,10 +278,6 @@ Properties</h2></td></tr>
 <tr class="memitem:a3367ea4e4ca27be0494d5ea1281eee17"><td class="memItemLeft" align="right" valign="top">Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a3367ea4e4ca27be0494d5ea1281eee17">ActiveImporter</a><code> [get]</code></td></tr>
 <tr class="memdesc:a3367ea4e4ca27be0494d5ea1281eee17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the importer was overridden.  <br /></td></tr>
 <tr class="separator:a3367ea4e4ca27be0494d5ea1281eee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ac4894e4f060d2bc7cbe1e49277119"><td class="memItemLeft" align="right" valign="top"><a id="a43ac4894e4f060d2bc7cbe1e49277119" name="a43ac4894e4f060d2bc7cbe1e49277119"></a>
-String[]&#160;</td><td class="memItemRight" valign="bottom"><b>AllDependencies</b><code> [get]</code></td></tr>
-<tr class="memdesc:a43ac4894e4f060d2bc7cbe1e49277119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the assets direct and indirect dependencies. Returns paths to the dependent assets. <br /></td></tr>
-<tr class="separator:a43ac4894e4f060d2bc7cbe1e49277119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1edde6ce83da160f94eb4a5846d7af3c"><td class="memItemLeft" align="right" valign="top"><a id="a1edde6ce83da160f94eb4a5846d7af3c" name="a1edde6ce83da160f94eb4a5846d7af3c"></a>
 <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AssetPath</b><code> [get]</code></td></tr>
 <tr class="memdesc:a1edde6ce83da160f94eb4a5846d7af3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the asset (file or folder). <br /></td></tr>
@@ -290,9 +286,13 @@ String[]&#160;</td><td class="memItemRight" valign="bottom"><b>AllDependencies</
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultImporter</b><code> [get]</code></td></tr>
 <tr class="memdesc:a668a0e0339854647017cc856c7281fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the default AssetImporter type for this asset. <br /></td></tr>
 <tr class="separator:a668a0e0339854647017cc856c7281fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75fc9897dda5806819a13fd7b060f1ff"><td class="memItemLeft" align="right" valign="top"><a id="a75fc9897dda5806819a13fd7b060f1ff" name="a75fc9897dda5806819a13fd7b060f1ff"></a>
+String[]&#160;</td><td class="memItemRight" valign="bottom"><b>Dependencies</b><code> [get]</code></td></tr>
+<tr class="memdesc:a75fc9897dda5806819a13fd7b060f1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the assets direct and indirect dependencies. Returns paths to the dependent assets. <br /></td></tr>
+<tr class="separator:a75fc9897dda5806819a13fd7b060f1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b24b761d10b36968c7ee02550b4f299"><td class="memItemLeft" align="right" valign="top"><a id="a9b24b761d10b36968c7ee02550b4f299" name="a9b24b761d10b36968c7ee02550b4f299"></a>
 String[]&#160;</td><td class="memItemRight" valign="bottom"><b>DirectDependencies</b><code> [get]</code></td></tr>
-<tr class="memdesc:a9b24b761d10b36968c7ee02550b4f299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the assets direct dependencies. Returns paths to the dependent assets. <br /></td></tr>
+<tr class="memdesc:a9b24b761d10b36968c7ee02550b4f299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the assets' direct dependencies (not recursive). Returns paths to the dependent assets. <br /></td></tr>
 <tr class="separator:a9b24b761d10b36968c7ee02550b4f299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1161ae5e57c6b875f97e1ce7aeb5c2f7"><td class="memItemLeft" align="right" valign="top"><a id="a1161ae5e57c6b875f97e1ce7aeb5c2f7" name="a1161ae5e57c6b875f97e1ce7aeb5c2f7"></a>
 GUID&#160;</td><td class="memItemRight" valign="bottom"><b>Guid</b><code> [get]</code></td></tr>
@@ -314,6 +314,10 @@ Texture&#160;</td><td class="memItemRight" valign="bottom"><b>Icon</b><code> [ge
 <tr class="memitem:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ad8252fd41d5d1e6677a1dfeb17dc7e5b">IsNativeAsset</a><code> [get]</code></td></tr>
 <tr class="memdesc:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this is a native asset.  <br /></td></tr>
 <tr class="separator:ad8252fd41d5d1e6677a1dfeb17dc7e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab050e001e5a2bcf11bbb54d9a649352c"><td class="memItemLeft" align="right" valign="top"><a id="ab050e001e5a2bcf11bbb54d9a649352c" name="ab050e001e5a2bcf11bbb54d9a649352c"></a>
+Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>IsScene</b><code> [get]</code></td></tr>
+<tr class="memdesc:ab050e001e5a2bcf11bbb54d9a649352c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this is a scene asset. <br /></td></tr>
+<tr class="separator:ab050e001e5a2bcf11bbb54d9a649352c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4acf65b045fc1bf25d2ad984c83415ad"><td class="memItemLeft" align="right" valign="top">String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a4acf65b045fc1bf25d2ad984c83415ad">Labels</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a4acf65b045fc1bf25d2ad984c83415ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or gets the labels associated with the asset.  <br /></td></tr>
 <tr class="separator:a4acf65b045fc1bf25d2ad984c83415ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -328,10 +332,14 @@ Int64&#160;</td><td class="memItemRight" valign="bottom"><b>LocalFileId</b><code
 <tr class="memitem:aa5f15533193c9207a0313f1660808fa1"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aa5f15533193c9207a0313f1660808fa1">MainObject</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aa5f15533193c9207a0313f1660808fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the asset's main object.  <br /></td></tr>
 <tr class="separator:aa5f15533193c9207a0313f1660808fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a290e24cac93cf9eb60f6dba8bc71a917"><td class="memItemLeft" align="right" valign="top"><a id="a290e24cac93cf9eb60f6dba8bc71a917" name="a290e24cac93cf9eb60f6dba8bc71a917"></a>
-Type&#160;</td><td class="memItemRight" valign="bottom"><b>MainType</b><code> [get]</code></td></tr>
-<tr class="memdesc:a290e24cac93cf9eb60f6dba8bc71a917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the main asset. <br /></td></tr>
-<tr class="separator:a290e24cac93cf9eb60f6dba8bc71a917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affaadb43c8cc8629439cbe9577d95174"><td class="memItemLeft" align="right" valign="top"><a id="affaadb43c8cc8629439cbe9577d95174" name="affaadb43c8cc8629439cbe9577d95174"></a>
+Type&#160;</td><td class="memItemRight" valign="bottom"><b>MainObjectType</b><code> [get]</code></td></tr>
+<tr class="memdesc:affaadb43c8cc8629439cbe9577d95174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the main asset. <br /></td></tr>
+<tr class="separator:affaadb43c8cc8629439cbe9577d95174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72f011daf759ecfa382ba71cc0009e6"><td class="memItemLeft" align="right" valign="top"><a id="aa72f011daf759ecfa382ba71cc0009e6" name="aa72f011daf759ecfa382ba71cc0009e6"></a>
+<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MetaPath</b><code> [get]</code></td></tr>
+<tr class="memdesc:aa72f011daf759ecfa382ba71cc0009e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the .meta file for the asset. <br /></td></tr>
+<tr class="separator:aa72f011daf759ecfa382ba71cc0009e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530cf1f8e3711f5a79e17ea7e8287155"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a530cf1f8e3711f5a79e17ea7e8287155">OwningBundle</a><code> [get]</code></td></tr>
 <tr class="memdesc:a530cf1f8e3711f5a79e17ea7e8287155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bundle name the asset belongs to.  <br /></td></tr>
 <tr class="separator:a530cf1f8e3711f5a79e17ea7e8287155"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -923,13 +931,13 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The local fileID or 0 on failure.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
-<div class="line"><span class="lineno">   67</span>            <span class="comment">// variable is to force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int</span></div>
-<div class="line"><span class="lineno">   68</span>            <span class="comment">// variants of the TryGetGUID* method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
-<div class="line"><span class="lineno">   69</span>            var localId = Int64.MinValue;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>            <span class="comment">// variable is to force Rider to not clean this up to &#39;var&#39; because Unity 2021 has both long and int</span></div>
+<div class="line"><span class="lineno">   74</span>            <span class="comment">// variants of the TryGetGUID* method and thus cause compile error due to &#39;call is ambiguous between&#39;</span></div>
+<div class="line"><span class="lineno">   75</span>            var localId = Int64.MinValue;</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1615,14 +1623,19 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>AssetImporter</em></td><td>&#160;</td></tr>
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Importer.SetOverride&lt;T&gt;</em></td><td>&#160;</td></tr>
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>m_AssetPath</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>UnityEditor.AssetImporters.ScriptedImporter</em></td><td>&#160;</td></tr>
 </table>
 </dd>
 </dl>
 </div>
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                    : AssetImporter</div>
+<div class="line"><span class="lineno">   55</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   56</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
+<div class="line"><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac2f0ebec39f0b273e96ecef9b68acebc" name="ac2f0ebec39f0b273e96ecef9b68acebc"></a>
@@ -1641,10 +1654,10 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Resets the active AssetImporter type to the default type, if necessary. </p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>        {</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (Importer.IsOverridden(m_AssetPath))</div>
-<div class="line"><span class="lineno">   61</span>                Importer.ClearOverride(m_AssetPath);</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span> (Importer.IsOverridden(m_AssetPath))</div>
+<div class="line"><span class="lineno">   69</span>                Importer.ClearOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#ad07d83c9e9dd67e9170b702cfc43d40c">CodeSmile.Editor.Asset.Importer.ClearOverride()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aa8bd9c0989728fa2397ced1f52288b66">CodeSmile.Editor.Asset.Importer.IsOverridden()</a>.</p>
 
@@ -1991,7 +2004,7 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Editor/Asset.Bundle.cs</li>
 <li>Editor/Asset.cs</li>
-<li>Editor/Asset.Dependencies.cs</li>
+<li>Editor/Asset.Dependency.cs</li>
 <li>Editor/Asset.Error.cs</li>
 <li>Editor/Asset.Importer.cs</li>
 <li>Editor/Asset.Labels.cs</li>

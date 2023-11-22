@@ -17,6 +17,7 @@ var searchData=
   ['isnative_14',['IsNative',['../class_code_smile_1_1_editor_1_1_asset.html#a2d0489bb8ad8663fb0fc56460a1e64a8',1,'CodeSmile::Editor::Asset']]],
   ['isnativeasset_15',['IsNativeAsset',['../class_code_smile_1_1_editor_1_1_asset.html#ad8252fd41d5d1e6677a1dfeb17dc7e5b',1,'CodeSmile::Editor::Asset']]],
   ['isoverridden_16',['IsOverridden',['../class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aa8bd9c0989728fa2397ced1f52288b66',1,'CodeSmile::Editor::Asset::Importer']]],
-  ['issub_17',['IsSub',['../class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8',1,'CodeSmile::Editor::Asset']]],
-  ['isvalid_18',['IsValid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acb35e1fe136e67589534574f90ed270a',1,'CodeSmile::Editor::Asset::Path']]]
+  ['isscene_17',['IsScene',['../class_code_smile_1_1_editor_1_1_asset.html#ab050e001e5a2bcf11bbb54d9a649352c',1,'CodeSmile::Editor::Asset']]],
+  ['issub_18',['IsSub',['../class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8',1,'CodeSmile::Editor::Asset']]],
+  ['isvalid_19',['IsValid',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acb35e1fe136e67589534574f90ed270a',1,'CodeSmile::Editor::Asset::Path']]]
 ];

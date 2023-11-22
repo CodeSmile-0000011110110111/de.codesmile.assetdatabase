@@ -4,7 +4,7 @@ var hierarchy =
     [ "CodeSmile.Editor.Asset.Bundle", "class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html", null ],
     [ "CodeSmile.Editor.Asset.Database.CacheServer", "class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html", null ],
     [ "CodeSmile.Editor.Asset.Database", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html", null ],
-    [ "CodeSmile.Editor.Asset.Dependencies", "class_code_smile_1_1_editor_1_1_asset_1_1_dependencies.html", null ],
+    [ "CodeSmile.Editor.Asset.Dependency", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html", null ],
     [ "CodeSmile.Editor.Asset.File", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html", null ],
     [ "IEquatable", null, [
       [ "CodeSmile.Editor.Asset.Path", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html", null ],
