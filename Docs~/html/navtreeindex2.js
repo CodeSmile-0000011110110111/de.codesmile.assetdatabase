@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"functions_v.html":[2,3,0,17],
-"hierarchy.html":[2,2],
 "index.html":[],
 "md__r_e_a_d_m_e.html":[0],
 "md__r_e_a_d_m_e.html#autotoc_md1":[0,0],

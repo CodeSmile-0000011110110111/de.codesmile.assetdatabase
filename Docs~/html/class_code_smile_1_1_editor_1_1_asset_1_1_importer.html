@@ -468,7 +468,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   85</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
 <div class="line"><span class="lineno">   86</span>                <span class="keywordflow">return</span> AssetDatabase.GetDefaultImporter(path);</div>
 <div class="line"><span class="lineno">   87</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   88</span>                UnityEngine.Debug.LogWarning(<span class="stringliteral">&quot;GetDefaultImporter is not available in Unity 2021.3 - returning null&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>                UnityEngine.Debug.LogWarning(<span class="stringliteral">&quot;GetDefaultImporter is not available in this Unity version - returning null&quot;</span>);</div>
 <div class="line"><span class="lineno">   89</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">   91</span>            }</div>

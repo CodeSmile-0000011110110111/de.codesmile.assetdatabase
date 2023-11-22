@@ -17,7 +17,6 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_file =
     [ "ForceSave", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#acb3cb1d3ce3729fc5313b6e5edbf832e", null ],
     [ "Import", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a0da3ff0fbd29e497a900bbb2c50ef9f3", null ],
     [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a1bb7f75d5d2dcadd2662987312e4afb4", null ],
-    [ "LoadAsync", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a9ddaa5e5fcb90e485b2a35ec813b884e", null ],
     [ "LoadMain< T >", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a0217a4ff5746bd7c38900900fe5983c4", null ],
     [ "LoadMain< T >", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#ae0fbd3c45874292b3ffb2338d4bee54b", null ],
     [ "LoadOrCreate< T >", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a6d332aacfcb1fd327389b8fa52db1750", null ],
