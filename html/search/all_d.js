@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['save_0',['Save',['../class_code_smile_1_1_editor_1_1_asset.html#a9f28e44a3e441ecd4e4a5d958cf0ad12',1,'CodeSmile.Editor.Asset.Save(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#a090fb654cfbffa2e4d6969c954634b0d',1,'CodeSmile.Editor.Asset.Save(GUID guid)'],['../class_code_smile_1_1_editor_1_1_asset.html#a796eba9055efb8d7239cc4f64536819a',1,'CodeSmile.Editor.Asset.Save()']]],
-  ['saveall_1',['SaveAll',['../class_code_smile_1_1_editor_1_1_asset.html#a2b037f503a36a546759c962024c48883',1,'CodeSmile::Editor::Asset']]],
-  ['setlabels_2',['SetLabels',['../class_code_smile_1_1_editor_1_1_asset.html#abdf3469d41ab0f49810ea2ac65be8a57',1,'CodeSmile::Editor::Asset']]],
-  ['setmainobject_3',['SetMainObject',['../class_code_smile_1_1_editor_1_1_asset.html#a75c476f66fe4c4f7feb4bad3502b173b',1,'CodeSmile.Editor.Asset.SetMainObject(Object subObject, Path path)'],['../class_code_smile_1_1_editor_1_1_asset.html#aa1b1e811d41c7f1e8d56770220612e82',1,'CodeSmile.Editor.Asset.SetMainObject(Object subObject, Object assetObject)']]],
-  ['setmainobjectdirty_4',['SetMainObjectDirty',['../class_code_smile_1_1_editor_1_1_asset.html#a78d4987e0256a03703721825d53e14ef',1,'CodeSmile::Editor::Asset']]],
-  ['stringextensions_5',['StringExtensions',['../class_code_smile_1_1_editor_1_1_string_extensions.html',1,'CodeSmile::Editor']]],
-  ['subasset_6',['SubAsset',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_sub_asset.html',1,'CodeSmile::Editor::Asset::Database']]],
-  ['subobjects_7',['SubObjects',['../class_code_smile_1_1_editor_1_1_asset.html#aab0eb3c4088f0735e1ebd666b166b9f0',1,'CodeSmile::Editor::Asset']]]
+  ['releasefilehandles_0',['ReleaseFileHandles',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#af41fed76f381121698b04cce1ea7f24a',1,'CodeSmile::Editor::Asset::Database']]],
+  ['remove_1',['Remove',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a1bb88863f7b8a467a9e9bef634b4322a',1,'CodeSmile.Editor.Asset.Bundle.Remove()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a5b0479f7c1fffab99c2dac4a8090039a',1,'CodeSmile.Editor.Asset.Dependency.Remove()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#ae3881714d0a8ee2d3683d30b696644ac',1,'CodeSmile.Editor.Asset.SubAsset.Remove()']]],
+  ['removeobject_2',['RemoveObject',['../class_code_smile_1_1_editor_1_1_asset.html#a1960f2c1d8c420d5c5f58eb0c2db7e3d',1,'CodeSmile::Editor::Asset']]],
+  ['removeunused_3',['RemoveUnused',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a6392e25dac69757e037ab1551873cb50',1,'CodeSmile::Editor::Asset::Bundle']]],
+  ['rename_4',['Rename',['../class_code_smile_1_1_editor_1_1_asset.html#a9a9e35eca234f519cbd7461ce0abff4f',1,'CodeSmile.Editor.Asset.Rename()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a155359381210caf5bc7d9993460a558c',1,'CodeSmile.Editor.Asset.File.Rename()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3f9b8979f721130c874d42b665e3e0cf',1,'CodeSmile.Editor.Asset.Path.Rename()']]],
+  ['resetreconnecttimer_5',['ResetReconnectTimer',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#ae0d0fcc147c13e41e4f085144abd29f6',1,'CodeSmile::Editor::Asset::Database::CacheServer']]]
 ];

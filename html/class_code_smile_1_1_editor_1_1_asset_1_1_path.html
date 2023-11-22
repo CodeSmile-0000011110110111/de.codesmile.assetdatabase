@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -100,12 +100,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset.Path Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'. Implicitly converts to/from string. Guards against inconsistencies, eg invalid paths, illegal characters, etc. Provides quick access to File I/O tasks such as getting a file's folder, extension, full path, existance, etc.  
+ <a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CodeSmile.Editor.Asset.Path:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_code_smile_1_1_editor_1_1_asset_1_1_path__inherit__graph.png" border="0" usemap="#a_code_smile_8_editor_8_asset_8_path_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_code_smile_8_editor_8_asset_8_path_inherit__map" id="a_code_smile_8_editor_8_asset_8_path_inherit__map">
-<area shape="rect" title=" " alt="" coords="56,80,248,107"/>
+<area shape="rect" title="Represents a relative path to an asset file or folder, typically under &#39;Assets&#39; or &#39;Packages&#39;...." alt="" coords="56,80,248,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,139,32"/>
 <area shape="rect" title=" " alt="" coords="163,5,304,32"/>
 </map>
@@ -115,7 +118,7 @@ Collaboration diagram for CodeSmile.Editor.Asset.Path:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_code_smile_1_1_editor_1_1_asset_1_1_path__coll__graph.png" border="0" usemap="#a_code_smile_8_editor_8_asset_8_path_coll__map" alt="Collaboration graph"/></div>
 <map name="a_code_smile_8_editor_8_asset_8_path_coll__map" id="a_code_smile_8_editor_8_asset_8_path_coll__map">
-<area shape="rect" title=" " alt="" coords="56,80,248,107"/>
+<area shape="rect" title="Represents a relative path to an asset file or folder, typically under &#39;Assets&#39; or &#39;Packages&#39;...." alt="" coords="56,80,248,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,139,32"/>
 <area shape="rect" title=" " alt="" coords="163,5,304,32"/>
 </map>
@@ -140,6 +143,10 @@ override Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>Equals</b
 <tr class="memitem:a99809ee157cb716de1d21b2499abe2be"><td class="memItemLeft" align="right" valign="top"><a id="a99809ee157cb716de1d21b2499abe2be" name="a99809ee157cb716de1d21b2499abe2be"></a>
 Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>Equals</b> (String other)</td></tr>
 <tr class="separator:a99809ee157cb716de1d21b2499abe2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146f84cb727c39b80543e63cb048c490"><td class="memItemLeft" align="right" valign="top"><a id="a146f84cb727c39b80543e63cb048c490" name="a146f84cb727c39b80543e63cb048c490"></a>
+String[]&#160;</td><td class="memItemRight" valign="bottom"><b>GetFolders</b> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a146f84cb727c39b80543e63cb048c490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the names of all folders in the path. <br /></td></tr>
+<tr class="separator:a146f84cb727c39b80543e63cb048c490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e950e9e99427177d5bda76cd2c9acb5"><td class="memItemLeft" align="right" valign="top"><a id="a5e950e9e99427177d5bda76cd2c9acb5" name="a5e950e9e99427177d5bda76cd2c9acb5"></a>
 override Int32&#160;</td><td class="memItemRight" valign="bottom"><b>GetHashCode</b> ()</td></tr>
 <tr class="separator:a5e950e9e99427177d5bda76cd2c9acb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +172,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e9b6c5035f899da67368eb8cc8dc02e"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">FolderExists</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a9e9b6c5035f899da67368eb8cc8dc02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the folder exists. False otherwise, or if the path is to a file.  <br /></td></tr>
 <tr class="separator:a9e9b6c5035f899da67368eb8cc8dc02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6f24d0d508eb47e0ac7617143721c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3d6f24d0d508eb47e0ac7617143721c3">FromMeta</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a3d6f24d0d508eb47e0ac7617143721c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the asset's file path from its .meta file path.  <br /></td></tr>
+<tr class="separator:a3d6f24d0d508eb47e0ac7617143721c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab438c7de9e569da5b7f6e3aeffe69672"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ab438c7de9e569da5b7f6e3aeffe69672">Get</a> (GUID guid)</td></tr>
 <tr class="memdesc:ab438c7de9e569da5b7f6e3aeffe69672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path of an asset file.  <br /></td></tr>
 <tr class="separator:ab438c7de9e569da5b7f6e3aeffe69672"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +184,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af505db78833a2e6f25bdfa8a90e8a5c5"><td class="memItemLeft" align="right" valign="top">static GUID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af505db78833a2e6f25bdfa8a90e8a5c5">GetGuid</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path, AssetPathToGUIDOptions options=AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets)</td></tr>
 <tr class="memdesc:af505db78833a2e6f25bdfa8a90e8a5c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GUID for the path. Returns an empty GUID if the asset at the path does not exist in the database. Exists ExistsInFileSystem  <br /></td></tr>
 <tr class="separator:af505db78833a2e6f25bdfa8a90e8a5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e7c14d26b3e558e293530eb13dbd3a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a1e7c14d26b3e558e293530eb13dbd3a6">GetMeta</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a1e7c14d26b3e558e293530eb13dbd3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the .meta file path from a path to an asset.  <br /></td></tr>
+<tr class="separator:a1e7c14d26b3e558e293530eb13dbd3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c40f815adb8ca837bb9b3153849dda0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5c40f815adb8ca837bb9b3153849dda0">GetScene</a> (Object obj)</td></tr>
+<tr class="memdesc:a5c40f815adb8ca837bb9b3153849dda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.  <br /></td></tr>
+<tr class="separator:a5c40f815adb8ca837bb9b3153849dda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb35e1fe136e67589534574f90ed270a"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acb35e1fe136e67589534574f90ed270a">IsValid</a> (String path)</td></tr>
 <tr class="memdesc:acb35e1fe136e67589534574f90ed270a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the provided path is valid. This means it contains no illegal folder or file name characters and it isn't too long. If this returns false, Asset.GetLastErrorMessage() contains more detailed information. Asset.GetLastErrorMessage()  <br /></td></tr>
 <tr class="separator:acb35e1fe136e67589534574f90ed270a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +216,12 @@ static Boolean&#160;</td><td class="memItemRight" valign="bottom"><b>operator==<
 <tr class="separator:ada4dc8088fc6e793f677bf95f8b57cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eb20b3ac56bddaa6404e47d5445e1ee"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a8eb20b3ac56bddaa6404e47d5445e1ee">operator==</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> ap1, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> ap2)</td></tr>
 <tr class="separator:a8eb20b3ac56bddaa6404e47d5445e1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada75e7d0768334f60b10836fc615df81"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ada75e7d0768334f60b10836fc615df81">ToAssetPaths</a> (Object[] objects)</td></tr>
+<tr class="memdesc:ada75e7d0768334f60b10836fc615df81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an array of objects to their asset paths. The returned array has the same size. Note that some items may be null if the input was null or not an asset.  <br /></td></tr>
+<tr class="separator:ada75e7d0768334f60b10836fc615df81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc77e6f0567435eb87bdc7787917cbd5"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acc77e6f0567435eb87bdc7787917cbd5">ToStrings</a> (IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt; paths)</td></tr>
+<tr class="memdesc:acc77e6f0567435eb87bdc7787917cbd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a collection of Path instances to a string array.  <br /></td></tr>
+<tr class="separator:acc77e6f0567435eb87bdc7787917cbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455fdf98d1c76c3976fc3fdc35117fa8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a455fdf98d1c76c3976fc3fdc35117fa8">UniquifyFilename</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a455fdf98d1c76c3976fc3fdc35117fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path either unaltered or with a numbering to make the file unique. This is only done if an asset file exists at the path. It does not alter folder paths. See also: Project Settings =&gt; Editor =&gt; Numbering Scheme Note: 'Uniquify' is a proper english verb, it means "to make unique".  <br /></td></tr>
 <tr class="separator:a455fdf98d1c76c3976fc3fdc35117fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +234,10 @@ const String&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultExtens
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a2cfd0e318b699406a5102035ed2f0c3d"><td class="memItemLeft" align="right" valign="top"><a id="a2cfd0e318b699406a5102035ed2f0c3d" name="a2cfd0e318b699406a5102035ed2f0c3d"></a>
+<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Asset</b><code> [get]</code></td></tr>
+<tr class="memdesc:a2cfd0e318b699406a5102035ed2f0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the asset file if the path represents a .meta file. <br /></td></tr>
+<tr class="separator:a2cfd0e318b699406a5102035ed2f0c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487aecd0d61cecfde3743f0b5dccdaf1"><td class="memItemLeft" align="right" valign="top"><a id="a487aecd0d61cecfde3743f0b5dccdaf1" name="a487aecd0d61cecfde3743f0b5dccdaf1"></a>
 String&#160;</td><td class="memItemRight" valign="bottom"><b>DirectoryName</b><code> [get]</code></td></tr>
 <tr class="memdesc:a487aecd0d61cecfde3743f0b5dccdaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the directory name. <br /></td></tr>
@@ -240,6 +266,10 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>FileNameWithoutExte
 <tr class="memitem:a5818adc386a314449ce543abcf33ba66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5818adc386a314449ce543abcf33ba66">FolderPathAssumptive</a><code> [get]</code></td></tr>
 <tr class="memdesc:a5818adc386a314449ce543abcf33ba66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the file's parent folder, or the path itself if the path points to a folder. If the path does not exist and it ends with an extension (has a dot) then it is assumed a file path, otherwise a folder path is assumed (Unity does not allow assets without extensions). CAUTION: This may incorrectly assume a file if the path's last folder contains a dot. In this case it returns the second to last folder in the path.  <br /></td></tr>
 <tr class="separator:a5818adc386a314449ce543abcf33ba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de9d48b7ebb231954986814df629c27"><td class="memItemLeft" align="right" valign="top"><a id="a9de9d48b7ebb231954986814df629c27" name="a9de9d48b7ebb231954986814df629c27"></a>
+String[]&#160;</td><td class="memItemRight" valign="bottom"><b>Folders</b><code> [get]</code></td></tr>
+<tr class="memdesc:a9de9d48b7ebb231954986814df629c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the names of all folders in the path. <br /></td></tr>
+<tr class="separator:a9de9d48b7ebb231954986814df629c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a841433241f86127d541af49fbad080e3"><td class="memItemLeft" align="right" valign="top"><a id="a841433241f86127d541af49fbad080e3" name="a841433241f86127d541af49fbad080e3"></a>
 static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullAssetsPath</b><code> [get]</code></td></tr>
 <tr class="memdesc:a841433241f86127d541af49fbad080e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the project's 'Assets' subfolder. <br /></td></tr>
@@ -259,20 +289,17 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 <tr class="memitem:a70b71140fa1d44a4eb87190a55e0f592"><td class="memItemLeft" align="right" valign="top">GUID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">Guid</a><code> [get]</code></td></tr>
 <tr class="memdesc:a70b71140fa1d44a4eb87190a55e0f592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GUID for the path. Returns an empty GUID if the asset at the path does not exist in the database. Exists ExistsInFileSystem  <br /></td></tr>
 <tr class="separator:a70b71140fa1d44a4eb87190a55e0f592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa660c844fc7aaf4b0f1ffd5706e96b"><td class="memItemLeft" align="right" valign="top"><a id="a5aa660c844fc7aaf4b0f1ffd5706e96b" name="a5aa660c844fc7aaf4b0f1ffd5706e96b"></a>
+<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Meta</b><code> [get]</code></td></tr>
+<tr class="memdesc:a5aa660c844fc7aaf4b0f1ffd5706e96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the .meta file if the path represents an asset file. <br /></td></tr>
+<tr class="separator:a5aa660c844fc7aaf4b0f1ffd5706e96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a298c94667f2e77ec80d8eb6f5bb88f"><td class="memItemLeft" align="right" valign="top"><a id="a7a298c94667f2e77ec80d8eb6f5bb88f" name="a7a298c94667f2e77ec80d8eb6f5bb88f"></a>
 <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UniqueFilePath</b><code> [get]</code></td></tr>
 <tr class="memdesc:a7a298c94667f2e77ec80d8eb6f5bb88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path either unaltered or with a numbering to make the file unique if an asset file already exists at the path. Does not alter path if it does not exist or points to a folder. See also: Project Settings =&gt; Editor =&gt; Numbering Scheme. <br /></td></tr>
 <tr class="separator:a7a298c94667f2e77ec80d8eb6f5bb88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a relative path to an asset file or folder under either 'Assets' or 'Packages'. Instances can be initialized with a relative or full (absolute) path, internally it will be converted to a relative path. Use the FullPath property to get the full (absolute) path. </p>
-<p>All path separators are converted to forward slashes for compatibility with Windows, Mac, Linux. Leading and trailing path separators are trimmed: "\Assets\folder\" =&gt; "Assets/folder"
-    &lt;/p&gt;
-    &lt;p&gt;
-        Instances are implicitly and explicitly convertible to/from string:
-        &lt;example&gt;string strPath = (string)new Asset.Path("Assets/MyFolder/My.file");&lt;/example&gt;
-        &lt;example&gt;Asset.Path assetPath = (Asset.Path)"Assets/MyFolder/My.file";</p>
-<p>Ideally you should pass in a string and henceforth work with the Asset.Path instance, since path sanitation occurs every time an Asset.Path instance is created. </p>
+<div class="textblock"><p>Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'. Implicitly converts to/from string. Guards against inconsistencies, eg invalid paths, illegal characters, etc. Provides quick access to File I/O tasks such as getting a file's folder, extension, full path, existance, etc. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8cc29261520e3a8dd7c24901138cb29d" name="a8cc29261520e3a8dd7c24901138cb29d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cc29261520e3a8dd7c24901138cb29d">&#9670;&#160;</a></span>Path() <span class="overload">[1/2]</span></h2>
@@ -430,39 +457,39 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the GUID of the deepest folder in the hierarchy</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>            {</div>
-<div class="line"><span class="lineno">   21</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">   22</span>                ThrowIf.PathIsNotValid(path);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>                var folderPath = path.FolderPathAssumptive;</div>
-<div class="line"><span class="lineno">   25</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a45120a9e22334ca5a661497e6d49dcdc">FileExists</a>(path) || <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">FolderExists</a>(folderPath))</div>
-<div class="line"><span class="lineno">   26</span>                    <span class="keywordflow">return</span> folderPath.Guid;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>                var folderNames = ((String)folderPath).Split(<span class="keyword">new</span>[] { <span class="charliteral">&#39;/&#39;</span> });</div>
-<div class="line"><span class="lineno">   29</span>                var folderGuid = GuidForExistingPath(folderNames[0]); <span class="comment">// first is &quot;Assets&quot;</span></div>
-<div class="line"><span class="lineno">   30</span>                var partialPath = folderNames[0];</div>
-<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">for</span> (var i = 1; i &lt; folderNames.Length; i++)</div>
-<div class="line"><span class="lineno">   32</span>                {</div>
-<div class="line"><span class="lineno">   33</span>                    partialPath += $<span class="stringliteral">&quot;/{folderNames[i]}&quot;</span>;</div>
-<div class="line"><span class="lineno">   34</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">FolderExists</a>(partialPath))</div>
-<div class="line"><span class="lineno">   35</span>                    {</div>
-<div class="line"><span class="lineno">   36</span>                        folderGuid = GuidForExistingPath(partialPath);</div>
-<div class="line"><span class="lineno">   37</span>                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   38</span>                    }</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>                    var guidString = AssetDatabase.CreateFolder(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">Get</a>(folderGuid), folderNames[i]);</div>
-<div class="line"><span class="lineno">   41</span>                    folderGuid = <span class="keyword">new</span> GUID(guidString);</div>
-<div class="line"><span class="lineno">   42</span>                }</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">return</span> folderGuid;</div>
-<div class="line"><span class="lineno">   45</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>            {</div>
+<div class="line"><span class="lineno">  302</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">  303</span>                ThrowIf.PathIsNotValid(path);</div>
+<div class="line"><span class="lineno">  304</span> </div>
+<div class="line"><span class="lineno">  305</span>                var folderPath = path.FolderPathAssumptive;</div>
+<div class="line"><span class="lineno">  306</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a45120a9e22334ca5a661497e6d49dcdc">FileExists</a>(path) || <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">FolderExists</a>(folderPath))</div>
+<div class="line"><span class="lineno">  307</span>                    <span class="keywordflow">return</span> folderPath.Guid;</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>                var folderNames = ((String)folderPath).Split(<span class="keyword">new</span>[] { <span class="charliteral">&#39;/&#39;</span> });</div>
+<div class="line"><span class="lineno">  310</span>                var folderGuid = GuidForExistingPath(folderNames[0]); <span class="comment">// first is &quot;Assets&quot;</span></div>
+<div class="line"><span class="lineno">  311</span>                var partialPath = folderNames[0];</div>
+<div class="line"><span class="lineno">  312</span>                <span class="keywordflow">for</span> (var i = 1; i &lt; folderNames.Length; i++)</div>
+<div class="line"><span class="lineno">  313</span>                {</div>
+<div class="line"><span class="lineno">  314</span>                    partialPath += $<span class="stringliteral">&quot;/{folderNames[i]}&quot;</span>;</div>
+<div class="line"><span class="lineno">  315</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">FolderExists</a>(partialPath))</div>
+<div class="line"><span class="lineno">  316</span>                    {</div>
+<div class="line"><span class="lineno">  317</span>                        folderGuid = GuidForExistingPath(partialPath);</div>
+<div class="line"><span class="lineno">  318</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  319</span>                    }</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>                    var guidString = AssetDatabase.CreateFolder(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">Get</a>(folderGuid), folderNames[i]);</div>
+<div class="line"><span class="lineno">  322</span>                    folderGuid = <span class="keyword">new</span> GUID(guidString);</div>
+<div class="line"><span class="lineno">  323</span>                }</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>                <span class="keywordflow">return</span> folderGuid;</div>
+<div class="line"><span class="lineno">  326</span>            }</div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_a45120a9e22334ca5a661497e6d49dcdc"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a45120a9e22334ca5a661497e6d49dcdc">CodeSmile.Editor.Asset.Path.FileExists</a></div><div class="ttdeci">static Boolean FileExists(Path path)</div><div class="ttdoc">Tests if the given file exists.</div></div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_a9e9b6c5035f899da67368eb8cc8dc02e"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">CodeSmile.Editor.Asset.Path.FolderExists</a></div><div class="ttdeci">static Boolean FolderExists(Path path)</div><div class="ttdoc">Returns true if the folder exists. False otherwise, or if the path is to a file.</div></div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">CodeSmile.Editor.Asset.Path.Get</a></div><div class="ttdeci">static Path Get(Object obj)</div><div class="ttdoc">Gets the path of an asset file.</div><div class="ttdef"><b>Definition:</b> Asset.Path.Get.cs:39</div></div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">CodeSmile.Editor.Asset.Path.Get</a></div><div class="ttdeci">static Path Get(Object obj)</div><div class="ttdoc">Gets the path of an asset file.</div><div class="ttdef"><b>Definition:</b> Asset.Path.cs:190</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a45120a9e22334ca5a661497e6d49dcdc">CodeSmile.Editor.Asset.Path.FileExists()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e">CodeSmile.Editor.Asset.Path.FolderExists()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5818adc386a314449ce543abcf33ba66">CodeSmile.Editor.Asset.Path.FolderPathAssumptive</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">CodeSmile.Editor.Asset.Path.Get()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">CodeSmile.Editor.Asset.Path.Guid</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a96f36c2744f1b086f7fc80f8d6c0a190">CodeSmile.Editor.Asset.Copy()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#af27dff605308acd7a646bcb0b17c161d">CodeSmile.Editor.Asset.Create()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ab43f85e953915359a552bf3b2e304908">CodeSmile.Editor.Asset.Move()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a2a6db4bba619faef38b4b99c8da67a6f">CodeSmile.Editor.Asset.File.Copy()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a8cb3801c403c95e266274f48726cc2bb">CodeSmile.Editor.Asset.File.Create()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a4e48e6c5ab9546d3e0817a988e1442ae">CodeSmile.Editor.Asset.File.Move()</a>.</p>
 
 </div>
 </div>
@@ -566,6 +593,41 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 
 </div>
 </div>
+<a id="a3d6f24d0d508eb47e0ac7617143721c3" name="a3d6f24d0d508eb47e0ac7617143721c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6f24d0d508eb47e0ac7617143721c3">&#9670;&#160;</a></span>FromMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> CodeSmile.Editor.Asset.Path.FromMeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the asset's file path from its .meta file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="ab438c7de9e569da5b7f6e3aeffe69672" name="ab438c7de9e569da5b7f6e3aeffe69672"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab438c7de9e569da5b7f6e3aeffe69672">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
 
@@ -598,10 +660,10 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The path to the asset file, or null if the object is not an asset.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                var path = AssetDatabase.GUIDToAssetPath(guid);</div>
-<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
-<div class="line"><span class="lineno">   54</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>            {</div>
+<div class="line"><span class="lineno">  203</span>                var path = AssetDatabase.GUIDToAssetPath(guid);</div>
+<div class="line"><span class="lineno">  204</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
+<div class="line"><span class="lineno">  205</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -637,12 +699,12 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The path to the asset file, or null if the object is not an asset.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                var path = AssetDatabase.GetAssetPath(obj);</div>
-<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
-<div class="line"><span class="lineno">   43</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>            {</div>
+<div class="line"><span class="lineno">  192</span>                var path = AssetDatabase.GetAssetPath(obj);</div>
+<div class="line"><span class="lineno">  193</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
+<div class="line"><span class="lineno">  194</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54">CodeSmile.Editor.Asset.Path.CreateFolders()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#abb2b3f9b84800bc55ccdd20d8c5abbde">CodeSmile.Editor.Asset.LoadMain&lt; T &gt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#a2550981a9ada66278790c6bf80a03c29">CodeSmile.Editor.Asset.VersionControl.CanMakeEditable()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54">CodeSmile.Editor.Asset.Path.CreateFolders()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a0217a4ff5746bd7c38900900fe5983c4">CodeSmile.Editor.Asset.File.LoadMain&lt; T &gt;()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ada75e7d0768334f60b10836fc615df81">CodeSmile.Editor.Asset.Path.ToAssetPaths()</a>.</p>
 
 </div>
 </div>
@@ -692,6 +754,76 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 
 </div>
 </div>
+<a id="a1e7c14d26b3e558e293530eb13dbd3a6" name="a1e7c14d26b3e558e293530eb13dbd3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e7c14d26b3e558e293530eb13dbd3a6">&#9670;&#160;</a></span>GetMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> CodeSmile.Editor.Asset.Path.GetMeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the .meta file path from a path to an asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a5c40f815adb8ca837bb9b3153849dda0" name="a5c40f815adb8ca837bb9b3153849dda0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c40f815adb8ca837bb9b3153849dda0">&#9670;&#160;</a></span>GetScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> CodeSmile.Editor.Asset.Path.GetScene </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="acb35e1fe136e67589534574f90ed270a" name="acb35e1fe136e67589534574f90ed270a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb35e1fe136e67589534574f90ed270a">&#9670;&#160;</a></span>IsValid()</h2>
 
@@ -717,34 +849,34 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 </div><div class="memdoc">
 
 <p>Returns true if the provided path is valid. This means it contains no illegal folder or file name characters and it isn't too long. If this returns false, Asset.GetLastErrorMessage() contains more detailed information. Asset.GetLastErrorMessage() </p>
-<div class="fragment"><div class="line"><span class="lineno">  169</span>            {</div>
-<div class="line"><span class="lineno">  170</span>                var isValid = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>                <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  173</span>                {</div>
-<div class="line"><span class="lineno">  174</span>                    <span class="comment">// System.IO will throw for most illegal chars, plus some extra checks</span></div>
-<div class="line"><span class="lineno">  175</span>                    var fileName = System.IO.Path.GetFileName(path);</div>
-<div class="line"><span class="lineno">  176</span>                    var folderName = System.IO.Path.GetDirectoryName(path);</div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>                    <span class="comment">// check folder name for some chars that System.IO allows in GetDirectoryName</span></div>
-<div class="line"><span class="lineno">  179</span>                    var testIllegalChars = <span class="keyword">new</span> Func&lt;Char, Boolean&gt;(c =&gt; c == <span class="charliteral">&#39;*&#39;</span> || c == <span class="charliteral">&#39;?&#39;</span> || c == <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  180</span>                    isValid = folderName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>                    <span class="keywordflow">if</span> (isValid)</div>
-<div class="line"><span class="lineno">  183</span>                    {</div>
-<div class="line"><span class="lineno">  184</span>                        <span class="comment">// check filename for some chars that System.IO allows in GetFileName</span></div>
-<div class="line"><span class="lineno">  185</span>                        fileName = path.Substring(folderName.Length, path.Length - folderName.Length);</div>
-<div class="line"><span class="lineno">  186</span>                        isValid = fileName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  187</span>                    }</div>
-<div class="line"><span class="lineno">  188</span>                }</div>
-<div class="line"><span class="lineno">  189</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  190</span>                {</div>
-<div class="line"><span class="lineno">  191</span>                    SetLastErrorMessage($<span class="stringliteral">&quot;{ex.Message} =&gt; \&quot;{path}\&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">  192</span>                    isValid = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  193</span>                }</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>                <span class="keywordflow">return</span> isValid;</div>
-<div class="line"><span class="lineno">  196</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>            {</div>
+<div class="line"><span class="lineno">  251</span>                var isValid = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>                <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  254</span>                {</div>
+<div class="line"><span class="lineno">  255</span>                    <span class="comment">// System.IO will throw for most illegal chars, plus some extra checks</span></div>
+<div class="line"><span class="lineno">  256</span>                    var fileName = System.IO.Path.GetFileName(path);</div>
+<div class="line"><span class="lineno">  257</span>                    var folderName = System.IO.Path.GetDirectoryName(path);</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>                    <span class="comment">// check folder name for some chars that System.IO allows in GetDirectoryName</span></div>
+<div class="line"><span class="lineno">  260</span>                    var testIllegalChars = <span class="keyword">new</span> Func&lt;Char, Boolean&gt;(c =&gt; c == <span class="charliteral">&#39;*&#39;</span> || c == <span class="charliteral">&#39;?&#39;</span> || c == <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  261</span>                    isValid = folderName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>                    <span class="keywordflow">if</span> (isValid)</div>
+<div class="line"><span class="lineno">  264</span>                    {</div>
+<div class="line"><span class="lineno">  265</span>                        <span class="comment">// check filename for some chars that System.IO allows in GetFileName</span></div>
+<div class="line"><span class="lineno">  266</span>                        fileName = path.Substring(folderName.Length, path.Length - folderName.Length);</div>
+<div class="line"><span class="lineno">  267</span>                        isValid = fileName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  268</span>                    }</div>
+<div class="line"><span class="lineno">  269</span>                }</div>
+<div class="line"><span class="lineno">  270</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  271</span>                {</div>
+<div class="line"><span class="lineno">  272</span>                    SetLastErrorMessage($<span class="stringliteral">&quot;{ex.Message} =&gt; \&quot;{path}\&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  273</span>                    isValid = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  274</span>                }</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>                <span class="keywordflow">return</span> isValid;</div>
+<div class="line"><span class="lineno">  277</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -888,14 +1020,61 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if rename succeeded, false otherwise.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>            {</div>
-<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">if</span> (String.IsNullOrEmpty(newFileOrFolderName))</div>
-<div class="line"><span class="lineno">   40</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>                m_RelativePath = $<span class="stringliteral">&quot;{DirectoryName}/{System.IO.Path.GetFileName(newFileOrFolderName)}&quot;</span>;</div>
-<div class="line"><span class="lineno">   43</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   44</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  427</span>            {</div>
+<div class="line"><span class="lineno">  428</span>                <span class="keywordflow">if</span> (String.IsNullOrEmpty(newFileOrFolderName))</div>
+<div class="line"><span class="lineno">  429</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  430</span> </div>
+<div class="line"><span class="lineno">  431</span>                m_RelativePath = $<span class="stringliteral">&quot;{DirectoryName}/{System.IO.Path.GetFileName(newFileOrFolderName)}&quot;</span>;</div>
+<div class="line"><span class="lineno">  432</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  433</span>            }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="ada75e7d0768334f60b10836fc615df81" name="ada75e7d0768334f60b10836fc615df81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada75e7d0768334f60b10836fc615df81">&#9670;&#160;</a></span>ToAssetPaths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String[] CodeSmile.Editor.Asset.Path.ToAssetPaths </td>
+          <td>(</td>
+          <td class="paramtype">Object[]&#160;</td>
+          <td class="paramname"><em>objects</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts an array of objects to their asset paths. The returned array has the same size. Note that some items may be null if the input was null or not an asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objects</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  350</span>            {</div>
+<div class="line"><span class="lineno">  351</span>                ThrowIf.ArgumentIsNull(objects, nameof(objects));</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>                var objectCount = objects.Length;</div>
+<div class="line"><span class="lineno">  354</span>                var paths = <span class="keyword">new</span> String[objectCount];</div>
+<div class="line"><span class="lineno">  355</span>                <span class="keywordflow">for</span> (var i = 0; i &lt; objectCount; i++)</div>
+<div class="line"><span class="lineno">  356</span>                    paths[i] = <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">Get</a>(objects[i]);</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>                <span class="keywordflow">return</span> paths;</div>
+<div class="line"><span class="lineno">  359</span>            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce">CodeSmile.Editor.Asset.Path.Get()</a>.</p>
+
 </div>
 </div>
 <a id="a3eeb7945d8781f1065683f6cbd13ff95" name="a3eeb7945d8781f1065683f6cbd13ff95"></a>
@@ -915,6 +1094,43 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 
 <p>Returns the relative path as string. Same as implicit string conversion. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="acc77e6f0567435eb87bdc7787917cbd5" name="acc77e6f0567435eb87bdc7787917cbd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc77e6f0567435eb87bdc7787917cbd5">&#9670;&#160;</a></span>ToStrings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String[] CodeSmile.Editor.Asset.Path.ToStrings </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt;&#160;</td>
+          <td class="paramname"><em>paths</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a collection of Path instances to a string array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd">CodeSmile.Editor.Asset.Database.ForceReserialize()</a>.</p>
 
 </div>
 </div>
@@ -950,10 +1166,10 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>            {</div>
-<div class="line"><span class="lineno">   30</span>                var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);</div>
-<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(uniquePath) ? path : uniquePath;</div>
-<div class="line"><span class="lineno">   32</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  337</span>            {</div>
+<div class="line"><span class="lineno">  338</span>                var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);</div>
+<div class="line"><span class="lineno">  339</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(uniquePath) ? path : uniquePath;</div>
+<div class="line"><span class="lineno">  340</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -979,19 +1195,19 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 </div><div class="memdoc">
 
 <p>Returns true if the path exists in the AssetDatabase. NOTE: This may still return true for asset files that have been deleted externally. ExistsInFileSystem </p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   53</span>                {</div>
-<div class="line"><span class="lineno">   54</span><span class="preprocessor">#if UNITY_2023_1_OR_NEWER</span></div>
-<div class="line"><span class="lineno">   55</span>                    <span class="keywordflow">return</span> AssetDatabase.AssetPathExists(m_RelativePath);</div>
-<div class="line"><span class="lineno">   56</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   57</span>                    <span class="keywordflow">return</span> <a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">Guid</a>.Empty() == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   59</span>                }</div>
-<div class="line"><span class="lineno">   60</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_a70b71140fa1d44a4eb87190a55e0f592"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">CodeSmile.Editor.Asset.Path.Guid</a></div><div class="ttdeci">GUID Guid</div><div class="ttdoc">Returns the GUID for the path. Returns an empty GUID if the asset at the path does not exist in the d...</div><div class="ttdef"><b>Definition:</b> Asset.Path.Guid.cs:19</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>            {</div>
+<div class="line"><span class="lineno">   48</span>                <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   49</span>                {</div>
+<div class="line"><span class="lineno">   50</span><span class="preprocessor">#if UNITY_2023_1_OR_NEWER</span></div>
+<div class="line"><span class="lineno">   51</span>                    <span class="keywordflow">return</span> AssetDatabase.AssetPathExists(m_RelativePath);</div>
+<div class="line"><span class="lineno">   52</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   53</span>                    <span class="keywordflow">return</span> <a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">Guid</a>.Empty() == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   55</span>                }</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html_a70b71140fa1d44a4eb87190a55e0f592"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592">CodeSmile.Editor.Asset.Path.Guid</a></div><div class="ttdeci">GUID Guid</div><div class="ttdoc">Returns the GUID for the path. Returns an empty GUID if the asset at the path does not exist in the d...</div><div class="ttdef"><b>Definition:</b> Asset.Path.cs:39</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a4770275813986acc253333af73d2a22f">CodeSmile.Editor.Asset.Delete()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a2d10dc26159c48b97b04bb0668b9b5dd">CodeSmile.Editor.Asset.File.Delete()</a>.</p>
 
 </div>
 </div>
@@ -1047,21 +1263,21 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>            {</div>
-<div class="line"><span class="lineno">  115</span>                <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  116</span>                {</div>
-<div class="line"><span class="lineno">  117</span>                    <span class="comment">// existing directory? return that</span></div>
-<div class="line"><span class="lineno">  118</span>                    <span class="keywordflow">if</span> (Directory.Exists(m_RelativePath))</div>
-<div class="line"><span class="lineno">  119</span>                        <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>                    <span class="comment">// existing file? return folder path</span></div>
-<div class="line"><span class="lineno">  122</span>                    <span class="keywordflow">if</span> (File.Exists(m_RelativePath))</div>
-<div class="line"><span class="lineno">  123</span>                        <span class="keywordflow">return</span> ToFolderPath();</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;unable to determine if file or folder because path&quot;</span> +</div>
-<div class="line"><span class="lineno">  126</span>                                                        $<span class="stringliteral">&quot; &#39;{m_RelativePath}&#39; does not exist&quot;</span>);</div>
-<div class="line"><span class="lineno">  127</span>                }</div>
-<div class="line"><span class="lineno">  128</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>            {</div>
+<div class="line"><span class="lineno">  131</span>                <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  132</span>                {</div>
+<div class="line"><span class="lineno">  133</span>                    <span class="comment">// existing directory? return that</span></div>
+<div class="line"><span class="lineno">  134</span>                    <span class="keywordflow">if</span> (Directory.Exists(m_RelativePath))</div>
+<div class="line"><span class="lineno">  135</span>                        <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>                    <span class="comment">// existing file? return folder path</span></div>
+<div class="line"><span class="lineno">  138</span>                    <span class="keywordflow">if</span> (System.IO.File.Exists(m_RelativePath))</div>
+<div class="line"><span class="lineno">  139</span>                        <span class="keywordflow">return</span> ToFolderPath();</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;unable to determine if file or folder because path&quot;</span> +</div>
+<div class="line"><span class="lineno">  142</span>                                                        $<span class="stringliteral">&quot; &#39;{m_RelativePath}&#39; does not exist&quot;</span>);</div>
+<div class="line"><span class="lineno">  143</span>                }</div>
+<div class="line"><span class="lineno">  144</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1086,28 +1302,28 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 </div><div class="memdoc">
 
 <p>Returns the path to the file's parent folder, or the path itself if the path points to a folder. If the path does not exist and it ends with an extension (has a dot) then it is assumed a file path, otherwise a folder path is assumed (Unity does not allow assets without extensions). CAUTION: This may incorrectly assume a file if the path's last folder contains a dot. In this case it returns the second to last folder in the path. </p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>            {</div>
-<div class="line"><span class="lineno">  140</span>                <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  141</span>                {</div>
-<div class="line"><span class="lineno">  142</span>                    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  143</span>                    {</div>
-<div class="line"><span class="lineno">  144</span>                        <span class="comment">// existing directory? return that</span></div>
-<div class="line"><span class="lineno">  145</span>                        <span class="keywordflow">if</span> (Directory.Exists(m_RelativePath))</div>
-<div class="line"><span class="lineno">  146</span>                            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>                        <span class="comment">// existing file? return folder path</span></div>
-<div class="line"><span class="lineno">  149</span>                        <span class="keywordflow">if</span> (File.Exists(m_RelativePath))</div>
-<div class="line"><span class="lineno">  150</span>                            <span class="keywordflow">return</span> ToFolderPath();</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>                        <span class="comment">// if it has an extension, assume it&#39;s a file (could also be a folder but alas ...)</span></div>
-<div class="line"><span class="lineno">  153</span>                        <span class="keywordflow">if</span> (System.IO.Path.HasExtension(m_RelativePath))</div>
-<div class="line"><span class="lineno">  154</span>                            <span class="keywordflow">return</span> ToFolderPath();</div>
-<div class="line"><span class="lineno">  155</span>                    }</div>
-<div class="line"><span class="lineno">  156</span>                    <span class="keywordflow">catch</span> (Exception) {}</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  159</span>                }</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>            {</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  157</span>                {</div>
+<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  159</span>                    {</div>
+<div class="line"><span class="lineno">  160</span>                        <span class="comment">// existing directory? return that</span></div>
+<div class="line"><span class="lineno">  161</span>                        <span class="keywordflow">if</span> (Directory.Exists(m_RelativePath))</div>
+<div class="line"><span class="lineno">  162</span>                            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>                        <span class="comment">// existing file? return folder path</span></div>
+<div class="line"><span class="lineno">  165</span>                        <span class="keywordflow">if</span> (System.IO.File.Exists(m_RelativePath))</div>
+<div class="line"><span class="lineno">  166</span>                            <span class="keywordflow">return</span> ToFolderPath();</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>                        <span class="comment">// if it has an extension, assume it&#39;s a file (could also be a folder but alas ...)</span></div>
+<div class="line"><span class="lineno">  169</span>                        <span class="keywordflow">if</span> (System.IO.Path.HasExtension(m_RelativePath))</div>
+<div class="line"><span class="lineno">  170</span>                            <span class="keywordflow">return</span> ToFolderPath();</div>
+<div class="line"><span class="lineno">  171</span>                    }</div>
+<div class="line"><span class="lineno">  172</span>                    <span class="keywordflow">catch</span> (Exception) {}</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>                    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  175</span>                }</div>
+<div class="line"><span class="lineno">  176</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54">CodeSmile.Editor.Asset.Path.CreateFolders()</a>.</p>
 
@@ -1141,15 +1357,10 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>FullProjectP
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Editor/Asset.Path.CreateFolders.cs</li>
 <li>Editor/Asset.Path.cs</li>
-<li>Editor/Asset.Path.Guid.cs</li>
-<li>Editor/Asset.Path.Uniquify.cs</li>
 <li>Editor/Asset.Path.Ctor.cs</li>
 <li>Editor/Asset.Path.Equality.cs</li>
-<li>Editor/Asset.Path.Get.cs</li>
 <li>Editor/Asset.Path.Operator.cs</li>
-<li>Editor/Asset.Path.Rename.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

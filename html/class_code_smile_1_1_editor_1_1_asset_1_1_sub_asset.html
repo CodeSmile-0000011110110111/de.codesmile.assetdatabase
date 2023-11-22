@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.1</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.2</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -91,9 +91,354 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CodeSmile.Editor.Asset.SubAsset Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Groups all SubAsset related functionality.  
+ <a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a982095d0e08926f5e77bc20c2a839ee3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a982095d0e08926f5e77bc20c2a839ee3">Add</a> (Object subObject, Object assetObject)</td></tr>
+<tr class="memdesc:a982095d0e08926f5e77bc20c2a839ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object as sub-object to the asset object.  <br /></td></tr>
+<tr class="separator:a982095d0e08926f5e77bc20c2a839ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a70d4ecb48fa9594c7ad80d25314fb"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a37a70d4ecb48fa9594c7ad80d25314fb">Extract</a> (Object subObject, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> destinationPath)</td></tr>
+<tr class="memdesc:a37a70d4ecb48fa9594c7ad80d25314fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset and dragging it outside the containing asset in the project view. Note: This only works with visible sub objects.  <br /></td></tr>
+<tr class="separator:a37a70d4ecb48fa9594c7ad80d25314fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="memItemLeft" align="right" valign="top">static Object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a55eac78b9e61acfb5871ca5a7c2d3253">LoadAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console).  <br /></td></tr>
+<tr class="separator:a55eac78b9e61acfb5871ca5a7c2d3253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e620b52d37c460b893eb677f3328656"><td class="memItemLeft" align="right" valign="top">static Object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#a9e620b52d37c460b893eb677f3328656">LoadVisible</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a9e620b52d37c460b893eb677f3328656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console).  <br /></td></tr>
+<tr class="separator:a9e620b52d37c460b893eb677f3328656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3881714d0a8ee2d3683d30b696644ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#ae3881714d0a8ee2d3683d30b696644ac">Remove</a> (Object subObject)</td></tr>
+<tr class="memdesc:ae3881714d0a8ee2d3683d30b696644ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an object as sub-object from whatever asset it is contained in.  <br /></td></tr>
+<tr class="separator:ae3881714d0a8ee2d3683d30b696644ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed146c61a480b040ceef2e77230e389f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#aed146c61a480b040ceef2e77230e389f">SetMain</a> (Object subObject, Object assetObject)</td></tr>
+<tr class="memdesc:aed146c61a480b040ceef2e77230e389f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset.  <br /></td></tr>
+<tr class="separator:aed146c61a480b040ceef2e77230e389f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef8e04e1c77b01ca51338d3c7b63fe2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#adef8e04e1c77b01ca51338d3c7b63fe2">SetMain</a> (Object subObject, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:adef8e04e1c77b01ca51338d3c7b63fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset.  <br /></td></tr>
+<tr class="separator:adef8e04e1c77b01ca51338d3c7b63fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Groups all SubAsset related functionality. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a982095d0e08926f5e77bc20c2a839ee3" name="a982095d0e08926f5e77bc20c2a839ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982095d0e08926f5e77bc20c2a839ee3">&#9670;&#160;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.SubAsset.Add </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>subObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>assetObject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an object as sub-object to the asset object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subObject</td><td></td></tr>
+    <tr><td class="paramname">assetObject</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>            {</div>
+<div class="line"><span class="lineno">   67</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   68</span>                ThrowIf.SubObjectIsGameObject(subObject);</div>
+<div class="line"><span class="lineno">   69</span>                ThrowIf.AlreadyAnAsset(subObject);</div>
+<div class="line"><span class="lineno">   70</span>                ThrowIf.ArgumentIsNull(assetObject, nameof(assetObject));</div>
+<div class="line"><span class="lineno">   71</span>                ThrowIf.NotAnAssetWithAssetExtension(assetObject);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                AssetDatabase.AddObjectToAsset(subObject, assetObject);</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a37a70d4ecb48fa9594c7ad80d25314fb" name="a37a70d4ecb48fa9594c7ad80d25314fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a70d4ecb48fa9594c7ad80d25314fb">&#9670;&#160;</a></span>Extract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Boolean CodeSmile.Editor.Asset.SubAsset.Extract </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>subObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>destinationPath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset and dragging it outside the containing asset in the project view. Note: This only works with visible sub objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subObject</td><td></td></tr>
+    <tr><td class="paramname">destinationPath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>            {</div>
+<div class="line"><span class="lineno">   54</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   55</span>                ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));</div>
+<div class="line"><span class="lineno">   58</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a55eac78b9e61acfb5871ca5a7c2d3253" name="a55eac78b9e61acfb5871ca5a7c2d3253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55eac78b9e61acfb5871ca5a7c2d3253">&#9670;&#160;</a></span>LoadAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Object[] CodeSmile.Editor.Asset.SubAsset.LoadAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads all sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9e620b52d37c460b893eb677f3328656" name="a9e620b52d37c460b893eb677f3328656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e620b52d37c460b893eb677f3328656">&#9670;&#160;</a></span>LoadVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Object[] CodeSmile.Editor.Asset.SubAsset.LoadVisible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae3881714d0a8ee2d3683d30b696644ac" name="ae3881714d0a8ee2d3683d30b696644ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3881714d0a8ee2d3683d30b696644ac">&#9670;&#160;</a></span>Remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.SubAsset.Remove </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>subObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes an object as sub-object from whatever asset it is contained in. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subObject</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>            {</div>
+<div class="line"><span class="lineno">   82</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>                AssetDatabase.RemoveObjectFromAsset(subObject);</div>
+<div class="line"><span class="lineno">   85</span>            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed146c61a480b040ceef2e77230e389f" name="aed146c61a480b040ceef2e77230e389f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed146c61a480b040ceef2e77230e389f">&#9670;&#160;</a></span>SetMain() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.SubAsset.SetMain </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>subObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>assetObject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subObject</td><td></td></tr>
+    <tr><td class="paramname">assetObject</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adef8e04e1c77b01ca51338d3c7b63fe2" name="adef8e04e1c77b01ca51338d3c7b63fe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef8e04e1c77b01ca51338d3c7b63fe2">&#9670;&#160;</a></span>SetMain() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CodeSmile.Editor.Asset.SubAsset.SetMain </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>subObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets (changes) an asset's 'main' object. Note: The subObject must already be a sub object of the targeted asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subObject</td><td></td></tr>
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>            {</div>
+<div class="line"><span class="lineno">   95</span>                AssetDatabase.SetMainObject(subObject, path);</div>
+<div class="line"><span class="lineno">   96</span>                File.Import(path);</div>
+<div class="line"><span class="lineno">   97</span>            }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a0da3ff0fbd29e497a900bbb2c50ef9f3">CodeSmile.Editor.Asset.File.Import()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Editor/Asset.SubAsset.cs</li>
 </ul>

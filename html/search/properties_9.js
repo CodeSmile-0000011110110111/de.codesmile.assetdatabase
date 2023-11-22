@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniquefilepath_0',['UniqueFilePath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a7a298c94667f2e77ec80d8eb6f5bb88f',1,'CodeSmile::Editor::Asset::Path']]]
+  ['namespaceprefix_0',['NamespacePrefix',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#a5cfcdd349d0c01c04b42b4511e052455',1,'CodeSmile::Editor::Asset::Database::CacheServer']]]
 ];
