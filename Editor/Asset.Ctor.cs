@@ -75,14 +75,14 @@ namespace CodeSmile.Editor
 			ThrowIf.NotInDatabase(obj);
 
 			m_MainObject = obj;
-			m_AssetPath = AssetDatabase.GetAssetPath(obj);
+			m_AssetPath = Path.Get(obj);
 		}
 
 		private void SetMainObjectAndAssetPath(GUID guid)
 		{
 			ThrowIf.NotAnAssetGuid(guid);
 
-			SetMainObjectAndAssetPath(AssetDatabase.GUIDToAssetPath(guid));
+			SetMainObjectAndAssetPath(Path.Get(guid));
 		}
 
 		private void SetAssetPathFromObject() => m_AssetPath = Path.Get(m_MainObject);

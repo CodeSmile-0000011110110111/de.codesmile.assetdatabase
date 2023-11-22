@@ -44,7 +44,7 @@ namespace CodeSmile.Editor
 		public Path AssetPath => m_AssetPath;
 
 		/// <summary>
-		/// Returns the path to the .meta file for the asset.
+		///     Returns the path to the .meta file for the asset.
 		/// </summary>
 		public Path MetaPath => Path.GetMeta(m_AssetPath);
 

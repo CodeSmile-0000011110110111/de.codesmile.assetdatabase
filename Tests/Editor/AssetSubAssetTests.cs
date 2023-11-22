@@ -91,6 +91,7 @@ public class AssetSubAssetTests : AssetTestBase
 		var subObject = Instantiate.DifferentExampleSO();
 		asset.AddObject(subObject);
 
+		// using the static should also reflect the change on instances
 		Asset.SubAsset.SetMain(subObject, asset);
 		var differentExampleSo = Asset.File.LoadMain<Object>(asset.AssetPath);
 

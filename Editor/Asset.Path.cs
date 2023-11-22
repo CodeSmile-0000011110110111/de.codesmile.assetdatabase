@@ -102,6 +102,11 @@ namespace CodeSmile.Editor
 			public String FullPath => System.IO.Path.GetFullPath(m_RelativePath).ToForwardSlashes();
 
 			/// <summary>
+			/// Returns the names of all folders in the path.
+			/// </summary>
+			public String[] Folders => GetFolders(m_RelativePath);
+
+			/// <summary>
 			///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
 			///     CAUTION: The path must exist! If not, throws an exception.
 			/// </summary>
@@ -202,7 +207,19 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path GetMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, what were they thinking coming up with that name??
+			public static Path GetMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
+
+			/// <summary>
+			/// Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public static Path GetScene(Object obj) => AssetDatabase.GetAssetOrScenePath(obj);
+
+			/// <summary>
+			/// Returns the names of all folders in the path.
+			/// </summary>
+			public String[] GetFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>
 			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
