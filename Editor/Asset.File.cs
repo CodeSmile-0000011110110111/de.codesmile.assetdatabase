@@ -390,8 +390,10 @@ namespace CodeSmile.Editor
 			/// <param name="path"></param>
 			/// <param name="localFileId"></param>
 			/// <returns>An AssetDatabaseLoadOperation instance to track progress.</returns>
+#if UNITY_2022_2_OR_NEWER
 			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId) =>
 				AssetDatabase.LoadObjectAsync(path, localFileId);
+#endif
 
 			/// <summary>
 			///     Finds the assets by the given filter criteria.

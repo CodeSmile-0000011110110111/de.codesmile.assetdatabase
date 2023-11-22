@@ -85,7 +85,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetDefaultImporter(path);
 #else
-				UnityEngine.Debug.LogWarning("GetDefaultImporter is not available in Unity 2021.3 - returning null");
+				UnityEngine.Debug.LogWarning("GetDefaultImporter is not available in this Unity version - returning null");
 				return null;
 #endif
 			}
