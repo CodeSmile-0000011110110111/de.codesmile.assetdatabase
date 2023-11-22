@@ -389,9 +389,8 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <param name="localFileId"></param>
-			/// <typeparam name="T"></typeparam>
-			/// <returns></returns>
-			public static AsyncOperation LoadAsync<T>(Path path, Int64 localFileId) where T : Object =>
+			/// <returns>An AssetDatabaseLoadOperation instance to track progress.</returns>
+			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId) =>
 				AssetDatabase.LoadObjectAsync(path, localFileId);
 
 			/// <summary>
