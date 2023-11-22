@@ -385,6 +385,16 @@ namespace CodeSmile.Editor
 			public static T Load<T>(Path path) where T : Object => AssetDatabase.LoadAssetAtPath<T>(path);
 
 			/// <summary>
+			///     Loads an object and its dependencies asynchronously.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="localFileId"></param>
+			/// <typeparam name="T"></typeparam>
+			/// <returns></returns>
+			public static AsyncOperation LoadAsync<T>(Path path, Int64 localFileId) where T : Object =>
+				AssetDatabase.LoadObjectAsync(path, localFileId);
+
+			/// <summary>
 			///     Finds the assets by the given filter criteria.
 			///     Returns an array of string GUIDs for compatibility reasons.
 			/// </summary>

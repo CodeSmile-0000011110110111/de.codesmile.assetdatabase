@@ -14,7 +14,7 @@ namespace CodeSmile.Editor
 		///     Groups all asset database functionality. Turns out there isn't actually that much that is
 		///     'database' related after all.
 		/// </summary>
-		public static class Database
+		public static partial class Database
 		{
 			/// <summary>
 			///     Gets or sets the desired worker count.
@@ -147,25 +147,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			[ExcludeFromCodeCoverage]
 			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
-
-			public static class CacheServer
-			{
-				/*
-	RefreshSettings
-	CanConnectToCacheServer
-	CloseCacheServerConnection
-	GetCacheServerAddress
-	GetCacheServerEnableDownload
-	GetCacheServerEnableUpload
-	GetCacheServerNamespacePrefix
-	GetCacheServerPort
-	GetCurrentCacheServerIp
-	IsCacheServerEnabled
-	IsConnectedToCacheServer
-	ResetCacheServerReconnectTimer
-	WriteImportSettingsIfDirty
-				 */
-			}
 		}
 	}
 }

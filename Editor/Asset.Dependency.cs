@@ -4,6 +4,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
+using UnityEngine;
 
 namespace CodeSmile.Editor
 {
@@ -56,6 +57,48 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static String[] GetAll(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
+
+			/// <summary>
+			///     Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter.
+			///     Call this method again to update existing dependencies.
+			///     For details
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>.
+			/// </summary>
+			/// <param name="globalDependencyName">A global name for the dependency.</param>
+			/// <param name="dependencyHash">The current hash of the dependency value.</param>
+			/// <see cref="Remove" />
+			[ExcludeFromCodeCoverage]
+			public static void Set(String globalDependencyName, Hash128 dependencyHash) =>
+				AssetDatabase.RegisterCustomDependency(globalDependencyName, dependencyHash);
+
+			/// <summary>
+			///     Removes one or more custom dependencies by using a global dependency name's prefix
+			///     (eg 'StartsWith') or full name.
+			/// </summary>
+			/// <param name="globalDependencyNamePrefix"></param>
+			/// <returns>The number of custom dependencies that were removed.</returns>
+			/// <see cref="Set" />
+			[ExcludeFromCodeCoverage]
+			public static UInt32 Remove(String globalDependencyNamePrefix) =>
+				AssetDatabase.UnregisterCustomDependencyPrefixFilter(globalDependencyNamePrefix);
+
+			/// <summary>
+			///     Returns the dependency hash for the asset at path.
+			///     If the hash changes it means the asset contents may have changed.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static Hash128 GetHash(Path path) => AssetDatabase.GetAssetDependencyHash(path);
+
+			/// <summary>
+			///     Returns the dependency hash for the asset.
+			///     If the hash changes it means the asset contents may have changed.
+			/// </summary>
+			/// <param name="guid"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static Hash128 GetHash(GUID guid) => AssetDatabase.GetAssetDependencyHash(guid);
 		}
 	}
 }

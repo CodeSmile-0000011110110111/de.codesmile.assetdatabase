@@ -92,7 +92,7 @@ namespace CodeSmile.Editor
 			/// <param name="assetName"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetAllAssetPaths(String bundleName) =>
+			public static String[] GetAllPaths(String bundleName) =>
 				AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
 
 			/// <summary>
@@ -103,7 +103,7 @@ namespace CodeSmile.Editor
 			/// <param name="assetName"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static String[] GetAssetPaths(String bundleName, String assetName) =>
+			public static String[] GetPaths(String bundleName, String assetName) =>
 				AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);
 
 			/// <summary>

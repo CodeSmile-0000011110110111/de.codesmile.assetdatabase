@@ -31,7 +31,7 @@ namespace CodeSmile.Editor
 
 			public static void AlreadyAnAsset(UnityEngine.Object obj)
 			{
-				if (IsImported(obj))
+				if (Status.IsImported(obj))
 					throw new ArgumentException($"object already is an asset file: {obj}");
 			}
 
@@ -43,7 +43,7 @@ namespace CodeSmile.Editor
 
 			public static void NotInDatabase(UnityEngine.Object obj)
 			{
-				if (IsImported(obj) == false)
+				if (Status.IsImported(obj) == false)
 					throw new ArgumentException($"object is not an asset: {obj}");
 			}
 

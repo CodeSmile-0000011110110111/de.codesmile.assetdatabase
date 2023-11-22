@@ -65,19 +65,32 @@ namespace CodeSmile.Editor
 			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
 			/// <summary>
+			/// Returns the path to the .meta file if the path represents an asset file.
+			/// </summary>
+			[ExcludeFromCodeCoverage] public Path Meta => GetMeta(this);
+
+			/// <summary>
+			/// Returns the path to the asset file if the path represents a .meta file.
+			/// </summary>
+			[ExcludeFromCodeCoverage] public Path Asset => FromMeta(this);
+
+			/// <summary>
 			///     Returns the extension of the file path.
 			/// </summary>
 			/// <value>The extension with a leading dot (eg '.txt') or an empty string.</value>
 			[ExcludeFromCodeCoverage] public String Extension => System.IO.Path.GetExtension(m_RelativePath);
+
 			/// <summary>
 			///     Returns the file name with extension.
 			/// </summary>
 			[ExcludeFromCodeCoverage] public String FileName => System.IO.Path.GetFileName(m_RelativePath);
+
 			/// <summary>
 			///     Returns the file name without extension.
 			/// </summary>
 			[ExcludeFromCodeCoverage] public String FileNameWithoutExtension =>
 				System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
+
 			/// <summary>
 			///     Returns the directory name.
 			/// </summary>
@@ -87,10 +100,12 @@ namespace CodeSmile.Editor
 			///     Returns the path to the project's 'Assets' subfolder.
 			/// </summary>
 			public static String FullAssetsPath => Application.dataPath;
+
 			/// <summary>
 			///     Returns the path to the project's 'Packages' subfolder.
 			/// </summary>
 			public static String FullPackagesPath => $"{FullProjectPath}/Packages";
+
 			/// <summary>
 			///     Returns the path to the project's root folder.
 			/// </summary>
@@ -104,7 +119,7 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns the names of all folders in the path.
 			/// </summary>
-			public String[] Folders => GetFolders(m_RelativePath);
+			public String[] Folders => GetFolders(this);
 
 			/// <summary>
 			///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
@@ -209,6 +224,14 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			public static Path GetMeta(Path path) =>
 				AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
+
+			/// <summary>
+			///     Returns the asset's file path from its .meta file path.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Path FromMeta(Path path) =>
+				AssetDatabase.GetAssetPathFromTextMetaFilePath(path); // seriously, that name??
 
 			/// <summary>
 			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.

@@ -19,24 +19,24 @@ public class AssetDeleteTests : AssetTestBase
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
-		Assert.True(Asset.IsImported(obj));
+		Assert.True(Asset.Status.IsImported(obj));
 
 		Asset.File.Delete(obj);
 
 		Assert.False(TestAssetPath.ExistsInFileSystem);
-		Assert.False(Asset.IsImported(obj));
+		Assert.False(Asset.Status.IsImported(obj));
 	}
 
 	[Test] public void DeleteStatic_ExistingAssetPath_FileDeleted()
 	{
 		var obj = CreateTestAssetObject(TestAssetPath);
 		Assert.True(TestAssetPath.ExistsInFileSystem);
-		Assert.True(Asset.IsImported(obj));
+		Assert.True(Asset.Status.IsImported(obj));
 
 		Asset.File.Delete(TestAssetPath);
 
 		Assert.False(TestAssetPath.ExistsInFileSystem);
-		Assert.False(Asset.IsImported(obj));
+		Assert.False(Asset.Status.IsImported(obj));
 	}
 
 	[Test] public void Delete_ExistingAssetObject_FileDeleted()
@@ -47,7 +47,7 @@ public class AssetDeleteTests : AssetTestBase
 
 		Assert.NotNull(deletedObj);
 		Assert.Null(asset.AssetPath);
-		Assert.False(Asset.IsImported(deletedObj));
+		Assert.False(Asset.Status.IsImported(deletedObj));
 		Assert.False(TestAssetPath.ExistsInFileSystem);
 	}
 
