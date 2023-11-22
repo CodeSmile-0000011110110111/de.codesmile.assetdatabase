@@ -102,7 +102,7 @@ namespace CodeSmile.Editor
 			public String FullPath => System.IO.Path.GetFullPath(m_RelativePath).ToForwardSlashes();
 
 			/// <summary>
-			/// Returns the names of all folders in the path.
+			///     Returns the names of all folders in the path.
 			/// </summary>
 			public String[] Folders => GetFolders(m_RelativePath);
 
@@ -203,23 +203,19 @@ namespace CodeSmile.Editor
 				new(AssetDatabase.AssetPathToGUID(path, options));
 
 			/// <summary>
-			/// Returns the .meta file path from a path to an asset.
+			///     Returns the .meta file path from a path to an asset.
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path GetMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
+			public static Path GetMeta(Path path) =>
+				AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
 
 			/// <summary>
-			/// Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
+			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
 			public static Path GetScene(Object obj) => AssetDatabase.GetAssetOrScenePath(obj);
-
-			/// <summary>
-			/// Returns the names of all folders in the path.
-			/// </summary>
-			public String[] GetFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>
 			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
@@ -387,6 +383,11 @@ namespace CodeSmile.Editor
 
 			private static GUID GuidForExistingPath(String path) =>
 				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
+
+			/// <summary>
+			///     Returns the names of all folders in the path.
+			/// </summary>
+			public String[] GetFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).

@@ -4,8 +4,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
-using UnityEditor.AssetImporters;
-using UnityEngine;
 
 namespace CodeSmile.Editor
 {
@@ -55,7 +53,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_1_OR_NEWER
 			where T : AssetImporter
 #else
-			where T : ScriptedImporter
+			where T : UnityEditor.AssetImporters.ScriptedImporter
 #endif
 		{
 			Importer.SetOverride<T>(m_AssetPath);
@@ -87,7 +85,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetDefaultImporter(path);
 #else
-				Debug.LogWarning("GetDefaultImporter is not available in Unity 2021.3 - returning null");
+				UnityEngine.Debug.LogWarning("GetDefaultImporter is not available in Unity 2021.3 - returning null");
 				return null;
 #endif
 			}
@@ -110,7 +108,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_1_OR_NEWER
 				where T : AssetImporter
 #else
-				where T : ScriptedImporter
+				where T : UnityEditor.AssetImporters.ScriptedImporter
 #endif
 			{
 				AssetDatabase.SetImporterOverride<T>(path);
@@ -143,7 +141,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(path);
 #else
-				Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
+				UnityEngine.Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
 				return null;
 #endif
 			}
@@ -159,7 +157,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(guid);
 #else
-				Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
+				UnityEngine.Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
 				return null;
 #endif
 			}
@@ -183,7 +181,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(paths);
 #else
-				Debug.LogWarning("GetImporterTypes not available in this Unity version - returning empty array");
+				UnityEngine.Debug.LogWarning("GetImporterTypes not available in this Unity version - returning empty array");
 				return new Type[0];
 #endif
 			}
@@ -199,7 +197,7 @@ namespace CodeSmile.Editor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(guids);
 #else
-				Debug.LogWarning("GetImporterTypes not available in this Unity version - returning empty array");
+				UnityEngine.Debug.LogWarning("GetImporterTypes not available in this Unity version - returning empty array");
 				return new Type[0];
 #endif
 			}
