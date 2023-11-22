@@ -112,7 +112,7 @@ namespace CodeSmile.Editor
 			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 			/// <summary>
-			/// Returns true if the given object is of type SceneAsset.
+			///     Returns true if the given object is of type SceneAsset.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>

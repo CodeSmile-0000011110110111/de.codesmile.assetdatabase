@@ -218,28 +218,22 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			/// Writes any unsaved changes of the importer for the asset at the given path to disk.
-			/// Note: this is mainly used to force the CacheServer/Accelerator to import the asset, and to do so
-			/// without user interaction.
+			///     Writes any unsaved changes of the importer for the asset at the given path to disk.
+			///     Note: this is mainly used to force the CacheServer/Accelerator to import the asset, and to do so
+			///     without user interaction.
 			/// </summary>
 			/// <param name="path"></param>
 			[ExcludeFromCodeCoverage]
-			public static void SaveSettings(Path path)
-			{
-				AssetDatabase.WriteImportSettingsIfDirty(path);
-			}
+			public static void SaveSettings(Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
 
 			/// <summary>
-			/// Writes any unsaved changes of the importer to disk.
-			/// Note: this is mainly used to force the CacheServer/Accelerator to import the asset, and to do so
-			/// without user interaction.
+			///     Writes any unsaved changes of the importer to disk.
+			///     Note: this is mainly used to force the CacheServer/Accelerator to import the asset, and to do so
+			///     without user interaction.
 			/// </summary>
 			/// <param name="importer"></param>
 			[ExcludeFromCodeCoverage]
-			public static void SaveSettings(AssetImporter importer)
-			{
-				SaveSettings(importer.assetPath);
-			}
+			public static void SaveSettings(AssetImporter importer) => SaveSettings(importer.assetPath);
 		}
 	}
 }

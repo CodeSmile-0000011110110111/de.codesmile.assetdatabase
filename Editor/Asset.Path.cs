@@ -65,12 +65,12 @@ namespace CodeSmile.Editor
 			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
 			/// <summary>
-			/// Returns the path to the .meta file if the path represents an asset file.
+			///     Returns the path to the .meta file if the path represents an asset file.
 			/// </summary>
 			[ExcludeFromCodeCoverage] public Path Meta => GetMeta(this);
 
 			/// <summary>
-			/// Returns the path to the asset file if the path represents a .meta file.
+			///     Returns the path to the asset file if the path represents a .meta file.
 			/// </summary>
 			[ExcludeFromCodeCoverage] public Path Asset => FromMeta(this);
 
