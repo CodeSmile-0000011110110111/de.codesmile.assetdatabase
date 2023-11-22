@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['subassets_0',['SubAssets',['../class_code_smile_1_1_editor_1_1_asset.html#a7cdc6412a92a3260fbb0090adbd0f99f',1,'CodeSmile::Editor::Asset']]]
+  ['namespaceprefix_0',['NamespacePrefix',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#a5cfcdd349d0c01c04b42b4511e052455',1,'CodeSmile::Editor::Asset::Database::CacheServer']]]
 ];

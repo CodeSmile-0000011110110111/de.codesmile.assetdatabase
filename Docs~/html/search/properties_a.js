@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uniquefilepath_0',['UniqueFilePath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a7a298c94667f2e77ec80d8eb6f5bb88f',1,'CodeSmile::Editor::Asset::Path']]],
-  ['unused_1',['Unused',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a8f1ceb9e793aa5f316ce97497b03eb49',1,'CodeSmile::Editor::Asset::Bundle']]]
+  ['owningbundle_0',['OwningBundle',['../class_code_smile_1_1_editor_1_1_asset.html#a530cf1f8e3711f5a79e17ea7e8287155',1,'CodeSmile::Editor::Asset']]],
+  ['owningbundlevariant_1',['OwningBundleVariant',['../class_code_smile_1_1_editor_1_1_asset.html#af6af9d6020e714968abef76b87b15fd4',1,'CodeSmile::Editor::Asset']]]
 ];

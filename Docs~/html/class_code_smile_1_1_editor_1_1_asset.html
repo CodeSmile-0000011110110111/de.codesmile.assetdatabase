@@ -130,6 +130,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'. Implicitly converts to/from string. Guards against inconsistencies, eg invalid paths, illegal characters, etc. Provides quick access to File I/O tasks such as getting a file's folder, extension, full path, existance, etc.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status.html">Status</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups asset status related functions.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_status.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html">SubAsset</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all SubAsset related functionality.  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,26 +243,6 @@ static String&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastError
 <tr class="memitem:a7e64cd59ce715783551782ef3c8d1615"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a7e64cd59ce715783551782ef3c8d1615">GetMainType</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a7e64cd59ce715783551782ef3c8d1615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the main asset at the path.  <br /></td></tr>
 <tr class="separator:a7e64cd59ce715783551782ef3c8d1615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91eb959072257d36a867da3d5ab28e39"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a91eb959072257d36a867da3d5ab28e39">IsForeign</a> (Object obj)</td></tr>
-<tr class="separator:a91eb959072257d36a867da3d5ab28e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20a010fbffb329e75018e90853ef08f"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ad20a010fbffb329e75018e90853ef08f">IsImported</a> (Object obj)</td></tr>
-<tr class="memdesc:ad20a010fbffb329e75018e90853ef08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the object is an asset in the AssetDatabase. If it isn't but you know the asset file exists then you need to Import() the asset. Unlike AssetDatabase, will not throw a NullRef if you pass null.  <br /></td></tr>
-<tr class="separator:ad20a010fbffb329e75018e90853ef08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e075bee85d0da50febd9b52b4833d53"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a1e075bee85d0da50febd9b52b4833d53">IsLoaded</a> (Object obj)</td></tr>
-<tr class="memdesc:a1e075bee85d0da50febd9b52b4833d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this object's main asset is loaded.  <br /></td></tr>
-<tr class="separator:a1e075bee85d0da50febd9b52b4833d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac748be7f1451f78ca85f6ea027c65ae9"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ac748be7f1451f78ca85f6ea027c65ae9">IsLoaded</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:ac748be7f1451f78ca85f6ea027c65ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this path's main asset is loaded.  <br /></td></tr>
-<tr class="separator:ac748be7f1451f78ca85f6ea027c65ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad68e16cfd0453dda5fb65e3590ebb6d4"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ad68e16cfd0453dda5fb65e3590ebb6d4">IsMain</a> (Object obj)</td></tr>
-<tr class="memdesc:ad68e16cfd0453dda5fb65e3590ebb6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this object is the asset's 'main' object.  <br /></td></tr>
-<tr class="separator:ad68e16cfd0453dda5fb65e3590ebb6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d0489bb8ad8663fb0fc56460a1e64a8"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a2d0489bb8ad8663fb0fc56460a1e64a8">IsNative</a> (Object obj)</td></tr>
-<tr class="memdesc:a2d0489bb8ad8663fb0fc56460a1e64a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this is a native asset. Native assets are serialized directly by Unity, such as materials. Note that scenes, prefabs and assembly definitions are considered foreign assets.  <br /></td></tr>
-<tr class="separator:a2d0489bb8ad8663fb0fc56460a1e64a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e46b2df7e2088244b1fd624ab5c8a8"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a25e46b2df7e2088244b1fd624ab5c8a8">IsSub</a> (Object obj)</td></tr>
-<tr class="memdesc:a25e46b2df7e2088244b1fd624ab5c8a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.  <br /></td></tr>
-<tr class="separator:a25e46b2df7e2088244b1fd624ab5c8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2742313dcf3b8cb2cbc6c5689cf262fe"><td class="memItemLeft" align="right" valign="top">static implicit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a2742313dcf3b8cb2cbc6c5689cf262fe">operator Asset</a> (GUID guid)</td></tr>
 <tr class="memdesc:a2742313dcf3b8cb2cbc6c5689cf262fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion of GUID to an asset instance.  <br /></td></tr>
 <tr class="separator:a2742313dcf3b8cb2cbc6c5689cf262fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -976,251 +959,6 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 
 </div>
 </div>
-<a id="a91eb959072257d36a867da3d5ab28e39" name="a91eb959072257d36a867da3d5ab28e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91eb959072257d36a867da3d5ab28e39">&#9670;&#160;</a></span>IsForeign()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsForeign </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns whether this is a foreign asset. </p>
-<p>A foreign asset is any type of file that Unity doesn't use directly but rather maintains cached versions of it in the Library folder. For example, a .png image is a foreign asset, there is no editor inside Unity for it, and the representation of the .png depends on the asset's settings and build platform (eg compression, max size, etc). Other foreign assets: scenes (.unity), prefabs, assembly definitions. </p>
-<p>IsNative </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ad20a010fbffb329e75018e90853ef08f" name="ad20a010fbffb329e75018e90853ef08f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20a010fbffb329e75018e90853ef08f">&#9670;&#160;</a></span>IsImported()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsImported </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the object is an asset in the AssetDatabase. If it isn't but you know the asset file exists then you need to Import() the asset. Unlike AssetDatabase, will not throw a NullRef if you pass null. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns false if the object isn't in the database or if the object is null.</dd></dl>
-
-</div>
-</div>
-<a id="a1e075bee85d0da50febd9b52b4833d53" name="a1e075bee85d0da50febd9b52b4833d53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e075bee85d0da50febd9b52b4833d53">&#9670;&#160;</a></span>IsLoaded() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsLoaded </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether this object's main asset is loaded. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ac748be7f1451f78ca85f6ea027c65ae9" name="ac748be7f1451f78ca85f6ea027c65ae9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac748be7f1451f78ca85f6ea027c65ae9">&#9670;&#160;</a></span>IsLoaded() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsLoaded </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether this path's main asset is loaded. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ad68e16cfd0453dda5fb65e3590ebb6d4" name="ad68e16cfd0453dda5fb65e3590ebb6d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad68e16cfd0453dda5fb65e3590ebb6d4">&#9670;&#160;</a></span>IsMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsMain </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether this object is the asset's 'main' object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a2d0489bb8ad8663fb0fc56460a1e64a8" name="a2d0489bb8ad8663fb0fc56460a1e64a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d0489bb8ad8663fb0fc56460a1e64a8">&#9670;&#160;</a></span>IsNative()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsNative </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether this is a native asset. Native assets are serialized directly by Unity, such as materials. Note that scenes, prefabs and assembly definitions are considered foreign assets. </p>
-<p>IsForeign </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a25e46b2df7e2088244b1fd624ab5c8a8" name="a25e46b2df7e2088244b1fd624ab5c8a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25e46b2df7e2088244b1fd624ab5c8a8">&#9670;&#160;</a></span>IsSub()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Boolean CodeSmile.Editor.Asset.IsSub </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
 <a id="a34189275d622e3a864bc6dd7755704e7" name="a34189275d622e3a864bc6dd7755704e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34189275d622e3a864bc6dd7755704e7">&#9670;&#160;</a></span>Load&lt; T &gt;()</h2>
 
@@ -1825,7 +1563,7 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Returns whether this is a foreign asset. </p>
-<p>IsForeign IsNative </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Status.IsForeign Status.IsNative </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1875,7 +1613,7 @@ Object[]&#160;</td><td class="memItemRight" valign="bottom"><b>VisibleSubAssets<
 </div><div class="memdoc">
 
 <p>Returns whether this is a native asset. </p>
-<p>IsNative IsForeign </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Status.IsNative Status.IsForeign </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

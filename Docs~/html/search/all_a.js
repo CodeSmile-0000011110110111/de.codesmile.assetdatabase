@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['openexternal_0',['OpenExternal',['../class_code_smile_1_1_editor_1_1_asset.html#ab7e2a9f844ff33ae71ed2e838595a3f5',1,'CodeSmile.Editor.Asset.OpenExternal()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#af8920c1c9e7fa1a978711b6e8677c9e6',1,'CodeSmile.Editor.Asset.File.OpenExternal(Object obj, Int32 lineNumber=-1, Int32 columnNumber=-1)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#afb22df00b5d30aa6589aee37768b090e',1,'CodeSmile.Editor.Asset.File.OpenExternal(Int32 instanceId, Int32 lineNumber=-1, Int32 columnNumber=-1)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a57c009a71a6eb9d667edbd9533e39c74',1,'CodeSmile.Editor.Asset.File.OpenExternal(Path path, Int32 lineNumber=-1, Int32 columnNumber=-1)']]],
-  ['openfolder_1',['OpenFolder',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af64b4842b50d4b4f27f104d5446fc724',1,'CodeSmile::Editor::Asset::Path']]],
-  ['operator_20asset_2',['operator Asset',['../class_code_smile_1_1_editor_1_1_asset.html#a24218995519a37a552be70a9570ab050',1,'CodeSmile.Editor.Asset.operator Asset(Object obj)'],['../class_code_smile_1_1_editor_1_1_asset.html#ab4ccdcc9dcf31ae1763093d115ec405e',1,'CodeSmile.Editor.Asset.operator Asset(Path path)'],['../class_code_smile_1_1_editor_1_1_asset.html#a2742313dcf3b8cb2cbc6c5689cf262fe',1,'CodeSmile.Editor.Asset.operator Asset(GUID guid)']]],
-  ['operator_20object_3',['operator Object',['../class_code_smile_1_1_editor_1_1_asset.html#af1e4f184e2b3b531eb0bc198e1a872a8',1,'CodeSmile::Editor::Asset']]],
-  ['operator_20path_4',['operator Path',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a4c42ba5b99ade3bde6831389744facd6',1,'CodeSmile::Editor::Asset::Path']]],
-  ['operator_20string_5',['operator String',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a59c71a2a21ea4a18a206d316c453b44c',1,'CodeSmile::Editor::Asset::Path']]],
-  ['owningbundle_6',['OwningBundle',['../class_code_smile_1_1_editor_1_1_asset.html#a530cf1f8e3711f5a79e17ea7e8287155',1,'CodeSmile::Editor::Asset']]],
-  ['owningbundlevariant_7',['OwningBundleVariant',['../class_code_smile_1_1_editor_1_1_asset.html#af6af9d6020e714968abef76b87b15fd4',1,'CodeSmile::Editor::Asset']]]
+  ['namespaceprefix_0',['NamespacePrefix',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#a5cfcdd349d0c01c04b42b4511e052455',1,'CodeSmile::Editor::Asset::Database::CacheServer']]]
 ];

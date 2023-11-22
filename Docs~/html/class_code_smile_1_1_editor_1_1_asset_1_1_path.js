@@ -6,6 +6,7 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_path =
     [ "CreateFolders", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54", null ],
     [ "FileExists", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a45120a9e22334ca5a661497e6d49dcdc", null ],
     [ "FolderExists", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a9e9b6c5035f899da67368eb8cc8dc02e", null ],
+    [ "FromMeta", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3d6f24d0d508eb47e0ac7617143721c3", null ],
     [ "Get", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ab438c7de9e569da5b7f6e3aeffe69672", null ],
     [ "Get", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac4cac82a1d02fc6a2e1a7f8d0ed3b3ce", null ],
     [ "GetFolders", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a146f84cb727c39b80543e63cb048c490", null ],
@@ -21,6 +22,7 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_path =
     [ "ToString", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3eeb7945d8781f1065683f6cbd13ff95", null ],
     [ "ToStrings", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#acc77e6f0567435eb87bdc7787917cbd5", null ],
     [ "UniquifyFilename", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a455fdf98d1c76c3976fc3fdc35117fa8", null ],
+    [ "Asset", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a2cfd0e318b699406a5102035ed2f0c3d", null ],
     [ "DirectoryName", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a487aecd0d61cecfde3743f0b5dccdaf1", null ],
     [ "Exists", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ae39d2cba9c43048e14ac086f7cb1178a", null ],
     [ "ExistsInFileSystem", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a76047691f5fe8289a43efe77c4f735f1", null ],
@@ -35,5 +37,6 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_path =
     [ "FullPath", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af43d906b69cce455404770f60df21f92", null ],
     [ "FullProjectPath", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5e7f6ac00ab15ca043ba734273f5d792", null ],
     [ "Guid", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a70b71140fa1d44a4eb87190a55e0f592", null ],
+    [ "Meta", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5aa660c844fc7aaf4b0f1ffd5706e96b", null ],
     [ "UniqueFilePath", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a7a298c94667f2e77ec80d8eb6f5bb88f", null ]
 ];

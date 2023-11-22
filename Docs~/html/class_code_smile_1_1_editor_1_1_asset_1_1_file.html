@@ -155,6 +155,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1bb7f75d5d2dcadd2662987312e4afb4"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a1bb7f75d5d2dcadd2662987312e4afb4">Load&lt; T &gt;</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a1bb7f75d5d2dcadd2662987312e4afb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the first visible object of the given type from the asset at path. This usually is the main object but it could be any other visible sub-object, depending on the type.  <br /></td></tr>
 <tr class="separator:a1bb7f75d5d2dcadd2662987312e4afb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddaa5e5fcb90e485b2a35ec813b884e"><td class="memItemLeft" align="right" valign="top">static AssetDatabaseLoadOperation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a9ddaa5e5fcb90e485b2a35ec813b884e">LoadAsync</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path, Int64 localFileId)</td></tr>
+<tr class="memdesc:a9ddaa5e5fcb90e485b2a35ec813b884e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an object and its dependencies asynchronously.  <br /></td></tr>
+<tr class="separator:a9ddaa5e5fcb90e485b2a35ec813b884e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0217a4ff5746bd7c38900900fe5983c4"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a0217a4ff5746bd7c38900900fe5983c4">LoadMain&lt; T &gt;</a> (GUID guid)</td></tr>
 <tr class="memdesc:a0217a4ff5746bd7c38900900fe5983c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the main asset object for the guid. Commonly this is the only object of the asset, but there are assets that consist of multiple objects such as Mesh assets that may contain for example animations and materials.  <br /></td></tr>
 <tr class="separator:a0217a4ff5746bd7c38900900fe5983c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,26 +251,26 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  651</span>            {</div>
-<div class="line"><span class="lineno">  652</span>                ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));</div>
-<div class="line"><span class="lineno">  653</span> </div>
-<div class="line"><span class="lineno">  654</span>                <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  655</span>                {</div>
-<div class="line"><span class="lineno">  656</span>                    Database.StartAssetEditing();</div>
-<div class="line"><span class="lineno">  657</span>                    massAssetFileEditAction.Invoke();</div>
-<div class="line"><span class="lineno">  658</span>                }</div>
-<div class="line"><span class="lineno">  659</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  660</span>                {</div>
-<div class="line"><span class="lineno">  661</span>                    Debug.LogError($<span class="stringliteral">&quot;Exception during BatchEditing: {ex.Message}&quot;</span>);</div>
+<div class="fragment"><div class="line"><span class="lineno">  660</span>            {</div>
+<div class="line"><span class="lineno">  661</span>                ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));</div>
 <div class="line"><span class="lineno">  662</span> </div>
-<div class="line"><span class="lineno">  663</span>                    <span class="keywordflow">if</span> (rethrowExceptions)</div>
-<div class="line"><span class="lineno">  664</span>                        <span class="keywordflow">throw</span> ex; <span class="comment">// re-throw to caller</span></div>
-<div class="line"><span class="lineno">  665</span>                }</div>
-<div class="line"><span class="lineno">  666</span>                <span class="keywordflow">finally</span></div>
-<div class="line"><span class="lineno">  667</span>                {</div>
-<div class="line"><span class="lineno">  668</span>                    Database.StopAssetEditing();</div>
-<div class="line"><span class="lineno">  669</span>                }</div>
-<div class="line"><span class="lineno">  670</span>            }</div>
+<div class="line"><span class="lineno">  663</span>                <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  664</span>                {</div>
+<div class="line"><span class="lineno">  665</span>                    Database.StartAssetEditing();</div>
+<div class="line"><span class="lineno">  666</span>                    massAssetFileEditAction.Invoke();</div>
+<div class="line"><span class="lineno">  667</span>                }</div>
+<div class="line"><span class="lineno">  668</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  669</span>                {</div>
+<div class="line"><span class="lineno">  670</span>                    Debug.LogError($<span class="stringliteral">&quot;Exception during BatchEditing: {ex.Message}&quot;</span>);</div>
+<div class="line"><span class="lineno">  671</span> </div>
+<div class="line"><span class="lineno">  672</span>                    <span class="keywordflow">if</span> (rethrowExceptions)</div>
+<div class="line"><span class="lineno">  673</span>                        <span class="keywordflow">throw</span> ex; <span class="comment">// re-throw to caller</span></div>
+<div class="line"><span class="lineno">  674</span>                }</div>
+<div class="line"><span class="lineno">  675</span>                <span class="keywordflow">finally</span></div>
+<div class="line"><span class="lineno">  676</span>                {</div>
+<div class="line"><span class="lineno">  677</span>                    Database.StopAssetEditing();</div>
+<div class="line"><span class="lineno">  678</span>                }</div>
+<div class="line"><span class="lineno">  679</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,12 +317,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if moving the asset will be successful, false otherwise.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  459</span>            {</div>
-<div class="line"><span class="lineno">  460</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  461</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  462</span> </div>
-<div class="line"><span class="lineno">  463</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));</div>
-<div class="line"><span class="lineno">  464</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  468</span>            {</div>
+<div class="line"><span class="lineno">  469</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  470</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  471</span> </div>
+<div class="line"><span class="lineno">  472</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));</div>
+<div class="line"><span class="lineno">  473</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#aff937906355f27e0d7aa9e852c368dac">CodeSmile.Editor.Asset.CanMove()</a>.</p>
 
@@ -392,11 +395,11 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  509</span>            {</div>
-<div class="line"><span class="lineno">  510</span>                ThrowIf.ArgumentIsNull(obj, nameof(obj));</div>
-<div class="line"><span class="lineno">  511</span> </div>
-<div class="line"><span class="lineno">  512</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a1fa9049d9f42227b6feb919660e754cf">CanOpenInEditor</a>(obj.GetInstanceID());</div>
-<div class="line"><span class="lineno">  513</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  518</span>            {</div>
+<div class="line"><span class="lineno">  519</span>                ThrowIf.ArgumentIsNull(obj, nameof(obj));</div>
+<div class="line"><span class="lineno">  520</span> </div>
+<div class="line"><span class="lineno">  521</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset.html#a1fa9049d9f42227b6feb919660e754cf">CanOpenInEditor</a>(obj.GetInstanceID());</div>
+<div class="line"><span class="lineno">  522</span>            }</div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html_a1fa9049d9f42227b6feb919660e754cf"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html#a1fa9049d9f42227b6feb919660e754cf">CodeSmile.Editor.Asset.CanOpenInEditor</a></div><div class="ttdeci">Boolean CanOpenInEditor()</div><div class="ttdoc">Returns true if the asset can be opened (edited) by the Unity Editor itself.</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a1fa9049d9f42227b6feb919660e754cf">CodeSmile.Editor.Asset.CanOpenInEditor()</a>.</p>
@@ -453,19 +456,19 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if copying succeeded, false if it failed.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  437</span>            {</div>
-<div class="line"><span class="lineno">  438</span>                ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));</div>
-<div class="line"><span class="lineno">  439</span>                ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
-<div class="line"><span class="lineno">  440</span>                ThrowIf.AssetPathNotInDatabase(sourcePath);</div>
-<div class="line"><span class="lineno">  441</span>                ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);</div>
-<div class="line"><span class="lineno">  442</span> </div>
-<div class="line"><span class="lineno">  443</span>                var newDestPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);</div>
-<div class="line"><span class="lineno">  444</span>                newDestPath.CreateFolders();</div>
-<div class="line"><span class="lineno">  445</span> </div>
-<div class="line"><span class="lineno">  446</span>                var success = AssetDatabase.CopyAsset(sourcePath, newDestPath);</div>
-<div class="line"><span class="lineno">  447</span>                SetLastErrorMessage(success ? String.Empty : $<span class="stringliteral">&quot;failed to copy {sourcePath} to {newDestPath}&quot;</span>);</div>
-<div class="line"><span class="lineno">  448</span>                <span class="keywordflow">return</span> success;</div>
-<div class="line"><span class="lineno">  449</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  446</span>            {</div>
+<div class="line"><span class="lineno">  447</span>                ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));</div>
+<div class="line"><span class="lineno">  448</span>                ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
+<div class="line"><span class="lineno">  449</span>                ThrowIf.AssetPathNotInDatabase(sourcePath);</div>
+<div class="line"><span class="lineno">  450</span>                ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);</div>
+<div class="line"><span class="lineno">  451</span> </div>
+<div class="line"><span class="lineno">  452</span>                var newDestPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);</div>
+<div class="line"><span class="lineno">  453</span>                newDestPath.CreateFolders();</div>
+<div class="line"><span class="lineno">  454</span> </div>
+<div class="line"><span class="lineno">  455</span>                var success = AssetDatabase.CopyAsset(sourcePath, newDestPath);</div>
+<div class="line"><span class="lineno">  456</span>                SetLastErrorMessage(success ? String.Empty : $<span class="stringliteral">&quot;failed to copy {sourcePath} to {newDestPath}&quot;</span>);</div>
+<div class="line"><span class="lineno">  457</span>                <span class="keywordflow">return</span> success;</div>
+<div class="line"><span class="lineno">  458</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54">CodeSmile.Editor.Asset.Path.CreateFolders()</a>.</p>
 
@@ -735,12 +738,12 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  560</span>            {</div>
-<div class="line"><span class="lineno">  561</span>                <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">  562</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  563</span> </div>
-<div class="line"><span class="lineno">  564</span>                <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
-<div class="line"><span class="lineno">  565</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  569</span>            {</div>
+<div class="line"><span class="lineno">  570</span>                <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  571</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  572</span> </div>
+<div class="line"><span class="lineno">  573</span>                <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
+<div class="line"><span class="lineno">  574</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ae39d2cba9c43048e14ac086f7cb1178a">CodeSmile.Editor.Asset.Path.Exists</a>.</p>
 
@@ -1030,6 +1033,52 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a9ddaa5e5fcb90e485b2a35ec813b884e" name="a9ddaa5e5fcb90e485b2a35ec813b884e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ddaa5e5fcb90e485b2a35ec813b884e">&#9670;&#160;</a></span>LoadAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static AssetDatabaseLoadOperation CodeSmile.Editor.Asset.File.LoadAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Int64&#160;</td>
+          <td class="paramname"><em>localFileId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads an object and its dependencies asynchronously. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">localFileId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An AssetDatabaseLoadOperation instance to track progress.</dd></dl>
+
+</div>
+</div>
 <a id="a0217a4ff5746bd7c38900900fe5983c4" name="a0217a4ff5746bd7c38900900fe5983c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0217a4ff5746bd7c38900900fe5983c4">&#9670;&#160;</a></span>LoadMain&lt; T &gt;() <span class="overload">[1/2]</span></h2>
 
@@ -1259,13 +1308,13 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the move was successful.</dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  474</span>            {</div>
-<div class="line"><span class="lineno">  475</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  476</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  477</span> </div>
-<div class="line"><span class="lineno">  478</span>                destinationPath.CreateFolders();</div>
-<div class="line"><span class="lineno">  479</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.MoveAsset(sourcePath, destinationPath));</div>
-<div class="line"><span class="lineno">  480</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  483</span>            {</div>
+<div class="line"><span class="lineno">  484</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  485</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>                destinationPath.CreateFolders();</div>
+<div class="line"><span class="lineno">  488</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.MoveAsset(sourcePath, destinationPath));</div>
+<div class="line"><span class="lineno">  489</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a519d22822ac99cbd55d39308e1c70a54">CodeSmile.Editor.Asset.Path.CreateFolders()</a>.</p>
 
@@ -1474,12 +1523,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the rename succeeded, false otherwise. If false, Asset.LastErrorMessage provides a human-readable failure reason. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  496</span>            {</div>
-<div class="line"><span class="lineno">  497</span>                <span class="keywordflow">if</span> (assetPath == <span class="keyword">null</span> || newFileName == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  498</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  499</span> </div>
-<div class="line"><span class="lineno">  500</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));</div>
-<div class="line"><span class="lineno">  501</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">  505</span>            {</div>
+<div class="line"><span class="lineno">  506</span>                <span class="keywordflow">if</span> (assetPath == <span class="keyword">null</span> || newFileName == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  507</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  508</span> </div>
+<div class="line"><span class="lineno">  509</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));</div>
+<div class="line"><span class="lineno">  510</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a9a9e35eca234f519cbd7461ce0abff4f">CodeSmile.Editor.Asset.Rename()</a>.</p>
 

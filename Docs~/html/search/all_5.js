@@ -16,8 +16,9 @@ var searchData=
   ['forcereserialize_13',['ForceReserialize',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a80dd790542208401de88889ba2f7b0bd',1,'CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable&lt; Path &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a5da58c38315731e07512eb470de21088',1,'CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable&lt; String &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)']]],
   ['forcereserializeall_14',['ForceReserializeAll',['../class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a3320d5cd1681aaf5a02e877dc36954d5',1,'CodeSmile::Editor::Asset::Database']]],
   ['forcesave_15',['ForceSave',['../class_code_smile_1_1_editor_1_1_asset.html#abeb8f051ae05988e40bb28605feee111',1,'CodeSmile.Editor.Asset.ForceSave()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#acb3cb1d3ce3729fc5313b6e5edbf832e',1,'CodeSmile.Editor.Asset.File.ForceSave()']]],
-  ['fullassetspath_16',['FullAssetsPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a841433241f86127d541af49fbad080e3',1,'CodeSmile::Editor::Asset::Path']]],
-  ['fullpackagespath_17',['FullPackagesPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac308b1d859698357fc9c5e42d163a26e',1,'CodeSmile::Editor::Asset::Path']]],
-  ['fullpath_18',['FullPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af43d906b69cce455404770f60df21f92',1,'CodeSmile::Editor::Asset::Path']]],
-  ['fullprojectpath_19',['FullProjectPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5e7f6ac00ab15ca043ba734273f5d792',1,'CodeSmile::Editor::Asset::Path']]]
+  ['frommeta_16',['FromMeta',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a3d6f24d0d508eb47e0ac7617143721c3',1,'CodeSmile::Editor::Asset::Path']]],
+  ['fullassetspath_17',['FullAssetsPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a841433241f86127d541af49fbad080e3',1,'CodeSmile::Editor::Asset::Path']]],
+  ['fullpackagespath_18',['FullPackagesPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ac308b1d859698357fc9c5e42d163a26e',1,'CodeSmile::Editor::Asset::Path']]],
+  ['fullpath_19',['FullPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#af43d906b69cce455404770f60df21f92',1,'CodeSmile::Editor::Asset::Path']]],
+  ['fullprojectpath_20',['FullProjectPath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5e7f6ac00ab15ca043ba734273f5d792',1,'CodeSmile::Editor::Asset::Path']]]
 ];
