@@ -198,6 +198,13 @@ namespace CodeSmile.Editor
 				new(AssetDatabase.AssetPathToGUID(path, options));
 
 			/// <summary>
+			/// Returns the .meta file path from a path to an asset.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Path GetMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, what were they thinking coming up with that name??
+
+			/// <summary>
 			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
 			///     characters and it isn't too long.
 			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
