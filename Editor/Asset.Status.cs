@@ -36,6 +36,12 @@ namespace CodeSmile.Editor
 		[ExcludeFromCodeCoverage] public Boolean IsNativeAsset => IsNative(m_MainObject);
 
 		/// <summary>
+		///     Returns true if this is a scene asset.
+		/// </summary>
+		[ExcludeFromCodeCoverage]
+		public Boolean IsScene => MainObjectType.Equals(typeof(SceneAsset));
+
+		/// <summary>
 		///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
 		///     the asset file exists then you need to Import() the asset.
 		///     Unlike AssetDatabase, will not throw a NullRef if you pass null.

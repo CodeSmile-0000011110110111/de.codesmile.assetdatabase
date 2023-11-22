@@ -32,10 +32,11 @@ namespace CodeSmile.Editor
 				m_MainObject = value;
 			}
 		}
+
 		/// <summary>
 		///     Returns the type of the main asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage] public Type MainType => GetMainType(m_AssetPath);
+		[ExcludeFromCodeCoverage] public Type MainObjectType => GetMainType(m_AssetPath);
 
 		/// <summary>
 		///     Returns the path to the asset (file or folder).

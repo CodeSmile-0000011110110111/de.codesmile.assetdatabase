@@ -14,13 +14,13 @@ namespace CodeSmile.Editor
 		///     Loads and returns all sub objects the asset is comprised of.
 		///     NOTE: Whether the main object is included in this list depends on the type of asset.
 		/// </summary>
-		public Object[] SubAssets => SubAsset.LoadAll(m_AssetPath);
+		public Object[] SubAssets => IsScene ? new Object[0] : SubAsset.LoadAll(m_AssetPath);
 
 		/// <summary>
 		///     Loads and returns only those asset objects that are shown in the project view.
 		///     NOTE: Does NOT include the main asset!
 		/// </summary>
-		public Object[] VisibleSubAssets => SubAsset.LoadVisible(m_AssetPath);
+		public Object[] VisibleSubAssets => IsScene ? new Object[0] : SubAsset.LoadVisible(m_AssetPath);
 
 		/// <summary>
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
@@ -109,6 +109,7 @@ namespace CodeSmile.Editor
 			///     Loads all sub-asset objects of an asset.
 			///     NOTE: Whether the main object is included in this list depends on the type of asset,
 			///     and whether onlyVisible is true. (Details still unclear - please ask!)
+			///     CAUTION: calling this on scene assets is not supported (error messages in console).
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
@@ -118,6 +119,7 @@ namespace CodeSmile.Editor
 			///     Loads only the visible (representation) sub-asset objects of an asset.
 			///     NOTE: Whether the main object is included in this list depends on the type of asset,
 			///     and whether onlyVisible is true. (Details still unclear - please ask!)
+			///     CAUTION: calling this on scene assets is not supported (error messages in console).
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
