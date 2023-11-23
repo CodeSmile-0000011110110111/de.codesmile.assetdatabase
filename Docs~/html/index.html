@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>de.codesmile.editor.assetdatabase: Main Page</title>
+<title>de.codesmile.editor.assetdatabase: CodeSmile AssetDatabase</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,10 +90,110 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">de.codesmile.editor.assetdatabase Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="namespace_code_smile.html">CodeSmile</a> AssetDatabase </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. 100% covered by tests.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Quick Introduction</h1>
+<p>You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The API offers both explicit and some implicit operations.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Working with Assets the way it was meant to be :)</h2>
+<div class="fragment"><div class="line">// Create new asset of a UnityEngine.Object instance (default extension: &quot;.asset&quot;):</div>
+<div class="line">Asset objAsset = Asset.Create(obj, &quot;Assets/Data/MySOAsset.asset&quot;);</div>
+<div class="line">Asset objAsset = Asset.Create(obj, &quot;Assets/Data/MySOAsset.asset&quot;, overwriteExisting: true);</div>
+<div class="line">Asset objAsset = new Asset(obj, &quot;Assets/Data/MySOAsset.asset&quot;); // Create asset ctor</div>
+<div class="line"> </div>
+<div class="line">// Load asset from an asset path:</div>
+<div class="line">Asset objAsset = new Asset(&quot;Assets/Example/MySOAsset.asset&quot;);</div>
+<div class="line">Asset objAsset = (Asset.Path)&quot;Assets/Example/MySOAsset.asset&quot;; // implicit conversion</div>
+<div class="line"> </div>
+<div class="line">// Load asset from an asset GUID</div>
+<div class="line">var guid = objAsset.Guid;</div>
+<div class="line">Asset guidAsset = new Asset(guid);</div>
+<div class="line">Asset guidAsset = guid; // implicit conversion</div>
+<div class="line"> </div>
+<div class="line">// Load asset from an existing asset instance:</div>
+<div class="line">Asset existingAsset = new Asset(obj);</div>
+<div class="line">Asset existingAsset = obj; // implicit conversion</div>
+<div class="line"> </div>
+<div class="line">// Get the asset&#39;s path, object and guid:</div>
+<div class="line">Asset.Path path = objAsset.AssetPath;</div>
+<div class="line">UnityEngine.Object obj = objAsset.MainObject;</div>
+<div class="line">var mySO = objAsset as MyScriptableObject; // implicit conversion + cast</div>
+<div class="line">GUID guid = objAsset.Guid;</div>
+<div class="line"> </div>
+<div class="line">// Save modifications to the object:</div>
+<div class="line">(objAsset as MyScriptableObject).BobbyBrown = &quot;My teeth is shiny!&quot;;</div>
+<div class="line">objAsset.ForceSave(); // calls SetDirty on the object before saving</div>
+<div class="line">// (dirty is not for Bobby but the script-only property change requires SetDirty) </div>
+<div class="line"> </div>
+<div class="line">// save object if it was marked dirty, otherwise skips serialization</div>
+<div class="line">objAsset.Save();</div>
+<div class="line"> </div>
+<div class="line">// Rename the asset file:</div>
+<div class="line">objAsset.Rename(&quot;different file name&quot;);</div>
+<div class="line"> </div>
+<div class="line">// Make a copy, will create non-existing folders:</div>
+<div class="line">Asset copyAsset = objAsset.Copy(&quot;Assets/folder/subfolder/copied.asset&quot;);</div>
+<div class="line"> </div>
+<div class="line">// You can also move the asset to a non-existing path:</div>
+<div class="line">objAsset.Move(&quot;Assets/folder/subfolder/moved.asset&quot;);</div>
+<div class="line"> </div>
+<div class="line">// Delete the asset file from disk: </div>
+<div class="line">objAsset.Delete(); // also: objAsset.Trash()</div>
+<div class="line">objAsset = null;</div>
+</div><!-- fragment --><p>There's a whole lot more and it's all as simple as that PLUS extra error checking and safety. For instance, batch editing ... yeah, you know you HAVE to wrap it in try/finally but how often did you NOT do it?</p>
+<p>Here it's guaranteed:</p>
+<div class="fragment"><div class="line">Asset.BatchEditing(() =&gt; {</div>
+<div class="line">    // your complex, mass asset editing code safely wrapped in try/finally ...</div>
+<div class="line">});</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+Notable changes / additions</h1>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Asset.Path</h2>
+<p>You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to create the folders in a path, rename the file, and more more more ...</p>
+<p>Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW this happened to you too, right?</p>
+<p>Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one single backslash.</p>
+<p>The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.</p>
+<div class="fragment"><div class="line">Asset.Path assetPath = &quot;Assets/subfolder/myfile.asset&quot;; // implicit conversion</div>
+<div class="line">Asset.Path assetPath = &quot;myfile.asset&quot;; // ERROR: missing &#39;Assets&#39;</div>
+<div class="line">Asset.Path assetPath = &quot;Assets/subf?lder/my|file.asset&quot;; // ERROR: illegal chars</div>
+<div class="line"> </div>
+<div class="line">string strPath = assetPath; // implicit conversion</div>
+<div class="line"> </div>
+<div class="line">strPath = &quot;C:\\Users\\Urso Clever\\Desktop\\MyPorject\\Assets\\myfile.asset&quot;;</div>
+<div class="line">AssetDatabase.CreateAsset(obj, strPath); // ERROR: used an absolute path, stupid!</div>
+<div class="line"> </div>
+<div class="line">Asset.Create(obj, strPath); // this just works - it&#39;s magic, maaagic!</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+Where is Refresh() ?</h2>
+<p>Oh, don't get me started. Something ain't quite right? Add another AssetDatabase.Refresh(). <a href="https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/">OMG WTF!</a></p>
+<p>I always wanted this method renamed. Initially I considered the true and honest name: <code>ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()</code></p>
+<p>But I decided to just call it: <code>Asset.Database.ImportAll()</code></p>
+<p>It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical ' refresh'.</p>
+<p>It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Why the GPL 3.0 license?</h1>
+<p>This software solely provides code used within the Unity editor application. It is therefore not being built into executables (known as 'builds') created by the Unity editor application.</p>
+<p>Thus, by merely using this software in your Unity project, the GPL license does not affect or alter your right to distribute 'builds' of your project. You do NOT have to publish your entire Unity project (source) itself under the GPL license.</p>
+<p>HOWEVER, it does require that any editor code (scripts) that use this software be released under the GPL license but ONLY if you distribute said editor code.</p>
+<p>Sharing the Unity project within your team / company is not distributing! BUT if you were to create an editor tool that uses this software, and you were to distribute that editor tool, you would have to distribute your editor tool under the same GPL 3.0 license.</p>
+<p>In essence, my motivation is this:</p>
+<ul>
+<li>I want to share my work, for free, in source form, to everyone's benefit.</li>
+<li>I want to discourage commercial editor tool developers from basing their work on this software for the simple reason that I may do so myself. (You cannot publish assets containing GPL licensed software on the Unity Asset Store. You can charge clients for any work you do with this software.)</li>
+<li>I want to encourage commercial software developers to obtain a more permissive license for this software, for example by purchasing rights to this software either via the Unity Asset Store or directly from me. This encouragement is mainly because the separation of editor vs runtime scripts can be somewhat fluid, and companies ought to to err on the safe side. Given how much work (aka 'money') this software can safe even a small team it is certainly worth to invest in it.</li>
+</ul>
+<p>I sincerely hope you understand my reasons for applying the GPL 3.0 license.</p>
+<p>Please contact me if you wish to license the software under different terms, no matter your intention. Generally feel free to contact me if you have any questions or feedback.</p>
+<p>Thanks for your time and understanding!</p>
+<ul>
+<li>Steffen aka <a class="el" href="namespace_code_smile.html">CodeSmile</a></li>
+<li><a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en@'+'st'+'eff'+'en'+'itt'+'er'+'hei'+'m.'+'de'; return false;">Email</a> / <a href="https://discord.gg/JN3Jz8qkeV">Discord</a> </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
