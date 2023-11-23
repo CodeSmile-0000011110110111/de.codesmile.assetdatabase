@@ -97,10 +97,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> It's Unity's AssetDatabase except now it's clean, concise, consistent and powerful.</p>
 <h1><a class="anchor" id="examples"></a>
 Examples</h1>
-<p>What used to be 20+ lines of code is now two. ;)</p>
+<p>My name is <a class="el" href="namespace_code_smile.html">CodeSmile</a> for a reason. Read on. :)</p>
 <h2><a class="anchor" id="load-or-create-asset"></a>
 Load or create asset</h2>
-<p>This is the original code, a common use case from the Unity forum. Notice the extra steps involved to create the asset and the folders. </p><div class="fragment"><div class="line">public static LevelData GetLevelDataAsset(int level)</div>
+<p>A common use case: if an asset cannot be loaded, create it. That only slightly complicates things with the AssetDatabase:</p>
+<div class="fragment"><div class="line">public static LevelData GetLevelDataAsset(int level)</div>
 <div class="line">{</div>
 <div class="line">  string assetPath = &quot;Assets/DataStore/Level{level}/LevelData.asset&quot;;</div>
 <div class="line"> </div>
@@ -121,7 +122,8 @@ Load or create asset</h2>
 <div class="line">  </div>
 <div class="line">  return levelData;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>With <a class="el" href="namespace_code_smile.html">CodeSmile</a> AssetDatabase the same code is just these two lines: </p><div class="fragment"><div class="line">public static LevelData GetLevelDataAsset(int level)</div>
+</div><!-- fragment --><p>Now what used to be 20+ lines of code is just this:</p>
+<div class="fragment"><div class="line">public static LevelData GetLevelDataAsset(int level)</div>
 <div class="line">{</div>
 <div class="line">    string assetPath = &quot;Assets/DataStore/Level{level}/LevelData.asset&quot;;</div>
 <div class="line">    return Asset.LoadOrCreate&lt;LevelData&gt;(assetPath, () =&gt; CreateInstance&lt;LevelData&gt;());</div>
@@ -131,11 +133,16 @@ Load an asset</h2>
 <p>Easy:</p>
 <p><code>Asset levelData = "Assets/Example/LevelData.asset";</code></p>
 <p>Wait .. wut?? :)</p>
-<p>Ah, I see, you have a GUID? In that case it's:</p>
+<p>I see, you have a GUID? In that case:</p>
 <p><code>Asset levelData = thisIsYourGuid;</code></p>
-<p>Likewise if you already have an asset object instance:</p>
+<p>Or if you already have an instance loaded:</p>
 <p><code>Asset levelData = yourAssetObject;</code></p>
-<p>My name is <a class="el" href="namespace_code_smile.html">CodeSmile</a> for a reason. :)</p>
+<p>The opposite also works, of course:</p>
+<p><code>UnityEngine.Object obj = asset;</code></p>
+<p>Not the right type? Just cast it:</p>
+<p><code>var levelData = (LevelData)asset;</code></p>
+<p>The Asset instance provides you access to everything you might want to do with an asset. Save, copy, rename, delete, you name it.</p>
+<p>You also get an asset's Labels, GUID, FileId, path, .meta path and so on. It's right where you expect it.</p>
 <h2><a class="anchor" id="get-an-assets-path"></a>
 Get an asset's path</h2>
 <p>Assuming you have an <code>asset</code> instance:</p>
@@ -154,55 +161,22 @@ Get an asset's path</h2>
 <div class="line">String assetFileName = assetPath.FileName;</div>
 <div class="line">String assetFileNameNoExt = assetPath.FileNameWithoutExtension;</div>
 <div class="line">String assetExtension = assetPath.Extension;</div>
-</div><!-- fragment --><h2><a class="anchor" id="asset-is-an-instance"></a>
-Asset is an instance</h2>
-<div class="fragment"><div class="line">// Create new asset of a UnityEngine.Object instance:</div>
-<div class="line">Asset objAsset = new Asset(obj, &quot;Assets/Data/MySOAsset.asset&quot;);</div>
-<div class="line"> </div>
-<div class="line">// Load asset from an existing asset instance:</div>
-<div class="line">Asset existingAsset = new Asset(obj);</div>
-<div class="line">Asset existingAsset = obj; // implicit conversion</div>
-<div class="line"> </div>
-<div class="line">// Get the asset&#39;s path, object and guid:</div>
-<div class="line">Asset.Path path = objAsset.AssetPath;</div>
-<div class="line">UnityEngine.Object obj = objAsset.MainObject;</div>
-<div class="line">var mySO = objAsset as MyScriptableObject; // implicit conversion + cast</div>
-<div class="line">GUID guid = objAsset.Guid;</div>
-<div class="line"> </div>
-<div class="line">// Save modifications to the object:</div>
-<div class="line">(objAsset as MyScriptableObject).BobbyBrown = &quot;My teeth is shiny!&quot;;</div>
-<div class="line">objAsset.ForceSave(); // calls SetDirty on the object before saving</div>
-<div class="line">// (dirty is not for Bobby but the script-only property change requires SetDirty) </div>
-<div class="line"> </div>
-<div class="line">// save object if it was marked dirty, otherwise skips serialization</div>
-<div class="line">objAsset.Save();</div>
-<div class="line"> </div>
-<div class="line">// Rename the asset file:</div>
-<div class="line">objAsset.Rename(&quot;different file name&quot;);</div>
-<div class="line"> </div>
-<div class="line">// Make a copy, will create non-existing folders:</div>
-<div class="line">Asset copyAsset = objAsset.Copy(&quot;Assets/folder/subfolder/copied.asset&quot;);</div>
-<div class="line"> </div>
-<div class="line">// You can also move the asset to a non-existing path:</div>
-<div class="line">objAsset.Move(&quot;Assets/folder/subfolder/moved.asset&quot;);</div>
-<div class="line"> </div>
-<div class="line">// Delete the asset file from disk: </div>
-<div class="line">objAsset.Delete(); // also: objAsset.Trash()</div>
-<div class="line">objAsset = null;</div>
-</div><!-- fragment --><p>There's a whole lot more and it's all as simple as that PLUS extra error checking and safety. For instance, batch editing ... yeah, you know you HAVE to wrap it in try/finally but how often did you NOT do it?</p>
-<p>Here it's guaranteed:</p>
-<div class="fragment"><div class="line">Asset.BatchEditing(() =&gt; {</div>
-<div class="line">    // your complex, mass asset editing code safely wrapped in try/finally ...</div>
-<div class="line">});</div>
-</div><!-- fragment --><h1><a class="anchor" id="license"></a>
-License</h1>
-<p>This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you build using this software requires the entire work to be published under the GPL.</p>
-<p>This software will also be available on the Unity Asset Store under the Asset Store EULA.</p>
-<p>If you wish to license this software under different terms please contact me!</p>
-<ul>
-<li>Steffen aka <a class="el" href="namespace_code_smile.html">CodeSmile</a></li>
-<li><a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en@'+'st'+'eff'+'en'+'itt'+'er'+'hei'+'m.'+'de'; return false;">Email</a> / <a href="https://discord.gg/JN3Jz8qkeV" target="_blank">Discord</a></li>
-</ul>
+</div><!-- fragment --><h2><a class="anchor" id="be-nice-be-concise"></a>
+Be nice, be concise!</h2>
+<p>Thus far you were forced to write rather verbose, convoluted code. This package will improve your work-smile balance. :)</p>
+<hr  />
+<p><code>string[] paths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);</code></p>
+<p><code>string[] paths = Asset.Bundle.GetPaths(bundleName, assetName);</code></p>
+<hr  />
+<p><code>uint count = AssetDatabase.UnregisterCustomDependencyPrefixFilter(prefix);</code></p>
+<p><code>uint count = Asset.Dependency.Remove(prefix);</code></p>
+<hr  />
+<p><code>var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);</code></p>
+<p><code>var metaPath = Asset.Path.ToMeta(assetPath);</code></p>
+<h1><a class="anchor" id="documentation"></a>
+Documentation</h1>
+<p><a href="https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html" target="_blank">Manual + API Reference</a></p>
+<p><a href="https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing" target="_blank">AssetDatabase to CodeSmile AssetDatabase</a> This is a spreadsheet that maps all AssetDatabase methods to their counterpart. Notice the logical grouping and simple, consistent naming scheme.</p>
 <h1><a class="anchor" id="requirements"></a>
 Requirements</h1>
 <ul>
@@ -218,38 +192,15 @@ Installation</h1>
 <li>Enter this URL: <code><a href="https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetinspector.git">https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetinspector.git</a></code></li>
 </ul>
 <p>This package is currently not available on OpenUPM.</p>
-<h1><a class="anchor" id="documentation"></a>
-Documentation</h1>
-<p><a href="https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html" target="_blank">Manual + API Reference</a></p>
-<p>tbd: spreadsheet</p>
-<h1><a class="anchor" id="quick-introduction"></a>
-Quick Introduction</h1>
-<p>You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The API offers both explicit and some implicit operations.</p>
-<h1><a class="anchor" id="notable-changes--additions"></a>
-Notable changes / additions</h1>
-<h2><a class="anchor" id="assetpath"></a>
-Asset.Path</h2>
-<p>You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid, relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to create the folders in a path, rename the file, and more more more ...</p>
-<p>Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW this happened to you too, right?</p>
-<p>Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one single backslash.</p>
-<p>The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.</p>
-<div class="fragment"><div class="line">Asset.Path assetPath = &quot;Assets/subfolder/myfile.asset&quot;; // implicit conversion</div>
-<div class="line">Asset.Path assetPath = &quot;myfile.asset&quot;; // ERROR: missing &#39;Assets&#39;</div>
-<div class="line">Asset.Path assetPath = &quot;Assets/subf?lder/my|file.asset&quot;; // ERROR: illegal chars</div>
-<div class="line"> </div>
-<div class="line">string strPath = assetPath; // implicit conversion</div>
-<div class="line"> </div>
-<div class="line">strPath = &quot;C:\\Users\\Urso Clever\\Desktop\\MyPorject\\Assets\\myfile.asset&quot;;</div>
-<div class="line">AssetDatabase.CreateAsset(obj, strPath); // ERROR: used an absolute path, stupid!</div>
-<div class="line"> </div>
-<div class="line">Asset.Create(obj, strPath); // this just works - it&#39;s magic, maaagic!</div>
-</div><!-- fragment --><h2><a class="anchor" id="where-is-refresh-"></a>
-Where is Refresh() ?</h2>
-<p>Oh, don't get me started. Something ain't quite right? Add another AssetDatabase.Refresh(). <a href="https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/" target="_blank">OMG WTF!</a></p>
-<p>I always wanted this method renamed. Initially I considered the true and honest name: <code>ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()</code></p>
-<p>But I decided to just call it: <code>Asset.Database.ImportAll()</code></p>
-<p>It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical ' refresh'.</p>
-<p>It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does. </p>
+<h1><a class="anchor" id="license"></a>
+License</h1>
+<p>This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you build using this software requires the entire work to be published under the GPL.</p>
+<p>This software will also be available on the Unity Asset Store under the Asset Store EULA.</p>
+<p>If you wish to license this software under different terms please contact me!</p>
+<ul>
+<li>Steffen aka <a class="el" href="namespace_code_smile.html">CodeSmile</a></li>
+<li><a href="#" onclick="location.href='mai'+'lto:'+'ste'+'ff'+'en@'+'st'+'eff'+'en'+'itt'+'er'+'hei'+'m.'+'de'; return false;">Email</a> / <a href="https://discord.gg/JN3Jz8qkeV" target="_blank">Discord</a> </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
