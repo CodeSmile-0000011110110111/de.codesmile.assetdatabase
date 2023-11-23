@@ -1,5 +1,7 @@
-<map id="CodeSmile.Editor.Asset.Path" name="CodeSmile.Editor.Asset.Path">
-<area shape="rect" id="node1" title="Represents a relative path to an asset file or folder, typically under &#39;Assets&#39; or &#39;Packages&#39;...." alt="" coords="56,80,248,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,139,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="163,5,304,32"/>
+<map id="Asset.Path" name="Asset.Path">
+<area shape="rect" id="Node000001" title="Represents a relative path to an asset file or folder, typically under &#39;Assets&#39; or &#39;Packages&#39;...." alt="" coords="53,123,235,939"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,131,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,88,83,122,78,123,73,89"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="155,5,287,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,89,211,123,206,122,211,88"/>
 </map>

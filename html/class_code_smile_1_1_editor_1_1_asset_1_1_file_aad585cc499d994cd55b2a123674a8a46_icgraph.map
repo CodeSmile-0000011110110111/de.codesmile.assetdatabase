@@ -1,0 +1,7 @@
+<map id="Create" name="Create">
+<area shape="rect" id="Node000001" title="Creates (saves) a new asset file at the target path. Also creates all non&#45;existing folders in the pat..." alt="" coords="252,31,311,57"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset.html#a4eb9736b74290d8c324d9d1a3fb0796a" title="Returns an instance by creating (saving) the object as an asset file at the given path...." alt="" coords="5,5,204,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,40,202,35,202,30,237,35"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file.html#aafa3d6fab63beb8b4ea1166456e994b9" title="Tries to load the object at path. If it cannot be loaded, it will be created using the Object instanc..." alt="" coords="38,56,171,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,53,172,62,171,57,237,48"/>
+</map>

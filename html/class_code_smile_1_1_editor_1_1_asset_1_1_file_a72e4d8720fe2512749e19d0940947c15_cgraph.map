@@ -1,0 +1,5 @@
+<map id="CanOpenInEditor" name="CanOpenInEditor">
+<area shape="rect" id="Node000001" title="Returns true if the given object can be opened (edited) by the Unity editor." alt="" coords="5,13,125,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset.html#ac1b2c03d50954442d3462c97a5dc8882" title="Returns true if the asset can be opened (edited) by the Unity Editor itself." alt="" coords="173,5,360,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,24,158,24,158,29,125,29"/>
+</map>

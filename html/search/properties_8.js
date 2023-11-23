@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['mainobject_0',['MainObject',['../class_code_smile_1_1_editor_1_1_asset_aa5f15533193c9207a0313f1660808fa1.html#aa5f15533193c9207a0313f1660808fa1',1,'CodeSmile::Editor::Asset']]],
-  ['mainobjecttype_1',['MainObjectType',['../class_code_smile_1_1_editor_1_1_asset.html#affaadb43c8cc8629439cbe9577d95174',1,'CodeSmile::Editor::Asset']]],
-  ['meta_2',['Meta',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a5aa660c844fc7aaf4b0f1ffd5706e96b',1,'CodeSmile::Editor::Asset::Path']]],
-  ['metapath_3',['MetaPath',['../class_code_smile_1_1_editor_1_1_asset.html#aa72f011daf759ecfa382ba71cc0009e6',1,'CodeSmile::Editor::Asset']]]
+  ['mainobject_0',['MainObject',['../class_code_smile_1_1_editor_1_1_asset.html#ab39ec1f49ab79e8ae84c6a53a2458f2d',1,'CodeSmile::Editor::Asset']]],
+  ['mainobjecttype_1',['MainObjectType',['../class_code_smile_1_1_editor_1_1_asset.html#a15e35df5acbfe3751310d7fd241a6295',1,'CodeSmile::Editor::Asset']]],
+  ['metapath_2',['metapath',['../class_code_smile_1_1_editor_1_1_asset.html#a0084f5ad8a13c505013748101a81b1df',1,'CodeSmile.Editor.Asset.MetaPath'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a0084f5ad8a13c505013748101a81b1df',1,'CodeSmile.Editor.Asset.Path.MetaPath']]]
 ];
