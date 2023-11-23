@@ -5,6 +5,7 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using UnityEditor;
 using UnityEngine;
 
 public class AssetPathTests : AssetTestBase
@@ -144,11 +145,14 @@ public class AssetPathTests : AssetTestBase
 	public void AssetPath_NotAProjectPath_Throws(String path) =>
 		Assert.Throws<ArgumentException>(() => new Asset.Path(path));
 
-	[Test] public void FolderPath_WithAssetsFolder_SameAsInput()
+	[Test] public void DirectoryName_ReturnsRelativePath() =>
+		Assert.AreEqual(TestSubFoldersPath, TestSubFoldersAssetPath.FolderPath);
+
+	[Test] public void FolderPath_WithAssetsFolder_IsNull()
 	{
 		var assetPath = new Asset.Path("Assets");
 
-		Assert.AreEqual(assetPath, assetPath.FolderPath);
+		Assert.AreEqual(null, assetPath.FolderPath);
 	}
 
 	[Test] public void FolderPath_WithValidSubFoldersFilePath_ReturnsFolderOfTheFile()
@@ -168,25 +172,9 @@ public class AssetPathTests : AssetTestBase
 
 		var assetPath = new Asset.Path(testPath);
 
-		Assert.AreEqual(testPath, assetPath.FolderPath);
 		Assert.AreEqual(guid, assetPath.Guid);
 	}
 
-	[ExcludeFromCodeCoverage] // code coverage considers the 'fp' variable unused because property throws
-	[Test] public void FolderPath_WithNonExistingPath_Throws()
-	{
-		var folderPath = "Assets/path/to/folder";
-		Assert.Throws<InvalidOperationException>(() =>
-		{
-			var path = new Asset.Path(folderPath);
-			var fp = path.FolderPath;
-		});
-		Assert.Throws<InvalidOperationException>(() =>
-		{
-			var path = new Asset.Path(folderPath + "/with.file");
-			var fp = path.FolderPath;
-		});
-	}
 
 	[TestCase("Assets", "", "Assets")]
 	[TestCase("Assets/Folder", "nope", "Assets/nope")]

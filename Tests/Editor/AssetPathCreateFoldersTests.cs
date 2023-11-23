@@ -11,7 +11,6 @@ public class AssetPathCreateFoldersTests : AssetTestBase
 	[Test] public void CreateFolders_NullPath_Throws() =>
 		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
 
-	[TestCase("Assets")]
 	[TestCase(TestSubFoldersPath)]
 	[TestCase("Assets/some.file")]
 	[TestCase(TestSubFoldersPath + "/fn.ext")]
@@ -19,15 +18,14 @@ public class AssetPathCreateFoldersTests : AssetTestBase
 	{
 		// create the folder first
 		var assetPath = (Asset.Path)dirPath;
-		assetPath.CreateFolders();
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
+		var createdGuid = assetPath.CreateFolders();
+		Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
 
 		var folderGuid = assetPath.CreateFolders();
 
 		Assert.False(folderGuid.Empty());
-		// we test for "assumptive" folder because some test cases include paths to a non-existing file
-		Assert.AreEqual(assetPath.FolderPathAssumptive.Guid, folderGuid);
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPathAssumptive));
+		Assert.AreEqual(createdGuid, folderGuid);
+		Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
 	}
 
 	[Test] public void CreateFolders_InvalidPath_Throws()

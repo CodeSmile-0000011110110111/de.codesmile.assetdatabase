@@ -26,6 +26,11 @@ namespace CodeSmile.Editor
 		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
 
 		/// <summary>
+		///     Removes all labels from the asset.
+		/// </summary>
+		public void ClearLabels() => Label.ClearAll(m_MainObject);
+
+		/// <summary>
 		///     Adds a label to the asset.
 		/// </summary>
 		/// <param name="label"></param>
@@ -36,11 +41,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="labels"></param>
 		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
-
-		/// <summary>
-		///     Clears the asset's labels.
-		/// </summary>
-		public void ClearLabels() => Label.ClearAll(m_MainObject);
 
 		/// <summary>
 		///     Groups all asset label related static methods.

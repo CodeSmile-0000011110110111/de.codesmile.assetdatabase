@@ -44,10 +44,23 @@ namespace CodeSmile.Editor
 		/// <example>
 		///     <code>
 		/// // implicit conversion and loads the asset, neat ey? :)
-		/// Asset asset = "Assets/Folder/MyAsset.asset";
+		/// Asset asset = new Path("Assets/Folder/MyAsset.asset");
 		/// </code>
 		/// </example>
 		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
+
+		/// <summary>
+		///     Implicit conversion of string path to an asset instance.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		/// // implicit conversion and loads the asset, neat ey? :)
+		/// Asset asset = "Assets/Folder/MyAsset.asset";
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(string path) => (Path)path; // implicit forward to Asset(Path)
 
 		/// <summary>
 		///     Implicit conversion of GUID to an asset instance.

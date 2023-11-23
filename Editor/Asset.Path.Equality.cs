@@ -38,7 +38,15 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			public override Boolean Equals(Object obj) => Equals(obj is Path path ? path : obj is String);
+			public override Boolean Equals(Object obj)
+			{
+				if (obj is Path path)
+					return Equals(path);
+				if (obj is String str)
+					return Equals(str);
+
+				return false;
+			}
 
 			/// <summary>
 			///     Returns the internal path string's hash code.

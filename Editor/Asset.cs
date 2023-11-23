@@ -36,17 +36,19 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the type of the main asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage] public Type MainObjectType => GetMainType(m_AssetPath);
+		public Type MainObjectType => GetMainType(m_AssetPath);
 
 		/// <summary>
 		///     Returns the path to the asset (file or folder).
 		/// </summary>
+		/// <see cref="MetaPath" />
 		public Path AssetPath => m_AssetPath;
 
 		/// <summary>
 		///     Returns the path to the .meta file for the asset.
 		/// </summary>
-		public Path MetaPath => Path.GetMeta(m_AssetPath);
+		/// <see cref="AssetPath" />
+		public Path MetaPath => Path.ToMeta(m_AssetPath);
 
 		/// <summary>
 		///     Returns the asset's GUID.

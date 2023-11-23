@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -67,12 +66,12 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns the path to the .meta file if the path represents an asset file.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public Path Meta => GetMeta(this);
+			[ExcludeFromCodeCoverage] public Path MetaPath => ToMeta(this);
 
 			/// <summary>
 			///     Returns the path to the asset file if the path represents a .meta file.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public Path Asset => FromMeta(this);
+			[ExcludeFromCodeCoverage] public Path AssetPath => FromMeta(this);
 
 			/// <summary>
 			///     Returns the extension of the file path.
@@ -90,11 +89,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			[ExcludeFromCodeCoverage] public String FileNameWithoutExtension =>
 				System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
-
-			/// <summary>
-			///     Returns the directory name.
-			/// </summary>
-			public String DirectoryName => System.IO.Path.GetDirectoryName(m_RelativePath).ToForwardSlashes();
 
 			/// <summary>
 			///     Returns the path to the project's 'Assets' subfolder.
@@ -117,61 +111,23 @@ namespace CodeSmile.Editor
 			public String FullPath => System.IO.Path.GetFullPath(m_RelativePath).ToForwardSlashes();
 
 			/// <summary>
-			///     Returns the names of all folders in the path.
+			///     Returns the names of all subfolders in the current directory.
+			///     If the path points to a file it returns an empty array, use "path.FolderPath.SubFolders"
+			///     in this case.
 			/// </summary>
-			public String[] Folders => GetFolders(this);
+			public String[] SubFolders => GetSubFolders(this);
 
 			/// <summary>
-			///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
-			///     CAUTION: The path must exist! If not, throws an exception.
+			///     Returns the relative path to the directory the file or folder is in.
+			///     This means for folders it returns the parent folder.
 			/// </summary>
-			/// <exception cref="InvalidOperationException">if the path does not exist</exception>
+			/// <returns>The parent folder of the file or folder. Returns null if it's the root path.</returns>
 			public Path FolderPath
 			{
 				get
 				{
-					// existing directory? return that
-					if (Directory.Exists(m_RelativePath))
-						return this;
-
-					// existing file? return folder path
-					if (System.IO.File.Exists(m_RelativePath))
-						return ToFolderPath();
-
-					throw new InvalidOperationException("unable to determine if file or folder because path" +
-					                                    $" '{m_RelativePath}' does not exist");
-				}
-			}
-
-			/// <summary>
-			///     Returns the path to the file's parent folder, or the path itself if the path points to a folder.
-			///     If the path does not exist and it ends with an extension (has a dot) then it is assumed a file path,
-			///     otherwise a folder path is assumed (Unity does not allow assets without extensions).
-			///     CAUTION: This may incorrectly assume a file if the path's last folder contains a dot. In this case
-			///     it returns the second to last folder in the path.
-			/// </summary>
-			[ExcludeFromCodeCoverage]
-			public Path FolderPathAssumptive
-			{
-				get
-				{
-					try
-					{
-						// existing directory? return that
-						if (Directory.Exists(m_RelativePath))
-							return this;
-
-						// existing file? return folder path
-						if (System.IO.File.Exists(m_RelativePath))
-							return ToFolderPath();
-
-						// if it has an extension, assume it's a file (could also be a folder but alas ...)
-						if (System.IO.Path.HasExtension(m_RelativePath))
-							return ToFolderPath();
-					}
-					catch (Exception) {}
-
-					return this;
+					var dirName = System.IO.Path.GetDirectoryName(m_RelativePath);
+					return String.IsNullOrEmpty(dirName) ? null : dirName;
 				}
 			}
 
@@ -222,7 +178,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path GetMeta(Path path) =>
+			public static Path ToMeta(Path path) =>
 				AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
 
 			/// <summary>
@@ -298,7 +254,7 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Creates the folders in the path recursively. Path may point to a file, but only folders
-			///     will be created.
+			///     will be created. If the last path chunk has an extension, it is considered a file.
 			/// </summary>
 			/// <param name="path">path to a file or folder</param>
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
@@ -307,8 +263,13 @@ namespace CodeSmile.Editor
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 				ThrowIf.PathIsNotValid(path);
 
-				var folderPath = path.FolderPathAssumptive;
-				if (FileExists(path) || FolderExists(folderPath))
+				if (FileExists(path))
+					return path.FolderPath.Guid;
+
+				// if the last part has an extension we assume the path points to a file
+				var isPresumablyFilePath = String.IsNullOrEmpty(path.Extension) == false;
+				var folderPath = isPresumablyFilePath ? path.FolderPath : path;
+				if (FolderExists(folderPath))
 					return folderPath.Guid;
 
 				var folderNames = ((String)folderPath).Split(new[] { '/' });
@@ -323,8 +284,7 @@ namespace CodeSmile.Editor
 						continue;
 					}
 
-					var guidString = AssetDatabase.CreateFolder(Get(folderGuid), folderNames[i]);
-					folderGuid = new GUID(guidString);
+					folderGuid = CreateSubFolder(Get(folderGuid), folderNames[i]);
 				}
 
 				return folderGuid;
@@ -370,8 +330,19 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			public static String[] ToStrings(IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
 
+			/// <summary>
+			///     Returns the names of all subfolders in the path.
+			///     Returns an empty array of the path points to a file.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns>Paths to all subfolders, or empty array if there are no subfolders or the path points to a file.</returns>
+			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
+
 			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
 				overwriteExisting ? destPath : destPath.UniqueFilePath;
+
+			private static GUID CreateSubFolder(Path parentFolder, String subFolderName) =>
+				new(AssetDatabase.CreateFolder(parentFolder, subFolderName));
 
 			private static String ToRelative(String fullOrRelativePath)
 			{
@@ -413,17 +384,10 @@ namespace CodeSmile.Editor
 				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
 
 			/// <summary>
-			///     Returns the names of all folders in the path.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns>Paths to all subfolders, or empty array if there are no subfolders.</returns>
-			public String[] GetFolders(Path path) => AssetDatabase.GetSubFolders(path);
-
-			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
 			/// </summary>
 			[ExcludeFromCodeCoverage]
-			public void OpenFolder() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPathAssumptive));
+			public void OpenFolder() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPath));
 
 			/// <summary>
 			///     Renames the file or folder with a new name.
@@ -435,7 +399,7 @@ namespace CodeSmile.Editor
 				if (String.IsNullOrEmpty(newFileOrFolderName))
 					return false;
 
-				m_RelativePath = $"{DirectoryName}/{System.IO.Path.GetFileName(newFileOrFolderName)}";
+				m_RelativePath = $"{FolderPath}/{System.IO.Path.GetFileName(newFileOrFolderName)}";
 				return true;
 			}
 
@@ -445,8 +409,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
 			public GUID CreateFolders() => CreateFolders(this);
-
-			private Path ToFolderPath() => new(System.IO.Path.GetDirectoryName(m_RelativePath));
 
 			/// <summary>
 			///     Returns the relative path as string. Same as implicit string conversion.

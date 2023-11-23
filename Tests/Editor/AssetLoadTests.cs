@@ -40,6 +40,27 @@ public class AssetLoadTests : AssetTestBase
 		Assert.AreEqual(obj.GetType(), loaded.GetType());
 	}
 
+	[Test] public void Load_ImplicitConversion_Succeeds()
+	{
+		var obj = CreateTestAssetObject(TestAssetPath);
+
+		Asset loaded = TestAssetPath;
+
+		Assert.NotNull(loaded);
+		Assert.AreEqual(obj, (Object)loaded);
+	}
+
+	[Test] public void Load_ImplicitStringConversion_Succeeds()
+	{
+		var obj = CreateTestAssetObject(TestAssetPath);
+
+		String stringPath = TestAssetPath;
+		Asset loaded = stringPath;
+
+		Assert.NotNull(loaded);
+		Assert.AreEqual(obj, (Object)loaded);
+	}
+
 	[Test] public void LoadMainStatic_NotExistingGuid_Throws() =>
 		Assert.Throws<ArgumentException>(() => Asset.File.LoadMain<Object>(new GUID()));
 
