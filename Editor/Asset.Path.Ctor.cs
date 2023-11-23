@@ -14,14 +14,13 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Creates an asset path from either a full or relative path.
-			///     Example input path: 'C:\Users\Urso Clever\Untiy Projects\First Projcet\Assets\something'
-			///     Resulting AssetPath: 'Assets/something'
+			///     Example input path: "C:\Users\Urso Clever\Untiy Projects\First Projcet\Assets\something"
+			///     Resulting AssetPath: "Assets/something"
 			/// </summary>
 			/// <param name="fullOrRelativePath">Absolute path to project's root folder or a subfolder.</param>
 			/// <exception cref="ArgumentException">
 			///     If path does not start with the project's Assets path (Application.dataPath).
 			/// </exception>
-			/// <returns></returns>
 			public Path(String fullOrRelativePath)
 			{
 				ThrowIf.NullOrWhitespace(fullOrRelativePath, nameof(fullOrRelativePath));
@@ -31,9 +30,15 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Creates an asset path from either a full or relative path to a directory, a filename,
 			///     and an optional extension (default: 'asset').
-			///     Example input: '\Assets\Some/Sub\Dir' - 'New File' - 'MyExt'
-			///     Resulting AssetPath: 'Assets/Some/Sub/Dir/New File.myext'
 			/// </summary>
+			/// <example>
+			///     Example parameters:
+			///     <c>"\Assets\Some/Sub\Dir", "New File", "MyExt"</c>
+			/// </example>
+			/// <example>
+			///     Resulting path:
+			///     <c>"Assets/Some/Sub/Dir/New File.myext"</c>
+			/// </example>
 			/// <param name="directory">
 			///     Path to a directory under Assets, or just 'Assets'. Can be a relative or absolute path.
 			///     Leading/trailing path separators are trimmed.
@@ -43,7 +48,6 @@ namespace CodeSmile.Editor
 			///     Extension of the file (default: 'asset'). Leading dots will be trimmed. Extension will be
 			///     lowercase.
 			/// </param>
-			/// <returns>The relative path to the asset file. </returns>
 			/// <exception cref="ArgumentException"></exception>
 			public Path(String directory, String fileName, String extension = DefaultExtension)
 			{

@@ -23,26 +23,64 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
 
-			public static Boolean operator ==(Path ap1, Path ap2)
+			/// <summary>
+			///     Tests two path instances for equality.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="path2"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Path path, Path path2)
 			{
-				if (ReferenceEquals(ap1, ap2))
+				if (ReferenceEquals(path, path2))
 					return true;
-				if (ReferenceEquals(ap1, null))
+				if (ReferenceEquals(path, null))
 					return false;
-				if (ReferenceEquals(ap2, null))
+				if (ReferenceEquals(path2, null))
 					return false;
 
-				return ap1.Equals(ap2);
+				return path.Equals(path2);
 			}
 
-			public static Boolean operator !=(Path ap1, Path ap2) => !(ap1 == ap2);
+			/// <summary>
+			///     Tests two path instances for inequality.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="path2"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path, Path path2) => !(path == path2);
 
-			public static Boolean operator ==(Path ap1, Object other) =>
-				other is String str ? ap1.Equals(str) : ap1.Equals(other as Path);
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Path path, Object other) =>
+				other is String str ? path.Equals(str) : path.Equals(other as Path);
 
-			public static Boolean operator !=(Path ap1, Object other) => !(ap1 == other);
-			public static Boolean operator ==(Object other, Path ap2) => ap2 == other;
-			public static Boolean operator !=(Object other, Path ap2) => !(ap2 == other);
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path, Object other) => !(path == other);
+
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Object other, Path path) => path == other;
+
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Object other, Path path) => !(path == other);
 		}
 	}
 }

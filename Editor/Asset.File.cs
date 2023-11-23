@@ -72,7 +72,6 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Loads the first object of the given type from the asset.
 		/// </summary>
-		/// <param name="path"></param>
 		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
 		public T Load<T>() where T : Object
@@ -123,7 +122,6 @@ namespace CodeSmile.Editor
 		///     Moves asset to destination path. Any non-existing folders in destination path
 		///     will be created. AssetPath property is updated accordingly.
 		/// </summary>
-		/// <param name="sourcePath"></param>
 		/// <param name="destinationPath"></param>
 		/// <returns>True if the move was successful.</returns>
 		public Boolean Move(Path destinationPath)
@@ -176,7 +174,6 @@ namespace CodeSmile.Editor
 		///     Opens the asset in the default (associated) application.
 		///     Optional line and column numbers can be specified for text files and applications that support this.
 		/// </summary>
-		/// <param name="obj"></param>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
 		[ExcludeFromCodeCoverage]
@@ -268,12 +265,11 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Same as: LoadOrCreate
-			///     <T>
-			///         (..) - this exists mainly for API discovery reasons.
-			///         Tries to load the object at path. If it cannot be loaded, it will be created using the Object instance
-			///         returned by the getObjectInstance Func callback.
+			///     Tries to load the object at path. If it cannot be loaded, it will be created using the Object instance
+			///     returned by the getObjectInstance Func callback.
+			///     Alias for LoadOrCreate. This exists mainly for API discovery reasons.
 			/// </summary>
+			/// <see cref="LoadOrCreate{T}" />
 			/// <param name="path"></param>
 			/// <param name="getInstance"></param>
 			/// <typeparam name="T"></typeparam>
@@ -390,10 +386,14 @@ namespace CodeSmile.Editor
 			/// <param name="path"></param>
 			/// <param name="localFileId"></param>
 			/// <returns>An AssetDatabaseLoadOperation instance to track progress.</returns>
+			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId)
+			{
 #if UNITY_2022_2_OR_NEWER
-			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId) =>
-				AssetDatabase.LoadObjectAsync(path, localFileId);
+				return AssetDatabase.LoadObjectAsync(path, localFileId);
+#else
+				throw new NotSupportedException($"The current Unity Editor version does not support this method: {nameof(AssetDatabase.LoadObjectAsync)}");
 #endif
+			}
 
 			/// <summary>
 			///     Finds the assets by the given filter criteria.
@@ -545,7 +545,7 @@ namespace CodeSmile.Editor
 			///     Opens the asset (by its instanceID) in the default (associated) application.
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="instanceId"></param>
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
 			[ExcludeFromCodeCoverage]
@@ -556,7 +556,7 @@ namespace CodeSmile.Editor
 			///     Opens the asset at the path in the default (associated) application.
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="path"></param>
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
 			[ExcludeFromCodeCoverage]
@@ -567,6 +567,7 @@ namespace CodeSmile.Editor
 			///     Deletes the asset file. Does nothing if there is no file at the given path.
 			/// </summary>
 			/// <param name="path"></param>
+			/// <returns>True if the asset was deleted, false otherwise.</returns>
 			public static Boolean Delete(Path path)
 			{
 				if (path == null || path.Exists == false)
@@ -578,7 +579,8 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Deletes the asset. Does nothing if the object is not an asset.
 			/// </summary>
-			/// <param name="path"></param>
+			/// <param name="obj"></param>
+			/// <returns>True if the asset was deleted, false otherwise.</returns>
 			public static Boolean Delete(Object obj) => Delete(Path.Get(obj));
 
 			/// <summary>
@@ -657,6 +659,7 @@ namespace CodeSmile.Editor
 			///     in a try/finally block so that exceptions will not cause the AssetDatabase to remain stopped indefinitely.
 			/// </summary>
 			/// <param name="massAssetFileEditAction"></param>
+			/// <param name="rethrowExceptions"></param>
 			[ExcludeFromCodeCoverage]
 			public static void BatchEditing(Action massAssetFileEditAction, Boolean rethrowExceptions = false)
 			{

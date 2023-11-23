@@ -21,6 +21,7 @@ namespace CodeSmile.Editor
 		///     <see cref="Rename" />
 		///     <see cref="Move" />
 		/// </summary>
+		/// <returns>The last error message or empty string if there was no error.</returns>
 		public static String GetLastErrorMessage() => s_LastErrorMessage;
 
 		private static void SetLastErrorMessage(String message) =>

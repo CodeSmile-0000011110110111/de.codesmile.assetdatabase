@@ -21,7 +21,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
-			public const String DefaultExtension = "asset";
+			private const String DefaultExtension = "asset";
 
 			// all are lowercase
 			private static readonly String[] s_AllowedAssetSubfolders =
@@ -246,6 +246,11 @@ namespace CodeSmile.Editor
 			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
 			///     <see cref="Asset.GetLastErrorMessage()" />
 			/// </summary>
+			/// <param name="path"></param>
+			/// <returns>
+			///     True if the string is a valid path and contains no illegal characters for a path or file.
+			///     False in all other cases.
+			/// </returns>
 			public static Boolean IsValid(String path)
 			{
 				var isValid = true;
@@ -410,6 +415,8 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns the names of all folders in the path.
 			/// </summary>
+			/// <param name="path"></param>
+			/// <returns>Paths to all subfolders, or empty array if there are no subfolders.</returns>
 			public String[] GetFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>
@@ -436,7 +443,6 @@ namespace CodeSmile.Editor
 			///     Creates the folders in the path recursively. Path may point to a file but only folders
 			///     will be created.
 			/// </summary>
-			/// <param name="path">path to a file or folder</param>
 			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
 			public GUID CreateFolders() => CreateFolders(this);
 

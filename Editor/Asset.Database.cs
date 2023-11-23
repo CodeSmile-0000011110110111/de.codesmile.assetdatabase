@@ -78,6 +78,8 @@ namespace CodeSmile.Editor
 			///     Note: this can potentially change a lot of files in version control. It should be done cautiously.
 			/// </summary>
 			/// <see cref="ForceReserialize()" />
+			/// <param name="paths"></param>
+			/// <param name="options"></param>
 			[ExcludeFromCodeCoverage]
 			public static void ForceReserialize(IEnumerable<Path> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)
@@ -93,6 +95,8 @@ namespace CodeSmile.Editor
 			///     Note: this can potentially change a lot of files in version control. It should be done cautiously.
 			/// </summary>
 			/// <see cref="ForceReserialize()" />
+			/// <param name="paths"></param>
+			/// <param name="options"></param>
 			[ExcludeFromCodeCoverage]
 			public static void ForceReserialize(IEnumerable<String> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)

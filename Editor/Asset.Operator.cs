@@ -20,6 +20,7 @@ namespace CodeSmile.Editor
 		/// MySO mySo = asset as MySo; // implicit conversion with 'as' operator
 		/// </code>
 		/// </example>
+		/// <returns>The asset's MainObject property.</returns>
 		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
 
 		/// <summary>

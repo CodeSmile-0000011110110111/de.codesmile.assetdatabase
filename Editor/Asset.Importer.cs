@@ -102,7 +102,6 @@ namespace CodeSmile.Editor
 			///     Sets an asset's importer override to the specified AssetImporter type.
 			/// </summary>
 			/// <param name="path"></param>
-			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static void SetOverride<T>(Path path)
 #if UNITY_2022_1_OR_NEWER
@@ -118,7 +117,6 @@ namespace CodeSmile.Editor
 			///     Clears an asset's importer override for the specified asset.
 			/// </summary>
 			/// <param name="path"></param>
-			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static void ClearOverride(Path path) => AssetDatabase.ClearImporterOverride(path);
 

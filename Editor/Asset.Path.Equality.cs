@@ -9,6 +9,11 @@ namespace CodeSmile.Editor
 	{
 		public partial class Path
 		{
+			/// <summary>
+			///     Tests another path for equality. They are equal if their internal relative path strings are equal.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <returns></returns>
 			public Boolean Equals(Path other)
 			{
 				if (ReferenceEquals(other, null))
@@ -19,8 +24,26 @@ namespace CodeSmile.Editor
 				return m_RelativePath.Equals(other.m_RelativePath);
 			}
 
+			/// <summary>
+			///     Tests paths for equality with a string. The string is elevated to a Path instance, and then
+			///     their internal path strings are compared.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <returns></returns>
 			public Boolean Equals(String other) => m_RelativePath.Equals(new Path(other).m_RelativePath);
-			public override Boolean Equals(Object obj) => Equals(obj as Path);
+
+			/// <summary>
+			///     Tests path for equality with an object. If the object is a Path or String will use the respective
+			///     Equals method for these types. In all other cases returns false.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public override Boolean Equals(Object obj) => Equals(obj is Path path ? path : obj is String);
+
+			/// <summary>
+			///     Returns the internal path string's hash code.
+			/// </summary>
+			/// <returns></returns>
 			public override Int32 GetHashCode() => m_RelativePath.GetHashCode();
 		}
 	}

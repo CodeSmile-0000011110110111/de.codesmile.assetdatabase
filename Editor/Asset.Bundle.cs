@@ -89,7 +89,6 @@ namespace CodeSmile.Editor
 			///     Returns all asset paths that are marked to be part of a given bundle.
 			/// </summary>
 			/// <param name="bundleName"></param>
-			/// <param name="assetName"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
 			public static String[] GetAllPaths(String bundleName) =>
