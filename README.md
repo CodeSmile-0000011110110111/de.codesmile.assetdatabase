@@ -4,11 +4,12 @@ It's Unity's AssetDatabase except now it's clean, concise, consistent and powerf
 
 ## Examples
 
-What used to be 20+ lines of code is now two. ;)
+My name is CodeSmile for a reason. Read on. :)
 
 ### Load or create asset
 
-This is the original code, a common use case from the Unity forum. Notice the extra steps involved to create the asset and the folders.
+A common use case: if an asset cannot be loaded, create it. That only slightly complicates things with the AssetDatabase:
+
 ```
 public static LevelData GetLevelDataAsset(int level)
 {
@@ -33,7 +34,8 @@ public static LevelData GetLevelDataAsset(int level)
 }
 ```
 
-With CodeSmile AssetDatabase the same code is just these two lines:
+Now what used to be 20+ lines of code is just this:
+
 ```
 public static LevelData GetLevelDataAsset(int level)
 {
@@ -50,15 +52,25 @@ Easy:
 
 Wait .. wut?? :)
 
-Ah, I see, you have a GUID? In that case it's:
+I see, you have a GUID? In that case:
 
 `Asset levelData = thisIsYourGuid;`
 
-Likewise if you already have an asset object instance:
+Or if you already have an instance loaded:
 
 `Asset levelData = yourAssetObject;`
 
-My name is CodeSmile for a reason. :)
+The opposite also works, of course:
+
+`UnityEngine.Object obj = asset;`
+
+Not the right type? Just cast it:
+
+`var levelData = (LevelData)asset;`
+
+The Asset instance provides you access to everything you might want to do with an asset. Save, copy, rename, delete, you name it. 
+
+You also get an asset's Labels, GUID, FileId, path, .meta path and so on. It's right where you expect it.
 
 ### Get an asset's path
 
@@ -94,66 +106,34 @@ String assetFileNameNoExt = assetPath.FileNameWithoutExtension;
 String assetExtension = assetPath.Extension;
 ```
 
+### Be nice, be concise!
 
-### Asset is an instance
+Thus far you were forced to write rather verbose, convoluted code. This package will improve your work-smile balance. :)
 
-```
-// Create new asset of a UnityEngine.Object instance:
-Asset objAsset = new Asset(obj, "Assets/Data/MySOAsset.asset");
+---
 
-// Load asset from an existing asset instance:
-Asset existingAsset = new Asset(obj);
-Asset existingAsset = obj; // implicit conversion
+`string[] paths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);`
 
-// Get the asset's path, object and guid:
-Asset.Path path = objAsset.AssetPath;
-UnityEngine.Object obj = objAsset.MainObject;
-var mySO = objAsset as MyScriptableObject; // implicit conversion + cast
-GUID guid = objAsset.Guid;
+`string[] paths = Asset.Bundle.GetPaths(bundleName, assetName);`
 
-// Save modifications to the object:
-(objAsset as MyScriptableObject).BobbyBrown = "My teeth is shiny!";
-objAsset.ForceSave(); // calls SetDirty on the object before saving
-// (dirty is not for Bobby but the script-only property change requires SetDirty) 
+---
 
-// save object if it was marked dirty, otherwise skips serialization
-objAsset.Save();
+`uint count = AssetDatabase.UnregisterCustomDependencyPrefixFilter(prefix);`
 
-// Rename the asset file:
-objAsset.Rename("different file name");
+`uint count = Asset.Dependency.Remove(prefix);`
 
-// Make a copy, will create non-existing folders:
-Asset copyAsset = objAsset.Copy("Assets/folder/subfolder/copied.asset");
+---
 
-// You can also move the asset to a non-existing path:
-objAsset.Move("Assets/folder/subfolder/moved.asset");
+`var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);`
 
-// Delete the asset file from disk: 
-objAsset.Delete(); // also: objAsset.Trash()
-objAsset = null;
-```
+`var metaPath = Asset.Path.ToMeta(assetPath);`
 
-There's a whole lot more and it's all as simple as that PLUS extra error checking and safety. For instance, batch
-editing ... yeah, you know you HAVE to wrap it in try/finally but how often did you NOT do it?
+## Documentation
 
-Here it's guaranteed:
+[Manual + API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
 
-```
-Asset.BatchEditing(() => {
-    // your complex, mass asset editing code safely wrapped in try/finally ...
-});
-```
-
-## License
-
-This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you build using this software requires the entire work to be published under the GPL.
-
-This software will also be available on the Unity Asset Store under the Asset Store EULA.
-
-If you wish to license this software under different terms please contact me!
-
-- Steffen aka CodeSmile
-- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
+[AssetDatabase to CodeSmile AssetDatabase](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing)
+This is a spreadsheet that maps all AssetDatabase methods to their counterpart. Notice the logical grouping and simple, consistent naming scheme.
 
 ## Requirements
 
@@ -170,61 +150,13 @@ This software is a Unity Package Manager 'npm package'.
 
 This package is currently not available on OpenUPM.
 
-## Documentation
+## License
 
-[Manual + API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
+This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you build using this software requires the entire work to be published under the GPL.
 
-tbd: spreadsheet
+This software will also be available on the Unity Asset Store under the Asset Store EULA.
 
-## Quick Introduction
+If you wish to license this software under different terms please contact me!
 
-You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The
-API offers both explicit and some implicit operations.
-
-
-## Notable changes / additions
-
-### Asset.Path
-
-You may have noticed the use of the Asset.Path class. This wraps a path to an asset, ensures the path is valid,
-relative, uses only forward slashes (compatible with all editor platforms), has checks for file existance, methods to
-create the folders in a path, rename the file, and more more more ...
-
-Path operations are at the heart of working with the AssetDatabase, yet it has traditionally been a crud despite a ton
-of utility methods because the path ultimately remained a string instance - anyone, anything could tamper it. I KNOW
-this happened to you too, right?
-
-Paths to assets demanded a class of its own to handle all the various quirks, compatibility issues, illegal characters
-and just common oversights like writing an editor script on Windows that stops working on Mac/Linux due to just one
-single backslash.
-
-The Asset.Path class implicitly converts to/from string and the conversion to Asset.Path performs validation and
-sanitation. So you KNOW the moment a path is malformed AND you get a readable error message.
-
-```
-Asset.Path assetPath = "Assets/subfolder/myfile.asset"; // implicit conversion
-Asset.Path assetPath = "myfile.asset"; // ERROR: missing 'Assets'
-Asset.Path assetPath = "Assets/subf?lder/my|file.asset"; // ERROR: illegal chars
-
-string strPath = assetPath; // implicit conversion
-
-strPath = "C:\\Users\\Urso Clever\\Desktop\\MyPorject\\Assets\\myfile.asset";
-AssetDatabase.CreateAsset(obj, strPath); // ERROR: used an absolute path, stupid!
-
-Asset.Create(obj, strPath); // this just works - it's magic, maaagic!
-```
-
-### Where is Refresh() ?
-
-Oh, don't get me started. Something ain't quite right? Add another
-AssetDatabase.Refresh(). [OMG WTF!](https://forum.unity.com/threads/calling-assetdatabase-refresh-mandatory-reading-or-face-the-consequences.1330947/)
-
-I always wanted this method renamed. Initially I considered the true and honest
-name: `ImportAllExternallyModifiedAssetsAndUnloadUnusedAssets()`
-
-But I decided to just call it: `Asset.Database.ImportAll()`
-
-It is the 'many' companion to Import() the same way SaveAll() is the 'many' companion to Save(). There is no magical '
-refresh'.
-
-It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.
+- Steffen aka CodeSmile
+- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
