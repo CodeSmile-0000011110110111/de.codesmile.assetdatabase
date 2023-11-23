@@ -1,29 +1,105 @@
 # CodeSmile AssetDatabase
 
-Modernized AssetDatabase API that's more consistent, performs more sanity checks and is generally easier to use. 100%
-covered by tests.
+It's Unity's AssetDatabase except now it's clean, concise, consistent and powerful.
 
-## Quick Introduction
+## Examples
 
-You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The
-API offers both explicit and some implicit operations.
+What used to be 20+ lines of code is now two. ;)
 
-### Working with Assets the way it was meant to be :)
+### Load or create asset
+
+This is the original code, a common use case from the Unity forum. Notice the extra steps involved to create the asset and the folders.
+```
+public static LevelData GetLevelDataAsset(int level)
+{
+  string assetPath = "Assets/DataStore/Level{level}/LevelData.asset";
+
+  var levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
+  if (levelData == null)
+  {
+	// create datastore folder if not exists
+	if (!AssetDatabase.IsValidFolder(@"Assets/DataStore"))
+	  AssetDatabase.CreateFolder("Assets", "DataStore");
+
+	// create level folder if not exists
+	if (!AssetDatabase.IsValidFolder(@"Assets/DataStore/Level{level}"))
+	  AssetDatabase.CreateFolder("Assets/DataStore", "Level{level}");
+
+	levelData = CreateInstance<LevelData>();
+	AssetDatabase.CreateAsset(levelData, assetPath);
+  }
+  
+  return levelData;
+}
+```
+
+With CodeSmile AssetDatabase the same code is just these two lines:
+```
+public static LevelData GetLevelDataAsset(int level)
+{
+	string assetPath = "Assets/DataStore/Level{level}/LevelData.asset";
+	return Asset.LoadOrCreate<LevelData>(assetPath, () => CreateInstance<LevelData>());
+}
+```
+
+### Load an asset 
+
+Easy:
+
+`Asset levelData = "Assets/Example/LevelData.asset";`
+
+Wait .. wut?? :)
+
+Ah, I see, you have a GUID? In that case it's:
+
+`Asset levelData = thisIsYourGuid;`
+
+Likewise if you already have an asset object instance:
+
+`Asset levelData = yourAssetObject;`
+
+My name is CodeSmile for a reason. :)
+
+### Get an asset's path
+
+Assuming you have an `asset` instance:
+
+`var assetPath = asset.AssetPath;`
+
+Oh right, you need the meta file path?
+Well, you could inquire the AssetDatabase:
+
+`var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);`
+
+But I'd much rather have you do this:
+
+`var metaPath = asset.MetaPath;`
+
+Or if you just need to work with just paths:
 
 ```
-// Create new asset of a UnityEngine.Object instance (default extension: ".asset"):
-Asset objAsset = Asset.Create(obj, "Assets/Data/MySOAsset.asset");
-Asset objAsset = Asset.Create(obj, "Assets/Data/MySOAsset.asset", overwriteExisting: true);
-Asset objAsset = new Asset(obj, "Assets/Data/MySOAsset.asset"); // Create asset ctor
+Path assetPath = "Assets/Folder/LevelData.asset";
+Path metaPath = assetPath.MetaPath;
+```
 
-// Load asset from an asset path:
-Asset objAsset = new Asset("Assets/Example/MySOAsset.asset");
-Asset objAsset = (Asset.Path)"Assets/Example/MySOAsset.asset"; // implicit conversion
+The secret sauce behind Asset.Path is that you never EVER need to worry about the path being malformed, containing illegal characters, mixing forward with backward slashes, or leaving leading/trailing slashes. 
 
-// Load asset from an asset GUID
-var guid = objAsset.Guid;
-Asset guidAsset = new Asset(guid);
-Asset guidAsset = guid; // implicit conversion
+Asset.Path also gives access to commonly used System.IO.Path functionality:
+
+```
+Path assetPath = "Assets/Folder/LevelData.asset";
+Path assetDir = assetPath.DirectoryPath;
+String assetFileName = assetPath.FileName;
+String assetFileNameNoExt = assetPath.FileNameWithoutExtension;
+String assetExtension = assetPath.Extension;
+```
+
+
+### Asset is an instance
+
+```
+// Create new asset of a UnityEngine.Object instance:
+Asset objAsset = new Asset(obj, "Assets/Data/MySOAsset.asset");
 
 // Load asset from an existing asset instance:
 Asset existingAsset = new Asset(obj);
@@ -67,6 +143,44 @@ Asset.BatchEditing(() => {
     // your complex, mass asset editing code safely wrapped in try/finally ...
 });
 ```
+
+## License
+
+This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you build using this software requires the entire work to be published under the GPL.
+
+This software will also be available on the Unity Asset Store under the Asset Store EULA.
+
+If you wish to license this software under different terms please contact me!
+
+- Steffen aka CodeSmile
+- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
+
+## Requirements
+
+- Unity 2021.3.3f1 or newer
+- A smile :)
+
+## Installation
+
+This software is a Unity Package Manager 'npm package'.
+
+- Open Window => Package Manager in Unity Editor
+- Choose "Install package from git URL..."
+- Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetinspector.git`
+
+This package is currently not available on OpenUPM.
+
+## Documentation
+
+[Manual + API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
+
+tbd: spreadsheet
+
+## Quick Introduction
+
+You can work either with Asset instances or the static Asset API. Internally, instance methods call the static API. The
+API offers both explicit and some implicit operations.
+
 
 ## Notable changes / additions
 
@@ -114,48 +228,3 @@ It is the 'many' companion to Import() the same way SaveAll() is the 'many' comp
 refresh'.
 
 It's just a very dumb name that prompted devs to use it too often with no thought given to what it actually does.
-
-# Why the GPL 3.0 license?
-
-This software solely provides code used within the Unity editor application.
-It is therefore not being built into executables (known as 'builds') created
-by the Unity editor application.
-
-Thus, by merely using this software in your Unity project, the GPL license
-does not affect or alter your right to distribute 'builds' of your project.
-You do NOT have to publish your entire Unity project (source) itself under the
-GPL license.
-
-HOWEVER, it does require that any editor code (scripts) that use this software
-be released under the GPL license but ONLY if you distribute said editor code.
-
-Sharing the Unity project within your team / company is not distributing!
-BUT if you were to create an editor tool that uses this software, and you were
-to distribute that editor tool, you would have to distribute your editor tool
-under the same GPL 3.0 license.
-
-In essence, my motivation is this:
-
-- I want to share my work, for free, in source form, to everyone's benefit.
-- I want to discourage commercial editor tool developers from basing their
-  work on this software for the simple reason that I may do so myself.
-  (You cannot publish assets containing GPL licensed software on the Unity
-  Asset Store. You can charge clients for any work you do with this software.)
-- I want to encourage commercial software developers to obtain a more
-  permissive license for this software, for example by purchasing rights to
-  this software either via the Unity Asset Store or directly from me.
-  This encouragement is mainly because the separation of editor vs runtime
-  scripts can be somewhat fluid, and companies ought to to err on the safe
-  side. Given how much work (aka 'money') this software can safe even a small
-  team it is certainly worth to invest in it.
-
-I sincerely hope you understand my reasons for applying the GPL 3.0 license.
-
-Please contact me if you wish to license the software under different terms,
-no matter your intention. Generally feel free to contact me if you have any
-questions or feedback.
-
-Thanks for your time and understanding!
-
-- Steffen aka CodeSmile
-- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)

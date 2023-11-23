@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['uniquefilepath_0',['UniqueFilePath',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a7a298c94667f2e77ec80d8eb6f5bb88f',1,'CodeSmile::Editor::Asset::Path']]],
-  ['uniquifyfilename_1',['UniquifyFilename',['../class_code_smile_1_1_editor_1_1_asset_1_1_path_a455fdf98d1c76c3976fc3fdc35117fa8.html#a455fdf98d1c76c3976fc3fdc35117fa8',1,'CodeSmile::Editor::Asset::Path']]],
-  ['unused_2',['Unused',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a8f1ceb9e793aa5f316ce97497b03eb49',1,'CodeSmile::Editor::Asset::Bundle']]],
-  ['uploadsallowed_3',['UploadsAllowed',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#a056b368da2d5c77fe76c2a717e62b9c0',1,'CodeSmile::Editor::Asset::Database::CacheServer']]]
+  ['namespaceprefix_0',['NamespacePrefix',['../class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html#a0d4894d317ef790042b43eb297af0cb5',1,'CodeSmile::Editor::Asset::Database::CacheServer']]],
+  ['notable_20changes_20additions_1',['Notable changes / additions',['../index.html#notable-changes--additions',1,'']]],
+  ['nov_2010_202023_2',['v1.1.0 - Nov 10, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v110---nov-10-2023',1,'']]],
+  ['nov_2012_202023_3',['v1.1.3 - Nov 12, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v113---nov-12-2023',1,'']]],
+  ['nov_2013_202023_4',['v1.1.4 - Nov 13, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v114---nov-13-2023',1,'']]],
+  ['nov_2022_202023_5',['nov 22 2023',['../md__c_h_a_n_g_e_l_o_g.html#v120---nov-22-2023',1,'v1.2.0 - Nov 22, 2023'],['../md__c_h_a_n_g_e_l_o_g.html#v121---nov-22-2023',1,'v1.2.1 - Nov 22, 2023']]],
+  ['nov_2023_202023_6',['v1.2.2 - Nov 23, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v122---nov-23-2023',1,'']]],
+  ['nov_209_202023_7',['v1.0.0 - Nov 9, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v100---nov-9-2023',1,'']]]
 ];

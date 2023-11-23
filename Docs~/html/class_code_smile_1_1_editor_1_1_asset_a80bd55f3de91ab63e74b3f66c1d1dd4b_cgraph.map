@@ -1,0 +1,5 @@
+<map id="ForceSave" name="ForceSave">
+<area shape="rect" id="Node000001" title="Forces the object to be written to disk, whether it is dirty or not." alt="" coords="5,13,88,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file.html#afc9d9d85f0043a80d647b8549b885514" title="Forces the object to be saved to disk by first flagging it as dirty. Note: Be sure that you need to &#39;..." alt="" coords="136,5,325,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,24,121,24,121,29,88,29"/>
+</map>

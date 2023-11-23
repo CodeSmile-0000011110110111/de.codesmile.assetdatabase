@@ -1,0 +1,5 @@
+<map id="CanMove" name="CanMove">
+<area shape="rect" id="Node000001" title="Tests if a Move operation will be successful without actually moving the asset. Note: Returns false i..." alt="" coords="271,5,345,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset.html#a31854cee2c427159e4ff866257872323" title="Tests if a Move operation will be successful without actually moving the asset. Note: Returns false i..." alt="" coords="5,5,223,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,21,223,21,223,16,256,16"/>
+</map>
