@@ -7,6 +7,7 @@ var searchData=
   ['v1_202_200_20nov_2022_202023_4',['v1.2.0 - Nov 22, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v120---nov-22-2023',1,'']]],
   ['v1_202_201_20nov_2022_202023_5',['v1.2.1 - Nov 22, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v121---nov-22-2023',1,'']]],
   ['v1_203_200_20nov_2023_202023_6',['v1.3.0 - Nov 23, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v130---nov-23-2023',1,'']]],
-  ['versioncontrol_7',['VersionControl',['../class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html',1,'CodeSmile::Editor::Asset']]],
-  ['visiblesubassets_8',['VisibleSubAssets',['../class_code_smile_1_1_editor_1_1_asset.html#ace611059f2ab296e1be5b51d33617000',1,'CodeSmile::Editor::Asset']]]
+  ['v1_203_201_20nov_2024_202023_7',['v1.3.1 - Nov 24, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v131---nov-24-2023',1,'']]],
+  ['versioncontrol_8',['VersionControl',['../class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html',1,'CodeSmile::Editor::Asset']]],
+  ['visiblesubassets_9',['VisibleSubAssets',['../class_code_smile_1_1_editor_1_1_asset.html#ace611059f2ab296e1be5b51d33617000',1,'CodeSmile::Editor::Asset']]]
 ];
