@@ -33,6 +33,7 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "GetIcon", "class_code_smile_1_1_editor_1_1_asset.html#a00abab41cd28c804bc7730e44c6f2bd4", null ],
     [ "GetIcon", "class_code_smile_1_1_editor_1_1_asset.html#ad878757670135db9c435ee0586aaccc2", null ],
     [ "GetLastErrorMessage", "class_code_smile_1_1_editor_1_1_asset.html#af1aa2544ba26b2d2d71f6e7b68f18fac", null ],
+    [ "GetMainType", "class_code_smile_1_1_editor_1_1_asset.html#a82b0bb0beb5f5422951631789bca4256", null ],
     [ "GetMainType", "class_code_smile_1_1_editor_1_1_asset.html#ab856af13e3309f29c328b6e38dedf774", null ],
     [ "GetSubType", "class_code_smile_1_1_editor_1_1_asset.html#a575f2272d38948b87fc09923b26327ba", null ],
     [ "Load< T >", "class_code_smile_1_1_editor_1_1_asset.html#a5d27be243c1f698cba116b768e3f65ec", null ],
