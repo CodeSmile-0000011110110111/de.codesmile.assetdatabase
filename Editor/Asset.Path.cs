@@ -178,16 +178,14 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path ToMeta(Path path) =>
-				AssetDatabase.GetTextMetaFilePathFromAssetPath(path); // seriously, that name??
+			public static Path ToMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
 
 			/// <summary>
 			///     Returns the asset's file path from its .meta file path.
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path FromMeta(Path path) =>
-				AssetDatabase.GetAssetPathFromTextMetaFilePath(path); // seriously, that name??
+			public static Path FromMeta(Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
 
 			/// <summary>
 			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
