@@ -145,6 +145,13 @@ namespace CodeSmile.Editor
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
+		///     Returns the type of the main asset for the GUID.
+		/// </summary>
+		/// <param name="guid"></param>
+		/// <returns></returns>
+		public static Type GetMainType(GUID guid) => AssetDatabase.GetMainAssetTypeFromGUID(guid);
+
+		/// <summary>
 		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
 		/// </summary>
 		/// <param name="path"></param>
