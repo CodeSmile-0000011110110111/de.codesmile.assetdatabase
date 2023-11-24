@@ -1,5 +1,18 @@
 # Change Log
 
+#### v1.4.0 - Nov 24, 2023
+
+- added static GetSubType
+- renamed Status IsForeignAsset to IsForeign
+- renamed Status IsNativeAsset to IsNative
+- renamed Database DirectoryMonitoringEnabled to DirectoryMonitoring
+- renamed Dependency Set to Register
+- renamed Dependency Remove to Unregister
+- renamed Importer SaveSettings to ApplySettings
+- renamed Path OpenFolder to OpenExternal
+- renamed Path UniquifyFilename to UniquifyFileName (camel case)
+- removed various ExcludeFromCodeCoverage attributes, added comment with reason to the remaining ones
+
 #### v1.3.1 - Nov 24, 2023
 
 - added several 'Object' getters to methods with only 'Path' parameters
