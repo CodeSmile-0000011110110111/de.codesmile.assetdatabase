@@ -58,7 +58,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the local FileID of the asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage] public Int64 LocalFileId => GetLocalFileId(m_MainObject);
+		[ExcludeFromCodeCoverage] public Int64 LocalFileId => GetFileId(m_MainObject);
 
 		/// <summary>
 		///     Returns the icon texture associated with the asset type.
@@ -70,7 +70,9 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
-		public static Int64 GetLocalFileId(Object obj)
+		/// <see cref="GetGuid"/>
+		/// <see cref="GetGuidAndFileId"/>
+		public static Int64 GetFileId(Object obj)
 		{
 			if (obj == null)
 				return 0L;
@@ -85,6 +87,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
+		/// <see cref="GetGuidAndFileId"/>
+		/// <see cref="GetFileId"/>
 		public static GUID GetGuid(Object obj)
 		{
 			if (obj == null)
@@ -101,7 +105,12 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		public static (GUID, Int64) GetGuidAndFileId(Object obj)
+		/// <see cref="GetGuid"/>
+		/// <see cref="GetFileId"/>
+
+		// Use of ValueTuple helps doxygen pick up this method as documented
+		// See this issue: https://github.com/doxygen/doxygen/issues/9618
+		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object obj)
 		{
 			if (obj == null)
 				return (new GUID(), 0L);
