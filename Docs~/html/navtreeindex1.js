@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#a95b80e7dd72006be16c920dcd4ce24f8":[2,0,0,0,0,10,3],
 "class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#a9db6b951f0daf2cd7be6b9edbab209a6":[2,0,0,0,0,10,8],
 "class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#aa423c228f7292c32aa016adc4b1bb0d2":[2,0,0,0,0,10,2],
 "class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#ad400e23135b52db79d22e0fc172be84d":[2,0,0,0,0,10,11],
