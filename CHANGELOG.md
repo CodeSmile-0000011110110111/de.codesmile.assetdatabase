@@ -1,5 +1,9 @@
 # Change Log
 
+#### v1.4.1 - Nov 24, 2023
+
+- added static GetMainType(guid)
+
 #### v1.4.0 - Nov 24, 2023
 
 - added static GetSubType
