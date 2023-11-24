@@ -1,5 +1,11 @@
 # Change Log
 
+#### v1.3.1 - Nov 24, 2023
+
+- added several 'Object' getters to methods with only 'Path' parameters
+- added static GetGuid method
+- added static GetGuidAndFileId method
+
 #### v1.3.0 - Nov 23, 2023
 
 - Fixed all technical documentation issues.
