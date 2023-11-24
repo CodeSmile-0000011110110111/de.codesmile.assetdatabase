@@ -3,7 +3,7 @@ var searchData=
   ['label_0',['Label',['../class_code_smile_1_1_editor_1_1_asset_1_1_label.html',1,'CodeSmile::Editor::Asset']]],
   ['labels_1',['Labels',['../class_code_smile_1_1_editor_1_1_asset.html#a537c910df9f9f5d24a916b70934f4de8',1,'CodeSmile::Editor::Asset']]],
   ['lasterrormessage_2',['LastErrorMessage',['../class_code_smile_1_1_editor_1_1_asset.html#ab38f88d01c036e7ee5492872b7d59721',1,'CodeSmile::Editor::Asset']]],
-  ['license_3',['License',['../index.html#license',1,'']]],
+  ['license_3',['GPL License',['../index.html#gpl-license',1,'']]],
   ['load_20an_20asset_4',['Load an asset',['../index.html#load-an-asset',1,'']]],
   ['load_20or_20create_20asset_5',['Load or create asset',['../index.html#load-or-create-asset',1,'']]],
   ['load_3c_20t_20_3e_6',['load&lt; t &gt;',['../class_code_smile_1_1_editor_1_1_asset.html#a5d27be243c1f698cba116b768e3f65ec',1,'CodeSmile.Editor.Asset.Load&lt; T &gt;()'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file.html#af8c4540f4aeef8ce7ca8036d82791d4b',1,'CodeSmile.Editor.Asset.File.Load&lt; T &gt;()']]],
