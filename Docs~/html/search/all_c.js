@@ -25,6 +25,7 @@ var searchData=
   ['getpaths_22',['GetPaths',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a915567be9f112102b73a36c0c09376e8',1,'CodeSmile::Editor::Asset::Bundle']]],
   ['getscene_23',['GetScene',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#abb0b2e76cfebb4a537b02590863bc536',1,'CodeSmile::Editor::Asset::Path']]],
   ['getsubfolders_24',['GetSubFolders',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a4038cffbb12bb39c396c87423a09b4f5',1,'CodeSmile::Editor::Asset::Path']]],
-  ['gpl_20license_25',['GPL License',['../index.html#gpl-license',1,'']]],
-  ['guid_26',['guid',['../class_code_smile_1_1_editor_1_1_asset.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmile.Editor.Asset.Guid'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmile.Editor.Asset.Path.Guid']]]
+  ['getsubtype_25',['GetSubType',['../class_code_smile_1_1_editor_1_1_asset.html#a575f2272d38948b87fc09923b26327ba',1,'CodeSmile::Editor::Asset']]],
+  ['gpl_20license_26',['GPL License',['../index.html#gpl-license',1,'']]],
+  ['guid_27',['guid',['../class_code_smile_1_1_editor_1_1_asset.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmile.Editor.Asset.Guid'],['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmile.Editor.Asset.Path.Guid']]]
 ];

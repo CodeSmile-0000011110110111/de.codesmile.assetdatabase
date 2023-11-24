@@ -23,5 +23,6 @@ var searchData=
   ['getowningbundlevariant_20',['GetOwningBundleVariant',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a8872257cb56767277c1b9bacb019b6d4',1,'CodeSmile::Editor::Asset::Bundle']]],
   ['getpaths_21',['GetPaths',['../class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a915567be9f112102b73a36c0c09376e8',1,'CodeSmile::Editor::Asset::Bundle']]],
   ['getscene_22',['GetScene',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#abb0b2e76cfebb4a537b02590863bc536',1,'CodeSmile::Editor::Asset::Path']]],
-  ['getsubfolders_23',['GetSubFolders',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a4038cffbb12bb39c396c87423a09b4f5',1,'CodeSmile::Editor::Asset::Path']]]
+  ['getsubfolders_23',['GetSubFolders',['../class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a4038cffbb12bb39c396c87423a09b4f5',1,'CodeSmile::Editor::Asset::Path']]],
+  ['getsubtype_24',['GetSubType',['../class_code_smile_1_1_editor_1_1_asset.html#a575f2272d38948b87fc09923b26327ba',1,'CodeSmile::Editor::Asset']]]
 ];

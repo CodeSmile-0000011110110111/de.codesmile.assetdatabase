@@ -128,12 +128,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa271b12838fa8633787d15fa1a8fa2e0" id="r_aa271b12838fa8633787d15fa1a8fa2e0"><td class="memItemLeft" align="right" valign="top">static Hash128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#aa271b12838fa8633787d15fa1a8fa2e0">GetHash</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:aa271b12838fa8633787d15fa1a8fa2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dependency hash for the asset at path. If the hash changes it means the asset contents may have changed.  <br /></td></tr>
 <tr class="separator:aa271b12838fa8633787d15fa1a8fa2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b44fd5717b1f80658656c4596c3ccf" id="r_af9b44fd5717b1f80658656c4596c3ccf"><td class="memItemLeft" align="right" valign="top">static UInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#af9b44fd5717b1f80658656c4596c3ccf">Remove</a> (String globalDependencyNamePrefix)</td></tr>
-<tr class="memdesc:af9b44fd5717b1f80658656c4596c3ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name.  <br /></td></tr>
-<tr class="separator:af9b44fd5717b1f80658656c4596c3ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4b31bcb8e625a371990197559367c0" id="r_a8c4b31bcb8e625a371990197559367c0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a8c4b31bcb8e625a371990197559367c0">Set</a> (String globalDependencyName, Hash128 dependencyHash)</td></tr>
-<tr class="memdesc:a8c4b31bcb8e625a371990197559367c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter. Call this method again to update existing dependencies. For details <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>.  <br /></td></tr>
-<tr class="separator:a8c4b31bcb8e625a371990197559367c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a134bb5b9509055fcf42da2042e92ef" id="r_a4a134bb5b9509055fcf42da2042e92ef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a4a134bb5b9509055fcf42da2042e92ef">Register</a> (String globalDependencyName, Hash128 dependencyHash)</td></tr>
+<tr class="memdesc:a4a134bb5b9509055fcf42da2042e92ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter. Call this method again to update existing dependencies. For details <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>.  <br /></td></tr>
+<tr class="separator:a4a134bb5b9509055fcf42da2042e92ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddd9c255e2bdbc73ab07f50eb24588e" id="r_a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="memItemLeft" align="right" valign="top">static UInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a3ddd9c255e2bdbc73ab07f50eb24588e">Unregister</a> (String globalDependencyNamePrefix)</td></tr>
+<tr class="memdesc:a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name.  <br /></td></tr>
+<tr class="separator:a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Groups all dependency related functionality. </p>
@@ -348,8 +348,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af9b44fd5717b1f80658656c4596c3ccf" name="af9b44fd5717b1f80658656c4596c3ccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b44fd5717b1f80658656c4596c3ccf">&#9670;&#160;</a></span>Remove()</h2>
+<a id="a4a134bb5b9509055fcf42da2042e92ef" name="a4a134bb5b9509055fcf42da2042e92ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a134bb5b9509055fcf42da2042e92ef">&#9670;&#160;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,43 +358,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static UInt32 Remove </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>globalDependencyNamePrefix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">globalDependencyNamePrefix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of custom dependencies that were removed.</dd></dl>
-<p>Set </p>
-
-</div>
-</div>
-<a id="a8c4b31bcb8e625a371990197559367c0" name="a8c4b31bcb8e625a371990197559367c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c4b31bcb8e625a371990197559367c0">&#9670;&#160;</a></span>Set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Set </td>
+          <td class="memname">static void Register </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>globalDependencyName</em>, </td>
@@ -426,7 +390,43 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Remove </p>
+<p>Unregister </p>
+
+</div>
+</div>
+<a id="a3ddd9c255e2bdbc73ab07f50eb24588e" name="a3ddd9c255e2bdbc73ab07f50eb24588e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ddd9c255e2bdbc73ab07f50eb24588e">&#9670;&#160;</a></span>Unregister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static UInt32 Unregister </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>globalDependencyNamePrefix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">globalDependencyNamePrefix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of custom dependencies that were removed.</dd></dl>
+<p>Register </p>
 
 </div>
 </div>

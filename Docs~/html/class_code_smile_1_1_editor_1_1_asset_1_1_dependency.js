@@ -6,6 +6,6 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_dependency =
     [ "GetDirect", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#ac9812be7412f8af18103fc4ef8d03b87", null ],
     [ "GetHash", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a773bdd015f687ec5ea5ab318448ee246", null ],
     [ "GetHash", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#aa271b12838fa8633787d15fa1a8fa2e0", null ],
-    [ "Remove", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#af9b44fd5717b1f80658656c4596c3ccf", null ],
-    [ "Set", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a8c4b31bcb8e625a371990197559367c0", null ]
+    [ "Register", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a4a134bb5b9509055fcf42da2042e92ef", null ],
+    [ "Unregister", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a3ddd9c255e2bdbc73ab07f50eb24588e", null ]
 ];

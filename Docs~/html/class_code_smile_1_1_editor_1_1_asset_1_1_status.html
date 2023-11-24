@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3394922507661f811d607c407fa6dcb8" id="r_a3394922507661f811d607c407fa6dcb8"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status.html#a3394922507661f811d607c407fa6dcb8">IsForeign</a> (Object obj)</td></tr>
+<tr class="memdesc:a3394922507661f811d607c407fa6dcb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this is a foreign asset.  <br /></td></tr>
 <tr class="separator:a3394922507661f811d607c407fa6dcb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc190f65f77a29265e62c770b05c9f3d" id="r_acc190f65f77a29265e62c770b05c9f3d"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status.html#acc190f65f77a29265e62c770b05c9f3d">IsImported</a> (Object obj)</td></tr>
 <tr class="memdesc:acc190f65f77a29265e62c770b05c9f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the object is an asset in the AssetDatabase. If it isn't but you know the asset file exists then you need to Import() the asset. Unlike AssetDatabase, will not throw a NullRef if you pass null.  <br /></td></tr>
@@ -160,6 +161,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Returns whether this is a foreign asset. </p>
 <p>A foreign asset is any type of file that Unity doesn't use directly but rather maintains cached versions of it in the Library folder. For example, a .png image is a foreign asset, there is no editor inside Unity for it, and the representation of the .png depends on the asset's settings and build platform (eg compression, max size, etc). Other foreign assets: scenes (.unity), prefabs, assembly definitions. </p>
 <p>IsNative </p><dl class="params"><dt>Parameters</dt><dd>

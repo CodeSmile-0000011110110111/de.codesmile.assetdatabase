@@ -177,15 +177,15 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>            {</div>
-<div class="line"><span class="lineno">   67</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   68</span>                ThrowIf.SubObjectIsGameObject(subObject);</div>
-<div class="line"><span class="lineno">   69</span>                ThrowIf.AlreadyAnAsset(subObject);</div>
-<div class="line"><span class="lineno">   70</span>                ThrowIf.ArgumentIsNull(assetObject, nameof(assetObject));</div>
-<div class="line"><span class="lineno">   71</span>                ThrowIf.NotAnAssetWithAssetExtension(assetObject);</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>                AssetDatabase.AddObjectToAsset(subObject, assetObject);</div>
-<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>            {</div>
+<div class="line"><span class="lineno">   66</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   67</span>                ThrowIf.SubObjectIsGameObject(subObject);</div>
+<div class="line"><span class="lineno">   68</span>                ThrowIf.AlreadyAnAsset(subObject);</div>
+<div class="line"><span class="lineno">   69</span>                ThrowIf.ArgumentIsNull(assetObject, nameof(assetObject));</div>
+<div class="line"><span class="lineno">   70</span>                ThrowIf.NotAnAssetWithAssetExtension(assetObject);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>                AssetDatabase.AddObjectToAsset(subObject, assetObject);</div>
+<div class="line"><span class="lineno">   73</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,12 +232,12 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>            {</div>
-<div class="line"><span class="lineno">   54</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   55</span>                ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));</div>
-<div class="line"><span class="lineno">   58</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>            {</div>
+<div class="line"><span class="lineno">   53</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   54</span>                ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));</div>
+<div class="line"><span class="lineno">   57</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,11 +342,11 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>            {</div>
-<div class="line"><span class="lineno">   82</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>                AssetDatabase.RemoveObjectFromAsset(subObject);</div>
-<div class="line"><span class="lineno">   85</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>            {</div>
+<div class="line"><span class="lineno">   81</span>                ThrowIf.ArgumentIsNull(subObject, nameof(subObject));</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>                AssetDatabase.RemoveObjectFromAsset(subObject);</div>
+<div class="line"><span class="lineno">   84</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -437,10 +437,10 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>            {</div>
-<div class="line"><span class="lineno">   95</span>                AssetDatabase.SetMainObject(subObject, path);</div>
-<div class="line"><span class="lineno">   96</span>                File.Import(path);</div>
-<div class="line"><span class="lineno">   97</span>            }</div>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>            {</div>
+<div class="line"><span class="lineno">   94</span>                AssetDatabase.SetMainObject(subObject, path);</div>
+<div class="line"><span class="lineno">   95</span>                File.Import(path);</div>
+<div class="line"><span class="lineno">   96</span>            }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a9023c374da2135cf7e97a768aa99a4b1">Asset.File.Import()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
