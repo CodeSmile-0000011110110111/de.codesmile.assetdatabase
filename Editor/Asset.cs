@@ -69,14 +69,48 @@ namespace CodeSmile.Editor
 		///     Returns the local FileID of the object.
 		/// </summary>
 		/// <param name="obj"></param>
-		/// <returns>The local fileID or 0 on failure.</returns>
-		[ExcludeFromCodeCoverage] public static Int64 GetLocalFileId(Object obj)
+		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
+		public static Int64 GetLocalFileId(Object obj)
 		{
-			// variable is to force Rider to not clean this up to 'var' because Unity 2021 has both long and int
-			// variants of the TryGetGUID* method and thus cause compile error due to 'call is ambiguous between'
-			var localId = Int64.MinValue;
+			if (obj == null)
+				return 0L;
 
+			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
+		}
+
+		/// <summary>
+		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		public static GUID GetGuid(Object obj)
+		{
+			if (obj == null)
+				return new GUID();
+
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out _)
+				? new GUID(guid)
+				: new GUID();
+		}
+
+		/// <summary>
+		///     Returns both GUID and local File ID of the object. Returns an empty GUID and 0L if the object is null
+		///     or not an asset.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		public static (GUID, Int64) GetGuidAndFileId(Object obj)
+		{
+			if (obj == null)
+				return (new GUID(), 0L);
+
+			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			var localId = Int64.MaxValue;
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
+				? (new GUID(guid), localId)
+				: (new GUID(), 0L);
 		}
 
 		/// <summary>
@@ -85,6 +119,14 @@ namespace CodeSmile.Editor
 		/// <param name="path"></param>
 		/// <returns></returns>
 		[ExcludeFromCodeCoverage] public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
+
+		/// <summary>
+		///     Returns the icon associated with the asset type.
+		///		Note: this will not return icons for sub-assets. It will only return the main asset's icon.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		[ExcludeFromCodeCoverage] public static Texture GetIcon(Object obj) => GetIcon(Path.Get(obj));
 
 		/// <summary>
 		///     Returns the type of the main asset at the path.

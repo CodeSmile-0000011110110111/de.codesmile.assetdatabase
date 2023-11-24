@@ -4,6 +4,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -22,7 +23,6 @@ namespace CodeSmile.Editor
 		/// <see cref="SetActiveImporter{T}" />
 		/// <see cref="SetActiveImporterToDefault" />
 		/// <see cref="DefaultImporter" />
-		[ExcludeFromCodeCoverage]
 		public Type ActiveImporter
 		{
 			get
@@ -48,7 +48,6 @@ namespace CodeSmile.Editor
 		/// <typeparam name="T"></typeparam>
 		/// <see cref="SetActiveImporterToDefault" />
 		/// <see cref="ActiveImporter" />
-		[ExcludeFromCodeCoverage]
 		public void SetActiveImporter<T>()
 #if UNITY_2022_1_OR_NEWER
 			where T : AssetImporter
@@ -62,7 +61,6 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Resets the active AssetImporter type to the default type, if necessary.
 		/// </summary>
-		[ExcludeFromCodeCoverage]
 		public void SetActiveImporterToDefault()
 		{
 			if (Importer.IsOverridden(m_AssetPath))
@@ -79,7 +77,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type GetDefault(Path path)
 			{
 #if UNITY_2022_1_OR_NEWER
@@ -91,6 +88,13 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
+			///     Returns an asset's default importer type.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public static Type GetDefault(Object obj) => GetDefault(Path.Get(obj));
+
+			/// <summary>
 			///     Returns an asset's overridden importer type.
 			/// </summary>
 			/// <param name="path"></param>
@@ -99,10 +103,16 @@ namespace CodeSmile.Editor
 			public static Type GetOverride(Path path) => AssetDatabase.GetImporterOverride(path);
 
 			/// <summary>
+			///     Returns an asset's overridden importer type.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public static Type GetOverride(Object obj) => GetOverride(Path.Get(obj));
+
+			/// <summary>
 			///     Sets an asset's importer override to the specified AssetImporter type.
 			/// </summary>
 			/// <param name="path"></param>
-			[ExcludeFromCodeCoverage]
 			public static void SetOverride<T>(Path path)
 #if UNITY_2022_1_OR_NEWER
 				where T : AssetImporter
@@ -129,12 +139,12 @@ namespace CodeSmile.Editor
 			public static Boolean IsOverridden(Path path) => GetDefault(path) != GetOverride(path);
 
 			/// <summary>
-			///     Gets the AssetImporter type used for the given asset.
+			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type Get(Path path)
+			public static Type GetActive(Path path)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(path);
@@ -145,12 +155,12 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Gets the AssetImporter type used for the given asset.
+			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
 			/// <param name="guid"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type Get(GUID guid)
+			public static Type GetActive(GUID guid)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(guid);
@@ -161,12 +171,20 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Gets the AssetImporter types used for the given assets.
+			///     Gets the active AssetImporter type used for the given asset.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			[ExcludeFromCodeCoverage]
+			public static Type GetActive(Object obj) => GetActive(GetGuid(obj));
+
+			/// <summary>
+			///     Gets the active AssetImporter types used for the given assets.
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type[] Get(Path[] paths) => Get(Path.ToStrings(paths));
+			public static Type[] GetActive(Path[] paths) => GetActive(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Gets the AssetImporter types used for the given assets.
@@ -174,7 +192,7 @@ namespace CodeSmile.Editor
 			/// <param name="paths"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type[] Get(String[] paths)
+			public static Type[] GetActive(String[] paths)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(paths);
@@ -185,12 +203,12 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Gets the AssetImporter types used for the given assets.
+			///     Gets the active AssetImporter types used for the given assets.
 			/// </summary>
 			/// <param name="guids"></param>
 			/// <returns></returns>
 			[ExcludeFromCodeCoverage]
-			public static Type[] Get(ReadOnlySpan<GUID> guids)
+			public static Type[] GetActive(ReadOnlySpan<GUID> guids)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(guids);
@@ -201,7 +219,7 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Gets the AssetImporter types available for a given asset, eg those that handle assets of the given type.
+			///     Gets the available AssetImporter types for a given asset, eg those that handle assets of the given type.
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
@@ -214,6 +232,13 @@ namespace CodeSmile.Editor
 				return AssetDatabase.GetAvailableImporterTypes(path);
 #endif
 			}
+
+			/// <summary>
+			///     Gets the available AssetImporter types for a given asset, eg those that handle assets of the given type.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public static Type[] GetAvailable(Object obj) => GetAvailable(Path.Get(obj));
 
 			/// <summary>
 			///     Writes any unsaved changes of the importer for the asset at the given path to disk.
