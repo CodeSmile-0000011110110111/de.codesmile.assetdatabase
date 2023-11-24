@@ -30,7 +30,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetDirect(Path path) => AssetDatabase.GetDependencies(path, false);
 
 			/// <summary>
@@ -38,7 +37,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetDirect(Path[] paths) =>
 				AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
 
@@ -47,7 +45,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetAll(Path path) => AssetDatabase.GetDependencies(path, true);
 
 			/// <summary>
@@ -55,7 +52,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetAll(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
 
 			/// <summary>
@@ -66,9 +62,8 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="globalDependencyName">A global name for the dependency.</param>
 			/// <param name="dependencyHash">The current hash of the dependency value.</param>
-			/// <see cref="Remove" />
-			[ExcludeFromCodeCoverage]
-			public static void Set(String globalDependencyName, Hash128 dependencyHash) =>
+			/// <see cref="Unregister" />
+			public static void Register(String globalDependencyName, Hash128 dependencyHash) =>
 				AssetDatabase.RegisterCustomDependency(globalDependencyName, dependencyHash);
 
 			/// <summary>
@@ -77,9 +72,8 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="globalDependencyNamePrefix"></param>
 			/// <returns>The number of custom dependencies that were removed.</returns>
-			/// <see cref="Set" />
-			[ExcludeFromCodeCoverage]
-			public static UInt32 Remove(String globalDependencyNamePrefix) =>
+			/// <see cref="Register" />
+			public static UInt32 Unregister(String globalDependencyNamePrefix) =>
 				AssetDatabase.UnregisterCustomDependencyPrefixFilter(globalDependencyNamePrefix);
 
 			/// <summary>
@@ -88,7 +82,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Hash128 GetHash(Path path) => AssetDatabase.GetAssetDependencyHash(path);
 
 			/// <summary>
@@ -97,7 +90,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="guid"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Hash128 GetHash(GUID guid) => AssetDatabase.GetAssetDependencyHash(guid);
 		}
 	}

@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -25,7 +24,7 @@ namespace CodeSmile.Editor
 		/// <see cref="Status.IsForeign" />
 		/// <see cref="Status.IsNative" />
 		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
+		public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
 
 		/// <summary>
 		///     Returns whether this is a native asset.
@@ -33,12 +32,11 @@ namespace CodeSmile.Editor
 		/// <see cref="Status.IsNative" />
 		/// <see cref="Status.IsForeign" />
 		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
+		public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
 
 		/// <summary>
 		///     Returns true if this is a scene asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage]
 		public Boolean IsScene => Status.IsScene(m_MainObject);
 
 		/// <summary>
@@ -60,19 +58,17 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage] public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
+			public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
 
 			/// <summary>
 			///     Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage] public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
+			public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
 
 			/// <summary>
-			///     <p>
-			///         Returns whether this is a foreign asset.
-			///     </p>
+			///     Returns whether this is a foreign asset.
 			///     <p>
 			///         A foreign asset is any type of file that Unity doesn't use
 			///         directly but rather maintains cached versions of it in the Library folder. For example, a .png image
@@ -84,7 +80,7 @@ namespace CodeSmile.Editor
 			/// <see cref="IsNative" />
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage] public static Boolean IsForeign(Object obj) => AssetDatabase.IsForeignAsset(obj);
+			public static Boolean IsForeign(Object obj) => AssetDatabase.IsForeignAsset(obj);
 
 			/// <summary>
 			///     Returns whether this is a native asset. Native assets are serialized directly by Unity, such as materials.
@@ -93,14 +89,13 @@ namespace CodeSmile.Editor
 			/// <see cref="IsForeign" />
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage] public static Boolean IsNative(Object obj) => AssetDatabase.IsNativeAsset(obj);
+			public static Boolean IsNative(Object obj) => AssetDatabase.IsNativeAsset(obj);
 
 			/// <summary>
 			///     Returns whether this object's main asset is loaded.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(Path.Get(obj));
 
 			/// <summary>
@@ -108,7 +103,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 			/// <summary>
@@ -116,7 +110,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Boolean IsScene(Object obj) => obj.GetType().Equals(typeof(SceneAsset));
 		}
 	}

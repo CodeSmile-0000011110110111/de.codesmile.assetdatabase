@@ -66,29 +66,28 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns the path to the .meta file if the path represents an asset file.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public Path MetaPath => ToMeta(this);
+			public Path MetaPath => ToMeta(this);
 
 			/// <summary>
 			///     Returns the path to the asset file if the path represents a .meta file.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public Path AssetPath => FromMeta(this);
+			public Path AssetPath => FromMeta(this);
 
 			/// <summary>
 			///     Returns the extension of the file path.
 			/// </summary>
 			/// <value>The extension with a leading dot (eg '.txt') or an empty string.</value>
-			[ExcludeFromCodeCoverage] public String Extension => System.IO.Path.GetExtension(m_RelativePath);
+			public String Extension => System.IO.Path.GetExtension(m_RelativePath);
 
 			/// <summary>
 			///     Returns the file name with extension.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public String FileName => System.IO.Path.GetFileName(m_RelativePath);
+			public String FileName => System.IO.Path.GetFileName(m_RelativePath);
 
 			/// <summary>
 			///     Returns the file name without extension.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public String FileNameWithoutExtension =>
-				System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
+			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
 
 			/// <summary>
 			///     Returns the path to the project's 'Assets' subfolder.
@@ -136,7 +135,7 @@ namespace CodeSmile.Editor
 			///     already exists at the path. Does not alter path if it does not exist or points to a folder.
 			///     See also: Project Settings => Editor => Numbering Scheme
 			/// </summary>
-			public Path UniqueFilePath => UniquifyFilename(this);
+			public Path UniqueFilePath => UniquifyFileName(this);
 
 			/// <summary>
 			///     Gets the path of an asset file.
@@ -296,7 +295,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path UniquifyFilename(Path path)
+			public static Path UniquifyFileName(Path path)
 			{
 				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
 				return String.IsNullOrEmpty(uniquePath) ? path : uniquePath;
@@ -384,8 +383,8 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
 			/// </summary>
-			[ExcludeFromCodeCoverage]
-			public void OpenFolder() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPath));
+			[ExcludeFromCodeCoverage] // cannot be tested
+			public void OpenExternal() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPath));
 
 			/// <summary>
 			///     Renames the file or folder with a new name.

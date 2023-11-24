@@ -48,7 +48,6 @@ namespace CodeSmile.Editor
 			/// <param name="subObject"></param>
 			/// <param name="destinationPath"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Boolean Extract(Object subObject, Path destinationPath)
 			{
 				ThrowIf.ArgumentIsNull(subObject, nameof(subObject));

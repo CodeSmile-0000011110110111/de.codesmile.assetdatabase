@@ -14,7 +14,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="packagePath"></param>
 		/// <param name="options"></param>
-		[ExcludeFromCodeCoverage]
 		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
 		{
 			ThrowIf.AssetDeleted(this);
@@ -34,7 +33,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="packagePath">path to file with the .unitypackage extension</param>
 			/// <see cref="ImportInteractive" />
-			[ExcludeFromCodeCoverage]
 			public static void Import(Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
@@ -49,7 +47,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="packagePath">path to file with the .unitypackage extension</param>
 			/// <see cref="Import" />
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // not testable
 			public static void ImportInteractive(Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
@@ -63,7 +61,6 @@ namespace CodeSmile.Editor
 			/// <param name="assetPath"></param>
 			/// <param name="packagePath">path to file with the .unitypackage extension</param>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage]
 			public static void Export(Path assetPath, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{
@@ -78,7 +75,6 @@ namespace CodeSmile.Editor
 			/// <param name="assetPaths"></param>
 			/// <param name="packagePath"></param>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage]
 			public static void Export(Path[] assetPaths, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default) =>
 				Export(Path.ToStrings(assetPaths), packagePath, options);
@@ -89,7 +85,6 @@ namespace CodeSmile.Editor
 			/// <param name="assetPaths"></param>
 			/// <param name="packagePath"></param>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage]
 			public static void Export(String[] assetPaths, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{

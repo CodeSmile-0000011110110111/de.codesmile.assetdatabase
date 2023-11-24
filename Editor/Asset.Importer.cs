@@ -13,7 +13,6 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the default AssetImporter type for this asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage]
 		public Type DefaultImporter => Importer.GetDefault(m_AssetPath);
 
 		/// <summary>
@@ -39,7 +38,6 @@ namespace CodeSmile.Editor
 		/// <see cref="DefaultImporter" />
 		/// <see cref="SetActiveImporter{T}" />
 		/// <see cref="SetActiveImporterToDefault" />
-		[ExcludeFromCodeCoverage]
 		public Boolean IsImporterOverridden => ActiveImporter != DefaultImporter;
 
 		/// <summary>
@@ -99,7 +97,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns>the AssetImporter type or null if there is no overridden importer</returns>
-			[ExcludeFromCodeCoverage]
 			public static Type GetOverride(Path path) => AssetDatabase.GetImporterOverride(path);
 
 			/// <summary>
@@ -127,7 +124,6 @@ namespace CodeSmile.Editor
 			///     Clears an asset's importer override for the specified asset.
 			/// </summary>
 			/// <param name="path"></param>
-			[ExcludeFromCodeCoverage]
 			public static void ClearOverride(Path path) => AssetDatabase.ClearImporterOverride(path);
 
 			/// <summary>
@@ -135,7 +131,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Boolean IsOverridden(Path path) => GetDefault(path) != GetOverride(path);
 
 			/// <summary>
@@ -143,7 +138,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type GetActive(Path path)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -159,7 +153,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="guid"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type GetActive(GUID guid)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -175,7 +168,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type GetActive(Object obj) => GetActive(GetGuid(obj));
 
 			/// <summary>
@@ -183,7 +175,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type[] GetActive(Path[] paths) => GetActive(Path.ToStrings(paths));
 
 			/// <summary>
@@ -191,7 +182,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="paths"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type[] GetActive(String[] paths)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -207,7 +197,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="guids"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type[] GetActive(ReadOnlySpan<GUID> guids)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -223,7 +212,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static Type[] GetAvailable(Path path)
 			{
 #if UNITY_2022_1_OR_NEWER
@@ -246,8 +234,7 @@ namespace CodeSmile.Editor
 			///     without user interaction.
 			/// </summary>
 			/// <param name="path"></param>
-			[ExcludeFromCodeCoverage]
-			public static void SaveSettings(Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
+			public static void ApplySettings(Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
 
 			/// <summary>
 			///     Writes any unsaved changes of the importer to disk.
@@ -255,8 +242,7 @@ namespace CodeSmile.Editor
 			///     without user interaction.
 			/// </summary>
 			/// <param name="importer"></param>
-			[ExcludeFromCodeCoverage]
-			public static void SaveSettings(AssetImporter importer) => SaveSettings(importer.assetPath);
+			public static void ApplySettings(AssetImporter importer) => ApplySettings(importer.assetPath);
 		}
 	}
 }

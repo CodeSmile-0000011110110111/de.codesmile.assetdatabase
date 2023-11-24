@@ -58,20 +58,20 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the local FileID of the asset.
 		/// </summary>
-		[ExcludeFromCodeCoverage] public Int64 LocalFileId => GetFileId(m_MainObject);
+		public Int64 LocalFileId => GetFileId(m_MainObject);
 
 		/// <summary>
 		///     Returns the icon texture associated with the asset type.
 		/// </summary>
-		[ExcludeFromCodeCoverage] public Texture Icon => GetIcon(m_AssetPath);
+		public Texture Icon => GetIcon(m_AssetPath);
 
 		/// <summary>
 		///     Returns the local FileID of the object.
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
-		/// <see cref="GetGuid"/>
-		/// <see cref="GetGuidAndFileId"/>
+		/// <see cref="GetGuid" />
+		/// <see cref="GetGuidAndFileId" />
 		public static Int64 GetFileId(Object obj)
 		{
 			if (obj == null)
@@ -87,8 +87,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		/// <see cref="GetGuidAndFileId"/>
-		/// <see cref="GetFileId"/>
+		/// <see cref="GetGuidAndFileId" />
+		/// <see cref="GetFileId" />
 		public static GUID GetGuid(Object obj)
 		{
 			if (obj == null)
@@ -105,8 +105,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		/// <see cref="GetGuid"/>
-		/// <see cref="GetFileId"/>
+		/// <see cref="GetGuid" />
+		/// <see cref="GetFileId" />
 
 		// Use of ValueTuple helps doxygen pick up this method as documented
 		// See this issue: https://github.com/doxygen/doxygen/issues/9618
@@ -127,15 +127,15 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
+		public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
 
 		/// <summary>
 		///     Returns the icon associated with the asset type.
-		///		Note: this will not return icons for sub-assets. It will only return the main asset's icon.
+		///     Note: this will not return icons for sub-assets. It will only return the main asset's icon.
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public static Texture GetIcon(Object obj) => GetIcon(Path.Get(obj));
+		public static Texture GetIcon(Object obj) => GetIcon(Path.Get(obj));
 
 		/// <summary>
 		///     Returns the type of the main asset at the path.
@@ -145,6 +145,14 @@ namespace CodeSmile.Editor
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
+		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <param name="fileId"></param>
+		/// <returns></returns>
+		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
+
+		/// <summary>
 		///     Returns MainObject cast to T, or null. But recommended usage is:
 		///     <p>
 		///         MyType t = asset as MyType;
@@ -152,6 +160,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
-		[ExcludeFromCodeCoverage] public T Get<T>() where T : Object => m_MainObject as T;
+		public T Get<T>() where T : Object => m_MainObject as T;
 	}
 }

@@ -176,7 +176,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="lineNumber"></param>
 		/// <param name="columnNumber"></param>
-		[ExcludeFromCodeCoverage]
+		[ExcludeFromCodeCoverage] // cannot be tested
 		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1)
 		{
 			ThrowIf.AssetDeleted(this);
@@ -246,7 +246,7 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			/// <see cref="Trash(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 			/// <see cref="Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
-			[ExcludeFromCodeCoverage] public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
+			public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
 			/// <summary>
 			///     Creates (saves) a new asset file at the target path. Also creates all non-existing folders in the path.
@@ -404,7 +404,6 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			/// <see cref="FindGuids" />
 			/// <see cref="FindPaths" />
-			[ExcludeFromCodeCoverage]
 			public static String[] Find(String filter, String[] searchInFolders = null) => searchInFolders == null
 				? AssetDatabase.FindAssets(filter)
 				: AssetDatabase.FindAssets(filter, searchInFolders);
@@ -417,7 +416,6 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			/// <see cref="Find" />
 			/// <see cref="FindGuids" />
-			[ExcludeFromCodeCoverage]
 			public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
 
@@ -429,7 +427,6 @@ namespace CodeSmile.Editor
 			/// <returns></returns>
 			/// <see cref="Find" />
 			/// <see cref="FindPaths" />
-			[ExcludeFromCodeCoverage]
 			public static GUID[] FindGuids(String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => new GUID(guid)).ToArray();
 
@@ -537,7 +534,7 @@ namespace CodeSmile.Editor
 			/// <param name="obj"></param>
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // cannot be tested
 			public static void OpenExternal(Object obj, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(obj, lineNumber, columnNumber);
 
@@ -548,7 +545,7 @@ namespace CodeSmile.Editor
 			/// <param name="instanceId"></param>
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // cannot be tested
 			public static void OpenExternal(Int32 instanceId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(instanceId, lineNumber, columnNumber);
 
@@ -559,7 +556,7 @@ namespace CodeSmile.Editor
 			/// <param name="path"></param>
 			/// <param name="lineNumber"></param>
 			/// <param name="columnNumber"></param>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // cannot be tested
 			public static void OpenExternal(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				OpenExternal(Load<Object>(path), lineNumber, columnNumber);
 
@@ -592,7 +589,6 @@ namespace CodeSmile.Editor
 			///     you can access via the Asset.Database.DeleteFailedPaths property.
 			/// </returns>
 			/// <see cref="FailedToDeletePaths" />
-			[ExcludeFromCodeCoverage]
 			public static Boolean Delete(IEnumerable<Path> paths) => Delete(paths.Cast<String>());
 
 			/// <summary>
@@ -604,7 +600,6 @@ namespace CodeSmile.Editor
 			///     you can access via the Asset.Database.DeleteFailedPaths property.
 			/// </returns>
 			/// <see cref="FailedToDeletePaths" />
-			[ExcludeFromCodeCoverage]
 			public static Boolean Delete(IEnumerable<String> paths) =>
 				AssetDatabase.DeleteAssets(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
@@ -634,7 +629,6 @@ namespace CodeSmile.Editor
 			///     you can access via the Asset.Database.DeleteFailedPaths property.
 			/// </returns>
 			/// <see cref="File.FailedToDeletePaths" />
-			[ExcludeFromCodeCoverage]
 			public static Boolean Trash(IEnumerable<Path> paths) => Trash(paths.Cast<String>());
 
 			/// <summary>
@@ -646,7 +640,6 @@ namespace CodeSmile.Editor
 			///     you can access via the Asset.Database.DeleteFailedPaths property.
 			/// </returns>
 			/// <see cref="File.FailedToDeletePaths" />
-			[ExcludeFromCodeCoverage]
 			public static Boolean Trash(IEnumerable<String> paths) =>
 				AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_FailedToDeletePaths = new List<String>());
 
@@ -660,7 +653,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="massAssetFileEditAction"></param>
 			/// <param name="rethrowExceptions"></param>
-			[ExcludeFromCodeCoverage]
 			public static void BatchEditing(Action massAssetFileEditAction, Boolean rethrowExceptions = false)
 			{
 				ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));

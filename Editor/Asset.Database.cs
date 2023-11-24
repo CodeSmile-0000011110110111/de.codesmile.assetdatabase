@@ -20,7 +20,7 @@ namespace CodeSmile.Editor
 			///     Gets or sets the desired worker count.
 			///     Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public static Int32 DesiredWorkerCount
+			public static Int32 DesiredWorkerCount
 			{
 				get => AssetDatabase.DesiredWorkerCount;
 				set
@@ -33,8 +33,7 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns whether directory monitoring is enabled in Preferences, or disabled due to symlinks.
 			/// </summary>
-			[ExcludeFromCodeCoverage] public static Boolean DirectoryMonitoringEnabled =>
-				AssetDatabase.IsDirectoryMonitoringEnabled();
+			public static Boolean DirectoryMonitoring => AssetDatabase.IsDirectoryMonitoringEnabled();
 
 			/// <summary>
 			///     Will stop Unity from automatically importing assets. Must be called in pair with DisallowAutoRefresh.
@@ -58,7 +57,7 @@ namespace CodeSmile.Editor
 			///     Releases any cached file handles Unity holds. May be required to allow manual asset or meta file
 			///     modifications that bypass the AssetDatabase.
 			/// </summary>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			public static void ReleaseFileHandles() => AssetDatabase.ReleaseCachedFileHandles();
 
 			/// <summary>
@@ -68,7 +67,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <see
 			///     cref="ForceReserialize(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path},UnityEditor.ForceReserializeAssetsOptions)" />
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			public static void ForceReserializeAll() => AssetDatabase.ForceReserializeAssets();
 
 			/// <summary>
@@ -80,7 +79,7 @@ namespace CodeSmile.Editor
 			/// <see cref="ForceReserialize()" />
 			/// <param name="paths"></param>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			public static void ForceReserialize(IEnumerable<Path> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)
 			{
@@ -97,7 +96,7 @@ namespace CodeSmile.Editor
 			/// <see cref="ForceReserialize()" />
 			/// <param name="paths"></param>
 			/// <param name="options"></param>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			public static void ForceReserialize(IEnumerable<String> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)
 			{
@@ -142,14 +141,14 @@ namespace CodeSmile.Editor
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			///     <see cref="File.BatchEditing" />
 			/// </summary>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
 
 			/// <summary>
 			///     Internal on purpose: use Asset.BatchEditing(Action) instead
 			///     <see cref="File.BatchEditing" />
 			/// </summary>
-			[ExcludeFromCodeCoverage]
+			[ExcludeFromCodeCoverage] // untestable
 			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
 		}
 	}

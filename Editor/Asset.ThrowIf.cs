@@ -88,7 +88,6 @@ namespace CodeSmile.Editor
 				}
 			}
 
-			[ExcludeFromCodeCoverage]
 			public static void AssetLoadReturnedNull(Object obj, Path path)
 			{
 				if (obj == null)

@@ -39,7 +39,7 @@ public class AssetCopyTests : AssetTestBase
 	[Test] public void CopyStatic_OntoItselfNoOverwrite_CreatesCopy()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
-		var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFilename(asset.AssetPath));
+		var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFileName(asset.AssetPath));
 
 		var success = Asset.File.Copy(asset.AssetPath, (String)asset.AssetPath);
 

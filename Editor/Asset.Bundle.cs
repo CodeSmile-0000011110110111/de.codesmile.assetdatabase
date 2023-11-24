@@ -14,7 +14,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>The bundle name or empty string.</returns>
-		[ExcludeFromCodeCoverage]
 		public String OwningBundle => Bundle.GetOwningBundle(m_AssetPath);
 
 		/// <summary>
@@ -22,7 +21,6 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path"></param>
 		/// <returns>The bundle variant name or empty string.</returns>
-		[ExcludeFromCodeCoverage]
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
@@ -34,19 +32,16 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns all asset bundle names.
 			/// </summary>
-			[ExcludeFromCodeCoverage]
 			public static String[] All => AssetDatabase.GetAllAssetBundleNames();
 
 			/// <summary>
 			///     Returns all unused asset bundle names.
 			/// </summary>
-			[ExcludeFromCodeCoverage]
 			public static String[] Unused => AssetDatabase.GetUnusedAssetBundleNames();
 
 			/// <summary>
 			///     Removes all unused asset bundles.
 			/// </summary>
-			[ExcludeFromCodeCoverage]
 			public static void RemoveUnused() => AssetDatabase.RemoveUnusedAssetBundleNames();
 
 			/// <summary>
@@ -54,7 +49,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <see cref="ForceRemove" />
 			/// <param name="bundleName"></param>
-			[ExcludeFromCodeCoverage]
 			public static void Remove(String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, false);
 
 			/// <summary>
@@ -62,7 +56,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <see cref="Remove" />
 			/// <param name="bundleName"></param>
-			[ExcludeFromCodeCoverage]
 			public static void ForceRemove(String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, true);
 
 			/// <summary>
@@ -71,7 +64,6 @@ namespace CodeSmile.Editor
 			/// <see cref="GetAllDependencies" />
 			/// <param name="bundleName"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetDirectDependencies(String bundleName) =>
 				AssetDatabase.GetAssetBundleDependencies(bundleName, false);
 
@@ -81,7 +73,6 @@ namespace CodeSmile.Editor
 			/// <see cref="GetDirectDependencies" />
 			/// <param name="bundleName"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetAllDependencies(String bundleName) =>
 				AssetDatabase.GetAssetBundleDependencies(bundleName, true);
 
@@ -90,7 +81,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="bundleName"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetAllPaths(String bundleName) =>
 				AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
 
@@ -101,7 +91,6 @@ namespace CodeSmile.Editor
 			/// <param name="bundleName"></param>
 			/// <param name="assetName"></param>
 			/// <returns></returns>
-			[ExcludeFromCodeCoverage]
 			public static String[] GetPaths(String bundleName, String assetName) =>
 				AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);
 
@@ -110,7 +99,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns>The bundle name or empty string.</returns>
-			[ExcludeFromCodeCoverage]
 			public static String GetOwningBundle(Path path) => AssetDatabase.GetImplicitAssetBundleName(path);
 
 			/// <summary>
@@ -118,7 +106,6 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns>The bundle name or empty string.</returns>
-			[ExcludeFromCodeCoverage]
 			public static String GetOwningBundleVariant(Path path) =>
 				AssetDatabase.GetImplicitAssetBundleVariantName(path);
 		}

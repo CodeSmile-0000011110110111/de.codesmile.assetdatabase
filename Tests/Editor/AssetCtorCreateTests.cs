@@ -24,7 +24,7 @@ public class AssetCtorCreateTests : AssetTestBase
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAssetObject(testPath);
-		var expectedPath = Asset.Path.UniquifyFilename(testPath);
+		var expectedPath = Asset.Path.UniquifyFileName(testPath);
 		var newObject = Instantiate.ExampleSO();
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath));
@@ -39,7 +39,7 @@ public class AssetCtorCreateTests : AssetTestBase
 	{
 		var testPath = TestAssetPath;
 		var existing = CreateTestAssetObject(testPath);
-		var expectedPath = Asset.Path.UniquifyFilename(testPath);
+		var expectedPath = Asset.Path.UniquifyFileName(testPath);
 		var newObject = Instantiate.ExampleSO();
 
 		var newAsset = DeleteAfterTest(new Asset(newObject, (String)TestAssetPath, true));
