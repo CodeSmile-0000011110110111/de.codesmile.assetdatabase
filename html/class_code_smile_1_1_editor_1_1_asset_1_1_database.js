@@ -10,5 +10,5 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_database =
     [ "ReleaseFileHandles", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html#afa24e66e009892bc1032c64f512f349d", null ],
     [ "SaveAll", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html#af4aa665fc0bbfcf9f076d5da1457b2c4", null ],
     [ "DesiredWorkerCount", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a46c1f775624b940edb495a5c2b08583c", null ],
-    [ "DirectoryMonitoringEnabled", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a634d47a15aad04a78065059017d78895", null ]
+    [ "DirectoryMonitoring", "class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a6190225c177bf52f95b2cdbcb99ccc2a", null ]
 ];

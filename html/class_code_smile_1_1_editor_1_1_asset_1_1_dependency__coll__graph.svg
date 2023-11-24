@@ -25,22 +25,22 @@
 <polygon fill="#999999" stroke="none" points="92,-164 0,-164 0,0 92,0 92,-164"/>
 <text text-anchor="start" x="4.75" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset.Dependency</text>
 <text text-anchor="start" x="44.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="10.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAll()</text>
-<text text-anchor="start" x="10.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAll()</text>
-<text text-anchor="start" x="10.5" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetDirect()</text>
-<text text-anchor="start" x="10.5" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetDirect()</text>
-<text text-anchor="start" x="10.5" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetHash()</text>
-<text text-anchor="start" x="10.5" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetHash()</text>
-<text text-anchor="start" x="10.5" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">Remove()</text>
-<text text-anchor="start" x="10.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="27" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Set()</text>
+<text text-anchor="start" x="10" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAll()</text>
+<text text-anchor="start" x="10" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAll()</text>
+<text text-anchor="start" x="10" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetDirect()</text>
+<text text-anchor="start" x="10" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetDirect()</text>
+<text text-anchor="start" x="10" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetHash()</text>
+<text text-anchor="start" x="10" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetHash()</text>
+<text text-anchor="start" x="10" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">Register()</text>
+<text text-anchor="start" x="10" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="26" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Unregister()</text>
 <polygon fill="#666666" stroke="#666666" points="0,-146 0,-146 92,-146 92,-146 0,-146"/>
 <polygon fill="#666666" stroke="#666666" points="0,-130 0,-130 92,-130 92,-130 0,-130"/>
 <polygon fill="none" stroke="#666666" points="0,0 0,-164 92,-164 92,0 0,0"/>

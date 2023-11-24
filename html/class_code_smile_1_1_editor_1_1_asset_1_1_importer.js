@@ -1,5 +1,7 @@
 var class_code_smile_1_1_editor_1_1_asset_1_1_importer =
 [
+    [ "ApplySettings", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#ab1b9f00c5b60dbee1c269cd4a8b7190e", null ],
+    [ "ApplySettings", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#affaadc9070dcaa35be2be767daf14f9a", null ],
     [ "ClearOverride", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a6fed2633e603f30a65ff02dedadf557a", null ],
     [ "GetActive", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a728bec89f163cf82119c37e0c73dfc0d", null ],
     [ "GetActive", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a99270722012ae955fdc451c3d45761d0", null ],
@@ -14,7 +16,5 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_importer =
     [ "GetOverride", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a1132a37dd996af46f1beb2dc12d4571a", null ],
     [ "GetOverride", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a3078cc1ed18eef4bdbc177fca89212a2", null ],
     [ "IsOverridden", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aed500f5c8bd8afe9c414b6e94d64c270", null ],
-    [ "SaveSettings", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a7b697a6eb58a84594662ad17d2ea7016", null ],
-    [ "SaveSettings", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a0de87c9ce525a47e6f60e9348bdf0ea8", null ],
     [ "SetOverride< T >", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a2635a92be6f2e87ece1fb427a88ea809", null ]
 ];

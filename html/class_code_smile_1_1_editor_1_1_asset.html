@@ -257,6 +257,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab856af13e3309f29c328b6e38dedf774" id="r_ab856af13e3309f29c328b6e38dedf774"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ab856af13e3309f29c328b6e38dedf774">GetMainType</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:ab856af13e3309f29c328b6e38dedf774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the main asset at the path.  <br /></td></tr>
 <tr class="separator:ab856af13e3309f29c328b6e38dedf774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575f2272d38948b87fc09923b26327ba" id="r_a575f2272d38948b87fc09923b26327ba"><td class="memItemLeft" align="right" valign="top">static Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#a575f2272d38948b87fc09923b26327ba">GetSubType</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path, Int64 fileId)</td></tr>
+<tr class="memdesc:a575f2272d38948b87fc09923b26327ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.  <br /></td></tr>
+<tr class="separator:a575f2272d38948b87fc09923b26327ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae41aa018507db1deffb10096f33e3bb6" id="r_ae41aa018507db1deffb10096f33e3bb6"><td class="memItemLeft" align="right" valign="top">static implicit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html#ae41aa018507db1deffb10096f33e3bb6">operator Asset</a> (GUID guid)</td></tr>
 <tr class="memdesc:ae41aa018507db1deffb10096f33e3bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion of GUID to an asset instance.  <br /></td></tr>
 <tr class="separator:ae41aa018507db1deffb10096f33e3bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -830,11 +833,11 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
-<div class="line"><span class="lineno">   20</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>            Package.Export(m_AssetPath, packagePath, options);</div>
-<div class="line"><span class="lineno">   23</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
+<div class="line"><span class="lineno">   19</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>            Package.Export(m_AssetPath, packagePath, options);</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#ab582b4cad1e26bf61ddb1e7385512905">Asset.Package.Export()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1201,6 +1204,52 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the type of the asset or null if the path does not exist</dd></dl>
+
+</div>
+</div>
+<a id="a575f2272d38948b87fc09923b26327ba" name="a575f2272d38948b87fc09923b26327ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575f2272d38948b87fc09923b26327ba">&#9670;&#160;</a></span>GetSubType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Type GetSubType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Int64&#160;</td>
+          <td class="paramname"><em>fileId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">fileId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1670,13 +1719,13 @@ Properties</h2></td></tr>
 </dd>
 </dl>
 </div>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                    : AssetImporter</div>
-<div class="line"><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   55</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
-<div class="line"><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   57</span>        {</div>
-<div class="line"><span class="lineno">   58</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                    : AssetImporter</div>
+<div class="line"><span class="lineno">   52</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   53</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
+<div class="line"><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1696,10 +1745,10 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resets the active AssetImporter type to the default type, if necessary. </p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>        {</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">if</span> (Importer.IsOverridden(m_AssetPath))</div>
-<div class="line"><span class="lineno">   67</span>                Importer.ClearOverride(m_AssetPath);</div>
-<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (Importer.IsOverridden(m_AssetPath))</div>
+<div class="line"><span class="lineno">   65</span>                Importer.ClearOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#a6fed2633e603f30a65ff02dedadf557a">Asset.Importer.ClearOverride()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer.html#aed500f5c8bd8afe9c414b6e94d64c270">Asset.Importer.IsOverridden()</a>.</p>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1825,13 +1874,13 @@ Properties</h2></td></tr>
 
 <p>Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the importer was overridden. </p>
 <p>SetActiveImporter&lt;T&gt; SetActiveImporterToDefault DefaultImporter </p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>        {</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   29</span>            {</div>
-<div class="line"><span class="lineno">   30</span>                var overridden = Importer.GetOverride(m_AssetPath);</div>
-<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> overridden != <span class="keyword">null</span> ? overridden : Importer.GetDefault(m_AssetPath);</div>
-<div class="line"><span class="lineno">   32</span>            }</div>
-<div class="line"><span class="lineno">   33</span>        }</div>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>        {</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   28</span>            {</div>
+<div class="line"><span class="lineno">   29</span>                var overridden = Importer.GetOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">   30</span>                <span class="keywordflow">return</span> overridden != <span class="keyword">null</span> ? overridden : Importer.GetDefault(m_AssetPath);</div>
+<div class="line"><span class="lineno">   31</span>            }</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
