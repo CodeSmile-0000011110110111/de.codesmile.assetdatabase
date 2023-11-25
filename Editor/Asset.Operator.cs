@@ -1,8 +1,9 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using System;
 using UnityEditor;
-using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
 {
@@ -60,7 +61,7 @@ namespace CodeSmile.Editor
 		/// Asset asset = "Assets/Folder/MyAsset.asset";
 		/// </code>
 		/// </example>
-		public static implicit operator Asset(string path) => (Path)path; // implicit forward to Asset(Path)
+		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
 
 		/// <summary>
 		///     Implicit conversion of GUID to an asset instance.

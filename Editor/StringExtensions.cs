@@ -6,7 +6,7 @@ using System;
 namespace CodeSmile.Editor
 {
 	/// <summary>
-	/// Extensions for System.String
+	///     Extensions for System.String
 	/// </summary>
 	public static class StringExtensions
 	{

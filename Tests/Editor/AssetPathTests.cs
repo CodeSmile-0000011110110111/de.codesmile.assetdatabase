@@ -4,8 +4,6 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
-using System.Diagnostics.CodeAnalysis;
-using UnityEditor;
 using UnityEngine;
 
 public class AssetPathTests : AssetTestBase
@@ -174,7 +172,6 @@ public class AssetPathTests : AssetTestBase
 
 		Assert.AreEqual(guid, assetPath.Guid);
 	}
-
 
 	[TestCase("Assets", "", "Assets")]
 	[TestCase("Assets/Folder", "nope", "Assets/nope")]

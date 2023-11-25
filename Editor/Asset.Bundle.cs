@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 
 namespace CodeSmile.Editor
@@ -12,21 +11,23 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the bundle name the asset belongs to.
 		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>The bundle name or empty string.</returns>
+		/// <param name="path">Path to an asset.</param>
+		/// <returns>The bundle name or an empty string.</returns>
 		public String OwningBundle => Bundle.GetOwningBundle(m_AssetPath);
 
 		/// <summary>
 		///     Returns the bundle variant name the asset belongs to.
 		/// </summary>
-		/// <param name="path"></param>
+		/// <param name="path">Path to an asset.</param>
 		/// <returns>The bundle variant name or empty string.</returns>
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
 		///     Groups all asset bundle related functionality.
-		///     Note: Unity recommends Addressables over Bundles!
 		/// </summary>
+		/// <remarks>
+		///     Unity recommends to use Addressables over Bundles.
+		/// </remarks>
 		public static class Bundle
 		{
 			/// <summary>

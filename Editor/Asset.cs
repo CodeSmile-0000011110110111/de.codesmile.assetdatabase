@@ -2,7 +2,6 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -21,10 +20,41 @@ namespace CodeSmile.Editor
 		private Object m_MainObject;
 
 		/// <summary>
-		///     Returns the asset's main object.
+		///     Gets or sets the asset's main object.
+		///     CodeSmile.Editor.Asset.GetMainType
 		/// </summary>
+		/// <example>
+		///     To cast the main object to a specific type you may simply cast the asset:
+		///     <code>var myObj = (MyType)asset;</code>
+		///     Is short for:
+		///     <code>var myObj = (MyType)asset.MainObject;</code>
+		///     The same works with the 'as' operator:
+		///     <code>var myObj = asset as MyType;</code>
+		///     Is short for:
+		///     <code>var myObj = asset.MainObject as MyType;</code>
+		///     Lastly you can also use the generic getter:
+		///     <code>var myObj = asset.Get&lt;MyType&gt;();</code>
+		/// </example>
+		/// <seealso cref="">
+		///     <list type="">
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.SubAsset" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path)" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object)" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.File.LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
+		///         </item>
+		///     </list>
+		/// </seealso>
 		public Object MainObject
 		{
+			// This 'loads' the asset but most of the time simply returns the internally cached instance.
+			// We need to load the instance because the user may have called static SubAsset.SetMain().
 			get => m_MainObject = LoadMain<Object>();
 			set
 			{
@@ -34,82 +64,97 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Returns the type of the main asset.
+		///     Returns the type of the main asset at the given path.
 		/// </summary>
+		/// <seealso cref="GetMainType(CodeSmile.Editor.Asset.Path)" />
 		public Type MainObjectType => GetMainType(m_AssetPath);
 
 		/// <summary>
 		///     Returns the path to the asset (file or folder).
 		/// </summary>
-		/// <see cref="MetaPath" />
+		/// <seealso cref="MetaPath" />
 		public Path AssetPath => m_AssetPath;
 
 		/// <summary>
 		///     Returns the path to the .meta file for the asset.
 		/// </summary>
-		/// <see cref="AssetPath" />
+		/// <seealso cref="AssetPath" />
+		/// <seealso cref="Path.ToMeta(Path)" />
 		public Path MetaPath => Path.ToMeta(m_AssetPath);
 
 		/// <summary>
 		///     Returns the asset's GUID.
 		/// </summary>
+		/// <seealso cref="FileId" />
+		/// <seealso cref="Path.GetGuid(Path)" />
 		public GUID Guid => Path.GetGuid(m_AssetPath);
 
 		/// <summary>
 		///     Returns the local FileID of the asset.
 		/// </summary>
-		public Int64 LocalFileId => GetFileId(m_MainObject);
+		/// <see cref="Guid" />
+		public Int64 FileId => GetFileId(m_MainObject);
 
 		/// <summary>
 		///     Returns the icon texture associated with the asset type.
 		/// </summary>
-		public Texture Icon => GetIcon(m_AssetPath);
+		public Texture2D Icon => GetIcon(m_AssetPath);
 
 		/// <summary>
-		///     Returns the local FileID of the object.
+		///     Returns the type of the main asset at the path.
 		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
-		/// <see cref="GetGuid" />
-		/// <see cref="GetGuidAndFileId" />
-		public static Int64 GetFileId(Object obj)
-		{
-			if (obj == null)
-				return 0L;
-
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
-			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
-		}
+		/// <param name="path">Path to an asset.</param>
+		/// <returns>Type of the asset. Null if the path does not exist.</returns>
+		/// <seealso cref="">
+		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html">AssetDatabase.GetMainAssetTypeAtPath</a>
+		/// </seealso>
+		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
-		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
+		///     Returns the type of the main asset for the GUID.
 		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns></returns>
-		/// <see cref="GetGuidAndFileId" />
-		/// <see cref="GetFileId" />
-		public static GUID GetGuid(Object obj)
-		{
-			if (obj == null)
-				return new GUID();
-
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out _)
-				? new GUID(guid)
-				: new GUID();
-		}
+		/// <param name="guid">Guid of an asset.</param>
+		/// <returns>Type of the asset. Null if the guid is not known or not an asset.</returns>
+		/// <seealso cref="">
+		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
+		/// </seealso>
+		public static Type GetMainType(GUID guid) => AssetDatabase.GetMainAssetTypeFromGUID(guid);
 
 		/// <summary>
-		///     Returns both GUID and local File ID of the object. Returns an empty GUID and 0L if the object is null
-		///     or not an asset.
+		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
 		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns></returns>
-		/// <see cref="GetGuid" />
-		/// <see cref="GetFileId" />
+		/// <param name="path">Path to an asset.</param>
+		/// <param name="fileId">Local file ID of the sub-asset.</param>
+		/// <returns>Type of the SubAsset, or null.</returns>
+		/// <seealso cref="">
+		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
+		/// </seealso>
+		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
 
-		// Use of ValueTuple helps doxygen pick up this method as documented
-		// See this issue: https://github.com/doxygen/doxygen/issues/9618
+		/// <example>
+		///     Example usage:
+		///     <code>
+		/// var (guid, fileId) = Asset.GetGuidAndFileId(obj);
+		/// </code>
+		/// </example>
+		/// <param name="obj">Object from which GUID and FileId should be obtained.</param>
+		/// <seealso cref="">
+		///     <list type="">
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetGuid" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetFileId" />
+		///         </item>
+		///         <item>
+		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		///         </item>
+		///     </list>
+		/// </seealso>
+		/// <returns>
+		///     The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset.
+		/// </returns>
+		// ValueTuple makes doxygen accept it as documented, see: https://github.com/doxygen/doxygen/issues/9618
 		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object obj)
 		{
 			if (obj == null)
@@ -123,50 +168,83 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Returns the icon associated with the asset type.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		public static Texture GetIcon(Path path) => AssetDatabase.GetCachedIcon(path);
-
-		/// <summary>
-		///     Returns the icon associated with the asset type.
-		///     Note: this will not return icons for sub-assets. It will only return the main asset's icon.
+		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
 		/// </summary>
 		/// <param name="obj"></param>
+		/// <seealso cref="">
+		///     <list type="">
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetFileId" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		///         </item>
+		///         <item>
+		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		///         </item>
+		///     </list>
+		/// </seealso>
 		/// <returns></returns>
-		public static Texture GetIcon(Object obj) => GetIcon(Path.Get(obj));
+		public static GUID GetGuid(Object obj)
+		{
+			if (obj == null)
+				return new GUID();
+
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out _)
+				? new GUID(guid)
+				: new GUID();
+		}
 
 		/// <summary>
-		///     Returns the type of the main asset at the path.
+		///     Returns the local FileID of the object.
 		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>the type of the asset or null if the path does not exist</returns>
-		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
+		/// <param name="obj"></param>
+		/// <seealso cref="">
+		///     <list type="">
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetGuid" />
+		///         </item>
+		///         <item>
+		///             <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		///         </item>
+		///         <item>
+		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		///         </item>
+		///     </list>
+		/// </seealso>
+		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
+		public static Int64 GetFileId(Object obj)
+		{
+			if (obj == null)
+				return 0L;
+
+			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			var localId = Int64.MaxValue;
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
+		}
 
 		/// <summary>
-		///     Returns the type of the main asset for the GUID.
+		///     Returns the icon associated with the asset type.
 		/// </summary>
-		/// <param name="guid"></param>
-		/// <returns></returns>
-		public static Type GetMainType(GUID guid) => AssetDatabase.GetMainAssetTypeFromGUID(guid);
+		/// <param name="path">Path to an asset.</param>
+		/// <returns>The icon texture cast as Texture2D, or null.</returns>
+		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
 
 		/// <summary>
-		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
+		///     Returns the icon associated with the asset type.
 		/// </summary>
-		/// <param name="path"></param>
-		/// <param name="fileId"></param>
-		/// <returns></returns>
-		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
+		/// <param name="obj">The object for which to get the icon.</param>
+		/// <returns>The object's icon texture or null. If the obj is a sub-asset then the main asset's icon is returned.</returns>
+		public static Texture2D GetIcon(Object obj) => GetIcon(Path.Get(obj));
 
-		/// <summary>
-		///     Returns MainObject cast to T, or null. But recommended usage is:
-		///     <p>
-		///         MyType t = asset as MyType;
-		///     </p>
-		/// </summary>
+		/// <remarks>
+		///     The alternative is to cast the asset instance:
+		///     <code>
+		/// var obj = (T)asset;
+		/// </code>
+		/// </remarks>
 		/// <typeparam name="T"></typeparam>
-		/// <returns></returns>
+		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
 		public T Get<T>() where T : Object => m_MainObject as T;
 	}
 }
