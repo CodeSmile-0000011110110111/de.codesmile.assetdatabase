@@ -1,5 +1,17 @@
 # Change Log
 
+#### v1.5.0 - Nov 25, 2023
+
+- added create asset from string (ctor and Asset.Create)
+- added create asset from byte[] (ctor and Asset.Create)
+- added ImportAndLoad<T>
+- added IsImported(Path)
+- split Create into Create and CreateAsNew
+- split Copy into Copy and CopyAsNew
+- renamed Copy instance method to SaveAs and SaveAsNew
+- fixed compile errors in some Unity versions 
+- GetIcon returns Texture2D
+
 #### v1.4.1 - Nov 24, 2023
 
 - added static GetMainType(guid)
