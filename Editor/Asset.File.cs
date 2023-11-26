@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -257,11 +258,30 @@ namespace CodeSmile.Editor
 			/// <param name="path">The relative asset path with filename and extension.</param>
 			/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
 			/// <returns></returns>
-			public static Asset Create(Object obj, Path path, Boolean overwriteExisting = false)
+			public static Object Create(Object obj, Path path, Boolean overwriteExisting = false)
 			{
+				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
 				path.CreateFolders();
-				CreateAssetInternal(obj, path, overwriteExisting);
-				return new Asset(obj);
+
+				path = Path.GetOverwriteOrUnique(path, overwriteExisting);
+				AssetDatabase.CreateAsset(obj, path);
+
+				return obj;
+			}
+
+			public static Object Create(string contents, Path path, Boolean overwriteExisting = false)
+			{
+				ThrowIf.ArgumentIsNull(contents, nameof(contents));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				path.CreateFolders();
+
+				path = Path.GetOverwriteOrUnique(path, overwriteExisting);
+				System.IO.File.WriteAllText(path, contents);
+
+				return ImportAndLoad<Object>(path);
 			}
 
 			/// <summary>
@@ -313,10 +333,18 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <param name="options"></param>
-			public static void Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+			/// <returns>The input path for method chaining.</returns>
+			public static Path Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 			{
 				if (path != null && path.ExistsInFileSystem)
 					AssetDatabase.ImportAsset(path, options);
+
+				return path;
+			}
+
+			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.ForceUpdate) where T: UnityEngine.Object
+			{
+				return Load<T>(Import(path, options | ImportAssetOptions.ForceUpdate));
 			}
 
 			/// <summary>
@@ -677,12 +705,6 @@ namespace CodeSmile.Editor
 				{
 					Database.StopAssetEditing();
 				}
-			}
-
-			private static void CreateAssetInternal(Object obj, Path path, Boolean overwriteExisting)
-			{
-				var newPath = Path.GetOverwriteOrUnique(path, overwriteExisting);
-				AssetDatabase.CreateAsset(obj, newPath);
 			}
 
 			private static void SaveInternal(Object obj, Boolean forceSave = false)

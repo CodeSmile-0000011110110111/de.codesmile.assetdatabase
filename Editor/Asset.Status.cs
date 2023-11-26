@@ -51,7 +51,23 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
-			public static Boolean IsImported(Object obj) => obj ? AssetDatabase.Contains(obj) : false;
+			public static Boolean IsImported(Object obj) => obj != null ? AssetDatabase.Contains(obj) : false;
+
+			/// <summary>
+			///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
+			///     the asset file exists then you need to Import() the asset.
+			///     Unlike AssetDatabase, will not throw a NullRef if you pass null.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
+			public static Boolean IsImported(Path path)
+			{
+#if UNITY_2023_2_OR_NEWER
+				return path != null ? AssetDatabase.AssetPathExists(path) : false;
+#else
+				return path != null ? AssetDatabase.GetMainAssetTypeAtPath(path) != null : false;
+#endif
+			}
 
 			/// <summary>
 			///     Returns whether this object is the asset's 'main' object.
@@ -99,18 +115,18 @@ namespace CodeSmile.Editor
 			public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(Path.Get(obj));
 
 			/// <summary>
-			///     Returns whether this path's main asset is loaded.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
-
-			/// <summary>
 			///     Returns true if the given object is of type SceneAsset.
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
 			public static Boolean IsScene(Object obj) => obj.GetType().Equals(typeof(SceneAsset));
+
+			/// <summary>
+			///     Returns whether this path's main asset is loaded.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 		}
 	}
 }

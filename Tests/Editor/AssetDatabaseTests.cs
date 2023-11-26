@@ -7,17 +7,17 @@ using System;
 
 public class AssetDatabaseTests : AssetTestBase
 {
-	[Test] public void Contains_NullAsset_False() => Assert.IsFalse(Asset.Status.IsImported(null));
+	[Test] public void IsImported_NullObject_False() => Assert.IsFalse(Asset.Status.IsImported((UnityEngine.Object)null));
 
-	[Test] public void Contains_NotAnAsset_False() => Assert.IsFalse(Asset.Status.IsImported(Instantiate.ExampleSO()));
+	[Test] public void IsImported_NullPath_False() => Assert.IsFalse(Asset.Status.IsImported((Asset.Path)null));
 
-	[Test] public void Contains_ExistingAsset_True() =>
+	[Test] public void IsImported_NotAnAsset_False() => Assert.IsFalse(Asset.Status.IsImported(Instantiate.ExampleSO()));
+
+	[Test] public void IsImported_ExistingAsset_True() =>
 		Assert.IsTrue(Asset.Status.IsImported(CreateTestAssetObject(TestAssetPath)));
 
-	[Test] public void Exists_NotAnAsset_False() => Assert.IsFalse(Asset.Status.IsImported(Instantiate.ExampleSO()));
-
-	[Test] public void Exists_ExistingAsset_True() =>
-		Assert.IsTrue(Asset.Status.IsImported(CreateTestAssetObject(TestAssetPath)));
+	[Test] public void IsImported_ExistingPath_True() =>
+		Assert.IsTrue(Asset.Status.IsImported(CreateTestAsset(TestAssetPath).AssetPath));
 
 	[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.GetMainType((String)TestAssetPath));
 }

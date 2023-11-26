@@ -91,8 +91,8 @@ public abstract class AssetTestBase
 	protected Object CreateTestAssetObject() => CreateTestAssetObject(TestAssetPath);
 
 	protected Object CreateTestAssetObject(String path) =>
-		DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path).MainObject);
+		DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path));
 
 	protected Asset CreateTestAsset(String path) =>
-		new(DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path).MainObject));
+		new(DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path)));
 }

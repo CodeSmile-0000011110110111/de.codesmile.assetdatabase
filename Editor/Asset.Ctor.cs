@@ -12,6 +12,12 @@ namespace CodeSmile.Editor
 	{
 		[ExcludeFromCodeCoverage] private Asset() {} // disallowed parameterless ctor
 
+		public Asset(string contents, Path path, Boolean overwriteExisting = false)
+		{
+			var obj = File.Create(contents, path, overwriteExisting);
+			SetMainObjectAndAssetPath(obj);
+		}
+
 		/// <summary>
 		///     Returns an instance by creating (saving) the object as an asset file at the given path.
 		///     The object must not already be an asset. If it is an asset you must use the ctor without a path.
@@ -27,8 +33,6 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentException">If the object already is an asset.</exception>
 		public Asset(Object obj, Path path, Boolean overwriteExisting = false)
 		{
-			ThrowIf.ArgumentIsNull(obj, nameof(obj));
-			ThrowIf.ArgumentIsNull(path, nameof(path));
 			ThrowIf.AlreadyAnAsset(obj);
 
 			File.Create(obj, path, overwriteExisting);
