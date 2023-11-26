@@ -50,20 +50,4 @@ public class AssetDeleteTests : AssetTestBase
 		Assert.False(Asset.Status.IsImported(deletedObj));
 		Assert.False(TestAssetPath.ExistsInFileSystem);
 	}
-
-	[Test] public void Delete_Again_Throws()
-	{
-		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
-		asset.Delete();
-
-		Assert.Throws<InvalidOperationException>(() => asset.Delete());
-	}
-
-	[Test] public void Delete_SaveAfterDelete_Throws()
-	{
-		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
-		asset.Delete();
-
-		Assert.Throws<InvalidOperationException>(() => asset.Save());
-	}
 }

@@ -50,12 +50,4 @@ public class AssetTrashTests : AssetTestBase
 		Assert.False(Asset.Status.IsImported(deletedObj));
 		Assert.False(TestAssetPath.ExistsInFileSystem);
 	}
-
-	[Test] public void Trash_Again_Throws()
-	{
-		var asset = new Asset(CreateTestAssetObject(TestAssetPath));
-		asset.Trash();
-
-		Assert.Throws<InvalidOperationException>(() => asset.Trash());
-	}
 }

@@ -20,73 +20,6 @@ namespace CodeSmile.Editor
 		private Path m_AssetPath;
 		private Object m_MainObject;
 
-		/// <summary>
-		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
-		/// </summary>
-		/// <param name="asset">The main object of the asset.</param>
-		/// <example>
-		///     <code>
-		/// Asset asset = new Asset(..);
-		/// Object obj = asset; // implicit conversion
-		/// MySO mySo = (MySo)asset; // implicit conversion with cast
-		/// MySO mySo = asset as MySo; // implicit conversion with 'as' operator
-		/// </code>
-		/// </example>
-		/// <returns>The asset's MainObject property.</returns>
-		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
-
-		/// <summary>
-		///     Implicit conversion of UnityEngine.Object to an asset instance.
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <returns>An asset instance or null if obj is null.</returns>
-		/// <example>
-		///     <code>
-		/// Object obj = ..;
-		/// Asset asset = obj; // implicit conversion: Object to Asset
-		/// </code>
-		/// </example>
-		public static implicit operator Asset(Object obj) => obj != null ? new Asset(obj) : null;
-
-		/// <summary>
-		///     Implicit conversion of Asset.Path to an asset instance.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>An asset instance or null if path is null.</returns>
-		/// <example>
-		///     <code>
-		/// // implicit conversion and loads the asset, neat ey? :)
-		/// Asset asset = new Path("Assets/Folder/MyAsset.asset");
-		/// </code>
-		/// </example>
-		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
-
-		/// <summary>
-		///     Implicit conversion of string path to an asset instance.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>An asset instance or null if path is null.</returns>
-		/// <example>
-		///     <code>
-		/// // implicit conversion and loads the asset, neat ey? :)
-		/// Asset asset = "Assets/Folder/MyAsset.asset";
-		/// </code>
-		/// </example>
-		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
-
-		/// <summary>
-		///     Implicit conversion of GUID to an asset instance.
-		/// </summary>
-		/// <param name="guid">An asset instance.</param>
-		/// <returns>An asset instance or null if guid is empty.</returns>
-		/// <example>
-		///     <code>
-		/// // implicit conversion and loads the asset, neat ey? :)
-		/// Asset asset = new GUID(..);
-		/// </code>
-		/// </example>
-		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
-
 		[ExcludeFromCodeCoverage] private Asset() {} // disallow parameterless ctor
 
 		/// <summary>
@@ -179,9 +112,77 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentException">If the object is not an asset.</exception>
 		public Asset(Object obj) => InitWithObject(obj);
 
+		/// <summary>
+		///     Implicit conversion to UnityEngine.Object.
+		/// </summary>
+		/// <param name="asset">The main object of the asset.</param>
+		/// <example>
+		///     <code>
+		///  Object obj = asset; // implicit conversion
+		///  MyType my = (MyType)asset; // implicit conversion with cast
+		///  MyType my = asset as MyType; // implicit conversion with 'as' operator
+		/// 		</code>
+		/// </example>
+		/// <returns>The asset's MainObject property.</returns>
+		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
+
+		/// <summary>
+		///     Implicit conversion of UnityEngine.Object to an Asset.
+		/// </summary>
+		/// <remarks>Throws exception if obj is not an asset object.</remarks>
+		/// <param name="obj">Existing asset reference.</param>
+		/// <returns>An asset instance or null if obj is null.</returns>
+		/// <example>
+		///     <code>
+		///  Asset asset = obj; // implicit conversion: Object to Asset
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(Object obj) => obj != null ? new Asset(obj) : null;
+
+		/// <summary>
+		///     Implicit conversion of Asset.Path to an Asset instance.
+		/// </summary>
+		/// <param name="path">Path to an asset file.</param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		///  // this imports & loads the asset, neat ey? :)
+		///  Path path = ..;
+		///  Asset asset = path;
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
+
+		/// <summary>
+		///     Implicit conversion of string path to an asset instance.
+		/// </summary>
+		/// <param name="path">Path to an asset file.</param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		///  // this imports & loads the asset, neat ey? :)
+		///  Asset asset = "Assets/Folder/MyAsset.asset";
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
+
+		/// <summary>
+		///     Implicit conversion of GUID to an asset instance.
+		/// </summary>
+		/// <param name="guid">An asset instance.</param>
+		/// <returns>An asset instance or null if guid is empty.</returns>
+		/// <example>
+		///     <code>
+		/// // loads the asset
+		/// GUID guid = ..
+		/// Asset asset = guid;
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
+
 		/// <remarks>
-		///     The alternative is to cast the asset instance:
-		///     <code>var obj = (T)asset;</code>
+		///     Alternative to casting the asset instance:
+		///     <code>var obj = asset as T;</code>
 		/// </remarks>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
@@ -195,12 +196,7 @@ namespace CodeSmile.Editor
 		///     CodeSmile.Editor.Asset.ForceSave().
 		/// </remarks>
 		/// <seealso cref="CodeSmile.Editor.Asset.ForceSave()" />
-		public void Save()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			File.Save(m_MainObject);
-		}
+		public void Save() => File.Save(m_MainObject);
 
 		/// <summary>
 		///     Saves the asset to disk, regardless of whether it is marked as 'dirty'.
@@ -210,12 +206,7 @@ namespace CodeSmile.Editor
 		///     <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty()</a>.
 		/// </remarks>
 		/// <seealso cref="CodeSmile.Editor.Asset.Save()" />
-		public void ForceSave()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			File.ForceSave(m_MainObject);
-		}
+		public void ForceSave() => File.ForceSave(m_MainObject);
 
 		/// <summary>
 		///     Saves a copy of the asset to a new path. Overwrites any existing asset at path.
@@ -231,13 +222,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="CodeSmile.Editor.Asset.Save" />
 		/// <seealso cref="CodeSmile.Editor.Asset.SaveAsNew" />
 		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
-		public Asset SaveAs(Path path)
-		{
-			ThrowIf.AssetDeleted(this);
-			ThrowIf.ArgumentIsNull(path, nameof(path));
-
-			return File.Copy(m_AssetPath, path) ? new Asset(path) : null;
-		}
+		public Asset SaveAs(Path path) => File.Copy(m_AssetPath, path) ? new Asset(path) : null;
 
 		/// <summary>
 		///     Saves a copy of the asset to a new path. Will not overwrite existing assets by generating a unique
@@ -269,23 +254,13 @@ namespace CodeSmile.Editor
 		///     is short for <code>asset.SaveAsNew(asset.AssetPath);</code>
 		/// </remarks>
 		/// <returns>The asset instance of the duplicate.</returns>
-		public Asset Duplicate()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return SaveAsNew(m_AssetPath);
-		}
+		public Asset Duplicate() => SaveAsNew(m_AssetPath);
 
 		/// <summary>
 		///     Marks the main object as dirty.
 		/// </summary>
 		/// <seealso cref="CodeSmile.Editor.Asset.ForceSave()" />
-		public void SetDirty()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			EditorUtility.SetDirty(m_MainObject);
-		}
+		public void SetDirty() => EditorUtility.SetDirty(m_MainObject);
 
 		// NOTE: there is no public Import() method needed since the main object is guaranteed to be imported
 		private void Import() {}
@@ -302,14 +277,10 @@ namespace CodeSmile.Editor
 		/// </remarks>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>Returns the 'first' asset of the type found.</returns>
-		/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.LoadAll" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
+		/// <seealso cref="CodeSmile.Editor.Asset.VisibleSubAssets" />
 		/// <seealso cref="CodeSmile.Editor.Asset.MainObject" />
-		public T Load<T>() where T : Object
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return File.Load<T>(m_AssetPath);
-		}
+		public T Load<T>() where T : Object => File.Load<T>(m_AssetPath);
 
 		/// <summary>
 		///     Tests if a Move operation will be successful without actually moving the asset.
@@ -322,12 +293,7 @@ namespace CodeSmile.Editor
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
 		/// <seealso cref="CodeSmile.Editor.Asset.Move" />
 		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
-		public Boolean CanMove(Path destinationPath)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return File.CanMove(m_AssetPath, destinationPath);
-		}
+		public Boolean CanMove(Path destinationPath) => File.CanMove(m_AssetPath, destinationPath);
 
 		/// <summary>
 		///     Moves asset to destination path.
@@ -343,8 +309,6 @@ namespace CodeSmile.Editor
 		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
 		public Boolean Move(Path destinationPath)
 		{
-			ThrowIf.AssetDeleted(this);
-
 			if (File.Move(m_AssetPath, destinationPath))
 			{
 				SetAssetPathFromObject();
@@ -355,22 +319,35 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Renames an asset's file or folder name.
-		///     NOTE: Cannot be used to change a file's extension. Use Move instead.
-		///     <see cref="Move" />
+		///     Renames an asset's file name (without extension) or a folder.
 		/// </summary>
+		/// <remarks>
+		///     Use CodeSmile.Editor.Asset.Move if you need to change the file's extension.
+		/// </remarks>
+		/// <example>
+		///     Rename file:
+		///     <code>
+		/// Asset asset = new Asset(obj, "Assets/initial name.asset");
+		/// asset.Rename("new file name");
+		/// </code>
+		///     Rename folder:
+		///     <code>
+		/// Asset asset = new Asset(obj, "Assets/subfloder");
+		/// asset.Rename("subfolder");
+		/// </code>
+		/// </example>
 		/// <param name="newFileName">
-		///     The new name of the file or folder, without extension.
+		///     The new name of the file or folder, without extension. Must not be a path.
 		/// </param>
 		/// <returns>
 		///     True if the rename succeeded. The AssetPath property will be updated accordingly.
-		///     If false, Asset.LastErrorMessage provides a human-readable failure reason and the AssetPath
-		///     property remains unchanged.
+		///     If false, CodeSmile.Editor.Asset.GetLastErrorMessage provides a human-readable failure reason and
+		///     the AssetPath property remains unchanged.
 		/// </returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.Move" />
+		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
 		public Boolean Rename(String newFileName)
 		{
-			ThrowIf.AssetDeleted(this);
-
 			if (File.Rename(m_AssetPath, newFileName))
 			{
 				SetAssetPathFromObject();
@@ -383,38 +360,40 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns true if the asset can be opened (edited) by the Unity Editor itself.
 		/// </summary>
-		/// <example>True: materials, .unity (scene) and .asset files. False: audio clips, scripts, reflection probes.</example>
-		/// <returns></returns>
+		/// <example>
+		///     Example assets where this is true: materials, .unity (scene), .asset files, ..
+		///     Where it is false: audio clips, scripts, reflection probes, ..
+		/// </example>
+		/// <returns>True if the editor can edit this asset type.</returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.OpenExternal" />
 		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
 
 		/// <summary>
-		///     Opens the asset in the default (associated) application.
-		///     Optional line and column numbers can be specified for text files and applications that support this.
+		///     Opens the asset in the external (associated) application.
 		/// </summary>
-		/// <param name="lineNumber"></param>
-		/// <param name="columnNumber"></param>
+		/// <remarks>
+		///     Optional line and column numbers can be specified for text files and applications that support this.
+		/// </remarks>
+		/// <param name="lineNumber">Line number to highlight. Support depends on application. Default: -1</param>
+		/// <param name="columnNumber">Column/character number to highlight. Support depends on application. Default: -1</param>
 		[ExcludeFromCodeCoverage] // cannot be tested
-		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1)
-		{
-			ThrowIf.AssetDeleted(this);
-
+		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 			File.OpenExternal(m_MainObject, lineNumber, columnNumber);
-		}
 
 		/// <summary>
-		///     Deletes the asset.
-		///     Does not Destroy the object.
-		///     CAUTION: The asset instance should be discarded afterwards.
+		///     Deletes the asset file.
 		/// </summary>
+		/// <remarks>
+		///     Does NOT destroy the object reference.
+		///     CAUTION: The asset instance is no longer valid after this call and should be discarded.
+		/// </remarks>
 		/// <returns>
-		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
+		///     If successful, returns the former MainObject. It is no longer an asset but still a valid instance.
 		///     Returns null if the object wasn't deleted.
 		/// </returns>
-		/// <see cref="File.Trash(CodeSmile.Editor.Asset.Path)" />
+		/// <see cref="CodeSmile.Editor.Asset.Trash()" />
 		public Object Delete()
 		{
-			ThrowIf.AssetDeleted(this);
-
 			var mainObject = m_MainObject;
 			if (File.Delete(m_AssetPath))
 				InvalidateInstance();
@@ -423,19 +402,19 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Moves the asset to the OS trash (same as Delete, but recoverable).
-		///     Does not Destroy the object.
-		///     CAUTION: The asset instance should be discarded afterwards.
+		///     Moves the asset to the OS trash. Same as Delete, but recoverable.
 		/// </summary>
+		/// <remarks>
+		///     Does NOT destroy the object reference.
+		///     CAUTION: The asset instance is no longer valid after this call and should be discarded.
+		/// </remarks>
 		/// <returns>
-		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
-		///     Returns null if the object wasn't trashed.
+		///     If successful, returns the former MainObject. It is no longer an asset but still a valid instance.
+		///     Returns null if the object wasn't deleted.
 		/// </returns>
-		/// <see cref="File.Delete(CodeSmile.Editor.Asset.Path)" />
+		/// <see cref="CodeSmile.Editor.Asset.Delete()" />
 		public Object Trash()
 		{
-			ThrowIf.AssetDeleted(this);
-
 			var mainObject = m_MainObject;
 			if (File.Trash(m_AssetPath))
 				InvalidateInstance();
@@ -446,9 +425,9 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Sets the active AssetImporter type for this asset.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <see cref="SetActiveImporterToDefault" />
-		/// <see cref="ActiveImporter" />
+		/// <typeparam name="T">The AssetImporter derived type that should handle importing this asset.</typeparam>
+		/// <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
+		/// <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
 		public void SetActiveImporter<T>()
 #if UNITY_2022_1_OR_NEWER
 			where T : AssetImporter
@@ -460,8 +439,10 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Resets the active AssetImporter type to the default type, if necessary.
+		///     Sets the active AssetImporter type back to the default type.
 		/// </summary>
+		/// <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
+		/// <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
 		public void SetActiveImporterToDefault()
 		{
 			if (Importer.IsOverridden(m_AssetPath))
@@ -469,52 +450,72 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Sets the asset's labels, replacing all existing labels.
+		///     Sets the asset's labels, replacing all previously existing labels.
 		/// </summary>
-		/// <param name="labels"></param>
+		/// <param name="labels">An array of labels. If null or empty will remove all labels.</param>
+		/// <seealso cref="CodeSmile.Editor.Asset.AddLabel" />
+		/// <seealso cref="CodeSmile.Editor.Asset.AddLabels" />
+		/// <seealso cref="CodeSmile.Editor.Asset.ClearLabels" />
 		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
 
 		/// <summary>
 		///     Removes all labels from the asset.
 		/// </summary>
+		/// <remarks>
+		///     Same as <code>SetLabels(null)</code>
+		/// </remarks>
+		/// <seealso cref="CodeSmile.Editor.Asset.SetLabels" />
 		public void ClearLabels() => Label.ClearAll(m_MainObject);
 
 		/// <summary>
 		///     Adds a label to the asset.
 		/// </summary>
-		/// <param name="label"></param>
+		/// <remarks>
+		///     When setting multiple labels use CodeSmile.Editor.Asset.AddLabels or CodeSmile.Editor.Asset.SetLabels
+		///     as this will be more efficient.
+		/// </remarks>
+		/// <param name="label">The label to add.</param>
+		/// <seealso cref="CodeSmile.Editor.Asset.AddLabels" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SetLabels" />
 		public void AddLabel(String label) => Label.Add(m_MainObject, label);
 
 		/// <summary>
 		///     Adds several labels to the asset.
 		/// </summary>
-		/// <param name="labels"></param>
+		/// <param name="labels">An array of labels to add.</param>
+		/// <seealso cref="CodeSmile.Editor.Asset.AddLabel" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SetLabels" />
 		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
 
 		/// <summary>
 		///     Exports this asset and its dependencies as a .unitypackage.
 		/// </summary>
-		/// <param name="packagePath"></param>
-		/// <param name="options"></param>
-		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
-		{
-			ThrowIf.AssetDeleted(this);
-
+		/// <param name="packagePath">
+		///     Full path to a .unitypackage file. May point to any location on the file system
+		///     as long as the user has write permissions there.
+		/// </param>
+		/// <param name="options">
+		///     See
+		///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+		/// </param>
+		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default) =>
 			Package.Export(m_AssetPath, packagePath, options);
-		}
 
 		/// <summary>
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
 		/// </summary>
-		/// <param name="subObject"></param>
-		public void AddObject(Object subObject) => SubAsset.Add(subObject, m_MainObject);
+		/// <param name="subObject">The object instance to add as subobject to this asset.</param>
+		/// <seealso cref="RemoveSubAsset" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
+		public void AddSubAsset(Object subObject) => SubAsset.Add(subObject, m_MainObject);
 
 		/// <summary>
 		///     Removes an object from the asset's sub-objects.
 		/// </summary>
-		/// <param name="subObject"></param>
-		/// W
-		public void RemoveObject(Object subObject) => SubAsset.Remove(subObject);
+		/// <param name="subObject">The sub-asset object to remove.</param>
+		/// <seealso cref="AddSubAsset" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
+		public void RemoveSubAsset(Object subObject) => SubAsset.Remove(subObject);
 
 		private void InvalidateInstance()
 		{

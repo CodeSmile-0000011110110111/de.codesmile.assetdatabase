@@ -34,7 +34,15 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <param name="labels"></param>
-			public static void SetAll(Object obj, String[] labels) => AssetDatabase.SetLabels(obj, labels);
+			public static void SetAll(Object obj, String[] labels)
+			{
+				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+
+				if (labels == null || labels.Length == 0)
+					AssetDatabase.ClearLabels(obj);
+				else
+					AssetDatabase.SetLabels(obj, labels);
+			}
 
 			/// <summary>
 			///     Adds a label to an asset's list of labels.

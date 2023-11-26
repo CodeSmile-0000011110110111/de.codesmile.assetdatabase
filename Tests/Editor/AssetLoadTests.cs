@@ -136,10 +136,10 @@ public class AssetLoadTests : AssetTestBase
 		Assert.False(TestAssetPath.Exists);
 
 		// using the CreateOrLoad alias that routes to LoadOrCreate
-		var loaded = Asset.File.CreateOrLoad<ExampleSO>(TestAssetPath, () =>
+		var loaded = Asset.File.CreateOrLoad(TestAssetPath, () =>
 		{
 			didRunCallback = true;
-			return Instantiate.ExampleSO();
+			return Instantiate.ExampleSO() as ExampleSO;
 		});
 
 		Assert.NotNull(loaded);

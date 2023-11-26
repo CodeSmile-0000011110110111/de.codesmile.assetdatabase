@@ -21,7 +21,7 @@ public class AssetSubAssetTests : AssetTestBase
 
 		{
 			var asset = CreateTestAsset(TestAssetPath);
-			asset.AddObject(subObject);
+			asset.AddSubAsset(subObject);
 
 			Assert.AreEqual(2, asset.SubAssets.Length);
 			Assert.Contains(subObject, asset.SubAssets);
@@ -48,10 +48,10 @@ public class AssetSubAssetTests : AssetTestBase
 	{
 		var subObject = Instantiate.ExampleSO();
 		var asset = CreateTestAsset(TestAssetPath);
-		asset.AddObject(subObject);
+		asset.AddSubAsset(subObject);
 		Assert.AreEqual(2, asset.SubAssets.Length);
 
-		asset.RemoveObject(subObject);
+		asset.RemoveSubAsset(subObject);
 
 		Assert.AreEqual(1, asset.SubAssets.Length);
 	}
@@ -74,7 +74,7 @@ public class AssetSubAssetTests : AssetTestBase
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 		var subObject = Instantiate.DifferentExampleSO();
-		asset.AddObject(subObject);
+		asset.AddSubAsset(subObject);
 
 		// check if the main object gets loaded after changing it
 		asset.MainObject = subObject;
@@ -89,7 +89,7 @@ public class AssetSubAssetTests : AssetTestBase
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 		var subObject = Instantiate.DifferentExampleSO();
-		asset.AddObject(subObject);
+		asset.AddSubAsset(subObject);
 
 		// using the static should also reflect the change on instances
 		Asset.SubAsset.SetMain(subObject, asset);

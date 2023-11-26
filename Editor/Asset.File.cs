@@ -38,44 +38,36 @@ namespace CodeSmile.Editor
 			///     The paths that failed to be deleted or trashed. Is an empty list if no failure occured on the
 			///     last call to DeleteMany or TrashMany.
 			/// </summary>
-			/// <returns></returns>
-			/// <see cref="Trash(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
-			/// <see cref="Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
+			/// <returns>The list of paths that could not be deleted, or an empty array.</returns>
+			/// <see cref="CodeSmile.Editor.Asset.File.Trash(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
+			/// <see cref="CodeSmile.Editor.Asset.File.Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 			public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
-			public static Object Create(Byte[] bytes, Path path) => CreateInternal(bytes, path);
-
-			public static Object CreateAsNew(Byte[] bytes, Path path) => CreateInternal(bytes, path.UniqueFilePath);
-
-			public static Object Create(String contents, Path path) => CreateInternal(contents, path);
-
-			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
+			/// <summary>
+			///     Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file.
+			/// </summary>
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="contents">The bytes to write.</param>
+			/// <param name="path">Path to a file with extension.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(UnityEngine.Object,Path)"/>
+			public static Object Create(Byte[] contents, Path path) => CreateInternal(contents, path);
 
 			/// <summary>
-			///     Creates (saves) an asset file at the target path. If an asset already exists it will be overwritten.
+			///     Writes the byte array to disk, then imports and loads the asset. Generates a unique file name
+			///     if an asset exists at the path.
 			/// </summary>
-			/// <remarks>
-			///     Also creates all non-existing folders in the path.
-			/// </remarks>
-			/// <param name="obj">The object to save as an asset file.</param>
-			/// <param name="path">The relative asset path with filename and extension.</param>
-			/// <returns>The created object.</returns>
-			public static Object Create(Object obj, Path path) => CreateInternal(obj, path);
-
-			/// <summary>
-			///     Creates (saves) a new asset file at the target path. Will not overwrite existing assets.
-			/// </summary>
-			/// <remarks>
-			///     If an asset already exists at the path the new asset will be created with a unique file name.
-			///     Also creates all non-existing folders in the path.
-			/// </remarks>
-			/// <param name="obj">The object to save as an asset file.</param>
-			/// <param name="path">
-			///     The relative asset path with filename and extension. Note that the actual path of the asset may
-			///     differ.
-			/// </param>
-			/// <returns>The newly created object.</returns>
-			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path.UniqueFilePath);
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="contents">The bytes to write.</param>
+			/// <param name="path">Path to a file with extension. Note that the asset's actual file name may differ.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(UnityEngine.Object,Path)"/>
+			public static Object CreateAsNew(Byte[] contents, Path path) =>
+				CreateInternal(contents, path.UniqueFilePath);
 
 			internal static Object CreateInternal(Byte[] bytes, Path path)
 			{
@@ -87,6 +79,32 @@ namespace CodeSmile.Editor
 				return ImportAndLoad<Object>(path);
 			}
 
+			/// <summary>
+			///     Writes the string to disk, then imports and loads the asset. Overwrites any existing file.
+			/// </summary>
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="contents">The string to write.</param>
+			/// <param name="path">Path to a file with extension.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(UnityEngine.Object,Path)"/>
+			public static Object Create(String contents, Path path) => CreateInternal(contents, path);
+
+			/// <summary>
+			///     Writes the string to disk, then imports and loads the asset. Generates a unique file name
+			///     if an asset exists at the path.
+			/// </summary>
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="contents">The string to write.</param>
+			/// <param name="path">Path to a file with extension. Note that the asset's actual file name may differ.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(UnityEngine.Object,Path)"/>
+			public static Object CreateAsNew(String contents, Path path) =>
+				CreateInternal(contents, path.UniqueFilePath);
+
 			internal static Object CreateInternal(String contents, Path path)
 			{
 				ThrowIf.ArgumentIsNull(contents, nameof(contents));
@@ -96,6 +114,34 @@ namespace CodeSmile.Editor
 				System.IO.File.WriteAllText(path, contents, Encoding.UTF8); // string assets ought to be UTF8
 				return ImportAndLoad<Object>(path);
 			}
+
+			/// <summary>
+			///     Writes the object to disk. Overwrites any existing file.
+			/// </summary>
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="obj">The object to save as an asset file.</param>
+			/// <param name="path">Path to a file with extension.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(UnityEngine.Object,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateOrLoad{T}"/>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a></seealso>
+			public static Object Create(Object obj, Path path) => CreateInternal(obj, path);
+
+			/// <summary>
+			///     Writes the object to disk. Generates a unique file name if an asset exists at the path.
+			/// </summary>
+			/// <remarks>Creates missing folders in the destination path. </remarks>
+			/// <param name="obj">The object to save as an asset file.</param>
+			/// <param name="path">Path to a file with extension. Note that the asset's actual file name may differ.</param>
+			/// <returns>The newly created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(UnityEngine.Object,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(string,Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateOrLoad{T}"/>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a></seealso>
+			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path.UniqueFilePath);
 
 			internal static Object CreateInternal(Object obj, Path path)
 			{
@@ -108,133 +154,230 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Tries to load the object at path. If it cannot be loaded, it will be created using the Object instance
-			///     returned by the getObjectInstance Func callback.
-			///     Alias for LoadOrCreate. This exists mainly for API discovery reasons.
+			///     Loads or creates an asset at path.
 			/// </summary>
-			/// <see cref="LoadOrCreate{T}" />
-			/// <param name="path"></param>
-			/// <param name="getInstance"></param>
-			/// <typeparam name="T"></typeparam>
-			/// <returns></returns>
-			public static T CreateOrLoad<T>(Path path, Func<Object> getInstance) where T : Object =>
+			///<remarks>
+			/// Will first attempt to load the asset at path. If this fails, will create an asset from the
+			/// object returned by getInstance.
+			/// This is an alias for CodeSmile.Editor.Asset.LoadOrCreate{T}.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <param name="getInstance">Func that returns a UnityEngine.Object</param>
+			/// <typeparam name="T">The type of the asset.</typeparam>
+			/// <returns>The loaded or created object of type T, or null if the object is not of type T.
+			/// Note that the asset file gets created in this case.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadOrCreate{T}" />
+			public static T CreateOrLoad<T>(Path path, Func<T> getInstance) where T : Object =>
 				LoadOrCreate<T>(path, getInstance);
 
 			/// <summary>
-			///     Saves the object to disk if it is marked dirty.
-			///     Note: Depending on how changes were made you may have to use ForceSave(Object) instead.
+			///     Saves the object to disk if it is dirty.
 			/// </summary>
-			/// <param name="obj">the asset object to save</param>
-			/// <see cref="ForceSave(UnityEngine.Object)" />
+			/// <remarks>
+			///     Depending on how changes were made you may have to use CodeSmile.Editor.Asset.File.ForceSave instead.
+			/// </remarks>
+			/// <param name="obj">The object to save.</param>
+			/// <see cref="CodeSmile.Editor.Asset.File.ForceSave" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a></seealso>
 			public static void Save(Object obj) => SaveInternal(obj);
 
 			/// <summary>
-			///     Forces the object to be saved to disk by first flagging it as dirty.
-			///     Note: Be sure that you need to 'force' the save operation, since serializing and object and writing
-			///     it to disk is a slow operation.
+			///     Forces the object to be saved to disk. Marks the object as dirty and then calls
+			/// CodeSmile.Editor.Asset.File.Save.
 			/// </summary>
-			/// <param name="obj">the asset object to save</param>
-			/// <see cref="Save(UnityEngine.Object)" />
+			/// <remarks>
+			///     This should only be used if the asset doesn't save otherwise, since unnecessarily writing an object
+			///		to disk is a slow operation. Example where this may be required would be changes to fields of a
+			///		ScriptableObject without using the
+			/// <a href="https://docs.unity3d.com/ScriptReference/SerializedObject.html">SerializedObject</a> or
+			/// <a href="https://docs.unity3d.com/ScriptReference/SerializedProperty.html">SerializedProperty</a> classes.
+			/// </remarks>
+			/// <param name="obj">The object to mark as dirty, then save.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Save" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a></seealso>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty</a></seealso>
 			public static void ForceSave(Object obj) => SaveInternal(obj, true);
 
+			private static void SaveInternal(Object obj, Boolean forceSave = false)
+			{
+				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.NotInDatabase(obj);
+
+				if (forceSave)
+					EditorUtility.SetDirty(obj);
+
+				AssetDatabase.SaveAssetIfDirty(obj);
+			}
+
 			/// <summary>
-			///     Saves any changes to the object to disk.
+			///     Saves any changes to the asset to disk, by GUID.
 			/// </summary>
-			/// <param name="guid"></param>
+			/// <param name="guid">The guid of the asset.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Save" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a></seealso>
 			public static void Save(GUID guid)
 			{
 				ThrowIf.NotAnAssetGuid(guid);
+
 				AssetDatabase.SaveAssetIfDirty(guid);
 			}
 
 			/// <summary>
-			///     Imports a file at a given path that was created or modified 'externally', ie not via Asset(Database) methods.
-			///     For example, any file/folder modified via System.IO.File.Write*() methods or through batch scripts.
-			///     Note: If the path does not exist, this method does nothing.
-			///     You will need to call Asset.Database.ImportAll() if you want to get rid of an externally deleted file
-			///     that still exists in the AssetDatabase.
+			///     Imports a file at a given path that was created or modified 'externally'.
+			///		Externally refers to any means other than AssetDatabase methods such as System.IO or batch scripts.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="options"></param>
-			/// <returns>The input path for method chaining.</returns>
-			public static Path Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+			/// <remarks>
+			///		CodeSmile AssetDatabase provides convenience Create methods that automatically import assets:
+			/// <see cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <see cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			///
+			///     Call CodeSmile.Editor.Asset.Database.ImportAll to get rid of externally deleted files.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.ImportAndLoad{T}"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a></seealso>
+			public static void Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 			{
 				if (path != null && path.ExistsInFileSystem)
 					AssetDatabase.ImportAsset(path, options);
-
-				return path;
 			}
 
-			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.ForceUpdate)
-				where T : Object => Load<T>(Import(path, options | ImportAssetOptions.ForceUpdate));
+			/// <summary>
+			///     Imports a file at a given path that was created or modified 'externally', then loads and returns
+			/// the asset object. See CodeSmile.Editor.Asset.File.Import for more info.
+			/// </summary>
+			/// <remarks>
+			///		CodeSmile AssetDatabase provides convenience Create methods that automatically import/load assets:
+			/// <see cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <see cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a></param>
+			/// <typeparam name="T">The type of the asset.</typeparam>
+			/// <returns>The asset object, or null if the asset could not be loaded or is not of type T.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.ImportAndLoad{T}"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Load{T}(Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)"/>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(string,Path)"/>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a></seealso>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a></seealso>
+			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+				where T : Object
+			{
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				ImportIfNotImported(path, options);
+				return Load<T>(path);
+			}
+
 
 			/// <summary>
-			///     Loads the main asset object at the path.
-			///     Commonly this is the only object of the asset, but there are assets that consist of multiple
-			///     objects. For example Mesh assets often contain sub objects like animations and materials.
+			///     Loads an asset at path.
 			/// </summary>
-			/// <see cref="Load{T}(CodeSmile.Editor.Asset.Path)" />
-			/// <param name="path"></param>
-			/// <typeparam name="T"></typeparam>
-			/// <returns>The asset object or null if the path does not exist or the asset is not imported.</returns>
+			/// <remarks>
+			/// Will only load visible sub-objects. Returns the first object of the type found. If there are multiple
+			/// objects of the same type, use CodeSmile.Editor.Asset.SubAsset.LoadVisible instead.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <typeparam name="T">Type of the asset.</typeparam>
+			/// <returns>The loaded asset object, or null if the asset does not exist or does not contain a
+			/// visible object of type T.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadMain{T}" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadOrCreate{T}" />
+			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.LoadVisible" />
+			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.LoadAll" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a></seealso>
+			public static T Load<T>(Path path) where T : Object
+			{
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+				ThrowIf.DoesNotExistInFileSystem(path);
+
+				ImportIfNotImported(path);
+				return AssetDatabase.LoadAssetAtPath<T>(path);
+			}
+
+			/// <summary>
+			///		Loads an asset at path or creates the asset if needed.
+			/// </summary>
+			/// <remarks>
+			///		If the file does not exist, creates the asset with the object returned from the getInstance Func.
+			///		If the asset isn't in the database, imports and loads the asset.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <param name="getInstance">Method that returns an object instance. Invoked only if the asset needs to be created.</param>
+			/// <typeparam name="T">The type of the asset.</typeparam>
+			/// <returns>The loaded or created asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Load{T}(Path)" />
+			public static T LoadOrCreate<T>(Path path, Func<T> getInstance) where T : Object
+			{
+				if (path.ExistsInFileSystem == false)
+					return Create(getInstance.Invoke(), path) as T;
+
+				return ImportAndLoad<T>(path);
+			}
+
+			/// <summary>
+			///     Loads the main asset at the path.
+			/// </summary>
+			/// <remarks>
+			///     Most of the times the main asset is the only object. There are assets that consist of multiple
+			///     objects however. For example Mesh assets often contain sub objects like animations and materials.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <typeparam name="T">Type of the asset.</typeparam>
+			/// <returns>The asset or null if the path does not exist.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Load{T}(Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadOrCreate{T}" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a></seealso>
 			public static T LoadMain<T>(Path path) where T : Object
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 				ThrowIf.DoesNotExistInFileSystem(path);
 
+				ImportIfNotImported(path);
 				return AssetDatabase.LoadMainAssetAtPath(path) as T;
 			}
 
 			/// <summary>
-			///     Loads the main asset object for the guid.
-			///     Commonly this is the only object of the asset, but there are assets that
-			///     consist of multiple objects such as Mesh assets that may contain for example animations and materials.
+			///     Loads the main asset object for the GUID.
 			/// </summary>
-			/// <param name="guid"></param>
-			/// <typeparam name="T"></typeparam>
+			/// <remarks>
+			///     Most of the times the main asset is the only object. There are assets that consist of multiple
+			///     objects however. For example Mesh assets often contain sub objects like animations and materials.
+			/// </remarks>
+			/// <param name="guid">GUID of an asset.</param>
+			/// <typeparam name="T">Type of the asset.</typeparam>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadMain{T}(Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.LoadOrCreate{T}" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a></seealso>
 			/// <returns>The asset object or null if the guid is not an asset guid.</returns>
 			public static T LoadMain<T>(GUID guid) where T : Object
 			{
 				ThrowIf.NotAnAssetGuid(guid);
 
-				return LoadMain<T>(Path.Get(guid));
+				var path = Path.Get(guid);
+				ImportIfNotImported(path);
+				return LoadMain<T>(path);
 			}
 
-			/// <summary>
-			///     Tries to load the object at path. If it cannot be loaded, it will be created using the Object instance
-			///     returned by the getObjectInstance Func callback.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="getInstance"></param>
-			/// <typeparam name="T"></typeparam>
-			/// <returns></returns>
-			public static T LoadOrCreate<T>(Path path, Func<Object> getInstance) where T : Object
+			private static void ImportIfNotImported(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 			{
-				if (path.Exists)
-					return LoadMain<T>(path);
-
-				var obj = getInstance.Invoke() as T;
-				Create(obj, path);
-
-				return obj;
+				// not in database but on disk? Import. Cannot determine if existing file has been updated though.
+				if (path.Exists == false && path.ExistsInFileSystem)
+					Import(path, options);
 			}
-
-			/// <summary>
-			///     Loads the first visible object of the given type from the asset at path. This usually is the main
-			///     object but it could be any other visible sub-object, depending on the type.
-			/// </summary>
-			/// <see cref="LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
-			/// <param name="path"></param>
-			/// <typeparam name="T"></typeparam>
-			/// <returns></returns>
-			public static T Load<T>(Path path) where T : Object => AssetDatabase.LoadAssetAtPath<T>(path);
 
 			/// <summary>
 			///     Loads an object and its dependencies asynchronously.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="localFileId"></param>
-			/// <returns>An AssetDatabaseLoadOperation instance to track progress.</returns>
+			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
+			/// <param name="path">The path to an asset file.</param>
+			/// <param name="localFileId">The local file ID of the (sub) asset. I'm sorry but this is what Unity requires.</param>
+			/// <returns>An AssetDatabaseLoadOperation to track progress.</returns>
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadObjectAsync.html">AssetDatabase.LoadObjectAsync</a></seealso>
 			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -244,59 +387,81 @@ namespace CodeSmile.Editor
 #endif
 			}
 
-#if !UNITY_2022_2_OR_NEWER
-	public class AssetDatabaseLoadOperation {}
+
+#if !UNITY_2022_2_OR_NEWER // dummy for LoadAsync in earlier versions
+			public class AssetDatabaseLoadOperation {}
 #endif
 
 			/// <summary>
-			///     Finds the assets by the given filter criteria.
-			///     Returns an array of string GUIDs for compatibility reasons.
+			///     Finds asset GUIDs by the given filter criteria.
 			/// </summary>
-			/// <param name="filter"></param>
-			/// <param name="searchInFolders"></param>
-			/// <returns></returns>
-			/// <see cref="FindGuids" />
-			/// <see cref="FindPaths" />
+			/// <param name="filter">A search filter string.</param>
+			/// <param name="searchInFolders">A list of folders to recursively search for files. Limiting the searched folders speeds up Find.</param>
+			/// <returns>An array of string GUIDs. Empty array if there were no search results.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.FindGuids" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.FindPaths" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html">AssetDatabase.FindAssets</a></seealso>
+			/// <seealso cref=""><a href="https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/">Search Filter String Examples</a></seealso>
 			public static String[] Find(String filter, String[] searchInFolders = null) => searchInFolders == null
 				? AssetDatabase.FindAssets(filter)
 				: AssetDatabase.FindAssets(filter, searchInFolders);
 
 			/// <summary>
-			///     Finds the assets by the given filter criteria. Returns an array of asset paths.
+			///     Finds asset GUIDs by the given filter criteria.
 			/// </summary>
-			/// <param name="filter"></param>
-			/// <param name="searchInFolders"></param>
-			/// <returns></returns>
-			/// <see cref="Find" />
-			/// <see cref="FindGuids" />
-			public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
-				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
-
-			/// <summary>
-			///     Finds the assets by the given filter criteria. Returns an array of GUID instances.
-			/// </summary>
-			/// <param name="filter"></param>
-			/// <param name="searchInFolders"></param>
-			/// <returns></returns>
-			/// <see cref="Find" />
-			/// <see cref="FindPaths" />
+			/// <remarks> Casts the result of CodeSmile.Editor.Asset.File.Find. </remarks>
+			/// <param name="filter">A search filter string.</param>
+			/// <param name="searchInFolders">A list of folders to recursively search for files. Limiting the searched folders speeds up Find.</param>
+			/// <returns>An array of GUIDs. Empty array if there were no search results.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Find" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.FindPaths" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html">AssetDatabase.FindAssets</a></seealso>
+			/// <seealso cref=""><a href="https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/">Search Filter String Examples</a></seealso>
 			public static GUID[] FindGuids(String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => new GUID(guid)).ToArray();
 
 			/// <summary>
-			///     Makes a copy of the source asset and saves it in the destination.
-			///     Will create destination path folders if necessary.
+			///     Finds asset paths by the given filter criteria.
 			/// </summary>
-			/// <param name="sourcePath">the source asset to copy from</param>
-			/// <param name="destinationPath">the destination path the copy is saved</param>
-			/// <param name="overwriteExisting">
-			///     True if an existing destination asset should be replaced. False if a unique filename
-			///     should be generated.
-			/// </param>
-			/// <returns>True if copying succeeded, false if it failed.</returns>
+			/// <remarks>Converts the list of string guids from CodeSmile.Editor.Asset.File.Find to actual Paths.</remarks>
+			/// <param name="filter">A search filter string.</param>
+			/// <param name="searchInFolders">A list of folders to recursively search for files. Limiting the searched folders speeds up Find.</param>
+			/// <returns>An Path array. Empty array if there were no search results.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Find" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.FindGuids" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html">AssetDatabase.FindAssets</a></seealso>
+			/// <seealso cref=""><a href="https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/">Search Filter String Examples</a></seealso>
+			public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
+				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
+
+			/// <summary>
+			///     Copies an asset from source to destination path. Overwrites any existing assets.
+			/// </summary>
+			/// <remarks>
+			///     Will create any missing destination folders automatically.
+			/// </remarks>
+			/// <param name="sourcePath">The source asset to copy.</param>
+			/// <param name="destinationPath">Path to destination file.</param>
+			/// <returns>True if copying succeeded, false if it failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure message.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html">AssetDatabase.CopyAsset</a></seealso>
 			public static Boolean Copy(Path sourcePath, Path destinationPath) =>
 				CopyInternal(sourcePath, destinationPath, true);
 
+			/// <summary>
+			///     Copies an asset from source to destination path. Generates a unique file name if an asset
+			/// already exist at destinationPath.
+			/// </summary>
+			/// <remarks>
+			///     Will create any missing destination folders automatically.
+			/// </remarks>
+			/// <param name="sourcePath">The source asset to copy.</param>
+			/// <param name="destinationPath">Path to destination file. Note that the actual file name may differ.</param>
+			/// <returns>True if copying succeeded, false if it failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure message.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Copy" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html">AssetDatabase.CopyAsset</a></seealso>
 			public static Boolean CopyAsNew(Path sourcePath, Path destinationPath) =>
 				CopyInternal(sourcePath, destinationPath.UniqueFilePath, false);
 
@@ -315,12 +480,19 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Tests if a Move operation will be successful without actually moving the asset.
-			///     Note: Returns false if any of the folders to destinationPath do not exist.
+			///     Tests if an asset can be moved to destination without moving the asset.
 			/// </summary>
-			/// <param name="sourcePath">The path to an existing asset.</param>
-			/// <param name="destinationPath">The path where to move the asset to. Can have a different extension.</param>
-			/// <returns>True if moving the asset will be successful, false otherwise.</returns>
+			/// <remarks>
+			///     Note: This returns false if any folders of destinationPath do not exist.
+			/// </remarks>
+			/// <param name="sourcePath">The path to an asset file.</param>
+			/// <param name="destinationPath">The path to move the file to. May have a different extension.</param>
+			/// <returns>True if moving the asset will be successful, false if part of the destinationPath does not exist or other reasons.
+			/// Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure message.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Move" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Rename" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ValidateMoveAsset.html">AssetDatabase.ValidateMoveAsset</a></seealso>
 			public static Boolean CanMove(Path sourcePath, Path destinationPath)
 			{
 				if (sourcePath == null || destinationPath == null)
@@ -330,12 +502,19 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Moves an asset from source to destination path. Any non-existing folders in destination path
-			///     will be created.
+			///     Moves an asset file to destination path.
 			/// </summary>
-			/// <param name="sourcePath"></param>
-			/// <param name="destinationPath"></param>
-			/// <returns>True if the move was successful.</returns>
+			/// <remarks>
+			///     Any missing folders in destinationPath will be created automatically.
+			/// </remarks>
+			/// <param name="sourcePath">The path to an asset file.</param>
+			/// <param name="destinationPath">The path to move the file to. May have a different extension.</param>
+			/// <returns>True if moving the asset will be successful, false if move failed.
+			/// Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure message.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.CanMove" />
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Rename" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAsset.html">AssetDatabase.MoveAsset</a></seealso>
 			public static Boolean Move(Path sourcePath, Path destinationPath)
 			{
 				if (sourcePath == null || destinationPath == null)
@@ -347,23 +526,25 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Renames an asset's file or folder name.
-			///     NOTE: Cannot be used to change a file's extension. Use Move instead.
-			///     <see cref="Move" />
 			/// </summary>
-			/// <param name="assetPath">The path to the file or folder to rename.</param>
-			/// <param name="newFileName">
-			///     The new name of the file or folder, without extension.
-			/// </param>
+			/// <remarks>
+			///     Cannot be used to change a file's extension. Use CodeSmile.Editor.Asset.File.Move to change the extension.
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <param name="newFileName">The new file name without extension.</param>
 			/// <returns>
 			///     True if the rename succeeded, false otherwise.
-			///     If false, Asset.LastErrorMessage provides a human-readable failure reason.
+			///     On failure use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure reason.
 			/// </returns>
-			public static Boolean Rename(Path assetPath, String newFileName)
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Move" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref=""><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RenameAsset.html">AssetDatabase.RenameAsset</a></seealso>
+			public static Boolean Rename(Path path, String newFileName)
 			{
-				if (assetPath == null || newFileName == null)
+				if (path == null || newFileName == null)
 					return false;
 
-				return Succeeded(AssetDatabase.RenameAsset(assetPath, newFileName));
+				return Succeeded(AssetDatabase.RenameAsset(path, newFileName));
 			}
 
 			/// <summary>
@@ -371,6 +552,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns></returns>
+			/// <param name="FAIL ERROR TBD CONTINUE HERE TOMORROW">added so i know where i was</param>
 			public static Boolean CanOpenInEditor(Object obj)
 			{
 				ThrowIf.ArgumentIsNull(obj, nameof(obj));
@@ -531,17 +713,6 @@ namespace CodeSmile.Editor
 				{
 					Database.StopAssetEditing();
 				}
-			}
-
-			private static void SaveInternal(Object obj, Boolean forceSave = false)
-			{
-				ThrowIf.ArgumentIsNull(obj, nameof(obj));
-				ThrowIf.NotInDatabase(obj);
-
-				if (forceSave)
-					EditorUtility.SetDirty(obj);
-
-				AssetDatabase.SaveAssetIfDirty(obj);
 			}
 		}
 	}
