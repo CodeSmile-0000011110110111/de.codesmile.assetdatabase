@@ -1,5 +1,0 @@
-<map id="IsOverridden" name="IsOverridden">
-<area shape="rect" id="Node000001" title="Returns true if the AssetImporter type for this asset has been overridden." alt="" coords="238,13,330,40"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset.html#ac07d4f60efca50c39e2f95a2af28d881" title="Resets the active AssetImporter type to the default type, if necessary." alt="" coords="5,5,190,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,29,190,29,190,24,223,24"/>
-</map>

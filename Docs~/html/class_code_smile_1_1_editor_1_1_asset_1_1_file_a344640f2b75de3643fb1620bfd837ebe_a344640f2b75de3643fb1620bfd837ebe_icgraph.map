@@ -1,0 +1,5 @@
+<map id="Save" name="Save">
+<area shape="rect" id="Node000001" title="Saves the object to disk if it is marked dirty. Note: Depending on how changes were made you may have..." alt="" coords="246,5,295,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33.html#a5df140c1ee51aadf7fe88ce3fb9cac33" title="Saves any changes to the object to disk if it is marked as dirty." alt="" coords="5,5,198,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,21,198,21,198,16,231,16"/>
+</map>

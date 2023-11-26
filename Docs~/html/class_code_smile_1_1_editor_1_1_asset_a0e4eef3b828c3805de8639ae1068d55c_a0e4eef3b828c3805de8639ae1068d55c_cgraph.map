@@ -1,0 +1,13 @@
+<map id="Copy" name="Copy">
+<area shape="rect" id="Node000001" title="Makes a copy of the asset. Will create destination path folders if necessary." alt="" coords="5,80,57,107"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_a613ec8386d2e3f381b8d875cda4f8c33.html#a613ec8386d2e3f381b8d875cda4f8c33" title="Makes a copy of the source asset and saves it in the destination. Will create destination path folder..." alt="" coords="105,80,324,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,91,90,91,90,96,57,96"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" title="Creates the folders in the path recursively. Path may point to a file, but only folders will be creat..." alt="" coords="372,72,567,115"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,91,357,91,357,96,325,96"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9" title="Tests if the given file exists." alt="" coords="626,5,821,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="553,69,625,50,626,55,554,74"/>
+<area shape="rect" id="Node000005" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63" title="Returns true if the folder exists. False otherwise, or if the path is to a file." alt="" coords="626,72,821,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="568,91,611,91,611,96,568,96"/>
+<area shape="rect" id="Node000006" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61" title="Gets the path of an asset file." alt="" coords="615,139,832,165"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="565,113,649,132,648,137,564,118"/>
+</map>

@@ -1,5 +1,0 @@
-<map id="Delete" name="Delete">
-<area shape="rect" id="Node000001" title="Deletes the asset. Does not Destroy the object. CAUTION: The asset instance should be discarded after..." alt="" coords="5,13,64,40"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a74d244f8f0c7794555d42faf4f80b81e" title="Deletes the asset file. Does nothing if there is no file at the given path." alt="" coords="112,5,301,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,24,97,24,97,29,64,29"/>
-</map>

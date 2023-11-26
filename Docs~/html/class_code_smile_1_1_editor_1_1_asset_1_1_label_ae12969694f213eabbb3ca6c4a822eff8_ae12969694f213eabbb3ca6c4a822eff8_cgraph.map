@@ -1,0 +1,5 @@
+<map id="Add" name="Add">
+<area shape="rect" id="Node000001" title="Adds a label to an asset&#39;s list of labels. Note: this is less efficient than SetLabels...." alt="" coords="5,5,50,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_label_a80fe26dff18736b19fce81cf632b5784.html#a80fe26dff18736b19fce81cf632b5784" title="Returns an asset&#39;s labels." alt="" coords="98,5,155,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,16,83,16,83,21,50,21"/>
+</map>

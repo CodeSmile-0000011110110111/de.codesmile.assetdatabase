@@ -1,0 +1,5 @@
+<map id="Export" name="Export">
+<area shape="rect" id="Node000001" title="Exports the asset and its dependencies to the packagePath file." alt="" coords="256,13,315,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_a6e9b9cc6eb629d6e34d6ea90088e0148.html#a6e9b9cc6eb629d6e34d6ea90088e0148" title="Exports this asset and its dependencies as a .unitypackage." alt="" coords="5,5,208,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,29,208,29,208,24,241,24"/>
+</map>

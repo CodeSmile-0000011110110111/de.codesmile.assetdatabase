@@ -1,0 +1,5 @@
+<map id="Import" name="Import">
+<area shape="rect" id="Node000001" title="Imports a file at a given path that was created or modified &#39;externally&#39;, ie not via Asset(Database) ..." alt="" coords="241,13,298,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset_a3b71c81caac64d816be91c0d2fb47fc3.html#a3b71c81caac64d816be91c0d2fb47fc3" title="Sets (changes) an asset&#39;s &#39;main&#39; object. Note: The subObject must already be a sub object of the targ..." alt="" coords="5,5,193,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,29,193,29,193,24,226,24"/>
+</map>

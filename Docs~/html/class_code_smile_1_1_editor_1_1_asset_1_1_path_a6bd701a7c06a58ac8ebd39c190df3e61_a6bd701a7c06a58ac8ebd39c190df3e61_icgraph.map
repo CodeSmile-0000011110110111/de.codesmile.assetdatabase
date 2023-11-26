@@ -1,0 +1,27 @@
+<map id="Get" name="Get">
+<area shape="rect" id="Node000001" title="Gets the path of an asset file." alt="" coords="775,136,818,163"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_version_control_a7bccb4c64f3460ad63559dd8b6474c98.html#a7bccb4c64f3460ad63559dd8b6474c98" title="Returns true if the asset can be opened for editing in the version control system...." alt="" coords="519,11,727,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="778,125,756,95,726,67,706,56,708,51,729,63,759,91,782,122"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" title="Creates the folders in the path recursively. Path may point to a file, but only folders will be creat..." alt="" coords="572,77,674,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="761,134,726,119,674,103,676,98,728,113,763,129"/>
+<area shape="rect" id="Node000011" href="$class_code_smile_1_1_editor_1_1_asset_a82b0bb0beb5f5422951631789bca4256.html#a82b0bb0beb5f5422951631789bca4256" title="Returns the type of the main asset for the GUID." alt="" coords="531,128,716,171"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="760,152,716,152,716,147,760,147"/>
+<area shape="rect" id="Node000012" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088.html#a9702d12ef27f2d0dfd1f8201fbb37088" title="Loads the main asset object for the guid. Commonly this is the only object of the asset,..." alt="" coords="529,195,718,237"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="763,169,728,185,697,197,695,192,726,180,761,164"/>
+<area shape="rect" id="Node000013" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a7ae63d2fe5a863de1b43c6a4895f32e6.html#a7ae63d2fe5a863de1b43c6a4895f32e6" title="Converts an array of objects to their asset paths. The returned array has the same size...." alt="" coords="572,261,675,288"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="786,177,764,216,748,235,729,252,703,265,676,272,674,267,701,260,726,247,744,231,759,213,782,175"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_a613ec8386d2e3f381b8d875cda4f8c33.html#a613ec8386d2e3f381b8d875cda4f8c33" title="Makes a copy of the source asset and saves it in the destination. Will create destination path folder..." alt="" coords="252,12,471,39"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="557,77,518,68,416,42,417,37,520,63,558,72"/>
+<area shape="rect" id="Node000006" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_aad585cc499d994cd55b2a123674a8a46.html#aad585cc499d994cd55b2a123674a8a46" title="Creates (saves) a new asset file at the target path. Also creates all non&#45;existing folders in the pat..." alt="" coords="267,69,456,112"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="557,93,457,93,457,88,557,88"/>
+<area shape="rect" id="Node000009" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_ab7eadabd235d60aafe18c2f4fea44d9e.html#ab7eadabd235d60aafe18c2f4fea44d9e" title="Moves an asset from source to destination path. Any non&#45;existing folders in destination path will be ..." alt="" coords="252,148,471,175"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="558,109,520,119,410,150,408,145,518,113,557,104"/>
+<area shape="rect" id="Node000005" href="$class_code_smile_1_1_editor_1_1_asset_a0e4eef3b828c3805de8639ae1068d55c.html#a0e4eef3b828c3805de8639ae1068d55c" title="Makes a copy of the asset. Will create destination path folders if necessary." alt="" coords="7,5,202,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="236,25,202,24,202,19,237,19"/>
+<area shape="rect" id="Node000007" href="$class_code_smile_1_1_editor_1_1_asset_a4eb9736b74290d8c324d9d1a3fb0796a.html#a4eb9736b74290d8c324d9d1a3fb0796a" title="Returns an instance by creating (saving) the object as an asset file at the given path...." alt="" coords="5,56,204,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="251,84,204,80,204,75,252,79"/>
+<area shape="rect" id="Node000008" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_aafa3d6fab63beb8b4ea1166456e994b9.html#aafa3d6fab63beb8b4ea1166456e994b9" title="Tries to load the object at path. If it cannot be loaded, it will be created using the Object instanc..." alt="" coords="10,107,199,149"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="252,109,200,117,199,112,251,104"/>
+<area shape="rect" id="Node000010" href="$class_code_smile_1_1_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8.html#a45faf9fc17e3cb57b87d2ae09e4dd7f8" title="Moves asset to destination path. Any non&#45;existing folders in destination path will be created...." alt="" coords="7,173,202,200"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="237,176,202,180,202,174,237,171"/>
+</map>

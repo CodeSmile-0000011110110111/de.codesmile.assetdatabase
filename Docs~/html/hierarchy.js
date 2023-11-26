@@ -6,6 +6,7 @@ var hierarchy =
     [ "Asset.Database.CacheServer", "class_code_smile_1_1_editor_1_1_asset_1_1_database_1_1_cache_server.html", null ],
     [ "Asset.Dependency", "class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html", null ],
     [ "Asset.File", "class_code_smile_1_1_editor_1_1_asset_1_1_file.html", null ],
+    [ "Asset.File.AssetDatabaseLoadOperation", "class_code_smile_1_1_editor_1_1_asset_1_1_file_1_1_asset_database_load_operation.html", null ],
     [ "Asset.Importer", "class_code_smile_1_1_editor_1_1_asset_1_1_importer.html", null ],
     [ "Asset.Label", "class_code_smile_1_1_editor_1_1_asset_1_1_label.html", null ],
     [ "Asset.Package", "class_code_smile_1_1_editor_1_1_asset_1_1_package.html", null ],

@@ -48,7 +48,7 @@ PROJECT_NAME           = de.codesmile.editor.assetdatabase
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 1.4
+PROJECT_NUMBER         = 1.5
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -260,7 +260,7 @@ INHERIT_DOCS           = YES
 # of the file/class/namespace that contains it.
 # The default value is: NO.
 
-SEPARATE_MEMBER_PAGES  = NO
+SEPARATE_MEMBER_PAGES  = YES
 
 # The TAB_SIZE tag can be used to set the number of spaces in a tab. Doxygen
 # uses this value to replace tabs by spaces in code fragments.
@@ -1176,7 +1176,7 @@ FORTRAN_COMMENT_AFTER  = 72
 # also VERBATIM_HEADERS is set to NO.
 # The default value is: NO.
 
-SOURCE_BROWSER         = NO
+SOURCE_BROWSER         = YES
 
 # Setting the INLINE_SOURCES tag to YES will include the body of functions,
 # classes and enums directly into the documentation.
@@ -1300,7 +1300,7 @@ CLANG_DATABASE_PATH    =
 # classes, structs, unions or interfaces.
 # The default value is: YES.
 
-ALPHABETICAL_INDEX     = YES
+ALPHABETICAL_INDEX     = NO
 
 # The IGNORE_PREFIX tag can be used to specify a prefix (or a list of prefixes)
 # that should be ignored while generating the index headers. The IGNORE_PREFIX
@@ -1393,7 +1393,7 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  =
+HTML_EXTRA_STYLESHEET  = Docs~/custom.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1485,7 +1485,7 @@ HTML_CODE_FOLDING      = YES
 # Minimum value: 0, maximum value: 9999, default value: 100.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_INDEX_NUM_ENTRIES = 100
+HTML_INDEX_NUM_ENTRIES = 1000
 
 # If the GENERATE_DOCSET tag is set to YES, additional index files will be
 # generated that can be used as input for Apple's Xcode 3 integrated development
@@ -1612,7 +1612,7 @@ TOC_EXPAND             = NO
 # protocol see https://www.sitemaps.org
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-SITEMAP_URL            =
+SITEMAP_URL            = https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/sitemap.xml
 
 # If the GENERATE_QHP tag is set to YES and both QHP_NAMESPACE and
 # QHP_VIRTUAL_FOLDER are set, an additional index file will be generated that
@@ -1753,7 +1753,7 @@ ENUM_VALUES_PER_LINE   = 4
 # Minimum value: 0, maximum value: 1500, default value: 250.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-TREEVIEW_WIDTH         = 250
+TREEVIEW_WIDTH         = 280
 
 # If the EXT_LINKS_IN_WINDOW option is set to YES, doxygen will open links to
 # external symbols imported via tag files in a separate window.
@@ -1767,7 +1767,7 @@ EXT_LINKS_IN_WINDOW    = YES
 # The default value is: YES.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-OBFUSCATE_EMAILS       = YES
+OBFUSCATE_EMAILS       = NO
 
 # If the HTML_FORMULA_FORMAT option is set to svg, doxygen will use the pdf2svg
 # tool (see https://github.com/dawbarton/pdf2svg) or inkscape (see
@@ -1787,7 +1787,7 @@ HTML_FORMULA_FORMAT    = png
 # Minimum value: 8, maximum value: 50, default value: 10.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-FORMULA_FONTSIZE       = 10
+FORMULA_FONTSIZE       = 11
 
 # The FORMULA_MACROFILE can contain LaTeX \newcommand and \renewcommand commands
 # to create new LaTeX commands to be used in formulas as building blocks. See
@@ -2697,7 +2697,7 @@ CALLER_GRAPH           = YES
 # The default value is: YES.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-GRAPHICAL_HIERARCHY    = YES
+GRAPHICAL_HIERARCHY    = NO
 
 # If the DIRECTORY_GRAPH tag is set to YES then doxygen will show the
 # dependencies a directory has on other directories in a graphical way. The

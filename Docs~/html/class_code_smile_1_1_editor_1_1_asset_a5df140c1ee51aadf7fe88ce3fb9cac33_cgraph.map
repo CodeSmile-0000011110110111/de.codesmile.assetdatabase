@@ -1,5 +1,0 @@
-<map id="Save" name="Save">
-<area shape="rect" id="Node000001" title="Saves any changes to the object to disk if it is marked as dirty." alt="" coords="5,5,55,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file.html#a344640f2b75de3643fb1620bfd837ebe" title="Saves the object to disk if it is marked dirty. Note: Depending on how changes were made you may have..." alt="" coords="103,5,320,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,16,88,16,88,21,55,21"/>
-</map>

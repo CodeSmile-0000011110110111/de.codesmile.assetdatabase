@@ -17,6 +17,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -99,7 +100,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><!--header-->
 <div class="contents">
 
-<p>Groups all asset bundle related functionality. Note: Unity recommends Addressables over Bundles!  
+<p>Groups all asset bundle related functionality.  
  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Asset.Bundle:</div>
@@ -111,412 +112,49 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a97653d565650721124445727508eb2fe" id="r_a97653d565650721124445727508eb2fe"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a97653d565650721124445727508eb2fe">ForceRemove</a> (String bundleName)</td></tr>
+<tr class="memitem:a97653d565650721124445727508eb2fe" id="r_a97653d565650721124445727508eb2fe"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a97653d565650721124445727508eb2fe.html#a97653d565650721124445727508eb2fe">ForceRemove</a> (String bundleName)</td></tr>
 <tr class="memdesc:a97653d565650721124445727508eb2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a specific asset bundle by name. CAUTION: The bundle is removed even if it is currently in use.  <br /></td></tr>
 <tr class="separator:a97653d565650721124445727508eb2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12af3e9758f2dcb3b520850bda67f58d" id="r_a12af3e9758f2dcb3b520850bda67f58d"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a12af3e9758f2dcb3b520850bda67f58d">GetAllDependencies</a> (String bundleName)</td></tr>
+<tr class="memitem:a12af3e9758f2dcb3b520850bda67f58d" id="r_a12af3e9758f2dcb3b520850bda67f58d"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a12af3e9758f2dcb3b520850bda67f58d.html#a12af3e9758f2dcb3b520850bda67f58d">GetAllDependencies</a> (String bundleName)</td></tr>
 <tr class="memdesc:a12af3e9758f2dcb3b520850bda67f58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all bundle names that the given bundle directly or indirectly depends on.  <br /></td></tr>
 <tr class="separator:a12af3e9758f2dcb3b520850bda67f58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f241bb1a10ab451aecd92a0abfd0ad6" id="r_a2f241bb1a10ab451aecd92a0abfd0ad6"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a2f241bb1a10ab451aecd92a0abfd0ad6">GetAllPaths</a> (String bundleName)</td></tr>
+<tr class="memitem:a2f241bb1a10ab451aecd92a0abfd0ad6" id="r_a2f241bb1a10ab451aecd92a0abfd0ad6"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a2f241bb1a10ab451aecd92a0abfd0ad6.html#a2f241bb1a10ab451aecd92a0abfd0ad6">GetAllPaths</a> (String bundleName)</td></tr>
 <tr class="memdesc:a2f241bb1a10ab451aecd92a0abfd0ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all asset paths that are marked to be part of a given bundle.  <br /></td></tr>
 <tr class="separator:a2f241bb1a10ab451aecd92a0abfd0ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa09567580e8a608d5234935817edeb5f" id="r_aa09567580e8a608d5234935817edeb5f"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#aa09567580e8a608d5234935817edeb5f">GetDirectDependencies</a> (String bundleName)</td></tr>
+<tr class="memitem:aa09567580e8a608d5234935817edeb5f" id="r_aa09567580e8a608d5234935817edeb5f"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_aa09567580e8a608d5234935817edeb5f.html#aa09567580e8a608d5234935817edeb5f">GetDirectDependencies</a> (String bundleName)</td></tr>
 <tr class="memdesc:aa09567580e8a608d5234935817edeb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bundle names that the given bundle directly depends on.  <br /></td></tr>
 <tr class="separator:aa09567580e8a608d5234935817edeb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ea9ad84cb591da5d88bc0f60ec07600" id="r_a2ea9ad84cb591da5d88bc0f60ec07600"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a2ea9ad84cb591da5d88bc0f60ec07600">GetOwningBundle</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memitem:a2ea9ad84cb591da5d88bc0f60ec07600" id="r_a2ea9ad84cb591da5d88bc0f60ec07600"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a2ea9ad84cb591da5d88bc0f60ec07600.html#a2ea9ad84cb591da5d88bc0f60ec07600">GetOwningBundle</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a2ea9ad84cb591da5d88bc0f60ec07600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bundle name that contains the asset at the given path.  <br /></td></tr>
 <tr class="separator:a2ea9ad84cb591da5d88bc0f60ec07600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8872257cb56767277c1b9bacb019b6d4" id="r_a8872257cb56767277c1b9bacb019b6d4"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a8872257cb56767277c1b9bacb019b6d4">GetOwningBundleVariant</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memitem:a8872257cb56767277c1b9bacb019b6d4" id="r_a8872257cb56767277c1b9bacb019b6d4"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a8872257cb56767277c1b9bacb019b6d4.html#a8872257cb56767277c1b9bacb019b6d4">GetOwningBundleVariant</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
 <tr class="memdesc:a8872257cb56767277c1b9bacb019b6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bundle variant name that contains the asset at the given path.  <br /></td></tr>
 <tr class="separator:a8872257cb56767277c1b9bacb019b6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915567be9f112102b73a36c0c09376e8" id="r_a915567be9f112102b73a36c0c09376e8"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a915567be9f112102b73a36c0c09376e8">GetPaths</a> (String bundleName, String assetName)</td></tr>
+<tr class="memitem:a915567be9f112102b73a36c0c09376e8" id="r_a915567be9f112102b73a36c0c09376e8"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a915567be9f112102b73a36c0c09376e8.html#a915567be9f112102b73a36c0c09376e8">GetPaths</a> (String bundleName, String assetName)</td></tr>
 <tr class="memdesc:a915567be9f112102b73a36c0c09376e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the asset paths in the given bundle whose name (without extension or path) matches the given asset name.  <br /></td></tr>
 <tr class="separator:a915567be9f112102b73a36c0c09376e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46533b0114e48541bd013510d189e865" id="r_a46533b0114e48541bd013510d189e865"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a46533b0114e48541bd013510d189e865">Remove</a> (String bundleName)</td></tr>
+<tr class="memitem:a46533b0114e48541bd013510d189e865" id="r_a46533b0114e48541bd013510d189e865"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a46533b0114e48541bd013510d189e865.html#a46533b0114e48541bd013510d189e865">Remove</a> (String bundleName)</td></tr>
 <tr class="memdesc:a46533b0114e48541bd013510d189e865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a specific asset bundle by name. If the bundle is currently in use, it will NOT be removed.  <br /></td></tr>
 <tr class="separator:a46533b0114e48541bd013510d189e865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d9f8415b580743cbd887fb5d66aba0" id="r_a08d9f8415b580743cbd887fb5d66aba0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a08d9f8415b580743cbd887fb5d66aba0">RemoveUnused</a> ()</td></tr>
+<tr class="memitem:a08d9f8415b580743cbd887fb5d66aba0" id="r_a08d9f8415b580743cbd887fb5d66aba0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a08d9f8415b580743cbd887fb5d66aba0.html#a08d9f8415b580743cbd887fb5d66aba0">RemoveUnused</a> ()</td></tr>
 <tr class="memdesc:a08d9f8415b580743cbd887fb5d66aba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all unused asset bundles.  <br /></td></tr>
 <tr class="separator:a08d9f8415b580743cbd887fb5d66aba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a7a491f4df9b8c6216b664e600b7ab0e3" id="r_a7a491f4df9b8c6216b664e600b7ab0e3"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a7a491f4df9b8c6216b664e600b7ab0e3">All</a><code> [get]</code></td></tr>
+<tr class="memitem:a7a491f4df9b8c6216b664e600b7ab0e3" id="r_a7a491f4df9b8c6216b664e600b7ab0e3"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a7a491f4df9b8c6216b664e600b7ab0e3.html#a7a491f4df9b8c6216b664e600b7ab0e3">All</a><code> [get]</code></td></tr>
 <tr class="memdesc:a7a491f4df9b8c6216b664e600b7ab0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all asset bundle names.  <br /></td></tr>
 <tr class="separator:a7a491f4df9b8c6216b664e600b7ab0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a096ba8fe96373ca1cdf4edf80991a6cc" id="r_a096ba8fe96373ca1cdf4edf80991a6cc"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle.html#a096ba8fe96373ca1cdf4edf80991a6cc">Unused</a><code> [get]</code></td></tr>
+<tr class="memitem:a096ba8fe96373ca1cdf4edf80991a6cc" id="r_a096ba8fe96373ca1cdf4edf80991a6cc"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc.html#a096ba8fe96373ca1cdf4edf80991a6cc">Unused</a><code> [get]</code></td></tr>
 <tr class="memdesc:a096ba8fe96373ca1cdf4edf80991a6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all unused asset bundle names.  <br /></td></tr>
 <tr class="separator:a096ba8fe96373ca1cdf4edf80991a6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Groups all asset bundle related functionality. Note: Unity recommends Addressables over Bundles! </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a97653d565650721124445727508eb2fe" name="a97653d565650721124445727508eb2fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97653d565650721124445727508eb2fe">&#9670;&#160;</a></span>ForceRemove()</h2>
+<div class="textblock"><p>Groups all asset bundle related functionality. </p>
+<p>Unity recommends to use Addressables over Bundles. </p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ForceRemove </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes a specific asset bundle by name. CAUTION: The bundle is removed even if it is currently in use. </p>
-<p>Remove </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a12af3e9758f2dcb3b520850bda67f58d" name="a12af3e9758f2dcb3b520850bda67f58d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12af3e9758f2dcb3b520850bda67f58d">&#9670;&#160;</a></span>GetAllDependencies()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAllDependencies </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all bundle names that the given bundle directly or indirectly depends on. </p>
-<p>GetDirectDependencies </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a2f241bb1a10ab451aecd92a0abfd0ad6" name="a2f241bb1a10ab451aecd92a0abfd0ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f241bb1a10ab451aecd92a0abfd0ad6">&#9670;&#160;</a></span>GetAllPaths()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAllPaths </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all asset paths that are marked to be part of a given bundle. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="aa09567580e8a608d5234935817edeb5f" name="aa09567580e8a608d5234935817edeb5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa09567580e8a608d5234935817edeb5f">&#9670;&#160;</a></span>GetDirectDependencies()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetDirectDependencies </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the bundle names that the given bundle directly depends on. </p>
-<p>GetAllDependencies </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a2ea9ad84cb591da5d88bc0f60ec07600" name="a2ea9ad84cb591da5d88bc0f60ec07600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ea9ad84cb591da5d88bc0f60ec07600">&#9670;&#160;</a></span>GetOwningBundle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String GetOwningBundle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the bundle name that contains the asset at the given path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The bundle name or empty string.</dd></dl>
-
-</div>
-</div>
-<a id="a8872257cb56767277c1b9bacb019b6d4" name="a8872257cb56767277c1b9bacb019b6d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8872257cb56767277c1b9bacb019b6d4">&#9670;&#160;</a></span>GetOwningBundleVariant()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String GetOwningBundleVariant </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the bundle variant name that contains the asset at the given path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The bundle name or empty string.</dd></dl>
-
-</div>
-</div>
-<a id="a915567be9f112102b73a36c0c09376e8" name="a915567be9f112102b73a36c0c09376e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a915567be9f112102b73a36c0c09376e8">&#9670;&#160;</a></span>GetPaths()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetPaths </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>assetName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the asset paths in the given bundle whose name (without extension or path) matches the given asset name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-    <tr><td class="paramname">assetName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a46533b0114e48541bd013510d189e865" name="a46533b0114e48541bd013510d189e865"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46533b0114e48541bd013510d189e865">&#9670;&#160;</a></span>Remove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Remove </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>bundleName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes a specific asset bundle by name. If the bundle is currently in use, it will NOT be removed. </p>
-<p>ForceRemove </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a08d9f8415b580743cbd887fb5d66aba0" name="a08d9f8415b580743cbd887fb5d66aba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d9f8415b580743cbd887fb5d66aba0">&#9670;&#160;</a></span>RemoveUnused()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void RemoveUnused </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes all unused asset bundles. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a7a491f4df9b8c6216b664e600b7ab0e3" name="a7a491f4df9b8c6216b664e600b7ab0e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a491f4df9b8c6216b664e600b7ab0e3">&#9670;&#160;</a></span>All</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [] All</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all asset bundle names. </p>
-
-</div>
-</div>
-<a id="a096ba8fe96373ca1cdf4edf80991a6cc" name="a096ba8fe96373ca1cdf4edf80991a6cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a096ba8fe96373ca1cdf4edf80991a6cc">&#9670;&#160;</a></span>Unused</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [] Unused</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all unused asset bundle names. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition at line <a class="el" href="_asset_8_bundle_8cs_source.html#l00031">31</a> of file <a class="el" href="_asset_8_bundle_8cs_source.html">Asset.Bundle.cs</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

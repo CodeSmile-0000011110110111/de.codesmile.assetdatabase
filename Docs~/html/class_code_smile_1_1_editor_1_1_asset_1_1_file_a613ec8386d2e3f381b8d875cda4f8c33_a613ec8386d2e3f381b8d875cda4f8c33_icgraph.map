@@ -1,0 +1,5 @@
+<map id="Copy" name="Copy">
+<area shape="rect" id="Node000001" title="Makes a copy of the source asset and saves it in the destination. Will create destination path folder..." alt="" coords="248,5,299,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_a0e4eef3b828c3805de8639ae1068d55c.html#a0e4eef3b828c3805de8639ae1068d55c" title="Makes a copy of the asset. Will create destination path folders if necessary." alt="" coords="5,5,200,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,21,200,21,200,16,233,16"/>
+</map>

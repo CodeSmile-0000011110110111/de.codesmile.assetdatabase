@@ -1,0 +1,11 @@
+<map id="Move" name="Move">
+<area shape="rect" id="Node000001" title="Moves an asset from source to destination path. Any non&#45;existing folders in destination path will be ..." alt="" coords="5,80,57,107"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" title="Creates the folders in the path recursively. Path may point to a file, but only folders will be creat..." alt="" coords="105,72,300,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,91,90,91,90,96,57,96"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9" title="Tests if the given file exists." alt="" coords="359,5,554,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,69,357,50,359,55,287,74"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63" title="Returns true if the folder exists. False otherwise, or if the path is to a file." alt="" coords="359,72,554,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="300,91,344,91,344,96,300,96"/>
+<area shape="rect" id="Node000005" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61" title="Gets the path of an asset file." alt="" coords="348,139,564,165"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="298,113,381,132,380,137,297,118"/>
+</map>
