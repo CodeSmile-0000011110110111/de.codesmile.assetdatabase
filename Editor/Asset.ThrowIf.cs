@@ -140,6 +140,12 @@ namespace CodeSmile.Editor
 				if (path.Extension.ToLower().Equals(".unitypackage") == false)
 					throw new ArgumentException($"file does not have .unitypackage extension: {path}");
 			}
+
+			public static void SourceAndDestPathAreEqual(Path sourcePath, Path destinationPath)
+			{
+				if (sourcePath.Equals(destinationPath))
+					throw new ArgumentException($"source and destination path are equal: {sourcePath}");
+			}
 		}
 	}
 }

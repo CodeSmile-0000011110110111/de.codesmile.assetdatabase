@@ -10,13 +10,13 @@ namespace CodeSmile.Editor
 {
 	public sealed partial class Asset
 	{
-		private const StatusQueryOptions DefaultStatusQueryOption = StatusQueryOptions.UseCachedIfPossible;
-
 		/// <summary>
 		///     Groups version control related functionality.
 		/// </summary>
 		public static class VersionControl
 		{
+			private const StatusQueryOptions DefaultStatusQueryOption = StatusQueryOptions.UseCachedIfPossible;
+
 			/// <summary>
 			///     Returns true if the asset can be opened for editing in the version control system.
 			///     If false, GetLastErrorMessage() returns the reason.

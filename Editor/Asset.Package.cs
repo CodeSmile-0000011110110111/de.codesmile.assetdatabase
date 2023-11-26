@@ -10,18 +10,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Exports this asset and its dependencies as a .unitypackage.
-		/// </summary>
-		/// <param name="packagePath"></param>
-		/// <param name="options"></param>
-		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			Package.Export(m_AssetPath, packagePath, options);
-		}
-
-		/// <summary>
 		///     Groups asset package import/export functionality, eg files with '.unitypackage' extension.
 		///     Does not contain PackageManager functionality.
 		/// </summary>

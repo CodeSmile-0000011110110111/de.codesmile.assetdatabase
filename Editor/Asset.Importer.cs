@@ -10,61 +10,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Returns the default AssetImporter type for this asset.
-		/// </summary>
-		public Type DefaultImporter => Importer.GetDefault(m_AssetPath);
-
-		/// <summary>
-		///     Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless
-		///     the importer was overridden.
-		/// </summary>
-		/// <see cref="SetActiveImporter{T}" />
-		/// <see cref="SetActiveImporterToDefault" />
-		/// <see cref="DefaultImporter" />
-		public Type ActiveImporter
-		{
-			get
-			{
-				var overridden = Importer.GetOverride(m_AssetPath);
-				return overridden != null ? overridden : Importer.GetDefault(m_AssetPath);
-			}
-		}
-
-		/// <summary>
-		///     Returns true if the asset's default AssetImporter type has been overridden.
-		/// </summary>
-		/// <see cref="ActiveImporter" />
-		/// <see cref="DefaultImporter" />
-		/// <see cref="SetActiveImporter{T}" />
-		/// <see cref="SetActiveImporterToDefault" />
-		public Boolean IsImporterOverridden => ActiveImporter != DefaultImporter;
-
-		/// <summary>
-		///     Sets the active AssetImporter type for this asset.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <see cref="SetActiveImporterToDefault" />
-		/// <see cref="ActiveImporter" />
-		public void SetActiveImporter<T>()
-#if UNITY_2022_1_OR_NEWER
-			where T : AssetImporter
-#else
-			where T : UnityEditor.AssetImporters.ScriptedImporter
-#endif
-		{
-			Importer.SetOverride<T>(m_AssetPath);
-		}
-
-		/// <summary>
-		///     Resets the active AssetImporter type to the default type, if necessary.
-		/// </summary>
-		public void SetActiveImporterToDefault()
-		{
-			if (Importer.IsOverridden(m_AssetPath))
-				Importer.ClearOverride(m_AssetPath);
-		}
-
-		/// <summary>
 		///     Groups all AssetImporter related functionality.
 		/// </summary>
 		public static class Importer

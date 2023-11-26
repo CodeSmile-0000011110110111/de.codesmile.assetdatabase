@@ -5,8 +5,7 @@ using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
 using System.Text;
-using UnityEditor;
-using UnityEngine;
+using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
 public class AssetCtorCreateTests : AssetTestBase
@@ -88,8 +87,8 @@ public class AssetCtorCreateTests : AssetTestBase
 		var asset = new Asset(tss, path, true);
 
 		Assert.True(Asset.Status.IsImported(path));
-		Assert.True(asset.MainObject is UnityEngine.UIElements.ThemeStyleSheet);
-		Assert.AreEqual(typeof(UnityEngine.UIElements.ThemeStyleSheet), asset.MainObjectType);
+		Assert.True(asset.MainObject is ThemeStyleSheet);
+		Assert.AreEqual(typeof(ThemeStyleSheet), asset.MainObjectType);
 	}
 
 	[Test] public void CreateCtor_ByteArray_CreatesAndImportsAsset()
@@ -100,7 +99,7 @@ public class AssetCtorCreateTests : AssetTestBase
 		var asset = new Asset(Encoding.UTF8.GetBytes(tss), path, true);
 
 		Assert.True(Asset.Status.IsImported(path));
-		Assert.True(asset.MainObject is UnityEngine.UIElements.ThemeStyleSheet);
-		Assert.AreEqual(typeof(UnityEngine.UIElements.ThemeStyleSheet), asset.MainObjectType);
+		Assert.True(asset.MainObject is ThemeStyleSheet);
+		Assert.AreEqual(typeof(ThemeStyleSheet), asset.MainObjectType);
 	}
 }

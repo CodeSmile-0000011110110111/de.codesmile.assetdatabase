@@ -2,12 +2,10 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using Object = UnityEngine.Object;
+using Object = System.Object;
 
 namespace CodeSmile.Editor
 {
@@ -21,10 +19,6 @@ namespace CodeSmile.Editor
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
 			private const String DefaultExtension = "asset";
-
-			// all are lowercase
-			private static readonly String[] s_AllowedAssetSubfolders =
-				{ "assets", "library", "logs", "packages", "projectsettings", "temp", "usersettings" };
 
 			private String m_RelativePath = String.Empty;
 
@@ -90,21 +84,6 @@ namespace CodeSmile.Editor
 			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
 
 			/// <summary>
-			///     Returns the path to the project's 'Assets' subfolder.
-			/// </summary>
-			public static String FullAssetsPath => Application.dataPath;
-
-			/// <summary>
-			///     Returns the path to the project's 'Packages' subfolder.
-			/// </summary>
-			public static String FullPackagesPath => $"{FullProjectPath}/Packages";
-
-			/// <summary>
-			///     Returns the path to the project's root folder.
-			/// </summary>
-			public static String FullProjectPath => FullAssetsPath.Substring(0, Application.dataPath.Length - 6);
-
-			/// <summary>
 			///     Creates and returns the full path, with forward slashes as separators.
 			/// </summary>
 			public String FullPath => System.IO.Path.GetFullPath(m_RelativePath).ToForwardSlashes();
@@ -138,247 +117,150 @@ namespace CodeSmile.Editor
 			public Path UniqueFilePath => UniquifyFileName(this);
 
 			/// <summary>
-			///     Gets the path of an asset file.
-			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
-			public static Path Get(Object obj)
-			{
-				var path = AssetDatabase.GetAssetPath(obj);
-				return String.IsNullOrEmpty(path) ? null : (Path)path;
-			}
-
-			/// <summary>
-			///     Gets the path of an asset file.
-			/// </summary>
-			/// <param name="guid"></param>
-			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
-			public static Path Get(GUID guid)
-			{
-				var path = AssetDatabase.GUIDToAssetPath(guid);
-				return String.IsNullOrEmpty(path) ? null : (Path)path;
-			}
-
-			/// <summary>
-			///     Returns the GUID for the path.
-			///     Returns an empty GUID if the asset at the path does not exist in the database.
-			///     <see cref="Exists" />
-			///     <see cref="ExistsInFileSystem" />
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="options"></param>
-			/// <returns></returns>
-			public static GUID GetGuid(Path path,
-				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
-				new(AssetDatabase.AssetPathToGUID(path, options));
-
-			/// <summary>
-			///     Returns the .meta file path from a path to an asset.
+			///     Implicit conversion to string (relative asset path). Same as ToString().
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path ToMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
+			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
 
 			/// <summary>
-			///     Returns the asset's file path from its .meta file path.
+			///     Implicit conversion of an AssetPath instance from a string path (full or relative).
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns></returns>
-			public static Path FromMeta(Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
+			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
 
 			/// <summary>
-			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
-			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Path GetScene(Object obj) => AssetDatabase.GetAssetOrScenePath(obj);
-
-			/// <summary>
-			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
-			///     characters and it isn't too long.
-			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
-			///     <see cref="Asset.GetLastErrorMessage()" />
+			///     Tests two path instances for equality.
 			/// </summary>
 			/// <param name="path"></param>
-			/// <returns>
-			///     True if the string is a valid path and contains no illegal characters for a path or file.
-			///     False in all other cases.
-			/// </returns>
-			public static Boolean IsValid(String path)
+			/// <param name="path2"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Path path, Path path2)
 			{
-				var isValid = true;
+				if (ReferenceEquals(path, path2))
+					return true;
+				if (ReferenceEquals(path, null))
+					return false;
+				if (ReferenceEquals(path2, null))
+					return false;
 
-				try
-				{
-					// System.IO will throw for most illegal chars, plus some extra checks
-					var fileName = System.IO.Path.GetFileName(path);
-					var folderName = System.IO.Path.GetDirectoryName(path);
-
-					// check folder name for some chars that System.IO allows in GetDirectoryName
-					var testIllegalChars = new Func<Char, Boolean>(c => c == '*' || c == '?' || c == ':');
-					isValid = folderName.Any(testIllegalChars) == false;
-
-					if (isValid)
-					{
-						// check filename for some chars that System.IO allows in GetFileName
-						fileName = path.Substring(folderName.Length, path.Length - folderName.Length);
-						isValid = fileName.Any(testIllegalChars) == false;
-					}
-				}
-				catch (Exception ex)
-				{
-					SetLastErrorMessage($"{ex.Message} => \"{path}\"");
-					isValid = false;
-				}
-
-				return isValid;
+				return path.Equals(path2);
 			}
 
 			/// <summary>
-			///     Tests if the given file exists.
+			///     Tests two path instances for inequality.
 			/// </summary>
 			/// <param name="path"></param>
+			/// <param name="path2"></param>
 			/// <returns></returns>
-			public static Boolean FileExists(Path path) => System.IO.File.Exists(path.m_RelativePath);
+			public static Boolean operator !=(Path path, Path path2) => !(path == path2);
 
 			/// <summary>
-			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
-			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>true if the folder exists</returns>
-			public static Boolean FolderExists(Path path) =>
-				path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
-
-			/// <summary>
-			///     Creates the folders in the path recursively. Path may point to a file, but only folders
-			///     will be created. If the last path chunk has an extension, it is considered a file.
-			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
-			public static GUID CreateFolders(Path path)
-			{
-				ThrowIf.ArgumentIsNull(path, nameof(path));
-				ThrowIf.PathIsNotValid(path);
-
-				if (FileExists(path))
-					return path.FolderPath.Guid;
-
-				// if the last part has an extension we assume the path points to a file
-				var isPresumablyFilePath = String.IsNullOrEmpty(path.Extension) == false;
-				var folderPath = isPresumablyFilePath ? path.FolderPath : path;
-				if (FolderExists(folderPath))
-					return folderPath.Guid;
-
-				var folderNames = ((String)folderPath).Split(new[] { '/' });
-				var folderGuid = GuidForExistingPath(folderNames[0]); // first is "Assets"
-				var partialPath = folderNames[0];
-				for (var i = 1; i < folderNames.Length; i++)
-				{
-					partialPath += $"/{folderNames[i]}";
-					if (FolderExists(partialPath))
-					{
-						folderGuid = GuidForExistingPath(partialPath);
-						continue;
-					}
-
-					folderGuid = CreateSubFolder(Get(folderGuid), folderNames[i]);
-				}
-
-				return folderGuid;
-			}
-
-			/// <summary>
-			///     Returns the path either unaltered or with a numbering to make the file unique.
-			///     This is only done if an asset file exists at the path. It does not alter folder paths.
-			///     See also: Project Settings => Editor => Numbering Scheme
-			///     Note: 'Uniquify' is a proper english verb, it means "to make unique".
+			///     Tests for equality with an object.
 			/// </summary>
 			/// <param name="path"></param>
+			/// <param name="other"></param>
 			/// <returns></returns>
-			public static Path UniquifyFileName(Path path)
-			{
-				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
-				return String.IsNullOrEmpty(uniquePath) ? path : uniquePath;
-			}
+			public static Boolean operator ==(Path path, Object other) =>
+				other is String str ? path.Equals(str) : path.Equals(other as Path);
 
 			/// <summary>
-			///     Converts an array of objects to their asset paths.
-			///     The returned array has the same size.
-			///     Note that some items may be null if the input was null or not an asset.
-			/// </summary>
-			/// <param name="objects"></param>
-			/// <returns></returns>
-			public static String[] ToAssetPaths(Object[] objects)
-			{
-				ThrowIf.ArgumentIsNull(objects, nameof(objects));
-
-				var objectCount = objects.Length;
-				var paths = new String[objectCount];
-				for (var i = 0; i < objectCount; i++)
-					paths[i] = Get(objects[i]);
-
-				return paths;
-			}
-
-			/// <summary>
-			///     Converts a collection of Path instances to a string array.
-			/// </summary>
-			/// <param name="paths"></param>
-			/// <returns></returns>
-			public static String[] ToStrings(IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
-
-			/// <summary>
-			///     Returns the names of all subfolders in the path.
-			///     Returns an empty array of the path points to a file.
+			///     Tests for inequality with an object.
 			/// </summary>
 			/// <param name="path"></param>
-			/// <returns>Paths to all subfolders, or empty array if there are no subfolders or the path points to a file.</returns>
-			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path, Object other) => !(path == other);
 
-			internal static Path UniquifyAsNeeded(Path destPath, Boolean overwriteExisting) =>
-				overwriteExisting ? destPath : destPath.UniqueFilePath;
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Object other, Path path) => path == other;
 
-			private static GUID CreateSubFolder(Path parentFolder, String subFolderName) =>
-				new(AssetDatabase.CreateFolder(parentFolder, subFolderName));
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Object other, Path path) => !(path == other);
 
-			private static String ToRelative(String fullOrRelativePath)
+			[ExcludeFromCodeCoverage] private Path() {} // disallowed parameterless ctor
+
+			/// <summary>
+			///     Creates an asset path from either a full or relative path.
+			///     Example input path: "C:\Users\Urso Clever\Untiy Projects\First Projcet\Assets\something"
+			///     Resulting AssetPath: "Assets/something"
+			/// </summary>
+			/// <param name="fullOrRelativePath">Absolute path to project's root folder or a subfolder.</param>
+			/// <exception cref="ArgumentException">
+			///     If path does not start with the project's Assets path (Application.dataPath).
+			/// </exception>
+			public Path(String fullOrRelativePath)
 			{
-				var relativePath = fullOrRelativePath;
-				if (IsRelative(relativePath) == false)
-				{
-					ThrowIf.NotAProjectPath(fullOrRelativePath);
-					relativePath = MakeRelative(fullOrRelativePath);
-				}
-
-				relativePath = relativePath.Trim('/');
-
-				ThrowIf.PathIsNotValid(relativePath);
-				return relativePath;
+				ThrowIf.NullOrWhitespace(fullOrRelativePath, nameof(fullOrRelativePath));
+				m_RelativePath = ToRelative(fullOrRelativePath.ToForwardSlashes());
 			}
 
-			private static Boolean IsRelative(String path)
+			/// <summary>
+			///     Creates an asset path from either a full or relative path to a directory, a filename,
+			///     and an optional extension (default: 'asset').
+			/// </summary>
+			/// <example>
+			///     Example parameters:
+			///     <c>"\Assets\Some/Sub\Dir", "New File", "MyExt"</c>
+			/// </example>
+			/// <example>
+			///     Resulting path:
+			///     <c>"Assets/Some/Sub/Dir/New File.myext"</c>
+			/// </example>
+			/// <param name="directory">
+			///     Path to a directory under Assets, or just 'Assets'. Can be a relative or absolute path.
+			///     Leading/trailing path separators are trimmed.
+			/// </param>
+			/// <param name="fileName">Name of the file without extension. Must not contain path separators.</param>
+			/// <param name="extension">
+			///     Extension of the file (default: 'asset'). Leading dots will be trimmed. Extension will be
+			///     lowercase.
+			/// </param>
+			/// <exception cref="ArgumentException"></exception>
+			public Path(String directory, String fileName, String extension = DefaultExtension)
 			{
-				path = path.TrimStart('/').ToLower();
+				ThrowIf.NullOrWhitespace(directory, nameof(directory));
+				ThrowIf.NullOrWhitespace(fileName, nameof(fileName));
+				ThrowIf.NullOrWhitespace(extension, nameof(extension));
+				ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));
 
-				// path must start with given project root subfolder names (eg 'Assets', 'Packages', 'Library' ..)
-				// and bei either just the subfolder (length equals) or be followed by a path separator
-				foreach (var allowedSubfolder in s_AllowedAssetSubfolders)
-				{
-					var doesStartsWith = path.StartsWith(allowedSubfolder);
-					var subfolderLength = allowedSubfolder.Length;
-					var lengthMatches = path.Length == subfolderLength;
-					if (doesStartsWith && (lengthMatches || path[subfolderLength].Equals('/')))
-						return true;
-				}
-
-				return false;
+				var relativeDir = ToRelative(directory.ToForwardSlashes());
+				m_RelativePath = $"{relativeDir}/{fileName}.{extension.TrimStart('.').ToLower()}";
 			}
 
-			private static String MakeRelative(String fullOrRelativePath) =>
-				fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
+			/// <summary>
+			///     Tests another path for equality. They are equal if their internal relative path strings are equal.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public Boolean Equals(Path other)
+			{
+				if (ReferenceEquals(other, null))
+					return false;
+				if (ReferenceEquals(this, other))
+					return true;
 
-			private static GUID GuidForExistingPath(String path) =>
-				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
+				return m_RelativePath.Equals(other.m_RelativePath);
+			}
+
+			/// <summary>
+			///     Tests paths for equality with a string. The string is elevated to a Path instance, and then
+			///     their internal path strings are compared.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public Boolean Equals(String other) => m_RelativePath.Equals(new Path(other).m_RelativePath);
 
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
@@ -412,6 +294,28 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <returns></returns>
 			public override String ToString() => m_RelativePath;
+
+			/// <summary>
+			///     Tests path for equality with an object. If the object is a Path or String will use the respective
+			///     Equals method for these types. In all other cases returns false.
+			/// </summary>
+			/// <param name="obj"></param>
+			/// <returns></returns>
+			public override Boolean Equals(Object obj)
+			{
+				if (obj is Path path)
+					return Equals(path);
+				if (obj is String str)
+					return Equals(str);
+
+				return false;
+			}
+
+			/// <summary>
+			///     Returns the internal path string's hash code.
+			/// </summary>
+			/// <returns></returns>
+			public override Int32 GetHashCode() => m_RelativePath.GetHashCode();
 		}
 	}
 }

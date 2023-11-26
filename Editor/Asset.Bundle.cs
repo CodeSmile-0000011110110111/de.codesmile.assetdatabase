@@ -9,24 +9,10 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Returns the bundle name the asset belongs to.
-		/// </summary>
-		/// <param name="path">Path to an asset.</param>
-		/// <returns>The bundle name or an empty string.</returns>
-		public String OwningBundle => Bundle.GetOwningBundle(m_AssetPath);
-
-		/// <summary>
-		///     Returns the bundle variant name the asset belongs to.
-		/// </summary>
-		/// <param name="path">Path to an asset.</param>
-		/// <returns>The bundle variant name or empty string.</returns>
-		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
-
-		/// <summary>
 		///     Groups all asset bundle related functionality.
 		/// </summary>
 		/// <remarks>
-		///     Unity recommends to use Addressables over Bundles.
+		///     Note: Unity recommends to use the Addressables package to work with Bundles.
 		/// </remarks>
 		public static class Bundle
 		{

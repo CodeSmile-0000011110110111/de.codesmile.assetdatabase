@@ -10,16 +10,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Returns the assets' direct dependencies (not recursive). Returns paths to the dependent assets.
-		/// </summary>
-		public String[] DirectDependencies => Dependency.GetDirect(m_AssetPath);
-
-		/// <summary>
-		///     Returns the assets direct and indirect dependencies. Returns paths to the dependent assets.
-		/// </summary>
-		public String[] Dependencies => Dependency.GetAll(m_AssetPath);
-
-		/// <summary>
 		///     Groups all dependency related functionality.
 		/// </summary>
 		public static class Dependency

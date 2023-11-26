@@ -28,222 +28,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Saves any changes to the object to disk if it is marked as dirty.
-		/// </summary>
-		/// <see cref="ForceSave()" />
-		public void Save()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			File.Save(m_MainObject);
-		}
-
-		/// <summary>
-		///     Forces the object to be written to disk, whether it is dirty or not.
-		/// </summary>
-		/// <see cref="Save()" />
-		public void ForceSave()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			File.ForceSave(m_MainObject);
-		}
-
-		/// <summary>
-		///     Marks the main object as dirty.
-		/// </summary>
-		/// <see cref="ForceSave()" />
-		public void SetDirty()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			EditorUtility.SetDirty(m_MainObject);
-		}
-
-		// NOTE: there is no Import() instance method since the Asset instance's object is guaranteed to be imported
-
-		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
-		private T LoadMain<T>() where T : Object
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return m_AssetPath != null ? (T)(m_MainObject = File.Load<T>(m_AssetPath)) : null;
-		}
-
-		/// <summary>
-		///     Loads the first object of the given type from the asset.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <returns></returns>
-		public T Load<T>() where T : Object
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return File.Load<T>(m_AssetPath);
-		}
-
-		/// <summary>
-		///     Saves a copy of the asset at the destinationPath. Overwrites any existing asset at destinationPath.
-		/// </summary>
-		/// <remarks>
-		///     Will create destination path folders if necessary.
-		/// </remarks>
-		/// <param name="destinationPath"></param>
-		/// <returns>The new Asset instance or null if copying failed.</returns>
-		public Asset SaveAs(Path destinationPath)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			var success = File.Copy(m_AssetPath, destinationPath);
-
-			return success ? new Asset(destinationPath) : null;
-		}
-
-		public Asset SaveAsNew(Path destinationPath)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			// get the expected path first because we don't know whether it'll be changed
-			destinationPath = destinationPath.UniqueFilePath;
-			var success = File.CopyAsNew(m_AssetPath, destinationPath);
-
-			return success ? new Asset(destinationPath) : null;
-		}
-
-		/// <summary>
-		///     Creates a duplicate of the asset with a new, unique file name.
-		/// </summary>
-		/// <returns>The asset instance of the duplicate.</returns>
-		public Asset Duplicate() => SaveAs(m_AssetPath);
-
-		/// <summary>
-		///     Tests if a Move operation will be successful without actually moving the asset.
-		///     Note: Returns false if any of the folders to destinationPath do not exist.
-		/// </summary>
-		/// <param name="destinationPath">The path where to move the asset to. Can have a different extension.</param>
-		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
-		public Boolean CanMove(Path destinationPath)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			return File.CanMove(m_AssetPath, destinationPath);
-		}
-
-		/// <summary>
-		///     Moves asset to destination path. Any non-existing folders in destination path
-		///     will be created. AssetPath property is updated accordingly.
-		/// </summary>
-		/// <param name="destinationPath"></param>
-		/// <returns>True if the move was successful.</returns>
-		public Boolean Move(Path destinationPath)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			if (File.Move(m_AssetPath, destinationPath))
-			{
-				SetAssetPathFromObject();
-				return true;
-			}
-
-			return false;
-		}
-
-		/// <summary>
-		///     Renames an asset's file or folder name.
-		///     NOTE: Cannot be used to change a file's extension. Use Move instead.
-		///     <see cref="Move" />
-		/// </summary>
-		/// <param name="newFileName">
-		///     The new name of the file or folder, without extension.
-		/// </param>
-		/// <returns>
-		///     True if the rename succeeded. The AssetPath property will be updated accordingly.
-		///     If false, Asset.LastErrorMessage provides a human-readable failure reason and the AssetPath
-		///     property remains unchanged.
-		/// </returns>
-		public Boolean Rename(String newFileName)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			if (File.Rename(m_AssetPath, newFileName))
-			{
-				SetAssetPathFromObject();
-				return true;
-			}
-
-			return false;
-		}
-
-		/// <summary>
-		///     Returns true if the asset can be opened (edited) by the Unity Editor itself.
-		/// </summary>
-		/// <example>True: materials, .unity (scene) and .asset files. False: audio clips, scripts, reflection probes.</example>
-		/// <returns></returns>
-		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
-
-		/// <summary>
-		///     Opens the asset in the default (associated) application.
-		///     Optional line and column numbers can be specified for text files and applications that support this.
-		/// </summary>
-		/// <param name="lineNumber"></param>
-		/// <param name="columnNumber"></param>
-		[ExcludeFromCodeCoverage] // cannot be tested
-		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1)
-		{
-			ThrowIf.AssetDeleted(this);
-
-			File.OpenExternal(m_MainObject, lineNumber, columnNumber);
-		}
-
-		/// <summary>
-		///     Deletes the asset.
-		///     Does not Destroy the object.
-		///     CAUTION: The asset instance should be discarded afterwards.
-		/// </summary>
-		/// <returns>
-		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
-		///     Returns null if the object wasn't deleted.
-		/// </returns>
-		/// <see cref="File.Trash(CodeSmile.Editor.Asset.Path)" />
-		public Object Delete()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			var mainObject = m_MainObject;
-			if (File.Delete(m_AssetPath))
-				InvalidateInstance();
-
-			return mainObject;
-		}
-
-		/// <summary>
-		///     Moves the asset to the OS trash (same as Delete, but recoverable).
-		///     Does not Destroy the object.
-		///     CAUTION: The asset instance should be discarded afterwards.
-		/// </summary>
-		/// <returns>
-		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
-		///     Returns null if the object wasn't trashed.
-		/// </returns>
-		/// <see cref="File.Delete(CodeSmile.Editor.Asset.Path)" />
-		public Object Trash()
-		{
-			ThrowIf.AssetDeleted(this);
-
-			var mainObject = m_MainObject;
-			if (File.Trash(m_AssetPath))
-				InvalidateInstance();
-
-			return mainObject;
-		}
-
-		private void InvalidateInstance()
-		{
-			m_AssetPath = null;
-			m_MainObject = null;
-		}
-
-		/// <summary>
 		///     Groups file related operations.
 		/// </summary>
 		public static class File
@@ -259,13 +43,13 @@ namespace CodeSmile.Editor
 			/// <see cref="Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 			public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
-			public static Object Create(Byte[] bytes, Path path) => CreateInternal(bytes, path, true);
+			public static Object Create(Byte[] bytes, Path path) => CreateInternal(bytes, path);
 
-			public static Object CreateAsNew(Byte[] bytes, Path path) => CreateInternal(bytes, path, false);
+			public static Object CreateAsNew(Byte[] bytes, Path path) => CreateInternal(bytes, path.UniqueFilePath);
 
-			public static Object Create(String contents, Path path) => CreateInternal(contents, path, true);
+			public static Object Create(String contents, Path path) => CreateInternal(contents, path);
 
-			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path, false);
+			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
 
 			/// <summary>
 			///     Creates (saves) an asset file at the target path. If an asset already exists it will be overwritten.
@@ -276,7 +60,7 @@ namespace CodeSmile.Editor
 			/// <param name="obj">The object to save as an asset file.</param>
 			/// <param name="path">The relative asset path with filename and extension.</param>
 			/// <returns>The created object.</returns>
-			public static Object Create(Object obj, Path path) => CreateInternal(obj, path, true);
+			public static Object Create(Object obj, Path path) => CreateInternal(obj, path);
 
 			/// <summary>
 			///     Creates (saves) a new asset file at the target path. Will not overwrite existing assets.
@@ -291,44 +75,35 @@ namespace CodeSmile.Editor
 			///     differ.
 			/// </param>
 			/// <returns>The newly created object.</returns>
-			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path, false);
+			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path.UniqueFilePath);
 
-			internal static Object CreateInternal(Byte[] bytes, Path path, Boolean overwriteExisting)
+			internal static Object CreateInternal(Byte[] bytes, Path path)
 			{
 				ThrowIf.ArgumentIsNull(bytes, nameof(bytes));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
-
-				path = Path.UniquifyAsNeeded(path, overwriteExisting);
 				System.IO.File.WriteAllBytes(path, bytes);
-
 				return ImportAndLoad<Object>(path);
 			}
 
-			internal static Object CreateInternal(String contents, Path path, Boolean overwriteExisting)
+			internal static Object CreateInternal(String contents, Path path)
 			{
 				ThrowIf.ArgumentIsNull(contents, nameof(contents));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
-
-				path = Path.UniquifyAsNeeded(path, overwriteExisting);
 				System.IO.File.WriteAllText(path, contents, Encoding.UTF8); // string assets ought to be UTF8
-
 				return ImportAndLoad<Object>(path);
 			}
 
-			internal static Object CreateInternal(Object obj, Path path, Boolean overwriteExisting)
+			internal static Object CreateInternal(Object obj, Path path)
 			{
 				ThrowIf.ArgumentIsNull(obj, nameof(obj));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
-
-				path = Path.UniquifyAsNeeded(path, overwriteExisting);
 				AssetDatabase.CreateAsset(obj, path);
-
 				return obj;
 			}
 
@@ -523,19 +298,19 @@ namespace CodeSmile.Editor
 				CopyInternal(sourcePath, destinationPath, true);
 
 			public static Boolean CopyAsNew(Path sourcePath, Path destinationPath) =>
-				CopyInternal(sourcePath, destinationPath, false);
+				CopyInternal(sourcePath, destinationPath.UniqueFilePath, false);
 
 			internal static Boolean CopyInternal(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
 			{
 				ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
 				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
 				ThrowIf.AssetPathNotInDatabase(sourcePath);
+				ThrowIf.SourceAndDestPathAreEqual(sourcePath, destinationPath);
 
-				var newDestPath = Path.UniquifyAsNeeded(destinationPath, overwriteExisting);
-				newDestPath.CreateFolders();
+				destinationPath.CreateFolders();
 
-				var success = AssetDatabase.CopyAsset(sourcePath, newDestPath);
-				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {newDestPath}");
+				var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);
+				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {destinationPath}");
 				return success;
 			}
 

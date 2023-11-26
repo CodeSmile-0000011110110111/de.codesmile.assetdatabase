@@ -2,8 +2,9 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using UnityEditor;
-using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -20,240 +21,534 @@ namespace CodeSmile.Editor
 		private Object m_MainObject;
 
 		/// <summary>
-		///     Gets or sets the asset's main object.
-		///     CodeSmile.Editor.Asset.GetMainType
+		///     Implicit conversion to UnityEngine.Object by returning the asset's MainObject.
 		/// </summary>
+		/// <param name="asset">The main object of the asset.</param>
 		/// <example>
-		///     To cast the main object to a specific type you may simply cast the asset:
-		///     <code>var myObj = (MyType)asset;</code>
-		///     Is short for:
-		///     <code>var myObj = (MyType)asset.MainObject;</code>
-		///     The same works with the 'as' operator:
-		///     <code>var myObj = asset as MyType;</code>
-		///     Is short for:
-		///     <code>var myObj = asset.MainObject as MyType;</code>
-		///     Lastly you can also use the generic getter:
-		///     <code>var myObj = asset.Get&lt;MyType&gt;();</code>
-		/// </example>
-		/// <seealso cref="">
-		///     <list type="">
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.SubAsset" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path)" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object)" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.File.LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
-		///         </item>
-		///     </list>
-		/// </seealso>
-		public Object MainObject
-		{
-			// This 'loads' the asset but most of the time simply returns the internally cached instance.
-			// We need to load the instance because the user may have called static SubAsset.SetMain().
-			get => m_MainObject = LoadMain<Object>();
-			set
-			{
-				SubAsset.SetMain(value, m_AssetPath);
-				m_MainObject = value;
-			}
-		}
-
-		/// <summary>
-		///     Returns the type of the main asset at the given path.
-		/// </summary>
-		/// <seealso cref="GetMainType(CodeSmile.Editor.Asset.Path)" />
-		public Type MainObjectType => GetMainType(m_AssetPath);
-
-		/// <summary>
-		///     Returns the path to the asset (file or folder).
-		/// </summary>
-		/// <seealso cref="MetaPath" />
-		public Path AssetPath => m_AssetPath;
-
-		/// <summary>
-		///     Returns the path to the .meta file for the asset.
-		/// </summary>
-		/// <seealso cref="AssetPath" />
-		/// <seealso cref="Path.ToMeta(Path)" />
-		public Path MetaPath => Path.ToMeta(m_AssetPath);
-
-		/// <summary>
-		///     Returns the asset's GUID.
-		/// </summary>
-		/// <seealso cref="FileId" />
-		/// <seealso cref="Path.GetGuid(Path)" />
-		public GUID Guid => Path.GetGuid(m_AssetPath);
-
-		/// <summary>
-		///     Returns the local FileID of the asset.
-		/// </summary>
-		/// <see cref="Guid" />
-		public Int64 FileId => GetFileId(m_MainObject);
-
-		/// <summary>
-		///     Returns the icon texture associated with the asset type.
-		/// </summary>
-		public Texture2D Icon => GetIcon(m_AssetPath);
-
-		/// <summary>
-		///     Returns the type of the main asset at the path.
-		/// </summary>
-		/// <param name="path">Path to an asset.</param>
-		/// <returns>Type of the asset. Null if the path does not exist.</returns>
-		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html">AssetDatabase.GetMainAssetTypeAtPath</a>
-		/// </seealso>
-		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
-
-		/// <summary>
-		///     Returns the type of the main asset for the GUID.
-		/// </summary>
-		/// <param name="guid">Guid of an asset.</param>
-		/// <returns>Type of the asset. Null if the guid is not known or not an asset.</returns>
-		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
-		/// </seealso>
-		public static Type GetMainType(GUID guid)
-		{
-#if UNITY_2023_2_OR_NEWER // It's also available in 2022.2 but not in the early patch versions (eg 7f1 onwards)
-			return AssetDatabase.GetMainAssetTypeFromGUID(guid);
-#else
-			return GetMainType(Path.Get(guid));
-#endif
-		}
-
-		/// <summary>
-		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
-		/// </summary>
-		/// <param name="path">Path to an asset.</param>
-		/// <param name="fileId">Local file ID of the sub-asset.</param>
-		/// <returns>Type of the SubAsset, or null.</returns>
-		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
-		/// </seealso>
-		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
-
-		/// <example>
-		///     Example usage:
 		///     <code>
-		/// var (guid, fileId) = Asset.GetGuidAndFileId(obj);
+		/// Asset asset = new Asset(..);
+		/// Object obj = asset; // implicit conversion
+		/// MySO mySo = (MySo)asset; // implicit conversion with cast
+		/// MySO mySo = asset as MySo; // implicit conversion with 'as' operator
 		/// </code>
 		/// </example>
-		/// <param name="obj">Object from which GUID and FileId should be obtained.</param>
-		/// <seealso cref="">
-		///     <list type="">
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetGuid" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetFileId" />
-		///         </item>
-		///         <item>
-		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
-		///         </item>
-		///     </list>
-		/// </seealso>
-		/// <returns>
-		///     The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset.
-		/// </returns>
-		// ValueTuple makes doxygen accept it as documented, see: https://github.com/doxygen/doxygen/issues/9618
-		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object obj)
-		{
-			if (obj == null)
-				return (new GUID(), 0L);
-
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
-			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
-				? (new GUID(guid), localId)
-				: (new GUID(), 0L);
-		}
+		/// <returns>The asset's MainObject property.</returns>
+		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
 
 		/// <summary>
-		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
+		///     Implicit conversion of UnityEngine.Object to an asset instance.
 		/// </summary>
 		/// <param name="obj"></param>
-		/// <seealso cref="">
-		///     <list type="">
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetFileId" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
-		///         </item>
-		///         <item>
-		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
-		///         </item>
-		///     </list>
-		/// </seealso>
-		/// <returns></returns>
-		public static GUID GetGuid(Object obj)
-		{
-			if (obj == null)
-				return new GUID();
+		/// <returns>An asset instance or null if obj is null.</returns>
+		/// <example>
+		///     <code>
+		/// Object obj = ..;
+		/// Asset asset = obj; // implicit conversion: Object to Asset
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(Object obj) => obj != null ? new Asset(obj) : null;
 
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
-			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
-				? new GUID(guid)
-				: new GUID();
+		/// <summary>
+		///     Implicit conversion of Asset.Path to an asset instance.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		/// // implicit conversion and loads the asset, neat ey? :)
+		/// Asset asset = new Path("Assets/Folder/MyAsset.asset");
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
+
+		/// <summary>
+		///     Implicit conversion of string path to an asset instance.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		/// // implicit conversion and loads the asset, neat ey? :)
+		/// Asset asset = "Assets/Folder/MyAsset.asset";
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
+
+		/// <summary>
+		///     Implicit conversion of GUID to an asset instance.
+		/// </summary>
+		/// <param name="guid">An asset instance.</param>
+		/// <returns>An asset instance or null if guid is empty.</returns>
+		/// <example>
+		///     <code>
+		/// // implicit conversion and loads the asset, neat ey? :)
+		/// Asset asset = new GUID(..);
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
+
+		[ExcludeFromCodeCoverage] private Asset() {} // disallow parameterless ctor
+
+		/// <summary>
+		///     Creates an asset file from a byte array.
+		/// </summary>
+		/// <remarks>Writes the data to a file, then imports the file and loads the asset object.</remarks>
+		/// <param name="contents">The data to save as an asset file.</param>
+		/// <param name="path">Path where to save the new asset file, with extension.</param>
+		/// <param name="overwriteExisting">
+		///     If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique
+		///     filename (default).
+		/// </param>
+		public Asset(Byte[] contents, Path path, Boolean overwriteExisting = false)
+		{
+			ThrowIf.ArgumentIsNull(contents, nameof(contents));
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+
+			path = Path.UniquifyAsNeeded(path, overwriteExisting);
+			var obj = File.CreateInternal(contents, path);
+			InitWithObject(obj);
 		}
 
 		/// <summary>
-		///     Returns the local FileID of the object.
+		///     Creates an asset file from a string.
 		/// </summary>
-		/// <param name="obj"></param>
-		/// <seealso cref="">
-		///     <list type="">
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetGuid" />
-		///         </item>
-		///         <item>
-		///             <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
-		///         </item>
-		///         <item>
-		///             <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
-		///         </item>
-		///     </list>
-		/// </seealso>
-		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
-		public static Int64 GetFileId(Object obj)
+		/// <param name="contents">The string to save as an asset file.</param>
+		/// <param name="path">Path where to save the new asset file, with extension.</param>
+		/// <param name="overwriteExisting">
+		///     If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique
+		///     filename (default).
+		/// </param>
+		public Asset(String contents, Path path, Boolean overwriteExisting = false)
 		{
-			if (obj == null)
-				return 0L;
+			ThrowIf.ArgumentIsNull(contents, nameof(contents));
+			ThrowIf.ArgumentIsNull(path, nameof(path));
 
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
-			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
+			path = Path.UniquifyAsNeeded(path, overwriteExisting);
+			var obj = File.CreateInternal(contents, path);
+			InitWithObject(obj);
 		}
 
 		/// <summary>
-		///     Returns the icon associated with the asset type.
+		///     Creates an asset file from an existing UnityEngine.Object instance.
 		/// </summary>
-		/// <param name="path">Path to an asset.</param>
-		/// <returns>The icon texture cast as Texture2D, or null.</returns>
-		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
+		/// <remarks>
+		///     The object must not already be an asset file (throws exception).
+		/// </remarks>
+		/// <param name="obj">The object to create as an asset file.</param>
+		/// <param name="path">Path where to save the new asset file, with extension.</param>
+		/// <param name="overwriteExisting">
+		///     If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique
+		///     filename (default).
+		/// </param>
+		/// <exception cref="ArgumentNullException">If the object is null.</exception>
+		/// <exception cref="ArgumentNullException">If the path is null.</exception>
+		/// <exception cref="ArgumentException">If the object is already serialized to an asset file.</exception>
+		/// <seealso cref="CodeSmile.Editor.Asset(UnityEngine.Object)" />
+		/// <seealso cref="CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)" />
+		public Asset(Object obj, Path path, Boolean overwriteExisting = false)
+		{
+			ThrowIf.ArgumentIsNull(obj, nameof(obj));
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+			ThrowIf.AlreadyAnAsset(obj);
+
+			path = Path.UniquifyAsNeeded(path, overwriteExisting);
+			File.CreateInternal(obj, path);
+			InitWithObject(obj);
+		}
 
 		/// <summary>
-		///     Returns the icon associated with the asset type.
+		///     Loads the asset at path.
 		/// </summary>
-		/// <param name="obj">The object for which to get the icon.</param>
-		/// <returns>The object's icon texture or null. If the obj is a sub-asset then the main asset's icon is returned.</returns>
-		public static Texture2D GetIcon(Object obj) => GetIcon(Path.Get(obj));
+		/// <param name="path">Path to an existing asset file.</param>
+		/// <exception cref="ArgumentNullException">If the path is null.</exception>
+		/// <exception cref="FileNotFoundException">If the path does not point to an existing asset file.</exception>
+		public Asset(Path path) => InitWithPath(path);
+
+		/// <summary>
+		///     Loads the asset using its GUID.
+		/// </summary>
+		/// <param name="assetGuid"></param>
+		/// <exception cref="ArgumentException">If the GUID is not in the AssetDatabase (not an asset).</exception>
+		public Asset(GUID assetGuid) => InitWithGuid(assetGuid);
+
+		/// <summary>
+		///     Uses an existing asset reference.
+		/// </summary>
+		/// <param name="obj">Instance of an asset.</param>
+		/// <exception cref="ArgumentNullException">If the object is null.</exception>
+		/// <exception cref="ArgumentException">If the object is not an asset.</exception>
+		public Asset(Object obj) => InitWithObject(obj);
 
 		/// <remarks>
 		///     The alternative is to cast the asset instance:
-		///     <code>
-		/// var obj = (T)asset;
-		/// </code>
+		///     <code>var obj = (T)asset;</code>
 		/// </remarks>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
 		public T Get<T>() where T : Object => m_MainObject as T;
+
+		/// <summary>
+		///     Saves any changes to the asset to disk.
+		/// </summary>
+		/// <remarks>
+		///     Not every change marks an object as 'dirty'. In such cases you need to use
+		///     CodeSmile.Editor.Asset.ForceSave().
+		/// </remarks>
+		/// <seealso cref="CodeSmile.Editor.Asset.ForceSave()" />
+		public void Save()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			File.Save(m_MainObject);
+		}
+
+		/// <summary>
+		///     Saves the asset to disk, regardless of whether it is marked as 'dirty'.
+		/// </summary>
+		/// <remarks>
+		///     Force saving is achieved by flagging the object as dirty with
+		///     <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty()</a>.
+		/// </remarks>
+		/// <seealso cref="CodeSmile.Editor.Asset.Save()" />
+		public void ForceSave()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			File.ForceSave(m_MainObject);
+		}
+
+		/// <summary>
+		///     Saves a copy of the asset to a new path. Overwrites any existing asset at path.
+		/// </summary>
+		/// <remarks>
+		///     Will automatically create missing folders.
+		/// </remarks>
+		/// <param name="path">The path where to save the copy.</param>
+		/// <returns>
+		///     The copy of the Asset or null if copying failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the
+		///     human readable error message.
+		/// </returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.Save" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SaveAsNew" />
+		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		public Asset SaveAs(Path path)
+		{
+			ThrowIf.AssetDeleted(this);
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+
+			return File.Copy(m_AssetPath, path) ? new Asset(path) : null;
+		}
+
+		/// <summary>
+		///     Saves a copy of the asset to a new path. Will not overwrite existing assets by generating a unique
+		///     filename where necessary.
+		/// </summary>
+		/// <remarks>
+		///     Will automatically create missing folders.
+		/// </remarks>
+		/// <param name="path">The path where to save the copy. Note that actual path of the asset may change.</param>
+		/// <returns>
+		///     The copy of the Asset or null if copying failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the
+		///     human readable error message.
+		/// </returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.Save()" />
+		/// <seealso cref="CodeSmile.Editor.Asset.SaveAs()" />
+		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		public Asset SaveAsNew(Path path)
+		{
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+
+			return SaveAs(path.UniqueFilePath);
+		}
+
+		/// <summary>
+		///     Creates a duplicate of the asset with a new, unique file name.
+		/// </summary>
+		/// <remarks>
+		///     <code>asset.Duplicate();</code>
+		///     is short for <code>asset.SaveAsNew(asset.AssetPath);</code>
+		/// </remarks>
+		/// <returns>The asset instance of the duplicate.</returns>
+		public Asset Duplicate()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			return SaveAsNew(m_AssetPath);
+		}
+
+		/// <summary>
+		///     Marks the main object as dirty.
+		/// </summary>
+		/// <seealso cref="CodeSmile.Editor.Asset.ForceSave()" />
+		public void SetDirty()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			EditorUtility.SetDirty(m_MainObject);
+		}
+
+		// NOTE: there is no public Import() method needed since the main object is guaranteed to be imported
+		private void Import() {}
+
+		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
+		private T LoadMain<T>() where T : Object =>
+			m_AssetPath != null ? (T)(m_MainObject = File.Load<T>(m_AssetPath)) : null;
+
+		/// <summary>
+		///     Loads a (sub) object from the asset identified by type.
+		/// </summary>
+		/// <remarks>
+		///     To load the main object of the Asset instance use the CodeSmile.Editor.Asset.MainObject property.
+		/// </remarks>
+		/// <typeparam name="T"></typeparam>
+		/// <returns>Returns the 'first' asset of the type found.</returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.LoadAll" />
+		/// <seealso cref="CodeSmile.Editor.Asset.MainObject" />
+		public T Load<T>() where T : Object
+		{
+			ThrowIf.AssetDeleted(this);
+
+			return File.Load<T>(m_AssetPath);
+		}
+
+		/// <summary>
+		///     Tests if a Move operation will be successful without actually moving the asset.
+		/// </summary>
+		/// <remarks>
+		///     Returns false if one or more folders in destinationPath do not exist.
+		///     On failure, use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure error message.
+		/// </remarks>
+		/// <param name="destinationPath">The path where to move the asset to. May have a different extension.</param>
+		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.Move" />
+		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		public Boolean CanMove(Path destinationPath)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			return File.CanMove(m_AssetPath, destinationPath);
+		}
+
+		/// <summary>
+		///     Moves asset to destination path.
+		/// </summary>
+		/// <remarks>
+		///     Missing folders in destination path will be created automatically.
+		///     After the move, the CodeSmile.Editor.Asset.AssetPath property is updated accordingly.
+		///     On failure, use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure error message.
+		/// </remarks>
+		/// <param name="destinationPath">The path where to move the asset to. May have a different extension.</param>
+		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.CanMove" />
+		/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		public Boolean Move(Path destinationPath)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			if (File.Move(m_AssetPath, destinationPath))
+			{
+				SetAssetPathFromObject();
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		///     Renames an asset's file or folder name.
+		///     NOTE: Cannot be used to change a file's extension. Use Move instead.
+		///     <see cref="Move" />
+		/// </summary>
+		/// <param name="newFileName">
+		///     The new name of the file or folder, without extension.
+		/// </param>
+		/// <returns>
+		///     True if the rename succeeded. The AssetPath property will be updated accordingly.
+		///     If false, Asset.LastErrorMessage provides a human-readable failure reason and the AssetPath
+		///     property remains unchanged.
+		/// </returns>
+		public Boolean Rename(String newFileName)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			if (File.Rename(m_AssetPath, newFileName))
+			{
+				SetAssetPathFromObject();
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		///     Returns true if the asset can be opened (edited) by the Unity Editor itself.
+		/// </summary>
+		/// <example>True: materials, .unity (scene) and .asset files. False: audio clips, scripts, reflection probes.</example>
+		/// <returns></returns>
+		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
+
+		/// <summary>
+		///     Opens the asset in the default (associated) application.
+		///     Optional line and column numbers can be specified for text files and applications that support this.
+		/// </summary>
+		/// <param name="lineNumber"></param>
+		/// <param name="columnNumber"></param>
+		[ExcludeFromCodeCoverage] // cannot be tested
+		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			File.OpenExternal(m_MainObject, lineNumber, columnNumber);
+		}
+
+		/// <summary>
+		///     Deletes the asset.
+		///     Does not Destroy the object.
+		///     CAUTION: The asset instance should be discarded afterwards.
+		/// </summary>
+		/// <returns>
+		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
+		///     Returns null if the object wasn't deleted.
+		/// </returns>
+		/// <see cref="File.Trash(CodeSmile.Editor.Asset.Path)" />
+		public Object Delete()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			var mainObject = m_MainObject;
+			if (File.Delete(m_AssetPath))
+				InvalidateInstance();
+
+			return mainObject;
+		}
+
+		/// <summary>
+		///     Moves the asset to the OS trash (same as Delete, but recoverable).
+		///     Does not Destroy the object.
+		///     CAUTION: The asset instance should be discarded afterwards.
+		/// </summary>
+		/// <returns>
+		///     If successful, returns the former MainObject - it is still valid but it is no longer an asset.
+		///     Returns null if the object wasn't trashed.
+		/// </returns>
+		/// <see cref="File.Delete(CodeSmile.Editor.Asset.Path)" />
+		public Object Trash()
+		{
+			ThrowIf.AssetDeleted(this);
+
+			var mainObject = m_MainObject;
+			if (File.Trash(m_AssetPath))
+				InvalidateInstance();
+
+			return mainObject;
+		}
+
+		/// <summary>
+		///     Sets the active AssetImporter type for this asset.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <see cref="SetActiveImporterToDefault" />
+		/// <see cref="ActiveImporter" />
+		public void SetActiveImporter<T>()
+#if UNITY_2022_1_OR_NEWER
+			where T : AssetImporter
+#else
+			where T : UnityEditor.AssetImporters.ScriptedImporter
+#endif
+		{
+			Importer.SetOverride<T>(m_AssetPath);
+		}
+
+		/// <summary>
+		///     Resets the active AssetImporter type to the default type, if necessary.
+		/// </summary>
+		public void SetActiveImporterToDefault()
+		{
+			if (Importer.IsOverridden(m_AssetPath))
+				Importer.ClearOverride(m_AssetPath);
+		}
+
+		/// <summary>
+		///     Sets the asset's labels, replacing all existing labels.
+		/// </summary>
+		/// <param name="labels"></param>
+		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
+
+		/// <summary>
+		///     Removes all labels from the asset.
+		/// </summary>
+		public void ClearLabels() => Label.ClearAll(m_MainObject);
+
+		/// <summary>
+		///     Adds a label to the asset.
+		/// </summary>
+		/// <param name="label"></param>
+		public void AddLabel(String label) => Label.Add(m_MainObject, label);
+
+		/// <summary>
+		///     Adds several labels to the asset.
+		/// </summary>
+		/// <param name="labels"></param>
+		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
+
+		/// <summary>
+		///     Exports this asset and its dependencies as a .unitypackage.
+		/// </summary>
+		/// <param name="packagePath"></param>
+		/// <param name="options"></param>
+		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			Package.Export(m_AssetPath, packagePath, options);
+		}
+
+		/// <summary>
+		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
+		/// </summary>
+		/// <param name="subObject"></param>
+		public void AddObject(Object subObject) => SubAsset.Add(subObject, m_MainObject);
+
+		/// <summary>
+		///     Removes an object from the asset's sub-objects.
+		/// </summary>
+		/// <param name="subObject"></param>
+		/// W
+		public void RemoveObject(Object subObject) => SubAsset.Remove(subObject);
+
+		private void InvalidateInstance()
+		{
+			m_AssetPath = null;
+			m_MainObject = null;
+		}
+
+		private void SetAssetPathFromObject() => m_AssetPath = Path.Get(m_MainObject);
+
+		private void InitWithPath(Path path)
+		{
+			ThrowIf.ArgumentIsNull(path, nameof(path));
+			ThrowIf.DoesNotExistInFileSystem(path);
+
+			m_AssetPath = path;
+			m_MainObject = Status.IsImported(path) ? LoadMain<Object>() : File.ImportAndLoad<Object>(path);
+
+			ThrowIf.AssetLoadReturnedNull(m_MainObject, m_AssetPath);
+		}
+
+		private void InitWithObject(Object obj)
+		{
+			ThrowIf.ArgumentIsNull(obj, nameof(obj));
+			ThrowIf.NotInDatabase(obj);
+
+			m_MainObject = obj;
+			m_AssetPath = Path.Get(obj);
+		}
+
+		private void InitWithGuid(GUID guid)
+		{
+			ThrowIf.NotAnAssetGuid(guid);
+
+			InitWithPath(Path.Get(guid));
+		}
 	}
 }

@@ -11,9 +11,9 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Groups all asset database functionality. Turns out there isn't actually that much that is
-		///     'database' related after all.
+		///     Groups all asset database functionality.
 		/// </summary>
+		/// <remarks>Turns out there isn't actually that much that is 'database' related after all.</remarks>
 		public static partial class Database
 		{
 			/// <summary>

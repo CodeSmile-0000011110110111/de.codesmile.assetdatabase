@@ -11,12 +11,7 @@ public class AssetImportTests : AssetTestBase
 	{
 		var testPath = DeleteAfterTest("Assets/file.txt");
 		File.WriteAllText(testPath, "<for no eyes only>");
-		Assert.Throws<AssetLoadException>(() => new Asset(testPath));
-
-		Asset.File.Import(testPath);
-
 		Assert.DoesNotThrow(() => new Asset(testPath));
-		DeleteAfterTest(new Asset(testPath));
 	}
 
 	[Test] public void ImportAllStatic_SystemIODeletedFile_AssetObjectLifetimeAsExpected()
@@ -45,7 +40,7 @@ public class AssetImportTests : AssetTestBase
 		Assert.Throws<FileNotFoundException>(() => new Asset(testPath)); // throws, file does not exist
 
 		File.WriteAllText(testPath, "test file contents are irrelevant");
-		Assert.Throws<AssetLoadException>(() => new Asset(testPath)); // throws, asset not in database
+		Assert.DoesNotThrow(() => new Asset(testPath)); // does not throw, asset auto-imported
 
 		Asset.Database.ImportAll();
 

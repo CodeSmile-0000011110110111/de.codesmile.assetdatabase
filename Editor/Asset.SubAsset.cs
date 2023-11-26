@@ -10,31 +10,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Loads and returns all sub objects the asset is comprised of.
-		///     NOTE: Whether the main object is included in this list depends on the type of asset.
-		/// </summary>
-		public Object[] SubAssets => IsScene ? new Object[0] : SubAsset.LoadAll(m_AssetPath);
-
-		/// <summary>
-		///     Loads and returns only those asset objects that are shown in the project view.
-		///     NOTE: Does NOT include the main asset!
-		/// </summary>
-		public Object[] VisibleSubAssets => IsScene ? new Object[0] : SubAsset.LoadVisible(m_AssetPath);
-
-		/// <summary>
-		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
-		/// </summary>
-		/// <param name="subObject"></param>
-		public void AddObject(Object subObject) => SubAsset.Add(subObject, m_MainObject);
-
-		/// <summary>
-		///     Removes an object from the asset's sub-objects.
-		/// </summary>
-		/// <param name="subObject"></param>
-		/// W
-		public void RemoveObject(Object subObject) => SubAsset.Remove(subObject);
-
-		/// <summary>
 		///     Groups all SubAsset related functionality.
 		/// </summary>
 		public static class SubAsset

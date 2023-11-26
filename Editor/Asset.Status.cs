@@ -10,36 +10,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Returns true after the asset has been deleted.
-		///     <p>
-		///         <see cref="File.Delete(CodeSmile.Editor.Asset.Path)" /> -
-		///         <see cref="File.Trash(CodeSmile.Editor.Asset.Path)" />
-		///     </p>
-		/// </summary>
-		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
-
-		/// <summary>
-		///     Returns whether this is a foreign asset.
-		/// </summary>
-		/// <see cref="Status.IsForeign" />
-		/// <see cref="Status.IsNative" />
-		/// <returns></returns>
-		public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
-
-		/// <summary>
-		///     Returns whether this is a native asset.
-		/// </summary>
-		/// <see cref="Status.IsNative" />
-		/// <see cref="Status.IsForeign" />
-		/// <returns></returns>
-		public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
-
-		/// <summary>
-		///     Returns true if this is a scene asset.
-		/// </summary>
-		public Boolean IsScene => Status.IsScene(m_MainObject);
-
-		/// <summary>
 		///     Groups asset status related functions.
 		/// </summary>
 		public static class Status

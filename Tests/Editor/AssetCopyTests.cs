@@ -16,13 +16,11 @@ public class AssetCopyTests : AssetTestBase
 	[Test] public void CopyStatic_MissingSourcePath_Throws() =>
 		Assert.Throws<ArgumentException>(() => Asset.File.Copy(TestAssetPath, TestAssetPath));
 
-	[Test] public void CopyStatic_OntoItselfOverwrite_Fails()
+	[Test] public void CopyStatic_OntoItself_Throws()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		var success = Asset.File.Copy(asset.AssetPath, asset.AssetPath);
-
-		Assert.IsFalse(success);
+		Assert.Throws<ArgumentException>(() => Asset.File.Copy(asset.AssetPath, asset.AssetPath));
 	}
 
 	[Test] public void CopyStatic_ToNotExistingFolder_Succeeds()

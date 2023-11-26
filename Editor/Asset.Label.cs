@@ -11,38 +11,6 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Sets or gets the labels associated with the asset.
-		/// </summary>
-		public String[] Labels
-		{
-			get => Label.GetAll(m_MainObject);
-			set => Label.SetAll(m_MainObject, value);
-		}
-
-		/// <summary>
-		///     Sets the asset's labels, replacing all existing labels.
-		/// </summary>
-		/// <param name="labels"></param>
-		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
-
-		/// <summary>
-		///     Removes all labels from the asset.
-		/// </summary>
-		public void ClearLabels() => Label.ClearAll(m_MainObject);
-
-		/// <summary>
-		///     Adds a label to the asset.
-		/// </summary>
-		/// <param name="label"></param>
-		public void AddLabel(String label) => Label.Add(m_MainObject, label);
-
-		/// <summary>
-		///     Adds several labels to the asset.
-		/// </summary>
-		/// <param name="labels"></param>
-		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
-
-		/// <summary>
 		///     Groups all asset label related static methods.
 		/// </summary>
 		public static class Label
