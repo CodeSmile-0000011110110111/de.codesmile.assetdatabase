@@ -391,9 +391,13 @@ namespace CodeSmile.Editor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.LoadObjectAsync(path, localFileId);
 #else
-				throw new NotSupportedException($"The current Unity Editor version does not support this method: {nameof(AssetDatabase.LoadObjectAsync)}");
+				throw new NotSupportedException($"AssetDatabase.LoadObjectAsync not available in this editor version");
 #endif
 			}
+
+#if !UNITY_2022_2_OR_NEWER
+	public class AssetDatabaseLoadOperation {}
+#endif
 
 			/// <summary>
 			///     Finds the assets by the given filter criteria.

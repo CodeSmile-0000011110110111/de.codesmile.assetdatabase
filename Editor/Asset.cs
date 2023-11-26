@@ -118,7 +118,14 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
 		/// </seealso>
-		public static Type GetMainType(GUID guid) => AssetDatabase.GetMainAssetTypeFromGUID(guid);
+		public static Type GetMainType(GUID guid)
+		{
+#if UNITY_2022_3_OR_NEWER
+			return AssetDatabase.GetMainAssetTypeFromGUID(guid);
+#else
+			return GetMainType(Path.Get(guid));
+#endif
+		}
 
 		/// <summary>
 		///     Gets the type of a sub asset by the main asset's path and the local file ID of the sub-asset.
@@ -190,7 +197,9 @@ namespace CodeSmile.Editor
 			if (obj == null)
 				return new GUID();
 
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out _)
+			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			var localId = Int64.MaxValue;
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
 				? new GUID(guid)
 				: new GUID();
 		}
