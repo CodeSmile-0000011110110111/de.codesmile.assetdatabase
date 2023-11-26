@@ -12,5 +12,5 @@ var searchData=
   ['loadmain_3c_20t_20_3e_9',['loadmain&lt; t &gt;',['../class_code_smile_1_1_editor_1_1_asset_1_1_file_a4cfb4aafd1fc98ab93c85d37afe2d181.html#a4cfb4aafd1fc98ab93c85d37afe2d181',1,'CodeSmile.Editor.Asset.File.LoadMain&lt; T &gt;(Path path)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088.html#a9702d12ef27f2d0dfd1f8201fbb37088',1,'CodeSmile.Editor.Asset.File.LoadMain&lt; T &gt;(GUID guid)']]],
   ['loadorcreate_3c_20t_20_3e_10',['LoadOrCreate&lt; T &gt;',['../class_code_smile_1_1_editor_1_1_asset_1_1_file_aafa3d6fab63beb8b4ea1166456e994b9.html#aafa3d6fab63beb8b4ea1166456e994b9',1,'CodeSmile::Editor::Asset::File']]],
   ['loadvisible_11',['LoadVisible',['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset_a6ee8fcada3ae12960b26363b158b0ba8.html#a6ee8fcada3ae12960b26363b158b0ba8',1,'CodeSmile::Editor::Asset::SubAsset']]],
-  ['log_12',['Change Log',['../md__c_h_a_n_g_e_l_o_g.html',1,'']]]
+  ['log_12',['Change Log',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html',1,'']]]
 ];
