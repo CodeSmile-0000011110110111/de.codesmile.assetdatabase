@@ -111,7 +111,7 @@ namespace CodeSmile.Editor
 			///     best interest if you use Asset.Save(obj) instead.
 			///     Also consider using BatchEditing(Action) in that case.
 			/// </summary>
-			/// <see cref="Asset.Save" />
+			/// <see cref="Asset.Save()" />
 			/// <see cref="Asset.ForceSave" />
 			/// <see cref="Asset.File.BatchEditing" />
 			public static void SaveAll() => AssetDatabase.SaveAssets();

@@ -58,15 +58,6 @@ namespace CodeSmile.Editor
 					throw new InvalidOperationException("asset has been deleted");
 			}
 
-			public static void OverwritingSamePath(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
-			{
-				if (overwriteExisting && sourcePath.Equals(destinationPath))
-				{
-					throw new ArgumentException(
-						$"destination path must not equal source if overwrite is specified: {destinationPath}");
-				}
-			}
-
 			public static void AssetNotImported(Path path, Type assetType)
 			{
 				if (assetType == null)

@@ -335,7 +335,7 @@ namespace CodeSmile.Editor
 			/// <returns>Paths to all subfolders, or empty array if there are no subfolders or the path points to a file.</returns>
 			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
-			internal static Path GetOverwriteOrUnique(Path destPath, Boolean overwriteExisting) =>
+			internal static Path UniquifyAsNeeded(Path destPath, Boolean overwriteExisting) =>
 				overwriteExisting ? destPath : destPath.UniqueFilePath;
 
 			private static GUID CreateSubFolder(Path parentFolder, String subFolderName) =>

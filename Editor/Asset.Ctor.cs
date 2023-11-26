@@ -12,9 +12,15 @@ namespace CodeSmile.Editor
 	{
 		[ExcludeFromCodeCoverage] private Asset() {} // disallowed parameterless ctor
 
+		public Asset(byte[] bytes, Path path, Boolean overwriteExisting = false)
+		{
+			var obj = File.CreateInternal(bytes, path, overwriteExisting);
+			SetMainObjectAndAssetPath(obj);
+		}
+
 		public Asset(string contents, Path path, Boolean overwriteExisting = false)
 		{
-			var obj = File.Create(contents, path, overwriteExisting);
+			var obj = File.CreateInternal(contents, path, overwriteExisting);
 			SetMainObjectAndAssetPath(obj);
 		}
 
@@ -35,7 +41,7 @@ namespace CodeSmile.Editor
 		{
 			ThrowIf.AlreadyAnAsset(obj);
 
-			File.Create(obj, path, overwriteExisting);
+			File.CreateInternal(obj, path, overwriteExisting);
 			SetMainObjectAndAssetPath(obj);
 		}
 

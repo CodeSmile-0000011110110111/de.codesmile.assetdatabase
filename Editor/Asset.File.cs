@@ -83,28 +83,38 @@ namespace CodeSmile.Editor
 		}
 
 		/// <summary>
-		///     Makes a copy of the asset.
-		///     Will create destination path folders if necessary.
+		///     Saves a copy of the asset at the destinationPath. Overwrites any existing asset at destinationPath.
 		/// </summary>
+		/// <remarks>
+		///     Will create destination path folders if necessary.
+		/// </remarks>
 		/// <param name="destinationPath"></param>
-		/// <param name="overwriteExisting"></param>
-		/// <returns>The Asset instance of the copy, or null if copying failed.</returns>
-		public Asset Copy(Path destinationPath, Boolean overwriteExisting = false)
+		/// <returns>The new Asset instance or null if copying failed.</returns>
+		public Asset SaveAs(Path destinationPath)
 		{
 			ThrowIf.AssetDeleted(this);
 
-			// get the expected copy's path first
-			var pathToCopy = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
-
 			var success = File.Copy(m_AssetPath, destinationPath);
-			return success ? new Asset(pathToCopy) : null;
+
+			return success ? new Asset(destinationPath) : null;
+		}
+
+		public Asset SaveAsNew(Path destinationPath)
+		{
+			ThrowIf.AssetDeleted(this);
+
+			// get the expected path first because we don't know whether it'll be changed
+			destinationPath = destinationPath.UniqueFilePath;
+			var success = File.CopyAsNew(m_AssetPath, destinationPath);
+
+			return success ? new Asset(destinationPath) : null;
 		}
 
 		/// <summary>
 		///     Creates a duplicate of the asset with a new, unique file name.
 		/// </summary>
 		/// <returns>The asset instance of the duplicate.</returns>
-		public Asset Duplicate() => Copy(m_AssetPath);
+		public Asset Duplicate() => SaveAs(m_AssetPath);
 
 		/// <summary>
 		///     Tests if a Move operation will be successful without actually moving the asset.
@@ -249,39 +259,77 @@ namespace CodeSmile.Editor
 			/// <see cref="Delete(System.Collections.Generic.IEnumerable{CodeSmile.Editor.Asset.Path})" />
 			public static IList<String> FailedToDeletePaths => s_FailedToDeletePaths;
 
+			public static Object Create(Byte[] bytes, Path path) => CreateInternal(bytes, path, true);
+
+			public static Object CreateAsNew(Byte[] bytes, Path path) => CreateInternal(bytes, path, false);
+
+			public static Object Create(String contents, Path path) => CreateInternal(contents, path, true);
+
+			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path, false);
+
 			/// <summary>
-			///     Creates (saves) a new asset file at the target path. Also creates all non-existing folders in the path.
-			///     Defaults to generating a unique filename if there is an existing asset file.
-			///     Can overwrite existing files, if specified.
+			///     Creates (saves) an asset file at the target path. If an asset already exists it will be overwritten.
 			/// </summary>
+			/// <remarks>
+			///     Also creates all non-existing folders in the path.
+			/// </remarks>
 			/// <param name="obj">The object to save as an asset file.</param>
 			/// <param name="path">The relative asset path with filename and extension.</param>
-			/// <param name="overwriteExisting">(Default: false) If true, any existing asset file will be overwritten.</param>
-			/// <returns></returns>
-			public static Object Create(Object obj, Path path, Boolean overwriteExisting = false)
+			/// <returns>The created object.</returns>
+			public static Object Create(Object obj, Path path) => CreateInternal(obj, path, true);
+
+			/// <summary>
+			///     Creates (saves) a new asset file at the target path. Will not overwrite existing assets.
+			/// </summary>
+			/// <remarks>
+			///     If an asset already exists at the path the new asset will be created with a unique file name.
+			///     Also creates all non-existing folders in the path.
+			/// </remarks>
+			/// <param name="obj">The object to save as an asset file.</param>
+			/// <param name="path">
+			///     The relative asset path with filename and extension. Note that the actual path of the asset may
+			///     differ.
+			/// </param>
+			/// <returns>The newly created object.</returns>
+			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path, false);
+
+			internal static Object CreateInternal(Byte[] bytes, Path path, Boolean overwriteExisting)
 			{
-				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.ArgumentIsNull(bytes, nameof(bytes));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
 
-				path = Path.GetOverwriteOrUnique(path, overwriteExisting);
-				AssetDatabase.CreateAsset(obj, path);
+				path = Path.UniquifyAsNeeded(path, overwriteExisting);
+				System.IO.File.WriteAllBytes(path, bytes);
 
-				return obj;
+				return ImportAndLoad<Object>(path);
 			}
 
-			public static Object Create(string contents, Path path, Boolean overwriteExisting = false)
+			internal static Object CreateInternal(String contents, Path path, Boolean overwriteExisting)
 			{
 				ThrowIf.ArgumentIsNull(contents, nameof(contents));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
 
-				path = Path.GetOverwriteOrUnique(path, overwriteExisting);
-				System.IO.File.WriteAllText(path, contents);
+				path = Path.UniquifyAsNeeded(path, overwriteExisting);
+				System.IO.File.WriteAllText(path, contents, Encoding.UTF8); // string assets ought to be UTF8
 
 				return ImportAndLoad<Object>(path);
+			}
+
+			internal static Object CreateInternal(Object obj, Path path, Boolean overwriteExisting)
+			{
+				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				path.CreateFolders();
+
+				path = Path.UniquifyAsNeeded(path, overwriteExisting);
+				AssetDatabase.CreateAsset(obj, path);
+
+				return obj;
 			}
 
 			/// <summary>
@@ -342,10 +390,8 @@ namespace CodeSmile.Editor
 				return path;
 			}
 
-			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.ForceUpdate) where T: UnityEngine.Object
-			{
-				return Load<T>(Import(path, options | ImportAssetOptions.ForceUpdate));
-			}
+			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.ForceUpdate)
+				where T : Object => Load<T>(Import(path, options | ImportAssetOptions.ForceUpdate));
 
 			/// <summary>
 			///     Loads the main asset object at the path.
@@ -473,14 +519,19 @@ namespace CodeSmile.Editor
 			///     should be generated.
 			/// </param>
 			/// <returns>True if copying succeeded, false if it failed.</returns>
-			public static Boolean Copy(Path sourcePath, Path destinationPath, Boolean overwriteExisting = false)
+			public static Boolean Copy(Path sourcePath, Path destinationPath) =>
+				CopyInternal(sourcePath, destinationPath, true);
+
+			public static Boolean CopyAsNew(Path sourcePath, Path destinationPath) =>
+				CopyInternal(sourcePath, destinationPath, false);
+
+			internal static Boolean CopyInternal(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
 			{
 				ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
 				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
 				ThrowIf.AssetPathNotInDatabase(sourcePath);
-				ThrowIf.OverwritingSamePath(sourcePath, destinationPath, overwriteExisting);
 
-				var newDestPath = Path.GetOverwriteOrUnique(destinationPath, overwriteExisting);
+				var newDestPath = Path.UniquifyAsNeeded(destinationPath, overwriteExisting);
 				newDestPath.CreateFolders();
 
 				var success = AssetDatabase.CopyAsset(sourcePath, newDestPath);

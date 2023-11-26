@@ -16,11 +16,13 @@ public class AssetCopyTests : AssetTestBase
 	[Test] public void CopyStatic_MissingSourcePath_Throws() =>
 		Assert.Throws<ArgumentException>(() => Asset.File.Copy(TestAssetPath, TestAssetPath));
 
-	[Test] public void CopyStatic_OntoItselfOverwrite_Throws()
+	[Test] public void CopyStatic_OntoItselfOverwrite_Fails()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		Assert.Throws<ArgumentException>(() => Asset.File.Copy(asset.AssetPath, asset.AssetPath, true));
+		var success = Asset.File.Copy(asset.AssetPath, asset.AssetPath);
+
+		Assert.IsFalse(success);
 	}
 
 	[Test] public void CopyStatic_ToNotExistingFolder_Succeeds()
@@ -36,22 +38,22 @@ public class AssetCopyTests : AssetTestBase
 		Assert.AreEqual(String.Empty, asset.LastErrorMessage);
 	}
 
-	[Test] public void CopyStatic_OntoItselfNoOverwrite_CreatesCopy()
+	[Test] public void CopyNoOverwriteStatic_OntoItself_CreatesCopy()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 		var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFileName(asset.AssetPath));
 
-		var success = Asset.File.Copy(asset.AssetPath, (String)asset.AssetPath);
+		var success = Asset.File.CopyAsNew(asset.AssetPath, (String)asset.AssetPath);
 
 		Assert.True(success);
 		Assert.True(expectedCopyPath.Exists);
 	}
 
-	[Test] public void Copy_OntoItselfNoOverwrite_CreatesCopy()
+	[Test] public void CopyNoOverwrite_OntoItself_CreatesCopy()
 	{
 		var asset = CreateTestAsset(TestAssetPath);
 
-		var assetCopy = DeleteAfterTest(asset.Copy(asset.AssetPath));
+		var assetCopy = DeleteAfterTest(asset.SaveAsNew(asset.AssetPath));
 
 		Assert.NotNull(assetCopy);
 		Assert.AreNotEqual(asset, assetCopy);
