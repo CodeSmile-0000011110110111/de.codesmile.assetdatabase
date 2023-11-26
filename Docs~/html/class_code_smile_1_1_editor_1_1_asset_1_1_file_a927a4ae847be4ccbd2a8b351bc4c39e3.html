@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_1_1_asset_database_load_operation.html">AssetDatabaseLoadOperation</a> LoadAsync </td>
+          <td class="memname">static AssetDatabaseLoadOperation LoadAsync </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -127,23 +127,26 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><div class="memdoc">
 
 <p>Loads an object and its dependencies asynchronously. </p>
+<p>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-    <tr><td class="paramname">localFileId</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>The path to an asset file.</td></tr>
+    <tr><td class="paramname">localFileId</td><td>The local file ID of the (sub) asset. I'm sorry but this is what Unity requires.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An AssetDatabaseLoadOperation instance to track progress.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An AssetDatabaseLoadOperation to track progress.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadObjectAsync.html">AssetDatabase.LoadObjectAsync</a></p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00389">389</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  390</span>            {</div>
-<div class="line"><span class="lineno">  391</span><span class="preprocessor">#if UNITY_2022_2_OR_NEWER</span></div>
-<div class="line"><span class="lineno">  392</span>                <span class="keywordflow">return</span> AssetDatabase.LoadObjectAsync(path, localFileId);</div>
-<div class="line"><span class="lineno">  393</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  394</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException($<span class="stringliteral">&quot;AssetDatabase.LoadObjectAsync not available in this editor version&quot;</span>);</div>
-<div class="line"><span class="lineno">  395</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  396</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00381">381</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  382</span>            {</div>
+<div class="line"><span class="lineno">  383</span><span class="preprocessor">#if UNITY_2022_2_OR_NEWER</span></div>
+<div class="line"><span class="lineno">  384</span>                <span class="keywordflow">return</span> AssetDatabase.LoadObjectAsync(path, localFileId);</div>
+<div class="line"><span class="lineno">  385</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  386</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException($<span class="stringliteral">&quot;AssetDatabase.LoadObjectAsync not available in this editor version&quot;</span>);</div>
+<div class="line"><span class="lineno">  387</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  388</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -118,29 +118,19 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><!-- fragment --><p> The same works with the 'as' operator: </p><div class="fragment"><div class="line">var myObj = asset as MyType;</div>
 </div><!-- fragment --><p> Is short for: </p><div class="fragment"><div class="line">var myObj = asset.MainObject as MyType;</div>
 </div><!-- fragment --><p> Lastly you can also use the generic getter: </p><div class="fragment"><div class="line">var myObj = asset.Get&lt;MyType&gt;();</div>
-</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd></dd></dl>
-<ul>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html" title="Groups all SubAsset related functionality.">CodeSmile.Editor.Asset.SubAsset</a>  </li>
-<li>
-CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path)  </li>
-<li>
-CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object)  </li>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a4cfb4aafd1fc98ab93c85d37afe2d181.html#a4cfb4aafd1fc98ab93c85d37afe2d181" title="Loads the main asset object at the path. Commonly this is the only object of the asset,...">CodeSmile.Editor.Asset.File.LoadMain&lt;T&gt;(CodeSmile.Editor.Asset.Path)</a>  </li>
-</ul>
+</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html" title="Groups all SubAsset related functionality.">CodeSmile.Editor.Asset.SubAsset</a>, CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path), CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object), <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a4cfb4aafd1fc98ab93c85d37afe2d181.html#a4cfb4aafd1fc98ab93c85d37afe2d181" title="Loads the main asset at the path.">CodeSmile.Editor.Asset.File.LoadMain&lt;T&gt;(CodeSmile.Editor.Asset.Path)</a></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00054">54</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>        {</div>
-<div class="line"><span class="lineno">   56</span>            <span class="comment">// This &#39;loads&#39; the asset but most of the time simply returns the internally cached instance.</span></div>
-<div class="line"><span class="lineno">   57</span>            <span class="comment">// We need to load the instance because the user may have called static SubAsset.SetMain().</span></div>
-<div class="line"><span class="lineno">   58</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   60</span>            {</div>
-<div class="line"><span class="lineno">   61</span>                SubAsset.SetMain(value, m_AssetPath);</div>
-<div class="line"><span class="lineno">   62</span>                m_MainObject = value;</div>
-<div class="line"><span class="lineno">   63</span>            }</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_properties_8cs_source.html#l00039">39</a> of file <a class="el" href="_asset_8_properties_8cs_source.html">Asset.Properties.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="comment">// This &#39;loads&#39; the asset but most of the time simply returns the internally cached instance.</span></div>
+<div class="line"><span class="lineno">   42</span>            <span class="comment">// We need to load the instance because the user may have called static SubAsset.SetMain().</span></div>
+<div class="line"><span class="lineno">   43</span>            <span class="keyword">get</span> =&gt; m_MainObject = LoadMain&lt;Object&gt;();</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   45</span>            {</div>
+<div class="line"><span class="lineno">   46</span>                SubAsset.SetMain(value, m_AssetPath);</div>
+<div class="line"><span class="lineno">   47</span>                m_MainObject = value;</div>
+<div class="line"><span class="lineno">   48</span>            }</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

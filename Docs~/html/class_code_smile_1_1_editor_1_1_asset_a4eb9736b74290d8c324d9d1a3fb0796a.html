@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 
 <div class="contents">
 <a id="a4eb9736b74290d8c324d9d1a3fb0796a" name="a4eb9736b74290d8c324d9d1a3fb0796a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eb9736b74290d8c324d9d1a3fb0796a">&#9670;&#160;</a></span>Asset() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb9736b74290d8c324d9d1a3fb0796a">&#9670;&#160;</a></span>Asset() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,43 +124,37 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
       </table>
 </div><div class="memdoc">
 
-<p>Returns an instance by creating (saving) the object as an asset file at the given path. The object must not already be an asset. If it is an asset you must use the ctor without a path. </p>
+<p>Creates an asset file from an existing UnityEngine.Object instance. </p>
+<p>The object must not already be an asset file (throws exception). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to create/save as asset file.</td></tr>
-    <tr><td class="paramname">path</td><td>The path to the asset file. It must have a valid asset extension.</td></tr>
-    <tr><td class="paramname">overwriteExisting</td><td>If true, will overwrite any existing asset file at the location. Otherwise may generate a uniquely numbered file name. </td></tr>
+    <tr><td class="paramname">obj</td><td>The object to create as an asset file.</td></tr>
+    <tr><td class="paramname">path</td><td>Path where to save the new asset file, with extension.</td></tr>
+    <tr><td class="paramname">overwriteExisting</td><td>If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique filename (default). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>If the object is null.</td></tr>
-    <tr><td class="paramname">ArgumentNullException</td><td>If the assetPath is null.</td></tr>
-    <tr><td class="paramname">ArgumentException</td><td>If the object already is an asset.</td></tr>
+    <tr><td class="paramname">ArgumentNullException</td><td>If the path is null.</td></tr>
+    <tr><td class="paramname">ArgumentException</td><td>If the object is already serialized to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(UnityEngine.Object)</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)</a></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_ctor_8cs_source.html#l00028">28</a> of file <a class="el" href="_asset_8_ctor_8cs_source.html">Asset.Ctor.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>        {</div>
-<div class="line"><span class="lineno">   30</span>            ThrowIf.ArgumentIsNull(obj, nameof(obj));</div>
-<div class="line"><span class="lineno">   31</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">   32</span>            ThrowIf.AlreadyAnAsset(obj);</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>            File.Create(obj, path, overwriteExisting);</div>
-<div class="line"><span class="lineno">   35</span>            SetMainObjectAndAssetPath(obj);</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00081">81</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>        {</div>
+<div class="line"><span class="lineno">   83</span>            ThrowIf.ArgumentIsNull(obj, nameof(obj));</div>
+<div class="line"><span class="lineno">   84</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">   85</span>            ThrowIf.AlreadyAnAsset(obj);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>            path = Path.UniquifyAsNeeded(path, overwriteExisting);</div>
+<div class="line"><span class="lineno">   88</span>            File.CreateInternal(obj, path);</div>
+<div class="line"><span class="lineno">   89</span>            InitWithObject(obj);</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00260">Asset.File.Create()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_a4eb9736b74290d8c324d9d1a3fb0796a_a4eb9736b74290d8c324d9d1a3fb0796a_cgraph.svg" width="100%" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
 </div><!-- contents -->

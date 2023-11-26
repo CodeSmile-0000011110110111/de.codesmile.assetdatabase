@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 <p>Example usage: </p><div class="fragment"><div class="line">var (guid, fileId) = <a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a>.<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b.html#a7e4d6b74d77fe93651551ee9b660c90b">GetGuidAndFileId</a>(obj);</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b_html_a7e4d6b74d77fe93651551ee9b660c90b"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b.html#a7e4d6b74d77fe93651551ee9b660c90b">CodeSmile.Editor.Asset.GetGuidAndFileId</a></div><div class="ttdeci">static ValueTuple&lt; GUID, Int64 &gt; GetGuidAndFileId(Object obj)</div><div class="ttdef"><b>Definition</b> <a href="_asset_8cs_source.html#l00165">Asset.cs:165</a></div></div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b_html_a7e4d6b74d77fe93651551ee9b660c90b"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b.html#a7e4d6b74d77fe93651551ee9b660c90b">CodeSmile.Editor.Asset.GetGuidAndFileId</a></div><div class="ttdeci">static ValueTuple&lt; GUID, Int64 &gt; GetGuidAndFileId(Object obj)</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_static_8cs_source.html#l00069">Asset.Static.cs:69</a></div></div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html">CodeSmile.Editor.Asset</a></div><div class="ttdoc">Replacement implementation for Unity's massive AssetDatabase class with a cleaner interface and more ...</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_bundle_8cs_source.html#l00009">Asset.Bundle.cs:10</a></div></div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -124,28 +124,21 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd></dd></dl>
-<ul>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_a4380c4b72ca4051c78bbaa8d8623f905.html#a4380c4b72ca4051c78bbaa8d8623f905" title="Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.">CodeSmile.Editor.Asset.GetGuid</a>  </li>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_a379d1f3c05346ede69d2f5a730095a48.html#a379d1f3c05346ede69d2f5a730095a48" title="Returns the local FileID of the object.">CodeSmile.Editor.Asset.GetFileId</a>  </li>
-<li>
-<a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>  </li>
-</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a4380c4b72ca4051c78bbaa8d8623f905.html#a4380c4b72ca4051c78bbaa8d8623f905" title="Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.">CodeSmile.Editor.Asset.GetGuid</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a379d1f3c05346ede69d2f5a730095a48.html#a379d1f3c05346ede69d2f5a730095a48" title="Returns the local FileID of the object.">CodeSmile.Editor.Asset.GetFileId</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a> </p>
 <dl class="section return"><dt>Returns</dt><dd>The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00165">165</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordflow">if</span> (obj == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  168</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> GUID(), 0L);</div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
-<div class="line"><span class="lineno">  171</span>            var localId = Int64.MaxValue;</div>
-<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)</div>
-<div class="line"><span class="lineno">  173</span>                ? (<span class="keyword">new</span> GUID(guid), localId)</div>
-<div class="line"><span class="lineno">  174</span>                : (new GUID(), 0L);</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00069">69</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> (obj == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   72</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> GUID(), 0L);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
+<div class="line"><span class="lineno">   75</span>            var localId = Int64.MaxValue;</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)</div>
+<div class="line"><span class="lineno">   77</span>                ? (<span class="keyword">new</span> GUID(guid), localId)</div>
+<div class="line"><span class="lineno">   78</span>                : (new GUID(), 0L);</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

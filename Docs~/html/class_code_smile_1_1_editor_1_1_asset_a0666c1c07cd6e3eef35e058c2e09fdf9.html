@@ -118,30 +118,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
       </table>
 </div><div class="memdoc">
 
-<p>Opens the asset in the default (associated) application. Optional line and column numbers can be specified for text files and applications that support this. </p>
+<p>Opens the asset in the external (associated) application. </p>
+<p>Optional line and column numbers can be specified for text files and applications that support this. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lineNumber</td><td></td></tr>
-    <tr><td class="paramname">columnNumber</td><td></td></tr>
+    <tr><td class="paramname">lineNumber</td><td>Line number to highlight. Support depends on application. Default: -1</td></tr>
+    <tr><td class="paramname">columnNumber</td><td>Column/character number to highlight. Support depends on application. Default: -1</td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00180">180</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
-<div class="line"><span class="lineno">  182</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>            File.OpenExternal(m_MainObject, lineNumber, columnNumber);</div>
-<div class="line"><span class="lineno">  185</span>        }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a7ff562a7e3fc1aaf8f8690fc775b5a34.html#a7ff562a7e3fc1aaf8f8690fc775b5a34">Asset.File.OpenExternal()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9_cgraph.svg" width="348" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>

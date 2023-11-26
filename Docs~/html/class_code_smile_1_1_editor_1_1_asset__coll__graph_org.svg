@@ -44,18 +44,18 @@
 <text text-anchor="start" x="4" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset()</text>
 <text text-anchor="start" x="4" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddLabel()</text>
+<text text-anchor="start" x="14" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset()</text>
 <text text-anchor="start" x="4" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddLabels()</text>
+<text text-anchor="start" x="14" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset()</text>
 <text text-anchor="start" x="4" y="-294.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-294.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddObject()</text>
+<text text-anchor="start" x="14" y="-294.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddLabel()</text>
 <text text-anchor="start" x="4" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">CanMove()</text>
+<text text-anchor="start" x="14" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddLabels()</text>
 <text text-anchor="start" x="4" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">CanOpenInEditor()</text>
+<text text-anchor="start" x="14" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddSubAsset()</text>
 <text text-anchor="start" x="4" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">ClearLabels()</text>
-<text text-anchor="start" x="14" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 17 more...</text>
+<text text-anchor="start" x="14" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">CanMove()</text>
+<text text-anchor="start" x="14" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 20 more...</text>
 <text text-anchor="start" x="4" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetFileId()</text>
 <text text-anchor="start" x="4" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

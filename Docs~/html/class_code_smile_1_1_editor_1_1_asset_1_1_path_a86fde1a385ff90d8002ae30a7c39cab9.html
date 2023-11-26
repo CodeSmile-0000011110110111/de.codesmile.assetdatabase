@@ -115,17 +115,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <p>Returns the relative path to the directory the file or folder is in. This means for folders it returns the parent folder. </p>
 <dl class="section return"><dt>Returns</dt><dd>The parent folder of the file or folder. Returns null if it's the root path.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00124">124</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>            {</div>
-<div class="line"><span class="lineno">  126</span>                <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  127</span>                {</div>
-<div class="line"><span class="lineno">  128</span>                    var dirName = System.IO.Path.GetDirectoryName(m_RelativePath);</div>
-<div class="line"><span class="lineno">  129</span>                    <span class="keywordflow">return</span> String.IsNullOrEmpty(dirName) ? null : dirName;</div>
-<div class="line"><span class="lineno">  130</span>                }</div>
-<div class="line"><span class="lineno">  131</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00103">103</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>            {</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  106</span>                {</div>
+<div class="line"><span class="lineno">  107</span>                    var dirName = System.IO.Path.GetDirectoryName(m_RelativePath);</div>
+<div class="line"><span class="lineno">  108</span>                    <span class="keywordflow">return</span> String.IsNullOrEmpty(dirName) ? null : dirName;</div>
+<div class="line"><span class="lineno">  109</span>                }</div>
+<div class="line"><span class="lineno">  110</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_asset_8_path_8cs_source.html#l00258">Asset.Path.CreateFolders()</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

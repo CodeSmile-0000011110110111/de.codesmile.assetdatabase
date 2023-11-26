@@ -116,17 +116,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Implicit conversion of Asset.Path to an asset instance. </p>
+<p>Implicit conversion of Asset.Path to an Asset instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An asset instance or null if path is null.</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// implicit conversion and loads the asset, neat ey? :)</span></div>
-<div class="line"><a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a> asset = <span class="keyword">new</span> <a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>(<span class="stringliteral">&quot;Assets/Folder/MyAsset.asset&quot;</span>);</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">CodeSmile.Editor.Asset.Path</a></div><div class="ttdoc">Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'....</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_path_8cs_source.html#l00021">Asset.Path.cs:22</a></div></div>
+<div class="fragment"><div class="line"><span class="comment">// this imports &amp; loads the asset, neat ey? :)</span></div>
+<div class="line"><a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path = ..;</div>
+<div class="line"><a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a> asset = path;</div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_html"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">CodeSmile.Editor.Asset.Path</a></div><div class="ttdoc">Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'....</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_path_8cs_source.html#l00019">Asset.Path.cs:20</a></div></div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html">CodeSmile.Editor.Asset</a></div><div class="ttdoc">Replacement implementation for Unity's massive AssetDatabase class with a cleaner interface and more ...</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_bundle_8cs_source.html#l00009">Asset.Bundle.cs:10</a></div></div>
 </div><!-- fragment --> 
 </div>

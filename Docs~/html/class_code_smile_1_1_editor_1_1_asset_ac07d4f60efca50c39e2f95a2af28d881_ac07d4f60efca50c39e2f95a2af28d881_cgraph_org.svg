@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Resets the active AssetImporter type to the default type, if necessary.">
+<g id="a_Node000001"><a xlink:title="Sets the active AssetImporter type back to the default type.">
 <polygon fill="#999999" stroke="#666666" points="133,-51 0,-51 0,-31 133,-31 133,-51"/>
 <text text-anchor="middle" x="66.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">SetActiveImporterToDefault</text>
 </a>

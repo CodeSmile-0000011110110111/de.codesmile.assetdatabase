@@ -1,5 +1,5 @@
 <map id="Rename" name="Rename">
-<area shape="rect" id="Node000001" title="Renames an asset&#39;s file or folder name. NOTE: Cannot be used to change a file&#39;s extension...." alt="" coords="5,13,75,40"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_a951e70234473ca3c6bfa9fafd12957b0.html#a951e70234473ca3c6bfa9fafd12957b0" title="Renames an asset&#39;s file or folder name. NOTE: Cannot be used to change a file&#39;s extension...." alt="" coords="123,5,312,48"/>
+<area shape="rect" id="Node000001" title="Renames an asset&#39;s file name (without extension) or a folder." alt="" coords="5,13,75,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_abbf289f0549df3a2f89bdb3470638122.html#abbf289f0549df3a2f89bdb3470638122" title="Renames an asset&#39;s file or folder name." alt="" coords="123,5,312,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,24,108,24,108,29,75,29"/>
 </map>

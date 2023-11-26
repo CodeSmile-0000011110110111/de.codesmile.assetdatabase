@@ -108,30 +108,16 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
       </table>
 </div><div class="memdoc">
 
-<p>Tests if a Move operation will be successful without actually moving the asset. Note: Returns false if any of the folders to destinationPath do not exist. </p>
+<p>Tests if a Move operation will be successful without actually moving the asset. </p>
+<p>Returns false if one or more folders in destinationPath do not exist. On failure, use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a> to get the failure error message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">destinationPath</td><td>The path where to move the asset to. Can have a different extension.</td></tr>
+    <tr><td class="paramname">destinationPath</td><td>The path where to move the asset to. May have a different extension.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if moving the asset will be successful, false otherwise.</dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00114">114</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>        {</div>
-<div class="line"><span class="lineno">  116</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> File.CanMove(m_AssetPath, destinationPath);</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00470">Asset.File.CanMove()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323_cgraph.svg" width="323" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8.html#a45faf9fc17e3cb57b87d2ae09e4dd7f8" title="Moves asset to destination path.">CodeSmile.Editor.Asset.Move</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a></dd></dl>
 
 </div>
 </div>

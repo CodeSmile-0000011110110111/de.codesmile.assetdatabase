@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Groups all asset database functionality. Turns out there isn&#39;t actually that much that is &#39;database&#39; ...">
+<g id="a_Node000001"><a xlink:title="Groups all asset database functionality.">
 <polygon fill="#999999" stroke="none" points="113,-212 0,-212 0,0 113,0 113,-212"/>
 <text text-anchor="start" x="21.62" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset.Database</text>
 <text text-anchor="start" x="4" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

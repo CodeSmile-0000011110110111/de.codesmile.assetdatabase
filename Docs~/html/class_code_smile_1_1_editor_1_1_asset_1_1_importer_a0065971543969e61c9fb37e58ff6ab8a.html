@@ -125,15 +125,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00140">140</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>            {</div>
-<div class="line"><span class="lineno">  142</span><span class="preprocessor">#if UNITY_2022_2_OR_NEWER</span></div>
-<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">return</span> AssetDatabase.GetImporterType(path);</div>
-<div class="line"><span class="lineno">  144</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  145</span>                UnityEngine.Debug.LogWarning(<span class="stringliteral">&quot;GetImporterType not available in this Unity version - returning null&quot;</span>);</div>
-<div class="line"><span class="lineno">  146</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  147</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  148</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00085">85</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>            {</div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">#if UNITY_2022_2_OR_NEWER</span></div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">return</span> AssetDatabase.GetImporterType(path);</div>
+<div class="line"><span class="lineno">   89</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   90</span>                UnityEngine.Debug.LogWarning(<span class="stringliteral">&quot;GetImporterType not available in this Unity version - returning null&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   93</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

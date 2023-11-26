@@ -1,5 +1,5 @@
 <map id="Move" name="Move">
-<area shape="rect" id="Node000001" title="Moves an asset from source to destination path. Any non&#45;existing folders in destination path will be ..." alt="" coords="248,5,299,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8.html#a45faf9fc17e3cb57b87d2ae09e4dd7f8" title="Moves asset to destination path. Any non&#45;existing folders in destination path will be created...." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="Node000001" title="Moves an asset file to destination path." alt="" coords="248,5,299,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8.html#a45faf9fc17e3cb57b87d2ae09e4dd7f8" title="Moves asset to destination path." alt="" coords="5,5,200,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,21,200,21,200,16,233,16"/>
 </map>

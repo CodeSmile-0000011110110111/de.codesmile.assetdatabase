@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Moves the asset to the OS trash (same as Delete, but recoverable). Does not Destroy the object....">
+<g id="a_Node000001"><a xlink:title="Moves the asset to the OS trash. Same as Delete, but recoverable.">
 <polygon fill="#999999" stroke="#666666" points="40,-26 0,-26 0,-6 40,-6 40,-26"/>
 <text text-anchor="middle" x="20" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">Trash</text>
 </a>

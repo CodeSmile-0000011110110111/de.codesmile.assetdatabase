@@ -86,7 +86,7 @@
 <text text-anchor="start" x="50" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsValid()</text>
 <text text-anchor="start" x="50" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
 <text text-anchor="start" x="40" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">~</text>
-<text text-anchor="start" x="50" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetOverwriteOrUnique()</text>
+<text text-anchor="start" x="50" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">UniquifyAsNeeded()</text>
 <polygon fill="#666666" stroke="#666666" points="36,-594 36,-594 172,-594 172,-594 36,-594"/>
 <polygon fill="#666666" stroke="#666666" points="36,-354 36,-354 48,-354 48,-354 36,-354"/>
 <polygon fill="#666666" stroke="#666666" points="48,-354 48,-354 172,-354 172,-354 48,-354"/>

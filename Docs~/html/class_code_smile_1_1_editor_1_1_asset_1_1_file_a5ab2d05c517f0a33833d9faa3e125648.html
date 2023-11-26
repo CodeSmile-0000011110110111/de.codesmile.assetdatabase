@@ -126,33 +126,27 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Tests if a Move operation will be successful without actually moving the asset. Note: Returns false if any of the folders to destinationPath do not exist. </p>
+<p>Tests if an asset can be moved to destination without moving the asset. </p>
+<p>Note: This returns false if any folders of destinationPath do not exist. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sourcePath</td><td>The path to an existing asset.</td></tr>
-    <tr><td class="paramname">destinationPath</td><td>The path where to move the asset to. Can have a different extension.</td></tr>
+    <tr><td class="paramname">sourcePath</td><td>The path to an asset file.</td></tr>
+    <tr><td class="paramname">destinationPath</td><td>The path to move the file to. May have a different extension.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if moving the asset will be successful, false otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if moving the asset will be successful, false if part of the destinationPath does not exist or other reasons. Use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a> to get the failure message.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab7eadabd235d60aafe18c2f4fea44d9e.html#ab7eadabd235d60aafe18c2f4fea44d9e" title="Moves an asset file to destination path.">CodeSmile.Editor.Asset.File.Move</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_abbf289f0549df3a2f89bdb3470638122.html#abbf289f0549df3a2f89bdb3470638122" title="Renames an asset&#39;s file or folder name.">CodeSmile.Editor.Asset.File.Rename</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ValidateMoveAsset.html">AssetDatabase.ValidateMoveAsset</a></p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00470">470</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  471</span>            {</div>
-<div class="line"><span class="lineno">  472</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  473</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  474</span> </div>
-<div class="line"><span class="lineno">  475</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));</div>
-<div class="line"><span class="lineno">  476</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00496">496</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  497</span>            {</div>
+<div class="line"><span class="lineno">  498</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  499</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  500</span> </div>
+<div class="line"><span class="lineno">  501</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath, destinationPath));</div>
+<div class="line"><span class="lineno">  502</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00114">Asset.CanMove()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_file_a5ab2d05c517f0a33833d9faa3e125648_a5ab2d05c517f0a33833d9faa3e125648_icgraph.svg" width="351" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
 </div><!-- contents -->

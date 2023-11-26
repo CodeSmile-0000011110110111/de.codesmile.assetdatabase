@@ -116,23 +116,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Forces the object to be saved to disk by first flagging it as dirty. Note: Be sure that you need to 'force' the save operation, since serializing and object and writing it to disk is a slow operation. </p>
+<p>Forces the object to be saved to disk. Marks the object as dirty and then calls <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a344640f2b75de3643fb1620bfd837ebe.html#a344640f2b75de3643fb1620bfd837ebe" title="Saves the object to disk if it is dirty.">CodeSmile.Editor.Asset.File.Save</a>. </p>
+<p>This should only be used if the asset doesn't save otherwise, since unnecessarily writing an object to disk is a slow operation. Example where this may be required would be changes to fields of a ScriptableObject without using the <a href="https://docs.unity3d.com/ScriptReference/SerializedObject.html">SerializedObject</a> or <a href="https://docs.unity3d.com/ScriptReference/SerializedProperty.html">SerializedProperty</a> classes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>the asset object to save</td></tr>
+    <tr><td class="paramname">obj</td><td>The object to mark as dirty, then save.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Save(UnityEngine.Object) </p>
-
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00044">Asset.ForceSave()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_file_afc9d9d85f0043a80d647b8549b885514_afc9d9d85f0043a80d647b8549b885514_icgraph.svg" width="367" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a344640f2b75de3643fb1620bfd837ebe.html#a344640f2b75de3643fb1620bfd837ebe" title="Saves the object to disk if it is dirty.">CodeSmile.Editor.Asset.File.Save</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a></p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty</a></p>
 
 </div>
 </div>

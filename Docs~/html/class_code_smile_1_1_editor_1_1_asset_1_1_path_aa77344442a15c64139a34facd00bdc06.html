@@ -142,16 +142,16 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_ctor_8cs_source.html#l00052">52</a> of file <a class="el" href="_asset_8_path_8_ctor_8cs_source.html">Asset.Path.Ctor.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>            {</div>
-<div class="line"><span class="lineno">   54</span>                ThrowIf.NullOrWhitespace(directory, nameof(directory));</div>
-<div class="line"><span class="lineno">   55</span>                ThrowIf.NullOrWhitespace(fileName, nameof(fileName));</div>
-<div class="line"><span class="lineno">   56</span>                ThrowIf.NullOrWhitespace(extension, nameof(extension));</div>
-<div class="line"><span class="lineno">   57</span>                ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>                var relativeDir = ToRelative(directory.ToForwardSlashes());</div>
-<div class="line"><span class="lineno">   60</span>                m_RelativePath = $<span class="stringliteral">&quot;{relativeDir}/{fileName}.{extension.TrimStart(&#39;.&#39;).ToLower()}&quot;</span>;</div>
-<div class="line"><span class="lineno">   61</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00231">231</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>            {</div>
+<div class="line"><span class="lineno">  233</span>                ThrowIf.NullOrWhitespace(directory, nameof(directory));</div>
+<div class="line"><span class="lineno">  234</span>                ThrowIf.NullOrWhitespace(fileName, nameof(fileName));</div>
+<div class="line"><span class="lineno">  235</span>                ThrowIf.NullOrWhitespace(extension, nameof(extension));</div>
+<div class="line"><span class="lineno">  236</span>                ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>                var relativeDir = ToRelative(directory.ToForwardSlashes());</div>
+<div class="line"><span class="lineno">  239</span>                m_RelativePath = $<span class="stringliteral">&quot;{relativeDir}/{fileName}.{extension.TrimStart(&#39;.&#39;).ToLower()}&quot;</span>;</div>
+<div class="line"><span class="lineno">  240</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

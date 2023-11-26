@@ -110,11 +110,11 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <p>Sets the active AssetImporter type for this asset. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>The AssetImporter derived type that should handle importing this asset.</td></tr>
   </table>
   </dd>
 </dl>
-<p>SetActiveImporterToDefault ActiveImporter </p>
+<p><a class="el" href="class_code_smile_1_1_editor_1_1_asset_ac07d4f60efca50c39e2f95a2af28d881.html#ac07d4f60efca50c39e2f95a2af28d881" title="Sets the active AssetImporter type back to the default type.">CodeSmile.Editor.Asset.SetActiveImporterToDefault</a> <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a57983fe52530259a94425f11144dcf12.html#a57983fe52530259a94425f11144dcf12" title="Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the imp...">CodeSmile.Editor.Asset.ActiveImporter</a> </p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -124,14 +124,14 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00048">48</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                    : AssetImporter</div>
-<div class="line"><span class="lineno">   51</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   52</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
-<div class="line"><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   54</span>        {</div>
-<div class="line"><span class="lineno">   55</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
-<div class="line"><span class="lineno">   56</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00431">431</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  433</span>                    : AssetImporter</div>
+<div class="line"><span class="lineno">  434</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  435</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
+<div class="line"><span class="lineno">  436</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  437</span>        {</div>
+<div class="line"><span class="lineno">  438</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
+<div class="line"><span class="lineno">  439</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -96,6 +96,21 @@ $(document).ready(function(){initNavTree('md__c_1_2_users_2_code_smile_2_project
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="change-log"></a> </p>
+<h3><a class="anchor" id="v150---nov-25-2023"></a>
+v1.5.0 - Nov 25, 2023</h3>
+<ul>
+<li>new Asset(Path) now auto-imports assets that exist on disk but not in DB</li>
+<li>changed load methods to import assets that exist on disk but not in DB</li>
+<li>added create asset from string (ctor and Asset.Create)</li>
+<li>added create asset from byte[] (ctor and Asset.Create)</li>
+<li>added ImportAndLoad&lt;T&gt;</li>
+<li>added IsImported(Path)</li>
+<li>split Create into Create and CreateAsNew</li>
+<li>split Copy into Copy and CopyAsNew</li>
+<li>renamed Copy instance method to SaveAs and SaveAsNew</li>
+<li>fixed compile errors in some Unity versions</li>
+<li>GetIcon returns Texture2D</li>
+</ul>
 <h3><a class="anchor" id="v141---nov-24-2023"></a>
 v1.4.1 - Nov 24, 2023</h3>
 <ul>

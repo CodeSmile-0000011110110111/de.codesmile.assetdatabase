@@ -107,22 +107,21 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
       </table>
 </div><div class="memdoc">
 
-<p>Deletes the asset. Does not Destroy the object. CAUTION: The asset instance should be discarded afterwards. </p>
-<dl class="section return"><dt>Returns</dt><dd>If successful, returns the former MainObject - it is still valid but it is no longer an asset. Returns null if the object wasn't deleted. </dd></dl>
-<p>File.Trash(CodeSmile.Editor.Asset.Path) </p>
+<p>Deletes the asset file. </p>
+<p>Does NOT destroy the object reference. CAUTION: The asset instance is no longer valid after this call and should be discarded. </p>
+<dl class="section return"><dt>Returns</dt><dd>If successful, returns the former MainObject. It is no longer an asset but still a valid instance. Returns null if the object wasn't deleted. </dd></dl>
+<p><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a.html#a9ff25b59d227ab5d89fdabafffb9876a" title="Moves the asset to the OS trash. Same as Delete, but recoverable.">CodeSmile.Editor.Asset.Trash()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00197">197</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>        {</div>
-<div class="line"><span class="lineno">  199</span>            ThrowIf.AssetDeleted(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>            var mainObject = m_MainObject;</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">if</span> (File.Delete(m_AssetPath))</div>
-<div class="line"><span class="lineno">  203</span>                InvalidateInstance();</div>
-<div class="line"><span class="lineno">  204</span> </div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">return</span> mainObject;</div>
-<div class="line"><span class="lineno">  206</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00395">395</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  396</span>        {</div>
+<div class="line"><span class="lineno">  397</span>            var mainObject = m_MainObject;</div>
+<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">if</span> (File.Delete(m_AssetPath))</div>
+<div class="line"><span class="lineno">  399</span>                InvalidateInstance();</div>
+<div class="line"><span class="lineno">  400</span> </div>
+<div class="line"><span class="lineno">  401</span>            <span class="keywordflow">return</span> mainObject;</div>
+<div class="line"><span class="lineno">  402</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00572">Asset.File.Delete()</a>.</p>
+<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00608">Asset.File.Delete()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

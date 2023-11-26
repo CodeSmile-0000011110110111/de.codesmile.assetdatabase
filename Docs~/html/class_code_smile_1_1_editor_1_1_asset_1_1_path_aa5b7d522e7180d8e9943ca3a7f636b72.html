@@ -125,57 +125,48 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the GUID of the deepest folder in the hierarchy</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00258">258</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  259</span>            {</div>
-<div class="line"><span class="lineno">  260</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">  261</span>                ThrowIf.PathIsNotValid(path);</div>
-<div class="line"><span class="lineno">  262</span> </div>
-<div class="line"><span class="lineno">  263</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9">FileExists</a>(path))</div>
-<div class="line"><span class="lineno">  264</span>                    <span class="keywordflow">return</span> path.FolderPath.Guid;</div>
-<div class="line"><span class="lineno">  265</span> </div>
-<div class="line"><span class="lineno">  266</span>                <span class="comment">// if the last part has an extension we assume the path points to a file</span></div>
-<div class="line"><span class="lineno">  267</span>                var isPresumablyFilePath = String.IsNullOrEmpty(path.Extension) == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  268</span>                var folderPath = isPresumablyFilePath ? path.FolderPath : path;</div>
-<div class="line"><span class="lineno">  269</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">FolderExists</a>(folderPath))</div>
-<div class="line"><span class="lineno">  270</span>                    <span class="keywordflow">return</span> folderPath.Guid;</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>                var folderNames = ((String)folderPath).Split(<span class="keyword">new</span>[] { <span class="charliteral">&#39;/&#39;</span> });</div>
-<div class="line"><span class="lineno">  273</span>                var folderGuid = GuidForExistingPath(folderNames[0]); <span class="comment">// first is &quot;Assets&quot;</span></div>
-<div class="line"><span class="lineno">  274</span>                var partialPath = folderNames[0];</div>
-<div class="line"><span class="lineno">  275</span>                <span class="keywordflow">for</span> (var i = 1; i &lt; folderNames.Length; i++)</div>
-<div class="line"><span class="lineno">  276</span>                {</div>
-<div class="line"><span class="lineno">  277</span>                    partialPath += $<span class="stringliteral">&quot;/{folderNames[i]}&quot;</span>;</div>
-<div class="line"><span class="lineno">  278</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">FolderExists</a>(partialPath))</div>
-<div class="line"><span class="lineno">  279</span>                    {</div>
-<div class="line"><span class="lineno">  280</span>                        folderGuid = GuidForExistingPath(partialPath);</div>
-<div class="line"><span class="lineno">  281</span>                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  282</span>                    }</div>
-<div class="line"><span class="lineno">  283</span> </div>
-<div class="line"><span class="lineno">  284</span>                    folderGuid = CreateSubFolder(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61">Get</a>(folderGuid), folderNames[i]);</div>
-<div class="line"><span class="lineno">  285</span>                }</div>
-<div class="line"><span class="lineno">  286</span> </div>
-<div class="line"><span class="lineno">  287</span>                <span class="keywordflow">return</span> folderGuid;</div>
-<div class="line"><span class="lineno">  288</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00154">154</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>            {</div>
+<div class="line"><span class="lineno">  156</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">  157</span>                ThrowIf.PathIsNotValid(path);</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9">FileExists</a>(path))</div>
+<div class="line"><span class="lineno">  160</span>                    <span class="keywordflow">return</span> path.FolderPath.Guid;</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>                <span class="comment">// if the last part has an extension we assume the path points to a file</span></div>
+<div class="line"><span class="lineno">  163</span>                var isPresumablyFilePath = String.IsNullOrEmpty(path.Extension) == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  164</span>                var folderPath = isPresumablyFilePath ? path.FolderPath : path;</div>
+<div class="line"><span class="lineno">  165</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">FolderExists</a>(folderPath))</div>
+<div class="line"><span class="lineno">  166</span>                    <span class="keywordflow">return</span> folderPath.Guid;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>                var folderNames = ((String)folderPath).Split(<span class="keyword">new</span>[] { <span class="charliteral">&#39;/&#39;</span> });</div>
+<div class="line"><span class="lineno">  169</span>                var folderGuid = GuidForExistingPath(folderNames[0]); <span class="comment">// first is &quot;Assets&quot;</span></div>
+<div class="line"><span class="lineno">  170</span>                var partialPath = folderNames[0];</div>
+<div class="line"><span class="lineno">  171</span>                <span class="keywordflow">for</span> (var i = 1; i &lt; folderNames.Length; i++)</div>
+<div class="line"><span class="lineno">  172</span>                {</div>
+<div class="line"><span class="lineno">  173</span>                    partialPath += $<span class="stringliteral">&quot;/{folderNames[i]}&quot;</span>;</div>
+<div class="line"><span class="lineno">  174</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">FolderExists</a>(partialPath))</div>
+<div class="line"><span class="lineno">  175</span>                    {</div>
+<div class="line"><span class="lineno">  176</span>                        folderGuid = GuidForExistingPath(partialPath);</div>
+<div class="line"><span class="lineno">  177</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  178</span>                    }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>                    folderGuid = CreateSubFolder(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61">Get</a>(folderGuid), folderNames[i]);</div>
+<div class="line"><span class="lineno">  181</span>                }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>                <span class="keywordflow">return</span> folderGuid;</div>
+<div class="line"><span class="lineno">  184</span>            }</div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63_html_a1702f388229f26cb1f4431a1ee8d4a63"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">CodeSmile.Editor.Asset.Path.FolderExists</a></div><div class="ttdeci">static Boolean FolderExists(Path path)</div><div class="ttdoc">Returns true if the folder exists. False otherwise, or if the path is to a file.</div></div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61_html_a6bd701a7c06a58ac8ebd39c190df3e61"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61">CodeSmile.Editor.Asset.Path.Get</a></div><div class="ttdeci">static Path Get(Object obj)</div><div class="ttdoc">Gets the path of an asset file.</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_path_8cs_source.html#l00145">Asset.Path.cs:145</a></div></div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61_html_a6bd701a7c06a58ac8ebd39c190df3e61"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61">CodeSmile.Editor.Asset.Path.Get</a></div><div class="ttdeci">static Path Get(Object obj)</div><div class="ttdoc">Gets the path of an asset file.</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_path_8_static_8cs_source.html#l00041">Asset.Path.Static.cs:41</a></div></div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9_html_ad6edf57483f25f25967aaf3b5c237cf9"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9">CodeSmile.Editor.Asset.Path.FileExists</a></div><div class="ttdeci">static Boolean FileExists(Path path)</div><div class="ttdoc">Tests if the given file exists.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_path_8cs_source.html#l00080">Asset.Path.Extension</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9">Asset.Path.FileExists()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">Asset.Path.FolderExists()</a>, <a class="el" href="_asset_8_path_8cs_source.html#l00125">Asset.Path.FolderPath</a>, <a class="el" href="_asset_8_path_8cs_source.html#l00145">Asset.Path.Get()</a>, and <a class="el" href="_asset_8_path_8cs_source.html#l00038">Asset.Path.Guid</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00448">Asset.File.Copy()</a>, <a class="el" href="_asset_8_file_8cs_source.html#l00260">Asset.File.Create()</a>, and <a class="el" href="_asset_8_file_8cs_source.html#l00485">Asset.File.Move()</a>.</p>
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9">Asset.Path.FileExists()</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63">Asset.Path.FolderExists()</a>, and <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00041">Asset.Path.Get()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72_aa5b7d522e7180d8e9943ca3a7f636b72_cgraph.svg" width="256" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72_aa5b7d522e7180d8e9943ca3a7f636b72_icgraph.svg" width="627" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

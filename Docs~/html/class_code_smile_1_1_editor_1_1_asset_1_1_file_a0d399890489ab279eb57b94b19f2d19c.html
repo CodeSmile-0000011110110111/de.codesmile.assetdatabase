@@ -116,19 +116,22 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Saves any changes to the object to disk. </p>
+<p>Saves any changes to the asset to disk, by GUID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">guid</td><td>The guid of the asset.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a344640f2b75de3643fb1620bfd837ebe.html#a344640f2b75de3643fb1620bfd837ebe" title="Saves the object to disk if it is dirty.">CodeSmile.Editor.Asset.File.Save</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a></p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00301">301</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>            {</div>
-<div class="line"><span class="lineno">  303</span>                ThrowIf.NotAnAssetGuid(guid);</div>
-<div class="line"><span class="lineno">  304</span>                AssetDatabase.SaveAssetIfDirty(guid);</div>
-<div class="line"><span class="lineno">  305</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00218">218</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>            {</div>
+<div class="line"><span class="lineno">  220</span>                ThrowIf.NotAnAssetGuid(guid);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>                AssetDatabase.SaveAssetIfDirty(guid);</div>
+<div class="line"><span class="lineno">  223</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -2,6 +2,7 @@ var class_code_smile_1_1_editor_1_1_asset_1_1_status =
 [
     [ "IsForeign", "class_code_smile_1_1_editor_1_1_asset_1_1_status_a3394922507661f811d607c407fa6dcb8.html#a3394922507661f811d607c407fa6dcb8", null ],
     [ "IsImported", "class_code_smile_1_1_editor_1_1_asset_1_1_status_acc190f65f77a29265e62c770b05c9f3d.html#acc190f65f77a29265e62c770b05c9f3d", null ],
+    [ "IsImported", "class_code_smile_1_1_editor_1_1_asset_1_1_status_a297c6d073c8a8d986f1166d66be168b4.html#a297c6d073c8a8d986f1166d66be168b4", null ],
     [ "IsLoaded", "class_code_smile_1_1_editor_1_1_asset_1_1_status_a365fa013d5ed4486e472143e9e04db6e.html#a365fa013d5ed4486e472143e9e04db6e", null ],
     [ "IsLoaded", "class_code_smile_1_1_editor_1_1_asset_1_1_status_a365884d5289c74812a93f110c11762a3.html#a365884d5289c74812a93f110c11762a3", null ],
     [ "IsMain", "class_code_smile_1_1_editor_1_1_asset_1_1_status_a26c49db6bdc8b480714a5eca07afb788.html#a26c49db6bdc8b480714a5eca07afb788", null ],

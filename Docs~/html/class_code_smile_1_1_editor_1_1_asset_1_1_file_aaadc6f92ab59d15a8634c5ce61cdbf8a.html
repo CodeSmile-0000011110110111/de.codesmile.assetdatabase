@@ -135,27 +135,27 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00660">660</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  661</span>            {</div>
-<div class="line"><span class="lineno">  662</span>                ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));</div>
-<div class="line"><span class="lineno">  663</span> </div>
-<div class="line"><span class="lineno">  664</span>                <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  665</span>                {</div>
-<div class="line"><span class="lineno">  666</span>                    Database.StartAssetEditing();</div>
-<div class="line"><span class="lineno">  667</span>                    massAssetFileEditAction.Invoke();</div>
-<div class="line"><span class="lineno">  668</span>                }</div>
-<div class="line"><span class="lineno">  669</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  670</span>                {</div>
-<div class="line"><span class="lineno">  671</span>                    Debug.LogError($<span class="stringliteral">&quot;Exception during BatchEditing: {ex.Message}&quot;</span>);</div>
-<div class="line"><span class="lineno">  672</span> </div>
-<div class="line"><span class="lineno">  673</span>                    <span class="keywordflow">if</span> (rethrowExceptions)</div>
-<div class="line"><span class="lineno">  674</span>                        <span class="keywordflow">throw</span> ex; <span class="comment">// re-throw to caller</span></div>
-<div class="line"><span class="lineno">  675</span>                }</div>
-<div class="line"><span class="lineno">  676</span>                <span class="keywordflow">finally</span></div>
-<div class="line"><span class="lineno">  677</span>                {</div>
-<div class="line"><span class="lineno">  678</span>                    Database.StopAssetEditing();</div>
-<div class="line"><span class="lineno">  679</span>                }</div>
-<div class="line"><span class="lineno">  680</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00696">696</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  697</span>            {</div>
+<div class="line"><span class="lineno">  698</span>                ThrowIf.ArgumentIsNull(massAssetFileEditAction, nameof(massAssetFileEditAction));</div>
+<div class="line"><span class="lineno">  699</span> </div>
+<div class="line"><span class="lineno">  700</span>                <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  701</span>                {</div>
+<div class="line"><span class="lineno">  702</span>                    Database.StartAssetEditing();</div>
+<div class="line"><span class="lineno">  703</span>                    massAssetFileEditAction.Invoke();</div>
+<div class="line"><span class="lineno">  704</span>                }</div>
+<div class="line"><span class="lineno">  705</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  706</span>                {</div>
+<div class="line"><span class="lineno">  707</span>                    Debug.LogError($<span class="stringliteral">&quot;Exception during BatchEditing: {ex.Message}&quot;</span>);</div>
+<div class="line"><span class="lineno">  708</span> </div>
+<div class="line"><span class="lineno">  709</span>                    <span class="keywordflow">if</span> (rethrowExceptions)</div>
+<div class="line"><span class="lineno">  710</span>                        <span class="keywordflow">throw</span> ex; <span class="comment">// re-throw to caller</span></div>
+<div class="line"><span class="lineno">  711</span>                }</div>
+<div class="line"><span class="lineno">  712</span>                <span class="keywordflow">finally</span></div>
+<div class="line"><span class="lineno">  713</span>                {</div>
+<div class="line"><span class="lineno">  714</span>                    Database.StopAssetEditing();</div>
+<div class="line"><span class="lineno">  715</span>                }</div>
+<div class="line"><span class="lineno">  716</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -123,28 +123,21 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd></dd></dl>
-<ul>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_a379d1f3c05346ede69d2f5a730095a48.html#a379d1f3c05346ede69d2f5a730095a48" title="Returns the local FileID of the object.">CodeSmile.Editor.Asset.GetFileId</a>  </li>
-<li>
-<a class="el" href="class_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b.html#a7e4d6b74d77fe93651551ee9b660c90b">CodeSmile.Editor.Asset.GetGuidAndFileId</a>  </li>
-<li>
-<a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>  </li>
-</ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a379d1f3c05346ede69d2f5a730095a48.html#a379d1f3c05346ede69d2f5a730095a48" title="Returns the local FileID of the object.">CodeSmile.Editor.Asset.GetFileId</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a7e4d6b74d77fe93651551ee9b660c90b.html#a7e4d6b74d77fe93651551ee9b660c90b">CodeSmile.Editor.Asset.GetGuidAndFileId</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a> </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00195">195</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  196</span>        {</div>
-<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span> (obj == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  198</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> GUID();</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
-<div class="line"><span class="lineno">  201</span>            var localId = Int64.MaxValue;</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)</div>
-<div class="line"><span class="lineno">  203</span>                ? <span class="keyword">new</span> GUID(guid)</div>
-<div class="line"><span class="lineno">  204</span>                : new GUID();</div>
-<div class="line"><span class="lineno">  205</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00091">91</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (obj == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> GUID();</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
+<div class="line"><span class="lineno">   97</span>            var localId = Int64.MaxValue;</div>
+<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)</div>
+<div class="line"><span class="lineno">   99</span>                ? <span class="keyword">new</span> GUID(guid)</div>
+<div class="line"><span class="lineno">  100</span>                : new GUID();</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

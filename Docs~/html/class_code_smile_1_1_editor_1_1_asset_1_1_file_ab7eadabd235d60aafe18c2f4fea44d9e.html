@@ -126,34 +126,37 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Moves an asset from source to destination path. Any non-existing folders in destination path will be created. </p>
+<p>Moves an asset file to destination path. </p>
+<p>Any missing folders in destinationPath will be created automatically. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sourcePath</td><td></td></tr>
-    <tr><td class="paramname">destinationPath</td><td></td></tr>
+    <tr><td class="paramname">sourcePath</td><td>The path to an asset file.</td></tr>
+    <tr><td class="paramname">destinationPath</td><td>The path to move the file to. May have a different extension.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the move was successful.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if moving the asset will be successful, false if move failed. Use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a> to get the failure message.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a5ab2d05c517f0a33833d9faa3e125648.html#a5ab2d05c517f0a33833d9faa3e125648" title="Tests if an asset can be moved to destination without moving the asset.">CodeSmile.Editor.Asset.File.CanMove</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_abbf289f0549df3a2f89bdb3470638122.html#abbf289f0549df3a2f89bdb3470638122" title="Renames an asset&#39;s file or folder name.">CodeSmile.Editor.Asset.File.Rename</a>, <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a message,...">CodeSmile.Editor.Asset.GetLastErrorMessage</a>, </dd></dl>
+<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAsset.html">AssetDatabase.MoveAsset</a></p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00485">485</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  486</span>            {</div>
-<div class="line"><span class="lineno">  487</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  488</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  489</span> </div>
-<div class="line"><span class="lineno">  490</span>                destinationPath.CreateFolders();</div>
-<div class="line"><span class="lineno">  491</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.MoveAsset(sourcePath, destinationPath));</div>
-<div class="line"><span class="lineno">  492</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00518">518</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  519</span>            {</div>
+<div class="line"><span class="lineno">  520</span>                <span class="keywordflow">if</span> (sourcePath == <span class="keyword">null</span> || destinationPath == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  521</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>                destinationPath.CreateFolders();</div>
+<div class="line"><span class="lineno">  524</span>                <span class="keywordflow">return</span> Succeeded(AssetDatabase.MoveAsset(sourcePath, destinationPath));</div>
+<div class="line"><span class="lineno">  525</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_path_8cs_source.html#l00258">Asset.Path.CreateFolders()</a>.</p>
+<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41.html#a707c1a8b6f6fab6ad12485008e38ce41">Asset.Path.CreateFolders()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00127">Asset.Move()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8cs_source.html#l00310">Asset.Move()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab7eadabd235d60aafe18c2f4fea44d9e_ab7eadabd235d60aafe18c2f4fea44d9e_cgraph.svg" width="570" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab7eadabd235d60aafe18c2f4fea44d9e_ab7eadabd235d60aafe18c2f4fea44d9e_cgraph.svg" width="306" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>

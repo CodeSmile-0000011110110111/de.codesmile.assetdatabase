@@ -125,35 +125,35 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the string is a valid path and contains no illegal characters for a path or file. False in all other cases. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00207">207</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>            {</div>
-<div class="line"><span class="lineno">  209</span>                var isValid = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>                <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  212</span>                {</div>
-<div class="line"><span class="lineno">  213</span>                    <span class="comment">// System.IO will throw for most illegal chars, plus some extra checks</span></div>
-<div class="line"><span class="lineno">  214</span>                    var fileName = System.IO.Path.GetFileName(path);</div>
-<div class="line"><span class="lineno">  215</span>                    var folderName = System.IO.Path.GetDirectoryName(path);</div>
-<div class="line"><span class="lineno">  216</span> </div>
-<div class="line"><span class="lineno">  217</span>                    <span class="comment">// check folder name for some chars that System.IO allows in GetDirectoryName</span></div>
-<div class="line"><span class="lineno">  218</span>                    var testIllegalChars = <span class="keyword">new</span> Func&lt;Char, Boolean&gt;(c =&gt; c == <span class="charliteral">&#39;*&#39;</span> || c == <span class="charliteral">&#39;?&#39;</span> || c == <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  219</span>                    isValid = folderName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>                    <span class="keywordflow">if</span> (isValid)</div>
-<div class="line"><span class="lineno">  222</span>                    {</div>
-<div class="line"><span class="lineno">  223</span>                        <span class="comment">// check filename for some chars that System.IO allows in GetFileName</span></div>
-<div class="line"><span class="lineno">  224</span>                        fileName = path.Substring(folderName.Length, path.Length - folderName.Length);</div>
-<div class="line"><span class="lineno">  225</span>                        isValid = fileName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  226</span>                    }</div>
-<div class="line"><span class="lineno">  227</span>                }</div>
-<div class="line"><span class="lineno">  228</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  229</span>                {</div>
-<div class="line"><span class="lineno">  230</span>                    SetLastErrorMessage($<span class="stringliteral">&quot;{ex.Message} =&gt; \&quot;{path}\&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">  231</span>                    isValid = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  232</span>                }</div>
-<div class="line"><span class="lineno">  233</span> </div>
-<div class="line"><span class="lineno">  234</span>                <span class="keywordflow">return</span> isValid;</div>
-<div class="line"><span class="lineno">  235</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00103">103</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>            {</div>
+<div class="line"><span class="lineno">  105</span>                var isValid = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  108</span>                {</div>
+<div class="line"><span class="lineno">  109</span>                    <span class="comment">// System.IO will throw for most illegal chars, plus some extra checks</span></div>
+<div class="line"><span class="lineno">  110</span>                    var fileName = System.IO.Path.GetFileName(path);</div>
+<div class="line"><span class="lineno">  111</span>                    var folderName = System.IO.Path.GetDirectoryName(path);</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>                    <span class="comment">// check folder name for some chars that System.IO allows in GetDirectoryName</span></div>
+<div class="line"><span class="lineno">  114</span>                    var testIllegalChars = <span class="keyword">new</span> Func&lt;Char, Boolean&gt;(c =&gt; c == <span class="charliteral">&#39;*&#39;</span> || c == <span class="charliteral">&#39;?&#39;</span> || c == <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  115</span>                    isValid = folderName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>                    <span class="keywordflow">if</span> (isValid)</div>
+<div class="line"><span class="lineno">  118</span>                    {</div>
+<div class="line"><span class="lineno">  119</span>                        <span class="comment">// check filename for some chars that System.IO allows in GetFileName</span></div>
+<div class="line"><span class="lineno">  120</span>                        fileName = path.Substring(folderName.Length, path.Length - folderName.Length);</div>
+<div class="line"><span class="lineno">  121</span>                        isValid = fileName.Any(testIllegalChars) == <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  122</span>                    }</div>
+<div class="line"><span class="lineno">  123</span>                }</div>
+<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  125</span>                {</div>
+<div class="line"><span class="lineno">  126</span>                    SetLastErrorMessage($<span class="stringliteral">&quot;{ex.Message} =&gt; \&quot;{path}\&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  127</span>                    isValid = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  128</span>                }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">return</span> isValid;</div>
+<div class="line"><span class="lineno">  131</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

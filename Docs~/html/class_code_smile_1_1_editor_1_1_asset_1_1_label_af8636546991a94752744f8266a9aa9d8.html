@@ -135,6 +135,16 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_asset_8_label_8cs_source.html#l00037">37</a> of file <a class="el" href="_asset_8_label_8cs_source.html">Asset.Label.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>            {</div>
+<div class="line"><span class="lineno">   39</span>                ThrowIf.ArgumentIsNull(obj, nameof(obj));</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">if</span> (labels == <span class="keyword">null</span> || labels.Length == 0)</div>
+<div class="line"><span class="lineno">   42</span>                    AssetDatabase.ClearLabels(obj);</div>
+<div class="line"><span class="lineno">   43</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   44</span>                    AssetDatabase.SetLabels(obj, labels);</div>
+<div class="line"><span class="lineno">   45</span>            }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
