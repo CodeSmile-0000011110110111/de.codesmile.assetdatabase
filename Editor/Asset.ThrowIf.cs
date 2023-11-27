@@ -78,7 +78,7 @@ namespace CodeSmile.Editor
 				}
 			}
 
-			public static void AssetLoadReturnedNull(Object obj, Path path)
+			public static void AssetLoadReturnedNull(UnityEngine.Object obj, Path path)
 			{
 				if (obj == null)
 				{
@@ -145,6 +145,18 @@ namespace CodeSmile.Editor
 			{
 				if (sourcePath.Equals(destinationPath))
 					throw new ArgumentException($"source and destination path are equal: {sourcePath}");
+			}
+
+			public static void NotAnAsset(UnityEngine.Object obj)
+			{
+				if (Database.Contains(obj) == false)
+					throw new ArgumentException($"{obj} is not an asset file");
+			}
+
+			public static void NotAnAsset(int instanceId)
+			{
+				if (Database.Contains(instanceId) == false)
+					throw new ArgumentException($"{instanceId} is not an asset instance ID");
 			}
 		}
 	}

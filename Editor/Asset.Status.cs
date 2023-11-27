@@ -21,7 +21,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="obj"></param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
-			public static Boolean IsImported(Object obj) => obj != null ? AssetDatabase.Contains(obj) : false;
+			public static Boolean IsImported(Object obj) => Database.Contains(obj);
 
 			/// <summary>
 			///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
@@ -30,14 +30,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
-			public static Boolean IsImported(Path path)
-			{
-#if UNITY_2023_2_OR_NEWER
-				return path != null ? AssetDatabase.AssetPathExists(path) : false;
-#else
-				return path != null ? AssetDatabase.GetMainAssetTypeAtPath(path) != null : false;
-#endif
-			}
+			public static Boolean IsImported(Path path) => path != null && path.Exists;
 
 			/// <summary>
 			///     Returns whether this object is the asset's 'main' object.

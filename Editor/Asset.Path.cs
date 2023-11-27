@@ -40,10 +40,10 @@ namespace CodeSmile.Editor
 			{
 				get
 				{
-#if UNITY_2023_1_OR_NEWER
+#if UNITY_2023_2_OR_NEWER
 					return AssetDatabase.AssetPathExists(m_RelativePath);
 #else
-					return Guid.Empty() == false;
+					return AssetDatabase.AssetPathToGUID(m_RelativePath, AssetPathToGUIDOptions.OnlyExistingAssets).Length > 0;
 #endif
 				}
 			}
@@ -115,79 +115,6 @@ namespace CodeSmile.Editor
 			///     See also: Project Settings => Editor => Numbering Scheme
 			/// </summary>
 			public Path UniqueFilePath => UniquifyFileName(this);
-
-			/// <summary>
-			///     Implicit conversion to string (relative asset path). Same as ToString().
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
-
-			/// <summary>
-			///     Implicit conversion of an AssetPath instance from a string path (full or relative).
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
-
-			/// <summary>
-			///     Tests two path instances for equality.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="path2"></param>
-			/// <returns></returns>
-			public static Boolean operator ==(Path path, Path path2)
-			{
-				if (ReferenceEquals(path, path2))
-					return true;
-				if (ReferenceEquals(path, null))
-					return false;
-				if (ReferenceEquals(path2, null))
-					return false;
-
-				return path.Equals(path2);
-			}
-
-			/// <summary>
-			///     Tests two path instances for inequality.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="path2"></param>
-			/// <returns></returns>
-			public static Boolean operator !=(Path path, Path path2) => !(path == path2);
-
-			/// <summary>
-			///     Tests for equality with an object.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="other"></param>
-			/// <returns></returns>
-			public static Boolean operator ==(Path path, Object other) =>
-				other is String str ? path.Equals(str) : path.Equals(other as Path);
-
-			/// <summary>
-			///     Tests for inequality with an object.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="other"></param>
-			/// <returns></returns>
-			public static Boolean operator !=(Path path, Object other) => !(path == other);
-
-			/// <summary>
-			///     Tests for equality with an object.
-			/// </summary>
-			/// <param name="other"></param>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static Boolean operator ==(Object other, Path path) => path == other;
-
-			/// <summary>
-			///     Tests for inequality with an object.
-			/// </summary>
-			/// <param name="other"></param>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static Boolean operator !=(Object other, Path path) => !(path == other);
 
 			[ExcludeFromCodeCoverage] private Path() {} // disallowed parameterless ctor
 
@@ -261,6 +188,79 @@ namespace CodeSmile.Editor
 			/// <param name="other"></param>
 			/// <returns></returns>
 			public Boolean Equals(String other) => m_RelativePath.Equals(new Path(other).m_RelativePath);
+
+			/// <summary>
+			///     Implicit conversion to string (relative asset path). Same as ToString().
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
+
+			/// <summary>
+			///     Implicit conversion of an AssetPath instance from a string path (full or relative).
+			/// </summary>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
+
+			/// <summary>
+			///     Tests two path instances for equality.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="path2"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Path path, Path path2)
+			{
+				if (ReferenceEquals(path, path2))
+					return true;
+				if (ReferenceEquals(path, null))
+					return false;
+				if (ReferenceEquals(path2, null))
+					return false;
+
+				return path.Equals(path2);
+			}
+
+			/// <summary>
+			///     Tests two path instances for inequality.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="path2"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path, Path path2) => !(path == path2);
+
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Path path, Object other) =>
+				other is String str ? path.Equals(str) : path.Equals(other as Path);
+
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="path"></param>
+			/// <param name="other"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path, Object other) => !(path == other);
+
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator ==(Object other, Path path) => path == other;
+
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="other"></param>
+			/// <param name="path"></param>
+			/// <returns></returns>
+			public static Boolean operator !=(Object other, Path path) => !(path == other);
 
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
