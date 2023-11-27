@@ -3,10 +3,6 @@
 
 #define DISABLED_UNTIL_ISSUE_59630_RESOLVED
 
-using CodeSmile.Editor;
-using NUnit.Framework;
-using System;
-
 public class AssetBatchEditingTests : AssetTestBase
 {
 	// [Test] public void BatchEditing_NullAction_Throws() =>

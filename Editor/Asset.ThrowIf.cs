@@ -153,7 +153,7 @@ namespace CodeSmile.Editor
 					throw new ArgumentException($"{obj} is not an asset file");
 			}
 
-			public static void NotAnAsset(int instanceId)
+			public static void NotAnAsset(Int32 instanceId)
 			{
 				if (Database.Contains(instanceId) == false)
 					throw new ArgumentException($"{instanceId} is not an asset instance ID");
