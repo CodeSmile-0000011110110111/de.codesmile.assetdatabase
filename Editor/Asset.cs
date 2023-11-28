@@ -38,8 +38,8 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
-			var obj = File.CreateInternal(contents, path);
-			InitWithMainObject(obj);
+			var asset = File.CreateInternal(contents, path);
+			InitWithMainObject(asset);
 		}
 
 		/// <summary>
@@ -57,8 +57,8 @@ namespace CodeSmile.Editor
 			ThrowIf.ArgumentIsNull(path, nameof(path));
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
-			var obj = File.CreateInternal(contents, path);
-			InitWithMainObject(obj);
+			var asset = File.CreateInternal(contents, path);
+			InitWithMainObject(asset);
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace CodeSmile.Editor
 		/// <remarks>
 		///     The object must not already be an asset file (throws exception).
 		/// </remarks>
-		/// <param name="instance">The instance to create as an asset file.</param>
+		/// <param name="asset">The instance to create as an asset file.</param>
 		/// <param name="path">Path where to save the new asset file, with extension.</param>
 		/// <param name="overwriteExisting">
 		///     If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique
@@ -78,15 +78,15 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentException">If the object is already serialized to an asset file.</exception>
 		/// <seealso cref="CodeSmile.Editor.Asset(UnityEngine.Object)" />
 		/// <seealso cref="CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)" />
-		public Asset(Object instance, Path path, Boolean overwriteExisting = false)
+		public Asset(Object asset, Path path, Boolean overwriteExisting = false)
 		{
-			ThrowIf.ArgumentIsNull(instance, nameof(instance));
+			ThrowIf.ArgumentIsNull(asset, nameof(asset));
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.AlreadyAnAsset(instance);
+			ThrowIf.AlreadyAnAsset(asset);
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
-			File.CreateInternal(instance, path);
-			InitWithMainObject(instance);
+			File.CreateInternal(asset, path);
+			InitWithMainObject(asset);
 		}
 
 		/// <summary>
@@ -100,17 +100,17 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Loads the asset using its GUID.
 		/// </summary>
-		/// <param name="assetGuid"></param>
+		/// <param name="assetGuid">GUID of an asset.</param>
 		/// <exception cref="ArgumentException">If the GUID is not in the AssetDatabase (not an asset).</exception>
 		public Asset(GUID assetGuid) => InitWithGuid(assetGuid);
 
 		/// <summary>
 		///     Uses an existing asset reference.
 		/// </summary>
-		/// <param name="instance">Instance of an asset.</param>
+		/// <param name="asset">Instance of an asset.</param>
 		/// <exception cref="ArgumentNullException">If the object is null.</exception>
 		/// <exception cref="ArgumentException">If the object is not an asset.</exception>
-		public Asset(Object instance) => InitWithMainObject(instance);
+		public Asset(Object asset) => InitWithMainObject(asset);
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object.
@@ -455,7 +455,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Sets the asset's labels, replacing all previously existing labels.
 		/// </summary>
-		/// <param name="labels">An array of labels. If null or empty will remove all labels.</param>
+		/// <param name="labels">An array of labels.</param>
 		/// <seealso cref="CodeSmile.Editor.Asset.AddLabel" />
 		/// <seealso cref="CodeSmile.Editor.Asset.AddLabels" />
 		/// <seealso cref="CodeSmile.Editor.Asset.ClearLabels" />
@@ -464,9 +464,6 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Removes all labels from the asset.
 		/// </summary>
-		/// <remarks>
-		///     Same as <code>SetLabels(null)</code>
-		/// </remarks>
 		/// <seealso cref="CodeSmile.Editor.Asset.SetLabels" />
 		public void ClearLabels() => Label.ClearAll(m_MainObject);
 
@@ -508,7 +505,7 @@ namespace CodeSmile.Editor
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
 		/// </summary>
 		/// <param name="instance">The object instance to add as subobject to this asset.</param>
-		/// <seealso cref="RemoveSubAsset" />
+		/// <seealso cref="CodeSmile.Editor.Asset.RemoveSubAsset" />
 		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
 		public void AddSubAsset(Object instance) => SubAsset.Add(instance, m_MainObject);
 
@@ -516,7 +513,7 @@ namespace CodeSmile.Editor
 		///     Removes an object from the asset's sub-objects.
 		/// </summary>
 		/// <param name="subAsset">The sub-asset object to remove.</param>
-		/// <seealso cref="AddSubAsset" />
+		/// <seealso cref="CodeSmile.Editor.Asset.AddSubAsset" />
 		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
 		public void RemoveSubAsset(Object subAsset) => SubAsset.Remove(subAsset);
 

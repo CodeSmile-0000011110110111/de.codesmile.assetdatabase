@@ -33,7 +33,7 @@ public class AssetCopyTests : AssetTestBase
 
 		Assert.True(didCopy);
 		Assert.True(destPath.Exists);
-		Assert.AreEqual(String.Empty, asset.LastErrorMessage);
+		Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());
 	}
 
 	[Test] public void CopyNoOverwriteStatic_OntoItself_CreatesCopy()

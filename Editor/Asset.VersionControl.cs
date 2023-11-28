@@ -38,15 +38,15 @@ namespace CodeSmile.Editor
 			///     Returns true if the asset can be opened for editing in the version control system.
 			///     If false, GetLastErrorMessage() returns the reason.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="asset"></param>
 			/// <param name="options"></param>
 			/// <returns></returns>
 			/// <see cref="Asset.GetLastErrorMessage" />
-			public static Boolean CanMakeEditable(Object obj, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean CanMakeEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
-				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.ArgumentIsNull(asset, nameof(asset));
 
-				return CanMakeEditable(Path.Get(obj), options);
+				return CanMakeEditable(Path.Get(asset), options);
 			}
 
 			/// <summary>
@@ -65,13 +65,13 @@ namespace CodeSmile.Editor
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
 			///     To get a reason, query the individual paths again.
 			/// </summary>
-			/// <param name="objects"></param>
+			/// <param name="assets"></param>
 			/// <param name="notEditablePaths"></param>
 			/// <param name="options"></param>
 			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
-			public static void CanMakeEditable(Object[] objects, out List<String> notEditablePaths,
+			public static void CanMakeEditable(Object[] assets, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				CanMakeEditable(Path.Get(objects), out notEditablePaths, options);
+				CanMakeEditable(Path.Get(assets), out notEditablePaths, options);
 
 			/// <summary>
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
@@ -92,12 +92,12 @@ namespace CodeSmile.Editor
 			///     Returns true if the meta file is open for editing in the version control system.
 			///     If false, GetLastErrorMessage() contains the failure reason.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="asset"></param>
 			/// <param name="options"></param>
 			/// <returns></returns>
-			public static Boolean IsMetaEditable(Object obj, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean IsMetaEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
-				var isOpen = AssetDatabase.IsMetaFileOpenForEdit(obj, out var message, options);
+				var isOpen = AssetDatabase.IsMetaFileOpenForEdit(asset, out var message, options);
 				if (isOpen == false)
 					SetLastErrorMessage(message);
 
@@ -108,12 +108,12 @@ namespace CodeSmile.Editor
 			///     Returns true if the asset file is open for editing in the version control system.
 			///     If false, GetLastErrorMessage() contains the failure reason.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="asset"></param>
 			/// <param name="options"></param>
 			/// <returns></returns>
-			public static Boolean IsEditable(Object obj, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean IsEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
-				var isOpen = AssetDatabase.IsOpenForEdit(obj, out var message, options);
+				var isOpen = AssetDatabase.IsOpenForEdit(asset, out var message, options);
 				if (isOpen == false)
 					SetLastErrorMessage(message);
 
@@ -136,13 +136,13 @@ namespace CodeSmile.Editor
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
 			///     To get a reason, query the individual objects again.
 			/// </summary>
-			/// <param name="objects"></param>
+			/// <param name="assets"></param>
 			/// <param name="notEditablePaths"></param>
 			/// <param name="options"></param>
 			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
-			public static void IsEditable(Object[] objects, out List<String> notEditablePaths,
+			public static void IsEditable(Object[] assets, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				IsEditable(Path.Get(objects), out notEditablePaths, options);
+				IsEditable(Path.Get(assets), out notEditablePaths, options);
 
 			/// <summary>
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
