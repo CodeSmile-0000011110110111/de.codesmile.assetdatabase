@@ -146,7 +146,7 @@ This software is a Unity Package Manager 'npm package'.
 
 - Open Window => Package Manager in Unity Editor
 - Choose "Install package from git URL..."
-- Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetinspector.git`
+- Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase.git`
 
 This package is currently not available on OpenUPM.
 
