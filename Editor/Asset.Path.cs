@@ -13,9 +13,12 @@ namespace CodeSmile.Editor
 	{
 		/// <summary>
 		///     Represents a relative path to an asset file or folder, typically under 'Assets' or 'Packages'.
-		///     Implicitly converts to/from string. Guards against inconsistencies, eg invalid paths, illegal characters, etc.
-		///     Provides quick access to File I/O tasks such as getting a file's folder, extension, full path, existance, etc.
 		/// </summary>
+		/// <remarks>
+		///     - Guards against inconsistencies like invalid paths, illegal characters, etc.
+		///		- Implicitly convertible to/from string.
+		///     - Provides quick access to File I/O tasks like: get file's folder, extension, full path, exists, etc.
+		/// </remarks>
 		public partial class Path : IEquatable<Path>, IEquatable<String>
 		{
 			private const String DefaultExtension = "asset";
@@ -29,6 +32,7 @@ namespace CodeSmile.Editor
 			///     <see cref="ExistsInFileSystem" />
 			/// </summary>
 			/// <returns></returns>
+			/// <include file='CONTINUE DOCS HERE' path='[@name=""]'/>
 			public GUID Guid => GetGuid(this, AssetPathToGUIDOptions.OnlyExistingAssets);
 
 			/// <summary>

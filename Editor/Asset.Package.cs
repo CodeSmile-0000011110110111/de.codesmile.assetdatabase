@@ -10,17 +10,22 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Groups asset package import/export functionality, eg files with '.unitypackage' extension.
-		///     Does not contain PackageManager functionality.
+		///     Groups import/export functionality for
+		///     <a href="https://docs.unity3d.com/Manual/AssetPackages.html">.unitypackage files</a> (Asset Packages).
 		/// </summary>
+		/// <remarks>
+		///     Does not contain Package Manager (npm packages) functionality.
+		/// </remarks>
 		public static class Package
 		{
 			/// <summary>
 			///     Silently imports a .unitypackage file at the given path.
-			///     Note: This is not used for importing Package Manager packages!
 			/// </summary>
-			/// <param name="packagePath">path to file with the .unitypackage extension</param>
-			/// <see cref="ImportInteractive" />
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Package.ImportInteractive" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
+			/// </seealso>
 			public static void Import(Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
@@ -29,12 +34,14 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Imports a .unitypackage file at the given path. Shows the import package dialogue to the
-			///     user before import.
-			///     Note: This is not used for importing Package Manager packages!
+			///     Imports a .unitypackage file at the given path interactively.
 			/// </summary>
-			/// <param name="packagePath">path to file with the .unitypackage extension</param>
-			/// <see cref="Import" />
+			/// <remarks> Shows the import package dialogue to the user before importing.</remarks>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Package.Import" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
+			/// </seealso>
 			[ExcludeFromCodeCoverage] // not testable
 			public static void ImportInteractive(Path packagePath)
 			{
@@ -44,11 +51,17 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Exports the asset and its dependencies to the packagePath file.
+			///     Exports the asset and its dependencies to a .unitypackage file.
 			/// </summary>
-			/// <param name="assetPath"></param>
-			/// <param name="packagePath">path to file with the .unitypackage extension</param>
-			/// <param name="options"></param>
+			/// <param name="assetPath">The asset to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Package.Export(String[],String)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
 			public static void Export(Path assetPath, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{
@@ -60,9 +73,15 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Exports multiple assets and their dependencies to the packagePath file.
 			/// </summary>
-			/// <param name="assetPaths"></param>
-			/// <param name="packagePath"></param>
-			/// <param name="options"></param>
+			/// <param name="assetPaths">The assets to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Package.Export(Path,String)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
 			public static void Export(Path[] assetPaths, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default) =>
 				Export(Path.ToStrings(assetPaths), packagePath, options);
@@ -70,9 +89,15 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Exports multiple assets and their dependencies to the packagePath file.
 			/// </summary>
-			/// <param name="assetPaths"></param>
-			/// <param name="packagePath"></param>
-			/// <param name="options"></param>
+			/// <param name="assetPaths">The assets to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Package.Export(Path,String)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
 			public static void Export(String[] assetPaths, String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{

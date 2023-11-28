@@ -745,7 +745,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html">AssetDatabase.DeleteAssets</a>
 			/// </seealso>
-			public static Boolean Delete(IEnumerable<Path> paths) => Delete(paths.Cast<String>());
+			public static Boolean Delete(IEnumerable<Path> paths) => Delete(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Tries to delete multiple files/folders.
@@ -809,7 +809,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetsToTrash.html">AssetDatabase.MoveAssetsToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(IEnumerable<Path> paths) => Trash(paths.Cast<String>());
+			public static Boolean Trash(IEnumerable<Path> paths) => Trash(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Tries to move multiple files/folders to the OS trash.
@@ -848,29 +848,19 @@ namespace CodeSmile.Editor
 			///     assets).
 			/// </remarks>
 			/// <param name="massAssetFileEditAction">Write any mass file editing code in this action.</param>
-			/// <param name="rethrowExceptions">
-			///     Set to true if you want to handle exceptions yourself within the massAssetFileEditAction. If false,
-			///     exceptions are only printed to the console as errors. Default: false.
-			/// </param>
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StartAssetEditing.html">AssetDatabase.StartAssetEditing</a>
 			/// </seealso>
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StopAssetEditing.html">AssetDatabase.StopAssetEditing</a>
 			/// </seealso>
-			public static void BatchEditing([NotNull] Action massAssetFileEditAction, Boolean rethrowExceptions = false)
+			public static void BatchEditing([NotNull] Action massAssetFileEditAction)
 			{
 				try
 				{
 					StartAssetEditing();
+
 					massAssetFileEditAction?.Invoke();
-				}
-				catch (Exception e)
-				{
-					if (rethrowExceptions)
-						throw; // re-throw to caller
-					else
-						Debug.LogError($"Exception during {nameof(BatchEditing)}: {e}");
 				}
 				finally
 				{
@@ -884,7 +874,7 @@ namespace CodeSmile.Editor
 
 			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
 			[ExcludeFromCodeCoverage] // untestable
-			internal static void StopAssetEditing() => AssetDatabase.StartAssetEditing();
+			internal static void StopAssetEditing() => AssetDatabase.StopAssetEditing();
 		}
 	}
 }

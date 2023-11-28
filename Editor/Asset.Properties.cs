@@ -11,9 +11,9 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Returns the last error message from some file operations that return a Boolean,
-		///     for example: Move, Rename, Copy
+		///     Returns the last error message of file operations that create failure messages.
 		/// </summary>
+		/// <remarks>The last error message or an empty string if the last operation succeeded.</remarks>
 		public String LastErrorMessage => GetLastErrorMessage();
 
 		/// <summary>
@@ -100,13 +100,15 @@ namespace CodeSmile.Editor
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
-		///     Returns the assets' direct dependencies (not recursive). Returns paths to the dependent assets.
+		///     Returns the assets' direct dependencies.
 		/// </summary>
+		/// <returns> Returns paths to the directly dependent assets.</returns>
 		public String[] DirectDependencies => Dependency.GetDirect(m_AssetPath);
 
 		/// <summary>
-		///     Returns the assets direct and indirect dependencies. Returns paths to the dependent assets.
+		///     Returns the assets' direct and indirect dependencies (recursive).
 		/// </summary>
+		/// <returns> Returns paths to the dependent assets.</returns>
 		public String[] Dependencies => Dependency.GetAll(m_AssetPath);
 
 		/// <summary>
@@ -115,9 +117,9 @@ namespace CodeSmile.Editor
 		public Type DefaultImporter => Importer.GetDefault(m_AssetPath);
 
 		/// <summary>
-		///     Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless
-		///     the importer was overridden.
+		///     Returns the active AssetImporter type for this asset.
 		/// </summary>
+		/// <remarks>Will be the DefaultImporter type unless the importer was overridden.</remarks>
 		/// <see cref="SetActiveImporter{T}" />
 		/// <see cref="SetActiveImporterToDefault" />
 		/// <see cref="DefaultImporter" />
@@ -180,14 +182,18 @@ namespace CodeSmile.Editor
 
 		/// <summary>
 		///     Loads and returns all sub objects the asset is comprised of.
-		///     NOTE: Whether the main object is included in this list depends on the type of asset.
 		/// </summary>
+		/// <remarks>
+		///     Whether the main object is included in this list depends on the type of asset.
+		/// </remarks>
 		public Object[] SubAssets => IsScene ? new Object[0] : SubAsset.LoadAll(m_AssetPath);
 
 		/// <summary>
 		///     Loads and returns only those asset objects that are shown in the project view.
-		///     NOTE: Does NOT include the main asset!
 		/// </summary>
+		/// <remarks>
+		///     Does not include the main asset.
+		/// </remarks>
 		public Object[] VisibleSubAssets => IsScene ? new Object[0] : SubAsset.LoadVisible(m_AssetPath);
 	}
 }

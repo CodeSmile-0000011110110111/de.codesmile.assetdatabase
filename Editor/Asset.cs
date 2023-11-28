@@ -180,8 +180,11 @@ namespace CodeSmile.Editor
 		/// </example>
 		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
+		/// <summary>
+		///     Alternative to casting the asset instance.
+		/// </summary>
 		/// <remarks>
-		///     Alternative to casting the asset instance:
+		///     This is an alias for:
 		///     <code>var obj = asset as T;</code>
 		/// </remarks>
 		/// <typeparam name="T"></typeparam>
@@ -225,8 +228,7 @@ namespace CodeSmile.Editor
 		public Asset SaveAs(Path path) => File.Copy(m_AssetPath, path) ? new Asset(path) : null;
 
 		/// <summary>
-		///     Saves a copy of the asset to a new path. Will not overwrite existing assets by generating a unique
-		///     filename where necessary.
+		///     Saves a copy of the asset to a new path. Generates a unique file/folder name if path already exists.
 		/// </summary>
 		/// <remarks>
 		///     Will automatically create missing folders.
@@ -425,6 +427,7 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Sets the active AssetImporter type for this asset.
 		/// </summary>
+		/// <remarks>T is AssetImporter in Unity 2022.1 or newer. In older versions T is ScriptedImporter.</remarks>
 		/// <typeparam name="T">The AssetImporter derived type that should handle importing this asset.</typeparam>
 		/// <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
 		/// <see cref="CodeSmile.Editor.Asset.ActiveImporter" />

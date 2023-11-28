@@ -15,70 +15,103 @@ namespace CodeSmile.Editor
 		public static class Dependency
 		{
 			/// <summary>
-			///     Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets.
+			///     Returns the direct dependencies of the asset at the given path.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <param name="path">Path to an asset file.</param>
+			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path[])" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
+			/// </seealso>
 			public static String[] GetDirect(Path path) => AssetDatabase.GetDependencies(path, false);
 
 			/// <summary>
-			///     Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.
+			///     Returns the direct dependencies of the assets at the given paths.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <returns></returns>
+			/// <param name="paths">Paths to asset files.</param>
+			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path[])" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
+			/// </seealso>
 			public static String[] GetDirect(Path[] paths) =>
 				AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
 
 			/// <summary>
-			///     Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.
+			///     Returns all (direct and indirect) dependencies of the asset at the given path.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <param name="path">Path to an asset file.</param>
+			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path[])" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
+			/// </seealso>
 			public static String[] GetAll(Path path) => AssetDatabase.GetDependencies(path, true);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <returns></returns>
+			/// <param name="paths">Paths to asset files.</param>
+			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path[])" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
+			/// </seealso>
 			public static String[] GetAll(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
 
 			/// <summary>
-			///     Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter.
-			///     Call this method again to update existing dependencies.
-			///     For details
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>.
+			///     Registers a custom dependency to be used in conjunction with a custom AssetImporter.
 			/// </summary>
 			/// <param name="globalDependencyName">A global name for the dependency.</param>
-			/// <param name="dependencyHash">The current hash of the dependency value.</param>
-			/// <see cref="Unregister" />
+			/// <param name="dependencyHash">
+			///     The current hash of the dependency value which, if changed, indicates that the asset has
+			///     changed.
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.Unregister" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">AssetDatabase.RegisterCustomDependency</a>
+			/// </seealso>
 			public static void Register(String globalDependencyName, Hash128 dependencyHash) =>
 				AssetDatabase.RegisterCustomDependency(globalDependencyName, dependencyHash);
 
 			/// <summary>
-			///     Removes one or more custom dependencies by using a global dependency name's prefix
-			///     (eg 'StartsWith') or full name.
+			///     Unregisters one or more custom dependencies with the given prefix (eg 'StartsWith').
 			/// </summary>
-			/// <param name="globalDependencyNamePrefix"></param>
+			/// <param name="globalDependencyNamePrefix">A 'starts with' filter string of the dependencies to unregister.</param>
 			/// <returns>The number of custom dependencies that were removed.</returns>
-			/// <see cref="Register" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.UnregisterCustomDependencyPrefixFilter.html">AssetDatabase.UnregisterCustomDependencyPrefixFilter</a>
+			/// </seealso>
 			public static UInt32 Unregister(String globalDependencyNamePrefix) =>
 				AssetDatabase.UnregisterCustomDependencyPrefixFilter(globalDependencyNamePrefix);
 
 			/// <summary>
-			///     Returns the dependency hash for the asset at path.
-			///     If the hash changes it means the asset contents may have changed.
+			///     Returns the dependency value hash for the asset at path.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <remarks>If the hash changed it means the asset contents may have changed.</remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <returns>The dependency hash value for this asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetDependencyHash.html">AssetDatabase.GetAssetDependencyHash</a>
+			/// </seealso>
 			public static Hash128 GetHash(Path path) => AssetDatabase.GetAssetDependencyHash(path);
 
 			/// <summary>
 			///     Returns the dependency hash for the asset.
-			///     If the hash changes it means the asset contents may have changed.
 			/// </summary>
-			/// <param name="guid"></param>
-			/// <returns></returns>
+			/// <remarks>If the hash changed it means the asset contents may have changed.</remarks>
+			/// <param name="guid">GUID of an asset file.</param>
+			/// <returns>The dependency hash value for this asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetDependencyHash.html">AssetDatabase.GetAssetDependencyHash</a>
+			/// </seealso>
 			public static Hash128 GetHash(GUID guid) => AssetDatabase.GetAssetDependencyHash(guid);
 		}
 	}

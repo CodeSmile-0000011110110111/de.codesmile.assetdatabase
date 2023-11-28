@@ -135,12 +135,17 @@ namespace CodeSmile.Editor
 		public static Texture2D GetIcon(Object obj) => GetIcon(Path.Get(obj));
 
 		/// <summary>
-		///     Returns the last error message returned by some methods that provide such a message,
-		///     for example Move and Rename.
-		///     <see cref="Rename" />
-		///     <see cref="Move" />
+		///     Returns the last error message returned by some methods that provide such a failure message.
 		/// </summary>
-		/// <returns>The last error message or empty string if there was no error.</returns>
+		/// <returns>The last error message or empty string if the last operation succeeded.</returns>
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Rename"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Move"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Copy"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.File.CopyAsNew"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.Path.IsValid"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable"/>
 		public static String GetLastErrorMessage() => s_LastErrorMessage;
 
 		private static void SetLastErrorMessage(String message) =>
