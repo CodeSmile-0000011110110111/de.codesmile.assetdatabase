@@ -13,12 +13,11 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the last error message of file operations that create failure messages.
 		/// </summary>
-		/// <remarks>The last error message or an empty string if the last operation succeeded.</remarks>
+		/// <returns>The last error message, or an empty string if the last operation succeeded.</returns>
 		public String LastErrorMessage => GetLastErrorMessage();
 
 		/// <summary>
 		///     Gets or sets the asset's main object.
-		///     CodeSmile.Editor.Asset.GetMainType
 		/// </summary>
 		/// <example>
 		///     To cast the main object to a specific type you may simply cast the asset:

@@ -15,81 +15,108 @@ namespace CodeSmile.Editor
 		public static class Status
 		{
 			/// <summary>
-			///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
-			///     the asset file exists then you need to Import() the asset.
-			///     Unlike AssetDatabase, will not throw a NullRef if you pass null.
+			///     Checks if the object is an asset in the AssetDatabase.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <remarks>
+			///     If you are sure the asset file exists but this method returns false then you need to Import() the asset.
+			/// </remarks>
+			/// <remarks>Unlike AssetDatabase, will not throw a NullRef if you pass null.</remarks>
+			/// <param name="instance">The instance to test.</param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
-			public static Boolean IsImported(Object obj) => Database.Contains(obj);
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsImported(CodeSmile.Editor.Asset.Path)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Database.Contains" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
+			/// </seealso>
+			public static Boolean IsImported(Object instance) => Database.Contains(instance);
 
 			/// <summary>
-			///     Checks if the object is an asset in the AssetDatabase. If it isn't but you know
-			///     the asset file exists then you need to Import() the asset.
-			///     Unlike AssetDatabase, will not throw a NullRef if you pass null.
+			///     Checks if the path is in the AssetDatabase.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
+			/// <remarks>
+			///     If you are sure the asset path exists but this method returns false then you need to Import() the asset.
+			/// </remarks>
+			/// <remarks>Unlike AssetDatabase, will not throw a NullRef if you pass null.</remarks>
+			/// <param name="path">Path to an asset.</param>
+			/// <returns>Returns false if the path isn't in the database or if the path is null.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsImported(UnityEngine.Object)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Database.Contains" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
+			/// </seealso>
 			public static Boolean IsImported(Path path) => path != null && path.Exists;
+
+			/// <summary>
+			///     Returns whether the (main) asset at the path is loaded.
+			/// </summary>
+			/// <param name="path">Path to an asset.</param>
+			/// <returns>True if the object at the path is loaded, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
+			/// </seealso>
+			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 			/// <summary>
 			///     Returns whether this object is the asset's 'main' object.
 			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Boolean IsMain(Object obj) => AssetDatabase.IsMainAsset(obj);
+			/// <param name="asset">Instance of an asset.</param>
+			/// <returns>True if it's the asset's main object, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsSub" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
+			/// </seealso>
+			public static Boolean IsMain(Object asset) => AssetDatabase.IsMainAsset(asset);
 
 			/// <summary>
-			///     Returns whether this object is a sub-asset of a composite asset. For example an Animation inside an FBX file.
+			///     Returns whether this object is a sub-asset of a composite asset.
 			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Boolean IsSub(Object obj) => AssetDatabase.IsSubAsset(obj);
+			/// <param name="asset">Instance of an asset.</param>
+			/// <returns>True if it's a sub asset, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsMain" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
+			/// </seealso>
+			public static Boolean IsSub(Object asset) => AssetDatabase.IsSubAsset(asset);
 
 			/// <summary>
 			///     Returns whether this is a foreign asset.
-			///     <p>
-			///         A foreign asset is any type of file that Unity doesn't use
-			///         directly but rather maintains cached versions of it in the Library folder. For example, a .png image
-			///         is a foreign asset, there is no editor inside Unity for it, and the representation of the .png depends
-			///         on the asset's settings and build platform (eg compression, max size, etc).
-			///         Other foreign assets: scenes (.unity), prefabs, assembly definitions.
-			///     </p>
 			/// </summary>
-			/// <see cref="IsNative" />
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Boolean IsForeign(Object obj) => AssetDatabase.IsForeignAsset(obj);
+			/// <remarks>
+			///     A foreign asset is any type of file that Unity doesn't edit directly.
+			///     Examples of foreign assets: scenes (.unity), prefabs, assembly definitions, ..
+			/// </remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <returns>True if it is a foreign asset, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsNative" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
+			/// </seealso>
+			public static Boolean IsForeign(Object asset) => AssetDatabase.IsForeignAsset(asset);
 
 			/// <summary>
-			///     Returns whether this is a native asset. Native assets are serialized directly by Unity, such as materials.
-			///     Note that scenes, prefabs and assembly definitions are considered foreign assets.
+			///     Returns whether this is a native asset.
 			/// </summary>
-			/// <see cref="IsForeign" />
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Boolean IsNative(Object obj) => AssetDatabase.IsNativeAsset(obj);
-
-			/// <summary>
-			///     Returns whether this object's main asset is loaded.
-			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns></returns>
-			public static Boolean IsLoaded(Object obj) => AssetDatabase.IsMainAssetAtPathLoaded(Path.Get(obj));
+			/// <remarks>
+			///     Native assets are editable within Unity, for example materials and animation controllers.
+			///     There are notable exceptions, such as scenes, prefabs and assembly definitions that are considered foreign assets.
+			/// </remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <returns>True if it is a native asset, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Status.IsForeign" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
+			/// </seealso>
+			public static Boolean IsNative(Object asset) => AssetDatabase.IsNativeAsset(asset);
 
 			/// <summary>
 			///     Returns true if the given object is of type SceneAsset.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="asset">The instance to test for being a SceneAsset type.</param>
 			/// <returns></returns>
-			public static Boolean IsScene(Object obj) => obj.GetType().Equals(typeof(SceneAsset));
-
-			/// <summary>
-			///     Returns whether this path's main asset is loaded.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
-			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
+			public static Boolean IsScene(Object asset) => asset.GetType().Equals(typeof(SceneAsset));
 		}
 	}
 }

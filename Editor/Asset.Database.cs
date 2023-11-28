@@ -57,12 +57,12 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Tests if the asset is in the database.
 			/// </summary>
-			/// <param name="obj">Asset to test.</param>
+			/// <param name="instance">Instance to test.</param>
 			/// <returns>Returns true if the asset is imported. Returns false if the asset is not in the database, or if obj is null.</returns>
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
-			public static Boolean Contains(Object obj) => obj != null ? AssetDatabase.Contains(obj) : false;
+			public static Boolean Contains(Object instance) => instance != null ? AssetDatabase.Contains(instance) : false;
 
 			/// <summary>
 			///     Tests if the asset is in the database.

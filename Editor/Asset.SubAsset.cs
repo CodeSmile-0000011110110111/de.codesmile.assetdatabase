@@ -10,92 +10,137 @@ namespace CodeSmile.Editor
 	public sealed partial class Asset
 	{
 		/// <summary>
-		///     Groups all SubAsset related functionality.
+		///     Groups all Sub-Asset related functionality.
 		/// </summary>
 		public static class SubAsset
 		{
 			/// <summary>
-			///     Extracts a sub-object of an asset as an asset of its own. This is the same as picking a sub-asset
-			///     and dragging it outside the containing asset in the project view.
-			///     Note: This only works with visible sub objects.
+			///     Extracts a sub-object of an asset as an asset of its own.
 			/// </summary>
-			/// <param name="subObject"></param>
-			/// <param name="destinationPath"></param>
-			/// <returns></returns>
-			public static Boolean Extract(Object subObject, Path destinationPath)
+			/// <remarks>
+			///     This is the same as dragging a sub-asset outside the containing asset in the project view.
+			///     For example an animation or material dragged from a FBX asset.
+			/// </remarks>
+			/// <remarks>
+			///     Only visible sub assets are extractable.
+			/// </remarks>
+			/// <param name="subAsset">Instance of a sub-asset.</param>
+			/// <param name="destinationPath">Path to the extracted asset file.</param>
+			/// <returns>
+			///     True if extraction succeeded. False otherwise, in that case CodeSmile.Editor.Asset.GetLastErrorMessage
+			///     provides the error message.
+			/// </returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html">AssetDatabase.ExtractAsset</a>
+			/// </seealso>
+			public static Boolean Extract(Object subAsset, Path destinationPath)
 			{
-				ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
+				ThrowIf.ArgumentIsNull(subAsset, nameof(subAsset));
 				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
 
-				return Succeeded(AssetDatabase.ExtractAsset(subObject, destinationPath));
+				return Succeeded(AssetDatabase.ExtractAsset(subAsset, destinationPath));
 			}
 
 			/// <summary>
-			///     Adds an object as sub-object to the asset object.
+			///     Adds an object as sub-asset to the asset.
 			/// </summary>
-			/// <param name="subObject"></param>
-			/// <param name="assetObject"></param>
-			public static void Add(Object subObject, Object assetObject)
+			/// <param name="subAssetInstance">The object to add as a sub-asset. It must not already be an asset.</param>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AddObjectToAsset.html">AssetDatabase.AddObjectToAsset</a>
+			/// </seealso>
+			public static void Add(Object subAssetInstance, Object asset)
 			{
-				ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
-				ThrowIf.SubObjectIsGameObject(subObject);
-				ThrowIf.AlreadyAnAsset(subObject);
-				ThrowIf.ArgumentIsNull(assetObject, nameof(assetObject));
-				ThrowIf.NotAnAssetWithAssetExtension(assetObject);
+				ThrowIf.ArgumentIsNull(subAssetInstance, nameof(subAssetInstance));
+				ThrowIf.SubObjectIsGameObject(subAssetInstance);
+				ThrowIf.AlreadyAnAsset(subAssetInstance);
+				ThrowIf.ArgumentIsNull(asset, nameof(asset));
+				ThrowIf.NotAnAssetWithAssetExtension(asset);
 
-				AssetDatabase.AddObjectToAsset(subObject, assetObject);
+				AssetDatabase.AddObjectToAsset(subAssetInstance, asset);
 			}
 
 			/// <summary>
-			///     Removes an object as sub-object from whatever asset it is contained in.
+			///     Removes a sub-object from the asset it is contained in.
 			/// </summary>
-			/// <param name="subObject"></param>
-			public static void Remove(Object subObject)
+			/// <param name="subAsset">Instance of a sub-asset.</param>
+			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Add" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html">AssetDatabase.RemoveObjectFromAsset</a>
+			/// </seealso>
+			public static void Remove(Object subAsset)
 			{
-				ThrowIf.ArgumentIsNull(subObject, nameof(subObject));
+				ThrowIf.ArgumentIsNull(subAsset, nameof(subAsset));
 
-				AssetDatabase.RemoveObjectFromAsset(subObject);
+				AssetDatabase.RemoveObjectFromAsset(subAsset);
 			}
 
 			/// <summary>
-			///     Sets (changes) an asset's 'main' object.
-			///     Note: The subObject must already be a sub object of the targeted asset.
+			///     Sets (changes) an asset's 'main' object to one of its sub-assets.
 			/// </summary>
-			/// <param name="subObject"></param>
-			/// <param name="path"></param>
-			public static void SetMain(Object subObject, Path path)
+			/// <remarks> Automatically imports the asset after changing the main type so that the change takes immediate effect. </remarks>
+			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
+			/// <param name="path">Path to the asset file.</param>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
+			/// </seealso>
+			public static void SetMain(Object subAsset, Path path)
 			{
-				AssetDatabase.SetMainObject(subObject, path);
+				AssetDatabase.SetMainObject(subAsset, path);
 				File.Import(path);
 			}
 
 			/// <summary>
-			///     Sets (changes) an asset's 'main' object.
-			///     Note: The subObject must already be a sub object of the targeted asset.
+			///     Sets (changes) an asset's 'main' object to one of its sub-assets.
 			/// </summary>
-			/// <param name="subObject"></param>
-			/// <param name="assetObject"></param>
-			public static void SetMain(Object subObject, Object assetObject) =>
-				SetMain(subObject, Path.Get(assetObject));
+			/// <remarks> Automatically imports the asset after changing the main type so that the change takes immediate effect. </remarks>
+			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
+			/// <param name="asset">Instance of the asset.</param>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
+			/// </seealso>
+			public static void SetMain(Object subAsset, Object asset) => SetMain(subAsset, Path.Get(asset));
 
 			/// <summary>
 			///     Loads all sub-asset objects of an asset.
-			///     NOTE: Whether the main object is included in this list depends on the type of asset,
-			///     and whether onlyVisible is true. (Details still unclear - please ask!)
-			///     CAUTION: calling this on scene assets is not supported (error messages in console).
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <remarks>
+			///     Whether the main object is included in this list depends on the type of asset.
+			/// </remarks>
+			/// <remarks>
+			///     CAUTION: Calling this on scene assets is not supported (error messages in console).
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <returns>
+			///     All sub-assets of the asset, possibly excluding the main asset. Or an empty array if load failed or there are
+			///     no sub-assets and the asset type does not include the main type in the sub-assets list.
+			/// </returns>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>
+			/// </seealso>
 			public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
 
 			/// <summary>
 			///     Loads only the visible (representation) sub-asset objects of an asset.
-			///     NOTE: Whether the main object is included in this list depends on the type of asset,
-			///     and whether onlyVisible is true. (Details still unclear - please ask!)
-			///     CAUTION: calling this on scene assets is not supported (error messages in console).
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <remarks>
+			///     The visible representations are those sub-assets you see in the project view when an asset is
+			///     expandable like a folder.
+			/// </remarks>
+			/// <remarks>Does not include the main asset.</remarks>
+			/// <remarks>
+			///     CAUTION: Calling this on scene assets is not supported (error messages in console).
+			/// </remarks>
+			/// <param name="path">Path to an asset file.</param>
+			/// <returns>
+			///     All visible sub-assets of the asset, excluding the main asset. Or an empty array if load failed or there are
+			///     no sub-assets.
+			/// </returns>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html">AssetDatabase.LoadAllAssetRepresentationsAtPath</a>
+			/// </seealso>
 			public static Object[] LoadVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
 		}
 	}

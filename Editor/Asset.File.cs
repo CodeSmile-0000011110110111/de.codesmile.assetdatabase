@@ -119,7 +119,7 @@ namespace CodeSmile.Editor
 			///     Writes the object to disk. Overwrites any existing file.
 			/// </summary>
 			/// <remarks>Creates missing folders in the destination path. </remarks>
-			/// <param name="obj">The object to save as an asset file.</param>
+			/// <param name="instance">The object to save as an asset file.</param>
 			/// <param name="path">Path to a file with extension.</param>
 			/// <returns>The newly created asset.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.CreateAsNew(UnityEngine.Object,Path)" />
@@ -129,13 +129,13 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object Create(Object obj, Path path) => CreateInternal(obj, path);
+			public static Object Create(Object instance, Path path) => CreateInternal(instance, path);
 
 			/// <summary>
 			///     Writes the object to disk. Generates a unique file name if an asset exists at the path.
 			/// </summary>
 			/// <remarks>Creates missing folders in the destination path. </remarks>
-			/// <param name="obj">The object to save as an asset file.</param>
+			/// <param name="instance">The object to save as an asset file.</param>
 			/// <param name="path">Path to a file with extension. Note that the asset's actual file name may differ.</param>
 			/// <returns>The newly created asset.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Create(UnityEngine.Object,Path)" />
@@ -145,16 +145,16 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object CreateAsNew(Object obj, Path path) => CreateInternal(obj, path.UniqueFilePath);
+			public static Object CreateAsNew(Object instance, Path path) => CreateInternal(instance, path.UniqueFilePath);
 
-			internal static Object CreateInternal(Object obj, Path path)
+			internal static Object CreateInternal(Object instance, Path path)
 			{
-				ThrowIf.ArgumentIsNull(obj, nameof(obj));
+				ThrowIf.ArgumentIsNull(instance, nameof(instance));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
 				path.CreateFolders();
-				AssetDatabase.CreateAsset(obj, path);
-				return obj;
+				AssetDatabase.CreateAsset(instance, path);
+				return instance;
 			}
 
 			/// <summary>
@@ -182,12 +182,12 @@ namespace CodeSmile.Editor
 			/// <remarks>
 			///     Depending on how changes were made you may have to use CodeSmile.Editor.Asset.File.ForceSave instead.
 			/// </remarks>
-			/// <param name="obj">The object to save.</param>
+			/// <param name="asset">The asset to save.</param>
 			/// <see cref="CodeSmile.Editor.Asset.File.ForceSave" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a>
 			/// </seealso>
-			public static void Save(Object obj) => SaveInternal(obj);
+			public static void Save(Object asset) => SaveInternal(asset);
 
 			/// <summary>
 			///     Forces the object to be saved to disk. Marks the object as dirty and then calls
@@ -200,7 +200,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/SerializedObject.html">SerializedObject</a> or
 			///     <a href="https://docs.unity3d.com/ScriptReference/SerializedProperty.html">SerializedProperty</a> classes.
 			/// </remarks>
-			/// <param name="obj">The object to mark as dirty, then save.</param>
+			/// <param name="asset">The asset to mark as dirty, then save.</param>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Save" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a>
@@ -208,17 +208,17 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty</a>
 			/// </seealso>
-			public static void ForceSave(Object obj) => SaveInternal(obj, true);
+			public static void ForceSave(Object asset) => SaveInternal(asset, true);
 
-			private static void SaveInternal(Object obj, Boolean forceSave = false)
+			private static void SaveInternal(Object asset, Boolean forceSave = false)
 			{
-				ThrowIf.ArgumentIsNull(obj, nameof(obj));
-				ThrowIf.NotInDatabase(obj);
+				ThrowIf.ArgumentIsNull(asset, nameof(asset));
+				ThrowIf.NotInDatabase(asset);
 
 				if (forceSave)
-					EditorUtility.SetDirty(obj);
+					EditorUtility.SetDirty(asset);
 
-				AssetDatabase.SaveAssetIfDirty(obj);
+				AssetDatabase.SaveAssetIfDirty(asset);
 			}
 
 			/// <summary>
@@ -629,13 +629,13 @@ namespace CodeSmile.Editor
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
 			/// </summary>
 			/// <remarks>Returns false if obj is not an asset but an in-memory instance.</remarks>
-			/// <param name="obj">The object to test for editability.</param>
+			/// <param name="instance">The object to test for editability.</param>
 			/// <returns>True if Unity can open assets of this type. False if it cannot or if obj is not an asset.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.OpenExternal(UnityEngine.Object,int,int)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
-			public static Boolean CanOpenInEditor([NotNull] Object obj) => CanOpenInEditor(obj.GetInstanceID());
+			public static Boolean CanOpenInEditor([NotNull] Object instance) => CanOpenInEditor(instance.GetInstanceID());
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
@@ -655,7 +655,7 @@ namespace CodeSmile.Editor
 			/// <remarks>
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </remarks>
-			/// <param name="obj">The asset to open externally.</param>
+			/// <param name="asset">The asset to open externally.</param>
 			/// <param name="lineNumber">Optional line number to highlight. Depends on application support.</param>
 			/// <param name="columnNumber">Optional column/character number to highlight. Depends on application support.</param>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.CanOpenInEditor(UnityEngine.Object)" />
@@ -663,8 +663,8 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html">AssetDatabase.OpenAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // cannot be tested
-			public static void OpenExternal(Object obj, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
-				AssetDatabase.OpenAsset(obj, lineNumber, columnNumber);
+			public static void OpenExternal(Object asset, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+				AssetDatabase.OpenAsset(asset, lineNumber, columnNumber);
 
 			/// <summary>
 			///     Opens the asset in the application associated with the file's extension.
@@ -723,14 +723,14 @@ namespace CodeSmile.Editor
 			///     Deletes an asset file or folder.
 			/// </summary>
 			/// <remarks> Does nothing if there is no file or folder at the given path. </remarks>
-			/// <param name="obj">The asset to delete.</param>
+			/// <param name="asset">The asset to delete.</param>
 			/// <returns>True if the asset was deleted, false otherwise.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Delete(Path)" />
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Trash(UnityEngine.Object)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html">AssetDatabase.DeleteAsset</a>
 			/// </seealso>
-			public static Boolean Delete(Object obj) => Delete(Path.Get(obj));
+			public static Boolean Delete(Object asset) => Delete(Path.Get(asset));
 
 			/// <summary>
 			///     Tries to delete multiple files/folders.
@@ -787,14 +787,14 @@ namespace CodeSmile.Editor
 			///     Similar to delete, but recoverable by user action.
 			///     Does nothing if there is no file or folder at the given path.
 			/// </remarks>
-			/// <param name="obj">The asset to trash.</param>
+			/// <param name="asset">The asset to trash.</param>
 			/// <returns>True if the asset was trashed, false otherwise.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Delete(Path)" />
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Trash(UnityEngine.Object)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html">AssetDatabase.MoveAssetToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(Object obj) => Trash(Path.Get(obj));
+			public static Boolean Trash(Object asset) => Trash(Path.Get(asset));
 
 			/// <summary>
 			///     Tries to move multiple files/folders to the OS trash.

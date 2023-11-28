@@ -25,6 +25,11 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the type of the main asset for the GUID.
 		/// </summary>
+		/// <remarks>
+		///     In Unity 2023.2 it uses AssetDatabase.GetMainAssetTypeFromGUID.
+		///     The method exists in 2022.2 but not in the early patch versions 0f1 through 6f1.
+		///     In earlier versions the type is obtained from the path's GUID.
+		/// </remarks>
 		/// <param name="guid">Guid of an asset.</param>
 		/// <returns>Type of the asset. Null if the guid is not known or not an asset.</returns>
 		/// <seealso cref="">
@@ -56,7 +61,7 @@ namespace CodeSmile.Editor
 		/// var (guid, fileId) = Asset.GetGuidAndFileId(obj);
 		/// </code>
 		/// </example>
-		/// <param name="obj">Object from which GUID and FileId should be obtained.</param>
+		/// <param name="asset">Object from which GUID and FileId should be obtained.</param>
 		/// <seealso cref="CodeSmile.Editor.Asset.GetGuid" />
 		/// <seealso cref="CodeSmile.Editor.Asset.GetFileId" />
 		/// <seealso cref="">
@@ -66,14 +71,14 @@ namespace CodeSmile.Editor
 		///     The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset.
 		/// </returns>
 		// ValueTuple makes doxygen accept it as documented, see: https://github.com/doxygen/doxygen/issues/9618
-		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object obj)
+		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object asset)
 		{
-			if (obj == null)
+			if (asset == null)
 				return (new GUID(), 0L);
 
 			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
 			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? (new GUID(guid), localId)
 				: (new GUID(), 0L);
 		}
@@ -81,21 +86,21 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
 		/// </summary>
-		/// <param name="obj"></param>
+		/// <param name="asset"></param>
 		/// <seealso cref="CodeSmile.Editor.Asset.GetFileId" />
 		/// <seealso cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
 		/// <seealso cref="">
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
 		/// <returns></returns>
-		public static GUID GetGuid(Object obj)
+		public static GUID GetGuid(Object asset)
 		{
-			if (obj == null)
+			if (asset == null)
 				return new GUID();
 
 			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
 			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var guid, out localId)
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? new GUID(guid)
 				: new GUID();
 		}
@@ -103,21 +108,21 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the local FileID of the object.
 		/// </summary>
-		/// <param name="obj"></param>
+		/// <param name="asset"></param>
 		/// <seealso cref="CodeSmile.Editor.Asset.GetGuid" />
 		/// <seealso cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
 		/// <seealso cref="">
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
 		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
-		public static Int64 GetFileId(Object obj)
+		public static Int64 GetFileId(Object asset)
 		{
-			if (obj == null)
+			if (asset == null)
 				return 0L;
 
 			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
 			var localId = Int64.MaxValue;
-			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out var _, out localId) ? localId : 0L;
+			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var _, out localId) ? localId : 0L;
 		}
 
 		/// <summary>
@@ -130,22 +135,22 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the icon associated with the asset type.
 		/// </summary>
-		/// <param name="obj">The object for which to get the icon.</param>
+		/// <param name="asset">The object for which to get the icon.</param>
 		/// <returns>The object's icon texture or null. If the obj is a sub-asset then the main asset's icon is returned.</returns>
-		public static Texture2D GetIcon(Object obj) => GetIcon(Path.Get(obj));
+		public static Texture2D GetIcon(Object asset) => GetIcon(Path.Get(asset));
 
 		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a failure message.
 		/// </summary>
 		/// <returns>The last error message or empty string if the last operation succeeded.</returns>
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Rename"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Move"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Copy"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.File.CopyAsNew"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.Path.IsValid"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable"/>
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable"/>
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Rename" />
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Move" />
+		/// <seealso cref="CodeSmile.Editor.Asset.File.Copy" />
+		/// <seealso cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
+		/// <seealso cref="CodeSmile.Editor.Asset.Path.IsValid" />
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
+		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
 		public static String GetLastErrorMessage() => s_LastErrorMessage;
 
 		private static void SetLastErrorMessage(String message) =>

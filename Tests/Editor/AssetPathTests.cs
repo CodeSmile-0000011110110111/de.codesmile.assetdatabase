@@ -183,10 +183,9 @@ public class AssetPathTests : AssetTestBase
 	{
 		var path = (Asset.Path)input;
 
-		var success = path.Rename(newFileName);
+		path.Rename(newFileName);
 
 		Assert.AreEqual(expected, path);
-		Assert.True(String.IsNullOrEmpty(newFileName) ? success == false : success);
 	}
 
 	[TestCase("Assets", true)]

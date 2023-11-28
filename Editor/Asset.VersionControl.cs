@@ -23,7 +23,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path"></param>
 			/// <param name="options"></param>
-			/// <returns></returns>
+			/// <param name="CONTINUE HERE"></param>
 			/// <see cref="Asset.GetLastErrorMessage" />
 			public static Boolean CanMakeEditable(Path path, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
@@ -71,7 +71,7 @@ namespace CodeSmile.Editor
 			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
 			public static void CanMakeEditable(Object[] objects, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				CanMakeEditable(Path.ToAssetPaths(objects), out notEditablePaths, options);
+				CanMakeEditable(Path.Get(objects), out notEditablePaths, options);
 
 			/// <summary>
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
@@ -142,7 +142,7 @@ namespace CodeSmile.Editor
 			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
 			public static void IsEditable(Object[] objects, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				IsEditable(Path.ToAssetPaths(objects), out notEditablePaths, options);
+				IsEditable(Path.Get(objects), out notEditablePaths, options);
 
 			/// <summary>
 			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.

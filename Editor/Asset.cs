@@ -39,7 +39,7 @@ namespace CodeSmile.Editor
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
 			var obj = File.CreateInternal(contents, path);
-			InitWithObject(obj);
+			InitWithMainObject(obj);
 		}
 
 		/// <summary>
@@ -58,7 +58,7 @@ namespace CodeSmile.Editor
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
 			var obj = File.CreateInternal(contents, path);
-			InitWithObject(obj);
+			InitWithMainObject(obj);
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace CodeSmile.Editor
 		/// <remarks>
 		///     The object must not already be an asset file (throws exception).
 		/// </remarks>
-		/// <param name="obj">The object to create as an asset file.</param>
+		/// <param name="instance">The instance to create as an asset file.</param>
 		/// <param name="path">Path where to save the new asset file, with extension.</param>
 		/// <param name="overwriteExisting">
 		///     If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique
@@ -78,15 +78,15 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentException">If the object is already serialized to an asset file.</exception>
 		/// <seealso cref="CodeSmile.Editor.Asset(UnityEngine.Object)" />
 		/// <seealso cref="CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)" />
-		public Asset(Object obj, Path path, Boolean overwriteExisting = false)
+		public Asset(Object instance, Path path, Boolean overwriteExisting = false)
 		{
-			ThrowIf.ArgumentIsNull(obj, nameof(obj));
+			ThrowIf.ArgumentIsNull(instance, nameof(instance));
 			ThrowIf.ArgumentIsNull(path, nameof(path));
-			ThrowIf.AlreadyAnAsset(obj);
+			ThrowIf.AlreadyAnAsset(instance);
 
 			path = Path.UniquifyAsNeeded(path, overwriteExisting);
-			File.CreateInternal(obj, path);
-			InitWithObject(obj);
+			File.CreateInternal(instance, path);
+			InitWithMainObject(instance);
 		}
 
 		/// <summary>
@@ -107,10 +107,10 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Uses an existing asset reference.
 		/// </summary>
-		/// <param name="obj">Instance of an asset.</param>
+		/// <param name="instance">Instance of an asset.</param>
 		/// <exception cref="ArgumentNullException">If the object is null.</exception>
 		/// <exception cref="ArgumentException">If the object is not an asset.</exception>
-		public Asset(Object obj) => InitWithObject(obj);
+		public Asset(Object instance) => InitWithMainObject(instance);
 
 		/// <summary>
 		///     Implicit conversion to UnityEngine.Object.
@@ -130,14 +130,14 @@ namespace CodeSmile.Editor
 		///     Implicit conversion of UnityEngine.Object to an Asset.
 		/// </summary>
 		/// <remarks>Throws exception if obj is not an asset object.</remarks>
-		/// <param name="obj">Existing asset reference.</param>
+		/// <param name="asset">Existing asset reference.</param>
 		/// <returns>An asset instance or null if obj is null.</returns>
 		/// <example>
 		///     <code>
 		///  Asset asset = obj; // implicit conversion: Object to Asset
 		/// 		</code>
 		/// </example>
-		public static implicit operator Asset(Object obj) => obj != null ? new Asset(obj) : null;
+		public static implicit operator Asset(Object asset) => asset != null ? new Asset(asset) : null;
 
 		/// <summary>
 		///     Implicit conversion of Asset.Path to an Asset instance.
@@ -507,18 +507,18 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
 		/// </summary>
-		/// <param name="subObject">The object instance to add as subobject to this asset.</param>
+		/// <param name="instance">The object instance to add as subobject to this asset.</param>
 		/// <seealso cref="RemoveSubAsset" />
 		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
-		public void AddSubAsset(Object subObject) => SubAsset.Add(subObject, m_MainObject);
+		public void AddSubAsset(Object instance) => SubAsset.Add(instance, m_MainObject);
 
 		/// <summary>
 		///     Removes an object from the asset's sub-objects.
 		/// </summary>
-		/// <param name="subObject">The sub-asset object to remove.</param>
+		/// <param name="subAsset">The sub-asset object to remove.</param>
 		/// <seealso cref="AddSubAsset" />
 		/// <seealso cref="CodeSmile.Editor.Asset.SubAssets" />
-		public void RemoveSubAsset(Object subObject) => SubAsset.Remove(subObject);
+		public void RemoveSubAsset(Object subAsset) => SubAsset.Remove(subAsset);
 
 		private void InvalidateInstance()
 		{
@@ -539,13 +539,13 @@ namespace CodeSmile.Editor
 			ThrowIf.AssetLoadReturnedNull(m_MainObject, m_AssetPath);
 		}
 
-		private void InitWithObject(Object obj)
+		private void InitWithMainObject(Object mainObject)
 		{
-			ThrowIf.ArgumentIsNull(obj, nameof(obj));
-			ThrowIf.NotInDatabase(obj);
+			ThrowIf.ArgumentIsNull(mainObject, nameof(mainObject));
+			ThrowIf.NotInDatabase(mainObject);
 
-			m_MainObject = obj;
-			m_AssetPath = Path.Get(obj);
+			m_MainObject = mainObject;
+			m_AssetPath = Path.Get(mainObject);
 		}
 
 		private void InitWithGuid(GUID guid)

@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -14,41 +15,78 @@ namespace CodeSmile.Editor
 	{
 		public partial class Path
 		{
-			// all are lowercase
+			// all lowercase
 			private static readonly String[] s_AllowedAssetSubfolders =
 				{ "assets", "library", "logs", "packages", "projectsettings", "temp", "usersettings" };
 
 			/// <summary>
-			///     Returns the path to the project's 'Assets' subfolder.
+			///     Returns the absolute path to the project's <c>Assets</c> subfolder.
 			/// </summary>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/Application-dataPath.html">Application.dataPath</a>
+			/// </seealso>
 			public static String FullAssetsPath => Application.dataPath;
 
 			/// <summary>
-			///     Returns the path to the project's 'Packages' subfolder.
+			///     Returns the absolute path to the project's <c>Packages</c> subfolder.
 			/// </summary>
 			public static String FullPackagesPath => $"{FullProjectPath}/Packages";
 
 			/// <summary>
-			///     Returns the path to the project's root folder.
+			///     Returns the absolute path to the project's <c>Library</c> subfolder.
+			/// </summary>
+			public static String FullLibraryPath => $"{FullProjectPath}/Library";
+
+			/// <summary>
+			///     Returns the absolute path to the project's <c>Logs</c> subfolder.
+			/// </summary>
+			public static String FullLogsPath => $"{FullProjectPath}/Logs";
+
+			/// <summary>
+			///     Returns the absolute path to the project's <c>ProjectSettings</c> subfolder.
+			/// </summary>
+			public static String FullProjectSettingsPath => $"{FullProjectPath}/ProjectSettings";
+
+			/// <summary>
+			///     Returns the absolute path to the project's <c>UserSettings</c> subfolder.
+			/// </summary>
+			public static String FullUserSettingsPath => $"{FullProjectPath}/UserSettings";
+
+			/// <summary>
+			///     Returns the absolute path to the project's <c>Temp</c> subfolder.
+			/// </summary>
+			public static String FullProjectTempPath => $"{FullProjectPath}/Temp";
+
+			/// <summary>
+			///     Returns the absolute path to the project's root folder.
 			/// </summary>
 			public static String FullProjectPath => FullAssetsPath.Substring(0, Application.dataPath.Length - 6);
 
 			/// <summary>
-			///     Gets the path of an asset file.
+			///     Gets the relative path of an asset.
 			/// </summary>
-			/// <param name="obj"></param>
-			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
-			public static Path Get(Object obj)
+			/// <param name="asset">Instance of an asset.</param>
+			/// <returns>The relative path to the asset file, or null if the object is not an asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.Get(GUID)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
+			/// </seealso>
+			public static Path Get(Object asset)
 			{
-				var path = AssetDatabase.GetAssetPath(obj);
+				var path = AssetDatabase.GetAssetPath(asset);
 				return String.IsNullOrEmpty(path) ? null : (Path)path;
 			}
 
 			/// <summary>
-			///     Gets the path of an asset file.
+			///     Gets the relative path of an asset.
 			/// </summary>
-			/// <param name="guid"></param>
-			/// <returns>The path to the asset file, or null if the object is not an asset.</returns>
+			/// <param name="guid">GUID of an asset.</param>
+			/// <returns>The relative path to the asset file, or null if the object is not an asset.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.Get(UnityEngine.Object)" />
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.Get(UnityEngine.Object[])" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
+			/// </seealso>
 			public static Path Get(GUID guid)
 			{
 				var path = AssetDatabase.GUIDToAssetPath(guid);
@@ -56,50 +94,89 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns the GUID for the path.
-			///     Returns an empty GUID if the asset at the path does not exist in the database.
-			///     <see cref="Exists" />
-			///     <see cref="ExistsInFileSystem" />
+			///     Converts an array of asset instances to their asset paths.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="options"></param>
-			/// <returns></returns>
+			/// <param name="assets">Asset instances.</param>
+			/// <returns>
+			///     An array of paths for each input object. The returned array has the same size. Items can be null if the input
+			///     object was either null or not an asset.
+			/// </returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.Get(UnityEngine.Object)" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
+			/// </seealso>
+			public static String[] Get(Object[] assets)
+			{
+				ThrowIf.ArgumentIsNull(assets, nameof(assets));
+
+				var objectCount = assets.Length;
+				var paths = new String[objectCount];
+				for (var i = 0; i < objectCount; i++)
+					paths[i] = Get(assets[i]);
+
+				return paths;
+			}
+
+			/// <summary>
+			///     Returns the GUID for an asset path.
+			/// </summary>
+			/// <param name="path">Path to an asset.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetPathToGUIDOptions.html">AssetPathToGUIDOptions</a>
+			/// </param>
+			/// <returns>GUID of the asset or an empty GUID if the path does not exist in the database.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.Exists" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html">AssetDatabase.AssetPathToGUID</a>
+			/// </seealso>
 			public static GUID GetGuid(Path path,
 				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
 				new(AssetDatabase.AssetPathToGUID(path, options));
 
 			/// <summary>
-			///     Returns the .meta file path from a path to an asset.
+			///     Returns the .meta file path for an asset path.
 			/// </summary>
-			/// <param name="path"></param>
+			/// <param name="path">Path to an asset.</param>
 			/// <returns></returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.FromMeta" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
+			/// </seealso>
 			public static Path ToMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
 
 			/// <summary>
-			///     Returns the asset's file path from its .meta file path.
+			///     Returns the asset's file path from a .meta file path.
 			/// </summary>
-			/// <param name="path"></param>
+			/// <param name="path">Path to a .meta file.</param>
 			/// <returns></returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.ToMeta" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
+			/// </seealso>
 			public static Path FromMeta(Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
 
 			/// <summary>
 			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
 			/// </summary>
-			/// <param name="obj"></param>
+			/// <param name="asset">An object instance.</param>
 			/// <returns></returns>
-			public static Path GetScene(Object obj) => AssetDatabase.GetAssetOrScenePath(obj);
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetOrScenePath.html">AssetDatabase.GetAssetOrScenePath</a>
+			/// </seealso>
+			public static Path GetScene(Object asset) => AssetDatabase.GetAssetOrScenePath(asset);
 
 			/// <summary>
-			///     Returns true if the provided path is valid. This means it contains no illegal folder or file name
-			///     characters and it isn't too long.
-			///     If this returns false, Asset.GetLastErrorMessage() contains more detailed information.
-			///     <see cref="Asset.GetLastErrorMessage()" />
+			///     Returns true if the provided path is valid.
 			/// </summary>
-			/// <param name="path"></param>
+			/// <remarks>
+			///     If this returns false CodeSmile.Editor.Asset.GetLastErrorMessage contains the error message.
+			/// </remarks>
+			/// <param name="path">String representation of an absolute or relative path.</param>
 			/// <returns>
-			///     True if the string is a valid path and contains no illegal characters for a path or file.
+			///     True if the string is a valid path and contains no illegal characters for a path or file, and isn't too long.
 			///     False in all other cases.
 			/// </returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
 			public static Boolean IsValid(String path)
 			{
 				var isValid = true;
@@ -131,26 +208,31 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Tests if the given file exists.
+			///     Tests if the given file exists in the file system.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <param name="path">Path to a file.</param>
+			/// <returns>True if the file exists in the file system. False otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.FolderExists" />
 			public static Boolean FileExists(Path path) => System.IO.File.Exists(path.m_RelativePath);
 
 			/// <summary>
-			///     Returns true if the folder exists. False otherwise, or if the path is to a file.
+			///     Tests if the given folder exists in the file system.
 			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>true if the folder exists</returns>
-			public static Boolean FolderExists(Path path) =>
-				path != null ? AssetDatabase.IsValidFolder(path.m_RelativePath) : false;
+			/// <param name="path">Path to a folder.</param>
+			/// <returns>True if the folder exists in the file system. False otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.Path.FileExists" />
+			public static Boolean FolderExists(Path path) => Directory.Exists(path.m_RelativePath);
 
 			/// <summary>
-			///     Creates the folders in the path recursively. Path may point to a file, but only folders
-			///     will be created. If the last path chunk has an extension, it is considered a file.
+			///     Creates any missing folders in the path.
 			/// </summary>
-			/// <param name="path">path to a file or folder</param>
-			/// <returns>the GUID of the deepest folder in the hierarchy</returns>
+			/// <remarks>Unlike AssetDatabase.CreateFolder this creates the entire path in one go rather than each folder one by one.</remarks>
+			/// <remarks> Path may point to either a file or folder. If the last path element has an extension it is considered a file. </remarks>
+			/// <param name="path">Path to a file or folder.</param>
+			/// <returns>GUID of the deepest (topmost) folder in the path.</returns>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateFolder.html">AssetDatabase.CreateFolder</a>
+			/// </seealso>
 			public static GUID CreateFolders(Path path)
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
@@ -184,13 +266,30 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns the path either unaltered or with a numbering to make the file unique.
-			///     This is only done if an asset file exists at the path. It does not alter folder paths.
-			///     See also: Project Settings => Editor => Numbering Scheme
-			///     Note: 'Uniquify' is a proper english verb, it means "to make unique".
+			///     Returns the names of all subfolders in the path.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <param name="path">Path to a folder.</param>
+			/// <returns>Names of each subfolder in the path. Empty array if there are no subfolders or the path points to a file.</returns>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a>
+			/// </seealso>
+			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
+
+			/// <summary>
+			///     Returns the path altered with a numbering if an asset already exists (and is imported) at the path.
+			/// </summary>
+			/// <remarks>
+			///     See also: Project Settings => Editor => Numbering Scheme
+			/// </remarks>
+			/// <remarks>
+			///     PS: "Uniquify" is a proper english verb. It means "to make unique". Methods carrying this verb
+			///     are commonly found in SQL database APIs.
+			/// </remarks>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html">AssetDatabase.GenerateUniqueAssetPath</a>
+			/// </seealso>
+			/// <param name="path">The input path.</param>
+			/// <returns>The path possibly altered with a number in the last path element.</returns>
 			public static Path UniquifyFileName(Path path)
 			{
 				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
@@ -198,38 +297,11 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Converts an array of objects to their asset paths.
-			///     The returned array has the same size.
-			///     Note that some items may be null if the input was null or not an asset.
-			/// </summary>
-			/// <param name="objects"></param>
-			/// <returns></returns>
-			public static String[] ToAssetPaths(Object[] objects)
-			{
-				ThrowIf.ArgumentIsNull(objects, nameof(objects));
-
-				var objectCount = objects.Length;
-				var paths = new String[objectCount];
-				for (var i = 0; i < objectCount; i++)
-					paths[i] = Get(objects[i]);
-
-				return paths;
-			}
-
-			/// <summary>
 			///     Converts a collection of Path instances to a string array.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <returns></returns>
+			/// <param name="paths">Input paths.</param>
+			/// <returns>Relative paths as strings.</returns>
 			public static String[] ToStrings(IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
-
-			/// <summary>
-			///     Returns the names of all subfolders in the path.
-			///     Returns an empty array of the path points to a file.
-			/// </summary>
-			/// <param name="path"></param>
-			/// <returns>Paths to all subfolders, or empty array if there are no subfolders or the path points to a file.</returns>
-			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			internal static Path UniquifyAsNeeded(Path path, Boolean overwriteExisting) =>
 				overwriteExisting ? path : path.UniqueFilePath;

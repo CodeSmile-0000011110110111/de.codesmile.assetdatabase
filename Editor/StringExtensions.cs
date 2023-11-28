@@ -11,11 +11,14 @@ namespace CodeSmile.Editor
 	public static class StringExtensions
 	{
 		/// <summary>
-		///     Converts any backslashes in the path to forward slashes to ensure the path works correctly
-		///     on all supported editor platforms (Windows, Mac, Linux).
+		///     Converts any backslashes in the path to forward slashes
 		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
+		/// <remarks>
+		///     Forward slashes are compatible with all supported Unity Editor platforms: Windows, Mac, Linux.
+		///     Backslashes only work on Windows.
+		/// </remarks>
+		/// <param name="path">Input string.</param>
+		/// <returns>The string with any backslashes replaced by forward slashes.</returns>
 		public static String ToForwardSlashes(this String path) => path.Replace('\\', '/');
 	}
 }

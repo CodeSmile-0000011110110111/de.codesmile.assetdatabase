@@ -60,14 +60,14 @@ namespace CodeSmile.Editor
 			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
 			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
-			/// <param name="obj">Instance of an asset file.</param>
+			/// <param name="asset">Instance of an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
-			public static Type GetActive(Object obj) => GetActive(GetGuid(obj));
+			public static Type GetActive(Object asset) => GetActive(GetGuid(asset));
 
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
@@ -143,12 +143,12 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Gets the available AssetImporter types for assets of this kind.
 			/// </summary>
-			/// <param name="obj">Instance of an asset file.</param>
+			/// <param name="asset">Instance of an asset file.</param>
 			/// <returns>AssetImporter types that handle importing assets of the same kind as the given asset file.</returns>
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
 			/// </seealso>
-			public static Type[] GetAvailable(Object obj) => GetAvailable(Path.Get(obj));
+			public static Type[] GetAvailable(Object asset) => GetAvailable(Path.Get(asset));
 
 			/// <summary>
 			///     Returns an asset's default importer type.
@@ -171,13 +171,13 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns an asset's default importer type.
 			/// </summary>
-			/// <param name="obj">An asset instance.</param>
+			/// <param name="asset">An asset instance.</param>
 			/// <returns>The type of the default importer for assets of this kind.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
 			/// </seealso>
-			public static Type GetDefault(Object obj) => GetDefault(Path.Get(obj));
+			public static Type GetDefault(Object asset) => GetDefault(Path.Get(asset));
 
 			/// <summary>
 			///     Returns an asset's overridden importer type.
@@ -194,14 +194,14 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns an asset's overridden importer type.
 			/// </summary>
-			/// <param name="obj">An asset instance.</param>
+			/// <param name="asset">An asset instance.</param>
 			/// <returns>The overridden AssetImporter type or null if there is no overridden importer.</returns>
 			/// <seealso cref="CodeSmile.Editor.Asset.Importer.SetOverride" />
 			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
 			/// </seealso>
-			public static Type GetOverride(Object obj) => GetOverride(Path.Get(obj));
+			public static Type GetOverride(Object asset) => GetOverride(Path.Get(asset));
 
 			/// <summary>
 			///     Sets the custom AssetImporter to use for the specified asset.
