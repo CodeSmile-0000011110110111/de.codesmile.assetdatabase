@@ -19,12 +19,19 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Returns true if the asset can be opened for editing in the version control system.
-			///     If false, GetLastErrorMessage() returns the reason.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <param name="options"></param>
-			/// <param name="CONTINUE HERE"></param>
-			/// <see cref="Asset.GetLastErrorMessage" />
+			/// <remarks>
+			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			/// </remarks>
+			/// <param name="path">Path to an asset.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <returns>True if the path can be opened for editing, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
+			/// </seealso>
 			public static Boolean CanMakeEditable(Path path, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var canOpen = AssetDatabase.CanOpenForEdit(path, out var message, options);
@@ -36,12 +43,19 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Returns true if the asset can be opened for editing in the version control system.
-			///     If false, GetLastErrorMessage() returns the reason.
 			/// </summary>
-			/// <param name="asset"></param>
-			/// <param name="options"></param>
-			/// <returns></returns>
-			/// <see cref="Asset.GetLastErrorMessage" />
+			/// <remarks>
+			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			/// </remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <returns>True if the path can be opened for editing, false otherwise.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
+			/// </seealso>
 			public static Boolean CanMakeEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				ThrowIf.ArgumentIsNull(asset, nameof(asset));
@@ -50,37 +64,35 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual paths again.
+			///     Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
+			/// <remarks>To get a failure message query each individual path. </remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that cannot be opened for editing. List is empty if all can be opened.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
+			/// </seealso>
 			public static void CanMakeEditable(Path[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				CanMakeEditable(Path.ToStrings(paths), out notEditablePaths, options);
 
 			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual paths again.
+			///     Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="assets"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
-			public static void CanMakeEditable(Object[] assets, out List<String> notEditablePaths,
-				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				CanMakeEditable(Path.Get(assets), out notEditablePaths, options);
-
-			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual paths again.
-			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
+			/// <remarks>To get a failure message query each individual path. </remarks>
+			/// <param name="paths">Instances of assets.</param>
+			/// <param name="notEditablePaths">List of paths that cannot be opened for editing. List is empty if all can be opened.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
+			/// </seealso>
 			public static void CanMakeEditable(String[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption)
 			{
@@ -89,12 +101,36 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns true if the meta file is open for editing in the version control system.
-			///     If false, GetLastErrorMessage() contains the failure reason.
+			///     Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="asset"></param>
-			/// <param name="options"></param>
+			/// <remarks>To get a failure message query each individual path. </remarks>
+			/// <param name="assets">Instances of assets.</param>
+			/// <param name="notEditablePaths">List of paths that cannot be opened for editing. List is empty if all can be opened.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
+			/// </seealso>
+			public static void CanMakeEditable(Object[] assets, out List<String> notEditablePaths,
+				StatusQueryOptions options = DefaultStatusQueryOption) =>
+				CanMakeEditable(Path.Get(assets), out notEditablePaths, options);
+
+			/// <summary>
+			///     Returns true if the meta file is open for editing in the version control system.
+			/// </summary>
+			/// <remarks>
+			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			/// </remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
 			/// <returns></returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMetaFileOpenForEdit.html">AssetDatabase.IsMetaFileOpenForEdit</a>
+			/// </seealso>
 			public static Boolean IsMetaEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var isOpen = AssetDatabase.IsMetaFileOpenForEdit(asset, out var message, options);
@@ -106,11 +142,18 @@ namespace CodeSmile.Editor
 
 			/// <summary>
 			///     Returns true if the asset file is open for editing in the version control system.
-			///     If false, GetLastErrorMessage() contains the failure reason.
 			/// </summary>
-			/// <param name="asset"></param>
-			/// <param name="options"></param>
+			/// <remarks>
+			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			/// </remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
 			/// <returns></returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
+			/// <seealso cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
+			/// </seealso>
 			public static Boolean IsEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var isOpen = AssetDatabase.IsOpenForEdit(asset, out var message, options);
@@ -121,37 +164,31 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual paths again.
+			///     Tests if the assets can be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
+			/// <remarks>To get an error message query each failed path individually.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
+			/// </seealso>
 			public static void IsEditable(Path[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				IsEditable(Path.ToStrings(paths), out notEditablePaths, options);
 
 			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual objects again.
+			///     Tests if the assets can be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="assets"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
-			public static void IsEditable(Object[] assets, out List<String> notEditablePaths,
-				StatusQueryOptions options = DefaultStatusQueryOption) =>
-				IsEditable(Path.Get(assets), out notEditablePaths, options);
-
-			/// <summary>
-			///     Returns a list of notEditablePaths that cannot be opened for editing in the version control system.
-			///     To get a reason, query the individual paths again.
-			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="options"></param>
-			/// <see cref="CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions)" />
+			/// <remarks>To get an error message query each failed path individually.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
+			/// </seealso>
 			public static void IsEditable(String[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption)
 			{
@@ -160,53 +197,104 @@ namespace CodeSmile.Editor
 			}
 
 			/// <summary>
-			///     Opens the file at path for editing in the version control system.
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">Unity Manual</a>
+			///     Tests if the assets can be opened for editing in the version control system.
 			/// </summary>
-			/// <param name="path"></param>
-			/// <returns></returns>
+			/// <remarks>To get an error message query each failed path individually.</remarks>
+			/// <param name="assets">Instances of assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <param name="options"><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></param>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
+			/// </seealso>
+			public static void IsEditable(Object[] assets, out List<String> notEditablePaths,
+				StatusQueryOptions options = DefaultStatusQueryOption) =>
+				IsEditable(Path.Get(assets), out notEditablePaths, options);
+
+			/// <summary>
+			///     Tries to open the path for editing in the version control system.
+			/// </summary>
+			/// <remarks>Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message if this
+			/// method returns false.</remarks>
+			/// <param name="path">Path to an asset.</param>
+			/// <returns>True if the path is now editable, false if at least one failed to open.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
+			/// </seealso>
 			public static Boolean MakeEditable(Path path) => AssetDatabase.MakeEditable(path);
 
 			/// <summary>
-			///     Opens the file paths for editing in the version control system.
-			///     Returns true if all could be opened. Returns false if one or more failed to open and the list of notEditablePaths.
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">Unity Manual</a>
+			///     Tries to open multiple paths for editing in the version control system.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <returns></returns>
+			/// <remarks>Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			/// individual paths.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <returns>True if the path is now editable, false if at least one failed to open.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
+			/// </seealso>
 			public static Boolean MakeEditable(Path[] paths, out List<String> notEditablePaths) =>
-				MakeEditableInternal(Path.ToStrings(paths), out notEditablePaths);
+				MakeMultipleEditable(Path.ToStrings(paths), out notEditablePaths);
 
 			/// <summary>
-			///     Opens the file paths for editing in the version control system.
-			///     Returns true if all could be opened. Returns false if one or more failed to open and the list of notEditablePaths.
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">Unity Manual</a>
+			///     Tries to open multiple paths for editing in the version control system.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <returns></returns>
+			/// <remarks>Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			/// individual paths.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
+			/// </seealso>
 			public static Boolean MakeEditable(String[] paths, out List<String> notEditablePaths) =>
-				MakeEditableInternal(paths, out notEditablePaths);
+				MakeMultipleEditable(paths, out notEditablePaths);
 
 			/// <summary>
-			///     Opens the file paths for editing in the version control system. Shows a prompt to the user.
-			///     Returns true if all could be opened. Returns false if one or more failed to open and the list of notEditablePaths.
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">Unity Manual</a>
+			///     Tries to open multiple paths for editing in the version control system. Shows a prompt to the user
+			/// unless the editor is in batch operation mode.
 			/// </summary>
-			/// <param name="paths"></param>
-			/// <param name="notEditablePaths"></param>
-			/// <param name="prompt">a custom prompt or null to use default prompt</param>
-			/// <returns></returns>
-			public static Boolean MakeEditableInteractive(String[] paths, out List<String> notEditablePaths,
-				String prompt = null) => MakeEditableInternal(paths, out notEditablePaths,
+			/// <remarks>Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			/// individual paths.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <param name="prompt">A message for the interactive dialog or null to use the default message.</param>
+			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
+			/// </seealso>
+			public static Boolean MakeEditableInteractive(Path[] paths, out List<String> notEditablePaths,
+				String prompt = null) => MakeMultipleEditable(Path.ToStrings(paths), out notEditablePaths,
 				prompt != null ? prompt : "Open for Edit?");
 
-			private static Boolean MakeEditableInternal(String[] paths, out List<String> notEditablePaths,
+			/// <summary>
+			///     Tries to open multiple paths for editing in the version control system. Shows a prompt to the user
+			/// unless the editor is in batch operation mode.
+			/// </summary>
+			/// <remarks>Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			/// individual paths.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
+			/// <param name="prompt">A message for the interactive dialog or null to use the default message.</param>
+			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
+			/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
+			/// </seealso>
+			public static Boolean MakeEditableInteractive(String[] paths, out List<String> notEditablePaths,
+				String prompt = null) => MakeMultipleEditable(paths, out notEditablePaths,
+				prompt != null ? prompt : "Open for Edit?");
+
+			private static Boolean MakeMultipleEditable(String[] paths, out List<String> notEditablePaths,
 				String prompt = null)
 			{
 				notEditablePaths = new List<String>();
-				return AssetDatabase.MakeEditable(paths, null, notEditablePaths);
+				return AssetDatabase.MakeEditable(paths, prompt, notEditablePaths);
 			}
 		}
 	}

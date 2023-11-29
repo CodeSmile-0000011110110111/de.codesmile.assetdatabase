@@ -7,7 +7,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using UnityEditor;
-using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmile.Editor
@@ -42,6 +41,54 @@ namespace CodeSmile.Editor
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Delete(IEnumerable{String})" />
 			/// <seealso cref="CodeSmile.Editor.Asset.File.Trash(IEnumerable{String})" />
 			public static IList<String> PathsNotDeleted => s_PathsNotDeleted;
+
+			/// <summary>
+			///     Batch multiple asset file operations to improve execution speed.
+			/// </summary>
+			/// <remarks>
+			///     Within the massAssetFileEditAction the AssetDatabase will queue any CodeSmile.Editor.Asset.File
+			///     operations and runs them afterwards in a single refresh cycle. This can significantly speed up mass
+			///     file operations.
+			/// </remarks>
+			/// <remarks>
+			///     The callback Action is safeguarded against exceptions leaving the AssetDatabase in a 'suspended' state.
+			///     Also note that Allow.. and DisallowAutoRefresh calls are already implied when using Start/StopAssetEditing.
+			///     See the code snippet below for implementation details.
+			/// </remarks>
+			/// <remarks>
+			///     CAUTION:
+			///     - Importing an asset and subsequently trying to load the asset within the callback will return null.
+			///     - When 'externally' modifying files and importing those, consider the above implication. You need to defer loading
+			///     and working with these objects. Calling BatchEditing twice is good practice (first modify & import, then load the
+			///     assets).
+			/// </remarks>
+			/// <param name="massAssetFileEditAction">Write any mass file editing code in this action.</param>
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StartAssetEditing.html">AssetDatabase.StartAssetEditing</a>
+			///     ,
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StopAssetEditing.html">AssetDatabase.StopAssetEditing</a>
+			/// </seealso>
+			public static void BatchEditing([NotNull] Action massAssetFileEditAction)
+			{
+				try
+				{
+					StartAssetEditing();
+
+					massAssetFileEditAction?.Invoke();
+				}
+				finally
+				{
+					StopAssetEditing();
+				}
+			}
+
+			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
+			[ExcludeFromCodeCoverage] // untestable
+			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
+
+			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
+			[ExcludeFromCodeCoverage] // untestable
+			internal static void StopAssetEditing() => AssetDatabase.StopAssetEditing();
 
 			/// <summary>
 			///     Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file.
@@ -145,7 +192,8 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object CreateAsNew(Object instance, Path path) => CreateInternal(instance, path.UniqueFilePath);
+			public static Object CreateAsNew(Object instance, Path path) =>
+				CreateInternal(instance, path.UniqueFilePath);
 
 			internal static Object CreateInternal(Object instance, Path path)
 			{
@@ -246,7 +294,7 @@ namespace CodeSmile.Editor
 			///     <see cref="CodeSmile.Editor.Asset.File.Create(string,Path)" />
 			///     Call CodeSmile.Editor.Asset.Database.ImportAll to get rid of externally deleted files.
 			/// </remarks>
-			/// <param name="path">Path to an asset file.</param>
+			/// <param name="path">Path to an asset.</param>
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
 			/// </param>
@@ -271,7 +319,7 @@ namespace CodeSmile.Editor
 			///     <see cref="CodeSmile.Editor.Asset.File.Create(Byte[],Path)" />
 			///     <see cref="CodeSmile.Editor.Asset.File.Create(string,Path)" />
 			/// </remarks>
-			/// <param name="path">Path to an asset file.</param>
+			/// <param name="path">Path to an asset.</param>
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
 			/// </param>
@@ -302,6 +350,42 @@ namespace CodeSmile.Editor
 				if (path.Exists == false && path.ExistsInFileSystem)
 					Import(path, options);
 			}
+
+			/// <summary>
+			///     Imports multiple paths that were created or modified 'externally'.
+			///     Externally refers to any means other than AssetDatabase methods such as System.IO or batch scripts.
+			/// </summary>
+			/// <remarks>Internally runs BatchEditing to batch the import operations.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.BatchEditing" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
+			/// </seealso>
+			public static void Import(Path[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
+				Import(Path.ToStrings(paths), options);
+
+			/// <summary>
+			///     Imports multiple paths that were created or modified 'externally'.
+			///     Externally refers to any means other than AssetDatabase methods such as System.IO or batch scripts.
+			/// </summary>
+			/// <remarks>Internally runs BatchEditing to batch the import operations.</remarks>
+			/// <param name="paths">Paths to assets.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
+			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.BatchEditing" />
+			/// <seealso cref="">
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
+			/// </seealso>
+			public static void Import(String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
+				BatchEditing(() =>
+				{
+					foreach (var path in paths)
+						AssetDatabase.ImportAsset(path, options);
+				});
 
 			/// <summary>
 			///     Loads an asset at path.
@@ -635,7 +719,8 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
-			public static Boolean CanOpenInEditor([NotNull] Object instance) => CanOpenInEditor(instance.GetInstanceID());
+			public static Boolean CanOpenInEditor([NotNull] Object instance) =>
+				CanOpenInEditor(instance.GetInstanceID());
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
@@ -826,55 +911,6 @@ namespace CodeSmile.Editor
 			/// </seealso>
 			public static Boolean Trash(IEnumerable<String> paths) =>
 				AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_PathsNotDeleted = new List<String>());
-
-			/// <summary>
-			///     Batch multiple asset file operations to improve execution speed.
-			/// </summary>
-			/// <remarks>
-			///     Within the massAssetFileEditAction the AssetDatabase will queue any CodeSmile.Editor.Asset.File
-			///     operations and runs them afterwards in a single refresh cycle. This can significantly speed up mass
-			///     file operations.
-			/// </remarks>
-			/// <remarks>
-			///     The callback Action is safeguarded against exceptions leaving the AssetDatabase in a 'suspended' state.
-			///     Also note that Allow.. and DisallowAutoRefresh calls are already implied when using Start/StopAssetEditing.
-			///     See the code snippet below for implementation details.
-			/// </remarks>
-			/// <remarks>
-			///     CAUTION:
-			///     - Importing an asset and subsequently trying to load the asset within the callback will return null.
-			///     - When 'externally' modifying files and importing those, consider the above implication. You need to defer loading
-			///     and working with these objects. Calling BatchEditing twice is good practice (first modify & import, then load the
-			///     assets).
-			/// </remarks>
-			/// <param name="massAssetFileEditAction">Write any mass file editing code in this action.</param>
-			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StartAssetEditing.html">AssetDatabase.StartAssetEditing</a>
-			/// </seealso>
-			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.StopAssetEditing.html">AssetDatabase.StopAssetEditing</a>
-			/// </seealso>
-			public static void BatchEditing([NotNull] Action massAssetFileEditAction)
-			{
-				try
-				{
-					StartAssetEditing();
-
-					massAssetFileEditAction?.Invoke();
-				}
-				finally
-				{
-					StopAssetEditing();
-				}
-			}
-
-			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
-			[ExcludeFromCodeCoverage] // untestable
-			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
-
-			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
-			[ExcludeFromCodeCoverage] // untestable
-			internal static void StopAssetEditing() => AssetDatabase.StopAssetEditing();
 		}
 	}
 }

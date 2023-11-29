@@ -62,7 +62,8 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
-			public static Boolean Contains(Object instance) => instance != null ? AssetDatabase.Contains(instance) : false;
+			public static Boolean Contains(Object instance) =>
+				instance != null ? AssetDatabase.Contains(instance) : false;
 
 			/// <summary>
 			///     Tests if the asset is in the database.
@@ -143,10 +144,10 @@ namespace CodeSmile.Editor
 			///     discuss implications with the team / tech lead.
 			/// </remarks>
 			/// <param name="paths">Paths to assets to reserialize to the current serialization version.</param>
-			/// <param name="options"></param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
+			/// </param>
 			/// <seealso cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
-			/// <seealso
-			///     cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{String},UnityEditor.ForceReserializeAssetsOptions)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
@@ -165,10 +166,10 @@ namespace CodeSmile.Editor
 			///     discuss implications with the team / tech lead.
 			/// </remarks>
 			/// <param name="paths">Paths to assets to reserialize to the current serialization version.</param>
-			/// <param name="options"></param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
+			/// </param>
 			/// <seealso cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
-			/// <seealso
-			///     cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{String},UnityEditor.ForceReserializeAssetsOptions)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
@@ -195,26 +196,34 @@ namespace CodeSmile.Editor
 			public static void SaveAll() => AssetDatabase.SaveAssets();
 
 			/// <summary>
-			///     Known as 'Refresh' this scans for and imports assets that have been modified *externally*.
-			///     Also unloads unused resources!
+			///     Scans for **externally** modified assets and imports them. Prefer to use CodeSmile.Editor.Asset.File.Import
+			///     within CodeSmile.Editor.Asset.File.BatchEditing. **CAUTION**: ImportAll ('Refresh') unloads unused resources.
+			///     This can degrade editor performance!
 			/// </summary>
 			/// <remarks>
-			///     IMPORTANT: The 'Refresh' method has traditionally been largely misunderstood and over-used.
-			///     Calling Refresh where it is unnecessary can lead to degraded Editor performance due to unloading 'unused'
-			///     assets. Those assets will then need to be reloaded when accessed again. A simple editor script that
-			///     calls 'Refresh' after common editor operations, for example on every Selection change,
-			///     can severely degrade Editor performance!
-			/// </remarks>
-			/// <remarks>
-			///     When to call ImportAll / 'Refresh'?
+			///     When to call ImportAll (same as AssetDatabase.Refresh):
 			///     - After System.IO.* operations modified files/folders in the project.
 			///     - After running an external process that modified files/folders in the project.
-			///     There is no need to call ImportAll / 'Refresh' in any other situation! REALLY!!
+			///     There is no need to call ImportAll / 'Refresh' in any other situation!
+			///     For best performance, prefer to use CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions) to import
+			///     multiple assets.
 			/// </remarks>
 			/// <remarks>
-			///     This needs to be stressed: when you use only CodeSmile.Editor.Asset methods to modify the file
-			///     system you do NOT need to call ImportAll. Likewise it is unnecessary to call 'Refresh' after using
-			///     only AssetDatabase methods.
+			///     History: I believe there was a time around Unity 3.x-ish where the Editor did not have an "auto refresh"
+			///     feature, so calling 'AssetDatabase.Refresh' after any AssetDatabase operation was common.
+			///     This seems to have stuck, even though it is no longer required. 'Refresh' remains over-used with no thought given
+			///     to its necessity or performance implications.
+			/// </remarks>
+			/// <remarks>
+			///     Any file operation done VIA the AssetDatabase these days does **not** require an AssetDatabase refresh!
+			///     Only file operations that bypass the AssetDatabase require importing affected files. In most cases you know
+			///     which files are affects, so import them individually. Everyone will thank you for the effort!
+			/// </remarks>
+			/// <remarks>
+			///     **CAUTION:** Since this method unloads 'unused' assets, any unloaded asset will have to be reloaded when accessed
+			///     again.
+			///     Worst case scenario: An editor script that indiscriminately calls this method after common editor operations,
+			///     such as selection change events, can severely degrade Editor performance!
 			/// </remarks>
 			/// <remarks>
 			///     Further reading for the curious:
@@ -223,6 +232,7 @@ namespace CodeSmile.Editor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
 			/// </param>
+			/// <seealso cref="CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)" />
 			/// <seealso cref="">
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html">AssetDatabase.Refresh</a>
 			/// </seealso>
