@@ -12,7 +12,6 @@ var hierarchy =
     [ "Asset.Status", "class_code_smile_1_1_editor_1_1_asset_1_1_status.html", null ],
     [ "Asset.SubAsset", "class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html", null ],
     [ "Asset.VersionControl", "class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html", null ],
-    [ "StringExtensions", "class_code_smile_1_1_editor_1_1_string_extensions.html", null ],
     [ "IEquatable", null, [
       [ "Asset.Path", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html", null ],
       [ "Asset.Path", "class_code_smile_1_1_editor_1_1_asset_1_1_path.html", null ]

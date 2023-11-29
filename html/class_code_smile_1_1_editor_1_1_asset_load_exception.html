@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>de.codesmile.editor.assetdatabase: AssetLoadException Class Reference</title>
+<title>CodeSmile AssetDatabase: AssetLoadException Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,7 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -117,82 +119,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14844af4b9e1ad1822b11d8e7a99b991" id="r_a14844af4b9e1ad1822b11d8e7a99b991"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception.html#a14844af4b9e1ad1822b11d8e7a99b991">AssetLoadException</a> (String message)</td></tr>
+<tr class="memitem:a14844af4b9e1ad1822b11d8e7a99b991" id="r_a14844af4b9e1ad1822b11d8e7a99b991"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception_a14844af4b9e1ad1822b11d8e7a99b991.html#a14844af4b9e1ad1822b11d8e7a99b991">AssetLoadException</a> (String message)</td></tr>
 <tr class="memdesc:a14844af4b9e1ad1822b11d8e7a99b991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates exception with message.  <br /></td></tr>
 <tr class="separator:a14844af4b9e1ad1822b11d8e7a99b991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19e920f646406abb17bf92089cd69b8f" id="r_a19e920f646406abb17bf92089cd69b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception.html#a19e920f646406abb17bf92089cd69b8f">AssetLoadException</a> (String message, Exception innerException)</td></tr>
+<tr class="memitem:a19e920f646406abb17bf92089cd69b8f" id="r_a19e920f646406abb17bf92089cd69b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception_a19e920f646406abb17bf92089cd69b8f.html#a19e920f646406abb17bf92089cd69b8f">AssetLoadException</a> (String message, Exception innerException)</td></tr>
 <tr class="memdesc:a19e920f646406abb17bf92089cd69b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates exception with message and inner exception.  <br /></td></tr>
 <tr class="separator:a19e920f646406abb17bf92089cd69b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Thrown in cases where loading an existing asset fails. That means the AssetDatabase returned null on loading. This happens in a few situations in Unity where the AssetDatabase is unavailable, such as in a static ctor. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a14844af4b9e1ad1822b11d8e7a99b991" name="a14844af4b9e1ad1822b11d8e7a99b991"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14844af4b9e1ad1822b11d8e7a99b991">&#9670;&#160;</a></span>AssetLoadException() <span class="overload">[1/2]</span></h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception.html">AssetLoadException</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Instantiates exception with message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>            : base(message) {}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a19e920f646406abb17bf92089cd69b8f" name="a19e920f646406abb17bf92089cd69b8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19e920f646406abb17bf92089cd69b8f">&#9670;&#160;</a></span>AssetLoadException() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_load_exception.html">AssetLoadException</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Exception&#160;</td>
-          <td class="paramname"><em>innerException</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Instantiates exception with message and inner exception. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td></td></tr>
-    <tr><td class="paramname">innerException</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>            : base(message, innerException) {}</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition at line <a class="el" href="_asset_load_exception_8cs_source.html#l00015">15</a> of file <a class="el" href="_asset_load_exception_8cs_source.html">AssetLoadException.cs</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

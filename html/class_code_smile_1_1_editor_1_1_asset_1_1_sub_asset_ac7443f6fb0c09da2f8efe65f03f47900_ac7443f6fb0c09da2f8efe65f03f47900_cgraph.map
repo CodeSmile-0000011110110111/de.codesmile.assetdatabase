@@ -1,0 +1,5 @@
+<map id="SetMain" name="SetMain">
+<area shape="rect" id="Node000001" title="Sets (changes) an asset&#39;s &#39;main&#39; object to one of its sub&#45;assets." alt="" coords="5,13,75,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_file_a9023c374da2135cf7e97a768aa99a4b1.html#a9023c374da2135cf7e97a768aa99a4b1" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me..." alt="" coords="123,5,312,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,24,108,24,108,29,75,29"/>
+</map>

@@ -24,16 +24,25 @@
 */
 var NAVTREE =
 [
-  [ "de.codesmile.editor.assetdatabase", "index.html", [
-    [ "CodeSmile AssetDatabase", "index.html", "index" ],
-    [ "Change Log", "md__c_h_a_n_g_e_l_o_g.html", null ],
+  [ "CodeSmile AssetDatabase", "index.html", [
+    [ "Examples", "index.html#examples", [
+      [ "Load or create asset", "index.html#load-or-create-asset", null ],
+      [ "Load an asset", "index.html#load-an-asset", null ],
+      [ "Get an asset's path", "index.html#get-an-assets-path", null ],
+      [ "Be nice, be concise!", "index.html#be-nice-be-concise", null ]
+    ] ],
+    [ "Documentation", "index.html#documentation", null ],
+    [ "Requirements", "index.html#requirements", null ],
+    [ "Installation", "index.html#installation", null ],
+    [ "GPL License", "index.html#gpl-license", null ],
+    [ "Support & Feeback", "index.html#support--feeback", null ],
+    [ "Change Log", "md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ]
@@ -43,7 +52,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html#a95b80e7dd72006be16c920dcd4ce24f8"
+"class_code_smile_1_1_editor_1_1_asset_ab412290c73bfd928390ef8d5bb0369dd.html#ab412290c73bfd928390ef8d5bb0369dd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>de.codesmile.editor.assetdatabase: Asset.Label Class Reference</title>
+<title>CodeSmile AssetDatabase: Asset.Label Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,7 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -110,306 +112,30 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae12969694f213eabbb3ca6c4a822eff8" id="r_ae12969694f213eabbb3ca6c4a822eff8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#ae12969694f213eabbb3ca6c4a822eff8">Add</a> (Object obj, String label)</td></tr>
-<tr class="memdesc:ae12969694f213eabbb3ca6c4a822eff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a label to an asset's list of labels. Note: this is less efficient than SetLabels. It is provided as a convenience to add a few labels without having to do the conversion to List, then add a label, then ToArray() the list. This is what is done internally.  <br /></td></tr>
-<tr class="separator:ae12969694f213eabbb3ca6c4a822eff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6d926793929be40e9f64900751d4b3" id="r_a9d6d926793929be40e9f64900751d4b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a9d6d926793929be40e9f64900751d4b3">Add</a> (Object obj, String[] labels)</td></tr>
-<tr class="memdesc:a9d6d926793929be40e9f64900751d4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds several labels to an asset's list of labels.  <br /></td></tr>
-<tr class="separator:a9d6d926793929be40e9f64900751d4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1809db03432bc4d5c7c5d97fd139e8" id="r_a6c1809db03432bc4d5c7c5d97fd139e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a6c1809db03432bc4d5c7c5d97fd139e8">ClearAll</a> (Object obj)</td></tr>
-<tr class="memdesc:a6c1809db03432bc4d5c7c5d97fd139e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all labels of an asset.  <br /></td></tr>
-<tr class="separator:a6c1809db03432bc4d5c7c5d97fd139e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af12ef27390e185dc2458c579d4a20aa2" id="r_af12ef27390e185dc2458c579d4a20aa2"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#af12ef27390e185dc2458c579d4a20aa2">GetAll</a> (GUID guid)</td></tr>
+<tr class="memitem:a74654d37066698d04130782810589a8e" id="r_a74654d37066698d04130782810589a8e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_a74654d37066698d04130782810589a8e.html#a74654d37066698d04130782810589a8e">Add</a> (Object asset, String label)</td></tr>
+<tr class="memdesc:a74654d37066698d04130782810589a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a single label to an asset's list of labels.  <br /></td></tr>
+<tr class="separator:a74654d37066698d04130782810589a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7557efca1f368842d1346c320dfdc8e" id="r_af7557efca1f368842d1346c320dfdc8e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_af7557efca1f368842d1346c320dfdc8e.html#af7557efca1f368842d1346c320dfdc8e">Add</a> (Object asset, String[] labels)</td></tr>
+<tr class="memdesc:af7557efca1f368842d1346c320dfdc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds several labels to an asset's list of labels.  <br /></td></tr>
+<tr class="separator:af7557efca1f368842d1346c320dfdc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7938a5ac725bbb9d3257ff8a9f6ec9f3" id="r_a7938a5ac725bbb9d3257ff8a9f6ec9f3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_a7938a5ac725bbb9d3257ff8a9f6ec9f3.html#a7938a5ac725bbb9d3257ff8a9f6ec9f3">ClearAll</a> (Object asset)</td></tr>
+<tr class="memdesc:a7938a5ac725bbb9d3257ff8a9f6ec9f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all labels of an asset.  <br /></td></tr>
+<tr class="separator:a7938a5ac725bbb9d3257ff8a9f6ec9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12ef27390e185dc2458c579d4a20aa2" id="r_af12ef27390e185dc2458c579d4a20aa2"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_af12ef27390e185dc2458c579d4a20aa2.html#af12ef27390e185dc2458c579d4a20aa2">GetAll</a> (GUID guid)</td></tr>
 <tr class="memdesc:af12ef27390e185dc2458c579d4a20aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's labels.  <br /></td></tr>
 <tr class="separator:af12ef27390e185dc2458c579d4a20aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80fe26dff18736b19fce81cf632b5784" id="r_a80fe26dff18736b19fce81cf632b5784"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">GetAll</a> (Object obj)</td></tr>
-<tr class="memdesc:a80fe26dff18736b19fce81cf632b5784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's labels.  <br /></td></tr>
-<tr class="separator:a80fe26dff18736b19fce81cf632b5784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8636546991a94752744f8266a9aa9d8" id="r_af8636546991a94752744f8266a9aa9d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#af8636546991a94752744f8266a9aa9d8">SetAll</a> (Object obj, String[] labels)</td></tr>
-<tr class="memdesc:af8636546991a94752744f8266a9aa9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an asset's labels, replacing any existing labels.  <br /></td></tr>
-<tr class="separator:af8636546991a94752744f8266a9aa9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27224c9c521b19b6b2c9ea97442f344" id="r_ad27224c9c521b19b6b2c9ea97442f344"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_ad27224c9c521b19b6b2c9ea97442f344.html#ad27224c9c521b19b6b2c9ea97442f344">GetAll</a> (Object asset)</td></tr>
+<tr class="memdesc:ad27224c9c521b19b6b2c9ea97442f344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an asset's labels.  <br /></td></tr>
+<tr class="separator:ad27224c9c521b19b6b2c9ea97442f344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82888b12b37f839fbabcb62e8fe169af" id="r_a82888b12b37f839fbabcb62e8fe169af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label_a82888b12b37f839fbabcb62e8fe169af.html#a82888b12b37f839fbabcb62e8fe169af">SetAll</a> ([NotNull] Object asset, [NotNull] String[] labels)</td></tr>
+<tr class="memdesc:a82888b12b37f839fbabcb62e8fe169af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an asset's labels. Replaces any existing labels.  <br /></td></tr>
+<tr class="separator:a82888b12b37f839fbabcb62e8fe169af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Groups all asset label related static methods. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae12969694f213eabbb3ca6c4a822eff8" name="ae12969694f213eabbb3ca6c4a822eff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae12969694f213eabbb3ca6c4a822eff8">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Add </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>label</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds a label to an asset's list of labels. Note: this is less efficient than SetLabels. It is provided as a convenience to add a few labels without having to do the conversion to List, then add a label, then ToArray() the list. This is what is done internally. </p>
-<p>Add(UnityEngine.Object,string[]) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">label</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>            {</div>
-<div class="line"><span class="lineno">   82</span>                var existingLabels = <span class="keyword">new</span> List&lt;String&gt;(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">GetAll</a>(obj));</div>
-<div class="line"><span class="lineno">   83</span>                existingLabels.Add(label);</div>
-<div class="line"><span class="lineno">   84</span>                AssetDatabase.SetLabels(obj, existingLabels.ToArray());</div>
-<div class="line"><span class="lineno">   85</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_label_html_a80fe26dff18736b19fce81cf632b5784"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">CodeSmile.Editor.Asset.Label.GetAll</a></div><div class="ttdeci">static String[] GetAll(Object obj)</div><div class="ttdoc">Returns an asset's labels.</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">Asset.Label.GetAll()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_label_ae12969694f213eabbb3ca6c4a822eff8_cgraph.svg" width="160" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a9d6d926793929be40e9f64900751d4b3" name="a9d6d926793929be40e9f64900751d4b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d6d926793929be40e9f64900751d4b3">&#9670;&#160;</a></span>Add() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Add </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>labels</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds several labels to an asset's list of labels. </p>
-<p>Add(UnityEngine.Object,string) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">labels</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>            {</div>
-<div class="line"><span class="lineno">   95</span>                var existingLabels = <span class="keyword">new</span> List&lt;String&gt;(<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">GetAll</a>(obj));</div>
-<div class="line"><span class="lineno">   96</span>                existingLabels.AddRange(labels);</div>
-<div class="line"><span class="lineno">   97</span>                AssetDatabase.SetLabels(obj, existingLabels.ToArray());</div>
-<div class="line"><span class="lineno">   98</span>            }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a80fe26dff18736b19fce81cf632b5784">Asset.Label.GetAll()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_label_a9d6d926793929be40e9f64900751d4b3_cgraph.svg" width="160" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a6c1809db03432bc4d5c7c5d97fd139e8" name="a6c1809db03432bc4d5c7c5d97fd139e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c1809db03432bc4d5c7c5d97fd139e8">&#9670;&#160;</a></span>ClearAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ClearAll </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clears all labels of an asset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af12ef27390e185dc2458c579d4a20aa2" name="af12ef27390e185dc2458c579d4a20aa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af12ef27390e185dc2458c579d4a20aa2">&#9670;&#160;</a></span>GetAll() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAll </td>
-          <td>(</td>
-          <td class="paramtype">GUID&#160;</td>
-          <td class="paramname"><em>guid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns an asset's labels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a80fe26dff18736b19fce81cf632b5784" name="a80fe26dff18736b19fce81cf632b5784"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80fe26dff18736b19fce81cf632b5784">&#9670;&#160;</a></span>GetAll() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAll </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns an asset's labels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#ae12969694f213eabbb3ca6c4a822eff8">Asset.Label.Add()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_label.html#a9d6d926793929be40e9f64900751d4b3">Asset.Label.Add()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_label_a80fe26dff18736b19fce81cf632b5784_icgraph.svg" width="160" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="af8636546991a94752744f8266a9aa9d8" name="af8636546991a94752744f8266a9aa9d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8636546991a94752744f8266a9aa9d8">&#9670;&#160;</a></span>SetAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void SetAll </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>labels</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets an asset's labels, replacing any existing labels. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">labels</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition at line <a class="el" href="_asset_8_label_8cs_source.html#l00017">17</a> of file <a class="el" href="_asset_8_label_8cs_source.html">Asset.Label.cs</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

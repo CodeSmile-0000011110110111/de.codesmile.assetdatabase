@@ -1,5 +1,0 @@
-<map id="Equals" name="Equals">
-<area shape="rect" id="Node000001" title="Tests another path for equality. They are equal if their internal relative path strings are equal." alt="" coords="115,5,176,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path.html#a28f250de206b1764c446bd97127b2f07" title="Tests path for equality with an object. If the object is a Path or String will use the respective Equ..." alt="" coords="5,5,67,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,21,67,21,67,16,100,16"/>
-</map>

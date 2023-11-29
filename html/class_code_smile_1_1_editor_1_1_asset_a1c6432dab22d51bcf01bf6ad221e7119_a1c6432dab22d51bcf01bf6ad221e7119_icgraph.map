@@ -1,0 +1,5 @@
+<map id="SaveAs" name="SaveAs">
+<area shape="rect" id="Node000001" title="Saves a copy of the asset to a new path. Overwrites any existing asset at path." alt="" coords="144,5,209,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0.html#af23adc642520b7f00cb047865ef50ad0" title="Saves a copy of the asset to a new path. Generates a unique file/folder name if path already exists." alt="" coords="5,5,96,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,21,96,21,96,16,129,16"/>
+</map>

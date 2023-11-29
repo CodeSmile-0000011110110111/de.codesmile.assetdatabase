@@ -1,0 +1,5 @@
+<map id="Get" name="Get">
+<area shape="rect" id="Node000001" title="Converts an array of asset instances to their asset paths." alt="" coords="5,5,48,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" title="Gets the relative path of an asset." alt="" coords="96,5,138,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,16,81,16,81,21,48,21"/>
+</map>

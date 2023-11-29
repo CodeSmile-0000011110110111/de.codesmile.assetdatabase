@@ -1,0 +1,12 @@
+body, table, div, p, dl {
+	font-size: 14px;
+}
+
+div.line {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 14px;
+}
+
+#nav-tree .label {
+  font: 14px var(--font-family-nav);
+}

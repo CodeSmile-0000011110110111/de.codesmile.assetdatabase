@@ -30,7 +30,7 @@
 <text text-anchor="start" x="4" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsImported()</text>
 <text text-anchor="start" x="4" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsLoaded()</text>
+<text text-anchor="start" x="14" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsImported()</text>
 <text text-anchor="start" x="4" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsLoaded()</text>
 <text text-anchor="start" x="4" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

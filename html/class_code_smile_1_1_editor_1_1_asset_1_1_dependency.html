@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>de.codesmile.editor.assetdatabase: Asset.Dependency Class Reference</title>
+<title>CodeSmile AssetDatabase: Asset.Dependency Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,7 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -110,327 +112,36 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a06dc80e093aecee7ddf32a510c985c73" id="r_a06dc80e093aecee7ddf32a510c985c73"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a06dc80e093aecee7ddf32a510c985c73">GetAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:a06dc80e093aecee7ddf32a510c985c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets.  <br /></td></tr>
+<tr class="memitem:a06dc80e093aecee7ddf32a510c985c73" id="r_a06dc80e093aecee7ddf32a510c985c73"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a06dc80e093aecee7ddf32a510c985c73.html#a06dc80e093aecee7ddf32a510c985c73">GetAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:a06dc80e093aecee7ddf32a510c985c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all (direct and indirect) dependencies of the asset at the given path.  <br /></td></tr>
 <tr class="separator:a06dc80e093aecee7ddf32a510c985c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202b8e6de5d96d6711177be73bdf212a" id="r_a202b8e6de5d96d6711177be73bdf212a"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a202b8e6de5d96d6711177be73bdf212a">GetAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] paths)</td></tr>
+<tr class="memitem:a202b8e6de5d96d6711177be73bdf212a" id="r_a202b8e6de5d96d6711177be73bdf212a"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a202b8e6de5d96d6711177be73bdf212a.html#a202b8e6de5d96d6711177be73bdf212a">GetAll</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] paths)</td></tr>
 <tr class="memdesc:a202b8e6de5d96d6711177be73bdf212a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.  <br /></td></tr>
 <tr class="separator:a202b8e6de5d96d6711177be73bdf212a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad094bf5b8f07a73d4fb62c8cdeeff25" id="r_aad094bf5b8f07a73d4fb62c8cdeeff25"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#aad094bf5b8f07a73d4fb62c8cdeeff25">GetDirect</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:aad094bf5b8f07a73d4fb62c8cdeeff25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets.  <br /></td></tr>
+<tr class="memitem:aad094bf5b8f07a73d4fb62c8cdeeff25" id="r_aad094bf5b8f07a73d4fb62c8cdeeff25"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_aad094bf5b8f07a73d4fb62c8cdeeff25.html#aad094bf5b8f07a73d4fb62c8cdeeff25">GetDirect</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:aad094bf5b8f07a73d4fb62c8cdeeff25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direct dependencies of the asset at the given path.  <br /></td></tr>
 <tr class="separator:aad094bf5b8f07a73d4fb62c8cdeeff25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9812be7412f8af18103fc4ef8d03b87" id="r_ac9812be7412f8af18103fc4ef8d03b87"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#ac9812be7412f8af18103fc4ef8d03b87">GetDirect</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] paths)</td></tr>
-<tr class="memdesc:ac9812be7412f8af18103fc4ef8d03b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets.  <br /></td></tr>
+<tr class="memitem:ac9812be7412f8af18103fc4ef8d03b87" id="r_ac9812be7412f8af18103fc4ef8d03b87"><td class="memItemLeft" align="right" valign="top">static String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_ac9812be7412f8af18103fc4ef8d03b87.html#ac9812be7412f8af18103fc4ef8d03b87">GetDirect</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] paths)</td></tr>
+<tr class="memdesc:ac9812be7412f8af18103fc4ef8d03b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direct dependencies of the assets at the given paths.  <br /></td></tr>
 <tr class="separator:ac9812be7412f8af18103fc4ef8d03b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a773bdd015f687ec5ea5ab318448ee246" id="r_a773bdd015f687ec5ea5ab318448ee246"><td class="memItemLeft" align="right" valign="top">static Hash128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a773bdd015f687ec5ea5ab318448ee246">GetHash</a> (GUID guid)</td></tr>
-<tr class="memdesc:a773bdd015f687ec5ea5ab318448ee246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dependency hash for the asset. If the hash changes it means the asset contents may have changed.  <br /></td></tr>
+<tr class="memitem:a773bdd015f687ec5ea5ab318448ee246" id="r_a773bdd015f687ec5ea5ab318448ee246"><td class="memItemLeft" align="right" valign="top">static Hash128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a773bdd015f687ec5ea5ab318448ee246.html#a773bdd015f687ec5ea5ab318448ee246">GetHash</a> (GUID guid)</td></tr>
+<tr class="memdesc:a773bdd015f687ec5ea5ab318448ee246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dependency hash for the asset.  <br /></td></tr>
 <tr class="separator:a773bdd015f687ec5ea5ab318448ee246"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa271b12838fa8633787d15fa1a8fa2e0" id="r_aa271b12838fa8633787d15fa1a8fa2e0"><td class="memItemLeft" align="right" valign="top">static Hash128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#aa271b12838fa8633787d15fa1a8fa2e0">GetHash</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
-<tr class="memdesc:aa271b12838fa8633787d15fa1a8fa2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dependency hash for the asset at path. If the hash changes it means the asset contents may have changed.  <br /></td></tr>
+<tr class="memitem:aa271b12838fa8633787d15fa1a8fa2e0" id="r_aa271b12838fa8633787d15fa1a8fa2e0"><td class="memItemLeft" align="right" valign="top">static Hash128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_aa271b12838fa8633787d15fa1a8fa2e0.html#aa271b12838fa8633787d15fa1a8fa2e0">GetHash</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> path)</td></tr>
+<tr class="memdesc:aa271b12838fa8633787d15fa1a8fa2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dependency value hash for the asset at path.  <br /></td></tr>
 <tr class="separator:aa271b12838fa8633787d15fa1a8fa2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a134bb5b9509055fcf42da2042e92ef" id="r_a4a134bb5b9509055fcf42da2042e92ef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a4a134bb5b9509055fcf42da2042e92ef">Register</a> (String globalDependencyName, Hash128 dependencyHash)</td></tr>
-<tr class="memdesc:a4a134bb5b9509055fcf42da2042e92ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter. Call this method again to update existing dependencies. For details <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>.  <br /></td></tr>
+<tr class="memitem:a4a134bb5b9509055fcf42da2042e92ef" id="r_a4a134bb5b9509055fcf42da2042e92ef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a4a134bb5b9509055fcf42da2042e92ef.html#a4a134bb5b9509055fcf42da2042e92ef">Register</a> (String globalDependencyName, Hash128 dependencyHash)</td></tr>
+<tr class="memdesc:a4a134bb5b9509055fcf42da2042e92ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a custom dependency to be used in conjunction with a custom AssetImporter.  <br /></td></tr>
 <tr class="separator:a4a134bb5b9509055fcf42da2042e92ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ddd9c255e2bdbc73ab07f50eb24588e" id="r_a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="memItemLeft" align="right" valign="top">static UInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency.html#a3ddd9c255e2bdbc73ab07f50eb24588e">Unregister</a> (String globalDependencyNamePrefix)</td></tr>
-<tr class="memdesc:a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name.  <br /></td></tr>
+<tr class="memitem:a3ddd9c255e2bdbc73ab07f50eb24588e" id="r_a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="memItemLeft" align="right" valign="top">static UInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a3ddd9c255e2bdbc73ab07f50eb24588e.html#a3ddd9c255e2bdbc73ab07f50eb24588e">Unregister</a> (String globalDependencyNamePrefix)</td></tr>
+<tr class="memdesc:a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters one or more custom dependencies with the given prefix (eg 'StartsWith').  <br /></td></tr>
 <tr class="separator:a3ddd9c255e2bdbc73ab07f50eb24588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Groups all dependency related functionality. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a06dc80e093aecee7ddf32a510c985c73" name="a06dc80e093aecee7ddf32a510c985c73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06dc80e093aecee7ddf32a510c985c73">&#9670;&#160;</a></span>GetAll() <span class="overload">[1/2]</span></h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAll </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all (direct and indirect) dependencies of the asset at the given path. Returns paths to dependent assets. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a202b8e6de5d96d6711177be73bdf212a" name="a202b8e6de5d96d6711177be73bdf212a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202b8e6de5d96d6711177be73bdf212a">&#9670;&#160;</a></span>GetAll() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetAll </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[]&#160;</td>
-          <td class="paramname"><em>paths</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="aad094bf5b8f07a73d4fb62c8cdeeff25" name="aad094bf5b8f07a73d4fb62c8cdeeff25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad094bf5b8f07a73d4fb62c8cdeeff25">&#9670;&#160;</a></span>GetDirect() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetDirect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the direct dependencies of the asset at the given path. Returns paths to dependent assets. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ac9812be7412f8af18103fc4ef8d03b87" name="ac9812be7412f8af18103fc4ef8d03b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9812be7412f8af18103fc4ef8d03b87">&#9670;&#160;</a></span>GetDirect() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static String[] GetDirect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[]&#160;</td>
-          <td class="paramname"><em>paths</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the direct dependencies of the assets at the given paths. Returns paths to dependent assets. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a773bdd015f687ec5ea5ab318448ee246" name="a773bdd015f687ec5ea5ab318448ee246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a773bdd015f687ec5ea5ab318448ee246">&#9670;&#160;</a></span>GetHash() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Hash128 GetHash </td>
-          <td>(</td>
-          <td class="paramtype">GUID&#160;</td>
-          <td class="paramname"><em>guid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the dependency hash for the asset. If the hash changes it means the asset contents may have changed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="aa271b12838fa8633787d15fa1a8fa2e0" name="aa271b12838fa8633787d15fa1a8fa2e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa271b12838fa8633787d15fa1a8fa2e0">&#9670;&#160;</a></span>GetHash() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Hash128 GetHash </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the dependency hash for the asset at path. If the hash changes it means the asset contents may have changed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a4a134bb5b9509055fcf42da2042e92ef" name="a4a134bb5b9509055fcf42da2042e92ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a134bb5b9509055fcf42da2042e92ef">&#9670;&#160;</a></span>Register()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Register </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>globalDependencyName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Hash128&#160;</td>
-          <td class="paramname"><em>dependencyHash</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter. Call this method again to update existing dependencies. For details <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">globalDependencyName</td><td>A global name for the dependency.</td></tr>
-    <tr><td class="paramname">dependencyHash</td><td>The current hash of the dependency value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Unregister </p>
-
-</div>
-</div>
-<a id="a3ddd9c255e2bdbc73ab07f50eb24588e" name="a3ddd9c255e2bdbc73ab07f50eb24588e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ddd9c255e2bdbc73ab07f50eb24588e">&#9670;&#160;</a></span>Unregister()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static UInt32 Unregister </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>globalDependencyNamePrefix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes one or more custom dependencies by using a global dependency name's prefix (eg 'StartsWith') or full name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">globalDependencyNamePrefix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of custom dependencies that were removed.</dd></dl>
-<p>Register </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition at line <a class="el" href="_asset_8_dependency_8cs_source.html#l00015">15</a> of file <a class="el" href="_asset_8_dependency_8cs_source.html">Asset.Dependency.cs</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

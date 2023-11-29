@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>de.codesmile.editor.assetdatabase: Asset.Database Class Reference</title>
+<title>CodeSmile AssetDatabase: Asset.Database Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,7 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">de.codesmile.editor.assetdatabase<span id="projectnumber">&#160;1.4</span>
+   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.5</span>
    </div>
    <div id="projectbrief">Improved AssetDatabase API</div>
   </td>
@@ -100,7 +102,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><!--header-->
 <div class="contents">
 
-<p>Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all.  
+<p>Groups all asset database functionality.  
  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Asset.Database:</div>
@@ -118,392 +120,52 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4f2683df249d67e506e9f2d9d9fe2b5a" id="r_a4f2683df249d67e506e9f2d9d9fe2b5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a4f2683df249d67e506e9f2d9d9fe2b5a">AllowAutoRefresh</a> ()</td></tr>
-<tr class="memdesc:a4f2683df249d67e506e9f2d9d9fe2b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will stop Unity from automatically importing assets. Must be called in pair with DisallowAutoRefresh. Multiple calls must be matched with an equal number of calls to DisallowAutoRefresh since internally this is using a counter that needs to return to 0 before auto refresh is going to be enabled again. Note: Has no effect if Preferences =&gt; Asset Pipeline =&gt; Auto Refresh is disabled to begin with. Same as AssetDatabase.AllowAutoRefresh(). DisallowAutoRefresh  <br /></td></tr>
+<tr class="memitem:a4f2683df249d67e506e9f2d9d9fe2b5a" id="r_a4f2683df249d67e506e9f2d9d9fe2b5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a.html#a4f2683df249d67e506e9f2d9d9fe2b5a">AllowAutoRefresh</a> ()</td></tr>
+<tr class="memdesc:a4f2683df249d67e506e9f2d9d9fe2b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will allow Unity to automatically import assets.  <br /></td></tr>
 <tr class="separator:a4f2683df249d67e506e9f2d9d9fe2b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb25c0a19eaf845815b001486373db4c" id="r_adb25c0a19eaf845815b001486373db4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#adb25c0a19eaf845815b001486373db4c">DisallowAutoRefresh</a> ()</td></tr>
-<tr class="memdesc:adb25c0a19eaf845815b001486373db4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as AssetDatabase.DisallowAutoRefresh(). AllowAutoRefresh  <br /></td></tr>
+<tr class="memitem:aebd60455d5568e8715f48750a2a15710" id="r_aebd60455d5568e8715f48750a2a15710"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_aebd60455d5568e8715f48750a2a15710.html#aebd60455d5568e8715f48750a2a15710">Contains</a> (Int32 instanceId)</td></tr>
+<tr class="memdesc:aebd60455d5568e8715f48750a2a15710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the asset is in the database.  <br /></td></tr>
+<tr class="separator:aebd60455d5568e8715f48750a2a15710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f98188e77af88fa79da70d1765765ff" id="r_a9f98188e77af88fa79da70d1765765ff"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a9f98188e77af88fa79da70d1765765ff.html#a9f98188e77af88fa79da70d1765765ff">Contains</a> (Object instance)</td></tr>
+<tr class="memdesc:a9f98188e77af88fa79da70d1765765ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if the asset is in the database.  <br /></td></tr>
+<tr class="separator:a9f98188e77af88fa79da70d1765765ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb25c0a19eaf845815b001486373db4c" id="r_adb25c0a19eaf845815b001486373db4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c.html#adb25c0a19eaf845815b001486373db4c">DisallowAutoRefresh</a> ()</td></tr>
+<tr class="memdesc:adb25c0a19eaf845815b001486373db4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will stop Unity from automatically importing assets.  <br /></td></tr>
 <tr class="separator:adb25c0a19eaf845815b001486373db4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5034822c95937bce27fc0a2ed42e190" id="r_ac5034822c95937bce27fc0a2ed42e190"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#ac5034822c95937bce27fc0a2ed42e190">ForceReserialize</a> (IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</td></tr>
-<tr class="memdesc:ac5034822c95937bce27fc0a2ed42e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously.  <br /></td></tr>
+<tr class="memitem:ac5034822c95937bce27fc0a2ed42e190" id="r_ac5034822c95937bce27fc0a2ed42e190"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190.html#ac5034822c95937bce27fc0a2ed42e190">ForceReserialize</a> (IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</td></tr>
+<tr class="memdesc:ac5034822c95937bce27fc0a2ed42e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all native asset files to reflect any changes in serialization in the current editor version.  <br /></td></tr>
 <tr class="separator:ac5034822c95937bce27fc0a2ed42e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a52e80c5a7eb1a687c8d6954a58d6fc" id="r_a6a52e80c5a7eb1a687c8d6954a58d6fc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a6a52e80c5a7eb1a687c8d6954a58d6fc">ForceReserialize</a> (IEnumerable&lt; String &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</td></tr>
-<tr class="memdesc:a6a52e80c5a7eb1a687c8d6954a58d6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously.  <br /></td></tr>
+<tr class="memitem:a6a52e80c5a7eb1a687c8d6954a58d6fc" id="r_a6a52e80c5a7eb1a687c8d6954a58d6fc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a6a52e80c5a7eb1a687c8d6954a58d6fc.html#a6a52e80c5a7eb1a687c8d6954a58d6fc">ForceReserialize</a> (IEnumerable&lt; String &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</td></tr>
+<tr class="memdesc:a6a52e80c5a7eb1a687c8d6954a58d6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all native asset files to reflect any changes in serialization in the current editor version.  <br /></td></tr>
 <tr class="separator:a6a52e80c5a7eb1a687c8d6954a58d6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bb323ec117cc6b7a8250244f59f1319" id="r_a2bb323ec117cc6b7a8250244f59f1319"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a2bb323ec117cc6b7a8250244f59f1319">ForceReserializeAll</a> ()</td></tr>
-<tr class="memdesc:a2bb323ec117cc6b7a8250244f59f1319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces reserializing all assets. This loads all assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously.  <br /></td></tr>
+<tr class="memitem:a2bb323ec117cc6b7a8250244f59f1319" id="r_a2bb323ec117cc6b7a8250244f59f1319"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a2bb323ec117cc6b7a8250244f59f1319.html#a2bb323ec117cc6b7a8250244f59f1319">ForceReserializeAll</a> ()</td></tr>
+<tr class="memdesc:a2bb323ec117cc6b7a8250244f59f1319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all native asset files to reflect any changes in serialization in the current editor version.  <br /></td></tr>
 <tr class="separator:a2bb323ec117cc6b7a8250244f59f1319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c993d64861e62fbdcff3700690b2318" id="r_a7c993d64861e62fbdcff3700690b2318"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a7c993d64861e62fbdcff3700690b2318">ImportAll</a> (ImportAssetOptions options=ImportAssetOptions.Default)</td></tr>
-<tr class="memdesc:a7c993d64861e62fbdcff3700690b2318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally. External is defined as 'any file modification operation not done through the AssetDatabase', for example by using System.IO methods or by running scripts and other external tools.  <br /></td></tr>
+<tr class="memitem:a7c993d64861e62fbdcff3700690b2318" id="r_a7c993d64861e62fbdcff3700690b2318"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318.html#a7c993d64861e62fbdcff3700690b2318">ImportAll</a> (ImportAssetOptions options=ImportAssetOptions.Default)</td></tr>
+<tr class="memdesc:a7c993d64861e62fbdcff3700690b2318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans for <b>external</b> file system modifications and updates the Database accordingly. Prefer to use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a9023c374da2135cf7e97a768aa99a4b1.html#a9023c374da2135cf7e97a768aa99a4b1" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me...">CodeSmile.Editor.Asset.File.Import</a> within <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2.html#ab0082c2158f7de6376b26a75827bd7a2" title="Batch multiple asset file operations to improve execution speed.">CodeSmile.Editor.Asset.File.BatchEditing</a>. <b>CAUTION</b>: ImportAll ('Refresh') unloads unused resources. This can degrade editor performance!  <br /></td></tr>
 <tr class="separator:a7c993d64861e62fbdcff3700690b2318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa24e66e009892bc1032c64f512f349d" id="r_afa24e66e009892bc1032c64f512f349d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#afa24e66e009892bc1032c64f512f349d">ReleaseFileHandles</a> ()</td></tr>
-<tr class="memdesc:afa24e66e009892bc1032c64f512f349d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases any cached file handles Unity holds. May be required to allow manual asset or meta file modifications that bypass the AssetDatabase.  <br /></td></tr>
+<tr class="memitem:afa24e66e009892bc1032c64f512f349d" id="r_afa24e66e009892bc1032c64f512f349d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_afa24e66e009892bc1032c64f512f349d.html#afa24e66e009892bc1032c64f512f349d">ReleaseFileHandles</a> ()</td></tr>
+<tr class="memdesc:afa24e66e009892bc1032c64f512f349d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases any cached file handles that Unity holds.  <br /></td></tr>
 <tr class="separator:afa24e66e009892bc1032c64f512f349d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4aa665fc0bbfcf9f076d5da1457b2c4" id="r_af4aa665fc0bbfcf9f076d5da1457b2c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#af4aa665fc0bbfcf9f076d5da1457b2c4">SaveAll</a> ()</td></tr>
-<tr class="memdesc:af4aa665fc0bbfcf9f076d5da1457b2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all unsaved (dirty) objects. CAUTION: Consider that the user may NOT want to have unsaved assets 'randomly' saved! If you work with specific object(s) (which you do most of the time, right?) it is in your (user's) best interest if you use Asset.Save(obj) instead. Also consider using BatchEditing(Action) in that case.  <br /></td></tr>
+<tr class="memitem:af4aa665fc0bbfcf9f076d5da1457b2c4" id="r_af4aa665fc0bbfcf9f076d5da1457b2c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_af4aa665fc0bbfcf9f076d5da1457b2c4.html#af4aa665fc0bbfcf9f076d5da1457b2c4">SaveAll</a> ()</td></tr>
+<tr class="memdesc:af4aa665fc0bbfcf9f076d5da1457b2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all unsaved (dirty) assets.  <br /></td></tr>
 <tr class="separator:af4aa665fc0bbfcf9f076d5da1457b2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a46c1f775624b940edb495a5c2b08583c" id="r_a46c1f775624b940edb495a5c2b08583c"><td class="memItemLeft" align="right" valign="top">static Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a46c1f775624b940edb495a5c2b08583c">DesiredWorkerCount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a46c1f775624b940edb495a5c2b08583c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the desired worker count. Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated.  <br /></td></tr>
+<tr class="memitem:a46c1f775624b940edb495a5c2b08583c" id="r_a46c1f775624b940edb495a5c2b08583c"><td class="memItemLeft" align="right" valign="top">static Int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a46c1f775624b940edb495a5c2b08583c.html#a46c1f775624b940edb495a5c2b08583c">DesiredWorkerCount</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a46c1f775624b940edb495a5c2b08583c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the desired worker count.  <br /></td></tr>
 <tr class="separator:a46c1f775624b940edb495a5c2b08583c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6190225c177bf52f95b2cdbcb99ccc2a" id="r_a6190225c177bf52f95b2cdbcb99ccc2a"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#a6190225c177bf52f95b2cdbcb99ccc2a">DirectoryMonitoring</a><code> [get]</code></td></tr>
-<tr class="memdesc:a6190225c177bf52f95b2cdbcb99ccc2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether directory monitoring is enabled in Preferences, or disabled due to symlinks.  <br /></td></tr>
+<tr class="memitem:a6190225c177bf52f95b2cdbcb99ccc2a" id="r_a6190225c177bf52f95b2cdbcb99ccc2a"><td class="memItemLeft" align="right" valign="top">static Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a6190225c177bf52f95b2cdbcb99ccc2a.html#a6190225c177bf52f95b2cdbcb99ccc2a">DirectoryMonitoring</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a6190225c177bf52f95b2cdbcb99ccc2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether directory monitoring is enabled in Preferences.  <br /></td></tr>
 <tr class="separator:a6190225c177bf52f95b2cdbcb99ccc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Groups all asset database functionality. Turns out there isn't actually that much that is 'database' related after all. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4f2683df249d67e506e9f2d9d9fe2b5a" name="a4f2683df249d67e506e9f2d9d9fe2b5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f2683df249d67e506e9f2d9d9fe2b5a">&#9670;&#160;</a></span>AllowAutoRefresh()</h2>
+<div class="textblock"><p>Groups all asset database functionality. </p>
+<p>Turns out there isn't actually that much that is 'database' related after all.</p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void AllowAutoRefresh </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Will stop Unity from automatically importing assets. Must be called in pair with DisallowAutoRefresh. Multiple calls must be matched with an equal number of calls to DisallowAutoRefresh since internally this is using a counter that needs to return to 0 before auto refresh is going to be enabled again. Note: Has no effect if Preferences =&gt; Asset Pipeline =&gt; Auto Refresh is disabled to begin with. Same as AssetDatabase.AllowAutoRefresh(). DisallowAutoRefresh </p>
-
-</div>
-</div>
-<a id="adb25c0a19eaf845815b001486373db4c" name="adb25c0a19eaf845815b001486373db4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb25c0a19eaf845815b001486373db4c">&#9670;&#160;</a></span>DisallowAutoRefresh()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void DisallowAutoRefresh </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Same as AssetDatabase.DisallowAutoRefresh(). AllowAutoRefresh </p>
-
-</div>
-</div>
-<a id="ac5034822c95937bce27fc0a2ed42e190" name="ac5034822c95937bce27fc0a2ed42e190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5034822c95937bce27fc0a2ed42e190">&#9670;&#160;</a></span>ForceReserialize() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ForceReserialize </td>
-          <td>(</td>
-          <td class="paramtype">IEnumerable&lt; <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> &gt;&#160;</td>
-          <td class="paramname"><em>paths</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ForceReserializeAssetsOptions&#160;</td>
-          <td class="paramname"><em>options</em> = <code>ForceReserializeAssetsOptions::ReserializeAssetsAndMetadata</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
-<p>ForceReserialize() </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-    <tr><td class="paramname">options</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>            {</div>
-<div class="line"><span class="lineno">   86</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
-<div class="line"><span class="lineno">   87</span>                <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#ac5034822c95937bce27fc0a2ed42e190">ForceReserialize</a>(Path.ToStrings(paths), options);</div>
-<div class="line"><span class="lineno">   88</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_database_html_ac5034822c95937bce27fc0a2ed42e190"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#ac5034822c95937bce27fc0a2ed42e190">CodeSmile.Editor.Asset.Database.ForceReserialize</a></div><div class="ttdeci">static void ForceReserialize(IEnumerable&lt; Path &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</div><div class="ttdoc">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur...</div><div class="ttdef"><b>Definition</b> Asset.Database.cs:83</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#ac5034822c95937bce27fc0a2ed42e190">Asset.Database.ForceReserialize()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html#ad43db7ddf503406b3dbe05949a040a46">Asset.Path.ToStrings()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database.html#ac5034822c95937bce27fc0a2ed42e190">Asset.Database.ForceReserialize()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190_cgraph.svg" width="372" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190_icgraph.svg" width="130" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a6a52e80c5a7eb1a687c8d6954a58d6fc" name="a6a52e80c5a7eb1a687c8d6954a58d6fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a52e80c5a7eb1a687c8d6954a58d6fc">&#9670;&#160;</a></span>ForceReserialize() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ForceReserialize </td>
-          <td>(</td>
-          <td class="paramtype">IEnumerable&lt; String &gt;&#160;</td>
-          <td class="paramname"><em>paths</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ForceReserializeAssetsOptions&#160;</td>
-          <td class="paramname"><em>options</em> = <code>ForceReserializeAssetsOptions::ReserializeAssetsAndMetadata</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
-<p>ForceReserialize() </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-    <tr><td class="paramname">options</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>            {</div>
-<div class="line"><span class="lineno">  103</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
-<div class="line"><span class="lineno">  104</span>                AssetDatabase.ForceReserializeAssets(paths, options);</div>
-<div class="line"><span class="lineno">  105</span>            }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a2bb323ec117cc6b7a8250244f59f1319" name="a2bb323ec117cc6b7a8250244f59f1319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb323ec117cc6b7a8250244f59f1319">&#9670;&#160;</a></span>ForceReserializeAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ForceReserializeAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Forces reserializing all assets. This loads all assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
-<p>ForceReserialize(System.Collections.Generic.IEnumerable&lt;CodeSmile.Editor.Asset.Path&gt;,UnityEditor.ForceReserializeAssetsOptions) </p>
-
-</div>
-</div>
-<a id="a7c993d64861e62fbdcff3700690b2318" name="a7c993d64861e62fbdcff3700690b2318"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c993d64861e62fbdcff3700690b2318">&#9670;&#160;</a></span>ImportAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ImportAll </td>
-          <td>(</td>
-          <td class="paramtype">ImportAssetOptions&#160;</td>
-          <td class="paramname"><em>options</em> = <code>ImportAssetOptions.Default</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally. External is defined as 'any file modification operation not done through the AssetDatabase', for example by using System.IO methods or by running scripts and other external tools. </p>
-<p>Note: the 100% accurate name for this method would have to be: ImportAllExternallyModifiedAssetsAndAlsoUnloadUnusedAssets() </p>
-<p>CAUTION: Calling this may have an adverse effect on editor performance. In addition to scanning for changed files it also calls Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as 'dirty' that are only referenced by scripts, leading to potential loss of unsaved data. https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html </p>
-<p>File.Import</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">options</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afa24e66e009892bc1032c64f512f349d" name="afa24e66e009892bc1032c64f512f349d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa24e66e009892bc1032c64f512f349d">&#9670;&#160;</a></span>ReleaseFileHandles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ReleaseFileHandles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Releases any cached file handles Unity holds. May be required to allow manual asset or meta file modifications that bypass the AssetDatabase. </p>
-
-</div>
-</div>
-<a id="af4aa665fc0bbfcf9f076d5da1457b2c4" name="af4aa665fc0bbfcf9f076d5da1457b2c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4aa665fc0bbfcf9f076d5da1457b2c4">&#9670;&#160;</a></span>SaveAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void SaveAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Saves all unsaved (dirty) objects. CAUTION: Consider that the user may NOT want to have unsaved assets 'randomly' saved! If you work with specific object(s) (which you do most of the time, right?) it is in your (user's) best interest if you use Asset.Save(obj) instead. Also consider using BatchEditing(Action) in that case. </p>
-<p>Asset.Save Asset.ForceSave Asset.File.BatchEditing </p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a46c1f775624b940edb495a5c2b08583c" name="a46c1f775624b940edb495a5c2b08583c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46c1f775624b940edb495a5c2b08583c">&#9670;&#160;</a></span>DesiredWorkerCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Int32 DesiredWorkerCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets or sets the desired worker count. Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated. </p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>            {</div>
-<div class="line"><span class="lineno">   25</span>                <span class="keyword">get</span> =&gt; AssetDatabase.DesiredWorkerCount;</div>
-<div class="line"><span class="lineno">   26</span>                <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   27</span>                {</div>
-<div class="line"><span class="lineno">   28</span>                    AssetDatabase.DesiredWorkerCount = value;</div>
-<div class="line"><span class="lineno">   29</span>                    AssetDatabase.ForceToDesiredWorkerCount();</div>
-<div class="line"><span class="lineno">   30</span>                }</div>
-<div class="line"><span class="lineno">   31</span>            }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a6190225c177bf52f95b2cdbcb99ccc2a" name="a6190225c177bf52f95b2cdbcb99ccc2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6190225c177bf52f95b2cdbcb99ccc2a">&#9670;&#160;</a></span>DirectoryMonitoring</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Boolean DirectoryMonitoring</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether directory monitoring is enabled in Preferences, or disabled due to symlinks. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition at line <a class="el" href="_asset_8_database_8_cache_server_8cs_source.html#l00012">12</a> of file <a class="el" href="_asset_8_database_8_cache_server_8cs_source.html">Asset.Database.CacheServer.cs</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
