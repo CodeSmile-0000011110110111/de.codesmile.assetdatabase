@@ -1,14 +1,22 @@
 # Change Log
 
-#### v1.5.0 - Nov 25, 2023
+#### v1.5.0 - Nov 29, 2023
 
+- new Asset(Path) now auto-imports assets that exist on disk but not in DB
+- changed load methods to import assets that exist on disk but not in DB
 - added create asset from string (ctor and Asset.Create)
 - added create asset from byte[] (ctor and Asset.Create)
 - added ImportAndLoad<T>
+- added Import(Path[]) to batch-import multiple assets
 - added IsImported(Path)
+- added setter to DirectoryMonitoring
+- added Database.Contains back and redirected Status.IsImported (same)
+- added paths to all important subfolders (eg Packages, Library, ..)
 - split Create into Create and CreateAsNew
 - split Copy into Copy and CopyAsNew
 - renamed Copy instance method to SaveAs and SaveAsNew
+- renamed FailedToDeletePaths to PathsNotDeleted
+- renamed ToAssetPaths(Object[]) to Get(Object[])
 - fixed compile errors in some Unity versions 
 - GetIcon returns Texture2D
 

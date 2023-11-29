@@ -20,7 +20,7 @@ namespace CodeSmile.Editor
 				///     Returns true if cache server (Accelerator) is enabled in Project Settings / Preferences.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsCacheServerEnabled.html">AssetDatabase.IsCacheServerEnabled</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsCacheServerEnabled.html">AssetDatabase.IsCacheServerEnabled</a>
 				/// </seealso>
 				public static Boolean Enabled => AssetDatabase.IsCacheServerEnabled();
 
@@ -28,7 +28,7 @@ namespace CodeSmile.Editor
 				///     Returns true if the editor is connected to a cache server (Accelerator).
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsConnectedToCacheServer.html">AssetDatabase.IsConnectedToCacheServer</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsConnectedToCacheServer.html">AssetDatabase.IsConnectedToCacheServer</a>
 				/// </seealso>
 				public static Boolean Connected => AssetDatabase.IsConnectedToCacheServer();
 
@@ -39,7 +39,7 @@ namespace CodeSmile.Editor
 				///     Returns an empty string if there is no connection.
 				/// </remarks>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCurrentCacheServerIp.html">AssetDatabase.GetCurrentCacheServerIp</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCurrentCacheServerIp.html">AssetDatabase.GetCurrentCacheServerIp</a>
 				/// </seealso>
 				public static String ConnectedAddress => AssetDatabase.GetCurrentCacheServerIp();
 
@@ -50,7 +50,7 @@ namespace CodeSmile.Editor
 				///     Returns an empty string if there is no connection.
 				/// </remarks>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerAddress.html">AssetDatabase.GetCacheServerAddress</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerAddress.html">AssetDatabase.GetCacheServerAddress</a>
 				/// </seealso>
 				public static String Address => AssetDatabase.GetCacheServerAddress();
 
@@ -61,7 +61,7 @@ namespace CodeSmile.Editor
 				///     Returns 0 if the port is unset.
 				/// </remarks>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerPort.html">AssetDatabase.GetCacheServerPort</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerPort.html">AssetDatabase.GetCacheServerPort</a>
 				/// </seealso>
 				public static UInt16 Port => AssetDatabase.GetCacheServerPort();
 
@@ -69,7 +69,7 @@ namespace CodeSmile.Editor
 				///     Returns the cache server (Accelerator) namespace prefix from Project Settings.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerNamespacePrefix.html">AssetDatabase.GetCacheServerNamespacePrefix</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerNamespacePrefix.html">AssetDatabase.GetCacheServerNamespacePrefix</a>
 				/// </seealso>
 				public static String NamespacePrefix => AssetDatabase.GetCacheServerNamespacePrefix();
 
@@ -77,7 +77,7 @@ namespace CodeSmile.Editor
 				///     Returns whether the cache server (Accelerator) is allowed to upload files.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerEnableUpload.html">AssetDatabase.GetCacheServerEnableUpload</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerEnableUpload.html">AssetDatabase.GetCacheServerEnableUpload</a>
 				/// </seealso>
 				public static Boolean UploadsAllowed => AssetDatabase.GetCacheServerEnableUpload();
 
@@ -85,7 +85,7 @@ namespace CodeSmile.Editor
 				///     Returns whether the cache server (Accelerator) is allowed to download files.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerEnableDownload.html">AssetDatabase.GetCacheServerEnableDownload</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetCacheServerEnableDownload.html">AssetDatabase.GetCacheServerEnableDownload</a>
 				/// </seealso>
 				public static Boolean DownloadsAllowed => AssetDatabase.GetCacheServerEnableDownload();
 
@@ -93,7 +93,7 @@ namespace CodeSmile.Editor
 				///     Applies modified cache server (Accelerator) settings so that they take effect immediately.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RefreshSettings.html">AssetDatabase.RefreshSettings</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RefreshSettings.html">AssetDatabase.RefreshSettings</a>
 				/// </seealso>
 				[ExcludeFromCodeCoverage] // not testable
 				public static void ApplySettings() => AssetDatabase.RefreshSettings();
@@ -106,7 +106,7 @@ namespace CodeSmile.Editor
 				/// <param name="port">The port number of the Cache Server/Accelerator service.</param>
 				/// <returns>True if connection could be established, false otherwise.</returns>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanConnectToCacheServer.html">AssetDatabase.CanConnectToCacheServer</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanConnectToCacheServer.html">AssetDatabase.CanConnectToCacheServer</a>
 				/// </seealso>
 				[ExcludeFromCodeCoverage] // not testable, requires external service
 				public static Boolean CanConnect(String ipAddress, UInt16 port) =>
@@ -117,7 +117,7 @@ namespace CodeSmile.Editor
 				///     connection attempts fail repeatedly.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ResetCacheServerReconnectTimer.html">AssetDatabase.ResetCacheServerReconnectTimer</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ResetCacheServerReconnectTimer.html">AssetDatabase.ResetCacheServerReconnectTimer</a>
 				/// </seealso>
 				[ExcludeFromCodeCoverage] // not testable
 				public static void ResetReconnectTimer() => AssetDatabase.ResetCacheServerReconnectTimer();
@@ -126,7 +126,7 @@ namespace CodeSmile.Editor
 				///     Disconnects any active cache server (Accelerator) connection.
 				/// </summary>
 				/// <seealso cref="">
-				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CloseCacheServerConnection.html">AssetDatabase.CloseCacheServerConnection</a>
+				///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CloseCacheServerConnection.html">AssetDatabase.CloseCacheServerConnection</a>
 				/// </seealso>
 				public static void Disconnect() => AssetDatabase.CloseCacheServerConnection();
 			}

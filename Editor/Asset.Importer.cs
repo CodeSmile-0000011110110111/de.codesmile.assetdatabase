@@ -20,10 +20,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
 			public static Type GetActive(Path path)
 			{
@@ -41,10 +41,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="guid">GUID of an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
 			public static Type GetActive(GUID guid)
 			{
@@ -62,10 +62,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="asset">Instance of an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
 			public static Type GetActive(Object asset) => GetActive(GetGuid(asset));
 
@@ -75,10 +75,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
 			/// </seealso>
 			public static Type[] GetActive(Path[] paths) => GetActive(Path.ToStrings(paths));
 
@@ -88,10 +88,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
 			/// </seealso>
 			public static Type[] GetActive(String[] paths)
 			{
@@ -108,10 +108,10 @@ namespace CodeSmile.Editor
 			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="guids">GUIDs to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
 			/// </seealso>
 			public static Type[] GetActive(ReadOnlySpan<GUID> guids)
 			{
@@ -129,7 +129,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>AssetImporter types that handle importing assets of the same kind as the given asset file.</returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
 			/// </seealso>
 			public static Type[] GetAvailable(Path path)
 			{
@@ -146,7 +146,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset file.</param>
 			/// <returns>AssetImporter types that handle importing assets of the same kind as the given asset file.</returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
 			/// </seealso>
 			public static Type[] GetAvailable(Object asset) => GetAvailable(Path.Get(asset));
 
@@ -155,9 +155,9 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>The type of the default importer for assets of this kind.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
 			/// </seealso>
 			public static Type GetDefault(Path path)
 			{
@@ -173,9 +173,9 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="asset">An asset instance.</param>
 			/// <returns>The type of the default importer for assets of this kind.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
 			/// </seealso>
 			public static Type GetDefault(Object asset) => GetDefault(Path.Get(asset));
 
@@ -184,10 +184,10 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>The overridden AssetImporter type or null if there is no overridden importer.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.SetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.SetOverride{T}" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
 			/// </seealso>
 			public static Type GetOverride(Path path) => AssetDatabase.GetImporterOverride(path);
 
@@ -196,10 +196,10 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="asset">An asset instance.</param>
 			/// <returns>The overridden AssetImporter type or null if there is no overridden importer.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.SetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.SetOverride{T}" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
 			/// </seealso>
 			public static Type GetOverride(Object asset) => GetOverride(Path.Get(asset));
 
@@ -207,11 +207,12 @@ namespace CodeSmile.Editor
 			///     Sets the custom AssetImporter to use for the specified asset.
 			/// </summary>
 			/// <param name="path">Path to an asset file.</param>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.ClearOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// <typeparam name="T">Type derived from AssetImporter. Note: in Unity 2021.3 T is ScriptedImporter.</typeparam>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetImporterOverride.html">AssetDatabase.SetImporterOverride</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.ClearOverride" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetImporterOverride.html">AssetDatabase.SetImporterOverride</a>
 			/// </seealso>
 			public static void SetOverride<T>(Path path)
 #if UNITY_2022_1_OR_NEWER
@@ -228,11 +229,11 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <remarks>The asset will then use the default importer.</remarks>
 			/// <param name="path">Path to an asset file.</param>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.SetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html">AssetDatabase.ClearImporterOverride</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.SetOverride{T}" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html">AssetDatabase.ClearImporterOverride</a>
 			/// </seealso>
 			public static void ClearOverride(Path path) => AssetDatabase.ClearImporterOverride(path);
 
@@ -241,14 +242,12 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>True if the importer for the asset is overriden, false if it uses the default importer.</returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.SetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
-			/// <seealso cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
-			/// </seealso>
-			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.SetOverride{T}" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetOverride" />
+			/// - <see cref="CodeSmile.Editor.Asset.Importer.GetDefault" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html">AssetDatabase.ClearImporterOverride</a>
 			/// </seealso>
 			public static Boolean IsOverridden(Path path) => GetDefault(path) != GetOverride(path);
 
@@ -261,7 +260,7 @@ namespace CodeSmile.Editor
 			/// </remarks>
 			/// <param name="path">Path to an asset file.</param>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html">AssetDatabase.WriteImportSettingsIfDirty</a>
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html">AssetDatabase.WriteImportSettingsIfDirty</a>
 			/// </seealso>
 			public static void ApplySettings(Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
 		}

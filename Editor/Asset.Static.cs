@@ -18,7 +18,7 @@ namespace CodeSmile.Editor
 		/// <param name="path">Path to an asset.</param>
 		/// <returns>Type of the asset. Null if the path does not exist.</returns>
 		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html">AssetDatabase.GetMainAssetTypeAtPath</a>
+		/// -  <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html">AssetDatabase.GetMainAssetTypeAtPath</a>
 		/// </seealso>
 		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
@@ -33,7 +33,7 @@ namespace CodeSmile.Editor
 		/// <param name="guid">Guid of an asset.</param>
 		/// <returns>Type of the asset. Null if the guid is not known or not an asset.</returns>
 		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
+		///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
 		/// </seealso>
 		public static Type GetMainType(GUID guid)
 		{
@@ -51,7 +51,7 @@ namespace CodeSmile.Editor
 		/// <param name="fileId">Local file ID of the sub-asset.</param>
 		/// <returns>Type of the SubAsset, or null.</returns>
 		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
+		///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
 		/// </seealso>
 		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
 
@@ -62,14 +62,13 @@ namespace CodeSmile.Editor
 		/// </code>
 		/// </example>
 		/// <param name="asset">Object from which GUID and FileId should be obtained.</param>
-		/// <seealso cref="CodeSmile.Editor.Asset.GetGuid" />
-		/// <seealso cref="CodeSmile.Editor.Asset.GetFileId" />
+		/// <returns>The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset. </returns>
 		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		/// - <see cref="CodeSmile.Editor.Asset.GetGuid" />
+		/// - <see cref="CodeSmile.Editor.Asset.GetFileId" />
+		/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
-		/// <returns>
-		///     The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset.
-		/// </returns>
+
 		// ValueTuple makes doxygen accept it as documented, see: https://github.com/doxygen/doxygen/issues/9618
 		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object asset)
 		{
@@ -86,13 +85,13 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Returns the GUID of an object. Returns an empty GUID if the object is null or not an asset.
 		/// </summary>
-		/// <param name="asset"></param>
-		/// <seealso cref="CodeSmile.Editor.Asset.GetFileId" />
-		/// <seealso cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		/// <param name="asset">An asset instance.</param>
+		/// <returns>The GUID of the asset. Returns empty GUID if the asset is null or not an asset.</returns>
 		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		/// - <see cref="CodeSmile.Editor.Asset.GetFileId" />
+		/// - <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
-		/// <returns></returns>
 		public static GUID GetGuid(Object asset)
 		{
 			if (asset == null)
@@ -109,12 +108,12 @@ namespace CodeSmile.Editor
 		///     Returns the local FileID of the object.
 		/// </summary>
 		/// <param name="asset"></param>
-		/// <seealso cref="CodeSmile.Editor.Asset.GetGuid" />
-		/// <seealso cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
-		/// <seealso cref="">
-		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
-		/// </seealso>
 		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
+		/// <seealso cref="">
+		/// - <see cref="CodeSmile.Editor.Asset.GetGuid" />
+		/// - <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
+		/// </seealso>
 		public static Int64 GetFileId(Object asset)
 		{
 			if (asset == null)
@@ -130,6 +129,9 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="path">Path to an asset.</param>
 		/// <returns>The icon texture cast as Texture2D, or null.</returns>
+		/// <seealso cref="">
+		/// - <see cref="CodeSmile.Editor.Asset.GetIcon(Object)" />
+		/// </seealso>
 		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
 
 		/// <summary>
@@ -137,20 +139,25 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="asset">The object for which to get the icon.</param>
 		/// <returns>The object's icon texture or null. If the obj is a sub-asset then the main asset's icon is returned.</returns>
+		/// <seealso cref="">
+		/// - <see cref="CodeSmile.Editor.Asset.GetIcon(CodeSmile.Editor.Asset.Path)" />
+		/// </seealso>
 		public static Texture2D GetIcon(Object asset) => GetIcon(Path.Get(asset));
 
 		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a failure message.
 		/// </summary>
 		/// <returns>The last error message or empty string if the last operation succeeded.</returns>
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Rename" />
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Move" />
-		/// <seealso cref="CodeSmile.Editor.Asset.File.Copy" />
-		/// <seealso cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
-		/// <seealso cref="CodeSmile.Editor.Asset.Path.IsValid" />
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
-		/// <seealso cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+		/// <seealso cref="">
+		/// - <see cref="CodeSmile.Editor.Asset.File.Rename" />
+		/// - <see cref="CodeSmile.Editor.Asset.File.Move" />
+		/// - <see cref="CodeSmile.Editor.Asset.File.Copy" />
+		/// - <see cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
+		/// - <see cref="CodeSmile.Editor.Asset.File.IsValid" />
+		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
+		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
+		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+		/// </seealso>
 		public static String GetLastErrorMessage() => s_LastErrorMessage;
 
 		private static void SetLastErrorMessage(String message) =>

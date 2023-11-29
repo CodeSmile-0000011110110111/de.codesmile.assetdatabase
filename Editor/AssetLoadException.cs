@@ -23,15 +23,15 @@ namespace CodeSmile.Editor
 		/// <summary>
 		///     Instantiates exception with message.
 		/// </summary>
-		/// <param name="message"></param>
+		/// <param name="message">Exception message</param>
 		public AssetLoadException(String message)
 			: base(message) {}
 
 		/// <summary>
 		///     Instantiates exception with message and inner exception.
 		/// </summary>
-		/// <param name="message"></param>
-		/// <param name="innerException"></param>
+		/// <param name="message">Exception message</param>
+		/// <param name="innerException">Inner exception that is rethrown</param>
 		public AssetLoadException(String message, Exception innerException)
 			: base(message, innerException) {}
 	}

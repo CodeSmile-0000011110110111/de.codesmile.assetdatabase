@@ -24,9 +24,9 @@ namespace CodeSmile.Editor
 			///     Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated.
 			/// </remarks>
 			/// <seealso cref="">
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DesiredWorkerCount.html">AssetDatabase.DesiredWorkerCount</a>
-			/// </seealso>
-			/// <seealso cref="">
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceToDesiredWorkerCount.html">AssetDatabase.ForceToDesiredWorkerCount</a>
 			/// </seealso>
 			public static Int32 DesiredWorkerCount
@@ -46,6 +46,7 @@ namespace CodeSmile.Editor
 			///     DirectoryMonitoring is automatically disabled when symlinks are used in the project.
 			/// </remarks>
 			/// <seealso cref="">
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsDirectoryMonitoringEnabled.html">AssetDatabase.IsDirectoryMonitoringEnabled</a>
 			/// </seealso>
 			public static Boolean DirectoryMonitoring
@@ -60,7 +61,7 @@ namespace CodeSmile.Editor
 			/// <param name="instance">Instance to test.</param>
 			/// <returns>Returns true if the asset is imported. Returns false if the asset is not in the database, or if obj is null.</returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
 			public static Boolean Contains(Object instance) =>
 				instance != null ? AssetDatabase.Contains(instance) : false;
@@ -71,7 +72,7 @@ namespace CodeSmile.Editor
 			/// <param name="instanceId">The instance ID of an asset.</param>
 			/// <returns>Returns true if the asset is imported. Returns false if the asset is not in the database.</returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
 			public static Boolean Contains(Int32 instanceId) => AssetDatabase.Contains(instanceId);
 
@@ -84,8 +85,9 @@ namespace CodeSmile.Editor
 			/// <remarks>
 			///     Must be called in pair with CodeSmile.Editor.Asset.Database.DisallowAutoRefresh.
 			/// </remarks>
-			/// <seealso cref="CodeSmile.Editor.Asset.Database.DisallowAutoRefresh" />
 			/// <seealso cref="">
+			///     - <see cref="CodeSmile.Editor.Asset.Database.DisallowAutoRefresh" />
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AllowAutoRefresh.html">AssetDatabase.AllowAutoRefresh</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -97,8 +99,9 @@ namespace CodeSmile.Editor
 			/// <remarks>
 			///     Must be called in pair with CodeSmile.Editor.Asset.Database.AllowAutoRefresh.
 			/// </remarks>
-			/// <seealso cref="CodeSmile.Editor.Asset.Database.AllowAutoRefresh" />
 			/// <seealso cref="">
+			///     - <see cref="CodeSmile.Editor.Asset.Database.AllowAutoRefresh" />
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DisallowAutoRefresh.html">AssetDatabase.DisallowAutoRefresh</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -112,6 +115,7 @@ namespace CodeSmile.Editor
 			///     access exceptions.
 			/// </remarks>
 			/// <seealso cref="">
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ReleaseCachedFileHandles.html">AssetDatabase.ReleaseCachedFileHandles</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -126,9 +130,11 @@ namespace CodeSmile.Editor
 			///     format this may change between none to all native assets, including .meta files. Use with caution when
 			///     working with source control: discuss implications with the team / tech lead.
 			/// </remarks>
-			/// <seealso
-			///     cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{string},UnityEditor.ForceReserializeAssetsOptions)" />
 			/// <seealso cref="">
+			///     -
+			///     <see
+			///         cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{String},ForceReserializeAssetsOptions)" />
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -147,8 +153,9 @@ namespace CodeSmile.Editor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
-			/// <seealso cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
 			/// <seealso cref="">
+			///     - <see cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -169,8 +176,9 @@ namespace CodeSmile.Editor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
-			/// <seealso cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
 			/// <seealso cref="">
+			///     - <see cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
+			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
@@ -187,26 +195,37 @@ namespace CodeSmile.Editor
 			///     CodeSmile.Editor.Asset.File.Save to explicitly save each modified asset. Preferably do so within
 			///     a CodeSmile.Editor.Asset.File.BatchEditing operation. Just be nice to fellow Editor users. ;)
 			/// </remarks>
-			/// <see cref="CodeSmile.Editor.Asset.File.Save" />
-			/// <see cref="CodeSmile.Editor.Asset.File.ForceSave" />
-			/// <see cref="CodeSmile.Editor.Asset.File.BatchEditing" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssets.html">AssetDatabase.SaveAssets</a>
+			///     - <see cref="CodeSmile.Editor.Asset.File.Save" />
+			///     - <see cref="CodeSmile.Editor.Asset.File.ForceSave" />
+			///     - <see cref="CodeSmile.Editor.Asset.File.BatchEditing" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssets.html">AssetDatabase.SaveAssets</a>
 			/// </seealso>
 			public static void SaveAll() => AssetDatabase.SaveAssets();
 
 			/// <summary>
-			///     Scans for **externally** modified assets and imports them. Prefer to use CodeSmile.Editor.Asset.File.Import
+			///     Scans for **external** file system modifications and updates the Database accordingly. Prefer to use
+			///     CodeSmile.Editor.Asset.File.Import
 			///     within CodeSmile.Editor.Asset.File.BatchEditing. **CAUTION**: ImportAll ('Refresh') unloads unused resources.
 			///     This can degrade editor performance!
 			/// </summary>
 			/// <remarks>
-			///     When to call ImportAll (same as AssetDatabase.Refresh):
-			///     - After System.IO.* operations modified files/folders in the project.
-			///     - After running an external process that modified files/folders in the project.
-			///     There is no need to call ImportAll / 'Refresh' in any other situation!
 			///     For best performance, prefer to use CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions) to import
-			///     multiple assets.
+			///     multiple assets in a batch operation.
+			/// </remarks>
+			/// <remarks>
+			///     When to call ImportAll (same as AssetDatabase.Refresh):
+			///     - After System.IO.File/Directory or similar methods modified files/folders in the project.
+			///     - After running an external process that possibly modified files/folders in the project.
+			///     There is no need to call ImportAll / 'Refresh' in any other situation!
+			/// </remarks>
+			/// <remarks>
+			///     Modified means the following:
+			///     - Create a file / folder
+			///     - Delete or trash a file / folder
+			///     - Move or rename a file / folder
+			///     - Change a file's contents
+			///     - Change attributes of a file/folder
 			/// </remarks>
 			/// <remarks>
 			///     History: I believe there was a time around Unity 3.x-ish where the Editor did not have an "auto refresh"
@@ -232,9 +251,9 @@ namespace CodeSmile.Editor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
 			/// </param>
-			/// <seealso cref="CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html">AssetDatabase.Refresh</a>
+			///     - <see cref="CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html">AssetDatabase.Refresh</a>
 			/// </seealso>
 			public static void ImportAll(ImportAssetOptions options = ImportAssetOptions.Default) =>
 				AssetDatabase.Refresh(options);

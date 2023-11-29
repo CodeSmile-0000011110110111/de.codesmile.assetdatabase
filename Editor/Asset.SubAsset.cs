@@ -30,9 +30,9 @@ namespace CodeSmile.Editor
 			///     True if extraction succeeded. False otherwise, in that case CodeSmile.Editor.Asset.GetLastErrorMessage
 			///     provides the error message.
 			/// </returns>
-			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html">AssetDatabase.ExtractAsset</a>
+			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html">AssetDatabase.ExtractAsset</a>
 			/// </seealso>
 			public static Boolean Extract(Object subAsset, Path destinationPath)
 			{
@@ -47,9 +47,9 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="subAssetInstance">The object to add as a sub-asset. It must not already be an asset.</param>
 			/// <param name="asset">Instance of an asset.</param>
-			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AddObjectToAsset.html">AssetDatabase.AddObjectToAsset</a>
+			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AddObjectToAsset.html">AssetDatabase.AddObjectToAsset</a>
 			/// </seealso>
 			public static void Add(Object subAssetInstance, Object asset)
 			{
@@ -66,9 +66,9 @@ namespace CodeSmile.Editor
 			///     Removes a sub-object from the asset it is contained in.
 			/// </summary>
 			/// <param name="subAsset">Instance of a sub-asset.</param>
-			/// <seealso cref="CodeSmile.Editor.Asset.SubAsset.Add" />
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html">AssetDatabase.RemoveObjectFromAsset</a>
+			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.Add" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html">AssetDatabase.RemoveObjectFromAsset</a>
 			/// </seealso>
 			public static void Remove(Object subAsset)
 			{
@@ -84,7 +84,9 @@ namespace CodeSmile.Editor
 			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
 			/// <param name="path">Path to the asset file.</param>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
+			/// - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
 			/// </seealso>
 			public static void SetMain(Object subAsset, Path path)
 			{
@@ -99,7 +101,9 @@ namespace CodeSmile.Editor
 			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
 			/// <param name="asset">Instance of the asset.</param>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
+			/// - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
+			/// - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
 			/// </seealso>
 			public static void SetMain(Object subAsset, Object asset) => SetMain(subAsset, Path.Get(asset));
 
@@ -118,7 +122,8 @@ namespace CodeSmile.Editor
 			///     no sub-assets and the asset type does not include the main type in the sub-assets list.
 			/// </returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>
+			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.LoadVisible" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>
 			/// </seealso>
 			public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
 
@@ -139,7 +144,8 @@ namespace CodeSmile.Editor
 			///     no sub-assets.
 			/// </returns>
 			/// <seealso cref="">
-			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html">AssetDatabase.LoadAllAssetRepresentationsAtPath</a>
+			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.LoadAll" />
+			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html">AssetDatabase.LoadAllAssetRepresentationsAtPath</a>
 			/// </seealso>
 			public static Object[] LoadVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
 		}
