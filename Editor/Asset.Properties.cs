@@ -27,8 +27,8 @@ namespace CodeSmile.Editor
 		/// </example>
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.SubAsset" />
-		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path)" />
-		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object)" />
+		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(Object,CodeSmile.Editor.Asset.Path)" />
+		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(Object,Object)" />
 		/// - <see cref="CodeSmile.Editor.Asset.File.LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
 		/// </seealso>
 		public Object MainObject

@@ -153,7 +153,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.File.Move" />
 		/// - <see cref="CodeSmile.Editor.Asset.File.Copy" />
 		/// - <see cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
-		/// - <see cref="CodeSmile.Editor.Asset.File.IsValid" />
+		/// - <see cref="CodeSmile.Editor.Asset.Path.IsValid" />
 		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
 		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
 		/// - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />

@@ -8,7 +8,7 @@ namespace CodeSmile.Editor
 	/// <summary>
 	///     Extensions for System.String
 	/// </summary>
-	public static class StringExtensions
+	internal static class StringExtensions
 	{
 		/// <summary>
 		///     Converts any backslashes in the path to forward slashes
@@ -19,6 +19,6 @@ namespace CodeSmile.Editor
 		/// </remarks>
 		/// <param name="path">Input string.</param>
 		/// <returns>The string with any backslashes replaced by forward slashes.</returns>
-		public static String ToForwardSlashes(this String path) => path.Replace('\\', '/');
+		internal static String ToForwardSlashes(this String path) => path.Replace('\\', '/');
 	}
 }

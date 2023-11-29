@@ -13,9 +13,8 @@ var searchData=
   ['setmain_10',['setmain',['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset_ac7443f6fb0c09da2f8efe65f03f47900.html#ac7443f6fb0c09da2f8efe65f03f47900',1,'CodeSmile.Editor.Asset.SubAsset.SetMain(Object subAsset, Path path)'],['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset_aa0c125dbe1ddb8cfd82c8848e6a0a2e2.html#aa0c125dbe1ddb8cfd82c8848e6a0a2e2',1,'CodeSmile.Editor.Asset.SubAsset.SetMain(Object subAsset, Object asset)']]],
   ['setoverride_3c_20t_20_3e_11',['SetOverride&lt; T &gt;',['../class_code_smile_1_1_editor_1_1_asset_1_1_importer_a2635a92be6f2e87ece1fb427a88ea809.html#a2635a92be6f2e87ece1fb427a88ea809',1,'CodeSmile::Editor::Asset::Importer']]],
   ['status_12',['Status',['../class_code_smile_1_1_editor_1_1_asset_1_1_status.html',1,'CodeSmile::Editor::Asset']]],
-  ['stringextensions_13',['StringExtensions',['../class_code_smile_1_1_editor_1_1_string_extensions.html',1,'CodeSmile::Editor']]],
-  ['subasset_14',['SubAsset',['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html',1,'CodeSmile::Editor::Asset']]],
-  ['subassets_15',['SubAssets',['../class_code_smile_1_1_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389.html#accd20b073ee732df08cf6ba0b9b8a389',1,'CodeSmile::Editor::Asset']]],
-  ['subfolders_16',['SubFolders',['../class_code_smile_1_1_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f.html#a0247c4e1ee282e42b31b89c70bebe85f',1,'CodeSmile::Editor::Asset::Path']]],
-  ['support_20feeback_17',['Support &amp; Feeback',['../index.html#support--feeback',1,'']]]
+  ['subasset_13',['SubAsset',['../class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset.html',1,'CodeSmile::Editor::Asset']]],
+  ['subassets_14',['SubAssets',['../class_code_smile_1_1_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389.html#accd20b073ee732df08cf6ba0b9b8a389',1,'CodeSmile::Editor::Asset']]],
+  ['subfolders_15',['SubFolders',['../class_code_smile_1_1_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f.html#a0247c4e1ee282e42b31b89c70bebe85f',1,'CodeSmile::Editor::Asset::Path']]],
+  ['support_20feeback_16',['Support &amp; Feeback',['../index.html#support--feeback',1,'']]]
 ];

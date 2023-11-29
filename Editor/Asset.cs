@@ -213,7 +213,7 @@ namespace CodeSmile.Editor
 		///     This is an alias for:
 		///     <code>var obj = asset as T;</code>
 		/// </remarks>
-		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="T">Type derived from UnityEngine.Object.</typeparam>
 		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
 		public T Get<T>() where T : Object => m_MainObject as T;
 
@@ -313,7 +313,7 @@ namespace CodeSmile.Editor
 		/// <remarks>
 		///     To load the main object of the Asset instance use the CodeSmile.Editor.Asset.MainObject property.
 		/// </remarks>
-		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="T">UnityEngine.Object derived type.</typeparam>
 		/// <returns>Returns the 'first' asset of the type found.</returns>
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.SubAssets" />
