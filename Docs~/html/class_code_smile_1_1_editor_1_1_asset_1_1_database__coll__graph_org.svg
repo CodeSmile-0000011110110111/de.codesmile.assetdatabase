@@ -21,23 +21,23 @@
 <text text-anchor="start" x="4" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">AllowAutoRefresh()</text>
 <text text-anchor="start" x="4" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisallowAutoRefresh()</text>
+<text text-anchor="start" x="14" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">Contains()</text>
 <text text-anchor="start" x="4" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserialize()</text>
+<text text-anchor="start" x="14" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">Contains()</text>
 <text text-anchor="start" x="4" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserialize()</text>
+<text text-anchor="start" x="14" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">DisallowAutoRefresh()</text>
 <text text-anchor="start" x="4" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserializeAll()</text>
+<text text-anchor="start" x="14" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserialize()</text>
 <text text-anchor="start" x="4" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImportAll()</text>
+<text text-anchor="start" x="14" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserialize()</text>
 <text text-anchor="start" x="4" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReleaseFileHandles()</text>
+<text text-anchor="start" x="14" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForceReserializeAll()</text>
 <text text-anchor="start" x="4" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">SaveAll()</text>
-<text text-anchor="start" x="4" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">~</text>
-<text text-anchor="start" x="14" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">StartAssetEditing()</text>
-<text text-anchor="start" x="4" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">~</text>
-<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">StopAssetEditing()</text>
+<text text-anchor="start" x="14" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImportAll()</text>
+<text text-anchor="start" x="4" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="14" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReleaseFileHandles()</text>
+<text text-anchor="start" x="4" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">SaveAll()</text>
 <polygon fill="#666666" stroke="#666666" points="0,-194 0,-194 113,-194 113,-194 0,-194"/>
 <polygon fill="#666666" stroke="#666666" points="0,-162 0,-162 12,-162 12,-162 0,-162"/>
 <polygon fill="#666666" stroke="#666666" points="12,-162 12,-162 113,-162 113,-162 12,-162"/>

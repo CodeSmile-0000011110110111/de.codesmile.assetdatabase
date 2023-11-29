@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -115,8 +116,13 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Forces reserializing all assets. This loads all assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
-<p>ForceReserialize(System.Collections.Generic.IEnumerable&lt;CodeSmile.Editor.Asset.Path&gt;,UnityEditor.ForceReserializeAssetsOptions) </p>
+<p>Updates all native asset files to reflect any changes in serialization in the current editor version. </p>
+<p>Use this after upgrading Unity Editor versions and you want to make sure all native assets are serialized to the current serialization format. Depending on whether Unity made changes to the serialization format this may change between none to all native assets, including .meta files. Use with caution when working with source control: discuss implications with the team / tech lead. </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a6a52e80c5a7eb1a687c8d6954a58d6fc.html#a6a52e80c5a7eb1a687c8d6954a58d6fc" title="Updates all native asset files to reflect any changes in serialization in the current editor version.">CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable&lt;String&gt;,ForceReserializeAssetsOptions)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a> </li>
+</ul>
 
 </div>
 </div>

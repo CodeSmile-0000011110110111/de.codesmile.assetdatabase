@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -112,22 +113,30 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns true if the path exists in the AssetDatabase. NOTE: This may still return true for asset files that have been deleted externally. ExistsInFileSystem </p>
+<p>Returns true if the path exists in the AssetDatabase. </p>
+<p>This may still return true for asset files that have been deleted externally if those changes have not been imported via <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318.html#a7c993d64861e62fbdcff3700690b2318" title="Scans for external file system modifications and updates the Database accordingly....">CodeSmile.Editor.Asset.Database.ImportAll</a>. </p>
+<p>In Unity 2023.2 or newer uses the new AssetPathExists method. In earlier versions AssetPathToGUID is used.</p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a60c6f10f04d962b32a6563c6b842b81c.html#a60c6f10f04d962b32a6563c6b842b81c" title="Returns true if the path exists in the file system.">CodeSmile.Editor.Asset.Path.ExistsInFileSystem</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status_acb9cd6a0d6ed83f334343ce1c50b7e43.html#acb9cd6a0d6ed83f334343ce1c50b7e43" title="Checks if the object is an asset in the AssetDatabase.">CodeSmile.Editor.Asset.Status.IsImported</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html">AssetDatabase.AssetPathToGUID</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00039">39</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   42</span>                {</div>
-<div class="line"><span class="lineno">   43</span><span class="preprocessor">#if UNITY_2023_1_OR_NEWER</span></div>
-<div class="line"><span class="lineno">   44</span>                    <span class="keywordflow">return</span> AssetDatabase.AssetPathExists(m_RelativePath);</div>
-<div class="line"><span class="lineno">   45</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   46</span>                    <span class="keywordflow">return</span> <a class="code hl_property" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c.html#a66a3fc7176ae79e7e9ee85df99c5ff7c">Guid</a>.Empty() == <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   48</span>                }</div>
-<div class="line"><span class="lineno">   49</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c_html_a66a3fc7176ae79e7e9ee85df99c5ff7c"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c.html#a66a3fc7176ae79e7e9ee85df99c5ff7c">CodeSmile.Editor.Asset.Path.Guid</a></div><div class="ttdeci">GUID Guid</div><div class="ttdoc">Returns the GUID for the path. Returns an empty GUID if the asset at the path does not exist in the d...</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_path_8cs_source.html#l00032">Asset.Path.cs:32</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00057">57</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>            {</div>
+<div class="line"><span class="lineno">   59</span>                <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   60</span>                {</div>
+<div class="line"><span class="lineno">   61</span><span class="preprocessor">#if UNITY_2023_2_OR_NEWER</span></div>
+<div class="line"><span class="lineno">   62</span>                    <span class="keywordflow">return</span> AssetDatabase.AssetPathExists(m_RelativePath);</div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   64</span>                    <span class="keywordflow">return</span> AssetDatabase.AssetPathToGUID(m_RelativePath, AssetPathToGUIDOptions.OnlyExistingAssets).Length &gt; 0;</div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   66</span>                }</div>
+<div class="line"><span class="lineno">   67</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00608">Asset.File.Delete()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00821">Asset.File.Delete()</a>.</p>
 
 </div>
 </div>

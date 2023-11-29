@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,14 +117,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Opens the file at path for editing in the version control system. <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">Unity Manual</a> </p>
+<p>Tries to open the path for editing in the version control system. </p>
+<p>Use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_aa423c228f7292c32aa016adc4b1bb0d2.html#aa423c228f7292c32aa016adc4b1bb0d2" title="Returns true if the asset can be opened for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.CanMakeEditable</a> to get an error message if this method returns false.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the path is now editable, false if at least one failed to open.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_aa423c228f7292c32aa016adc4b1bb0d2.html#aa423c228f7292c32aa016adc4b1bb0d2" title="Returns true if the asset can be opened for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.CanMakeEditable</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a> </li>
+</ul>
 
 </div>
 </div>

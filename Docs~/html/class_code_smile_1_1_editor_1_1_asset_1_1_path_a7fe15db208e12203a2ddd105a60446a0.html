@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -108,14 +109,16 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
       </table>
 </div><div class="memdoc">
 
-<p>Tests paths for equality with a string. The string is elevated to a Path instance, and then their internal path strings are compared. </p>
+<p>Tests another path for equality. </p>
+<p>They are equal if their internal relative path strings are equal.</p>
+<p>The string is elevated to a Path instance, and then compared.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td></td></tr>
+    <tr><td class="paramname">other</td><td>A path string or null.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this path equals the other path. False otherwise.</dd></dl>
 
 </div>
 </div>

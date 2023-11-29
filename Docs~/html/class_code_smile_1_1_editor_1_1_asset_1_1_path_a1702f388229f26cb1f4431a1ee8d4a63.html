@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,16 +117,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns true if the folder exists. False otherwise, or if the path is to a file. </p>
+<p>Tests if the given folder exists in the file system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>path to a file or folder</td></tr>
+    <tr><td class="paramname">path</td><td>Path to a folder.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the folder exists</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the folder exists in the file system. False otherwise.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9" title="Tests if the given file exists in the file system.">CodeSmile.Editor.Asset.Path.FileExists</a> </li>
+</ul>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00154">Asset.Path.CreateFolders()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00245">Asset.Path.CreateFolders()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

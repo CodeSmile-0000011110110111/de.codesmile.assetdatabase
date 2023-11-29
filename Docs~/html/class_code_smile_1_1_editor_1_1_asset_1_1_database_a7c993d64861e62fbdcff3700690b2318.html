@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,16 +117,34 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Formerly known as 'Refresh()', this scans for and imports assets that have been modified externally. External is defined as 'any file modification operation not done through the AssetDatabase', for example by using System.IO methods or by running scripts and other external tools. </p>
-<p>Note: the 100% accurate name for this method would have to be: ImportAllExternallyModifiedAssetsAndAlsoUnloadUnusedAssets() </p>
-<p>CAUTION: Calling this may have an adverse effect on editor performance. In addition to scanning for changed files it also calls Resources.UnloadUnusedAssets internally and it also discards any unsaved objects not marked as 'dirty' that are only referenced by scripts, leading to potential loss of unsaved data. https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html </p>
-<p>File.Import</p>
+<p>Scans for <b>external</b> file system modifications and updates the Database accordingly. Prefer to use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a9023c374da2135cf7e97a768aa99a4b1.html#a9023c374da2135cf7e97a768aa99a4b1" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me...">CodeSmile.Editor.Asset.File.Import</a> within <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2.html#ab0082c2158f7de6376b26a75827bd7a2" title="Batch multiple asset file operations to improve execution speed.">CodeSmile.Editor.Asset.File.BatchEditing</a>. <b>CAUTION</b>: ImportAll ('Refresh') unloads unused resources. This can degrade editor performance! </p>
+<p>For best performance, prefer to use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a14a0b13089618f69503bf61a03560df3.html#a14a0b13089618f69503bf61a03560df3" title="Imports multiple paths that were created or modified &#39;externally&#39;. Externally refers to any means oth...">CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)</a> to import multiple assets in a batch operation. </p>
+<p>When to call ImportAll (same as AssetDatabase.Refresh):</p><ul>
+<li>After System.IO.File/Directory or similar methods modified files/folders in the project.</li>
+<li>After running an external process that possibly modified files/folders in the project. There is no need to call ImportAll / 'Refresh' in any other situation! </li>
+</ul>
+<p>Modified means the following:</p><ul>
+<li>Create a file / folder</li>
+<li>Delete or trash a file / folder</li>
+<li>Move or rename a file / folder</li>
+<li>Change a file's contents</li>
+<li>Change attributes of a file/folder </li>
+</ul>
+<p>History: I believe there was a time around Unity 3.x-ish where the Editor did not have an "auto refresh" feature, so calling 'AssetDatabase.Refresh' after any AssetDatabase operation was common. This seems to have stuck, even though it is no longer required. 'Refresh' remains over-used with no thought given to its necessity or performance implications. </p>
+<p>Any file operation done VIA the AssetDatabase these days does <b>not</b> require an AssetDatabase refresh! Only file operations that bypass the AssetDatabase require importing affected files. In most cases you know which files are affects, so import them individually. Everyone will thank you for the effort! </p>
+<p><b>CAUTION:</b> Since this method unloads 'unused' assets, any unloaded asset will have to be reloaded when accessed again. Worst case scenario: An editor script that indiscriminately calls this method after common editor operations, such as selection change events, can severely degrade Editor performance! </p>
+<p>Further reading for the curious: <a href="https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html">AssetDatabase Refreshing</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">options</td><td></td></tr>
+    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a> </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a14a0b13089618f69503bf61a03560df3.html#a14a0b13089618f69503bf61a03560df3" title="Imports multiple paths that were created or modified &#39;externally&#39;. Externally refers to any means oth...">CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html">AssetDatabase.Refresh</a> </li>
+</ul>
 
 </div>
 </div>

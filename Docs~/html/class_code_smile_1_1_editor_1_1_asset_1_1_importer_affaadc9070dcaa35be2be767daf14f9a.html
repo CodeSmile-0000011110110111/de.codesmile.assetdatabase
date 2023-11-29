@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 
 <div class="contents">
 <a id="affaadc9070dcaa35be2be767daf14f9a" name="affaadc9070dcaa35be2be767daf14f9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affaadc9070dcaa35be2be767daf14f9a">&#9670;&#160;</a></span>ApplySettings() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#affaadc9070dcaa35be2be767daf14f9a">&#9670;&#160;</a></span>ApplySettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,13 +117,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Writes any unsaved changes of the importer for the asset at the given path to disk. Note: this is mainly used to force the CacheServer/Accelerator to import the asset, and to do so without user interaction. </p>
+<p>Writes any unsaved changes of the given asset's importer to disk. </p>
+<p>This is mainly used to force the CacheServer/Accelerator to import the asset. It does so without user interaction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html">AssetDatabase.WriteImportSettingsIfDirty</a> </li>
+</ul>
 
 </div>
 </div>

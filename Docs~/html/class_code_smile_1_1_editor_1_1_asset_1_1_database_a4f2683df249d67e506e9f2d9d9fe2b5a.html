@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -115,7 +116,14 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Will stop Unity from automatically importing assets. Must be called in pair with DisallowAutoRefresh. Multiple calls must be matched with an equal number of calls to DisallowAutoRefresh since internally this is using a counter that needs to return to 0 before auto refresh is going to be enabled again. Note: Has no effect if Preferences =&gt; Asset Pipeline =&gt; Auto Refresh is disabled to begin with. Same as AssetDatabase.AllowAutoRefresh(). DisallowAutoRefresh </p>
+<p>Will allow Unity to automatically import assets. </p>
+<p>This has no effect if Preferences =&gt; Asset Pipeline =&gt; Auto Refresh is disabled. </p>
+<p>Must be called in pair with <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c.html#adb25c0a19eaf845815b001486373db4c" title="Will stop Unity from automatically importing assets.">CodeSmile.Editor.Asset.Database.DisallowAutoRefresh</a>. </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c.html#adb25c0a19eaf845815b001486373db4c" title="Will stop Unity from automatically importing assets.">CodeSmile.Editor.Asset.Database.DisallowAutoRefresh</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AllowAutoRefresh.html">AssetDatabase.AllowAutoRefresh</a> </li>
+</ul>
 
 </div>
 </div>

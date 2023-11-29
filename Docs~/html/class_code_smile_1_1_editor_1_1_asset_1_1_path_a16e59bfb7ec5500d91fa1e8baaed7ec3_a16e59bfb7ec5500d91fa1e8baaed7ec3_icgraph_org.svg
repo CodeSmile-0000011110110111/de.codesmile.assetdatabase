@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Tests another path for equality. They are equal if their internal relative path strings are equal.">
+<g id="a_Node000001"><a xlink:title="Tests another path for equality.">
 <polygon fill="#999999" stroke="#666666" points="145.25,-39 99.25,-39 99.25,-19 145.25,-19 145.25,-39"/>
 <text text-anchor="middle" x="122.25" y="-25.5" font-family="Helvetica,sans-Serif" font-size="10.00">Equals</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a28f250de206b1764c446bd97127b2f07.html#a28f250de206b1764c446bd97127b2f07" target="_top" xlink:title="Tests path for equality with an object. If the object is a Path or String will use the respective Equ...">
+<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a28f250de206b1764c446bd97127b2f07.html#a28f250de206b1764c446bd97127b2f07" target="_top" xlink:title="Tests path for equality with an object.">
 <polygon fill="white" stroke="#666666" points="54.62,-58 8.62,-58 8.62,-38 54.62,-38 54.62,-58"/>
 <text text-anchor="middle" x="31.62" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">Equals</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a5032c54fe61edff5f28d2460d18dffc4.html#a5032c54fe61edff5f28d2460d18dffc4" target="_top" xlink:title="Tests two path instances for equality.">
+<g id="a_Node000003"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_aba3e55bf4914578717ffd4ec9707c29f.html#aba3e55bf4914578717ffd4ec9707c29f" target="_top" xlink:title="Tests two path instances for equality.">
 <polygon fill="white" stroke="#666666" points="63.25,-20 0,-20 0,0 63.25,0 63.25,-20"/>
 <text text-anchor="middle" x="31.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">operator==</text>
 </a>

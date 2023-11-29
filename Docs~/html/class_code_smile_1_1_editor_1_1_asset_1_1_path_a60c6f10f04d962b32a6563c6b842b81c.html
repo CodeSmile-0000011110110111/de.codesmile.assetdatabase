@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -112,11 +113,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns true if the path exists in the file system, be it file or folder. Returns false if the path does not exist. NOTE: This solely checks for physical existance, a new asset at that path may still not 'exist' in the database until it has been imported. Exists </p>
+<p>Returns true if the path exists in the file system. </p>
+<p>This checks for physical existance of a file or folder using the System.IO methods. It may return true where <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea.html#abd65d5ceb97d69f280079d5bfa8c75ea" title="Returns true if the path exists in the AssetDatabase.">CodeSmile.Editor.Asset.Path.Exists</a> returns false.</p>
+<p>In such a case this may indicate that the asset has been created but not yet imported. The corresponding status check is: <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status_acb9cd6a0d6ed83f334343ce1c50b7e43.html#acb9cd6a0d6ed83f334343ce1c50b7e43" title="Checks if the object is an asset in the AssetDatabase.">CodeSmile.Editor.Asset.Status.IsImported</a>. </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea.html#abd65d5ceb97d69f280079d5bfa8c75ea" title="Returns true if the path exists in the AssetDatabase.">CodeSmile.Editor.Asset.Path.Exists</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_status_acb9cd6a0d6ed83f334343ce1c50b7e43.html#acb9cd6a0d6ed83f334343ce1c50b7e43" title="Checks if the object is an asset in the AssetDatabase.">CodeSmile.Editor.Asset.Status.IsImported</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00058">58</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00082">82</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00242">Asset.File.Import()</a>, and <a class="el" href="_asset_8_file_8cs_source.html#l00314">Asset.File.LoadOrCreate&lt; T &gt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00320">Asset.File.Import()</a>.</p>
 
 </div>
 </div>

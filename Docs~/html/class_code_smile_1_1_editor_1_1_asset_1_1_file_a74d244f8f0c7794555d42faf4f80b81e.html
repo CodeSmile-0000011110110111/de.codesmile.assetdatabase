@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,26 +117,33 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Deletes the asset file. Does nothing if there is no file at the given path. </p>
+<p>Deletes an asset file or folder. </p>
+<p>Does nothing if there is no file or folder at the given path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>The path to delete.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the asset was deleted, false otherwise.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a0653aef0b5ac886118c2ea1a1cfb7f2f.html#a0653aef0b5ac886118c2ea1a1cfb7f2f" title="Deletes an asset file or folder.">CodeSmile.Editor.Asset.File.Delete(Object)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a1dbff3d08585e6472aac97a3e3a7df9d.html#a1dbff3d08585e6472aac97a3e3a7df9d" title="Moves an asset file or folder to the OS trash.">CodeSmile.Editor.Asset.File.Trash(CodeSmile.Editor.Asset.Path)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html">AssetDatabase.DeleteAsset</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00608">608</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  609</span>            {</div>
-<div class="line"><span class="lineno">  610</span>                <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">  611</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  612</span> </div>
-<div class="line"><span class="lineno">  613</span>                <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
-<div class="line"><span class="lineno">  614</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00821">821</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  822</span>            {</div>
+<div class="line"><span class="lineno">  823</span>                <span class="keywordflow">if</span> (path == <span class="keyword">null</span> || path.Exists == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  824</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  825</span> </div>
+<div class="line"><span class="lineno">  826</span>                <span class="keywordflow">return</span> AssetDatabase.DeleteAsset(path);</div>
+<div class="line"><span class="lineno">  827</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_path_8cs_source.html#l00040">Asset.Path.Exists</a>.</p>
+<p class="reference">References <a class="el" href="_asset_8_path_8cs_source.html#l00058">Asset.Path.Exists</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8cs_source.html#l00395">Asset.Delete()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8cs_source.html#l00445">Asset.Delete()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

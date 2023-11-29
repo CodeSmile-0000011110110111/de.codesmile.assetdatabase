@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Tests if the given file exists.">
+<g id="a_Node000001"><a xlink:title="Tests if the given file exists in the file system.">
 <polygon fill="#999999" stroke="#666666" points="172.25,-20 112.75,-20 112.75,0 172.25,0 172.25,-20"/>
 <text text-anchor="middle" x="142.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">FileExists</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" target="_top" xlink:title="Creates the folders in the path recursively. Path may point to a file, but only folders will be creat...">
+<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" target="_top" xlink:title="Creates any missing folders in the path.">
 <polygon fill="white" stroke="#666666" points="76.75,-20 0,-20 0,0 76.75,0 76.75,-20"/>
 <text text-anchor="middle" x="38.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">CreateFolders</text>
 </a>

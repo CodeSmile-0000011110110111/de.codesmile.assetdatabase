@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,14 +117,19 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns all asset paths that are marked to be part of a given bundle. </p>
+<p>Returns all asset paths that are part of a given asset bundle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bundleName</td><td></td></tr>
+    <tr><td class="paramname">bundleName</td><td>Name of the asset bundle.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The paths to assets belonging to this bundle. Is empty if no assets belong to the bundle.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_bundle_a915567be9f112102b73a36c0c09376e8.html#a915567be9f112102b73a36c0c09376e8" title="Returns the asset paths in a given asset bundle that matches an asset name.">CodeSmile.Editor.Asset.Bundle.GetPaths</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundle.html">AssetDatabase.GetAssetPathsFromAssetBundle</a> </li>
+</ul>
 
 </div>
 </div>

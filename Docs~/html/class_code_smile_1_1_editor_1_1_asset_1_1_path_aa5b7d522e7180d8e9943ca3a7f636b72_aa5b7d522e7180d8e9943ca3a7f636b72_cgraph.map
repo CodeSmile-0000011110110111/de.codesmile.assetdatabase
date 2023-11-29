@@ -1,9 +1,9 @@
 <map id="CreateFolders" name="CreateFolders">
-<area shape="rect" id="Node000001" title="Creates the folders in the path recursively. Path may point to a file, but only folders will be creat..." alt="" coords="5,56,108,83"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9" title="Tests if the given file exists." alt="" coords="163,5,243,32"/>
+<area shape="rect" id="Node000001" title="Creates any missing folders in the path." alt="" coords="5,56,108,83"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_ad6edf57483f25f25967aaf3b5c237cf9.html#ad6edf57483f25f25967aaf3b5c237cf9" title="Tests if the given file exists in the file system." alt="" coords="163,5,243,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,53,149,34,151,39,98,58"/>
-<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63" title="Returns true if the folder exists. False otherwise, or if the path is to a file." alt="" coords="156,56,250,83"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1702f388229f26cb1f4431a1ee8d4a63.html#a1702f388229f26cb1f4431a1ee8d4a63" title="Tests if the given folder exists in the file system." alt="" coords="156,56,250,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,67,141,67,141,72,108,72"/>
-<area shape="rect" id="Node000004" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a6bd701a7c06a58ac8ebd39c190df3e61.html#a6bd701a7c06a58ac8ebd39c190df3e61" title="Gets the path of an asset file." alt="" coords="182,107,224,133"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" title="Gets the relative path of an asset." alt="" coords="182,107,224,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="98,81,168,106,167,111,97,86"/>
 </map>

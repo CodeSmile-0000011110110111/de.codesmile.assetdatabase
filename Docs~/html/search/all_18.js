@@ -10,7 +10,7 @@ var searchData=
   ['v1_203_201_20nov_2024_202023_7',['v1.3.1 - Nov 24, 2023',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v131---nov-24-2023',1,'']]],
   ['v1_204_200_20nov_2024_202023_8',['v1.4.0 - Nov 24, 2023',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v140---nov-24-2023',1,'']]],
   ['v1_204_201_20nov_2024_202023_9',['v1.4.1 - Nov 24, 2023',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v141---nov-24-2023',1,'']]],
-  ['v1_205_200_20nov_2025_202023_10',['v1.5.0 - Nov 25, 2023',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v150---nov-25-2023',1,'']]],
+  ['v1_205_200_20nov_2029_202023_10',['v1.5.0 - Nov 29, 2023',['../md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v150---nov-29-2023',1,'']]],
   ['versioncontrol_11',['VersionControl',['../class_code_smile_1_1_editor_1_1_asset_1_1_version_control.html',1,'CodeSmile::Editor::Asset']]],
   ['visiblesubassets_12',['VisibleSubAssets',['../class_code_smile_1_1_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000.html#ace611059f2ab296e1be5b51d33617000',1,'CodeSmile::Editor::Asset']]]
 ];

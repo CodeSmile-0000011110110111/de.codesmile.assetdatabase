@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Returns the last error message returned by some methods that provide such a message,...">
+<g id="a_Node000001"><a xlink:title="Returns the last error message returned by some methods that provide such a failure message.">
 <polygon fill="#999999" stroke="#666666" points="111.25,-20 0,-20 0,0 111.25,0 111.25,-20"/>
 <text text-anchor="middle" x="55.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLastErrorMessage</text>
 </a>

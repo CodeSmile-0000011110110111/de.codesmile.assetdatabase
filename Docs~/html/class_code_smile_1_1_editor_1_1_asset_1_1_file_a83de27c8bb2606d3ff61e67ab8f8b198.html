@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,15 +117,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Tries to delete all the given assets. </p>
+<p>Tries to delete multiple files/folders. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
+    <tr><td class="paramname">paths</td><td>The paths to delete.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if all assets where deleted, false if one or more failed to delete whose paths you can access via the Asset.Database.DeleteFailedPaths property. </dd></dl>
-<p>FailedToDeletePaths </p>
+<dl class="section return"><dt>Returns</dt><dd>True if all assets where deleted, false if one or more failed to delete. On failure, you can access failed paths via <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537.html#a02854122d4449e39feb8c1dfdc8bd537" title="The paths that failed to be deleted or trashed. Is an empty list if no failure occured on the last ca...">CodeSmile.Editor.Asset.File.PathsNotDeleted</a> property. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a8431ec0a71289a653315a40cfde4653d.html#a8431ec0a71289a653315a40cfde4653d" title="Tries to move multiple files/folders to the OS trash.">CodeSmile.Editor.Asset.File.Trash(IEnumerable&lt;String&gt;)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537.html#a02854122d4449e39feb8c1dfdc8bd537" title="The paths that failed to be deleted or trashed. Is an empty list if no failure occured on the last ca...">CodeSmile.Editor.Asset.File.PathsNotDeleted</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html">AssetDatabase.DeleteAssets</a> </li>
+</ul>
 
 </div>
 </div>

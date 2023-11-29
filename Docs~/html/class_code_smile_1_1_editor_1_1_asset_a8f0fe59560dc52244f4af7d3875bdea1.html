@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -133,16 +134,28 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>If contents is null.</td></tr>
+    <tr><td class="paramname">ArgumentNullException</td><td>If the path is null.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(Byte[],CodeSmile.Editor.Asset.Path,Boolean)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(Object,CodeSmile.Editor.Asset.Path,Boolean)</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00054">54</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>        {</div>
-<div class="line"><span class="lineno">   56</span>            ThrowIf.ArgumentIsNull(contents, nameof(contents));</div>
-<div class="line"><span class="lineno">   57</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>            path = Path.UniquifyAsNeeded(path, overwriteExisting);</div>
-<div class="line"><span class="lineno">   60</span>            var obj = File.CreateInternal(contents, path);</div>
-<div class="line"><span class="lineno">   61</span>            InitWithObject(obj);</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00066">66</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            ThrowIf.ArgumentIsNull(contents, nameof(contents));</div>
+<div class="line"><span class="lineno">   69</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>            path = Path.UniquifyAsNeeded(path, overwriteExisting);</div>
+<div class="line"><span class="lineno">   72</span>            var asset = File.CreateInternal(contents, path);</div>
+<div class="line"><span class="lineno">   73</span>            InitWithMainObject(asset);</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,20 +117,26 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns the path either unaltered or with a numbering to make the file unique. This is only done if an asset file exists at the path. It does not alter folder paths. See also: Project Settings =&gt; Editor =&gt; Numbering Scheme Note: 'Uniquify' is a proper english verb, it means "to make unique". </p>
+<p>Returns the path altered with a numbering if an asset already exists (and is imported) at the path. </p>
+<p>See also: Project Settings =&gt; Editor =&gt; Numbering Scheme </p>
+<p>PS: "Uniquify" is a proper english verb. It means "to make unique". Methods carrying this verb are commonly found in SQL database APIs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>The input path.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The path possibly altered with a number in the last path element.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html">AssetDatabase.GenerateUniqueAssetPath</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00194">194</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>            {</div>
-<div class="line"><span class="lineno">  196</span>                var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);</div>
-<div class="line"><span class="lineno">  197</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(uniquePath) ? path : uniquePath;</div>
-<div class="line"><span class="lineno">  198</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00304">304</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  305</span>            {</div>
+<div class="line"><span class="lineno">  306</span>                var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);</div>
+<div class="line"><span class="lineno">  307</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(uniquePath) ? path : uniquePath;</div>
+<div class="line"><span class="lineno">  308</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

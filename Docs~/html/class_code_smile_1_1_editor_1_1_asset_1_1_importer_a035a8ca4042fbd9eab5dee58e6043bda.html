@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -119,21 +120,25 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <p>Returns an asset's default importer type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The type of the default importer for assets of this kind.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer_a3078cc1ed18eef4bdbc177fca89212a2.html#a3078cc1ed18eef4bdbc177fca89212a2" title="Returns an asset&#39;s overridden importer type.">CodeSmile.Editor.Asset.Importer.GetOverride</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00022">22</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>            {</div>
-<div class="line"><span class="lineno">   24</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
-<div class="line"><span class="lineno">   25</span>                <span class="keywordflow">return</span> AssetDatabase.GetDefaultImporter(path);</div>
-<div class="line"><span class="lineno">   26</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   27</span>                UnityEngine.Debug.LogWarning(<span class="stringliteral">&quot;GetDefaultImporter is not available in this Unity version - returning null&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   30</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00162">162</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>            {</div>
+<div class="line"><span class="lineno">  164</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
+<div class="line"><span class="lineno">  165</span>                <span class="keywordflow">return</span> AssetDatabase.GetDefaultImporter(path);</div>
+<div class="line"><span class="lineno">  166</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  167</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> NotSupportedException(<span class="stringliteral">&quot;GetDefaultImporter is not available in this Unity version&quot;</span>);</div>
+<div class="line"><span class="lineno">  168</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  169</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

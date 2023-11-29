@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -112,17 +113,23 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Gets or sets the desired worker count. Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated. </p>
+<p>Gets or sets the desired worker count. </p>
+<p>Setting the worked count calls ForceToDesiredWorkerCount() to ensure the worker count is updated. </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DesiredWorkerCount.html">AssetDatabase.DesiredWorkerCount</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceToDesiredWorkerCount.html">AssetDatabase.ForceToDesiredWorkerCount</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_database_8cs_source.html#l00023">23</a> of file <a class="el" href="_asset_8_database_8cs_source.html">Asset.Database.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>            {</div>
-<div class="line"><span class="lineno">   25</span>                <span class="keyword">get</span> =&gt; AssetDatabase.DesiredWorkerCount;</div>
-<div class="line"><span class="lineno">   26</span>                <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   27</span>                {</div>
-<div class="line"><span class="lineno">   28</span>                    AssetDatabase.DesiredWorkerCount = value;</div>
-<div class="line"><span class="lineno">   29</span>                    AssetDatabase.ForceToDesiredWorkerCount();</div>
-<div class="line"><span class="lineno">   30</span>                }</div>
-<div class="line"><span class="lineno">   31</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_database_8cs_source.html#l00032">32</a> of file <a class="el" href="_asset_8_database_8cs_source.html">Asset.Database.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>            {</div>
+<div class="line"><span class="lineno">   34</span>                <span class="keyword">get</span> =&gt; AssetDatabase.DesiredWorkerCount;</div>
+<div class="line"><span class="lineno">   35</span>                <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   36</span>                {</div>
+<div class="line"><span class="lineno">   37</span>                    AssetDatabase.DesiredWorkerCount = value;</div>
+<div class="line"><span class="lineno">   38</span>                    AssetDatabase.ForceToDesiredWorkerCount();</div>
+<div class="line"><span class="lineno">   39</span>                }</div>
+<div class="line"><span class="lineno">   40</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

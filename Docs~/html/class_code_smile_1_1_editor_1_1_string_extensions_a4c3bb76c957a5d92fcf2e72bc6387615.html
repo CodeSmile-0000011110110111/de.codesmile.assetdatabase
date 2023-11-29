@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,14 +117,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_string
 </table>
 </div><div class="memdoc">
 
-<p>Converts any backslashes in the path to forward slashes to ensure the path works correctly on all supported editor platforms (Windows, Mac, Linux). </p>
+<p>Converts any backslashes in the path to forward slashes. </p>
+<p>Forward slashes are compatible with all supported Unity Editor platforms: Windows, Mac, Linux. Backslashes only work on Windows. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Input string.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The string with any backslashes replaced by forward slashes.</dd></dl>
 
 </div>
 </div>

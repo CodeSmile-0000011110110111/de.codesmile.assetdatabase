@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -108,13 +109,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><div class="memdoc">
 
 <p>Sets the active AssetImporter type for this asset. </p>
+<p>T is AssetImporter in Unity 2022.1 or newer. In older versions T is ScriptedImporter.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The AssetImporter derived type that should handle importing this asset.</td></tr>
   </table>
   </dd>
 </dl>
-<p><a class="el" href="class_code_smile_1_1_editor_1_1_asset_ac07d4f60efca50c39e2f95a2af28d881.html#ac07d4f60efca50c39e2f95a2af28d881" title="Sets the active AssetImporter type back to the default type.">CodeSmile.Editor.Asset.SetActiveImporterToDefault</a> <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a57983fe52530259a94425f11144dcf12.html#a57983fe52530259a94425f11144dcf12" title="Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the imp...">CodeSmile.Editor.Asset.ActiveImporter</a> </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a57983fe52530259a94425f11144dcf12.html#a57983fe52530259a94425f11144dcf12" title="Returns the active AssetImporter type for this asset.">CodeSmile.Editor.Asset.ActiveImporter</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_ac07d4f60efca50c39e2f95a2af28d881.html#ac07d4f60efca50c39e2f95a2af28d881" title="Sets the active AssetImporter type back to the default type.">CodeSmile.Editor.Asset.SetActiveImporterToDefault</a> </li>
+</ul>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -124,14 +130,14 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00431">431</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  433</span>                    : AssetImporter</div>
-<div class="line"><span class="lineno">  434</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  435</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
-<div class="line"><span class="lineno">  436</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  437</span>        {</div>
-<div class="line"><span class="lineno">  438</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
-<div class="line"><span class="lineno">  439</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00486">486</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  488</span>                    : AssetImporter</div>
+<div class="line"><span class="lineno">  489</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  490</span>            where T : UnityEditor.AssetImporters.ScriptedImporter</div>
+<div class="line"><span class="lineno">  491</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  492</span>        {</div>
+<div class="line"><span class="lineno">  493</span>            Importer.SetOverride&lt;T&gt;(m_AssetPath);</div>
+<div class="line"><span class="lineno">  494</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

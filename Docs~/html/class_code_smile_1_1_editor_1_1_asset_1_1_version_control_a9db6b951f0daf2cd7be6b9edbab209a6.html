@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -132,22 +133,27 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns a list of notEditablePaths that cannot be opened for editing in the version control system. To get a reason, query the individual paths again. </p>
+<p>Tests if the assets can be opened for editing in the version control system. </p>
+<p>To get an error message query each failed path individually.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-    <tr><td class="paramname">notEditablePaths</td><td></td></tr>
-    <tr><td class="paramname">options</td><td></td></tr>
+    <tr><td class="paramname">paths</td><td>Paths to assets.</td></tr>
+    <tr><td class="paramname">notEditablePaths</td><td>List of paths that are not editable. Is empty if all paths are editable.</td></tr>
+    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a></td></tr>
   </table>
   </dd>
 </dl>
-<p>CanMakeEditable(CodeSmile.Editor.Asset.Path,UnityEditor.StatusQueryOptions) </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_aa423c228f7292c32aa016adc4b1bb0d2.html#aa423c228f7292c32aa016adc4b1bb0d2" title="Returns true if the asset can be opened for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.CanMakeEditable</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_version_control_8cs_source.html#l00155">155</a> of file <a class="el" href="_asset_8_version_control_8cs_source.html">Asset.VersionControl.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  157</span>            {</div>
-<div class="line"><span class="lineno">  158</span>                notEditablePaths = <span class="keyword">new</span> List&lt;String&gt;();</div>
-<div class="line"><span class="lineno">  159</span>                AssetDatabase.IsOpenForEdit(paths, notEditablePaths, options);</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_version_control_8cs_source.html#l00192">192</a> of file <a class="el" href="_asset_8_version_control_8cs_source.html">Asset.VersionControl.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  194</span>            {</div>
+<div class="line"><span class="lineno">  195</span>                notEditablePaths = <span class="keyword">new</span> List&lt;String&gt;();</div>
+<div class="line"><span class="lineno">  196</span>                AssetDatabase.IsOpenForEdit(paths, notEditablePaths, options);</div>
+<div class="line"><span class="lineno">  197</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

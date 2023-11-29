@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Clears an asset&#39;s importer override for the specified asset.">
+<g id="a_Node000001"><a xlink:title="Clears an AssetImporter override for the specified asset.">
 <polygon fill="#999999" stroke="#666666" points="248,-26 174.25,-26 174.25,-6 248,-6 248,-26"/>
 <text text-anchor="middle" x="211.12" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">ClearOverride</text>
 </a>

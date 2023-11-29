@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -112,17 +113,23 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns the active AssetImporter type for this asset. Will be the DefaultImporter type unless the importer was overridden. </p>
-<p>SetActiveImporter&lt;T&gt; SetActiveImporterToDefault DefaultImporter </p>
+<p>Returns the active AssetImporter type for this asset. </p>
+<p>Will be the DefaultImporter type unless the importer was overridden.</p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27.html#a171f2bcee950b6e79886c7507f9beb27" title="Returns the default AssetImporter type for this asset.">CodeSmile.Editor.Asset.DefaultImporter</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_a72e9a93bb94e649cca5f01e8c4f1cc83.html#a72e9a93bb94e649cca5f01e8c4f1cc83" title="Sets the active AssetImporter type for this asset.">CodeSmile.Editor.Asset.SetActiveImporter&lt;T&gt;</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_ac07d4f60efca50c39e2f95a2af28d881.html#ac07d4f60efca50c39e2f95a2af28d881" title="Sets the active AssetImporter type back to the default type.">CodeSmile.Editor.Asset.SetActiveImporterToDefault</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_properties_8cs_source.html#l00124">124</a> of file <a class="el" href="_asset_8_properties_8cs_source.html">Asset.Properties.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>        {</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  127</span>            {</div>
-<div class="line"><span class="lineno">  128</span>                var overridden = Importer.GetOverride(m_AssetPath);</div>
-<div class="line"><span class="lineno">  129</span>                <span class="keywordflow">return</span> overridden != <span class="keyword">null</span> ? overridden : Importer.GetDefault(m_AssetPath);</div>
-<div class="line"><span class="lineno">  130</span>            }</div>
-<div class="line"><span class="lineno">  131</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_properties_8cs_source.html#l00146">146</a> of file <a class="el" href="_asset_8_properties_8cs_source.html">Asset.Properties.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>        {</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  149</span>            {</div>
+<div class="line"><span class="lineno">  150</span>                var overridden = Importer.GetOverride(m_AssetPath);</div>
+<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">return</span> overridden != <span class="keyword">null</span> ? overridden : Importer.GetDefault(m_AssetPath);</div>
+<div class="line"><span class="lineno">  152</span>            }</div>
+<div class="line"><span class="lineno">  153</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

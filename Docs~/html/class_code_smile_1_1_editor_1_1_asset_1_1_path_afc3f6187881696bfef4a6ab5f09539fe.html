@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 
 <div class="contents">
 <a id="afc3f6187881696bfef4a6ab5f09539fe" name="afc3f6187881696bfef4a6ab5f09539fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3f6187881696bfef4a6ab5f09539fe">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3f6187881696bfef4a6ab5f09539fe">&#9670;&#160;</a></span>Get() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,20 +117,26 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Gets the path of an asset file. </p>
+<p>Gets the relative path of an asset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">guid</td><td>GUID of an asset.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The path to the asset file, or null if the object is not an asset.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The relative path to the asset file, or null if the object is not an asset.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" title="Gets the relative path of an asset.">CodeSmile.Editor.Asset.Path.Get(Object)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a930bda1611a02deae73c0cf12f4edc19.html#a930bda1611a02deae73c0cf12f4edc19" title="Converts an array of asset instances to their asset paths.">CodeSmile.Editor.Asset.Path.Get(Object[])</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00052">52</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>            {</div>
-<div class="line"><span class="lineno">   54</span>                var path = AssetDatabase.GUIDToAssetPath(guid);</div>
-<div class="line"><span class="lineno">   55</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00090">90</a> of file <a class="el" href="_asset_8_path_8_static_8cs_source.html">Asset.Path.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                var path = AssetDatabase.GUIDToAssetPath(guid);</div>
+<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">return</span> String.IsNullOrEmpty(path) ? null : (Path)path;</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -115,8 +116,19 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns the last error message returned by some methods that provide such a message, for example Move and Rename. Rename Move </p>
-<dl class="section return"><dt>Returns</dt><dd>The last error message or empty string if there was no error.</dd></dl>
+<p>Returns the last error message returned by some methods that provide such a failure message. </p>
+<dl class="section return"><dt>Returns</dt><dd>The last error message or empty string if the last operation succeeded.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_abbf289f0549df3a2f89bdb3470638122.html#abbf289f0549df3a2f89bdb3470638122" title="Renames an asset&#39;s file or folder name.">CodeSmile.Editor.Asset.File.Rename</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ab7eadabd235d60aafe18c2f4fea44d9e.html#ab7eadabd235d60aafe18c2f4fea44d9e" title="Moves an asset file to destination path.">CodeSmile.Editor.Asset.File.Move</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a816640eaaf58fbb3fdc25eda632a1c4b.html#a816640eaaf58fbb3fdc25eda632a1c4b" title="Copies an asset from source to destination path. Overwrites any existing assets.">CodeSmile.Editor.Asset.File.Copy</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_aa957e3f3144167c7f0e0290dbae3abe7.html#aa957e3f3144167c7f0e0290dbae3abe7" title="Copies an asset from source to destination path. Generates a unique file name if an asset already exi...">CodeSmile.Editor.Asset.File.CopyAsNew</a></li>
+<li>CodeSmile.Editor.Asset.File.IsValid</li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_a7b05653222880987c4c81d202550794a.html#a7b05653222880987c4c81d202550794a" title="Returns true if the asset file is open for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.IsEditable</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_a49a0b26676ad25bf26f9a2af5bb53bbb.html#a49a0b26676ad25bf26f9a2af5bb53bbb" title="Returns true if the meta file is open for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.IsMetaEditable</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_version_control_aa423c228f7292c32aa016adc4b1bb0d2.html#aa423c228f7292c32aa016adc4b1bb0d2" title="Returns true if the asset can be opened for editing in the version control system.">CodeSmile.Editor.Asset.VersionControl.CanMakeEditable</a> </li>
+</ul>
 
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac">Asset.GetLastErrorMessage()</a>.</p>
 

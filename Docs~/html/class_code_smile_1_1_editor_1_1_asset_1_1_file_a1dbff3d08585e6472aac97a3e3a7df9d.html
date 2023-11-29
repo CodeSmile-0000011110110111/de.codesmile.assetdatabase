@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,16 +117,23 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Moves the asset file to the OS trash (same as Delete, but recoverable). Does nothing if there is no file at the given path. </p>
+<p>Moves an asset file or folder to the OS trash. </p>
+<p>Similar to delete, but recoverable by user action. Does nothing if there is no file or folder at the given path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>The asset path to trash.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if successfully trashed</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the asset was trashed, false otherwise.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a74d244f8f0c7794555d42faf4f80b81e.html#a74d244f8f0c7794555d42faf4f80b81e" title="Deletes an asset file or folder.">CodeSmile.Editor.Asset.File.Delete(CodeSmile.Editor.Asset.Path)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a1f1b112a200cd3290658811871c47248.html#a1f1b112a200cd3290658811871c47248" title="Moves an asset file or folder to the OS trash.">CodeSmile.Editor.Asset.File.Trash(Object)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html">AssetDatabase.MoveAssetToTrash</a> </li>
+</ul>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8cs_source.html#l00416">Asset.Trash()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8cs_source.html#l00468">Asset.Trash()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

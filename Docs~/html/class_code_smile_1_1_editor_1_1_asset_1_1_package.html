@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -99,7 +100,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><!--header-->
 <div class="contents">
 
-<p>Groups asset package import/export functionality, eg files with '.unitypackage' extension. Does not contain PackageManager functionality.  
+<p>Groups import/export functionality for <a href="https://docs.unity3d.com/Manual/AssetPackages.html">.unitypackage files</a> (Asset Packages).  
  <a href="class_code_smile_1_1_editor_1_1_asset_1_1_package.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Asset.Package:</div>
@@ -112,7 +113,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab582b4cad1e26bf61ddb1e7385512905" id="r_ab582b4cad1e26bf61ddb1e7385512905"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_ab582b4cad1e26bf61ddb1e7385512905.html#ab582b4cad1e26bf61ddb1e7385512905">Export</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> assetPath, String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
-<tr class="memdesc:ab582b4cad1e26bf61ddb1e7385512905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the asset and its dependencies to the packagePath file.  <br /></td></tr>
+<tr class="memdesc:ab582b4cad1e26bf61ddb1e7385512905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the asset and its dependencies to a .unitypackage file.  <br /></td></tr>
 <tr class="separator:ab582b4cad1e26bf61ddb1e7385512905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b89c5513bc7489846a51251e3e6169" id="r_a43b89c5513bc7489846a51251e3e6169"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_a43b89c5513bc7489846a51251e3e6169.html#a43b89c5513bc7489846a51251e3e6169">Export</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a>[] assetPaths, String packagePath, ExportPackageOptions options=ExportPackageOptions.Default)</td></tr>
 <tr class="memdesc:a43b89c5513bc7489846a51251e3e6169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports multiple assets and their dependencies to the packagePath file.  <br /></td></tr>
@@ -121,16 +122,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a802e044a9d928272141847bf30233fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports multiple assets and their dependencies to the packagePath file.  <br /></td></tr>
 <tr class="separator:a802e044a9d928272141847bf30233fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a9aa65e606c4fca7109fa869debd31e" id="r_a6a9aa65e606c4fca7109fa869debd31e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_a6a9aa65e606c4fca7109fa869debd31e.html#a6a9aa65e606c4fca7109fa869debd31e">Import</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> packagePath)</td></tr>
-<tr class="memdesc:a6a9aa65e606c4fca7109fa869debd31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Silently imports a .unitypackage file at the given path. Note: This is not used for importing Package Manager packages!  <br /></td></tr>
+<tr class="memdesc:a6a9aa65e606c4fca7109fa869debd31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Silently imports a .unitypackage file at the given path.  <br /></td></tr>
 <tr class="separator:a6a9aa65e606c4fca7109fa869debd31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1780bcfa87d20221a92c6d7835b7a31" id="r_ad1780bcfa87d20221a92c6d7835b7a31"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_ad1780bcfa87d20221a92c6d7835b7a31.html#ad1780bcfa87d20221a92c6d7835b7a31">ImportInteractive</a> (<a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path.html">Path</a> packagePath)</td></tr>
-<tr class="memdesc:ad1780bcfa87d20221a92c6d7835b7a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports a .unitypackage file at the given path. Shows the import package dialogue to the user before import. Note: This is not used for importing Package Manager packages!  <br /></td></tr>
+<tr class="memdesc:ad1780bcfa87d20221a92c6d7835b7a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports a .unitypackage file at the given path interactively.  <br /></td></tr>
 <tr class="separator:ad1780bcfa87d20221a92c6d7835b7a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Groups asset package import/export functionality, eg files with '.unitypackage' extension. Does not contain PackageManager functionality. </p>
+<div class="textblock"><p>Groups import/export functionality for <a href="https://docs.unity3d.com/Manual/AssetPackages.html">.unitypackage files</a> (Asset Packages). </p>
+<p>Does not contain Package Manager (npm packages) functionality. </p>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00016">16</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00019">19</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -111,17 +112,22 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <p>Loads the asset at path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Path to an existing asset file.</td></tr>
+    <tr><td class="paramname">path</td><td>Path to an existing asset.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>If the path is null.</td></tr>
-    <tr><td class="paramname">FileNotFoundException</td><td>If the path does not point to an existing asset file.</td></tr>
+    <tr><td class="paramname">FileNotFoundException</td><td>If the path is not an asset on disk.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(Object)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmile.Editor.Asset(GUID)</a> </li>
+</ul>
 
 </div>
 </div>

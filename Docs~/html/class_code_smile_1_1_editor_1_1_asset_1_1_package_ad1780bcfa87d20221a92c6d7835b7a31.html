@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,21 +117,26 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Imports a .unitypackage file at the given path. Shows the import package dialogue to the user before import. Note: This is not used for importing Package Manager packages! </p>
+<p>Imports a .unitypackage file at the given path interactively. </p>
+<p>Shows the import package dialogue to the user before importing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">packagePath</td><td>path to file with the .unitypackage extension</td></tr>
+    <tr><td class="paramname">packagePath</td><td>Path to file with the .unitypackage extension.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Import </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_a6a9aa65e606c4fca7109fa869debd31e.html#a6a9aa65e606c4fca7109fa869debd31e" title="Silently imports a .unitypackage file at the given path.">CodeSmile.Editor.Asset.Package.Import</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00039">39</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   44</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00048">48</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>            {</div>
+<div class="line"><span class="lineno">   50</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   53</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

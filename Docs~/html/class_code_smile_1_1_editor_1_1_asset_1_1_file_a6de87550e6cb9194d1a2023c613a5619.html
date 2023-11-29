@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -127,7 +128,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><div class="memdoc">
 
 <p>Loads or creates an asset at path. </p>
-<p>remarks&gt; Will first attempt to load the asset at path. If this fails, will create an asset from the object returned by getInstance. This is an alias for CodeSmile.Editor.Asset.LoadOrCreate{T}. </p>
+<p>Will first attempt to load the asset at path. If this fails, will create an asset from the object returned by getInstance. This is an alias for CodeSmile.Editor.Asset.LoadOrCreate{T}. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
@@ -137,17 +138,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the asset.</td></tr>
+    <tr><td class="paramname">T</td><td>UnityEngine.Object derived type.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The loaded or created object of type T, or null if the object is not of type T. Note that the asset file gets created in this case.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" title="Loads an asset at path or creates the asset if needed.">CodeSmile.Editor.Asset.File.LoadOrCreate&lt;T&gt;</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The loaded or created object of type T, or null if the object is not of type T. Note that the asset file gets created in this case. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" title="Loads an asset at path or creates the asset if needed.">CodeSmile.Editor.Asset.File.LoadOrCreate&lt;T&gt;</a> </li>
+</ul>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Object</em></td><td>&#160;</td></tr>
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>LoadOrCreate&lt;T&gt;</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>LoadOrCreate</em></td><td>&#160;</td></tr>
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>path</em></td><td>&#160;</td></tr>
 <tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>getInstance</em></td><td>&#160;</td></tr>
 </table>

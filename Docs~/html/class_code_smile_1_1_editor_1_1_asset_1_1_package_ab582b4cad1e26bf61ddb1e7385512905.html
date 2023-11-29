@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -132,22 +133,27 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Exports the asset and its dependencies to the packagePath file. </p>
+<p>Exports the asset and its dependencies to a .unitypackage file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">assetPath</td><td></td></tr>
-    <tr><td class="paramname">packagePath</td><td>path to file with the .unitypackage extension</td></tr>
-    <tr><td class="paramname">options</td><td></td></tr>
+    <tr><td class="paramname">assetPath</td><td>The asset to export.</td></tr>
+    <tr><td class="paramname">packagePath</td><td>Path to file with the .unitypackage extension.</td></tr>
+    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a> </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_package_a802e044a9d928272141847bf30233fd4.html#a802e044a9d928272141847bf30233fd4" title="Exports multiple assets and their dependencies to the packagePath file.">CodeSmile.Editor.Asset.Package.Export(String[],String,ExportPackageOptions)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00052">52</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>            {</div>
-<div class="line"><span class="lineno">   55</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>                AssetDatabase.ExportPackage(assetPath, packagePath, options);</div>
-<div class="line"><span class="lineno">   58</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00068">68</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>            {</div>
+<div class="line"><span class="lineno">   71</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                AssetDatabase.ExportPackage(assetPath, packagePath, options);</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

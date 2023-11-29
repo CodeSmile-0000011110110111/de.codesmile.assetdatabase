@@ -1,5 +1,0 @@
-<map id="operator==" name="operator==">
-<area shape="rect" id="Node000001" title="Tests two path instances for equality." alt="" coords="5,5,90,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3.html#a16e59bfb7ec5500d91fa1e8baaed7ec3" title="Tests another path for equality. They are equal if their internal relative path strings are equal." alt="" coords="138,5,199,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,16,123,16,123,21,90,21"/>
-</map>

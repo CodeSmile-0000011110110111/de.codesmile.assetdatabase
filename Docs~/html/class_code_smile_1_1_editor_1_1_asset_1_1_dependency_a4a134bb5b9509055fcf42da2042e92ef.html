@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -126,15 +127,19 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Sets (registers) a custom dependency to be used in conjunction with a custom AssetImporter. Call this method again to update existing dependencies. For details <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">see the manual</a>. </p>
+<p>Registers a custom dependency to be used in conjunction with a custom AssetImporter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">globalDependencyName</td><td>A global name for the dependency.</td></tr>
-    <tr><td class="paramname">dependencyHash</td><td>The current hash of the dependency value.</td></tr>
+    <tr><td class="paramname">dependencyHash</td><td>The current hash of the dependency value which, if changed, indicates that the asset has changed. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Unregister </p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_dependency_a3ddd9c255e2bdbc73ab07f50eb24588e.html#a3ddd9c255e2bdbc73ab07f50eb24588e" title="Unregisters one or more custom dependencies with the given prefix (eg &#39;StartsWith&#39;).">CodeSmile.Editor.Asset.Dependency.Unregister</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">AssetDatabase.RegisterCustomDependency</a> </li>
+</ul>
 
 </div>
 </div>

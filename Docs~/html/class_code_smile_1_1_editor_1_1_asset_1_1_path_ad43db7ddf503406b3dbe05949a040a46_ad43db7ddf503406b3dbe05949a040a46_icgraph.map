@@ -1,6 +1,0 @@
-<map id="ToStrings" name="ToStrings">
-<area shape="rect" id="Node000001" title="Converts a collection of Path instances to a string array." alt="" coords="277,37,353,64"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190.html#ac5034822c95937bce27fc0a2ed42e190" title="Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur..." alt="" coords="5,29,229,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,53,229,53,229,48,262,48"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="150,17,138,10,117,8,99,10,87,15,83,21,84,28,79,29,78,19,84,10,97,5,117,3,139,5,152,12"/>
-</map>

@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,23 +117,27 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Gets the available AssetImporter types for a given asset, eg those that handle assets of the given type. </p>
+<p>Gets the available AssetImporter types for assets of this kind. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>AssetImporter types that handle importing assets of the same kind as the given asset file.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a> </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00159">159</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>            {</div>
-<div class="line"><span class="lineno">  161</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
-<div class="line"><span class="lineno">  162</span>                <span class="keywordflow">return</span> AssetDatabase.GetAvailableImporters(path);</div>
-<div class="line"><span class="lineno">  163</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  164</span>                <span class="keywordflow">return</span> AssetDatabase.GetAvailableImporterTypes(path);</div>
-<div class="line"><span class="lineno">  165</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  166</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_importer_8cs_source.html#l00134">134</a> of file <a class="el" href="_asset_8_importer_8cs_source.html">Asset.Importer.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>            {</div>
+<div class="line"><span class="lineno">  136</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
+<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">return</span> AssetDatabase.GetAvailableImporters(path);</div>
+<div class="line"><span class="lineno">  138</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">return</span> AssetDatabase.GetAvailableImporterTypes(path);</div>
+<div class="line"><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  141</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

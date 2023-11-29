@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41.html#a707c1a8b6f6fab6ad12485008e38ce41" target="_top" xlink:title="Creates the folders in the path recursively. Path may point to a file but only folders will be create...">
+<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41.html#a707c1a8b6f6fab6ad12485008e38ce41" target="_top" xlink:title="Creates the folders in the path recursively.">
 <polygon fill="white" stroke="#666666" points="221,-32 74.5,-32 74.5,0 221,0 221,-32"/>
 <text text-anchor="start" x="82.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmile.Editor.Asset.Path.</text>
 <text text-anchor="middle" x="147.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">CreateFolders</text>

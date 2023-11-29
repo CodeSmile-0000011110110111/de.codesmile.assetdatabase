@@ -1,6 +1,0 @@
-<map id="ForceReserialize" name="ForceReserialize">
-<area shape="rect" id="Node000001" title="Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur..." alt="" coords="5,29,124,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="30,30,24,21,28,11,42,5,65,3,90,6,103,13,100,17,88,11,64,8,43,10,32,15,29,20,34,27"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_1_1_editor_1_1_asset_1_1_path_ad43db7ddf503406b3dbe05949a040a46.html#ad43db7ddf503406b3dbe05949a040a46" title="Converts a collection of Path instances to a string array." alt="" coords="172,21,367,64"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="124,40,157,40,157,45,124,45"/>
-</map>

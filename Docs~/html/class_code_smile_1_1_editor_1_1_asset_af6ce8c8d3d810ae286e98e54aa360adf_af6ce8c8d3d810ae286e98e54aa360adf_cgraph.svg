@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a74d244f8f0c7794555d42faf4f80b81e.html#a74d244f8f0c7794555d42faf4f80b81e" target="_top" xlink:title="Deletes the asset file. Does nothing if there is no file at the given path.">
+<g id="a_Node000002"><a xlink:href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a74d244f8f0c7794555d42faf4f80b81e.html#a74d244f8f0c7794555d42faf4f80b81e" target="_top" xlink:title="Deletes an asset file or folder.">
 <polygon fill="white" stroke="#666666" points="221.75,-32 79.75,-32 79.75,0 221.75,0 221.75,-32"/>
 <text text-anchor="start" x="87.75" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmile.Editor.Asset.File.</text>
 <text text-anchor="middle" x="150.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Delete</text>

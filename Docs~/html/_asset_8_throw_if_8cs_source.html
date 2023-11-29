@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -177,7 +178,7 @@ $(document).ready(function(){initNavTree('_asset_8_throw_if_8cs_source.html','')
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> AssetLoadReturnedNull(Object obj, Path path)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> AssetLoadReturnedNull(UnityEngine.Object obj, Path path)</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">if</span> (obj == <span class="keyword">null</span>)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                {</div>
@@ -245,9 +246,21 @@ $(document).ready(function(){initNavTree('_asset_8_throw_if_8cs_source.html','')
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">if</span> (sourcePath.Equals(destinationPath))</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException($<span class="stringliteral">&quot;source and destination path are equal: {sourcePath}&quot;</span>);</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> NotAnAsset(UnityEngine.Object obj)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <span class="keywordflow">if</span> (Database.Contains(obj) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException($<span class="stringliteral">&quot;{obj} is not an asset file&quot;</span>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> NotAnAsset(Int32 instanceId)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="keywordflow">if</span> (Database.Contains(instanceId) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException($<span class="stringliteral">&quot;{instanceId} is not an asset instance ID&quot;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}</div>
 <div class="ttc" id="anamespace_code_smile_1_1_editor_html"><div class="ttname"><a href="namespace_code_smile_1_1_editor.html">CodeSmile.Editor</a></div><div class="ttdef"><b>Definition</b> <a href="_asset_8_bundle_8cs_source.html#l00007">Asset.Bundle.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

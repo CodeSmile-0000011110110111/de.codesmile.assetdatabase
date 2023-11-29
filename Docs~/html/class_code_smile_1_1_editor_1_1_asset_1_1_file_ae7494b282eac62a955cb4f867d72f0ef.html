@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -127,25 +128,33 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><div class="memdoc">
 
 <p>Imports a file at a given path that was created or modified 'externally', then loads and returns the asset object. See <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a9023c374da2135cf7e97a768aa99a4b1.html#a9023c374da2135cf7e97a768aa99a4b1" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me...">CodeSmile.Editor.Asset.File.Import</a> for more info. </p>
-<p><a class="el" href="namespace_code_smile.html">CodeSmile</a> AssetDatabase provides convenience Create methods that automatically import/load assets: CodeSmile.Editor.Asset.File.Create(Byte[],Path) CodeSmile.Editor.Asset.File.Create(string,Path) </p>
+<p>You may want to use the Create overloads that automatically create the file, then import and load the new file:</p><ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ac06fc29444361ea05b15a504b027656f.html#ac06fc29444361ea05b15a504b027656f" title="Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file.">CodeSmile.Editor.Asset.File.Create(Byte[],CodeSmile.Editor.Asset.Path)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a8850be1e907e5ea2c0017d804a069220.html#a8850be1e907e5ea2c0017d804a069220" title="Writes the string to disk, then imports and loads the asset. Overwrites any existing file.">CodeSmile.Editor.Asset.File.Create(String,CodeSmile.Editor.Asset.Path)</a> </li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
-    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset.</td></tr>
+    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the asset.</td></tr>
+    <tr><td class="paramname">T</td><td>A UnityEngine.Object derived type.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The asset object, or null if the asset could not be loaded or is not of type T.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ae7494b282eac62a955cb4f867d72f0ef.html#ae7494b282eac62a955cb4f867d72f0ef" title="Imports a file at a given path that was created or modified &#39;externally&#39;, then loads and returns the ...">CodeSmile.Editor.Asset.File.ImportAndLoad&lt;T&gt;</a>, CodeSmile.Editor.Asset.File.Load&lt;T&gt;(Path), CodeSmile.Editor.Asset.File.Create(Byte[],Path), CodeSmile.Editor.Asset.File.Create(string,Path), </dd></dl>
-<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a></p>
 <dl class="section see"><dt>See also</dt><dd></dd></dl>
-<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a></p>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ae7494b282eac62a955cb4f867d72f0ef.html#ae7494b282eac62a955cb4f867d72f0ef" title="Imports a file at a given path that was created or modified &#39;externally&#39;, then loads and returns the ...">CodeSmile.Editor.Asset.File.ImportAndLoad&lt;T&gt;</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_af8c4540f4aeef8ce7ca8036d82791d4b.html#af8c4540f4aeef8ce7ca8036d82791d4b" title="Loads an asset at path.">CodeSmile.Editor.Asset.File.Load&lt;T&gt;(CodeSmile.Editor.Asset.Path)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_ac06fc29444361ea05b15a504b027656f.html#ac06fc29444361ea05b15a504b027656f" title="Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file.">CodeSmile.Editor.Asset.File.Create(Byte[],CodeSmile.Editor.Asset.Path)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a8850be1e907e5ea2c0017d804a069220.html#a8850be1e907e5ea2c0017d804a069220" title="Writes the string to disk, then imports and loads the asset. Overwrites any existing file.">CodeSmile.Editor.Asset.File.Create(String,CodeSmile.Editor.Asset.Path)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a> </li>
+</ul>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -155,19 +164,19 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00267">267</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>                        : Object</div>
-<div class="line"><span class="lineno">  269</span>            {</div>
-<div class="line"><span class="lineno">  270</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>                ImportIfNotImported(path, options);</div>
-<div class="line"><span class="lineno">  273</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec.html#a5d27be243c1f698cba116b768e3f65ec">Load&lt;T&gt;</a>(path);</div>
-<div class="line"><span class="lineno">  274</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00350">350</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  351</span>                        : Object</div>
+<div class="line"><span class="lineno">  352</span>            {</div>
+<div class="line"><span class="lineno">  353</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>                ImportIfNotImported(path, options);</div>
+<div class="line"><span class="lineno">  356</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec.html#a5d27be243c1f698cba116b768e3f65ec">Load&lt;T&gt;</a>(path);</div>
+<div class="line"><span class="lineno">  357</span>            }</div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_html_a5d27be243c1f698cba116b768e3f65ec"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec.html#a5d27be243c1f698cba116b768e3f65ec">CodeSmile.Editor.Asset.Load&lt; T &gt;</a></div><div class="ttdeci">T Load&lt; T &gt;()</div><div class="ttdoc">Loads a (sub) object from the asset identified by type.</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec.html#a5d27be243c1f698cba116b768e3f65ec">Asset.Load&lt; T &gt;()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00314">Asset.File.LoadOrCreate&lt; T &gt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_asset_8_file_8cs_source.html#l00445">Asset.File.LoadOrCreate&lt; T &gt;()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

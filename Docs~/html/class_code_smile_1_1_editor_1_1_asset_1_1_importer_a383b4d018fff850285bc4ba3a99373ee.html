@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -117,13 +118,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </div><div class="memdoc">
 
 <p>Gets the active AssetImporter types used for the given assets. </p>
+<p>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
+    <tr><td class="paramname">paths</td><td>Paths to asset files.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The AssetImporter types in use for the specified assets.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer_a035a8ca4042fbd9eab5dee58e6043bda.html#a035a8ca4042fbd9eab5dee58e6043bda" title="Returns an asset&#39;s default importer type.">CodeSmile.Editor.Asset.Importer.GetDefault</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_importer_a3078cc1ed18eef4bdbc177fca89212a2.html#a3078cc1ed18eef4bdbc177fca89212a2" title="Returns an asset&#39;s overridden importer type.">CodeSmile.Editor.Asset.Importer.GetOverride</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a> </li>
+</ul>
 
 </div>
 </div>

@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -132,15 +133,21 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Opens the asset (by its instanceID) in the default (associated) application. Optional line and column numbers can be specified for text files and applications that support this. </p>
+<p>Opens the asset in the application associated with the file's extension. </p>
+<p>Optional line and column numbers can be specified for text files and applications that support this. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">instanceId</td><td></td></tr>
-    <tr><td class="paramname">lineNumber</td><td></td></tr>
-    <tr><td class="paramname">columnNumber</td><td></td></tr>
+    <tr><td class="paramname">instanceId</td><td>An instance ID of the asset to open externally.</td></tr>
+    <tr><td class="paramname">lineNumber</td><td>Optional line number to highlight. Depends on application support.</td></tr>
+    <tr><td class="paramname">columnNumber</td><td>Optional column/character number to highlight. Depends on application support.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d.html#aabdb1dcc073e89416e72eccf3839ad1d" title="Returns true if the given object can be opened (edited) by the Unity editor.">CodeSmile.Editor.Asset.File.CanOpenInEditor(Int32)</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html">AssetDatabase.OpenAsset</a> </li>
+</ul>
 
 </div>
 </div>

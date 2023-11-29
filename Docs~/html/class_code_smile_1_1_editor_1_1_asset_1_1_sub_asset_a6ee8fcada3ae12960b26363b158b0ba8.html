@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,14 +117,22 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Loads only the visible (representation) sub-asset objects of an asset. NOTE: Whether the main object is included in this list depends on the type of asset, and whether onlyVisible is true. (Details still unclear - please ask!) CAUTION: calling this on scene assets is not supported (error messages in console). </p>
+<p>Loads only the visible (representation) sub-asset objects of an asset. </p>
+<p>The visible representations are those sub-assets you see in the project view when an asset is expandable like a folder. </p>
+<p>Does not include the main asset.</p>
+<p>CAUTION: Calling this on scene assets is not supported (error messages in console). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>All visible sub-assets of the asset, excluding the main asset. Or an empty array if load failed or there are no sub-assets. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_sub_asset_a592a18a1c296d21ec42815cf84c8a34c.html#a592a18a1c296d21ec42815cf84c8a34c" title="Loads all sub-asset objects of an asset.">CodeSmile.Editor.Asset.SubAsset.LoadAll</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html">AssetDatabase.LoadAllAssetRepresentationsAtPath</a> </li>
+</ul>
 
 </div>
 </div>

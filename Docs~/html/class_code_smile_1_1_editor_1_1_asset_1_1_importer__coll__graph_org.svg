@@ -18,9 +18,9 @@
 <text text-anchor="start" x="4" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">ApplySettings()</text>
 <text text-anchor="start" x="4" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">ApplySettings()</text>
+<text text-anchor="start" x="14" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">ClearOverride()</text>
 <text text-anchor="start" x="4" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">ClearOverride()</text>
+<text text-anchor="start" x="14" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetActive()</text>
 <text text-anchor="start" x="4" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetActive()</text>
 <text text-anchor="start" x="4" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -32,10 +32,10 @@
 <text text-anchor="start" x="4" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetActive()</text>
 <text text-anchor="start" x="4" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetActive()</text>
+<text text-anchor="start" x="14" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAvailable()</text>
 <text text-anchor="start" x="4" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetAvailable()</text>
-<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="14" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
 <polygon fill="#666666" stroke="#666666" points="0,-194 0,-194 84,-194 84,-194 0,-194"/>
 <polygon fill="#666666" stroke="#666666" points="0,-178 0,-178 84,-178 84,-178 0,-178"/>
 <polygon fill="none" stroke="#666666" points="0,0 0,-212 84,-212 84,0 0,0"/>

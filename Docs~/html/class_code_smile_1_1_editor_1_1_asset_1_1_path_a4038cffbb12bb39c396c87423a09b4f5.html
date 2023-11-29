@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,14 +117,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Returns the names of all subfolders in the path. Returns an empty array of the path points to a file. </p>
+<p>Returns the names of all subfolders in the path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to a folder.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Paths to all subfolders, or empty array if there are no subfolders or the path points to a file.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Names of each subfolder in the path. Empty array if there are no subfolders or the path points to a file.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a> </li>
+</ul>
 
 </div>
 </div>

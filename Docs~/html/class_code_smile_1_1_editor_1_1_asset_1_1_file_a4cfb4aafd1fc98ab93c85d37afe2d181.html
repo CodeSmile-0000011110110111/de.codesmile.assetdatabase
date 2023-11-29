@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -116,8 +117,10 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Loads the main asset at the path. </p>
-<p>Most of the times the main asset is the only object. There are assets that consist of multiple objects however. For example Mesh assets often contain sub objects like animations and materials. </p>
+<p>Loads the main (root) asset at the path. </p>
+<ul>
+<li>Will import the asset if it is not yet in the AssetDatabase. </li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Path to an asset file.</td></tr>
@@ -126,13 +129,17 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>Type of the asset.</td></tr>
+    <tr><td class="paramname">T</td><td>UnityEngine.Object derived type.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The asset or null if the path does not exist.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>CodeSmile.Editor.Asset.File.Load&lt;T&gt;(Path), <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" title="Loads an asset at path or creates the asset if needed.">CodeSmile.Editor.Asset.File.LoadOrCreate&lt;T&gt;</a>, </dd></dl>
-<p><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a></p>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_af8c4540f4aeef8ce7ca8036d82791d4b.html#af8c4540f4aeef8ce7ca8036d82791d4b" title="Loads an asset at path.">CodeSmile.Editor.Asset.File.Load&lt;T&gt;(CodeSmile.Editor.Asset.Path)</a></li>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" title="Loads an asset at path or creates the asset if needed.">CodeSmile.Editor.Asset.File.LoadOrCreate&lt;T&gt;</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a> </li>
+</ul>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -142,15 +149,15 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00335">335</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  335</span>                                                           : Object</div>
-<div class="line"><span class="lineno">  336</span>            {</div>
-<div class="line"><span class="lineno">  337</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">  338</span>                ThrowIf.DoesNotExistInFileSystem(path);</div>
-<div class="line"><span class="lineno">  339</span> </div>
-<div class="line"><span class="lineno">  340</span>                ImportIfNotImported(path);</div>
-<div class="line"><span class="lineno">  341</span>                <span class="keywordflow">return</span> AssetDatabase.LoadMainAssetAtPath(path) as T;</div>
-<div class="line"><span class="lineno">  342</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00468">468</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  468</span>                                                           : Object</div>
+<div class="line"><span class="lineno">  469</span>            {</div>
+<div class="line"><span class="lineno">  470</span>                ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">  471</span>                ThrowIf.DoesNotExistInFileSystem(path);</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>                ImportIfNotImported(path);</div>
+<div class="line"><span class="lineno">  474</span>                <span class="keywordflow">return</span> AssetDatabase.LoadMainAssetAtPath(path) as T;</div>
+<div class="line"><span class="lineno">  475</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

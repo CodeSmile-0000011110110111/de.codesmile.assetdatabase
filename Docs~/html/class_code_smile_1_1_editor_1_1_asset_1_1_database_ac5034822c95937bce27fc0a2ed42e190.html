@@ -16,6 +16,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -111,7 +112,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">ForceReserializeAssetsOptions&#160;</td>
-          <td class="paramname"><em>options</em> = <code>ForceReserializeAssetsOptions::ReserializeAssetsAndMetadata</code>&#160;</td>
+          <td class="paramname"><em>options</em> = <code>ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -126,39 +127,20 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 </table>
 </div><div class="memdoc">
 
-<p>Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their current serialization version, and then writes them back to disk. Note: this can potentially change a lot of files in version control. It should be done cautiously. </p>
-<p>ForceReserialize() </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Updates all native asset files to reflect any changes in serialization in the current editor version. </p>
+<p>Use this after upgrading Unity Editor versions and you want to make sure all native assets are serialized to the current serialization format. Depending on whether Unity made changes to the serialization format this may change between none to all native assets. Use with caution when working with source control: discuss implications with the team / tech lead. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paths</td><td></td></tr>
-    <tr><td class="paramname">options</td><td></td></tr>
+    <tr><td class="paramname">paths</td><td>Paths to assets to reserialize to the current serialization version.</td></tr>
+    <tr><td class="paramname">options</td><td><a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a> </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_asset_8_database_8cs_source.html#l00083">83</a> of file <a class="el" href="_asset_8_database_8cs_source.html">Asset.Database.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>            {</div>
-<div class="line"><span class="lineno">   86</span>                ThrowIf.ArgumentIsNull(paths, nameof(paths));</div>
-<div class="line"><span class="lineno">   87</span>                <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190.html#ac5034822c95937bce27fc0a2ed42e190">ForceReserialize</a>(Path.ToStrings(paths), options);</div>
-<div class="line"><span class="lineno">   88</span>            }</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190_html_ac5034822c95937bce27fc0a2ed42e190"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190.html#ac5034822c95937bce27fc0a2ed42e190">CodeSmile.Editor.Asset.Database.ForceReserialize</a></div><div class="ttdeci">static void ForceReserialize(IEnumerable&lt; Path &gt; paths, ForceReserializeAssetsOptions options=ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata)</div><div class="ttdoc">Forces reserializing the assets as the given paths. This loads the assets, upgrades them to their cur...</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_database_8cs_source.html#l00083">Asset.Database.cs:83</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_database_8cs_source.html#l00083">Asset.Database.ForceReserialize()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_path_ad43db7ddf503406b3dbe05949a040a46.html#ad43db7ddf503406b3dbe05949a040a46">Asset.Path.ToStrings()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_asset_8_database_8cs_source.html#l00083">Asset.Database.ForceReserialize()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190_ac5034822c95937bce27fc0a2ed42e190_cgraph.svg" width="372" height="70"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_code_smile_1_1_editor_1_1_asset_1_1_database_ac5034822c95937bce27fc0a2ed42e190_ac5034822c95937bce27fc0a2ed42e190_icgraph.svg" width="130" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section see"><dt>See also</dt><dd></dd></dl>
+<ul>
+<li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_1_1_database_a2bb323ec117cc6b7a8250244f59f1319.html#a2bb323ec117cc6b7a8250244f59f1319" title="Updates all native asset files to reflect any changes in serialization in the current editor version.">CodeSmile.Editor.Asset.Database.ForceReserializeAll</a></li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a> </li>
+</ul>
 
 </div>
 </div>
