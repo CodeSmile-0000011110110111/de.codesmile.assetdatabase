@@ -26,10 +26,10 @@ namespace CodeSmile.Editor
 			/// <param name="instance">The instance to test.</param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported(CodeSmile.Editor.Asset.Path)" />
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
-			/// - <see cref="Contains" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported(CodeSmile.Editor.Asset.Path)" />
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			///     - <see cref="Contains" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
 			public static Boolean IsImported(Object instance) => Database.Contains(instance);
 
@@ -43,10 +43,11 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>Returns false if the path isn't in the database or if the path is null.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported(Object)" />
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
-			/// - <see cref="Contains" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported(Object)" />
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			///     - <see cref="Contains" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
 			/// </seealso>
 			public static Boolean IsImported(Path path) => path != null && path.Exists;
 
@@ -56,8 +57,9 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>True if the object at the path is loaded, false otherwise.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
@@ -68,8 +70,8 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it's the asset's main object, false otherwise.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsMain(Object asset) => AssetDatabase.IsMainAsset(asset);
@@ -80,8 +82,8 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it's a sub asset, false otherwise.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsSub(Object asset) => AssetDatabase.IsSubAsset(asset);
@@ -96,8 +98,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it is a foreign asset, false otherwise.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsForeign(Object asset) => AssetDatabase.IsForeignAsset(asset);
@@ -112,8 +115,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it is a native asset, false otherwise.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsNative(Object asset) => AssetDatabase.IsNativeAsset(asset);

@@ -6,8 +6,6 @@
 using CodeSmile.Editor;
 using NUnit.Framework;
 using System;
-using UnityEditor;
-using UnityEngine;
 
 public class AssetBatchEditingTests : AssetTestBase
 {

@@ -22,9 +22,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>The labels of the asset or an empty array.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.Add" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Label.Add" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
 			/// </seealso>
 			public static String[] GetAll(Object asset) => AssetDatabase.GetLabels(asset);
 
@@ -34,9 +34,9 @@ namespace CodeSmile.Editor
 			/// <param name="guid">GUID of an asset.</param>
 			/// <returns>The labels of the asset or an empty array.</returns>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.Add" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Label.Add" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
 			/// </seealso>
 			public static String[] GetAll(GUID guid) => AssetDatabase.GetLabels(guid);
 
@@ -46,9 +46,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="labels">An array of labels.</param>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.Add" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetLabels.html">AssetDatabase.SetLabels</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Label.Add" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetLabels.html">AssetDatabase.SetLabels</a>
 			/// </seealso>
 			public static void SetAll([NotNull] Object asset, [NotNull] String[] labels)
 			{
@@ -63,9 +63,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="label">The label to add.</param>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.Add(Object,String[])" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.Add(Object,String[])" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
 			/// </seealso>
 			public static void Add(Object asset, String label)
 			{
@@ -80,9 +80,9 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="labels">The labels to add.</param>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.Add(Object,String)" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.Add(Object,String)" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
 			/// </seealso>
 			public static void Add(Object asset, String[] labels)
 			{
@@ -96,9 +96,9 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <seealso cref="">
-			/// - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
-			/// - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
-			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearLabels.html">AssetDatabase.ClearLabels</a>
+			///     - <see cref="CodeSmile.Editor.Asset.Label.GetAll" />
+			///     - <see cref="CodeSmile.Editor.Asset.Label.SetAll" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearLabels.html">AssetDatabase.ClearLabels</a>
 			/// </seealso>
 			public static void ClearAll(Object asset) => AssetDatabase.ClearLabels(asset);
 		}

@@ -136,7 +136,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     -
 			///     <see
-			///         cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{String},ForceReserializeAssetsOptions)" />
+			///         cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{string},ForceReserializeAssetsOptions)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>

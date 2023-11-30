@@ -172,7 +172,8 @@ namespace CodeSmile.Editor
 			/// <param name="instanceOrAsset">An object instance or asset.</param>
 			/// <returns>The scene path if the object is an instance in the scene. Otherwise the asset's path.</returns>
 			/// <seealso cref="">
-			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetOrScenePath.html">AssetDatabase.GetAssetOrScenePath</a>
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetOrScenePath.html">AssetDatabase.GetAssetOrScenePath</a>
 			/// </seealso>
 			public static Path GetScene(Object instanceOrAsset) => AssetDatabase.GetAssetOrScenePath(instanceOrAsset);
 

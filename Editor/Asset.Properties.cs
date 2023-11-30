@@ -27,10 +27,10 @@ namespace CodeSmile.Editor
 		///     <code>var myObj = asset.Get&lt;MyType&gt;();</code>
 		/// </example>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.SubAsset" />
-		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(Object,CodeSmile.Editor.Asset.Path)" />
-		/// - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(Object,Object)" />
-		/// - <see cref="CodeSmile.Editor.Asset.File.LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmile.Editor.Asset.SubAsset" />
+		///     - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmile.Editor.Asset.SubAsset.SetMain(UnityEngine.Object,UnityEngine.Object)" />
+		///     - <see cref="CodeSmile.Editor.Asset.File.LoadMain{T}(CodeSmile.Editor.Asset.Path)" />
 		/// </seealso>
 		public Object MainObject
 		{
@@ -48,7 +48,7 @@ namespace CodeSmile.Editor
 		///     Returns the type of the main asset at the given path.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.GetMainType(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmile.Editor.Asset.GetMainType(CodeSmile.Editor.Asset.Path)" />
 		/// </seealso>
 		public Type MainObjectType => GetMainType(m_AssetPath);
 
@@ -56,7 +56,7 @@ namespace CodeSmile.Editor
 		///     Returns the path to the asset (file or folder).
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.MetaPath" />
+		///     - <see cref="CodeSmile.Editor.Asset.MetaPath" />
 		/// </seealso>
 		public Path AssetPath => m_AssetPath;
 
@@ -64,7 +64,7 @@ namespace CodeSmile.Editor
 		///     Returns the path to the .meta file for the asset.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.AssetPath" />
+		///     - <see cref="CodeSmile.Editor.Asset.AssetPath" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Path MetaPath => Path.ToMeta(m_AssetPath);
@@ -73,7 +73,7 @@ namespace CodeSmile.Editor
 		///     Returns the asset's GUID.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.FileId" />
+		///     - <see cref="CodeSmile.Editor.Asset.FileId" />
 		/// </seealso>
 		public GUID Guid => Path.GetGuid(m_AssetPath);
 
@@ -81,7 +81,7 @@ namespace CodeSmile.Editor
 		///     Returns the local FileID of the asset.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.Guid" />
+		///     - <see cref="CodeSmile.Editor.Asset.Guid" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Int64 FileId => GetFileId(m_MainObject);
@@ -98,7 +98,7 @@ namespace CodeSmile.Editor
 		/// <param name="path">Path to an asset.</param>
 		/// <returns>The bundle name or an empty string.</returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.OwningBundleVariant" />
+		///     - <see cref="CodeSmile.Editor.Asset.OwningBundleVariant" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public String OwningBundle => Bundle.GetOwningBundle(m_AssetPath);
@@ -109,7 +109,7 @@ namespace CodeSmile.Editor
 		/// <param name="path">Path to an asset.</param>
 		/// <returns>The bundle variant name or empty string.</returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.OwningBundle" />
+		///     - <see cref="CodeSmile.Editor.Asset.OwningBundle" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
@@ -119,7 +119,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns> Returns paths to the directly dependent assets.</returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.Dependencies" />
+		///     - <see cref="CodeSmile.Editor.Asset.Dependencies" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public String[] DirectDependencies => Dependency.GetDirect(m_AssetPath);
@@ -129,7 +129,7 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns> Returns paths to the dependent assets.</returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.DirectDependencies" />
+		///     - <see cref="CodeSmile.Editor.Asset.DirectDependencies" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public String[] Dependencies => Dependency.GetAll(m_AssetPath);
@@ -138,7 +138,7 @@ namespace CodeSmile.Editor
 		///     Returns the default AssetImporter type for this asset.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
+		///     - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Type DefaultImporter => Importer.GetDefault(m_AssetPath);
@@ -148,9 +148,9 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <remarks>Will be the DefaultImporter type unless the importer was overridden.</remarks>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.DefaultImporter" />
-		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
-		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
+		///     - <see cref="CodeSmile.Editor.Asset.DefaultImporter" />
+		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
+		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Type ActiveImporter
@@ -166,10 +166,10 @@ namespace CodeSmile.Editor
 		///     Returns true if the asset's default AssetImporter type has been overridden.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
-		/// - <see cref="CodeSmile.Editor.Asset.DefaultImporter" />
-		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
-		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
+		///     - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
+		///     - <see cref="CodeSmile.Editor.Asset.DefaultImporter" />
+		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
+		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
 		public Boolean IsImporterOverridden => ActiveImporter != DefaultImporter;
 
@@ -177,7 +177,7 @@ namespace CodeSmile.Editor
 		///     Sets or gets the labels associated with the asset.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.SetLabels" />
+		///     - <see cref="CodeSmile.Editor.Asset.SetLabels" />
 		/// </seealso>
 		public String[] Labels
 		{
@@ -189,8 +189,8 @@ namespace CodeSmile.Editor
 		///     Returns true after the asset has been deleted.
 		/// </summary>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.File.Delete(CodeSmile.Editor.Asset.Path)" />
-		/// - <see cref="CodeSmile.Editor.Asset.File.Trash(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmile.Editor.Asset.File.Delete(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmile.Editor.Asset.File.Trash(CodeSmile.Editor.Asset.Path)" />
 		/// </seealso>
 		public Boolean IsDeleted => m_AssetPath == null && m_MainObject == null;
 
@@ -199,8 +199,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns></returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
-		/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
+		///     - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
+		///     - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
@@ -210,8 +210,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns></returns>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
-		/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
+		///     - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
+		///     - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
@@ -228,7 +228,7 @@ namespace CodeSmile.Editor
 		///     Whether the main object is included in this list depends on the type of asset.
 		/// </remarks>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.VisibleSubAssets" />
+		///     - <see cref="CodeSmile.Editor.Asset.VisibleSubAssets" />
 		/// </seealso>
 		public Object[] SubAssets => IsScene ? new Object[0] : SubAsset.LoadAll(m_AssetPath);
 
@@ -239,7 +239,7 @@ namespace CodeSmile.Editor
 		///     Does not include the main asset.
 		/// </remarks>
 		/// <seealso cref="">
-		/// - <see cref="CodeSmile.Editor.Asset.SubAssets" />
+		///     - <see cref="CodeSmile.Editor.Asset.SubAssets" />
 		/// </seealso>
 		public Object[] VisibleSubAssets => IsScene ? new Object[0] : SubAsset.LoadVisible(m_AssetPath);
 	}

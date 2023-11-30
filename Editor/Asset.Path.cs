@@ -48,7 +48,7 @@ namespace CodeSmile.Editor
 			/// <remarks>In Unity 2023.2 or newer uses the new AssetPathExists method. In earlier versions AssetPathToGUID is used.</remarks>
 			/// <seealso cref="">
 			///     - <see cref="CodeSmile.Editor.Asset.Path.ExistsInFileSystem" />
-			///		- <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
 			///     -
@@ -69,15 +69,17 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns true if the path exists in the file system.
 			/// </summary>
-			/// <remarks>This checks for physical existance of a file or folder using the System.IO methods.
-			/// It may return true where CodeSmile.Editor.Asset.Path.Exists returns false.</remarks>
+			/// <remarks>
+			///     This checks for physical existance of a file or folder using the System.IO methods.
+			///     It may return true where CodeSmile.Editor.Asset.Path.Exists returns false.
+			/// </remarks>
 			/// <remarks>
 			///     In such a case this may indicate that the asset has been created but not yet imported.
-			///		The corresponding status check is: CodeSmile.Editor.Asset.Status.IsImported.
+			///     The corresponding status check is: CodeSmile.Editor.Asset.Status.IsImported.
 			/// </remarks>
 			/// <seealso cref="">
 			///     - <see cref="CodeSmile.Editor.Asset.Path.Exists" />
-			///		- <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
 			/// </seealso>
 			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
@@ -189,79 +191,6 @@ namespace CodeSmile.Editor
 			/// </seealso>
 			public Path UniqueFilePath => UniquifyFileName(this);
 
-			/// <summary>
-			///     Implicit conversion to string.
-			/// </summary>
-			/// <param name="path">Input path.</param>
-			/// <returns>Relative path as string.</returns>
-			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
-
-			/// <summary>
-			///     Implicit conversion to Path from a string.
-			/// </summary>
-			/// <param name="path">Input string path. Path may be absolute or relative.</param>
-			/// <returns>Relative path as string.</returns>
-			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
-
-			/// <summary>
-			///     Tests two path instances for equality.
-			/// </summary>
-			/// <param name="path1">A Path.</param>
-			/// <param name="path2">Another path.</param>
-			/// <returns>True if both paths point to the same location. False otherwise.</returns>
-			public static Boolean operator ==(Path path1, Path path2)
-			{
-				if (ReferenceEquals(path1, path2))
-					return true;
-				if (ReferenceEquals(path1, null))
-					return false;
-				if (ReferenceEquals(path2, null))
-					return false;
-
-				return path1.Equals(path2);
-			}
-
-			/// <summary>
-			///     Tests two path instances for inequality.
-			/// </summary>
-			/// <param name="path1">A Path.</param>
-			/// <param name="path2">Another path.</param>
-			/// <returns></returns>
-			public static Boolean operator !=(Path path1, Path path2) => !(path1 == path2);
-
-			/// <summary>
-			///     Tests for equality with an object.
-			/// </summary>
-			/// <param name="path1">A Path.</param>
-			/// <param name="other">Any instance.</param>
-			/// <returns>True if both paths point to the same location. False otherwise.</returns>
-			public static Boolean operator ==(Path path1, Object other) =>
-				other is String str ? path1.Equals(str) : path1.Equals(other as Path);
-
-			/// <summary>
-			///     Tests for inequality with an object.
-			/// </summary>
-			/// <param name="path1">A Path.</param>
-			/// <param name="other">Any instance.</param>
-			/// <returns></returns>
-			public static Boolean operator !=(Path path1, Object other) => !(path1 == other);
-
-			/// <summary>
-			///     Tests for equality with an object.
-			/// </summary>
-			/// <param name="other">Any instance.</param>
-			/// <param name="path">A Path.</param>
-			/// <returns>True if both paths point to the same location. False otherwise.</returns>
-			public static Boolean operator ==(Object other, Path path) => path == other;
-
-			/// <summary>
-			///     Tests for inequality with an object.
-			/// </summary>
-			/// <param name="other">Any instance.</param>
-			/// <param name="path">A Path.</param>
-			/// <returns></returns>
-			public static Boolean operator !=(Object other, Path path) => !(path == other);
-
 			[ExcludeFromCodeCoverage] private Path() {} // disallowed parameterless ctor
 
 			/// <summary>
@@ -355,6 +284,79 @@ namespace CodeSmile.Editor
 			public Boolean Equals(String other) => m_RelativePath.Equals(new Path(other).m_RelativePath);
 
 			/// <summary>
+			///     Implicit conversion to string.
+			/// </summary>
+			/// <param name="path">Input path.</param>
+			/// <returns>Relative path as string.</returns>
+			public static implicit operator String(Path path) => path != null ? path.m_RelativePath : null;
+
+			/// <summary>
+			///     Implicit conversion to Path from a string.
+			/// </summary>
+			/// <param name="path">Input string path. Path may be absolute or relative.</param>
+			/// <returns>Relative path as string.</returns>
+			public static implicit operator Path(String path) => path != null ? new Path(path) : null;
+
+			/// <summary>
+			///     Tests two path instances for equality.
+			/// </summary>
+			/// <param name="path1">A Path.</param>
+			/// <param name="path2">Another path.</param>
+			/// <returns>True if both paths point to the same location. False otherwise.</returns>
+			public static Boolean operator ==(Path path1, Path path2)
+			{
+				if (ReferenceEquals(path1, path2))
+					return true;
+				if (ReferenceEquals(path1, null))
+					return false;
+				if (ReferenceEquals(path2, null))
+					return false;
+
+				return path1.Equals(path2);
+			}
+
+			/// <summary>
+			///     Tests two path instances for inequality.
+			/// </summary>
+			/// <param name="path1">A Path.</param>
+			/// <param name="path2">Another path.</param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path1, Path path2) => !(path1 == path2);
+
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="path1">A Path.</param>
+			/// <param name="other">Any instance.</param>
+			/// <returns>True if both paths point to the same location. False otherwise.</returns>
+			public static Boolean operator ==(Path path1, Object other) =>
+				other is String str ? path1.Equals(str) : path1.Equals(other as Path);
+
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="path1">A Path.</param>
+			/// <param name="other">Any instance.</param>
+			/// <returns></returns>
+			public static Boolean operator !=(Path path1, Object other) => !(path1 == other);
+
+			/// <summary>
+			///     Tests for equality with an object.
+			/// </summary>
+			/// <param name="other">Any instance.</param>
+			/// <param name="path">A Path.</param>
+			/// <returns>True if both paths point to the same location. False otherwise.</returns>
+			public static Boolean operator ==(Object other, Path path) => path == other;
+
+			/// <summary>
+			///     Tests for inequality with an object.
+			/// </summary>
+			/// <param name="other">Any instance.</param>
+			/// <param name="path">A Path.</param>
+			/// <returns></returns>
+			public static Boolean operator !=(Object other, Path path) => !(path == other);
+
+			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
 			/// </summary>
 			/// <seealso cref="">
@@ -378,8 +380,10 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Creates the folders in the path recursively.
 			/// </summary>
-			/// <remarks>The CodeSmile.Editor.Asset.File write operations use this internally to create any missing folders,
-			/// so you do not need to call this yourself in those cases.</remarks>
+			/// <remarks>
+			///     The CodeSmile.Editor.Asset.File write operations use this internally to create any missing folders,
+			///     so you do not need to call this yourself in those cases.
+			/// </remarks>
 			/// <remarks>
 			///     Path may point to a file. It is assumed that if the last element of the path
 			///     contains a dot it has an extension and is therefore a file.
