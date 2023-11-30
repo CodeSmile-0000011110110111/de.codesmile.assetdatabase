@@ -5,10 +5,13 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public class ExampleSO : ScriptableObject
+namespace CodeSmileEditor.Tests.Helper
 {
-	public Object Ref;
-	public String Text;
-	public Int32 InstanceId;
-	public Single FloatValue;
+	public class ExampleSO : ScriptableObject
+	{
+		public Object Ref;
+		public String Text;
+		public Int32 InstanceId;
+		public Single FloatValue;
+	}
 }

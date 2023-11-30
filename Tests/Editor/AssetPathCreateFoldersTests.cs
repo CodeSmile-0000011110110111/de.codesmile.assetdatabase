@@ -1,82 +1,85 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using CodeSmile.Editor;
+using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
 using System;
 using UnityEditor;
 
-public class AssetPathCreateFoldersTests : AssetTestBase
+namespace CodeSmileEditor.Tests
 {
-	[Test] public void CreateFolders_NullPath_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
-
-	[TestCase(TestSubFoldersPath)]
-	[TestCase("Assets/some.file")]
-	[TestCase(TestSubFoldersPath + "/fn.ext")]
-	public void CreateFolders_ExistingFolder_ReturnsExistingFolderGuid(String dirPath)
+	public class AssetPathCreateFoldersTests : AssetTestBase
 	{
-		// create the folder first
-		var assetPath = (Asset.Path)dirPath;
-		var createdGuid = assetPath.CreateFolders();
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
+		[Test] public void CreateFolders_NullPath_Throws() =>
+			Assert.Throws<ArgumentNullException>(() => Asset.Path.CreateFolders(null));
 
-		var folderGuid = assetPath.CreateFolders();
+		[TestCase(TestSubFoldersPath)]
+		[TestCase("Assets/some.file")]
+		[TestCase(TestSubFoldersPath + "/fn.ext")]
+		public void CreateFolders_ExistingFolder_ReturnsExistingFolderGuid(String dirPath)
+		{
+			// create the folder first
+			var assetPath = (Asset.Path)dirPath;
+			var createdGuid = assetPath.CreateFolders();
+			Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
 
-		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(createdGuid, folderGuid);
-		Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
-	}
+			var folderGuid = assetPath.CreateFolders();
 
-	[Test] public void CreateFolders_InvalidPath_Throws()
-	{
-		var path = "Asset/this * is ? illagel/file.asset";
-		Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
-	}
+			Assert.False(folderGuid.Empty());
+			Assert.AreEqual(createdGuid, folderGuid);
+			Assert.True(Asset.Path.FolderExists(assetPath.FolderPath));
+		}
 
-	[Test] public void CreateFolders_InvalidFileName_Throws()
-	{
-		var path = "Asset/subfolder/you < are | not : allowed * to do > this.asset";
-		Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
-	}
+		[Test] public void CreateFolders_InvalidPath_Throws()
+		{
+			var path = "Asset/this * is ? illagel/file.asset";
+			Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
+		}
 
-	[Test] public void CreateFolders_ValidFilePath_FolderExists()
-	{
-		var dirPath = TestSubFolderPath;
+		[Test] public void CreateFolders_InvalidFileName_Throws()
+		{
+			var path = "Asset/subfolder/you < are | not : allowed * to do > this.asset";
+			Assert.Throws<ArgumentException>(() => Asset.Path.CreateFolders(path));
+		}
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
+		[Test] public void CreateFolders_ValidFilePath_FolderExists()
+		{
+			var dirPath = TestSubFolderPath;
 
-		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
-		Assert.True(Asset.Path.FolderExists(dirPath));
-	}
+			var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
 
-	[Test] public void CreateFolders_CreateAllFoldersRecursive_FolderExists()
-	{
-		var dirPath = TestSubFoldersPath;
+			Assert.False(folderGuid.Empty());
+			Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
+			Assert.True(Asset.Path.FolderExists(dirPath));
+		}
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
+		[Test] public void CreateFolders_CreateAllFoldersRecursive_FolderExists()
+		{
+			var dirPath = TestSubFoldersPath;
 
-		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
-		Assert.True(Asset.Path.FolderExists(dirPath));
-	}
+			var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
 
-	[Test] public void CreateFolders_CreateOnlySomeFoldersRecursive_FolderExists()
-	{
-		// have topmost folder already created
-		var dirPath = TestSubFoldersPath;
-		var splitPath = dirPath.Split('/');
-		var alreadyExistingFolder = $"{splitPath[0]}/{splitPath[1]}";
+			Assert.False(folderGuid.Empty());
+			Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
+			Assert.True(Asset.Path.FolderExists(dirPath));
+		}
 
-		Asset.Path.CreateFolders(alreadyExistingFolder);
-		Asset.File.Import(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
-		Assert.True(Asset.Path.FolderExists(alreadyExistingFolder));
+		[Test] public void CreateFolders_CreateOnlySomeFoldersRecursive_FolderExists()
+		{
+			// have topmost folder already created
+			var dirPath = TestSubFoldersPath;
+			var splitPath = dirPath.Split('/');
+			var alreadyExistingFolder = $"{splitPath[0]}/{splitPath[1]}";
 
-		var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
+			Asset.Path.CreateFolders(alreadyExistingFolder);
+			Asset.File.Import(alreadyExistingFolder, ImportAssetOptions.ForceUpdate);
+			Assert.True(Asset.Path.FolderExists(alreadyExistingFolder));
 
-		Assert.False(folderGuid.Empty());
-		Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
-		Assert.True(Asset.Path.FolderExists(dirPath));
+			var folderGuid = DeleteAfterTest(Asset.Path.CreateFolders(dirPath + "/some.file"));
+
+			Assert.False(folderGuid.Empty());
+			Assert.AreEqual(((Asset.Path)dirPath).Guid, folderGuid);
+			Assert.True(Asset.Path.FolderExists(dirPath));
+		}
 	}
 }

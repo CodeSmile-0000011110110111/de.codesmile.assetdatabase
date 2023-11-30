@@ -4,9 +4,12 @@
 using System;
 using UnityEngine;
 
-public class DifferentExampleSO : ScriptableObject
+namespace CodeSmileEditor.Tests.Helper
 {
-	public String Text;
-	public Int32 InstanceId;
-	public Single FloatValue;
+	public class DifferentExampleSO : ScriptableObject
+	{
+		public String Text;
+		public Int32 InstanceId;
+		public Single FloatValue;
+	}
 }

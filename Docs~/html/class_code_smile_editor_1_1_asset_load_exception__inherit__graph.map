@@ -1,0 +1,5 @@
+<map id="AssetLoadException" name="AssetLoadException">
+<area shape="rect" id="Node000001" title="Thrown in cases where loading an existing asset fails. That means the AssetDatabase returned null on ..." alt="" coords="5,123,157,235"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,5,132,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,89,84,123,79,123,79,89"/>
+</map>

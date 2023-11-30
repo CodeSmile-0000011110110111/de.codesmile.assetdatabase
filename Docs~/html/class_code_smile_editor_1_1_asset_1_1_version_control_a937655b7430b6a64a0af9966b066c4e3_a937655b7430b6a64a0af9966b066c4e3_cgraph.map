@@ -1,0 +1,7 @@
+<map id="CanMakeEditable" name="CanMakeEditable">
+<area shape="rect" id="Node000001" title="Returns true if the asset can be opened for editing in the version control system." alt="" coords="5,31,129,57"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_version_control_aa423c228f7292c32aa016adc4b1bb0d2.html#aa423c228f7292c32aa016adc4b1bb0d2" title="Returns true if the asset can be opened for editing in the version control system." alt="" coords="221,5,345,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,34,206,25,207,30,129,39"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" title="Gets the relative path of an asset." alt="" coords="177,56,389,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,49,162,52,161,58,129,54"/>
+</map>

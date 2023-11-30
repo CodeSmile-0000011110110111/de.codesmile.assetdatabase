@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{

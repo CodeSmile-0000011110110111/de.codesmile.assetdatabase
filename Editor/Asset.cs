@@ -7,7 +7,7 @@ using System.IO;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	/// <summary>
 	///     Replacement implementation for Unity's *massive* AssetDatabase class with a cleaner interface
@@ -35,8 +35,8 @@ namespace CodeSmile.Editor
 		/// <exception cref="System.ArgumentNullException">If contents is null.</exception>
 		/// <exception cref="System.ArgumentNullException">If the path is null.</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(string,CodeSmile.Editor.Asset.Path,bool)" />
-		///     - <see cref="CodeSmile.Editor.Asset(Object,CodeSmile.Editor.Asset.Path,bool)" />
+		///     - <see cref="CodeSmileEditor.Asset(string,CodeSmileEditor.Asset.Path,bool)" />
+		///     - <see cref="CodeSmileEditor.Asset(Object,CodeSmileEditor.Asset.Path,bool)" />
 		/// </seealso>
 		public Asset(Byte[] contents, Path path, Boolean overwriteExisting = false)
 		{
@@ -60,8 +60,8 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentNullException">If contents is null.</exception>
 		/// <exception cref="ArgumentNullException">If the path is null.</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(Byte[],CodeSmile.Editor.Asset.Path,Boolean)" />
-		///     - <see cref="CodeSmile.Editor.Asset(Object,CodeSmile.Editor.Asset.Path,Boolean)" />
+		///     - <see cref="CodeSmileEditor.Asset(Byte[],CodeSmileEditor.Asset.Path,Boolean)" />
+		///     - <see cref="CodeSmileEditor.Asset(Object,CodeSmileEditor.Asset.Path,Boolean)" />
 		/// </seealso>
 		public Asset(String contents, Path path, Boolean overwriteExisting = false)
 		{
@@ -89,8 +89,8 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentNullException">If the path is null.</exception>
 		/// <exception cref="ArgumentException">If the object is already an asset on disk.</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(Byte[],CodeSmile.Editor.Asset.Path,Boolean)" />
-		///     - <see cref="CodeSmile.Editor.Asset(String,CodeSmile.Editor.Asset.Path,Boolean)" />
+		///     - <see cref="CodeSmileEditor.Asset(Byte[],CodeSmileEditor.Asset.Path,Boolean)" />
+		///     - <see cref="CodeSmileEditor.Asset(String,CodeSmileEditor.Asset.Path,Boolean)" />
 		/// </seealso>
 		public Asset(Object asset, Path path, Boolean overwriteExisting = false)
 		{
@@ -110,8 +110,8 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentNullException">If the path is null.</exception>
 		/// <exception cref="FileNotFoundException">If the path is not an asset on disk.</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(Object)" />
-		///     - <see cref="CodeSmile.Editor.Asset(GUID)" />
+		///     - <see cref="CodeSmileEditor.Asset(Object)" />
+		///     - <see cref="CodeSmileEditor.Asset(GUID)" />
 		/// </seealso>
 		public Asset(Path path) => InitWithPath(path);
 
@@ -121,8 +121,8 @@ namespace CodeSmile.Editor
 		/// <param name="assetGuid">GUID of an asset.</param>
 		/// <exception cref="ArgumentException">If the GUID is not in the AssetDatabase (not an asset).</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(Object)" />
-		///     - <see cref="CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmileEditor.Asset(Object)" />
+		///     - <see cref="CodeSmileEditor.Asset(CodeSmileEditor.Asset.Path)" />
 		/// </seealso>
 		public Asset(GUID assetGuid) => InitWithGuid(assetGuid);
 
@@ -133,8 +133,8 @@ namespace CodeSmile.Editor
 		/// <exception cref="ArgumentNullException">If the object is null.</exception>
 		/// <exception cref="ArgumentException">If the object is not an asset on disk.</exception>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset(CodeSmile.Editor.Asset.Path)" />
-		///     - <see cref="CodeSmile.Editor.Asset(GUID)" />
+		///     - <see cref="CodeSmileEditor.Asset(CodeSmileEditor.Asset.Path)" />
+		///     - <see cref="CodeSmileEditor.Asset(GUID)" />
 		/// </seealso>
 		public Asset(Object asset) => InitWithMainObject(asset);
 
@@ -222,10 +222,10 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <remarks>
 		///     Not every change marks an object as 'dirty'. In such cases you need to use
-		///     CodeSmile.Editor.Asset.ForceSave().
+		///     CodeSmileEditor.Asset.ForceSave().
 		/// </remarks>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.ForceSave()" />
+		///     - <see cref="CodeSmileEditor.Asset.ForceSave()" />
 		/// </seealso>
 		public void Save() => File.Save(m_MainObject);
 
@@ -237,7 +237,7 @@ namespace CodeSmile.Editor
 		///     <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty()</a>.
 		/// </remarks>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Save()" />
+		///     - <see cref="CodeSmileEditor.Asset.Save()" />
 		/// </seealso>
 		public void ForceSave() => File.ForceSave(m_MainObject);
 
@@ -249,13 +249,13 @@ namespace CodeSmile.Editor
 		/// </remarks>
 		/// <param name="path">The path where to save the copy.</param>
 		/// <returns>
-		///     The copy of the Asset or null if copying failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the
+		///     The copy of the Asset or null if copying failed. Use CodeSmileEditor.Asset.GetLastErrorMessage to get the
 		///     human readable error message.
 		/// </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Save" />
-		///     - <see cref="CodeSmile.Editor.Asset.SaveAsNew" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		///     - <see cref="CodeSmileEditor.Asset.Save" />
+		///     - <see cref="CodeSmileEditor.Asset.SaveAsNew" />
+		///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 		/// </seealso>
 		public Asset SaveAs(Path path) => File.Copy(m_AssetPath, path) ? new Asset(path) : null;
 
@@ -267,13 +267,13 @@ namespace CodeSmile.Editor
 		/// </remarks>
 		/// <param name="path">The path where to save the copy. Note that actual path of the asset may change.</param>
 		/// <returns>
-		///     The copy of the Asset or null if copying failed. Use CodeSmile.Editor.Asset.GetLastErrorMessage to get the
+		///     The copy of the Asset or null if copying failed. Use CodeSmileEditor.Asset.GetLastErrorMessage to get the
 		///     human readable error message.
 		/// </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Save" />
-		///     - <see cref="CodeSmile.Editor.Asset.SaveAs" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		///     - <see cref="CodeSmileEditor.Asset.Save" />
+		///     - <see cref="CodeSmileEditor.Asset.SaveAs" />
+		///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 		/// </seealso>
 		public Asset SaveAsNew(Path path)
 		{
@@ -296,7 +296,7 @@ namespace CodeSmile.Editor
 		///     Marks the main object as dirty.
 		/// </summary>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.ForceSave" />
+		///     - <see cref="CodeSmileEditor.Asset.ForceSave" />
 		/// </seealso>
 		public void SetDirty() => EditorUtility.SetDirty(m_MainObject);
 
@@ -312,14 +312,14 @@ namespace CodeSmile.Editor
 		///     Loads a (sub) object from the asset identified by type.
 		/// </summary>
 		/// <remarks>
-		///     To load the main object of the Asset instance use the CodeSmile.Editor.Asset.MainObject property.
+		///     To load the main object of the Asset instance use the CodeSmileEditor.Asset.MainObject property.
 		/// </remarks>
 		/// <typeparam name="T">UnityEngine.Object derived type.</typeparam>
 		/// <returns>Returns the 'first' asset of the type found.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.SubAssets" />
-		///     - <see cref="CodeSmile.Editor.Asset.VisibleSubAssets" />
-		///     - <see cref="CodeSmile.Editor.Asset.MainObject" />
+		///     - <see cref="CodeSmileEditor.Asset.SubAssets" />
+		///     - <see cref="CodeSmileEditor.Asset.VisibleSubAssets" />
+		///     - <see cref="CodeSmileEditor.Asset.MainObject" />
 		/// </seealso>
 		public T Load<T>() where T : Object => File.Load<T>(m_AssetPath);
 
@@ -328,13 +328,13 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <remarks>
 		///     Returns false if one or more folders in destinationPath do not exist.
-		///     On failure, use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure error message.
+		///     On failure, use CodeSmileEditor.Asset.GetLastErrorMessage to get the failure error message.
 		/// </remarks>
 		/// <param name="destinationPath">The path where to move the asset to. May have a different extension.</param>
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Move" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		///     - <see cref="CodeSmileEditor.Asset.Move" />
+		///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 		/// </seealso>
 		public Boolean CanMove(Path destinationPath) => File.CanMove(m_AssetPath, destinationPath);
 
@@ -343,14 +343,14 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <remarks>
 		///     Missing folders in destination path will be created automatically.
-		///     After the move, the CodeSmile.Editor.Asset.AssetPath property is updated accordingly.
-		///     On failure, use CodeSmile.Editor.Asset.GetLastErrorMessage to get the failure error message.
+		///     After the move, the CodeSmileEditor.Asset.AssetPath property is updated accordingly.
+		///     On failure, use CodeSmileEditor.Asset.GetLastErrorMessage to get the failure error message.
 		/// </remarks>
 		/// <param name="destinationPath">The path where to move the asset to. May have a different extension.</param>
 		/// <returns>True if moving the asset will be successful, false otherwise.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.CanMove" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		///     - <see cref="CodeSmileEditor.Asset.CanMove" />
+		///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 		/// </seealso>
 		public Boolean Move(Path destinationPath)
 		{
@@ -367,7 +367,7 @@ namespace CodeSmile.Editor
 		///     Renames an asset's file name (without extension) or a folder.
 		/// </summary>
 		/// <remarks>
-		///     Use CodeSmile.Editor.Asset.Move if you need to change the file's extension.
+		///     Use CodeSmileEditor.Asset.Move if you need to change the file's extension.
 		/// </remarks>
 		/// <example>
 		///     Rename file:
@@ -386,12 +386,12 @@ namespace CodeSmile.Editor
 		/// </param>
 		/// <returns>
 		///     True if the rename succeeded. The AssetPath property will be updated accordingly.
-		///     If false, CodeSmile.Editor.Asset.GetLastErrorMessage provides a human-readable failure reason and
+		///     If false, CodeSmileEditor.Asset.GetLastErrorMessage provides a human-readable failure reason and
 		///     the AssetPath property remains unchanged.
 		/// </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Move" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+		///     - <see cref="CodeSmileEditor.Asset.Move" />
+		///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 		/// </seealso>
 		public Boolean Rename(String newFileName)
 		{
@@ -413,7 +413,7 @@ namespace CodeSmile.Editor
 		/// </example>
 		/// <returns>True if the editor can edit this asset type.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.OpenExternal" />
+		///     - <see cref="CodeSmileEditor.Asset.OpenExternal" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
@@ -442,7 +442,7 @@ namespace CodeSmile.Editor
 		///     Returns null if the object wasn't deleted.
 		/// </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Trash" />
+		///     - <see cref="CodeSmileEditor.Asset.Trash" />
 		/// </seealso>
 		public Object Delete()
 		{
@@ -465,7 +465,7 @@ namespace CodeSmile.Editor
 		///     Returns null if the object wasn't deleted.
 		/// </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.Delete" />
+		///     - <see cref="CodeSmileEditor.Asset.Delete" />
 		/// </seealso>
 		public Object Trash()
 		{
@@ -482,8 +482,8 @@ namespace CodeSmile.Editor
 		/// <remarks>T is AssetImporter in Unity 2022.1 or newer. In older versions T is ScriptedImporter.</remarks>
 		/// <typeparam name="T">The AssetImporter derived type that should handle importing this asset.</typeparam>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
-		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
+		///     - <see cref="CodeSmileEditor.Asset.ActiveImporter" />
+		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public void SetActiveImporter<T>()
@@ -500,8 +500,8 @@ namespace CodeSmile.Editor
 		///     Sets the active AssetImporter type back to the default type.
 		/// </summary>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
-		///     - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
+		///     - <see cref="CodeSmileEditor.Asset.ActiveImporter" />
+		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporter{T}" />
 		/// </seealso>
 		public void SetActiveImporterToDefault()
 		{
@@ -514,9 +514,9 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="labels">An array of labels.</param>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabel" />
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabels" />
-		///     - <see cref="CodeSmile.Editor.Asset.ClearLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabel" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.ClearLabels" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
@@ -525,9 +525,9 @@ namespace CodeSmile.Editor
 		///     Removes all labels from the asset.
 		/// </summary>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabel" />
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabels" />
-		///     - <see cref="CodeSmile.Editor.Asset.SetLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabel" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.SetLabels" />
 		/// </seealso>
 		public void ClearLabels() => Label.ClearAll(m_MainObject);
 
@@ -535,13 +535,13 @@ namespace CodeSmile.Editor
 		///     Adds a label to the asset.
 		/// </summary>
 		/// <remarks>
-		///     When setting multiple labels use CodeSmile.Editor.Asset.AddLabels or CodeSmile.Editor.Asset.SetLabels
+		///     When setting multiple labels use CodeSmileEditor.Asset.AddLabels or CodeSmileEditor.Asset.SetLabels
 		///     as this will be more efficient.
 		/// </remarks>
 		/// <param name="label">The label to add.</param>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabels" />
-		///     - <see cref="CodeSmile.Editor.Asset.SetLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.SetLabels" />
 		/// </seealso>
 		public void AddLabel(String label) => Label.Add(m_MainObject, label);
 
@@ -550,8 +550,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="labels">An array of labels to add.</param>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.AddLabel" />
-		///     - <see cref="CodeSmile.Editor.Asset.SetLabels" />
+		///     - <see cref="CodeSmileEditor.Asset.AddLabel" />
+		///     - <see cref="CodeSmileEditor.Asset.SetLabels" />
 		/// </seealso>
 		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
 
@@ -574,8 +574,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="instance">The object instance to add as subobject to this asset.</param>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.RemoveSubAsset" />
-		///     - <see cref="CodeSmile.Editor.Asset.SubAssets" />
+		///     - <see cref="CodeSmileEditor.Asset.RemoveSubAsset" />
+		///     - <see cref="CodeSmileEditor.Asset.SubAssets" />
 		/// </seealso>
 		public void AddSubAsset(Object instance) => SubAsset.Add(instance, m_MainObject);
 
@@ -584,8 +584,8 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <param name="subAsset">The sub-asset object to remove.</param>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.AddSubAsset" />
-		///     - <see cref="CodeSmile.Editor.Asset.SubAssets" />
+		///     - <see cref="CodeSmileEditor.Asset.AddSubAsset" />
+		///     - <see cref="CodeSmileEditor.Asset.SubAssets" />
 		/// </seealso>
 		public void RemoveSubAsset(Object subAsset) => SubAsset.Remove(subAsset);
 

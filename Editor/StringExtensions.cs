@@ -3,7 +3,7 @@
 
 using System;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	/// <summary>
 	///     Extensions for System.String

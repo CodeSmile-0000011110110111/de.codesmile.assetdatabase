@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = System.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -32,7 +32,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <returns>The GUID for the asset at the path, or an empty GUID if the asset does not exist in the database.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Exists" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Exists" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html">AssetDatabase.AssetPathToGUID</a>
 			/// </seealso>
@@ -43,12 +43,12 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <remarks>
 			///     This may still return true for asset files that have been deleted externally if those changes
-			///     have not been imported via CodeSmile.Editor.Asset.Database.ImportAll.
+			///     have not been imported via CodeSmileEditor.Asset.Database.ImportAll.
 			/// </remarks>
 			/// <remarks>In Unity 2023.2 or newer uses the new AssetPathExists method. In earlier versions AssetPathToGUID is used.</remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.ExistsInFileSystem" />
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.ExistsInFileSystem" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsImported" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
 			///     -
@@ -71,15 +71,15 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <remarks>
 			///     This checks for physical existance of a file or folder using the System.IO methods.
-			///     It may return true where CodeSmile.Editor.Asset.Path.Exists returns false.
+			///     It may return true where CodeSmileEditor.Asset.Path.Exists returns false.
 			/// </remarks>
 			/// <remarks>
 			///     In such a case this may indicate that the asset has been created but not yet imported.
-			///     The corresponding status check is: CodeSmile.Editor.Asset.Status.IsImported.
+			///     The corresponding status check is: CodeSmileEditor.Asset.Status.IsImported.
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Exists" />
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Exists" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsImported" />
 			/// </seealso>
 			public Boolean ExistsInFileSystem => FileExists(this) || FolderExists(this);
 
@@ -87,8 +87,8 @@ namespace CodeSmile.Editor
 			///     Returns the path to the .meta file if the path is an asset file or folder.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.AssetPath" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.ToMeta" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.AssetPath" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.ToMeta" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
 			/// </seealso>
@@ -99,8 +99,8 @@ namespace CodeSmile.Editor
 			///     Returns the path to the asset file if the path represents a .meta file.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.MetaPath" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FromMeta" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.MetaPath" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FromMeta" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
 			/// </seealso>
@@ -112,8 +112,8 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <returns>The extension with a leading dot (eg '.txt') or an empty string if there is no extension.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileName" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileNameWithoutExtension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileName" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileNameWithoutExtension" />
 			/// </seealso>
 			public String Extension => System.IO.Path.GetExtension(m_RelativePath);
 
@@ -121,8 +121,8 @@ namespace CodeSmile.Editor
 			///     Returns the file name with extension.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Extension" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileNameWithoutExtension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Extension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileNameWithoutExtension" />
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public String FileName => System.IO.Path.GetFileName(m_RelativePath);
@@ -131,8 +131,8 @@ namespace CodeSmile.Editor
 			///     Returns the file name without extension.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Extension" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileName" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Extension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileName" />
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
 			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
@@ -141,7 +141,7 @@ namespace CodeSmile.Editor
 			///     Returns the full (absolute) path with forward slashes as separators.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FolderPath" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FolderPath" />
 			/// </seealso>
 			public String FullPath => System.IO.Path.GetFullPath(m_RelativePath).ToForwardSlashes();
 
@@ -150,10 +150,10 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <remarks>
 			///     If the path points to a file this returns an empty array. Use
-			///     CodeSmile.Editor.Asset.Path.FolderPath.SubFolders in this case to first get the file's folder.
+			///     CodeSmileEditor.Asset.Path.FolderPath.SubFolders in this case to first get the file's folder.
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.GetSubFolders" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.GetSubFolders" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a>
 			/// </seealso>
@@ -165,9 +165,9 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <returns>The parent folder of the file or folder. Returns null if it's the root path eg "Assets".</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileName" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileNameWithoutExtension" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Extension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileName" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileNameWithoutExtension" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Extension" />
 			/// </seealso>
 			public Path FolderPath
 			{
@@ -185,7 +185,7 @@ namespace CodeSmile.Editor
 			///     See also: Project Settings => Editor => Numbering Scheme
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.UniquifyFileName" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.UniquifyFileName" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html">AssetDatabase.GenerateUniqueAssetPath</a>
 			/// </seealso>
@@ -217,7 +217,7 @@ namespace CodeSmile.Editor
 			/// </example>
 			/// <param name="fullOrRelativePath">Relative or absolute path to an asset file or folder.</param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path(String,String,String)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path(String,String,String)" />
 			/// </seealso>
 			public Path(String fullOrRelativePath)
 			{
@@ -245,7 +245,7 @@ namespace CodeSmile.Editor
 			///     Extension of the file (default: 'asset'). Leading dots will be trimmed. Extension will be lowercase.
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path(String)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path(String)" />
 			/// </seealso>
 			public Path(String folderPath, String fileName, String extension = DefaultExtension)
 			{
@@ -366,7 +366,7 @@ namespace CodeSmile.Editor
 			public void OpenExternal() => Application.OpenURL(System.IO.Path.GetFullPath(FolderPath));
 
 			/// <summary>
-			///     Renames the last element of the CodeSmile.Editor.Asset.Path instance.
+			///     Renames the last element of the CodeSmileEditor.Asset.Path instance.
 			/// </summary>
 			/// <remarks>NOTE: This does **not** rename a file/folder on disk! It renames the Path instance.</remarks>
 			/// <remarks>When renaming a file you must specifiy the new filename with extension.</remarks>
@@ -381,7 +381,7 @@ namespace CodeSmile.Editor
 			///     Creates the folders in the path recursively.
 			/// </summary>
 			/// <remarks>
-			///     The CodeSmile.Editor.Asset.File write operations use this internally to create any missing folders,
+			///     The CodeSmileEditor.Asset.File write operations use this internally to create any missing folders,
 			///     so you do not need to call this yourself in those cases.
 			/// </remarks>
 			/// <remarks>
@@ -390,7 +390,7 @@ namespace CodeSmile.Editor
 			/// </remarks>
 			/// <returns>The GUID of the deepest (last) folder in the path.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.CreateFolders(CodeSmile.Editor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.CreateFolders(CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
 			public GUID CreateFolders() => CreateFolders(this);
 

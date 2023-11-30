@@ -1,74 +1,77 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
-using CodeSmile.Editor;
+using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
 using System;
 using UnityEditor;
 
-public class AssetSaveTests : AssetTestBase
+namespace CodeSmileEditor.Tests
 {
-	[Test] public void SaveObjectStatic_Null_Throws() =>
-		Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
-
-	[Test] public void SaveObjectStatic_NotAnAsset_Throws()
+	public class AssetSaveTests : AssetTestBase
 	{
-		var obj = Instantiate.ExampleSO();
-		Assert.Throws<ArgumentException>(() => Asset.File.Save(obj));
-	}
+		[Test] public void SaveObjectStatic_Null_Throws() =>
+			Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
 
-	[Test] public void Save_ModifiedAssetWithoutDirty_FileSizeUnchanged()
-	{
-		var soAsset = CreateTestAsset(TestAssetPath);
-		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+		[Test] public void SaveObjectStatic_NotAnAsset_Throws()
+		{
+			var obj = Instantiate.ExampleSO();
+			Assert.Throws<ArgumentException>(() => Asset.File.Save(obj));
+		}
 
-		// changing the field does not 'dirty' the object, thus won't save it
-		(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
-		soAsset.Save();
+		[Test] public void Save_ModifiedAssetWithoutDirty_FileSizeUnchanged()
+		{
+			var soAsset = CreateTestAsset(TestAssetPath);
+			var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
-		// change hasn't been 'saved'
-		Assert.AreEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
-	}
+			// changing the field does not 'dirty' the object, thus won't save it
+			(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
+			soAsset.Save();
 
-	[Test] public void ForceSave_ModifiedAsset_FileSizeChanged()
-	{
-		var soAsset = CreateTestAsset(TestAssetPath);
-		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+			// change hasn't been 'saved'
+			Assert.AreEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+		}
 
-		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
-		soAsset.ForceSave(); // ForceSave dirties the object before saving
+		[Test] public void ForceSave_ModifiedAsset_FileSizeChanged()
+		{
+			var soAsset = CreateTestAsset(TestAssetPath);
+			var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
-		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
-	}
+			(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
+			soAsset.ForceSave(); // ForceSave dirties the object before saving
 
-	[Test] public void SaveAllStatic_ModifiedAsset_FileSizeChanged()
-	{
-		var soAsset = CreateTestAsset(TestAssetPath);
-		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+			Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+		}
 
-		(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
-		soAsset.SetDirty(); // dirty it manually because SaveAll has no 'force' variant
-		Asset.Database.SaveAll();
+		[Test] public void SaveAllStatic_ModifiedAsset_FileSizeChanged()
+		{
+			var soAsset = CreateTestAsset(TestAssetPath);
+			var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
-		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
-	}
+			(soAsset.MainObject as ExampleSO).Text = "Soooo dirty!";
+			soAsset.SetDirty(); // dirty it manually because SaveAll has no 'force' variant
+			Asset.Database.SaveAll();
 
-	[Test] public void SaveGuidStatic_Empty_Throws() =>
-		Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
+			Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+		}
 
-	[Test] public void SaveGuidStatic_NotAnAsset_Throws() =>
-		Assert.Throws<ArgumentException>(() => Asset.File.Save(GUID.Generate()));
+		[Test] public void SaveGuidStatic_Empty_Throws() =>
+			Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
 
-	[Test] public void SaveGuidStatic_ModifiedAsset_FileSizeChanged()
-	{
-		var soAsset = CreateTestAsset(TestAssetPath);
-		var fileSize = AssetHelper.GetFileSize(TestAssetPath);
+		[Test] public void SaveGuidStatic_NotAnAsset_Throws() =>
+			Assert.Throws<ArgumentException>(() => Asset.File.Save(GUID.Generate()));
 
-		// changing the field does not 'dirty' the object, thus won't save it
-		(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
-		soAsset.SetDirty();
-		Asset.File.Save(soAsset.Guid);
+		[Test] public void SaveGuidStatic_ModifiedAsset_FileSizeChanged()
+		{
+			var soAsset = CreateTestAsset(TestAssetPath);
+			var fileSize = AssetHelper.GetFileSize(TestAssetPath);
 
-		Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+			// changing the field does not 'dirty' the object, thus won't save it
+			(soAsset.MainObject as ExampleSO).Text = "Not so dirty!";
+			soAsset.SetDirty();
+			Asset.File.Save(soAsset.Guid);
+
+			Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
+		}
 	}
 }

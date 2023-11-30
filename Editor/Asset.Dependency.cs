@@ -5,7 +5,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -20,8 +20,8 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path)" />
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path[])" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetAll(CodeSmileEditor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetDirect(CodeSmileEditor.Asset.Path[])" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
@@ -33,8 +33,8 @@ namespace CodeSmile.Editor
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path[])" />
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetAll(CodeSmileEditor.Asset.Path[])" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetDirect(CodeSmileEditor.Asset.Path)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
@@ -47,8 +47,8 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path[])" />
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetAll(CodeSmileEditor.Asset.Path[])" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetDirect(CodeSmileEditor.Asset.Path)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
@@ -60,8 +60,8 @@ namespace CodeSmile.Editor
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>Paths to dependent assets, or empty array if there are no dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetAll(CodeSmile.Editor.Asset.Path)" />
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.GetDirect(CodeSmile.Editor.Asset.Path[])" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetAll(CodeSmileEditor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.GetDirect(CodeSmileEditor.Asset.Path[])" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
@@ -76,7 +76,7 @@ namespace CodeSmile.Editor
 			///     changed.
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.Unregister" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.Unregister" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">AssetDatabase.RegisterCustomDependency</a>
 			/// </seealso>
@@ -89,7 +89,7 @@ namespace CodeSmile.Editor
 			/// <param name="globalDependencyNamePrefix">A 'starts with' filter string of the dependencies to unregister.</param>
 			/// <returns>The number of custom dependencies that were removed.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.Register" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.UnregisterCustomDependencyPrefixFilter.html">AssetDatabase.UnregisterCustomDependencyPrefixFilter</a>
 			/// </seealso>
@@ -103,7 +103,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>The dependency hash value for this asset.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.Register" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetDependencyHash.html">AssetDatabase.GetAssetDependencyHash</a>
 			/// </seealso>
@@ -116,7 +116,7 @@ namespace CodeSmile.Editor
 			/// <param name="guid">GUID of an asset file.</param>
 			/// <returns>The dependency hash value for this asset.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Dependency.Register" />
+			///     - <see cref="CodeSmileEditor.Asset.Dependency.Register" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetDependencyHash.html">AssetDatabase.GetAssetDependencyHash</a>
 			/// </seealso>

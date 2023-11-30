@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -86,10 +86,10 @@ namespace CodeSmile.Editor
 			///     This has no effect if Preferences => Asset Pipeline => Auto Refresh is disabled.
 			/// </remarks>
 			/// <remarks>
-			///     Must be called in pair with CodeSmile.Editor.Asset.Database.DisallowAutoRefresh.
+			///     Must be called in pair with CodeSmileEditor.Asset.Database.DisallowAutoRefresh.
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Database.DisallowAutoRefresh" />
+			///     - <see cref="CodeSmileEditor.Asset.Database.DisallowAutoRefresh" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AllowAutoRefresh.html">AssetDatabase.AllowAutoRefresh</a>
 			/// </seealso>
@@ -100,10 +100,10 @@ namespace CodeSmile.Editor
 			///     Will stop Unity from automatically importing assets.
 			/// </summary>
 			/// <remarks>
-			///     Must be called in pair with CodeSmile.Editor.Asset.Database.AllowAutoRefresh.
+			///     Must be called in pair with CodeSmileEditor.Asset.Database.AllowAutoRefresh.
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Database.AllowAutoRefresh" />
+			///     - <see cref="CodeSmileEditor.Asset.Database.AllowAutoRefresh" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DisallowAutoRefresh.html">AssetDatabase.DisallowAutoRefresh</a>
 			/// </seealso>
@@ -136,7 +136,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     -
 			///     <see
-			///         cref="CodeSmile.Editor.Asset.Database.ForceReserialize(IEnumerable{string},ForceReserializeAssetsOptions)" />
+			///         cref="CodeSmileEditor.Asset.Database.ForceReserialize(IEnumerable{string},ForceReserializeAssetsOptions)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
@@ -157,7 +157,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
+			///     - <see cref="CodeSmileEditor.Asset.Database.ForceReserializeAll" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
@@ -180,7 +180,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Database.ForceReserializeAll" />
+			///     - <see cref="CodeSmileEditor.Asset.Database.ForceReserializeAll" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
@@ -195,25 +195,25 @@ namespace CodeSmile.Editor
 			/// <remarks>
 			///     CAUTION: Consider that a user generally does NOT want an editor script to 'randomly' save all
 			///     unsaved assets! Use only where absolutely appropriate, otherwise prefer to use
-			///     CodeSmile.Editor.Asset.File.Save to explicitly save each modified asset. Preferably do so within
-			///     a CodeSmile.Editor.Asset.File.BatchEditing operation. Just be nice to fellow Editor users. ;)
+			///     CodeSmileEditor.Asset.File.Save to explicitly save each modified asset. Preferably do so within
+			///     a CodeSmileEditor.Asset.File.BatchEditing operation. Just be nice to fellow Editor users. ;)
 			/// </remarks>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.File.Save" />
-			///     - <see cref="CodeSmile.Editor.Asset.File.ForceSave" />
-			///     - <see cref="CodeSmile.Editor.Asset.File.BatchEditing" />
+			///     - <see cref="CodeSmileEditor.Asset.File.Save" />
+			///     - <see cref="CodeSmileEditor.Asset.File.ForceSave" />
+			///     - <see cref="CodeSmileEditor.Asset.File.BatchEditing" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssets.html">AssetDatabase.SaveAssets</a>
 			/// </seealso>
 			public static void SaveAll() => AssetDatabase.SaveAssets();
 
 			/// <summary>
 			///     Scans for **external** file system modifications and updates the Database accordingly. Prefer to use
-			///     CodeSmile.Editor.Asset.File.Import
-			///     within CodeSmile.Editor.Asset.File.BatchEditing. **CAUTION**: ImportAll ('Refresh') unloads unused resources.
+			///     CodeSmileEditor.Asset.File.Import
+			///     within CodeSmileEditor.Asset.File.BatchEditing. **CAUTION**: ImportAll ('Refresh') unloads unused resources.
 			///     This can degrade editor performance!
 			/// </summary>
 			/// <remarks>
-			///     For best performance, prefer to use CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions) to import
+			///     For best performance, prefer to use CodeSmileEditor.Asset.File.Import(String[],ImportAssetOptions) to import
 			///     multiple assets in a batch operation.
 			/// </remarks>
 			/// <remarks>
@@ -255,7 +255,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html">ImportAssetOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.File.Import(String[],ImportAssetOptions)" />
+			///     - <see cref="CodeSmileEditor.Asset.File.Import(String[],ImportAssetOptions)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html">AssetDatabase.Refresh</a>
 			/// </seealso>
 			public static void ImportAll(ImportAssetOptions options = ImportAssetOptions.Default) =>

@@ -10,7 +10,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -74,7 +74,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>The relative path to the asset file, or null if the object is not an asset.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Get(GUID)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Get(GUID)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
 			/// </seealso>
 			public static Path Get(Object asset)
@@ -89,8 +89,8 @@ namespace CodeSmile.Editor
 			/// <param name="guid">GUID of an asset.</param>
 			/// <returns>The relative path to the asset file, or null if the object is not an asset.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Get(Object)" />
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Get(Object[])" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Get(Object)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Get(Object[])" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
 			/// </seealso>
 			public static Path Get(GUID guid)
@@ -108,7 +108,7 @@ namespace CodeSmile.Editor
 			///     object was either null or not an asset.
 			/// </returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Get(Object)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Get(Object)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
 			/// </seealso>
 			public static String[] Get(Object[] assets)
@@ -132,7 +132,7 @@ namespace CodeSmile.Editor
 			/// </param>
 			/// <returns>GUID of the asset or an empty GUID if the path does not exist in the database.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.Exists" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.Exists" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html">AssetDatabase.AssetPathToGUID</a>
 			/// </seealso>
@@ -146,7 +146,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>The corresponding .meta file path.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FromMeta" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FromMeta" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
 			/// </seealso>
@@ -159,7 +159,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to a .meta file.</param>
 			/// <returns>The corresponding path to an asset file or folder.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.ToMeta" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.ToMeta" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
 			/// </seealso>
@@ -181,7 +181,7 @@ namespace CodeSmile.Editor
 			///     Returns true if the provided path is valid.
 			/// </summary>
 			/// <remarks>
-			///     If this returns false CodeSmile.Editor.Asset.GetLastErrorMessage contains the error message.
+			///     If this returns false CodeSmileEditor.Asset.GetLastErrorMessage contains the error message.
 			/// </remarks>
 			/// <param name="path">String representation of an absolute or relative path.</param>
 			/// <returns>
@@ -189,7 +189,7 @@ namespace CodeSmile.Editor
 			///     False in all other cases.
 			/// </returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			/// </seealso>
 			public static Boolean IsValid(String path)
 			{
@@ -227,7 +227,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to a file.</param>
 			/// <returns>True if the file exists in the file system. False otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FolderExists" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FolderExists" />
 			/// </seealso>
 			public static Boolean FileExists(Path path) => System.IO.File.Exists(path.m_RelativePath);
 
@@ -237,7 +237,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to a folder.</param>
 			/// <returns>True if the folder exists in the file system. False otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Path.FileExists" />
+			///     - <see cref="CodeSmileEditor.Asset.Path.FileExists" />
 			/// </seealso>
 			public static Boolean FolderExists(Path path) => Directory.Exists(path.m_RelativePath);
 

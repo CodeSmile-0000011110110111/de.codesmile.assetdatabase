@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -21,7 +21,7 @@ namespace CodeSmile.Editor
 			///     Returns true if the asset can be opened for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			///     If this method returns false, CodeSmileEditor.Asset.GetLastErrorMessage() returns the error message.
 			/// </remarks>
 			/// <param name="path">Path to an asset.</param>
 			/// <param name="options">
@@ -29,9 +29,9 @@ namespace CodeSmile.Editor
 			/// </param>
 			/// <returns>True if the path can be opened for editing, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.MakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
@@ -48,7 +48,7 @@ namespace CodeSmile.Editor
 			///     Returns true if the asset can be opened for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			///     If this method returns false, CodeSmileEditor.Asset.GetLastErrorMessage() returns the error message.
 			/// </remarks>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="options">
@@ -56,9 +56,9 @@ namespace CodeSmile.Editor
 			/// </param>
 			/// <returns>True if the path can be opened for editing, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.MakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
@@ -80,9 +80,9 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.MakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
@@ -101,9 +101,9 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.MakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
@@ -125,9 +125,9 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.MakeEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.MakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
@@ -139,7 +139,7 @@ namespace CodeSmile.Editor
 			///     Returns true if the meta file is open for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			///     If this method returns false, CodeSmileEditor.Asset.GetLastErrorMessage() returns the error message.
 			/// </remarks>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="options">
@@ -147,8 +147,8 @@ namespace CodeSmile.Editor
 			/// </param>
 			/// <returns></returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMetaFileOpenForEdit.html">AssetDatabase.IsMetaFileOpenForEdit</a>
 			/// </seealso>
@@ -165,7 +165,7 @@ namespace CodeSmile.Editor
 			///     Returns true if the asset file is open for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     If this method returns false, CodeSmile.Editor.Asset.GetLastErrorMessage() returns the error message.
+			///     If this method returns false, CodeSmileEditor.Asset.GetLastErrorMessage() returns the error message.
 			/// </remarks>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <param name="options">
@@ -173,8 +173,8 @@ namespace CodeSmile.Editor
 			/// </param>
 			/// <returns></returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
-			///     - <see cref="CodeSmile.Editor.Asset.GetLastErrorMessage" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsMetaEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
@@ -197,7 +197,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
@@ -215,7 +215,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
@@ -236,7 +236,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html">StatusQueryOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
@@ -248,13 +248,13 @@ namespace CodeSmile.Editor
 			///     Tries to open the path for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message if this
+			///     Use CodeSmileEditor.Asset.VersionControl.CanMakeEditable to get an error message if this
 			///     method returns false.
 			/// </remarks>
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>True if the path is now editable, false if at least one failed to open.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
 			public static Boolean MakeEditable(Path path) => AssetDatabase.MakeEditable(path);
@@ -263,14 +263,14 @@ namespace CodeSmile.Editor
 			///     Tries to open multiple paths for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			///     Use CodeSmileEditor.Asset.VersionControl.CanMakeEditable to get an error message for
 			///     individual paths.
 			/// </remarks>
 			/// <param name="paths">Paths to assets.</param>
 			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
 			/// <returns>True if the path is now editable, false if at least one failed to open.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
 			public static Boolean MakeEditable(Path[] paths, out List<String> notEditablePaths) =>
@@ -280,14 +280,14 @@ namespace CodeSmile.Editor
 			///     Tries to open multiple paths for editing in the version control system.
 			/// </summary>
 			/// <remarks>
-			///     Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			///     Use CodeSmileEditor.Asset.VersionControl.CanMakeEditable to get an error message for
 			///     individual paths.
 			/// </remarks>
 			/// <param name="paths">Paths to assets.</param>
 			/// <param name="notEditablePaths">List of paths that are not editable. Is empty if all paths are editable.</param>
 			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
 			public static Boolean MakeEditable(String[] paths, out List<String> notEditablePaths) =>
@@ -298,7 +298,7 @@ namespace CodeSmile.Editor
 			///     unless the editor is in batch operation mode.
 			/// </summary>
 			/// <remarks>
-			///     Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			///     Use CodeSmileEditor.Asset.VersionControl.CanMakeEditable to get an error message for
 			///     individual paths.
 			/// </remarks>
 			/// <param name="paths">Paths to assets.</param>
@@ -306,7 +306,7 @@ namespace CodeSmile.Editor
 			/// <param name="prompt">A message for the interactive dialog or null to use the default message.</param>
 			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
 			public static Boolean MakeEditableInteractive(Path[] paths, out List<String> notEditablePaths,
@@ -318,7 +318,7 @@ namespace CodeSmile.Editor
 			///     unless the editor is in batch operation mode.
 			/// </summary>
 			/// <remarks>
-			///     Use CodeSmile.Editor.Asset.VersionControl.CanMakeEditable to get an error message for
+			///     Use CodeSmileEditor.Asset.VersionControl.CanMakeEditable to get an error message for
 			///     individual paths.
 			/// </remarks>
 			/// <param name="paths">Paths to assets.</param>
@@ -326,7 +326,7 @@ namespace CodeSmile.Editor
 			/// <param name="prompt">A message for the interactive dialog or null to use the default message.</param>
 			/// <returns>True if the paths are now editable, false if at least one failed to open.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
 			public static Boolean MakeEditableInteractive(String[] paths, out List<String> notEditablePaths,

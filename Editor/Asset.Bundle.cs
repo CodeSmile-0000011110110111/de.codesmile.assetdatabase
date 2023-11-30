@@ -4,7 +4,7 @@
 using System;
 using UnityEditor;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -20,7 +20,7 @@ namespace CodeSmile.Editor
 			///     Returns all asset bundle names.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.Unused" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.Unused" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAllAssetBundleNames.html">AssetDatabase.GetAllAssetBundleNames</a>
 			/// </seealso>
@@ -30,7 +30,7 @@ namespace CodeSmile.Editor
 			///     Returns all unused asset bundle names.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.All" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.All" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetUnusedAssetBundleNames.html">AssetDatabase.GetUnusedAssetBundleNames</a>
 			/// </seealso>
@@ -43,7 +43,7 @@ namespace CodeSmile.Editor
 			///     Returns all unused asset bundle names.
 			/// </summary>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.Unused" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.Unused" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveUnusedAssetBundleNames.html">AssetDatabase.RemoveUnusedAssetBundleNames</a>
 			/// </seealso>
@@ -55,7 +55,7 @@ namespace CodeSmile.Editor
 			/// <remarks>If the bundle is currently in use, it will NOT be removed.</remarks>
 			/// <param name="bundleName">Name of the asset bundle to remove.</param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.ForceRemove" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.ForceRemove" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html">AssetDatabase.RemoveAssetBundleName</a>
 			/// </seealso>
@@ -67,7 +67,7 @@ namespace CodeSmile.Editor
 			/// <remarks>CAUTION: The bundle is removed even if it is currently in use.</remarks>
 			/// <param name="bundleName">Name of the asset bundle to remove.</param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.Remove" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.Remove" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html">AssetDatabase.RemoveAssetBundleName</a>
 			/// </seealso>
@@ -79,7 +79,7 @@ namespace CodeSmile.Editor
 			/// <param name="bundleName">Name of the asset bundle.</param>
 			/// <returns>Directly dependent asset bundle names or an empty array if there are no direct dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetAllDependencies" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetAllDependencies" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html">AssetDatabase.GetAssetBundleDependencies</a>
 			/// </seealso>
@@ -92,7 +92,7 @@ namespace CodeSmile.Editor
 			/// <param name="bundleName">Name of the asset bundle.</param>
 			/// <returns>Directly dependent asset bundle names or an empty array if there are no direct dependencies.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetAllDependencies" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetAllDependencies" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html">AssetDatabase.GetAssetBundleDependencies</a>
 			/// </seealso>
@@ -105,7 +105,7 @@ namespace CodeSmile.Editor
 			/// <param name="bundleName">Name of the asset bundle.</param>
 			/// <returns>The paths to assets belonging to this bundle. Is empty if no assets belong to the bundle.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetPaths" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetPaths" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundle.html">AssetDatabase.GetAssetPathsFromAssetBundle</a>
 			/// </seealso>
@@ -119,7 +119,7 @@ namespace CodeSmile.Editor
 			/// <param name="assetName">Filter string that asset name needs to match.</param>
 			/// <returns>The paths to assets whose name matches the filter string. Empty string if there are no matches.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetAllPaths" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetAllPaths" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName.html">AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName</a>
 			/// </seealso>
@@ -135,7 +135,7 @@ namespace CodeSmile.Editor
 			///     bundle.
 			/// </returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetOwningBundleVariant" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetOwningBundleVariant" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleName.html">AssetDatabase.GetImplicitAssetBundleName</a>
 			/// </seealso>
@@ -150,7 +150,7 @@ namespace CodeSmile.Editor
 			///     asset bundle.
 			/// </returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Bundle.GetOwningBundle" />
+			///     - <see cref="CodeSmileEditor.Asset.Bundle.GetOwningBundle" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleVariantName.html">AssetDatabase.GetImplicitAssetBundleVariantName</a>
 			/// </seealso>

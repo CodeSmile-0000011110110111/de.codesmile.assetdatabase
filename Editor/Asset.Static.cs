@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -70,8 +70,8 @@ namespace CodeSmile.Editor
 		/// <param name="asset">Object from which GUID and FileId should be obtained.</param>
 		/// <returns>The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset. </returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.GetGuid" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetFileId" />
+		///     - <see cref="CodeSmileEditor.Asset.GetGuid" />
+		///     - <see cref="CodeSmileEditor.Asset.GetFileId" />
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
@@ -95,8 +95,8 @@ namespace CodeSmile.Editor
 		/// <param name="asset">An asset instance.</param>
 		/// <returns>The GUID of the asset. Returns empty GUID if the asset is null or not an asset.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.GetFileId" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		///     - <see cref="CodeSmileEditor.Asset.GetFileId" />
+		///     - <see cref="CodeSmileEditor.Asset.GetGuidAndFileId" />
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
@@ -118,8 +118,8 @@ namespace CodeSmile.Editor
 		/// <param name="asset"></param>
 		/// <returns>The local fileID or 0 if obj is null or not an asset.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.GetGuid" />
-		///     - <see cref="CodeSmile.Editor.Asset.GetGuidAndFileId" />
+		///     - <see cref="CodeSmileEditor.Asset.GetGuid" />
+		///     - <see cref="CodeSmileEditor.Asset.GetGuidAndFileId" />
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
@@ -139,7 +139,7 @@ namespace CodeSmile.Editor
 		/// <param name="path">Path to an asset.</param>
 		/// <returns>The icon texture cast as Texture2D, or null.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.GetIcon(Object)" />
+		///     - <see cref="CodeSmileEditor.Asset.GetIcon(Object)" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
@@ -150,7 +150,7 @@ namespace CodeSmile.Editor
 		/// <param name="asset">The object for which to get the icon.</param>
 		/// <returns>The object's icon texture or null. If the obj is a sub-asset then the main asset's icon is returned.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.GetIcon(CodeSmile.Editor.Asset.Path)" />
+		///     - <see cref="CodeSmileEditor.Asset.GetIcon(CodeSmileEditor.Asset.Path)" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
 		public static Texture2D GetIcon(Object asset) => GetIcon(Path.Get(asset));
@@ -160,14 +160,14 @@ namespace CodeSmile.Editor
 		/// </summary>
 		/// <returns>The last error message or empty string if the last operation succeeded.</returns>
 		/// <seealso cref="">
-		///     - <see cref="CodeSmile.Editor.Asset.File.Rename" />
-		///     - <see cref="CodeSmile.Editor.Asset.File.Move" />
-		///     - <see cref="CodeSmile.Editor.Asset.File.Copy" />
-		///     - <see cref="CodeSmile.Editor.Asset.File.CopyAsNew" />
-		///     - <see cref="CodeSmile.Editor.Asset.Path.IsValid" />
-		///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsEditable" />
-		///     - <see cref="CodeSmile.Editor.Asset.VersionControl.IsMetaEditable" />
-		///     - <see cref="CodeSmile.Editor.Asset.VersionControl.CanMakeEditable" />
+		///     - <see cref="CodeSmileEditor.Asset.File.Rename" />
+		///     - <see cref="CodeSmileEditor.Asset.File.Move" />
+		///     - <see cref="CodeSmileEditor.Asset.File.Copy" />
+		///     - <see cref="CodeSmileEditor.Asset.File.CopyAsNew" />
+		///     - <see cref="CodeSmileEditor.Asset.Path.IsValid" />
+		///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsEditable" />
+		///     - <see cref="CodeSmileEditor.Asset.VersionControl.IsMetaEditable" />
+		///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 		/// </seealso>
 		public static String GetLastErrorMessage() => s_LastErrorMessage;
 

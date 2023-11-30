@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -23,7 +23,7 @@ namespace CodeSmile.Editor
 			/// </summary>
 			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Package.ImportInteractive" />
+			///     - <see cref="CodeSmileEditor.Asset.Package.ImportInteractive" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
 			/// </seealso>
@@ -41,7 +41,7 @@ namespace CodeSmile.Editor
 			/// <remarks> Shows the import package dialogue to the user before importing.</remarks>
 			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Package.Import" />
+			///     - <see cref="CodeSmileEditor.Asset.Package.Import" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
 			/// </seealso>
@@ -62,7 +62,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Package.Export(String[],String,ExportPackageOptions)" />
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(String[],String,ExportPackageOptions)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
@@ -83,7 +83,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Package.Export(CodeSmile.Editor.Asset.Path,String,ExportPackageOptions)" />
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
@@ -100,7 +100,7 @@ namespace CodeSmile.Editor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Package.Export(CodeSmile.Editor.Asset.Path,String,ExportPackageOptions)" />
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>

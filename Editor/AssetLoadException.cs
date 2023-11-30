@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	/// <summary>
 	///     Thrown in cases where loading an existing asset fails. That means the AssetDatabase returned null on loading.

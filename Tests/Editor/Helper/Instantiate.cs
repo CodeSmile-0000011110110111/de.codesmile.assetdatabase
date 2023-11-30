@@ -3,22 +3,25 @@
 
 using UnityEngine;
 
-public static class Instantiate
+namespace CodeSmileEditor.Tests.Helper
 {
-	public static ScriptableObject ExampleSO()
+	public static class Instantiate
 	{
-		var so = ScriptableObject.CreateInstance<ExampleSO>();
-		so.Text = so.GetType().AssemblyQualifiedName;
-		so.InstanceId = so.GetInstanceID();
-		so.Ref = so;
-		return so;
-	}
+		public static ScriptableObject ExampleSO()
+		{
+			var so = ScriptableObject.CreateInstance<ExampleSO>();
+			so.Text = so.GetType().AssemblyQualifiedName;
+			so.InstanceId = so.GetInstanceID();
+			so.Ref = so;
+			return so;
+		}
 
-	public static DifferentExampleSO DifferentExampleSO()
-	{
-		var so = ScriptableObject.CreateInstance<DifferentExampleSO>();
-		so.Text = so.GetType().AssemblyQualifiedName;
-		so.InstanceId = so.GetInstanceID();
-		return so;
+		public static DifferentExampleSO DifferentExampleSO()
+		{
+			var so = ScriptableObject.CreateInstance<DifferentExampleSO>();
+			so.Text = so.GetType().AssemblyQualifiedName;
+			so.InstanceId = so.GetInstanceID();
+			return so;
+		}
 	}
 }

@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace CodeSmile.Editor
+namespace CodeSmileEditor
 {
 	public sealed partial class Asset
 	{
@@ -26,8 +26,8 @@ namespace CodeSmile.Editor
 			/// <param name="instance">The instance to test.</param>
 			/// <returns>Returns false if the object isn't in the database or if the object is null.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported(CodeSmile.Editor.Asset.Path)" />
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsImported(CodeSmileEditor.Asset.Path)" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsLoaded" />
 			///     - <see cref="Contains" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
@@ -43,8 +43,8 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>Returns false if the path isn't in the database or if the path is null.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported(Object)" />
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsImported(Object)" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsLoaded" />
 			///     - <see cref="Contains" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
@@ -57,7 +57,7 @@ namespace CodeSmile.Editor
 			/// <param name="path">Path to an asset.</param>
 			/// <returns>True if the object at the path is loaded, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsImported" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
 			/// </seealso>
@@ -70,7 +70,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it's the asset's main object, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsSub" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
@@ -82,7 +82,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it's a sub asset, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsMain" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
@@ -98,7 +98,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it is a foreign asset, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsNative" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
 			/// </seealso>
@@ -115,7 +115,7 @@ namespace CodeSmile.Editor
 			/// <param name="asset">Instance of an asset.</param>
 			/// <returns>True if it is a native asset, false otherwise.</returns>
 			/// <seealso cref="">
-			///     - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
+			///     - <see cref="CodeSmileEditor.Asset.Status.IsForeign" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
 			/// </seealso>

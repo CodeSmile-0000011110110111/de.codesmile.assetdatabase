@@ -4,7 +4,10 @@
 using System;
 using System.IO;
 
-public static class AssetHelper
+namespace CodeSmileEditor.Tests.Helper
 {
-	public static Int64 GetFileSize(String path) => new FileInfo(path).Length;
+	public static class AssetHelper
+	{
+		public static Int64 GetFileSize(String path) => new FileInfo(path).Length;
+	}
 }
