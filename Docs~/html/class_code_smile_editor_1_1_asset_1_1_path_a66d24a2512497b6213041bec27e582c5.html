@@ -139,19 +139,19 @@ $(document).ready(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_
 </dl>
 <dl class="section see"><dt>See also</dt><dd></dd></dl>
 <ul>
-<li>Asset.Path(String) </li>
+<li><a class="el" href="class_code_smile_editor_1_1_asset_1_1_path.html" title="Represents a relative path to an asset file or folder, typically under &#39;Assets&#39; or &#39;Packages&#39;.">CodeSmileEditor.Asset.Path(String)</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00251">251</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  252</span>            {</div>
-<div class="line"><span class="lineno">  253</span>                ThrowIf.NullOrWhitespace(folderPath, nameof(folderPath));</div>
-<div class="line"><span class="lineno">  254</span>                ThrowIf.NullOrWhitespace(fileName, nameof(fileName));</div>
-<div class="line"><span class="lineno">  255</span>                ThrowIf.NullOrWhitespace(extension, nameof(extension));</div>
-<div class="line"><span class="lineno">  256</span>                ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));</div>
-<div class="line"><span class="lineno">  257</span> </div>
-<div class="line"><span class="lineno">  258</span>                var relativeDir = ToRelative(folderPath.ToForwardSlashes());</div>
-<div class="line"><span class="lineno">  259</span>                m_RelativePath = $<span class="stringliteral">&quot;{relativeDir}/{fileName}.{extension.TrimStart(&#39;.&#39;).ToLower()}&quot;</span>;</div>
-<div class="line"><span class="lineno">  260</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_path_8cs_source.html#l00250">250</a> of file <a class="el" href="_asset_8_path_8cs_source.html">Asset.Path.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>            {</div>
+<div class="line"><span class="lineno">  252</span>                ThrowIf.NullOrWhitespace(folderPath, nameof(folderPath));</div>
+<div class="line"><span class="lineno">  253</span>                ThrowIf.NullOrWhitespace(fileName, nameof(fileName));</div>
+<div class="line"><span class="lineno">  254</span>                ThrowIf.NullOrWhitespace(extension, nameof(extension));</div>
+<div class="line"><span class="lineno">  255</span>                ThrowIf.ContainsPathSeparators(fileName, nameof(fileName));</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>                var relativeDir = ToRelative(folderPath.ToForwardSlashes());</div>
+<div class="line"><span class="lineno">  258</span>                m_RelativePath = $<span class="stringliteral">&quot;{relativeDir}/{fileName}.{extension.TrimStart(&#39;.&#39;).ToLower()}&quot;</span>;</div>
+<div class="line"><span class="lineno">  259</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

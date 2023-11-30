@@ -1,7 +1,8 @@
 # Change Log
 
-#### v1.5.0 - Nov 29, 2023
+#### v1.6.0 - Nov 30, 2023
 
+- changed namespace from CodeSmile.Editor.* to CodeSmileEditor.*
 - new Asset(Path) now auto-imports assets that exist on disk but not in DB
 - changed load methods to import assets that exist on disk but not in DB
 - added create asset from string (ctor and Asset.Create)
