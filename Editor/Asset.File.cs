@@ -42,6 +42,7 @@ namespace CodeSmile.Editor
 			///     - <see cref="CodeSmile.Editor.Asset.File.Delete(IEnumerable{String})" />
 			///     - <see cref="CodeSmile.Editor.Asset.File.Trash(IEnumerable{String})" />
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // trivial
 			public static IList<String> PathsNotDeleted => s_PathsNotDeleted;
 
 			/// <summary>
@@ -513,6 +514,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadObjectAsync.html">AssetDatabase.LoadObjectAsync</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId)
 			{
 #if UNITY_2022_2_OR_NEWER
@@ -545,6 +547,7 @@ namespace CodeSmile.Editor
 			///         String Examples
 			///     </a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static String[] Find(String filter, String[] searchInFolders = null) => searchInFolders == null
 				? AssetDatabase.FindAssets(filter)
 				: AssetDatabase.FindAssets(filter, searchInFolders);
@@ -569,6 +572,7 @@ namespace CodeSmile.Editor
 			///         String Examples
 			///     </a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static GUID[] FindGuids(String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => new GUID(guid)).ToArray();
 
@@ -592,6 +596,7 @@ namespace CodeSmile.Editor
 			///         String Examples
 			///     </a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
 
@@ -740,6 +745,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean CanOpenInEditor([NotNull] Object instance) =>
 				CanOpenInEditor(instance.GetInstanceID());
 
@@ -754,6 +760,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean CanOpenInEditor(Int32 instanceId) => AssetDatabase.CanOpenAssetInEditor(instanceId);
 
 			/// <summary>

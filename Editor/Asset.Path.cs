@@ -90,6 +90,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public Path MetaPath => ToMeta(this);
 
 			/// <summary>
@@ -101,6 +102,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public Path AssetPath => FromMeta(this);
 
 			/// <summary>
@@ -120,6 +122,7 @@ namespace CodeSmile.Editor
 			///     - <see cref="CodeSmile.Editor.Asset.Path.Extension" />
 			///     - <see cref="CodeSmile.Editor.Asset.Path.FileNameWithoutExtension" />
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public String FileName => System.IO.Path.GetFileName(m_RelativePath);
 
 			/// <summary>
@@ -129,6 +132,7 @@ namespace CodeSmile.Editor
 			///     - <see cref="CodeSmile.Editor.Asset.Path.Extension" />
 			///     - <see cref="CodeSmile.Editor.Asset.Path.FileName" />
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public String FileNameWithoutExtension => System.IO.Path.GetFileNameWithoutExtension(m_RelativePath);
 
 			/// <summary>
@@ -151,6 +155,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public String[] SubFolders => GetSubFolders(this);
 
 			/// <summary>

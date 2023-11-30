@@ -52,6 +52,7 @@ namespace CodeSmile.Editor
 					throw new ArgumentException($"guid is not an asset: {guid}");
 			}
 
+			/*
 			public static void AssetDeleted(Asset asset)
 			{
 				if (asset.IsDeleted)
@@ -77,6 +78,7 @@ namespace CodeSmile.Editor
 					                             $"not assignable from asset type: {assetType.FullName}; path: {path}");
 				}
 			}
+			*/
 
 			public static void AssetLoadReturnedNull(UnityEngine.Object obj, Path path)
 			{
@@ -147,7 +149,7 @@ namespace CodeSmile.Editor
 					throw new ArgumentException($"source and destination path are equal: {sourcePath}");
 			}
 
-			public static void NotAnAsset(UnityEngine.Object obj)
+			/*public static void NotAnAsset(UnityEngine.Object obj)
 			{
 				if (Database.Contains(obj) == false)
 					throw new ArgumentException($"{obj} is not an asset file");
@@ -157,7 +159,7 @@ namespace CodeSmile.Editor
 			{
 				if (Database.Contains(instanceId) == false)
 					throw new ArgumentException($"{instanceId} is not an asset instance ID");
-			}
+			}*/
 		}
 	}
 }

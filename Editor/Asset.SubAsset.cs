@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -34,6 +35,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.SubAsset.Remove" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html">AssetDatabase.ExtractAsset</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean Extract(Object subAsset, Path destinationPath)
 			{
 				ThrowIf.ArgumentIsNull(subAsset, nameof(subAsset));

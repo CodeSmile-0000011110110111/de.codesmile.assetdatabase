@@ -215,7 +215,7 @@ namespace CodeSmile.Editor
 		/// </remarks>
 		/// <typeparam name="T">Type derived from UnityEngine.Object.</typeparam>
 		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
-		public T Get<T>() where T : Object => m_MainObject as T;
+		public T GetAs<T>() where T : Object => m_MainObject as T;
 
 		/// <summary>
 		///     Saves any changes to the asset to disk.
@@ -227,7 +227,10 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.ForceSave()" />
 		/// </seealso>
-		public void Save() => File.Save(m_MainObject);
+		public void Save()
+		{
+			File.Save(m_MainObject);
+		}
 
 		/// <summary>
 		///     Saves the asset to disk, regardless of whether it is marked as 'dirty'.
@@ -301,6 +304,7 @@ namespace CodeSmile.Editor
 		public void SetDirty() => EditorUtility.SetDirty(m_MainObject);
 
 		// NOTE: there is no public Import() method needed since the main object is guaranteed to be imported
+		[ExcludeFromCodeCoverage] // private, not used
 		private void Import() {}
 
 		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
@@ -414,6 +418,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.OpenExternal" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean CanOpenInEditor() => File.CanOpenInEditor(m_MainObject);
 
 		/// <summary>
@@ -483,6 +488,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
 		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public void SetActiveImporter<T>()
 #if UNITY_2022_1_OR_NEWER
 			where T : AssetImporter
@@ -515,6 +521,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.AddLabels" />
 		/// - <see cref="CodeSmile.Editor.Asset.ClearLabels" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public void SetLabels(String[] labels) => Label.SetAll(m_MainObject, labels);
 
 		/// <summary>
@@ -561,6 +568,7 @@ namespace CodeSmile.Editor
 		/// <param name="options">
 		///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 		/// </param>
+		[ExcludeFromCodeCoverage] // simple relay
 		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default) =>
 			Package.Export(m_AssetPath, packagePath, options);
 

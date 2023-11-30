@@ -1,7 +1,9 @@
 ﻿// Copyright (C) 2021-2023 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
+using NUnit.Framework;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -26,7 +28,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported(CodeSmile.Editor.Asset.Path)" />
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
-			/// - <see cref="CodeSmile.Editor.Asset.Database.Contains" />
+			/// - <see cref="Contains" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
 			public static Boolean IsImported(Object instance) => Database.Contains(instance);
@@ -43,7 +45,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported(Object)" />
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsLoaded" />
-			/// - <see cref="CodeSmile.Editor.Asset.Database.Contains" />
+			/// - <see cref="Contains" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
 			/// </seealso>
 			public static Boolean IsImported(Path path) => path != null && path.Exists;
@@ -57,6 +59,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsImported" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 			/// <summary>
@@ -68,6 +71,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsSub" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsMain(Object asset) => AssetDatabase.IsMainAsset(asset);
 
 			/// <summary>
@@ -79,6 +83,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsMain" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsSub(Object asset) => AssetDatabase.IsSubAsset(asset);
 
 			/// <summary>
@@ -94,6 +99,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsForeign(Object asset) => AssetDatabase.IsForeignAsset(asset);
 
 			/// <summary>
@@ -109,6 +115,7 @@ namespace CodeSmile.Editor
 			/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
 			/// - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean IsNative(Object asset) => AssetDatabase.IsNativeAsset(asset);
 
 			/// <summary>

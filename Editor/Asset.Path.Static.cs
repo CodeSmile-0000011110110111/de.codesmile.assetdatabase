@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -35,26 +36,31 @@ namespace CodeSmile.Editor
 			/// <summary>
 			///     Returns the absolute path to the project's <c>Library</c> subfolder.
 			/// </summary>
+			[ExcludeFromCodeCoverage] // returns string interpolation
 			public static String FullLibraryPath => $"{FullProjectPath}/Library";
 
 			/// <summary>
 			///     Returns the absolute path to the project's <c>Logs</c> subfolder.
 			/// </summary>
+			[ExcludeFromCodeCoverage] // returns string interpolation
 			public static String FullLogsPath => $"{FullProjectPath}/Logs";
 
 			/// <summary>
 			///     Returns the absolute path to the project's <c>ProjectSettings</c> subfolder.
 			/// </summary>
+			[ExcludeFromCodeCoverage] // returns string interpolation
 			public static String FullProjectSettingsPath => $"{FullProjectPath}/ProjectSettings";
 
 			/// <summary>
 			///     Returns the absolute path to the project's <c>UserSettings</c> subfolder.
 			/// </summary>
+			[ExcludeFromCodeCoverage] // returns string interpolation
 			public static String FullUserSettingsPath => $"{FullProjectPath}/UserSettings";
 
 			/// <summary>
 			///     Returns the absolute path to the project's <c>Temp</c> subfolder.
 			/// </summary>
+			[ExcludeFromCodeCoverage] // returns string interpolation
 			public static String FullProjectTempPath => $"{FullProjectPath}/Temp";
 
 			/// <summary>
@@ -144,6 +150,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Path ToMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
 
 			/// <summary>
@@ -156,6 +163,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Path FromMeta(Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
 
 			/// <summary>
@@ -283,6 +291,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>

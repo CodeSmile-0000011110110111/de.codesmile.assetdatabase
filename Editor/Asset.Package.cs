@@ -27,6 +27,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static void Import(Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);

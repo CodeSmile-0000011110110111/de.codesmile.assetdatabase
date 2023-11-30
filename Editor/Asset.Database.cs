@@ -29,6 +29,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceToDesiredWorkerCount.html">AssetDatabase.ForceToDesiredWorkerCount</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Int32 DesiredWorkerCount
 			{
 				get => AssetDatabase.DesiredWorkerCount;
@@ -49,6 +50,7 @@ namespace CodeSmile.Editor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsDirectoryMonitoringEnabled.html">AssetDatabase.IsDirectoryMonitoringEnabled</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean DirectoryMonitoring
 			{
 				get => AssetDatabase.IsDirectoryMonitoringEnabled();
@@ -74,6 +76,7 @@ namespace CodeSmile.Editor
 			/// <seealso cref="">
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
 			public static Boolean Contains(Int32 instanceId) => AssetDatabase.Contains(instanceId);
 
 			/// <summary>

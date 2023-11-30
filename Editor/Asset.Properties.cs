@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -65,6 +66,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.AssetPath" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Path MetaPath => Path.ToMeta(m_AssetPath);
 
 		/// <summary>
@@ -81,11 +83,13 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.Guid" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Int64 FileId => GetFileId(m_MainObject);
 
 		/// <summary>
 		///     Returns the icon texture associated with the asset type.
 		/// </summary>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Texture2D Icon => GetIcon(m_AssetPath);
 
 		/// <summary>
@@ -96,6 +100,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.OwningBundleVariant" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public String OwningBundle => Bundle.GetOwningBundle(m_AssetPath);
 
 		/// <summary>
@@ -106,6 +111,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.OwningBundle" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public String OwningBundleVariant => Bundle.GetOwningBundleVariant(m_AssetPath);
 
 		/// <summary>
@@ -115,6 +121,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.Dependencies" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public String[] DirectDependencies => Dependency.GetDirect(m_AssetPath);
 
 		/// <summary>
@@ -124,6 +131,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.DirectDependencies" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public String[] Dependencies => Dependency.GetAll(m_AssetPath);
 
 		/// <summary>
@@ -132,6 +140,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.ActiveImporter" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Type DefaultImporter => Importer.GetDefault(m_AssetPath);
 
 		/// <summary>
@@ -143,6 +152,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporter{T}" />
 		/// - <see cref="CodeSmile.Editor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Type ActiveImporter
 		{
 			get
@@ -192,6 +202,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
 		/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
 
 		/// <summary>
@@ -202,6 +213,7 @@ namespace CodeSmile.Editor
 		/// - <see cref="CodeSmile.Editor.Asset.Status.IsForeign" />
 		/// - <see cref="CodeSmile.Editor.Asset.Status.IsNative" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
 
 		/// <summary>

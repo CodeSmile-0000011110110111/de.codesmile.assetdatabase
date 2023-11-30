@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -35,6 +36,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a>
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public static Type GetMainType(GUID guid)
 		{
 #if UNITY_2023_2_OR_NEWER // It's also available in 2022.2 but not in the early patch versions (eg 7f1 onwards)
@@ -53,6 +55,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		///    - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
 
 		/// <example>
@@ -132,6 +135,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.GetIcon(Object)" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
 
 		/// <summary>
@@ -142,6 +146,7 @@ namespace CodeSmile.Editor
 		/// <seealso cref="">
 		/// - <see cref="CodeSmile.Editor.Asset.GetIcon(CodeSmile.Editor.Asset.Path)" />
 		/// </seealso>
+		[ExcludeFromCodeCoverage] // simple relay
 		public static Texture2D GetIcon(Object asset) => GetIcon(Path.Get(asset));
 
 		/// <summary>
