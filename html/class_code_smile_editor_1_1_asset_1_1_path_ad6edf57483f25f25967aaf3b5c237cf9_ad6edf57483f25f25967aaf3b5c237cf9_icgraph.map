@@ -1,0 +1,5 @@
+<map id="FileExists" name="FileExists">
+<area shape="rect" id="Node000001" title="Tests if the given file exists in the file system." alt="" coords="156,5,235,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_path_aa5b7d522e7180d8e9943ca3a7f636b72.html#aa5b7d522e7180d8e9943ca3a7f636b72" title="Creates any missing folders in the path." alt="" coords="5,5,108,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,21,108,21,108,16,141,16"/>
+</map>

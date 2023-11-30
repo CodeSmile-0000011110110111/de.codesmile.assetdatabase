@@ -1,0 +1,7 @@
+<map id="Import" name="Import">
+<area shape="rect" id="Node000001" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me..." alt="" coords="237,35,294,61"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_a98ebc39e040ade9e43957b49505c7640.html#a98ebc39e040ade9e43957b49505c7640" title="Imports multiple paths that were created or modified &#39;externally&#39;. Externally refers to any means oth..." alt="" coords="68,5,126,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,43,126,26,127,21,222,38"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_sub_asset_ac7443f6fb0c09da2f8efe65f03f47900.html#ac7443f6fb0c09da2f8efe65f03f47900" title="Sets (changes) an asset&#39;s &#39;main&#39; object to one of its sub&#45;assets." alt="" coords="5,56,189,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,58,190,64,189,59,221,53"/>
+</map>

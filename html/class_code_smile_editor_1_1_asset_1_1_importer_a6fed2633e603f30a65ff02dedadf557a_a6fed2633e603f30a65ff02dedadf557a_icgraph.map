@@ -1,0 +1,5 @@
+<map id="ClearOverride" name="ClearOverride">
+<area shape="rect" id="Node000001" title="Clears an AssetImporter override for the specified asset." alt="" coords="234,13,332,40"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_ac07d4f60efca50c39e2f95a2af28d881.html#ac07d4f60efca50c39e2f95a2af28d881" title="Sets the active AssetImporter type back to the default type." alt="" coords="5,5,186,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,29,186,29,186,24,219,24"/>
+</map>

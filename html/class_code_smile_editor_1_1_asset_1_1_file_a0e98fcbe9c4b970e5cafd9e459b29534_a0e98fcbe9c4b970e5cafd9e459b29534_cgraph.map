@@ -1,0 +1,9 @@
+<map id="LoadOrCreate&lt; T &gt;" name="LoadOrCreate&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Loads an asset at path or creates the asset if needed." alt="" coords="5,31,138,57"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_ac06fc29444361ea05b15a504b027656f.html#ac06fc29444361ea05b15a504b027656f" title="Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file." alt="" coords="226,5,285,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,32,211,22,211,27,139,37"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_file_ae7494b282eac62a955cb4f867d72f0ef.html#ae7494b282eac62a955cb4f867d72f0ef" title="Imports a file at a given path that was created or modified &#39;externally&#39;, then loads and returns the ..." alt="" coords="186,56,325,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,51,171,55,170,60,138,56"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec.html#a5d27be243c1f698cba116b768e3f65ec" title="Loads a (sub) object from the asset identified by type." alt="" coords="373,56,592,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,67,358,67,358,72,325,72"/>
+</map>
