@@ -131,17 +131,17 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00038">38</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
-<div class="line"><span class="lineno">   40</span><span class="preprocessor">#if UNITY_2023_2_OR_NEWER </span><span class="comment">// It&#39;s also available in 2022.2 but not in the early patch versions (eg 7f1 onwards)</span></div>
-<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> AssetDatabase.GetMainAssetTypeFromGUID(guid);</div>
-<div class="line"><span class="lineno">   42</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774">GetMainType</a>(Path.Get(guid));</div>
-<div class="line"><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   45</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00042">42</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">#if UNITY_2023_2_OR_NEWER </span><span class="comment">// It&#39;s also available in 2022.2 but not in the early patch versions (eg 7f1 onwards)</span></div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">return</span> AssetDatabase.GetMainAssetTypeFromGUID(guid);</div>
+<div class="line"><span class="lineno">   46</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774">GetMainType</a>(Path.Get(guid));</div>
+<div class="line"><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   49</span>        }</div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774_html_ab856af13e3309f29c328b6e38dedf774"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774">CodeSmile.Editor.Asset.GetMainType</a></div><div class="ttdeci">static Type GetMainType(Path path)</div><div class="ttdoc">Returns the type of the main asset at the path.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00074">Asset.Path.Get()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774">Asset.GetMainType()</a>.</p>
+<p class="reference">References <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00080">Asset.Path.Get()</a>, and <a class="el" href="class_code_smile_1_1_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774">Asset.GetMainType()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <p>Use <a class="el" href="class_code_smile_1_1_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8.html#a45faf9fc17e3cb57b87d2ae09e4dd7f8" title="Moves asset to destination path.">CodeSmile.Editor.Asset.Move</a> if you need to change the file's extension. </p>
 <p>Rename file: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a> asset = <span class="keyword">new</span> <a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a>(obj, <span class="stringliteral">&quot;Assets/initial name.asset&quot;</span>);</div>
 <div class="line">asset.<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675.html#a28fe22006383d71d5b564df4a46b2675">Rename</a>(<span class="stringliteral">&quot;new file name&quot;</span>);</div>
-<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_html_a28fe22006383d71d5b564df4a46b2675"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675.html#a28fe22006383d71d5b564df4a46b2675">CodeSmile.Editor.Asset.Rename</a></div><div class="ttdeci">Boolean Rename(String newFileName)</div><div class="ttdoc">Renames an asset's file name (without extension) or a folder.</div><div class="ttdef"><b>Definition</b> <a href="_asset_8cs_source.html#l00395">Asset.cs:395</a></div></div>
+<div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_html_a28fe22006383d71d5b564df4a46b2675"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675.html#a28fe22006383d71d5b564df4a46b2675">CodeSmile.Editor.Asset.Rename</a></div><div class="ttdeci">Boolean Rename(String newFileName)</div><div class="ttdoc">Renames an asset's file name (without extension) or a folder.</div><div class="ttdef"><b>Definition</b> <a href="_asset_8cs_source.html#l00396">Asset.cs:396</a></div></div>
 <div class="ttc" id="aclass_code_smile_1_1_editor_1_1_asset_html"><div class="ttname"><a href="class_code_smile_1_1_editor_1_1_asset.html">CodeSmile.Editor.Asset</a></div><div class="ttdoc">Replacement implementation for Unity's massive AssetDatabase class with a cleaner interface and more ...</div><div class="ttdef"><b>Definition</b> <a href="_asset_8_bundle_8cs_source.html#l00009">Asset.Bundle.cs:10</a></div></div>
 </div><!-- fragment --><p> Rename folder: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a> asset = <span class="keyword">new</span> <a class="code hl_class" href="class_code_smile_1_1_editor_1_1_asset.html">Asset</a>(obj, <span class="stringliteral">&quot;Assets/subfloder&quot;</span>);</div>
 <div class="line">asset.<a class="code hl_function" href="class_code_smile_1_1_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675.html#a28fe22006383d71d5b564df4a46b2675">Rename</a>(<span class="stringliteral">&quot;subfolder&quot;</span>);</div>
@@ -130,18 +130,18 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <li><a class="el" href="class_code_smile_1_1_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac.html#af1aa2544ba26b2d2d71f6e7b68f18fac" title="Returns the last error message returned by some methods that provide such a failure message.">CodeSmile.Editor.Asset.GetLastErrorMessage</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00395">395</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  396</span>        {</div>
-<div class="line"><span class="lineno">  397</span>            <span class="keywordflow">if</span> (File.Rename(m_AssetPath, newFileName))</div>
-<div class="line"><span class="lineno">  398</span>            {</div>
-<div class="line"><span class="lineno">  399</span>                SetAssetPathFromObject();</div>
-<div class="line"><span class="lineno">  400</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  401</span>            }</div>
-<div class="line"><span class="lineno">  402</span> </div>
-<div class="line"><span class="lineno">  403</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  404</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00396">396</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>        {</div>
+<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">if</span> (File.Rename(m_AssetPath, newFileName))</div>
+<div class="line"><span class="lineno">  399</span>            {</div>
+<div class="line"><span class="lineno">  400</span>                SetAssetPathFromObject();</div>
+<div class="line"><span class="lineno">  401</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  402</span>            }</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  405</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00724">Asset.File.Rename()</a>.</p>
+<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00729">Asset.File.Rename()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

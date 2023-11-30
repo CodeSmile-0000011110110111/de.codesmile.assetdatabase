@@ -132,17 +132,17 @@ $(document).ready(function(){initNavTree('class_code_smile_1_1_editor_1_1_asset_
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00095">95</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>        {</div>
-<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">if</span> (asset == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> GUID();</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
-<div class="line"><span class="lineno">  101</span>            var localId = Int64.MaxValue;</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)</div>
-<div class="line"><span class="lineno">  103</span>                ? <span class="keyword">new</span> GUID(guid)</div>
-<div class="line"><span class="lineno">  104</span>                : new GUID();</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_static_8cs_source.html#l00103">103</a> of file <a class="el" href="_asset_8_static_8cs_source.html">Asset.Static.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span> (asset == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  106</span>                <span class="keywordflow">return</span> <span class="keyword">new</span> GUID();</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>            <span class="comment">// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method</span></div>
+<div class="line"><span class="lineno">  109</span>            var localId = Int64.MaxValue;</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)</div>
+<div class="line"><span class="lineno">  111</span>                ? <span class="keyword">new</span> GUID(guid)</div>
+<div class="line"><span class="lineno">  112</span>                : new GUID();</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

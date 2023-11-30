@@ -27,7 +27,7 @@ var class_code_smile_1_1_editor_1_1_asset =
     [ "Duplicate", "class_code_smile_1_1_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a.html#ad06bce954d9c1e05d9f53e0274a9f85a", null ],
     [ "ExportPackage", "class_code_smile_1_1_editor_1_1_asset_a6e9b9cc6eb629d6e34d6ea90088e0148.html#a6e9b9cc6eb629d6e34d6ea90088e0148", null ],
     [ "ForceSave", "class_code_smile_1_1_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b.html#a80bd55f3de91ab63e74b3f66c1d1dd4b", null ],
-    [ "Get< T >", "class_code_smile_1_1_editor_1_1_asset_a5750e835e7ec1b02a86741a1d4ecb5af.html#a5750e835e7ec1b02a86741a1d4ecb5af", null ],
+    [ "GetAs< T >", "class_code_smile_1_1_editor_1_1_asset_ab2654b81fc249b4651914a866b493b5b.html#ab2654b81fc249b4651914a866b493b5b", null ],
     [ "GetFileId", "class_code_smile_1_1_editor_1_1_asset_ad36186b2247f450fdfc3f4c61645c923.html#ad36186b2247f450fdfc3f4c61645c923", null ],
     [ "GetGuid", "class_code_smile_1_1_editor_1_1_asset_a12bbf3b61387837dc737812972ef2f89.html#a12bbf3b61387837dc737812972ef2f89", null ],
     [ "GetGuidAndFileId", "class_code_smile_1_1_editor_1_1_asset_a00e0527297a5e8437416f08e6dc08a29.html#a00e0527297a5e8437416f08e6dc08a29", null ],
