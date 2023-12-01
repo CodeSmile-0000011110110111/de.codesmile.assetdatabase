@@ -14,8 +14,7 @@ namespace CodeSmileEditor.Tests
 
 		[Test] public void IsImported_NullPath_False() => Assert.IsFalse(Asset.Status.IsImported((Asset.Path)null));
 
-		[Test] public void IsImported_NotAnAsset_False() =>
-			Assert.IsFalse(Asset.Status.IsImported(Instantiate.ExampleSO()));
+		[Test] public void IsImported_NotAnAsset_False() => Assert.IsFalse(Asset.Status.IsImported(Instantiate.ExampleSO()));
 
 		[Test] public void IsImported_ExistingAsset_True() =>
 			Assert.IsTrue(Asset.Status.IsImported(CreateTestAssetObject(TestAssetPath)));

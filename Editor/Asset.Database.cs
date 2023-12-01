@@ -65,8 +65,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
-			public static Boolean Contains(Object instance) =>
-				instance != null ? AssetDatabase.Contains(instance) : false;
+			public static Boolean Contains(Object instance) => instance != null ? AssetDatabase.Contains(instance) : false;
 
 			/// <summary>
 			///     Tests if the asset is in the database.

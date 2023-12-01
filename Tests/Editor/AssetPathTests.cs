@@ -13,14 +13,12 @@ namespace CodeSmileEditor.Tests
 		[Test] public void AssetPath_ExplicitConversion_StringEquals() =>
 			Assert.AreEqual(TestAssetPath, (String)new Asset.Path(TestAssetPath));
 
-		[Test] public void AssetPath_NullString_Throws() =>
-			Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
+		[Test] public void AssetPath_NullString_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
 
 		[Test] public void AssetPath_EmptyString_Throws() =>
 			Assert.Throws<ArgumentException>(() => new Asset.Path(String.Empty));
 
-		[Test] public void AssetPath_WhitespaceString_Throws() =>
-			Assert.Throws<ArgumentException>(() => new Asset.Path(" "));
+		[Test] public void AssetPath_WhitespaceString_Throws() => Assert.Throws<ArgumentException>(() => new Asset.Path(" "));
 
 		[TestCase("AssetsData")]
 		[TestCase("SomeFolder/")]
@@ -80,7 +78,8 @@ namespace CodeSmileEditor.Tests
 			String expected) => Assert.AreEqual(expected, new Asset.Path(inputPath, fileName));
 
 		[TestCase("\\Assets\\folder/", "fn", "text", "Assets/folder/fn.text")]
-		public void AssetPath_CombinePathFileNameExtension_AsExpected(String inputPath, String fileName, String extension,
+		public void AssetPath_CombinePathFileNameExtension_AsExpected(String inputPath, String fileName,
+			String extension,
 			String expected) => Assert.AreEqual(expected, new Asset.Path(inputPath, fileName, extension));
 
 		[Test] public void AssetPath_WithFullAssetsPath_IsRelativePath()
@@ -121,8 +120,9 @@ namespace CodeSmileEditor.Tests
 			Assert.Throws<ArgumentException>(() => new Asset.Path("Assets", fileName));
 
 		[TestCase("ext")] [TestCase(".ext")]
-		public void AssetPath_CombineExtension_AsExpected(String extension) =>
-			Assert.AreEqual("Assets/FN." + extension.TrimStart('.'), new Asset.Path("Assets", "FN", extension));
+		public void AssetPath_CombineExtension_AsExpected(String extension) => Assert.AreEqual(
+			"Assets/FN." + extension.TrimStart('.'),
+			new Asset.Path("Assets", "FN", extension));
 
 		[TestCase(null, "file name", "extension")]
 		[TestCase("Assets", null, "extension")]

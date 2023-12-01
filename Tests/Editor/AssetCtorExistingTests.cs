@@ -12,8 +12,7 @@ namespace CodeSmileEditor.Tests
 {
 	public class AssetCtorExistingTests : AssetTestBase
 	{
-		[Test] public void PathCtor_Null_Throws() =>
-			Assert.Throws<ArgumentNullException>(() => new Asset((Asset.Path)null));
+		[Test] public void PathCtor_Null_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset((Asset.Path)null));
 
 		[Test] public void PathCtor_NotExistingPath_Throws() =>
 			Assert.Throws<FileNotFoundException>(() => new Asset("Assets/does not.exist"));
@@ -47,8 +46,7 @@ namespace CodeSmileEditor.Tests
 
 		[Test] public void GuidCtor_EmptyGuid_Throws() => Assert.Throws<ArgumentException>(() => new Asset(new GUID()));
 
-		[Test] public void GuidCtor_NotAnAsset_Throws() =>
-			Assert.Throws<ArgumentException>(() => new Asset(GUID.Generate()));
+		[Test] public void GuidCtor_NotAnAsset_Throws() => Assert.Throws<ArgumentException>(() => new Asset(GUID.Generate()));
 
 		[Test] public void GuidCtor_ExistingAsset_Succeeds()
 		{

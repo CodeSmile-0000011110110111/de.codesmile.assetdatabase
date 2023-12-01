@@ -109,8 +109,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundle.html">AssetDatabase.GetAssetPathsFromAssetBundle</a>
 			/// </seealso>
-			public static String[] GetAllPaths(String bundleName) =>
-				AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
+			public static String[] GetAllPaths(String bundleName) => AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
 
 			/// <summary>
 			///     Returns the asset paths in a given asset bundle that matches an asset name.
@@ -154,8 +153,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleVariantName.html">AssetDatabase.GetImplicitAssetBundleVariantName</a>
 			/// </seealso>
-			public static String GetOwningBundleVariant(Path path) =>
-				AssetDatabase.GetImplicitAssetBundleVariantName(path);
+			public static String GetOwningBundleVariant(Path path) => AssetDatabase.GetImplicitAssetBundleVariantName(path);
 		}
 	}
 }

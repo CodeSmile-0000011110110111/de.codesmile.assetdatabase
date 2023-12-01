@@ -10,8 +10,7 @@ namespace CodeSmileEditor.Tests
 {
 	public class AssetSaveTests : AssetTestBase
 	{
-		[Test] public void SaveObjectStatic_Null_Throws() =>
-			Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
+		[Test] public void SaveObjectStatic_Null_Throws() => Assert.Throws<ArgumentNullException>(() => Asset.File.Save(null));
 
 		[Test] public void SaveObjectStatic_NotAnAsset_Throws()
 		{
@@ -55,8 +54,7 @@ namespace CodeSmileEditor.Tests
 			Assert.AreNotEqual(fileSize, AssetHelper.GetFileSize(TestAssetPath));
 		}
 
-		[Test] public void SaveGuidStatic_Empty_Throws() =>
-			Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
+		[Test] public void SaveGuidStatic_Empty_Throws() => Assert.Throws<ArgumentException>(() => Asset.File.Save(new GUID()));
 
 		[Test] public void SaveGuidStatic_NotAnAsset_Throws() =>
 			Assert.Throws<ArgumentException>(() => Asset.File.Save(GUID.Generate()));

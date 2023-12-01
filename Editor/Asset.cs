@@ -305,8 +305,7 @@ namespace CodeSmileEditor
 		private void Import() {}
 
 		// Private on purpose: the main object is automatically loaded when instantiating an Asset class.
-		private T LoadMain<T>() where T : Object =>
-			m_AssetPath != null ? (T)(m_MainObject = File.Load<T>(m_AssetPath)) : null;
+		private T LoadMain<T>() where T : Object => m_AssetPath != null ? (T)(m_MainObject = File.Load<T>(m_AssetPath)) : null;
 
 		/// <summary>
 		///     Loads a (sub) object from the asset identified by type.

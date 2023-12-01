@@ -38,8 +38,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
-			public static String[] GetDirect(Path[] paths) =>
-				AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
+			public static String[] GetDirect(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the asset at the given path.

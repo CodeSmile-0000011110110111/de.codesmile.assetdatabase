@@ -121,8 +121,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(String,CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew(Byte[] contents, Path path) =>
-				CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew(Byte[] contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
 
 			internal static Object CreateInternal(Byte[] bytes, Path path)
 			{
@@ -161,8 +160,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Byte[],CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew(String contents, Path path) =>
-				CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
 
 			internal static Object CreateInternal(String contents, Path path)
 			{
@@ -204,8 +202,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateOrLoad{T}" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object CreateAsNew(Object instance, Path path) =>
-				CreateInternal(instance, path.UniqueFilePath);
+			public static Object CreateAsNew(Object instance, Path path) => CreateInternal(instance, path.UniqueFilePath);
 
 			internal static Object CreateInternal(Object instance, Path path)
 			{
@@ -235,8 +232,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.File.LoadOrCreate{T}" />
 			/// </seealso>
-			public static T CreateOrLoad<T>(Path path, Func<T> getInstance) where T : Object =>
-				LoadOrCreate(path, getInstance);
+			public static T CreateOrLoad<T>(Path path, Func<T> getInstance) where T : Object => LoadOrCreate(path, getInstance);
 
 			/// <summary>
 			///     Saves the object to disk if it is dirty.
@@ -393,8 +389,8 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.BatchEditing" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
-			public static void Import(String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
-				BatchEditing(() =>
+			public static void Import(String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) => BatchEditing(
+				() =>
 				{
 					foreach (var path in paths)
 						AssetDatabase.ImportAsset(path, options);
@@ -746,8 +742,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean CanOpenInEditor([NotNull] Object instance) =>
-				CanOpenInEditor(instance.GetInstanceID());
+			public static Boolean CanOpenInEditor([NotNull] Object instance) => CanOpenInEditor(instance.GetInstanceID());
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
