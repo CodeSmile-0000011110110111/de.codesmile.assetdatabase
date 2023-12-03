@@ -1,7 +1,7 @@
 <map id="GetMainType" name="GetMainType">
 <area shape="rect" id="Node000001" title="Returns the type of the main asset for the GUID." alt="" coords="5,31,104,57"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" title="Gets the relative path of an asset." alt="" coords="152,5,364,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8.html#aa3620ff1f8b2c02fc1282284cd7c1df8" title="Gets the relative path of an asset." alt="" coords="152,5,364,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,35,137,31,137,36,104,41"/>
-<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774" title="Returns the type of the main asset at the path." alt="" coords="209,56,307,83"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_a3192f3d24b4397b10f50ef366ee3feba.html#a3192f3d24b4397b10f50ef366ee3feba" title="Returns the type of the main asset at the path." alt="" coords="209,56,307,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,47,194,59,194,64,104,53"/>
 </map>

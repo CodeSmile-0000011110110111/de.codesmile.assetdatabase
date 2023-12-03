@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" target="_top" xlink:title="Gets the relative path of an asset.">
+<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8.html#aa3620ff1f8b2c02fc1282284cd7c1df8" target="_top" xlink:title="Gets the relative path of an asset.">
 <polygon fill="white" stroke="#666666" points="269,-58 109.75,-58 109.75,-38 269,-38 269,-58"/>
 <text text-anchor="middle" x="189.38" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmileEditor.Asset.Path.Get</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_code_smile_editor_1_1_asset_ab856af13e3309f29c328b6e38dedf774.html#ab856af13e3309f29c328b6e38dedf774" target="_top" xlink:title="Returns the type of the main asset at the path.">
+<g id="a_Node000003"><a xlink:href="class_code_smile_editor_1_1_asset_a3192f3d24b4397b10f50ef366ee3feba.html#a3192f3d24b4397b10f50ef366ee3feba" target="_top" xlink:title="Returns the type of the main asset at the path.">
 <polygon fill="white" stroke="#666666" points="226.25,-20 152.5,-20 152.5,0 226.25,0 226.25,-20"/>
 <text text-anchor="middle" x="189.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetMainType</text>
 </a>

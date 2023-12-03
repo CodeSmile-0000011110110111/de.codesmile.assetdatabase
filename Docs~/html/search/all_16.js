@@ -1,7 +1,18 @@
 var searchData=
 [
-  ['tometa_0',['ToMeta',['../class_code_smile_editor_1_1_asset_1_1_path_a91fc02514c002bf68e48d1e27a90612f.html#a91fc02514c002bf68e48d1e27a90612f',1,'CodeSmileEditor::Asset::Path']]],
-  ['tostring_1',['ToString',['../class_code_smile_editor_1_1_asset_1_1_path_a012fbb0f39e57c0a44ec83dd408fcda3.html#a012fbb0f39e57c0a44ec83dd408fcda3',1,'CodeSmileEditor::Asset::Path']]],
-  ['tostrings_2',['ToStrings',['../class_code_smile_editor_1_1_asset_1_1_path_ad43db7ddf503406b3dbe05949a040a46.html#ad43db7ddf503406b3dbe05949a040a46',1,'CodeSmileEditor::Asset::Path']]],
-  ['trash_3',['trash',['../class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a.html#a9ff25b59d227ab5d89fdabafffb9876a',1,'CodeSmileEditor.Asset.Trash()'],['../class_code_smile_editor_1_1_asset_1_1_file_a1dbff3d08585e6472aac97a3e3a7df9d.html#a1dbff3d08585e6472aac97a3e3a7df9d',1,'CodeSmileEditor.Asset.File.Trash(Path path)'],['../class_code_smile_editor_1_1_asset_1_1_file_a1f1b112a200cd3290658811871c47248.html#a1f1b112a200cd3290658811871c47248',1,'CodeSmileEditor.Asset.File.Trash(Object asset)'],['../class_code_smile_editor_1_1_asset_1_1_file_ab8b5e407282a81136f5df920fdf977ca.html#ab8b5e407282a81136f5df920fdf977ca',1,'CodeSmileEditor.Asset.File.Trash(IEnumerable&lt; Path &gt; paths)'],['../class_code_smile_editor_1_1_asset_1_1_file_a8431ec0a71289a653315a40cfde4653d.html#a8431ec0a71289a653315a40cfde4653d',1,'CodeSmileEditor.Asset.File.Trash(IEnumerable&lt; String &gt; paths)']]]
+  ['s_20path_0',['Get an asset&apos;s path',['../index.html#get-an-assets-path',1,'']]],
+  ['save_1',['save',['../class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33.html#a5df140c1ee51aadf7fe88ce3fb9cac33',1,'CodeSmileEditor.Asset.Save()'],['../class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2.html#a07847a761e01e0d2fdd91c3cf6db50d2',1,'CodeSmileEditor.Asset.File.Save([NotNull] Object asset)'],['../class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c.html#a0d399890489ab279eb57b94b19f2d19c',1,'CodeSmileEditor.Asset.File.Save(GUID guid)']]],
+  ['saveall_2',['SaveAll',['../class_code_smile_editor_1_1_asset_1_1_database_af4aa665fc0bbfcf9f076d5da1457b2c4.html#af4aa665fc0bbfcf9f076d5da1457b2c4',1,'CodeSmileEditor::Asset::Database']]],
+  ['saveas_3',['SaveAs',['../class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119.html#a1c6432dab22d51bcf01bf6ad221e7119',1,'CodeSmileEditor::Asset']]],
+  ['saveasnew_4',['SaveAsNew',['../class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0.html#af23adc642520b7f00cb047865ef50ad0',1,'CodeSmileEditor::Asset']]],
+  ['setall_5',['SetAll',['../class_code_smile_editor_1_1_asset_1_1_label_a82888b12b37f839fbabcb62e8fe169af.html#a82888b12b37f839fbabcb62e8fe169af',1,'CodeSmileEditor::Asset::Label']]],
+  ['setdirty_6',['SetDirty',['../class_code_smile_editor_1_1_asset_ac9fdda28d3fb7be683439603387df920.html#ac9fdda28d3fb7be683439603387df920',1,'CodeSmileEditor::Asset']]],
+  ['setlabels_7',['SetLabels',['../class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5.html#af924398cf4176684f1c3bad2017f9ed5',1,'CodeSmileEditor::Asset']]],
+  ['setmain_8',['setmain',['../class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519.html#ac4fb08375dcad548d850eec212582519',1,'CodeSmileEditor.Asset.SubAsset.SetMain([NotNull] Object subAsset, [NotNull] Path path)'],['../class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476.html#a61bfe373deb21386f749d2f947da5476',1,'CodeSmileEditor.Asset.SubAsset.SetMain([NotNull] Object subAsset, [NotNull] Object asset)']]],
+  ['setoverride_3c_20t_20_3e_9',['SetOverride&lt; T &gt;',['../class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7.html#adc9eeee37a0d895ad4f37e583288e2e7',1,'CodeSmileEditor::Asset::Importer']]],
+  ['status_10',['Status',['../class_code_smile_editor_1_1_asset_1_1_status.html',1,'CodeSmileEditor::Asset']]],
+  ['subasset_11',['SubAsset',['../class_code_smile_editor_1_1_asset_1_1_sub_asset.html',1,'CodeSmileEditor::Asset']]],
+  ['subassets_12',['SubAssets',['../class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389.html#accd20b073ee732df08cf6ba0b9b8a389',1,'CodeSmileEditor::Asset']]],
+  ['subfolders_13',['SubFolders',['../class_code_smile_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f.html#a0247c4e1ee282e42b31b89c70bebe85f',1,'CodeSmileEditor::Asset::Path']]],
+  ['support_20feeback_14',['Support &amp; Feeback',['../index.html#support--feeback',1,'']]]
 ];

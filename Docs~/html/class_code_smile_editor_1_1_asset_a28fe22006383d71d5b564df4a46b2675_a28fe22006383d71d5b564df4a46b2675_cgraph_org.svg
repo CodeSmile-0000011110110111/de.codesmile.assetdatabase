@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_abbf289f0549df3a2f89bdb3470638122.html#abbf289f0549df3a2f89bdb3470638122" target="_top" xlink:title="Renames an asset&#39;s file or folder name.">
+<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab.html#a34bfcab396a4bfed873f01e8622033ab" target="_top" xlink:title="Renames an asset&#39;s file or folder name.">
 <polygon fill="white" stroke="#666666" points="227,-32 88,-32 88,0 227,0 227,-32"/>
 <text text-anchor="start" x="96" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmileEditor.Asset.File.</text>
 <text text-anchor="middle" x="157.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Rename</text>

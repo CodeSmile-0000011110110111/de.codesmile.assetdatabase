@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['uniquefilepath_0',['UniqueFilePath',['../class_code_smile_editor_1_1_asset_1_1_path_a095641cd17b35305e83b4dcee0704e0b.html#a095641cd17b35305e83b4dcee0704e0b',1,'CodeSmileEditor::Asset::Path']]],
-  ['uniquifyfilename_1',['UniquifyFileName',['../class_code_smile_editor_1_1_asset_1_1_path_a13c77b69e913ea3ed81cee5f17b4cbca.html#a13c77b69e913ea3ed81cee5f17b4cbca',1,'CodeSmileEditor::Asset::Path']]],
-  ['unregister_2',['Unregister',['../class_code_smile_editor_1_1_asset_1_1_dependency_a3ddd9c255e2bdbc73ab07f50eb24588e.html#a3ddd9c255e2bdbc73ab07f50eb24588e',1,'CodeSmileEditor::Asset::Dependency']]],
-  ['unused_3',['Unused',['../class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc.html#a096ba8fe96373ca1cdf4edf80991a6cc',1,'CodeSmileEditor::Asset::Bundle']]],
-  ['uploadsallowed_4',['UploadsAllowed',['../class_code_smile_editor_1_1_asset_1_1_database_1_1_cache_server_adace505fc9ae3b5da05e0759ac552186.html#adace505fc9ae3b5da05e0759ac552186',1,'CodeSmileEditor::Asset::Database::CacheServer']]]
+  ['tometa_0',['ToMeta',['../class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3.html#af4219b5ed1497e66fd495b412688ecf3',1,'CodeSmileEditor::Asset::Path']]],
+  ['tostring_1',['ToString',['../class_code_smile_editor_1_1_asset_1_1_path_a012fbb0f39e57c0a44ec83dd408fcda3.html#a012fbb0f39e57c0a44ec83dd408fcda3',1,'CodeSmileEditor::Asset::Path']]],
+  ['tostrings_2',['ToStrings',['../class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d.html#a698b564cc49ed111277f35dac618252d',1,'CodeSmileEditor::Asset::Path']]],
+  ['trash_3',['trash',['../class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a.html#a9ff25b59d227ab5d89fdabafffb9876a',1,'CodeSmileEditor.Asset.Trash()'],['../class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177.html#a7b0aaffab801a8597c60daff4bccb177',1,'CodeSmileEditor.Asset.File.Trash([NotNull] Path path)'],['../class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808.html#aaecd043609a6fb930141fd2cf906b808',1,'CodeSmileEditor.Asset.File.Trash([NotNull] Object asset)'],['../class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2.html#a648bb9fbc03561bb60612a090b8317d2',1,'CodeSmileEditor.Asset.File.Trash([NotNull] IEnumerable&lt; Path &gt; paths)'],['../class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee.html#a5c0a13cf46027517d371dd2d3c49fdee',1,'CodeSmileEditor.Asset.File.Trash([NotNull] IEnumerable&lt; String &gt; paths)']]]
 ];

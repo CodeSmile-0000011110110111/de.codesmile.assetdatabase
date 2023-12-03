@@ -130,10 +130,8 @@ Thus far you were forced to write rather verbose, convoluted code. This package 
 
 ## Documentation
 
-[Manual + API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
-
-[AssetDatabase to CodeSmile AssetDatabase](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing)
-This is a spreadsheet that maps all AssetDatabase methods to their counterpart. Notice the logical grouping and simple, consistent naming scheme.
+- [Scripting API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
+- [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) (AssetDatabase method mapping)
 
 ## Requirements
 

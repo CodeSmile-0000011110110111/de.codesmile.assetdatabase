@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_ae7494b282eac62a955cb4f867d72f0ef.html#ae7494b282eac62a955cb4f867d72f0ef" target="_top" xlink:title="Imports a file at a given path that was created or modified &#39;externally&#39;, then loads and returns the ...">
+<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0.html#a4dc6aff1e32f03b26ec0e310fb4233c0" target="_top" xlink:title="Imports a file at a given path that was created or modified &#39;externally&#39;, then loads and returns the ...">
 <polygon fill="white" stroke="#666666" points="314,-32 175,-32 175,0 314,0 314,-32"/>
 <text text-anchor="start" x="183" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmileEditor.Asset.File.</text>
 <text text-anchor="middle" x="244.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImportAndLoad&lt; T &gt;</text>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" target="_top" xlink:title="Loads an asset at path or creates the asset if needed.">
+<g id="a_Node000003"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281.html#a8e86208ec0d709c8259baacdb5e70281" target="_top" xlink:title="Loads an asset at path or creates the asset if needed.">
 <polygon fill="white" stroke="#666666" points="139,-32 0,-32 0,0 139,0 139,-32"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmileEditor.Asset.File.</text>
 <text text-anchor="middle" x="69.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">LoadOrCreate&lt; T &gt;</text>
