@@ -1,5 +1,13 @@
 # Change Log
 
+#### v1.7.0 - Dec 03, 2023
+
+- Import() throws if file does not exist
+- added setter to ActiveImporter property
+- removed SetActiveImporterToDefault and SetActiveImporter methods
+- added [NotNull] attributes
+- code cleanup
+
 #### v1.6.0 - Nov 30, 2023
 
 - changed namespace from CodeSmile.Editor.* to CodeSmileEditor.*

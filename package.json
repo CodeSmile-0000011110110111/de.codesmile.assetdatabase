@@ -2,7 +2,7 @@
   "name": "de.codesmile.editor.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
   "description": "User-friendly AssetDatabase API => consistent, concise, clear, comprehensible, convenient, complete, well tested.\n\nCompatible with Unity 2021.3.3f1 and newer.",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "unity": "2021.3",
   "unityRelease": "3f1",
   "author": {
