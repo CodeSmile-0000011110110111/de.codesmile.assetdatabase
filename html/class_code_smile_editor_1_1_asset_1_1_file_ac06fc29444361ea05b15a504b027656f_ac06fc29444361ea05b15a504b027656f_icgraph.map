@@ -1,5 +1,0 @@
-<map id="Create" name="Create">
-<area shape="rect" id="Node000001" title="Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file." alt="" coords="186,5,245,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_a0e98fcbe9c4b970e5cafd9e459b29534.html#a0e98fcbe9c4b970e5cafd9e459b29534" title="Loads an asset at path or creates the asset if needed." alt="" coords="5,5,138,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,21,138,21,138,16,171,16"/>
-</map>

@@ -79,7 +79,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="4" y="-438.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-438.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsDeleted</text>
 <text text-anchor="start" x="4" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="14" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsForeignAsset</text>
+<text text-anchor="start" x="14" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">IsForeign</text>
 <text text-anchor="start" x="14" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
 <text text-anchor="start" x="4" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">Asset()</text>
@@ -101,7 +101,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="14" y="-262.5" font-family="Helvetica,sans-Serif" font-size="10.00">AddSubAsset()</text>
 <text text-anchor="start" x="4" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">CanMove()</text>
-<text text-anchor="start" x="14" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 20 more...</text>
+<text text-anchor="start" x="14" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 18 more...</text>
 <text text-anchor="start" x="4" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="14" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetFileId()</text>
 <text text-anchor="start" x="4" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

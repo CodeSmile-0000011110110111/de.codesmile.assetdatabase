@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_path_a1aa26b3370ac2454e86ed88f6999dd36.html#a1aa26b3370ac2454e86ed88f6999dd36" target="_top" xlink:title="Gets the relative path of an asset.">
+<g id="a_Node000002"><a xlink:href="class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8.html#aa3620ff1f8b2c02fc1282284cd7c1df8" target="_top" xlink:title="Gets the relative path of an asset.">
 <polygon fill="white" stroke="#666666" points="276.5,-20 117.25,-20 117.25,0 276.5,0 276.5,-20"/>
 <text text-anchor="middle" x="196.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">CodeSmileEditor.Asset.Path.Get</text>
 </a>
