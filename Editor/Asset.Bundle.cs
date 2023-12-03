@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 
 namespace CodeSmileEditor
@@ -59,7 +60,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html">AssetDatabase.RemoveAssetBundleName</a>
 			/// </seealso>
-			public static void Remove(String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, false);
+			public static void Remove([NotNull] String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, false);
 
 			/// <summary>
 			///     Removes a specific asset bundle by name.
@@ -71,7 +72,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html">AssetDatabase.RemoveAssetBundleName</a>
 			/// </seealso>
-			public static void ForceRemove(String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, true);
+			public static void ForceRemove([NotNull] String bundleName) => AssetDatabase.RemoveAssetBundleName(bundleName, true);
 
 			/// <summary>
 			///     Returns the bundle names that the given asset bundle directly depends on.
@@ -83,7 +84,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html">AssetDatabase.GetAssetBundleDependencies</a>
 			/// </seealso>
-			public static String[] GetDirectDependencies(String bundleName) =>
+			public static String[] GetDirectDependencies([NotNull] String bundleName) =>
 				AssetDatabase.GetAssetBundleDependencies(bundleName, false);
 
 			/// <summary>
@@ -96,7 +97,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html">AssetDatabase.GetAssetBundleDependencies</a>
 			/// </seealso>
-			public static String[] GetAllDependencies(String bundleName) =>
+			public static String[] GetAllDependencies([NotNull] String bundleName) =>
 				AssetDatabase.GetAssetBundleDependencies(bundleName, true);
 
 			/// <summary>
@@ -109,7 +110,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundle.html">AssetDatabase.GetAssetPathsFromAssetBundle</a>
 			/// </seealso>
-			public static String[] GetAllPaths(String bundleName) => AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
+			public static String[] GetAllPaths([NotNull] String bundleName) => AssetDatabase.GetAssetPathsFromAssetBundle(bundleName);
 
 			/// <summary>
 			///     Returns the asset paths in a given asset bundle that matches an asset name.
@@ -122,7 +123,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName.html">AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName</a>
 			/// </seealso>
-			public static String[] GetPaths(String bundleName, String assetName) =>
+			public static String[] GetPaths([NotNull] String bundleName, [NotNull] String assetName) =>
 				AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);
 
 			/// <summary>
@@ -138,7 +139,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleName.html">AssetDatabase.GetImplicitAssetBundleName</a>
 			/// </seealso>
-			public static String GetOwningBundle(Path path) => AssetDatabase.GetImplicitAssetBundleName(path);
+			public static String GetOwningBundle([NotNull] Path path) => AssetDatabase.GetImplicitAssetBundleName(path);
 
 			/// <summary>
 			///     Returns the bundle variant name that contains the asset path.
@@ -153,7 +154,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleVariantName.html">AssetDatabase.GetImplicitAssetBundleVariantName</a>
 			/// </seealso>
-			public static String GetOwningBundleVariant(Path path) => AssetDatabase.GetImplicitAssetBundleVariantName(path);
+			public static String GetOwningBundleVariant([NotNull] Path path) => AssetDatabase.GetImplicitAssetBundleVariantName(path);
 		}
 	}
 }

@@ -22,7 +22,7 @@ namespace CodeSmileEditor
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html">AssetDatabase.GetMainAssetTypeAtPath</a>
 		/// </seealso>
-		public static Type GetMainType(Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
+		public static Type GetMainType([NotNull] Path path) => AssetDatabase.GetMainAssetTypeAtPath(path);
 
 		/// <summary>
 		///     Returns the type of the main asset for the GUID.
@@ -59,7 +59,7 @@ namespace CodeSmileEditor
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html">AssetDatabase.GetTypeFromPathAndFileID</a>
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public static Type GetSubType(Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
+		public static Type GetSubType([NotNull] Path path, Int64 fileId) => AssetDatabase.GetTypeFromPathAndFileID(path, fileId);
 
 		/// <example>
 		///     Example usage:
@@ -77,7 +77,7 @@ namespace CodeSmileEditor
 		/// </seealso>
 
 		// ValueTuple makes doxygen accept it as documented, see: https://github.com/doxygen/doxygen/issues/9618
-		public static ValueTuple<GUID, Int64> GetGuidAndFileId(Object asset)
+		public static ValueTuple<GUID, Int64> GetGuidAndFileId([NotNull] Object asset)
 		{
 			if (asset == null)
 				return (new GUID(), 0L);
@@ -100,7 +100,7 @@ namespace CodeSmileEditor
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
-		public static GUID GetGuid(Object asset)
+		public static GUID GetGuid([NotNull] Object asset)
 		{
 			if (asset == null)
 				return new GUID();
@@ -123,7 +123,7 @@ namespace CodeSmileEditor
 		///     -
 		///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a>
 		/// </seealso>
-		public static Int64 GetFileId(Object asset)
+		public static Int64 GetFileId([NotNull] Object asset)
 		{
 			if (asset == null)
 				return 0L;
@@ -142,7 +142,7 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.GetIcon(Object)" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public static Texture2D GetIcon(Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
+		public static Texture2D GetIcon([NotNull] Path path) => AssetDatabase.GetCachedIcon(path) as Texture2D;
 
 		/// <summary>
 		///     Returns the icon associated with the asset type.
@@ -153,7 +153,7 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.GetIcon(CodeSmileEditor.Asset.Path)" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public static Texture2D GetIcon(Object asset) => GetIcon(Path.Get(asset));
+		public static Texture2D GetIcon([NotNull] Object asset) => GetIcon(Path.Get(asset));
 
 		/// <summary>
 		///     Returns the last error message returned by some methods that provide such a failure message.

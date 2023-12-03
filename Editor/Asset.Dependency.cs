@@ -2,6 +2,7 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,7 +26,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
-			public static String[] GetDirect(Path path) => AssetDatabase.GetDependencies(path, false);
+			public static String[] GetDirect([NotNull] Path path) => AssetDatabase.GetDependencies(path, false);
 
 			/// <summary>
 			///     Returns the direct dependencies of the assets at the given paths.
@@ -38,7 +39,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
-			public static String[] GetDirect(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
+			public static String[] GetDirect([NotNull] Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), false);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the asset at the given path.
@@ -51,7 +52,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
-			public static String[] GetAll(Path path) => AssetDatabase.GetDependencies(path, true);
+			public static String[] GetAll([NotNull] Path path) => AssetDatabase.GetDependencies(path, true);
 
 			/// <summary>
 			///     Returns all (direct and indirect) dependencies of the assets at the given paths. Returns paths to dependent assets.
@@ -64,7 +65,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html">AssetDatabase.GetDependencies</a>
 			/// </seealso>
-			public static String[] GetAll(Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
+			public static String[] GetAll([NotNull] Path[] paths) => AssetDatabase.GetDependencies(Path.ToStrings(paths), true);
 
 			/// <summary>
 			///     Registers a custom dependency to be used in conjunction with a custom AssetImporter.
@@ -79,7 +80,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RegisterCustomDependency.html">AssetDatabase.RegisterCustomDependency</a>
 			/// </seealso>
-			public static void Register(String globalDependencyName, Hash128 dependencyHash) =>
+			public static void Register([NotNull] String globalDependencyName, Hash128 dependencyHash) =>
 				AssetDatabase.RegisterCustomDependency(globalDependencyName, dependencyHash);
 
 			/// <summary>
@@ -92,7 +93,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.UnregisterCustomDependencyPrefixFilter.html">AssetDatabase.UnregisterCustomDependencyPrefixFilter</a>
 			/// </seealso>
-			public static UInt32 Unregister(String globalDependencyNamePrefix) =>
+			public static UInt32 Unregister([NotNull] String globalDependencyNamePrefix) =>
 				AssetDatabase.UnregisterCustomDependencyPrefixFilter(globalDependencyNamePrefix);
 
 			/// <summary>
@@ -106,7 +107,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetDependencyHash.html">AssetDatabase.GetAssetDependencyHash</a>
 			/// </seealso>
-			public static Hash128 GetHash(Path path) => AssetDatabase.GetAssetDependencyHash(path);
+			public static Hash128 GetHash([NotNull] Path path) => AssetDatabase.GetAssetDependencyHash(path);
 
 			/// <summary>
 			///     Returns the dependency hash for the asset.

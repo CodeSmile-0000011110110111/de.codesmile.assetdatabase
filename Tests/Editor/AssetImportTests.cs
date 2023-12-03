@@ -3,6 +3,7 @@
 
 using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
+using System;
 using System.IO;
 
 namespace CodeSmileEditor.Tests
@@ -28,7 +29,7 @@ namespace CodeSmileEditor.Tests
 			File.Delete(testPath);
 			File.Delete(testPath + ".meta");
 			Assert.True(Asset.Status.IsImported(asset.MainObject)); // deleted, but still in the database
-			Asset.File.Import(testPath); // Import() does nothing if the path doesn't exist
+			Assert.Throws<FileNotFoundException>(() => Asset.File.Import(testPath)); // import fail: file does not exist
 			Assert.True(Asset.Status.IsImported(asset.MainObject)); // it's still in the database
 
 			Asset.Database.ImportAll();

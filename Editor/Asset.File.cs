@@ -106,7 +106,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(String,CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object Create(Byte[] contents, Path path) => CreateInternal(contents, path);
+			public static Object Create([NotNull] Byte[] contents, [NotNull] Path path) => CreateInternal(contents, path);
 
 			/// <summary>
 			///     Writes the byte array to disk, then imports and loads the asset. Generates a unique file name
@@ -121,9 +121,10 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(String,CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew(Byte[] contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] Byte[] contents, [NotNull] Path path) =>
+				CreateInternal(contents, path.UniqueFilePath);
 
-			internal static Object CreateInternal(Byte[] bytes, Path path)
+			internal static Object CreateInternal([NotNull] Byte[] bytes, [NotNull] Path path)
 			{
 				ThrowIf.ArgumentIsNull(bytes, nameof(bytes));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
@@ -145,7 +146,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Byte[],CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object Create(String contents, Path path) => CreateInternal(contents, path);
+			public static Object Create([NotNull] String contents, [NotNull] Path path) => CreateInternal(contents, path);
 
 			/// <summary>
 			///     Writes the string to disk, then imports and loads the asset. Generates a unique file name
@@ -160,9 +161,10 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Byte[],CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew(String contents, Path path) => CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] String contents, [NotNull] Path path) =>
+				CreateInternal(contents, path.UniqueFilePath);
 
-			internal static Object CreateInternal(String contents, Path path)
+			internal static Object CreateInternal([NotNull] String contents, [NotNull] Path path)
 			{
 				ThrowIf.ArgumentIsNull(contents, nameof(contents));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
@@ -186,7 +188,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateOrLoad{T}" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object Create(Object instance, Path path) => CreateInternal(instance, path);
+			public static Object Create([NotNull] Object instance, [NotNull] Path path) => CreateInternal(instance, path);
 
 			/// <summary>
 			///     Writes the object to disk. Generates a unique file name if an asset exists at the path.
@@ -202,9 +204,10 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateOrLoad{T}" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object CreateAsNew(Object instance, Path path) => CreateInternal(instance, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] Object instance, [NotNull] Path path) =>
+				CreateInternal(instance, path.UniqueFilePath);
 
-			internal static Object CreateInternal(Object instance, Path path)
+			internal static Object CreateInternal([NotNull] Object instance, [NotNull] Path path)
 			{
 				ThrowIf.ArgumentIsNull(instance, nameof(instance));
 				ThrowIf.ArgumentIsNull(path, nameof(path));
@@ -232,7 +235,8 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.File.LoadOrCreate{T}" />
 			/// </seealso>
-			public static T CreateOrLoad<T>(Path path, Func<T> getInstance) where T : Object => LoadOrCreate(path, getInstance);
+			public static T CreateOrLoad<T>([NotNull] Path path, [NotNull] Func<T> getInstance) where T : Object =>
+				LoadOrCreate(path, getInstance);
 
 			/// <summary>
 			///     Saves the object to disk if it is dirty.
@@ -246,7 +250,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a>
 			/// </seealso>
-			public static void Save(Object asset) => SaveInternal(asset);
+			public static void Save([NotNull] Object asset) => SaveInternal(asset);
 
 			/// <summary>
 			///     Forces the object to be saved to disk. Marks the object as dirty and then calls
@@ -266,9 +270,9 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html">AssetDatabase.SaveAssetIfDirty</a>
 			///     - <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty</a>
 			/// </seealso>
-			public static void ForceSave(Object asset) => SaveInternal(asset, true);
+			public static void ForceSave([NotNull] Object asset) => SaveInternal(asset, true);
 
-			private static void SaveInternal(Object asset, Boolean forceSave = false)
+			private static void SaveInternal([NotNull] Object asset, Boolean forceSave = false)
 			{
 				ThrowIf.ArgumentIsNull(asset, nameof(asset));
 				ThrowIf.NotInDatabase(asset);
@@ -314,10 +318,12 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(String,CodeSmileEditor.Asset.Path)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
-			public static void Import(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+			public static void Import([NotNull] Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 			{
-				if (path != null && path.ExistsInFileSystem)
-					AssetDatabase.ImportAsset(path, options);
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+				ThrowIf.DoesNotExistInFileSystem(path);
+
+				AssetDatabase.ImportAsset(path, options);
 			}
 
 			/// <summary>
@@ -344,7 +350,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>
 			/// </seealso>
-			public static T ImportAndLoad<T>(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+			public static T ImportAndLoad<T>([NotNull] Path path, ImportAssetOptions options = ImportAssetOptions.Default)
 				where T : Object
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
@@ -353,7 +359,8 @@ namespace CodeSmileEditor
 				return Load<T>(path);
 			}
 
-			private static void ImportIfNotImported(Path path, ImportAssetOptions options = ImportAssetOptions.Default)
+			private static void ImportIfNotImported([NotNull] Path path,
+				ImportAssetOptions options = ImportAssetOptions.Default)
 			{
 				// not in database but on disk? Import. Cannot determine if existing file has been updated though.
 				if (path.Exists == false && path.ExistsInFileSystem)
@@ -373,7 +380,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.BatchEditing" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
-			public static void Import(Path[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
+			public static void Import([NotNull] Path[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
 				Import(Path.ToStrings(paths), options);
 
 			/// <summary>
@@ -389,12 +396,13 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.BatchEditing" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
-			public static void Import(String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) => BatchEditing(
-				() =>
-				{
-					foreach (var path in paths)
-						AssetDatabase.ImportAsset(path, options);
-				});
+			public static void Import([NotNull] String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
+				BatchEditing(
+					() =>
+					{
+						foreach (var path in paths)
+							AssetDatabase.ImportAsset(path, options);
+					});
 
 			/// <summary>
 			///     Loads an asset at path.
@@ -417,7 +425,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>
 			/// </seealso>
-			public static T Load<T>(Path path) where T : Object
+			public static T Load<T>([NotNull] Path path) where T : Object
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 
@@ -439,7 +447,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.File.Load{T}(CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static T LoadOrCreate<T>(Path path, Func<T> getInstance) where T : Object
+			public static T LoadOrCreate<T>([NotNull] Path path, [NotNull] Func<T> getInstance) where T : Object
 			{
 				if (path.ExistsInFileSystem == false)
 					return Create(getInstance.Invoke(), path) as T;
@@ -462,7 +470,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>
 			/// </seealso>
-			public static T LoadMain<T>(Path path) where T : Object
+			public static T LoadMain<T>([NotNull] Path path) where T : Object
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 				ThrowIf.DoesNotExistInFileSystem(path);
@@ -511,7 +519,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadObjectAsync.html">AssetDatabase.LoadObjectAsync</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static AssetDatabaseLoadOperation LoadAsync(Path path, Int64 localFileId)
+			public static AssetDatabaseLoadOperation LoadAsync([NotNull] Path path, Int64 localFileId)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.LoadObjectAsync(path, localFileId);
@@ -544,7 +552,7 @@ namespace CodeSmileEditor
 			///     </a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static String[] Find(String filter, String[] searchInFolders = null) => searchInFolders == null
+			public static String[] Find([NotNull] String filter, String[] searchInFolders = null) => searchInFolders == null
 				? AssetDatabase.FindAssets(filter)
 				: AssetDatabase.FindAssets(filter, searchInFolders);
 
@@ -569,7 +577,7 @@ namespace CodeSmileEditor
 			///     </a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static GUID[] FindGuids(String filter, String[] searchInFolders = null) =>
+			public static GUID[] FindGuids([NotNull] String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => new GUID(guid)).ToArray();
 
 			/// <summary>
@@ -593,7 +601,7 @@ namespace CodeSmileEditor
 			///     </a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Path[] FindPaths(String filter, String[] searchInFolders = null) =>
+			public static Path[] FindPaths([NotNull] String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
 
 			/// <summary>
@@ -613,7 +621,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html">AssetDatabase.CopyAsset</a>
 			/// </seealso>
-			public static Boolean Copy(Path sourcePath, Path destinationPath) =>
+			public static Boolean Copy([NotNull] Path sourcePath, [NotNull] Path destinationPath) =>
 				CopyInternal(sourcePath, destinationPath, true);
 
 			/// <summary>
@@ -634,10 +642,11 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html">AssetDatabase.CopyAsset</a>
 			/// </seealso>
-			public static Boolean CopyAsNew(Path sourcePath, Path destinationPath) =>
+			public static Boolean CopyAsNew([NotNull] Path sourcePath, [NotNull] Path destinationPath) =>
 				CopyInternal(sourcePath, destinationPath.UniqueFilePath, false);
 
-			internal static Boolean CopyInternal(Path sourcePath, Path destinationPath, Boolean overwriteExisting)
+			internal static Boolean CopyInternal([NotNull] Path sourcePath, [NotNull] Path destinationPath,
+				Boolean overwriteExisting)
 			{
 				ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
 				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
@@ -670,7 +679,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ValidateMoveAsset.html">AssetDatabase.ValidateMoveAsset</a>
 			/// </seealso>
-			public static Boolean CanMove(Path sourcePath, Path destinationPath)
+			public static Boolean CanMove([NotNull] Path sourcePath, [NotNull] Path destinationPath)
 			{
 				if (sourcePath == null || destinationPath == null)
 					return false;
@@ -696,7 +705,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAsset.html">AssetDatabase.MoveAsset</a>
 			/// </seealso>
-			public static Boolean Move(Path sourcePath, Path destinationPath)
+			public static Boolean Move([NotNull] Path sourcePath, [NotNull] Path destinationPath)
 			{
 				if (sourcePath == null || destinationPath == null)
 					return false;
@@ -722,13 +731,8 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RenameAsset.html">AssetDatabase.RenameAsset</a>
 			/// </seealso>
-			public static Boolean Rename(Path path, String newFileName)
-			{
-				if (path == null || newFileName == null)
-					return false;
-
-				return Succeeded(AssetDatabase.RenameAsset(path, newFileName));
-			}
+			public static Boolean Rename([NotNull] Path path, String newFileName) =>
+				String.IsNullOrEmpty(newFileName) == false && Succeeded(AssetDatabase.RenameAsset(path, newFileName));
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
@@ -772,7 +776,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html">AssetDatabase.OpenAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // cannot be tested
-			public static void OpenExternal(Object asset, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+			public static void OpenExternal([NotNull] Object asset, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(asset, lineNumber, columnNumber);
 
 			/// <summary>
@@ -806,7 +810,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html">AssetDatabase.OpenAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // cannot be tested
-			public static void OpenExternal(Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+			public static void OpenExternal([NotNull] Path path, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				OpenExternal(Load<Object>(path), lineNumber, columnNumber);
 
 			/// <summary>
@@ -820,11 +824,8 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Trash(CodeSmileEditor.Asset.Path)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html">AssetDatabase.DeleteAsset</a>
 			/// </seealso>
-			public static Boolean Delete(Path path)
+			public static Boolean Delete([NotNull] Path path)
 			{
-				if (path == null || path.Exists == false)
-					return false;
-
 				return AssetDatabase.DeleteAsset(path);
 			}
 
@@ -839,7 +840,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Trash(Object)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html">AssetDatabase.DeleteAsset</a>
 			/// </seealso>
-			public static Boolean Delete(Object asset) => Delete(Path.Get(asset));
+			public static Boolean Delete([NotNull] Object asset) => Delete(Path.Get(asset));
 
 			/// <summary>
 			///     Tries to delete multiple files/folders.
@@ -854,7 +855,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.PathsNotDeleted" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html">AssetDatabase.DeleteAssets</a>
 			/// </seealso>
-			public static Boolean Delete(IEnumerable<Path> paths) => Delete(Path.ToStrings(paths));
+			public static Boolean Delete([NotNull] IEnumerable<Path> paths) => Delete(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Tries to delete multiple files/folders.
@@ -869,7 +870,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.PathsNotDeleted" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html">AssetDatabase.DeleteAssets</a>
 			/// </seealso>
-			public static Boolean Delete(IEnumerable<String> paths) =>
+			public static Boolean Delete([NotNull] IEnumerable<String> paths) =>
 				AssetDatabase.DeleteAssets(paths.ToArray(), s_PathsNotDeleted = new List<String>());
 
 			/// <summary>
@@ -887,7 +888,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html">AssetDatabase.MoveAssetToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(Path path) => path != null && AssetDatabase.MoveAssetToTrash(path);
+			public static Boolean Trash([NotNull] Path path) => path != null && AssetDatabase.MoveAssetToTrash(path);
 
 			/// <summary>
 			///     Moves an asset file or folder to the OS trash.
@@ -904,7 +905,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html">AssetDatabase.MoveAssetToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(Object asset) => Trash(Path.Get(asset));
+			public static Boolean Trash([NotNull] Object asset) => Trash(Path.Get(asset));
 
 			/// <summary>
 			///     Tries to move multiple files/folders to the OS trash.
@@ -920,7 +921,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetsToTrash.html">AssetDatabase.MoveAssetsToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(IEnumerable<Path> paths) => Trash(Path.ToStrings(paths));
+			public static Boolean Trash([NotNull] IEnumerable<Path> paths) => Trash(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Tries to move multiple files/folders to the OS trash.
@@ -936,7 +937,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetsToTrash.html">AssetDatabase.MoveAssetsToTrash</a>
 			/// </seealso>
-			public static Boolean Trash(IEnumerable<String> paths) =>
+			public static Boolean Trash([NotNull] IEnumerable<String> paths) =>
 				AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_PathsNotDeleted = new List<String>());
 		}
 	}

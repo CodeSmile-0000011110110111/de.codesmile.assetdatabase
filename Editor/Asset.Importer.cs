@@ -2,6 +2,8 @@
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -26,7 +28,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
-			public static Type GetActive(Path path)
+			public static Type GetActive([NotNull] Path path)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(path);
@@ -70,7 +72,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
-			public static Type GetActive(Object asset) => GetActive(GetGuid(asset));
+			public static Type GetActive([NotNull] Object asset) => GetActive(GetGuid(asset));
 
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
@@ -84,7 +86,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
 			/// </seealso>
-			public static Type[] GetActive(Path[] paths) => GetActive(Path.ToStrings(paths));
+			public static Type[] GetActive([NotNull] Path[] paths) => GetActive(Path.ToStrings(paths));
 
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
@@ -98,7 +100,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html">AssetDatabase.GetImporterTypes</a>
 			/// </seealso>
-			public static Type[] GetActive(String[] paths)
+			public static Type[] GetActive([NotNull] String[] paths)
 			{
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(paths);
@@ -138,7 +140,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
 			/// </seealso>
-			public static Type[] GetAvailable(Path path)
+			public static Type[] GetAvailable([NotNull] Path path)
 			{
 #if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetAvailableImporters(path);
@@ -156,7 +158,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html">AssetDatabase.GetAvailableImporters</a>
 			/// </seealso>
-			public static Type[] GetAvailable(Object asset) => GetAvailable(Path.Get(asset));
+			public static Type[] GetAvailable([NotNull] Object asset) => GetAvailable(Path.Get(asset));
 
 			/// <summary>
 			///     Returns an asset's default importer type.
@@ -168,7 +170,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
 			/// </seealso>
-			public static Type GetDefault(Path path)
+			public static Type GetDefault([NotNull] Path path)
 			{
 #if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetDefaultImporter(path);
@@ -187,7 +189,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html">AssetDatabase.GetDefaultImporter</a>
 			/// </seealso>
-			public static Type GetDefault(Object asset) => GetDefault(Path.Get(asset));
+			public static Type GetDefault([NotNull] Object asset) => GetDefault(Path.Get(asset));
 
 			/// <summary>
 			///     Returns an asset's overridden importer type.
@@ -200,7 +202,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
 			/// </seealso>
-			public static Type GetOverride(Path path) => AssetDatabase.GetImporterOverride(path);
+			public static Type GetOverride([NotNull] Path path) => AssetDatabase.GetImporterOverride(path);
 
 			/// <summary>
 			///     Returns an asset's overridden importer type.
@@ -213,7 +215,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html">AssetDatabase.GetImporterOverride</a>
 			/// </seealso>
-			public static Type GetOverride(Object asset) => GetOverride(Path.Get(asset));
+			public static Type GetOverride([NotNull] Object asset) => GetOverride(Path.Get(asset));
 
 			/// <summary>
 			///     Sets the custom AssetImporter to use for the specified asset.
@@ -227,7 +229,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetImporterOverride.html">AssetDatabase.SetImporterOverride</a>
 			/// </seealso>
-			public static void SetOverride<T>(Path path)
+			public static void SetOverride<T>([NotNull] Path path)
 #if UNITY_2022_1_OR_NEWER
 				where T : AssetImporter
 #else
@@ -249,7 +251,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html">AssetDatabase.ClearImporterOverride</a>
 			/// </seealso>
-			public static void ClearOverride(Path path) => AssetDatabase.ClearImporterOverride(path);
+			public static void ClearOverride([NotNull] Path path) => AssetDatabase.ClearImporterOverride(path);
 
 			/// <summary>
 			///     Returns true if the AssetImporter type for this asset has been overridden.
@@ -265,7 +267,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html">AssetDatabase.ClearImporterOverride</a>
 			/// </seealso>
-			public static Boolean IsOverridden(Path path) => GetDefault(path) != GetOverride(path);
+			public static Boolean IsOverridden([NotNull] Path path) => GetDefault(path) != GetOverride(path);
 
 			/// <summary>
 			///     Writes any unsaved changes of the given asset's importer to disk.
@@ -279,7 +281,15 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html">AssetDatabase.WriteImportSettingsIfDirty</a>
 			/// </seealso>
-			public static void ApplySettings(Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
+			public static void ApplySettings([NotNull] Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
+
+			internal static void SetImporterOverride([NotNull] Type value, [NotNull] String assetPath)
+			{
+				var methodName = "SetImporterOverride";
+				var bindingFlags = BindingFlags.Public | BindingFlags.Static;
+				var methodInfo = typeof(AssetDatabase).GetMethod(methodName, bindingFlags).MakeGenericMethod(value);
+				methodInfo.Invoke(null, new System.Object[] { assetPath });
+			}
 		}
 	}
 }

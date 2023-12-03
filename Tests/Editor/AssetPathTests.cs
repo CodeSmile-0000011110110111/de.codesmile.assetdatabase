@@ -13,7 +13,8 @@ namespace CodeSmileEditor.Tests
 		[Test] public void AssetPath_ExplicitConversion_StringEquals() =>
 			Assert.AreEqual(TestAssetPath, (String)new Asset.Path(TestAssetPath));
 
-		[Test] public void AssetPath_NullString_Throws() => Assert.Throws<ArgumentNullException>(() => new Asset.Path(null));
+		[Test] public void AssetPath_NullString_Throws() =>
+			Assert.Throws<ArgumentNullException>(() => new Asset.Path((String)null));
 
 		[Test] public void AssetPath_EmptyString_Throws() =>
 			Assert.Throws<ArgumentException>(() => new Asset.Path(String.Empty));

@@ -31,7 +31,7 @@ namespace CodeSmileEditor
 			///     - <see cref="Contains" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
-			public static Boolean IsImported(Object instance) => Database.Contains(instance);
+			public static Boolean IsImported([NotNull] Object instance) => Database.Contains(instance);
 
 			/// <summary>
 			///     Checks if the path is in the AssetDatabase.
@@ -49,7 +49,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html">AssetDatabase.AssetPathExists</a>
 			/// </seealso>
-			public static Boolean IsImported(Path path) => path != null && path.Exists;
+			public static Boolean IsImported([NotNull] Path path) => path != null && path.Exists;
 
 			/// <summary>
 			///     Returns whether the (main) asset at the path is loaded.
@@ -62,7 +62,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAssetAtPathLoaded.html">AssetDatabase.IsMainAssetAtPathLoaded</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean IsLoaded(Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
+			public static Boolean IsLoaded([NotNull] Path path) => AssetDatabase.IsMainAssetAtPathLoaded(path);
 
 			/// <summary>
 			///     Returns whether this object is the asset's 'main' object.
@@ -74,7 +74,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMainAsset.html">AssetDatabase.IsMainAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean IsMain(Object asset) => AssetDatabase.IsMainAsset(asset);
+			public static Boolean IsMain([NotNull] Object asset) => AssetDatabase.IsMainAsset(asset);
 
 			/// <summary>
 			///     Returns whether this object is a sub-asset of a composite asset.
@@ -86,7 +86,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsSubAsset.html">AssetDatabase.IsSubAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean IsSub(Object asset) => AssetDatabase.IsSubAsset(asset);
+			public static Boolean IsSub([NotNull] Object asset) => AssetDatabase.IsSubAsset(asset);
 
 			/// <summary>
 			///     Returns whether this is a foreign asset.
@@ -103,7 +103,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsForeignAsset.html">AssetDatabase.IsForeignAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean IsForeign(Object asset) => AssetDatabase.IsForeignAsset(asset);
+			public static Boolean IsForeign([NotNull] Object asset) => AssetDatabase.IsForeignAsset(asset);
 
 			/// <summary>
 			///     Returns whether this is a native asset.
@@ -120,14 +120,14 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsNativeAsset.html">AssetDatabase.IsNativeAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean IsNative(Object asset) => AssetDatabase.IsNativeAsset(asset);
+			public static Boolean IsNative([NotNull] Object asset) => AssetDatabase.IsNativeAsset(asset);
 
 			/// <summary>
 			///     Returns true if the given object is of type SceneAsset.
 			/// </summary>
 			/// <param name="asset">The instance to test for being a SceneAsset type.</param>
 			/// <returns>True if the object is of type SceneAsset. False otherwise.</returns>
-			public static Boolean IsScene(Object asset) => asset is SceneAsset;
+			public static Boolean IsScene([NotNull] Object asset) => asset is SceneAsset;
 		}
 	}
 }

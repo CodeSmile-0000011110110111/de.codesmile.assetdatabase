@@ -36,7 +36,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html">AssetDatabase.ExtractAsset</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean Extract(Object subAsset, Path destinationPath)
+			public static Boolean Extract([NotNull] Object subAsset, [NotNull] Path destinationPath)
 			{
 				ThrowIf.ArgumentIsNull(subAsset, nameof(subAsset));
 				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
@@ -54,7 +54,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AddObjectToAsset.html">AssetDatabase.AddObjectToAsset</a>
 			/// </seealso>
-			public static void Add(Object subAssetInstance, Object asset)
+			public static void Add([NotNull] Object subAssetInstance, [NotNull] Object asset)
 			{
 				ThrowIf.ArgumentIsNull(subAssetInstance, nameof(subAssetInstance));
 				ThrowIf.SubObjectIsGameObject(subAssetInstance);
@@ -74,7 +74,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html">AssetDatabase.RemoveObjectFromAsset</a>
 			/// </seealso>
-			public static void Remove(Object subAsset)
+			public static void Remove([NotNull] Object subAsset)
 			{
 				ThrowIf.ArgumentIsNull(subAsset, nameof(subAsset));
 
@@ -93,7 +93,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
 			/// </seealso>
-			public static void SetMain(Object subAsset, Path path)
+			public static void SetMain([NotNull] Object subAsset, [NotNull] Path path)
 			{
 				AssetDatabase.SetMainObject(subAsset, path);
 				File.Import(path);
@@ -111,7 +111,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html">AssetDatabase.SetMainObject</a>
 			/// </seealso>
-			public static void SetMain(Object subAsset, Object asset) => SetMain(subAsset, Path.Get(asset));
+			public static void SetMain([NotNull] Object subAsset, [NotNull] Object asset) => SetMain(subAsset, Path.Get(asset));
 
 			/// <summary>
 			///     Loads all sub-asset objects of an asset.
@@ -132,7 +132,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>
 			/// </seealso>
-			public static Object[] LoadAll(Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
+			public static Object[] LoadAll([NotNull] Path path) => AssetDatabase.LoadAllAssetsAtPath(path);
 
 			/// <summary>
 			///     Loads only the visible (representation) sub-asset objects of an asset.
@@ -155,7 +155,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html">AssetDatabase.LoadAllAssetRepresentationsAtPath</a>
 			/// </seealso>
-			public static Object[] LoadVisible(Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
+			public static Object[] LoadVisible([NotNull] Path path) => AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
 		}
 	}
 }

@@ -26,7 +26,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
 			/// </seealso>
-			public static String[] GetAll(Object asset) => AssetDatabase.GetLabels(asset);
+			public static String[] GetAll([NotNull] Object asset) => AssetDatabase.GetLabels(asset);
 
 			/// <summary>
 			///     Returns an asset's labels.
@@ -53,6 +53,7 @@ namespace CodeSmileEditor
 			public static void SetAll([NotNull] Object asset, [NotNull] String[] labels)
 			{
 				ThrowIf.ArgumentIsNull(asset, nameof(asset));
+				ThrowIf.ArgumentIsNull(labels, nameof(labels));
 
 				AssetDatabase.SetLabels(asset, labels);
 			}
@@ -67,7 +68,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Label.GetAll" />
 			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
 			/// </seealso>
-			public static void Add(Object asset, String label)
+			public static void Add([NotNull] Object asset, [NotNull] String label)
 			{
 				var existingLabels = new List<String>(GetAll(asset));
 				existingLabels.Add(label);
@@ -84,7 +85,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Label.GetAll" />
 			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
 			/// </seealso>
-			public static void Add(Object asset, String[] labels)
+			public static void Add([NotNull] Object asset, [NotNull] String[] labels)
 			{
 				var existingLabels = new List<String>(GetAll(asset));
 				existingLabels.AddRange(labels);
@@ -100,7 +101,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearLabels.html">AssetDatabase.ClearLabels</a>
 			/// </seealso>
-			public static void ClearAll(Object asset) => AssetDatabase.ClearLabels(asset);
+			public static void ClearAll([NotNull] Object asset) => AssetDatabase.ClearLabels(asset);
 		}
 	}
 }

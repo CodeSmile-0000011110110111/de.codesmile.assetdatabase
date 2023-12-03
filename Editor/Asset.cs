@@ -476,39 +476,6 @@ namespace CodeSmileEditor
 		}
 
 		/// <summary>
-		///     Sets the active AssetImporter type for this asset.
-		/// </summary>
-		/// <remarks>T is AssetImporter in Unity 2022.1 or newer. In older versions T is ScriptedImporter.</remarks>
-		/// <typeparam name="T">The AssetImporter derived type that should handle importing this asset.</typeparam>
-		/// <seealso cref="">
-		///     - <see cref="CodeSmileEditor.Asset.ActiveImporter" />
-		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporterToDefault" />
-		/// </seealso>
-		[ExcludeFromCodeCoverage] // simple relay
-		public void SetActiveImporter<T>()
-#if UNITY_2022_1_OR_NEWER
-			where T : AssetImporter
-#else
-			where T : UnityEditor.AssetImporters.ScriptedImporter
-#endif
-		{
-			Importer.SetOverride<T>(m_AssetPath);
-		}
-
-		/// <summary>
-		///     Sets the active AssetImporter type back to the default type.
-		/// </summary>
-		/// <seealso cref="">
-		///     - <see cref="CodeSmileEditor.Asset.ActiveImporter" />
-		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporter{T}" />
-		/// </seealso>
-		public void SetActiveImporterToDefault()
-		{
-			if (Importer.IsOverridden(m_AssetPath))
-				Importer.ClearOverride(m_AssetPath);
-		}
-
-		/// <summary>
 		///     Sets the asset's labels, replacing all previously existing labels.
 		/// </summary>
 		/// <param name="labels">An array of labels.</param>

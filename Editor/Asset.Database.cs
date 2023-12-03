@@ -161,7 +161,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
-			public static void ForceReserialize(IEnumerable<Path> paths,
+			public static void ForceReserialize([NotNull] IEnumerable<Path> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata) =>
 				ForceReserialize(Path.ToStrings(paths), options);
 
@@ -184,7 +184,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
-			public static void ForceReserialize(IEnumerable<String> paths,
+			public static void ForceReserialize([NotNull] IEnumerable<String> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata) =>
 				AssetDatabase.ForceReserializeAssets(paths, options);
 

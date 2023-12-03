@@ -77,7 +77,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Path.Get(GUID)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
 			/// </seealso>
-			public static Path Get(Object asset)
+			public static Path Get([NotNull] Object asset)
 			{
 				var path = AssetDatabase.GetAssetPath(asset);
 				return String.IsNullOrEmpty(path) ? null : (Path)path;
@@ -111,7 +111,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.Path.Get(Object)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html">AssetDatabase.GetAssetPath</a>
 			/// </seealso>
-			public static String[] Get(Object[] assets)
+			public static String[] Get([NotNull] Object[] assets)
 			{
 				ThrowIf.ArgumentIsNull(assets, nameof(assets));
 
@@ -136,7 +136,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html">AssetDatabase.AssetPathToGUID</a>
 			/// </seealso>
-			public static GUID GetGuid(Path path,
+			public static GUID GetGuid([NotNull] Path path,
 				AssetPathToGUIDOptions options = AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets) =>
 				new(AssetDatabase.AssetPathToGUID(path, options));
 
@@ -151,7 +151,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html">AssetDatabase.GetTextMetaFilePathFromAssetPath</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Path ToMeta(Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
+			public static Path ToMeta([NotNull] Path path) => AssetDatabase.GetTextMetaFilePathFromAssetPath(path);
 
 			/// <summary>
 			///     Returns the asset's file path from a .meta file path.
@@ -164,7 +164,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html">AssetDatabase.GetAssetPathFromTextMetaFilePath</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Path FromMeta(Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
+			public static Path FromMeta([NotNull] Path path) => AssetDatabase.GetAssetPathFromTextMetaFilePath(path);
 
 			/// <summary>
 			///     Returns the scene's path if the object is instantiated in a scene, otherwise returns the object's path.
@@ -175,7 +175,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetOrScenePath.html">AssetDatabase.GetAssetOrScenePath</a>
 			/// </seealso>
-			public static Path GetScene(Object instanceOrAsset) => AssetDatabase.GetAssetOrScenePath(instanceOrAsset);
+			public static Path GetScene([NotNull] Object instanceOrAsset) => AssetDatabase.GetAssetOrScenePath(instanceOrAsset);
 
 			/// <summary>
 			///     Returns true if the provided path is valid.
@@ -191,7 +191,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			/// </seealso>
-			public static Boolean IsValid(String path)
+			public static Boolean IsValid([NotNull] String path)
 			{
 				var isValid = true;
 
@@ -229,7 +229,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.Path.FolderExists" />
 			/// </seealso>
-			public static Boolean FileExists(Path path) => System.IO.File.Exists(path.m_RelativePath);
+			public static Boolean FileExists([NotNull] Path path) => System.IO.File.Exists(path.m_RelativePath);
 
 			/// <summary>
 			///     Tests if the given folder exists in the file system.
@@ -239,7 +239,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.Path.FileExists" />
 			/// </seealso>
-			public static Boolean FolderExists(Path path) => Directory.Exists(path.m_RelativePath);
+			public static Boolean FolderExists([NotNull] Path path) => Directory.Exists(path.m_RelativePath);
 
 			/// <summary>
 			///     Creates any missing folders in the path.
@@ -251,7 +251,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateFolder.html">AssetDatabase.CreateFolder</a>
 			/// </seealso>
-			public static GUID CreateFolders(Path path)
+			public static GUID CreateFolders([NotNull] Path path)
 			{
 				ThrowIf.ArgumentIsNull(path, nameof(path));
 				ThrowIf.PathIsNotValid(path);
@@ -293,7 +293,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html">AssetDatabase.GetSubFolders</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static String[] GetSubFolders(Path path) => AssetDatabase.GetSubFolders(path);
+			public static String[] GetSubFolders([NotNull] Path path) => AssetDatabase.GetSubFolders(path);
 
 			/// <summary>
 			///     Returns the path altered with a numbering if an asset already exists (and is imported) at the path.
@@ -311,7 +311,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html">AssetDatabase.GenerateUniqueAssetPath</a>
 			/// </seealso>
-			public static Path UniquifyFileName(Path path)
+			public static Path UniquifyFileName([NotNull] Path path)
 			{
 				var uniquePath = AssetDatabase.GenerateUniqueAssetPath(path);
 				return String.IsNullOrEmpty(uniquePath) ? path : uniquePath;
@@ -322,15 +322,15 @@ namespace CodeSmileEditor
 			/// </summary>
 			/// <param name="paths">Input paths.</param>
 			/// <returns>Relative paths as strings.</returns>
-			public static String[] ToStrings(IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
+			public static String[] ToStrings([NotNull] IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
 
-			internal static Path UniquifyAsNeeded(Path path, Boolean overwriteExisting) =>
+			internal static Path UniquifyAsNeeded([NotNull] Path path, Boolean overwriteExisting) =>
 				overwriteExisting ? path : path.UniqueFilePath;
 
-			private static GUID CreateSubFolder(Path parentFolder, String subFolderName) =>
+			private static GUID CreateSubFolder([NotNull] Path parentFolder, [NotNull] String subFolderName) =>
 				new(AssetDatabase.CreateFolder(parentFolder, subFolderName));
 
-			private static String ToRelative(String fullOrRelativePath)
+			private static String ToRelative([NotNull] String fullOrRelativePath)
 			{
 				var relativePath = fullOrRelativePath;
 				if (IsRelative(relativePath) == false)
@@ -345,7 +345,7 @@ namespace CodeSmileEditor
 				return relativePath;
 			}
 
-			private static Boolean IsRelative(String path)
+			private static Boolean IsRelative([NotNull] String path)
 			{
 				path = path.TrimStart('/').ToLower();
 
@@ -363,10 +363,10 @@ namespace CodeSmileEditor
 				return false;
 			}
 
-			private static String MakeRelative(String fullOrRelativePath) =>
+			private static String MakeRelative([NotNull] String fullOrRelativePath) =>
 				fullOrRelativePath.Substring(FullProjectPath.Length).Trim('/');
 
-			private static GUID GuidForExistingPath(String path) =>
+			private static GUID GuidForExistingPath([NotNull] String path) =>
 				new(AssetDatabase.AssetPathToGUID(path, AssetPathToGUIDOptions.OnlyExistingAssets));
 		}
 	}

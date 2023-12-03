@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
-using Object = System.Object;
+using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor
 {
@@ -218,8 +218,9 @@ namespace CodeSmileEditor
 			/// <param name="fullOrRelativePath">Relative or absolute path to an asset file or folder.</param>
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.Path(String,String,String)" />
+			///     - <see cref="CodeSmileEditor.Asset.Path(Object)" />
 			/// </seealso>
-			public Path(String fullOrRelativePath)
+			public Path([NotNull] String fullOrRelativePath)
 			{
 				ThrowIf.NullOrWhitespace(fullOrRelativePath, nameof(fullOrRelativePath));
 				m_RelativePath = ToRelative(fullOrRelativePath.ToForwardSlashes());
@@ -247,7 +248,7 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.Path(String)" />
 			/// </seealso>
-			public Path(String folderPath, String fileName, String extension = DefaultExtension)
+			public Path([NotNull] String folderPath, [NotNull] String fileName, [NotNull] String extension = DefaultExtension)
 			{
 				ThrowIf.NullOrWhitespace(folderPath, nameof(folderPath));
 				ThrowIf.NullOrWhitespace(fileName, nameof(fileName));
@@ -256,6 +257,22 @@ namespace CodeSmileEditor
 
 				var relativeDir = ToRelative(folderPath.ToForwardSlashes());
 				m_RelativePath = $"{relativeDir}/{fileName}.{extension.TrimStart('.').ToLower()}";
+			}
+
+			/// <summary>
+			/// Creates an asset path from an asset instance.
+			/// </summary>
+			/// <remarks>Throws exception if asset is not an asset on disk.</remarks>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Path(String)" />
+			/// </seealso>
+			public Path([NotNull] Object asset)
+			{
+				ThrowIf.ArgumentIsNull(asset, nameof(asset));
+				ThrowIf.NotInDatabase(asset);
+
+				m_RelativePath = Get(asset);
 			}
 
 			/// <summary>
@@ -329,7 +346,7 @@ namespace CodeSmileEditor
 			/// <param name="path1">A Path.</param>
 			/// <param name="other">Any instance.</param>
 			/// <returns>True if both paths point to the same location. False otherwise.</returns>
-			public static Boolean operator ==(Path path1, Object other) =>
+			public static Boolean operator ==(Path path1, System.Object other) =>
 				other is String str ? path1.Equals(str) : path1.Equals(other as Path);
 
 			/// <summary>
@@ -338,7 +355,7 @@ namespace CodeSmileEditor
 			/// <param name="path1">A Path.</param>
 			/// <param name="other">Any instance.</param>
 			/// <returns></returns>
-			public static Boolean operator !=(Path path1, Object other) => !(path1 == other);
+			public static Boolean operator !=(Path path1, System.Object other) => !(path1 == other);
 
 			/// <summary>
 			///     Tests for equality with an object.
@@ -346,7 +363,7 @@ namespace CodeSmileEditor
 			/// <param name="other">Any instance.</param>
 			/// <param name="path">A Path.</param>
 			/// <returns>True if both paths point to the same location. False otherwise.</returns>
-			public static Boolean operator ==(Object other, Path path) => path == other;
+			public static Boolean operator ==(System.Object other, Path path) => path == other;
 
 			/// <summary>
 			///     Tests for inequality with an object.
@@ -354,7 +371,7 @@ namespace CodeSmileEditor
 			/// <param name="other">Any instance.</param>
 			/// <param name="path">A Path.</param>
 			/// <returns></returns>
-			public static Boolean operator !=(Object other, Path path) => !(path == other);
+			public static Boolean operator !=(System.Object other, Path path) => !(path == other);
 
 			/// <summary>
 			///     Opens the folder externally, for example File Explorer (Windows) or Finder (Mac).
@@ -410,7 +427,7 @@ namespace CodeSmileEditor
 			/// </remarks>
 			/// <param name="obj"></param>
 			/// <returns>True if the path equals the input string or Path. False otherwise or if input is neither string nor Path.</returns>
-			public override Boolean Equals(Object obj)
+			public override Boolean Equals(System.Object obj)
 			{
 				if (obj is Path path)
 					return Equals(path);

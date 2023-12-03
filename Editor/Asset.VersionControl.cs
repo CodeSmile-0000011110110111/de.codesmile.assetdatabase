@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -35,7 +36,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
-			public static Boolean CanMakeEditable(Path path, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean CanMakeEditable([NotNull] Path path, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var canOpen = AssetDatabase.CanOpenForEdit(path, out var message, options);
 				if (canOpen == false)
@@ -62,7 +63,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
-			public static Boolean CanMakeEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean CanMakeEditable([NotNull] Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				ThrowIf.ArgumentIsNull(asset, nameof(asset));
 
@@ -86,7 +87,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
-			public static void CanMakeEditable(Path[] paths, out List<String> notEditablePaths,
+			public static void CanMakeEditable([NotNull] Path[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				CanMakeEditable(Path.ToStrings(paths), out notEditablePaths, options);
 
@@ -107,7 +108,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
-			public static void CanMakeEditable(String[] paths, out List<String> notEditablePaths,
+			public static void CanMakeEditable([NotNull] String[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				notEditablePaths = new List<String>();
@@ -131,7 +132,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html">AssetDatabase.CanOpenForEdit</a>
 			/// </seealso>
-			public static void CanMakeEditable(Object[] assets, out List<String> notEditablePaths,
+			public static void CanMakeEditable([NotNull] Object[] assets, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				CanMakeEditable(Path.Get(assets), out notEditablePaths, options);
 
@@ -152,7 +153,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMetaFileOpenForEdit.html">AssetDatabase.IsMetaFileOpenForEdit</a>
 			/// </seealso>
-			public static Boolean IsMetaEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean IsMetaEditable([NotNull] Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var isOpen = AssetDatabase.IsMetaFileOpenForEdit(asset, out var message, options);
 				if (isOpen == false)
@@ -178,7 +179,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
-			public static Boolean IsEditable(Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
+			public static Boolean IsEditable([NotNull] Object asset, StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				var isOpen = AssetDatabase.IsOpenForEdit(asset, out var message, options);
 				if (isOpen == false)
@@ -201,7 +202,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
-			public static void IsEditable(Path[] paths, out List<String> notEditablePaths,
+			public static void IsEditable([NotNull] Path[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				IsEditable(Path.ToStrings(paths), out notEditablePaths, options);
 
@@ -219,7 +220,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
-			public static void IsEditable(String[] paths, out List<String> notEditablePaths,
+			public static void IsEditable([NotNull] String[] paths, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption)
 			{
 				notEditablePaths = new List<String>();
@@ -240,7 +241,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html">AssetDatabase.IsOpenForEdit</a>
 			/// </seealso>
-			public static void IsEditable(Object[] assets, out List<String> notEditablePaths,
+			public static void IsEditable([NotNull] Object[] assets, out List<String> notEditablePaths,
 				StatusQueryOptions options = DefaultStatusQueryOption) =>
 				IsEditable(Path.Get(assets), out notEditablePaths, options);
 
@@ -257,7 +258,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
-			public static Boolean MakeEditable(Path path) => AssetDatabase.MakeEditable(path);
+			public static Boolean MakeEditable([NotNull] Path path) => AssetDatabase.MakeEditable(path);
 
 			/// <summary>
 			///     Tries to open multiple paths for editing in the version control system.
@@ -273,7 +274,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
-			public static Boolean MakeEditable(Path[] paths, out List<String> notEditablePaths) =>
+			public static Boolean MakeEditable([NotNull] Path[] paths, out List<String> notEditablePaths) =>
 				MakeMultipleEditable(Path.ToStrings(paths), out notEditablePaths);
 
 			/// <summary>
@@ -290,7 +291,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
-			public static Boolean MakeEditable(String[] paths, out List<String> notEditablePaths) =>
+			public static Boolean MakeEditable([NotNull] String[] paths, out List<String> notEditablePaths) =>
 				MakeMultipleEditable(paths, out notEditablePaths);
 
 			/// <summary>
@@ -309,7 +310,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
-			public static Boolean MakeEditableInteractive(Path[] paths, out List<String> notEditablePaths,
+			public static Boolean MakeEditableInteractive([NotNull] Path[] paths, out List<String> notEditablePaths,
 				String prompt = null) => MakeMultipleEditable(Path.ToStrings(paths), out notEditablePaths,
 				prompt != null ? prompt : "Open for Edit?");
 
@@ -329,11 +330,11 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.VersionControl.CanMakeEditable" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html">AssetDatabase.MakeEditable</a>
 			/// </seealso>
-			public static Boolean MakeEditableInteractive(String[] paths, out List<String> notEditablePaths,
+			public static Boolean MakeEditableInteractive([NotNull] String[] paths, out List<String> notEditablePaths,
 				String prompt = null) => MakeMultipleEditable(paths, out notEditablePaths,
 				prompt != null ? prompt : "Open for Edit?");
 
-			private static Boolean MakeMultipleEditable(String[] paths, out List<String> notEditablePaths,
+			private static Boolean MakeMultipleEditable([NotNull] String[] paths, out List<String> notEditablePaths,
 				String prompt = null)
 			{
 				notEditablePaths = new List<String>();

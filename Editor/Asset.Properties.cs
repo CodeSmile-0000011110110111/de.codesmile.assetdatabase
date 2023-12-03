@@ -160,6 +160,13 @@ namespace CodeSmileEditor
 				var overridden = Importer.GetOverride(m_AssetPath);
 				return overridden != null ? overridden : Importer.GetDefault(m_AssetPath);
 			}
+			set
+			{
+				if (value == null)
+					Importer.ClearOverride(m_AssetPath);
+				else
+					Importer.SetImporterOverride(value, m_AssetPath);
+			}
 		}
 
 		/// <summary>
@@ -203,7 +210,7 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.Status.IsNative" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public Boolean IsForeignAsset => Status.IsForeign(m_MainObject);
+		public Boolean IsForeign => Status.IsForeign(m_MainObject);
 
 		/// <summary>
 		///     Returns whether this is a native asset.
@@ -214,7 +221,7 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.Status.IsNative" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public Boolean IsNativeAsset => Status.IsNative(m_MainObject);
+		public Boolean IsNative => Status.IsNative(m_MainObject);
 
 		/// <summary>
 		///     Returns true if this is a scene asset.

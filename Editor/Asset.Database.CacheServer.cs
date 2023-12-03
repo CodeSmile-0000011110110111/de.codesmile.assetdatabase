@@ -119,7 +119,7 @@ namespace CodeSmileEditor
 				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanConnectToCacheServer.html">AssetDatabase.CanConnectToCacheServer</a>
 				/// </seealso>
 				[ExcludeFromCodeCoverage] // not testable, requires external service
-				public static Boolean CanConnect(String ipAddress, UInt16 port) =>
+				public static Boolean CanConnect([NotNull] String ipAddress, UInt16 port) =>
 					AssetDatabase.CanConnectToCacheServer(ipAddress, port);
 
 				/// <summary>

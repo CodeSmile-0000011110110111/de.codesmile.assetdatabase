@@ -28,7 +28,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static void Import(Path packagePath)
+			public static void Import([NotNull] Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
@@ -46,7 +46,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // not testable
-			public static void ImportInteractive(Path packagePath)
+			public static void ImportInteractive([NotNull] Path packagePath)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
@@ -66,7 +66,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
-			public static void Export(Path assetPath, String packagePath,
+			public static void Export([NotNull] Path assetPath, [NotNull] String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
@@ -87,7 +87,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
-			public static void Export(Path[] assetPaths, String packagePath,
+			public static void Export([NotNull] Path[] assetPaths, [NotNull] String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default) =>
 				Export(Path.ToStrings(assetPaths), packagePath, options);
 
@@ -104,7 +104,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
-			public static void Export(String[] assetPaths, String packagePath,
+			public static void Export([NotNull] String[] assetPaths, [NotNull] String packagePath,
 				ExportPackageOptions options = ExportPackageOptions.Default)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
