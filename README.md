@@ -18,6 +18,16 @@ public static LevelData GetLevelDataAsset(int level)
   var levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
   if (levelData == null)
   {
+	// Load returns null does *NOT* mean the file doesn't exist!
+	// A user may have 'Auto Refresh' disabled => the asset may not have been imported
+	AssetDatabase.ImportAsset(assetPath);
+	
+	// try loading it again now:
+	levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
+  }
+
+  if (levelData == null)
+  {
 	// create datastore folder if not exists
 	if (!AssetDatabase.IsValidFolder(@"Assets/DataStore"))
 	  AssetDatabase.CreateFolder("Assets", "DataStore");
@@ -34,7 +44,7 @@ public static LevelData GetLevelDataAsset(int level)
 }
 ```
 
-Now what used to be 20+ lines of code is just this:
+Now what used to be over 20 lines of code is just this, with all edge-cases taken care of:
 
 ```
 public static LevelData GetLevelDataAsset(int level)
@@ -51,8 +61,9 @@ Easy:
 `Asset levelData = "Assets/Example/LevelData.asset";`
 
 Wait .. wut?? :)
+Yup, that's correct!
 
-I see, you have a GUID? In that case:
+You have a GUID? In that case:
 
 `Asset levelData = thisIsYourGuid;`
 
@@ -90,11 +101,13 @@ But I'd much rather have you do this:
 Or if you just need to work with just paths:
 
 ```
-Path assetPath = "Assets/Folder/LevelData.asset";
-Path metaPath = assetPath.MetaPath;
+Asset.Path assetPath = "Assets/Folder/LevelData.asset";
+Asset.Path metaPath = assetPath.MetaPath;
 ```
 
-The secret sauce behind Asset.Path is that you never EVER need to worry about the path being malformed, containing illegal characters, mixing forward with backward slashes, or leaving leading/trailing slashes. 
+The secret sauce behind Asset.Path is that you never EVER need to worry about the path being malformed, containing illegal characters, leaving leading/trailing slashes, or the paths not working on Mac OS or Linux due to backslashes. 
+
+Asset.Path also accepts absolute paths and makes them relative. But if the path is pointing outside the project, perhaps another project because you copy/pasted that code, it'll throw an exception rather than letting you modify assets in unrelated (!) projects. Yes, that can happen, with potentially devastating results!  
 
 Asset.Path also gives access to commonly used System.IO.Path functionality:
 
@@ -127,6 +140,11 @@ Thus far you were forced to write rather verbose, convoluted code. This package 
 `var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);`
 
 `var metaPath = Asset.Path.ToMeta(assetPath);`
+
+Mind you, those are the static methods. The instance methods are even more concise! For instance:
+
+`var metaPath = asset.MetaPath;`
+
 
 ## Documentation
 

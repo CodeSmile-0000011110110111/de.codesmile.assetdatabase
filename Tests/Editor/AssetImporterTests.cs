@@ -36,7 +36,10 @@ namespace CodeSmileEditor.Tests
 		[ScriptedImporter(1, "test")]
 		public class TestImporter : ScriptedImporter
 		{
-			public override void OnImportAsset(AssetImportContext ctx) => Debug.Log($"OnImportAsset: {ctx}");
+			public override void OnImportAsset(AssetImportContext ctx)
+			{
+				//Debug.Log($"OnImportAsset: {ctx}");
+			}
 		}
 	}
 }

@@ -86,14 +86,6 @@ namespace CodeSmileEditor
 				}
 			}
 
-			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
-			[ExcludeFromCodeCoverage] // untestable
-			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
-
-			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
-			[ExcludeFromCodeCoverage] // untestable
-			internal static void StopAssetEditing() => AssetDatabase.StopAssetEditing();
-
 			/// <summary>
 			///     Writes the byte array to disk, then imports and loads the asset. Overwrites any existing file.
 			/// </summary>
@@ -124,16 +116,6 @@ namespace CodeSmileEditor
 			public static Object CreateAsNew([NotNull] Byte[] contents, [NotNull] Path path) =>
 				CreateInternal(contents, path.UniqueFilePath);
 
-			internal static Object CreateInternal([NotNull] Byte[] bytes, [NotNull] Path path)
-			{
-				ThrowIf.ArgumentIsNull(bytes, nameof(bytes));
-				ThrowIf.ArgumentIsNull(path, nameof(path));
-
-				path.CreateFolders();
-				System.IO.File.WriteAllBytes(path, bytes);
-				return ImportAndLoad<Object>(path);
-			}
-
 			/// <summary>
 			///     Writes the string to disk, then imports and loads the asset. Overwrites any existing file.
 			/// </summary>
@@ -163,16 +145,6 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Object CreateAsNew([NotNull] String contents, [NotNull] Path path) =>
 				CreateInternal(contents, path.UniqueFilePath);
-
-			internal static Object CreateInternal([NotNull] String contents, [NotNull] Path path)
-			{
-				ThrowIf.ArgumentIsNull(contents, nameof(contents));
-				ThrowIf.ArgumentIsNull(path, nameof(path));
-
-				path.CreateFolders();
-				System.IO.File.WriteAllText(path, contents, Encoding.UTF8); // string assets ought to be UTF8
-				return ImportAndLoad<Object>(path);
-			}
 
 			/// <summary>
 			///     Writes the object to disk. Overwrites any existing file.
@@ -206,16 +178,6 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Object CreateAsNew([NotNull] Object instance, [NotNull] Path path) =>
 				CreateInternal(instance, path.UniqueFilePath);
-
-			internal static Object CreateInternal([NotNull] Object instance, [NotNull] Path path)
-			{
-				ThrowIf.ArgumentIsNull(instance, nameof(instance));
-				ThrowIf.ArgumentIsNull(path, nameof(path));
-
-				path.CreateFolders();
-				AssetDatabase.CreateAsset(instance, path);
-				return instance;
-			}
 
 			/// <summary>
 			///     Loads or creates an asset at path.
@@ -271,17 +233,6 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html">EditorUtility.SetDirty</a>
 			/// </seealso>
 			public static void ForceSave([NotNull] Object asset) => SaveInternal(asset, true);
-
-			private static void SaveInternal([NotNull] Object asset, Boolean forceSave = false)
-			{
-				ThrowIf.ArgumentIsNull(asset, nameof(asset));
-				ThrowIf.NotInDatabase(asset);
-
-				if (forceSave)
-					EditorUtility.SetDirty(asset);
-
-				AssetDatabase.SaveAssetIfDirty(asset);
-			}
 
 			/// <summary>
 			///     Saves any changes to the asset to disk, by GUID.
@@ -357,14 +308,6 @@ namespace CodeSmileEditor
 
 				ImportIfNotImported(path, options);
 				return Load<T>(path);
-			}
-
-			private static void ImportIfNotImported([NotNull] Path path,
-				ImportAssetOptions options = ImportAssetOptions.Default)
-			{
-				// not in database but on disk? Import. Cannot determine if existing file has been updated though.
-				if (path.Exists == false && path.ExistsInFileSystem)
-					Import(path, options);
 			}
 
 			/// <summary>
@@ -524,13 +467,9 @@ namespace CodeSmileEditor
 #if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.LoadObjectAsync(path, localFileId);
 #else
-				throw new NotSupportedException($"AssetDatabase.LoadObjectAsync not available in this editor version");
+				throw new NotSupportedException("AssetDatabase.LoadObjectAsync not available in this editor version");
 #endif
 			}
-
-#if !UNITY_2022_2_OR_NEWER // dummy for LoadAsync in earlier versions
-			public class AssetDatabaseLoadOperation {}
-#endif
 
 			/// <summary>
 			///     Finds asset GUIDs by the given filter criteria.
@@ -644,21 +583,6 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Boolean CopyAsNew([NotNull] Path sourcePath, [NotNull] Path destinationPath) =>
 				CopyInternal(sourcePath, destinationPath.UniqueFilePath, false);
-
-			internal static Boolean CopyInternal([NotNull] Path sourcePath, [NotNull] Path destinationPath,
-				Boolean overwriteExisting)
-			{
-				ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
-				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
-				ThrowIf.AssetPathNotInDatabase(sourcePath);
-				ThrowIf.SourceAndDestPathAreEqual(sourcePath, destinationPath);
-
-				destinationPath.CreateFolders();
-
-				var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);
-				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {destinationPath}");
-				return success;
-			}
 
 			/// <summary>
 			///     Tests if an asset can be moved to destination without moving the asset.
@@ -824,10 +748,9 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Trash(CodeSmileEditor.Asset.Path)" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html">AssetDatabase.DeleteAsset</a>
 			/// </seealso>
-			public static Boolean Delete([NotNull] Path path)
-			{
-				return AssetDatabase.DeleteAsset(path);
-			}
+			public static Boolean Delete([NotNull] Path path) =>
+				// path.Exists prevents Unity from spitting out an unnecessary warning message
+				path != null && path.Exists && AssetDatabase.DeleteAsset(path);
 
 			/// <summary>
 			///     Deletes an asset file or folder.
@@ -939,6 +862,83 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Boolean Trash([NotNull] IEnumerable<String> paths) =>
 				AssetDatabase.MoveAssetsToTrash(paths.ToArray(), s_PathsNotDeleted = new List<String>());
+
+			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
+			[ExcludeFromCodeCoverage] // untestable
+			internal static void StartAssetEditing() => AssetDatabase.StartAssetEditing();
+
+			// Internal on purpose: use Asset.File.BatchEditing(Action) instead
+			[ExcludeFromCodeCoverage] // untestable
+			internal static void StopAssetEditing() => AssetDatabase.StopAssetEditing();
+
+			internal static Object CreateInternal([NotNull] Byte[] bytes, [NotNull] Path path)
+			{
+				ThrowIf.ArgumentIsNull(bytes, nameof(bytes));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				path.CreateFolders();
+				System.IO.File.WriteAllBytes(path, bytes);
+				return ImportAndLoad<Object>(path);
+			}
+
+			internal static Object CreateInternal([NotNull] String contents, [NotNull] Path path)
+			{
+				ThrowIf.ArgumentIsNull(contents, nameof(contents));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				path.CreateFolders();
+				System.IO.File.WriteAllText(path, contents, Encoding.UTF8); // string assets ought to be UTF8
+				return ImportAndLoad<Object>(path);
+			}
+
+			internal static Object CreateInternal([NotNull] Object instance, [NotNull] Path path)
+			{
+				ThrowIf.ArgumentIsNull(instance, nameof(instance));
+				ThrowIf.ArgumentIsNull(path, nameof(path));
+
+				path.CreateFolders();
+				AssetDatabase.CreateAsset(instance, path);
+				return instance;
+			}
+
+			internal static Boolean CopyInternal([NotNull] Path sourcePath, [NotNull] Path destinationPath,
+				Boolean overwriteExisting)
+			{
+				ThrowIf.ArgumentIsNull(sourcePath, nameof(sourcePath));
+				ThrowIf.ArgumentIsNull(destinationPath, nameof(destinationPath));
+				ThrowIf.AssetPathNotInDatabase(sourcePath);
+				ThrowIf.SourceAndDestPathAreEqual(sourcePath, destinationPath);
+
+				destinationPath.CreateFolders();
+
+				var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);
+				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {destinationPath}");
+				return success;
+			}
+
+			private static void SaveInternal([NotNull] Object asset, Boolean forceSave = false)
+			{
+				ThrowIf.ArgumentIsNull(asset, nameof(asset));
+				ThrowIf.NotInDatabase(asset);
+
+				if (forceSave)
+					EditorUtility.SetDirty(asset);
+
+				AssetDatabase.SaveAssetIfDirty(asset);
+			}
+
+			private static void ImportIfNotImported([NotNull] Path path,
+				ImportAssetOptions options = ImportAssetOptions.Default)
+			{
+				// Not in database but on disk? => Import path
+				// Cannot determine if existing file has been updated though.
+				if (path.Exists == false && path.ExistsInFileSystem)
+					Import(path, options);
+			}
+
+#if !UNITY_2022_2_OR_NEWER // dummy for LoadAsync in earlier versions
+			public class AssetDatabaseLoadOperation {}
+#endif
 		}
 	}
 }

@@ -1,5 +1,9 @@
 # Change Log
 
+#### v1.7.1 - Dec 04, 2023
+
+- Asset.File.Delete avoids unnecessary warning message from Unity if path.Exists is false
+
 #### v1.7.0 - Dec 03, 2023
 
 - Import() throws if file does not exist
