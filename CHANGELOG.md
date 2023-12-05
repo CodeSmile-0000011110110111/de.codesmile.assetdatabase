@@ -1,7 +1,8 @@
 # Change Log
 
-#### v1.7.1 - Dec 04, 2023
+#### v1.7.1 - Dec 05, 2023
 
+- rename package to de.codesmile.assetdabase (removed the 'editor' part)
 - Asset.File.Delete avoids unnecessary warning message from Unity if path.Exists is false
 
 #### v1.7.0 - Dec 03, 2023
