@@ -145,8 +145,6 @@ namespace CodeSmileEditor
 		/// <example>
 		///     <code>
 		///  Object obj = asset; // implicit conversion
-		///  MyType my = (MyType)asset; // implicit conversion with cast
-		///  MyType my = asset as MyType; // implicit conversion with 'as' operator
 		/// 		</code>
 		/// </example>
 		/// <returns>The asset's MainObject property.</returns>
@@ -172,9 +170,7 @@ namespace CodeSmileEditor
 		/// <returns>An asset instance or null if path is null.</returns>
 		/// <example>
 		///     <code>
-		///  // this imports & loads the asset, neat ey? :)
-		///  Path path = ..;
-		///  Asset asset = path;
+		///  Asset asset = new Path("Assets/folder/file.asset");
 		/// 		</code>
 		/// </example>
 		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
@@ -200,22 +196,21 @@ namespace CodeSmileEditor
 		/// <example>
 		///     <code>
 		/// // loads the asset
-		/// GUID guid = ..
 		/// Asset asset = guid;
 		/// </code>
 		/// </example>
 		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
 		/// <summary>
-		///     Alternative to casting the asset instance.
+		///     Gets the main object cast to T.
 		/// </summary>
 		/// <remarks>
 		///     This is an alias for:
-		///     <code>var obj = asset as T;</code>
+		///     <code>var obj = asset.MainObject as T;</code>
 		/// </remarks>
 		/// <typeparam name="T">Type derived from UnityEngine.Object.</typeparam>
 		/// <returns>Returns MainObject cast to T or null if main object is not of type T.</returns>
-		public T GetAs<T>() where T : Object => m_MainObject as T;
+		public T GetMain<T>() where T : Object => m_MainObject as T;
 
 		/// <summary>
 		///     Saves any changes to the asset to disk.
