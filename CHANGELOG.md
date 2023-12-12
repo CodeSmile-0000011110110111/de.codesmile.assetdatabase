@@ -1,5 +1,12 @@
 # Change Log
 
+#### v1.8.0 - Dec 09, 2023
+
+- renamed ForceReserializeAssets to UpgradeAssetSerializationFormats 
+- renamed ForceReserializeAllAssets to UpgradeAllAssetSerializationFormats (*)
+
+(*) To provide more rationale: I saw a user's script that wasn't working as intended and thus the user helplessly threw in every non-obviously named AssetDatabase method - the usual candidates that I've already covered but the use of "ForceReserializeAssets" was new to me. This struck me as yet another non-obvious method name and of course it bothered me so I had to come up with a more descriptive name.
+
 #### v1.7.1 - Dec 05, 2023
 
 - rename package to de.codesmile.assetdabase (removed the 'editor' part)
