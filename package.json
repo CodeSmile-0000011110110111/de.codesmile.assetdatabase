@@ -1,7 +1,7 @@
 {
   "name": "de.codesmile.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
-"description": "Accessible 'clean code' version of Unity's ~20 year old AssetDatabase class and related functionality.\n\nPublished under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Custom licensing for Asset Publishers & Sponsors (<a href=\"mailto:steffen@steffenitterheim.de\">contact me</a>)\n- Asset Store Terms and EULA for most other uses",
+  "description": "Accessible 'clean code' version of Unity's ~20 year old AssetDatabase class and related functionality.\n\nPublished under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Custom licensing for Asset Publishers & Sponsors (<a href=\"mailto:steffen@steffenitterheim.de\">contact me</a>)\n- Asset Store Terms and EULA for most other uses",
   "version": "1.8.0",
   "unity": "2021.3",
   "unityRelease": "3f1",
@@ -14,7 +14,7 @@
   "documentationUrl": "https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase/blob/main/README.md",
   "licensesUrl": "https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase/blob/main/README.md",
   "dependencies": {
-    "com.unity.test-framework": "1.3.9"
+    "com.unity.test-framework": "1.4.1"
   },
   "relatedPackages": {}
 }
