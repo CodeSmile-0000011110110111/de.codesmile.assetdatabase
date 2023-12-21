@@ -152,7 +152,6 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporter{T}" />
 		///     - <see cref="CodeSmileEditor.Asset.SetActiveImporterToDefault" />
 		/// </seealso>
-		[ExcludeFromCodeCoverage] // simple relay
 		public Type ActiveImporter
 		{
 			get
@@ -168,6 +167,14 @@ namespace CodeSmileEditor
 					Importer.SetImporterOverride(value, m_AssetPath);
 			}
 		}
+
+		/// <summary>
+		/// Returns the available importers for this asset.
+		/// </summary>
+		/// <seealso cref="">
+		///     - <see cref="CodeSmileEditor.Asset.Importer.GetAvailable" />
+		/// </seealso>
+		public Type[] AvailableImporters => Importer.GetAvailable(m_AssetPath);
 
 		/// <summary>
 		///     Returns true if the asset's default AssetImporter type has been overridden.

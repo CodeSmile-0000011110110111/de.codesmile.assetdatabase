@@ -47,6 +47,7 @@ namespace CodeSmileEditor.Tests
 
 			var deletedObj = asset.Delete();
 
+			Assert.True(asset.IsDeleted);
 			Assert.NotNull(deletedObj);
 			Assert.Null(asset.AssetPath);
 			Assert.False(Asset.Status.IsImported(deletedObj));

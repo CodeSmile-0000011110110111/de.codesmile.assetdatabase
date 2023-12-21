@@ -140,6 +140,7 @@ namespace CodeSmileEditor
 				///     -
 				///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CloseCacheServerConnection.html">AssetDatabase.CloseCacheServerConnection</a>
 				/// </seealso>
+				[ExcludeFromCodeCoverage] // not testable, requires external service
 				public static void Disconnect() => AssetDatabase.CloseCacheServerConnection();
 			}
 		}

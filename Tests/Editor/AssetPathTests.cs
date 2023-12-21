@@ -109,6 +109,15 @@ namespace CodeSmileEditor.Tests
 			Assert.AreEqual(fullPath, new Asset.Path(fullPath.Replace('/', '\\')).FullPath);
 		}
 
+		[Test] public void AssetPath_WithObject_EqualsObjectPath()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+
+			var path = new Asset.Path(asset.MainObject);
+
+			Assert.AreEqual(asset.AssetPath, path);
+		}
+
 		[Test] public void AssetPath_CombineFullPath_MadeRelative() =>
 			Assert.AreEqual("Assets/FN.test", new Asset.Path(Application.dataPath, "FN", ".test"));
 

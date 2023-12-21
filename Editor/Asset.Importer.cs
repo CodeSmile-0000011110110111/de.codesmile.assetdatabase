@@ -281,6 +281,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html">AssetDatabase.WriteImportSettingsIfDirty</a>
 			/// </seealso>
+			[ExcludeFromCodeCoverage] // cannot be tested
 			public static void ApplySettings([NotNull] Path path) => AssetDatabase.WriteImportSettingsIfDirty(path);
 
 			internal static void SetImporterOverride([NotNull] Type value, [NotNull] String assetPath)

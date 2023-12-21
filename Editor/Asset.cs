@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
+using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor

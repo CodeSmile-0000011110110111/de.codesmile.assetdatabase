@@ -135,12 +135,12 @@ namespace CodeSmileEditor
 			/// <seealso cref="">
 			///     -
 			///     <see
-			///         cref="UpgradeAssetSerializationFormats(System.Collections.Generic.IEnumerable{string},UnityEditor.ForceReserializeAssetsOptions)" />
+			///         cref="UpgradeAssetSerializationVersion" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
-			public static void UpgradeAllAssetSerializationFormats() => AssetDatabase.ForceReserializeAssets();
+			public static void UpgradeAllAssetSerializationVersions() => AssetDatabase.ForceReserializeAssets();
 
 			/// <summary>
 			///     Updates all native asset files to reflect any changes in serialization in the current editor version.
@@ -156,14 +156,14 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="UpgradeAllAssetSerializationFormats" />
+			///     - <see cref="UpgradeAllAssetSerializationVersions" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
-			public static void UpgradeAssetSerializationFormats([NotNull] IEnumerable<Path> paths,
+			public static void UpgradeAssetSerializationVersion([NotNull] IEnumerable<Path> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata) =>
-				UpgradeAssetSerializationFormats(Path.ToStrings(paths), options);
+				UpgradeAssetSerializationVersion(Path.ToStrings(paths), options);
 
 			/// <summary>
 			///     Updates all native asset files to reflect any changes in serialization in the current editor version.
@@ -179,12 +179,12 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html">ForceReserializeAssetsOptions</a>
 			/// </param>
 			/// <seealso cref="">
-			///     - <see cref="UpgradeAllAssetSerializationFormats" />
+			///     - <see cref="UpgradeAllAssetSerializationVersions" />
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html">AssetDatabase.ForceReserializeAssets</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // untestable
-			public static void UpgradeAssetSerializationFormats([NotNull] IEnumerable<String> paths,
+			public static void UpgradeAssetSerializationVersion([NotNull] IEnumerable<String> paths,
 				ForceReserializeAssetsOptions options = ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata) =>
 				AssetDatabase.ForceReserializeAssets(paths, options);
 

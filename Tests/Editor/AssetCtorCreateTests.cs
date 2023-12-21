@@ -58,9 +58,12 @@ namespace CodeSmileEditor.Tests
 		{
 			var obj = DeleteAfterTest((Object)Instantiate.ExampleSO());
 
-			new Asset(obj, (String)TestAssetPath);
+			var asset = new Asset(obj, (String)TestAssetPath);
 
 			Assert.True(TestAssetPath.Exists);
+			Assert.NotZero(asset.FileId);
+			Assert.False(asset.Guid.Empty());
+			Assert.NotNull(asset.GetMain<ExampleSO>());
 		}
 
 		[Test] public void CreateCtor_NotExistingSubFoldersPath_CreatesFoldersAndAsset()
@@ -81,12 +84,13 @@ namespace CodeSmileEditor.Tests
 			Assert.True(TestAssetPath.Exists);
 		}
 
+		// UI Toolkit runtime theme
+		private readonly string TssContents = "@import url(\"unity-theme://default\");\nVisualElement {}";
 		[Test] public void CreateCtor_StringContents_CreatesAndImportsAsset()
 		{
 			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
-			var tss = "@import url(\"unity-theme://default\");\nVisualElement {}"; // UI Toolkit runtime theme
 
-			var asset = new Asset(tss, path, true);
+			var asset = new Asset(TssContents, path, true);
 
 			Assert.True(Asset.Status.IsImported(path));
 			Assert.True(asset.MainObject is ThemeStyleSheet);
@@ -96,13 +100,52 @@ namespace CodeSmileEditor.Tests
 		[Test] public void CreateCtor_ByteArray_CreatesAndImportsAsset()
 		{
 			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
-			var tss = "@import url(\"unity-theme://default\");\nVisualElement {}"; // UI Toolkit runtime theme
 
-			var asset = new Asset(Encoding.UTF8.GetBytes(tss), path, true);
+			var asset = new Asset(Encoding.UTF8.GetBytes(TssContents), path, true);
 
 			Assert.True(Asset.Status.IsImported(path));
 			Assert.True(asset.MainObject is ThemeStyleSheet);
 			Assert.AreEqual(typeof(ThemeStyleSheet), asset.MainObjectType);
+		}
+
+		[Test] public void CreateStatic_StringContents_CreatesAndImportsAsset()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
+
+			var obj = Asset.File.Create(TssContents, path);
+
+			Assert.True(Asset.Status.IsImported(path));
+			Assert.True(obj is ThemeStyleSheet);
+		}
+
+		[Test] public void CreateStatic_ByteArray_CreatesAndImportsAsset()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
+
+			var obj = Asset.File.Create(Encoding.UTF8.GetBytes(TssContents), path);
+
+			Assert.True(Asset.Status.IsImported(path));
+			Assert.True(obj is ThemeStyleSheet);
+		}
+
+		[Test] public void CreateAsNewStatic_StringContents_CreatesAndImportsAsset()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
+
+			var obj = Asset.File.CreateAsNew(TssContents, path);
+
+			Assert.True(Asset.Status.IsImported(path));
+			Assert.True(obj is ThemeStyleSheet);
+		}
+
+		[Test] public void CreateAsNewStatic_ByteArray_CreatesAndImportsAsset()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.tss");
+
+			var obj = Asset.File.CreateAsNew(Encoding.UTF8.GetBytes(TssContents), path);
+
+			Assert.True(Asset.Status.IsImported(path));
+			Assert.True(obj is ThemeStyleSheet);
 		}
 	}
 }
