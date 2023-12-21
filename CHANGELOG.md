@@ -1,11 +1,16 @@
 # Change Log
 
+#### v1.8.1 - Dec 21, 2023
+
+- added AvailableImporters property
+- added missing Asset.Importer, Asset.Path and Asset.File.Create tests
+
 #### v1.8.0 - Dec 09, 2023
 
-- renamed ForceReserializeAssets to UpgradeAssetSerializationFormats 
-- renamed ForceReserializeAllAssets to UpgradeAllAssetSerializationFormats (*)
+- renamed ForceReserializeAssets to UpgradeAssetSerializationVersion and
+- renamed ForceReserializeAllAssets to UpgradeAllAssetSerializationVersions (*)
 
-(*) To provide more rationale: I saw a user's script that wasn't working as intended and thus the user helplessly threw in every non-obviously named AssetDatabase method - the usual candidates that I've already covered but the use of "ForceReserializeAssets" was new to me. This struck me as yet another non-obvious method name and of course it bothered me so I had to come up with a more descriptive name.
+(*) To provide more rationale: I saw a user's script where the user helplessly threw in the usual candidates due to some issue, but this also included "ForceReserializeAssets" That's when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for: upgrading the version of serialized assets.
 
 #### v1.7.1 - Dec 05, 2023
 
