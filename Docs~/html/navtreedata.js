@@ -25,18 +25,17 @@
 var NAVTREE =
 [
   [ "CodeSmile AssetDatabase", "index.html", [
-    [ "Examples", "index.html#examples", [
-      [ "Load or create asset", "index.html#load-or-create-asset", null ],
-      [ "Load an asset", "index.html#load-an-asset", null ],
-      [ "Get an asset's path", "index.html#get-an-assets-path", null ],
-      [ "Be nice, be concise!", "index.html#be-nice-be-concise", null ]
-    ] ],
+    [ "Who needs this?", "index.html#who-needs-this", null ],
+    [ "But .. why?", "index.html#but--why", null ],
+    [ "I don't trust this ..", "index.html#i-dont-trust-this-", null ],
+    [ "What about support?", "index.html#what-about-support", null ],
+    [ "Example Code Snippets", "index.html#example-code-snippets", null ],
     [ "Documentation", "index.html#documentation", null ],
     [ "Requirements", "index.html#requirements", null ],
     [ "Installation", "index.html#installation", null ],
     [ "GPL License", "index.html#gpl-license", null ],
     [ "Support & Feeback", "index.html#support--feeback", null ],
-    [ "Change Log", "md__c_1_2_users_2_code_smile_2_projects_2de_8codesmile_8editor_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
+    [ "Change Log", "md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
