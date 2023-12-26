@@ -534,6 +534,7 @@ namespace CodeSmileEditor
 		/// <summary>
 		///     Adds an object as a sub-object to the asset. The object must not already be an asset.
 		/// </summary>
+		/// <remarks>This implicitly saves the change to disk - you do NOT need to call Save() afterwards.</remarks>
 		/// <param name="instance">The object instance to add as subobject to this asset.</param>
 		/// <seealso cref="">
 		///     - <see cref="CodeSmileEditor.Asset.RemoveSubAsset" />

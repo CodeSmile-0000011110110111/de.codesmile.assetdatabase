@@ -45,8 +45,9 @@ namespace CodeSmileEditor
 			}
 
 			/// <summary>
-			///     Adds an object as sub-asset to the asset.
+			///     Adds an object as sub-asset to the asset. This change is implicitly saved to disk.
 			/// </summary>
+			/// <remarks>You do NOT need to call Save() afterwards.</remarks>
 			/// <param name="subAssetInstance">The object to add as a sub-asset. It must not already be an asset.</param>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <seealso cref="">

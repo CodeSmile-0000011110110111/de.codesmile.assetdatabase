@@ -1,155 +1,90 @@
 # CodeSmile AssetDatabase
 
-It's Unity's AssetDatabase except now it's clean, concise, consistent and powerful.
+It's Unity's age-old AssetDatabase - in clean code form! It will make you smile. :)
 
-## Examples
+## Who needs this?
 
-My name is CodeSmile for a reason. Read on. :)
+I spent a great deal of time to make AssetDatabase tasks dead simple for a layperson or just anyone who doesn't want to be bothered with how all of this works and what all the edge-cases and side-effects might be.
 
-### Load or create asset
+## But .. why?
 
-A common use case: if an asset cannot be loaded, create it. That only slightly complicates things with the AssetDatabase:
+Unload your mind. Put yourself at ease.
 
-```
-public static LevelData GetLevelDataAsset(int level)
-{
-  string assetPath = "Assets/DataStore/Level{level}/LevelData.asset";
+For every task there is a single call and you are DONE!
 
-  var levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
-  if (levelData == null)
-  {
-	// Load returns null does *NOT* mean the file doesn't exist!
-	// A user may have 'Auto Refresh' disabled => the asset may not have been imported
-	AssetDatabase.ImportAsset(assetPath);
-	
-	// try loading it again now:
-	levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
-  }
+The structure and naming is intended to be EXTREMELY simple to find your way around and then to call the appropriate method with fewer parameters, with names that speak for themselves. 
 
-  if (levelData == null)
-  {
-	// create datastore folder if not exists
-	if (!AssetDatabase.IsValidFolder(@"Assets/DataStore"))
-	  AssetDatabase.CreateFolder("Assets", "DataStore");
+No longer do you need to wonder what a 'valid folder' might be. Or ponder what it means to 'force reserialize all assets'. 
 
-	// create level folder if not exists
-	if (!AssetDatabase.IsValidFolder(@"Assets/DataStore/Level{level}"))
-	  AssetDatabase.CreateFolder("Assets/DataStore", "Level{level}");
+Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is **NOT** needed. (Hint: almost every time.)
 
-	levelData = CreateInstance<LevelData>();
-	AssetDatabase.CreateAsset(levelData, assetPath);
-  }
-  
-  return levelData;
-}
-```
+Or just being confused, once again, about whether you need to use `AssetDatabase.GetTextMetaFilePathFromAssetPath` or `AssetDatabase.GetAssetPathFromTextMetaFilePath`. Or the unholy trinity: `AssetPath.AssetPathToGUID`~`AssetPath.GUIDFromAssetPath`~`AssetPath.GUIDToAssetPath`.
 
-Now what used to be over 20 lines of code is just this, with all edge-cases taken care of:
+## I don't trust this ..
 
-```
-public static LevelData GetLevelDataAsset(int level)
-{
-	string assetPath = "Assets/DataStore/Level{level}/LevelData.asset";
-	return Asset.LoadOrCreate<LevelData>(assetPath, () => CreateInstance<LevelData>());
-}
-```
+The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!
 
-### Load an asset 
+It is also extensively unit TESTED to be correct.
 
-Easy:
+And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand **why** my code works.
 
-`Asset levelData = "Assets/Example/LevelData.asset";`
+## What about support?
 
-Wait .. wut?? :)
-Yup, that's correct!
+[The documentation](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html) is more complete with more details and caveats mentioned than Unity's. 
 
-You have a GUID? In that case:
+And if there's anything out of the ordinary, open an issue or [contact me](mailto:steffen@steffenitterheim.de). I also have a [Discord channel](https://discord.gg/JN3Jz8qkeV).
 
-`Asset levelData = thisIsYourGuid;`
+## Example Code Snippets
 
-Or if you already have an instance loaded:
+`Asset data = "Assets/Folder/Data.asset";` // Load an asset from its path
 
-`Asset levelData = yourAssetObject;`
+`data.ForceSave();` // mark asset as dirty and save it
 
-The opposite also works, of course:
+`data.AddSubAsset(subData);` // Add a sub-asset (implicitly saved)
 
-`UnityEngine.Object obj = asset;`
+`data.ActiveImporter = typeof(MyDataImporter);` // Change asset's importer 
 
-Not the right type? Just cast it:
+`data.ExportPackage("I:/leveldata.unitypackage");` // Export as .unitypackage
 
-`var levelData = (LevelData)asset;`
+`var dataObject = data.MainObject;` // Get asset's UnityEngine.Object instance
 
-The Asset instance provides you access to everything you might want to do with an asset. Save, copy, rename, delete, you name it. 
+`var levelData = data.GetAs<LevelData>();` // Get it as specific type (may be null)
 
-You also get an asset's Labels, GUID, FileId, path, .meta path and so on. It's right where you expect it.
+`var levelData = (LevelData)data;` // Cast to a type (may throw)
 
-### Get an asset's path
+`var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");` // Create (overwrite) asset from string
 
-Assuming you have an `asset` instance:
+`var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");` // Create new asset from byte[]
 
-`var assetPath = asset.AssetPath;`
+`var asset = new Asset(bytes, "Assets/Folder/Data.asset");` // Same as above using Asset ctor
 
-Oh right, you need the meta file path?
-Well, you could inquire the AssetDatabase:
+The 'create' methods above cover EVERY ASPECT and edge-cases:
+- Error checking (null arguments, path validation, ..)
+- Create non-existing folders of the path
+- Generate a unique filename (unless overwriting)
+- Write the string/bytes to file
+- Import the new asset file
+- Load the new asset file
 
-`var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);`
+`var actualPath = asset.AssetPath;` // Filename might have changed, eg "Data (3).asset"
 
-But I'd much rather have you do this:
+`var subAssets = asset.SubAssets;` // Do I need to keep explaining these calls?
 
-`var metaPath = asset.MetaPath;`
+`var assetDupe = asset.Duplicate();` // Because you need a duplicate ..
 
-Or if you just need to work with just paths:
+`assetDupe.Delete();` // .. but then decided you don't.
 
-```
-Asset.Path assetPath = "Assets/Folder/LevelData.asset";
-Asset.Path metaPath = assetPath.MetaPath;
-```
+`var newAsset = asset.SaveAsNew("Assets/Elsewhere/Daydah.asset");` // Now you want a copy?
 
-The secret sauce behind Asset.Path is that you never EVER need to worry about the path being malformed, containing illegal characters, leaving leading/trailing slashes, or the paths not working on Mac OS or Linux due to backslashes. 
+`newAsset.Trash();` // Okay. Either you're bored or excited to work with the AssetDatabase for the first time EVER. :)
 
-Asset.Path also accepts absolute paths and makes them relative. But if the path is pointing outside the project, perhaps another project because you copy/pasted that code, it'll throw an exception rather than letting you modify assets in unrelated (!) projects. Yes, that can happen, with potentially devastating results!  
-
-Asset.Path also gives access to commonly used System.IO.Path functionality:
-
-```
-Path assetPath = "Assets/Folder/LevelData.asset";
-Path assetDir = assetPath.DirectoryPath;
-String assetFileName = assetPath.FileName;
-String assetFileNameNoExt = assetPath.FileNameWithoutExtension;
-String assetExtension = assetPath.Extension;
-```
-
-### Be nice, be concise!
-
-Thus far you were forced to write rather verbose, convoluted code. This package will improve your work-smile balance. :)
-
----
-
-`string[] paths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(bundleName, assetName);`
-
-`string[] paths = Asset.Bundle.GetPaths(bundleName, assetName);`
-
----
-
-`uint count = AssetDatabase.UnregisterCustomDependencyPrefixFilter(prefix);`
-
-`uint count = Asset.Dependency.Remove(prefix);`
-
----
-
-`var metaPath = AssetDatabase.GetTextMetaFilePathFromAssetPath(assetPath);`
-
-`var metaPath = Asset.Path.ToMeta(assetPath);`
-
-Mind you, those are the static methods. The instance methods are even more concise! For instance:
-
-`var metaPath = asset.MetaPath;`
-
+`var msg = Asset.GetLastErrorMessage();` // A file operation failed? Show this!
 
 ## Documentation
 
-- [Scripting API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.editor.assetdatabase/html/index.html)
+- [Scripting API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html)
 - [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) (AssetDatabase method mapping)
+- [Changelog](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/blob/main/CHANGELOG.md)
 
 ## Requirements
 
