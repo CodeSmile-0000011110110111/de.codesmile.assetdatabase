@@ -4,7 +4,11 @@ It's Unity's age-old AssetDatabase - in clean code form! It will make you smile.
 
 ## Who needs this?
 
-I spent a great deal of time to make AssetDatabase tasks dead simple for a layperson or just anyone who doesn't want to be bothered with how all of this works and what all the edge-cases and side-effects might be.
+I do! ![My image](Media~/steffen portrait codesmile logo larger top-left-64x62.png) Actually, I WANTED it. :)
+
+I spent a great deal of time to make AssetDatabase tasks dead simple for a layperson.
+
+And anyone who doesn't want to be bothered with how all of this assetcrapbase works and what all the edge-cases and side-effects could be, might be, and really just want to have this working and move on!
 
 ## But .. why?
 
@@ -24,7 +28,7 @@ Or just being confused, once again, about whether you need to use `AssetDatabase
 
 The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!
 
-It is also extensively unit TESTED to be correct.
+It is also extensively unit TESTED to be correct. 
 
 And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand **why** my code works.
 
@@ -86,11 +90,6 @@ The 'create' methods above cover EVERY ASPECT and edge-cases:
 - [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) (AssetDatabase method mapping)
 - [Changelog](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/blob/main/CHANGELOG.md)
 
-## Requirements
-
-- Unity 2021.3.3f1 or newer
-- A smile :)
-
 ## Installation
 
 This software is a Unity Package Manager 'npm package'.
@@ -100,6 +99,13 @@ This software is a Unity Package Manager 'npm package'.
 - Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase.git`
 
 This package is currently not available on OpenUPM.
+
+## Requirements
+
+- Unity 2021.3.3f1 or newer (*)
+- A smile :)
+
+Sorry, I will not backport to 2020 or older due to extensive use of C# 9 features.
 
 ## GPL License
 
