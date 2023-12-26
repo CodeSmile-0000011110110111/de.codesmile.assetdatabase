@@ -56,6 +56,10 @@ And if there's anything out of the ordinary, open an issue or [contact me](mailt
 
 `var levelData = (LevelData)data;` // Cast to a type (may throw)
 
+`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (eg in a loop)
+
+`Asset.File.Import(paths);` // Mass import of paths, batched internally
+
 `var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");` // Create (overwrite) asset from string
 
 `var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");` // Create new asset from byte[]
@@ -83,6 +87,18 @@ The 'create' methods above cover EVERY ASPECT and edge-cases:
 `newAsset.Trash();` // Okay. Either you're bored or excited to work with the AssetDatabase for the first time EVER. :)
 
 `var msg = Asset.GetLastErrorMessage();` // A file operation failed? Show this!
+
+## Where's Refresh?
+
+You don't need it. ;)
+
+But if you do, here's Waldo: `Asset.Database.ImportAll();`
+
+This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts). 
+
+Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use.
+
+So if you work with a SINGLE asset (even when in a loop) use the singular Save & Import methods, NOT SaveAllAssets and Refresh.
 
 ## Documentation
 
