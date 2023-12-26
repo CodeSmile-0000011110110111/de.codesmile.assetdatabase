@@ -4,7 +4,7 @@ It's Unity's age-old AssetDatabase - in clean code form! It will make you smile.
 
 ## Who needs this?
 
-I do! ![My image](Media~/steffen portrait codesmile logo larger top-left-64x62.png) Actually, I WANTED it. :)
+I do! ![CodeSmile Icon]("Media~/steffen%20portrait%20codesmile%20logo%20larger%20top-left-64x62.png") Actually, I WANTED it. :)
 
 I spent a great deal of time to make AssetDatabase tasks dead simple for a layperson.
 
