@@ -106,6 +106,7 @@ So if you work with a SINGLE asset (or many in a loop) use the singular Save & I
 - [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) (AssetDatabase method mapping)
 - [Changelog](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/blob/main/CHANGELOG.md)
 
+
 ## Installation
 
 This software is a Unity Package Manager 'npm package'.
