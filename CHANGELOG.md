@@ -1,5 +1,10 @@
 # Change Log
 
+#### v1.8.2 - Dec 26, 2023
+
+- updated README and API docs
+- removed extra call to ImportIfNotImported in method chain
+
 #### v1.8.1 - Dec 21, 2023
 
 - added AvailableImporters property
