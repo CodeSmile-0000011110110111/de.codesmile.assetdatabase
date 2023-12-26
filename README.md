@@ -96,9 +96,9 @@ But if you do, here's Waldo: `Asset.Database.ImportAll();`
 
 This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts). 
 
-Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use.
+Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use. You can imagine how this has a negative impact on editor performance.
 
-So if you work with a SINGLE asset (even when in a loop) use the singular Save & Import methods, NOT SaveAllAssets and Refresh. Likewise, if you modify an asset through AssetDatabase methods, you do **NOT** need to call Refresh(). Ever!
+So if you work with a SINGLE asset (or many in a loop) use the singular Save & Import methods, NOT SaveAllAssets. Likewise, if you modify an asset through AssetDatabase methods, you do **NOT** need to call Refresh(). Ever!
 
 ## Documentation
 
