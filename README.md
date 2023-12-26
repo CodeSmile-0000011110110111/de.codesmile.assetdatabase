@@ -34,18 +34,6 @@ Or just being confused, once again, about whether you need to use `AssetDatabase
 
 `data.ActiveImporter = typeof(MyDataImporter);` // Change asset's importer
 
-`data.ExportPackage("I:/leveldata.unitypackage");` // Export as .unitypackage
-
-`var dataObject = data.MainObject;` // Get asset's UnityEngine.Object instance
-
-`var levelData = data.GetAs<LevelData>();` // Get it as specific type (may be null)
-
-`var levelData = (LevelData)data;` // Cast to a type (may throw)
-
-`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (loop)
-
-`Asset.File.Import(paths);` // Mass import of paths, batched internally
-
 `var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");` // Create (overwrite) asset from string
 
 `var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");` // Create new asset from byte[]
@@ -62,6 +50,14 @@ The 'create' methods above cover EVERY ASPECT and edge-cases:
 
 `var actualPath = asset.AssetPath;` // Filename might have changed, eg "Data (3).asset"
 
+`asset.ExportPackage("I:/leveldata.unitypackage");` // Export as .unitypackage
+
+`var obj = asset.MainObject;` // Get asset's UnityEngine.Object instance
+
+`var levelData = asset.GetAs<LevelData>();` // Get it as specific type (may be null)
+
+`var levelData = (LevelData)asset;` // Cast to a type (may throw)
+
 `var subAssets = asset.SubAssets;` // Do I need to keep explaining these calls?
 
 `var assetDupe = asset.Duplicate();` // Because you need a duplicate ..
@@ -71,6 +67,10 @@ The 'create' methods above cover EVERY ASPECT and edge-cases:
 `var newAsset = asset.SaveAsNew("Assets/Elsewhere/Daydah.asset");` // Now you want a copy?
 
 `newAsset.Trash();` // Okay. Either you're bored or excited to work with the AssetDatabase for the first time EVER. :)
+
+`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (loop)
+
+`Asset.File.Import(paths);` // Mass import of paths, batched internally
 
 `var msg = Asset.GetLastErrorMessage();` // A file operation failed? Show this!
 
