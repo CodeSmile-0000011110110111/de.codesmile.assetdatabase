@@ -20,23 +20,9 @@ The structure and naming is intended to be EXTREMELY simple to find your way aro
 
 No longer do you need to wonder what a 'valid folder' might be. Or ponder what it means to 'force reserialize all assets'. 
 
-Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is **NOT** needed. (Hint: almost every time.)
+Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is indeed **required**. (Hint: almost never!)
 
 Or just being confused, once again, about whether you need to use `AssetDatabase.GetTextMetaFilePathFromAssetPath` or `AssetDatabase.GetAssetPathFromTextMetaFilePath`. Or the unholy trinity: `AssetPath.AssetPathToGUID`~`AssetPath.GUIDFromAssetPath`~`AssetPath.GUIDToAssetPath`.
-
-## I don't trust this ..
-
-The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!
-
-It is also extensively unit TESTED to be correct. 
-
-And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand **why** my code works.
-
-## What about support?
-
-[The documentation](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html) is more complete with more details and caveats mentioned than Unity's. 
-
-And if there's anything out of the ordinary, open an issue or [contact me](mailto:steffen@steffenitterheim.de). I also have a [Discord channel](https://discord.gg/JN3Jz8qkeV).
 
 ## Example Code Snippets
 
@@ -46,7 +32,7 @@ And if there's anything out of the ordinary, open an issue or [contact me](mailt
 
 `data.AddSubAsset(subData);` // Add a sub-asset (implicitly saved)
 
-`data.ActiveImporter = typeof(MyDataImporter);` // Change asset's importer 
+`data.ActiveImporter = typeof(MyDataImporter);` // Change asset's importer
 
 `data.ExportPackage("I:/leveldata.unitypackage");` // Export as .unitypackage
 
@@ -56,7 +42,7 @@ And if there's anything out of the ordinary, open an issue or [contact me](mailt
 
 `var levelData = (LevelData)data;` // Cast to a type (may throw)
 
-`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (eg in a loop)
+`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (loop)
 
 `Asset.File.Import(paths);` // Mass import of paths, batched internally
 
@@ -88,9 +74,23 @@ The 'create' methods above cover EVERY ASPECT and edge-cases:
 
 `var msg = Asset.GetLastErrorMessage();` // A file operation failed? Show this!
 
+## I don't trust this ..
+
+The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!
+
+It is also extensively unit TESTED to be correct. 
+
+And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand **why** my code works.
+
+## What about support?
+
+[The documentation](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html) is more complete with more details and caveats mentioned than Unity's. 
+
+And if there's anything out of the ordinary, open an issue or [contact me](mailto:steffen@steffenitterheim.de). I also have a [Discord channel](https://discord.gg/JN3Jz8qkeV).
+
 ## Where's Refresh?
 
-You don't need it. ;)
+I did mention you don't need it, right? ;)
 
 But if you do, here's Waldo: `Asset.Database.ImportAll();`
 
@@ -98,7 +98,7 @@ This is an expensive (!) database operation in that it scans the ENTIRE "Assets"
 
 Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use.
 
-So if you work with a SINGLE asset (even when in a loop) use the singular Save & Import methods, NOT SaveAllAssets and Refresh.
+So if you work with a SINGLE asset (even when in a loop) use the singular Save & Import methods, NOT SaveAllAssets and Refresh. Likewise, if you modify an asset through AssetDatabase methods, you do **NOT** need to call Refresh(). Ever!
 
 ## Documentation
 
