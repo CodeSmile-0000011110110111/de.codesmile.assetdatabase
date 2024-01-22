@@ -1,0 +1,122 @@
+\doxysection{Code\+Smile Asset\+Database}
+\hypertarget{index}{}\label{index}\index{CodeSmile AssetDatabase@{CodeSmile AssetDatabase}}
+\label{index_md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e}%
+\Hypertarget{index_md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e}%
+ It\textquotesingle{}s Unity\textquotesingle{}s age-\/old Asset\+Database -\/ in clean code form! It will make you smile. \+:)\hypertarget{index_who-needs-this}{}\doxysubsection{\texorpdfstring{Who needs this?}{Who needs this?}}\label{index_who-needs-this}
+I do!  Actually, I WANTED it. \+:)
+
+I spent a great deal of time to make Asset\+Database tasks dead simple for a layperson.
+
+And anyone who doesn\textquotesingle{}t want to be bothered with how all of this assetcrapbase works and what all the edge-\/cases and side-\/effects could be, might be, and really just want to have this working and move on!\hypertarget{index_but--why}{}\doxysubsection{\texorpdfstring{But .. why?}{But .. why?}}\label{index_but--why}
+Unload your mind. Put yourself at ease.
+
+For every task there is a single call and you are DONE!
+
+The structure and naming is intended to be EXTREMELY simple to find your way around and then to call the appropriate method with fewer parameters, with names that speak for themselves.
+
+No longer do you need to wonder what a \textquotesingle{}valid folder\textquotesingle{} might be. Or ponder what it means to \textquotesingle{}force reserialize all assets\textquotesingle{}.
+
+Let alone the ubiquitous \textquotesingle{}Save\+All\+Assets\textquotesingle{} followed by \textquotesingle{}Refresh\textquotesingle{} -\/ are you calling that in your scripts? 99\% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is indeed {\bfseries{required}}. (Hint\+: almost never!)
+
+Or just being confused, once again, about whether you need to use {\ttfamily Asset\+Database.\+Get\+Text\+Meta\+File\+Path\+From\+Asset\+Path} or {\ttfamily Asset\+Database.\+Get\+Asset\+Path\+From\+Text\+Meta\+File\+Path}. Or the unholy trinity\+: {\ttfamily Asset\+Path.\+Asset\+Path\+To\+GUID}\texorpdfstring{$\sim$}{\string~}{\ttfamily Asset\+Path.\+GUIDFrom\+Asset\+Path}\texorpdfstring{$\sim$}{\string~}{\ttfamily Asset\+Path.\+GUIDTo\+Asset\+Path}.\hypertarget{index_example-code-snippets}{}\doxysubsection{\texorpdfstring{Example Code Snippets}{Example Code Snippets}}\label{index_example-code-snippets}
+{\ttfamily Asset data = "{}\+Assets/\+Folder/\+Data.\+asset"{};} // Load an asset from its path
+
+{\ttfamily data.\+Force\+Save();} // mark asset as dirty and save it
+
+{\ttfamily data.\+Add\+Sub\+Asset(sub\+Data);} // Add a sub-\/asset (implicitly saved)
+
+{\ttfamily data.\+Active\+Importer = typeof(\+My\+Data\+Importer);} // Change asset\textquotesingle{}s importer
+
+{\ttfamily var obj = Asset.\+File.\+Create(str, "{}\+Assets/\+Folder/\+Data.\+asset"{});} // Create (overwrite) asset from string
+
+{\ttfamily var obj = Asset.\+File.\+Create\+As\+New(bytes, "{}\+Assets/\+Folder/\+Data.\+asset"{});} // Create new asset from byte\mbox{[}\mbox{]}
+
+{\ttfamily var asset = new Asset(bytes, "{}\+Assets/\+Folder/\+Data.\+asset"{});} // Same as above using Asset ctor
+
+The \textquotesingle{}create\textquotesingle{} methods above cover EVERY ASPECT and edge-\/cases\+:
+\begin{DoxyItemize}
+\item Error checking (null arguments, path validation, ..)
+\item Create non-\/existing folders of the path
+\item Generate a unique filename (unless overwriting)
+\item Write the string/bytes to file
+\item Import the new asset file
+\item Load the new asset file
+\end{DoxyItemize}
+
+{\ttfamily var actual\+Path = asset.\+Asset\+Path;} // Filename might have changed, eg "{}\+Data (3).\+asset"{}
+
+{\ttfamily asset.\+Export\+Package("{}\+I\+:/leveldata.\+unitypackage"{});} // Export as .unitypackage
+
+{\ttfamily var obj = asset.\+Main\+Object;} // Get asset\textquotesingle{}s Unity\+Engine.\+Object instance
+
+{\ttfamily var level\+Data = asset.\+Get\+As\texorpdfstring{$<$}{<}Level\+Data\texorpdfstring{$>$}{>}();} // Get it as specific type (may be null)
+
+{\ttfamily var level\+Data = (Level\+Data)asset;} // Cast to a type (may throw)
+
+{\ttfamily var sub\+Assets = asset.\+Sub\+Assets;} // Do I need to keep explaining these calls?
+
+{\ttfamily var asset\+Dupe = asset.\+Duplicate();} // Because you need a duplicate ..
+
+{\ttfamily asset\+Dupe.\+Delete();} // .. but then decided you don\textquotesingle{}t.
+
+{\ttfamily var new\+Asset = asset.\+Save\+As\+New("{}\+Assets/\+Elsewhere/\+Daydah.\+asset"{});} // Now you want a copy?
+
+{\ttfamily new\+Asset.\+Trash();} // Okay. Either you\textquotesingle{}re bored or excited to work with the Asset\+Database for the first time EVER. \+:)
+
+{\ttfamily Asset.\+File.\+Batch\+Editing(() =\texorpdfstring{$>$}{>} \{ /\texorpdfstring{$\ast$}{*} mass file IO \texorpdfstring{$\ast$}{*}/ \});} // Speed up calling many Asset.\+File.\texorpdfstring{$\ast$}{*} methods (loop)
+
+{\ttfamily Asset.\+File.\+Import(paths);} // Mass import of paths, batched internally
+
+{\ttfamily var msg = Asset.\+Get\+Last\+Error\+Message();} // A file operation failed? Show this!\hypertarget{index_i-dont-trust-this-}{}\doxysubsection{\texorpdfstring{I don\textquotesingle{}t trust this ..}{I don\textquotesingle{}t trust this ..}}\label{index_i-dont-trust-this-}
+The implementation is utmost CORRECT -\/ there are no unnecessary, performance-\/degrading calls such as \textquotesingle{}Refresh\textquotesingle{} and \textquotesingle{}Save\+All\+Assets\textquotesingle{} littered throughout like you\textquotesingle{}ll find in most editor scripts -\/ unfortunately even in popular assets/libraries!
+
+It is also extensively unit TESTED to be correct.
+
+And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand {\bfseries{why}} my code works.\hypertarget{index_what-about-support}{}\doxysubsection{\texorpdfstring{What about support?}{What about support?}}\label{index_what-about-support}
+\href{https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html}{\texttt{ The documentation}} is more complete with more details and caveats mentioned than Unity\textquotesingle{}s.
+
+And if there\textquotesingle{}s anything out of the ordinary, open an issue or \href{mailto:steffen@steffenitterheim.de}{\texttt{ contact me}}. I also have a \href{https://discord.gg/JN3Jz8qkeV}{\texttt{ Discord channel}}.\hypertarget{index_wheres-refresh}{}\doxysubsection{\texorpdfstring{Where\textquotesingle{}s Refresh?}{Where\textquotesingle{}s Refresh?}}\label{index_wheres-refresh}
+I did mention you don\textquotesingle{}t need it, right? ;)
+
+But if you do, here\textquotesingle{}s Waldo\+: {\ttfamily Asset.\+Database.\+Import\+All();}
+
+Caution\+: This is an expensive (!) database operation in that it scans the ENTIRE "{}\+Assets"{} tree and tests ALL (!) files for changes made EXTERNALLY (eg System.\+IO methods, bash scripts).
+
+Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use. You can imagine how this has a negative impact on editor performance.
+
+Since Refresh() has been excessively overused I decided to name it closer to what it actually does.\hypertarget{index_documentation}{}\doxysubsection{\texorpdfstring{Documentation}{Documentation}}\label{index_documentation}
+
+\begin{DoxyItemize}
+\item \href{https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html}{\texttt{ Scripting API Reference}}
+\item \href{https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing}{\texttt{ Transition Guide}} (Asset\+Database method mapping)
+\item \href{https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/blob/main/CHANGELOG.md}{\texttt{ Changelog}}
+\end{DoxyItemize}\hypertarget{index_installation}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{index_installation}
+This software is a Unity Package Manager \textquotesingle{}npm package\textquotesingle{}.
+
+
+\begin{DoxyItemize}
+\item Open Window =\texorpdfstring{$>$}{>} Package Manager in Unity Editor
+\item Choose "{}\+Install package from git URL..."{}
+\item Enter this URL\+: {\ttfamily \href{https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase.git}{\texttt{ https\+://github.\+com/\+Code\+Smile-\/0000011110110111/de.\+codesmile.\+editor.\+assetdatabase.\+git}}}
+\end{DoxyItemize}
+
+This package is currently not available on Open\+UPM.\hypertarget{index_requirements}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{index_requirements}
+
+\begin{DoxyItemize}
+\item Unity 2021.\+3.\+3f1 or newer (\texorpdfstring{$\ast$}{*})
+\item A smile \+:)
+\end{DoxyItemize}
+
+Sorry, I will not backport to 2020 or older due to extensive use of C\# 9 features.\hypertarget{index_gpl-license}{}\doxysubsection{\texorpdfstring{GPL License}{GPL License}}\label{index_gpl-license}
+This software is licensed under the GNU General Public License v3.\+0 (GPL 3.\+0). The main implication is that any work you publish that uses this software requires the entire work to be published as open source software under the same GPL 3.\+0 license.
+
+This software will also be available on the Unity Asset Store under the Asset Store EULA.
+
+If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!
+
+
+\begin{DoxyItemize}
+\item Steffen aka Code\+Smile
+\item \href{mailto:steffen@steffenitterheim.de}{\texttt{ Email}} / \href{https://discord.gg/JN3Jz8qkeV}{\texttt{ Discord}}
+\end{DoxyItemize}\hypertarget{index_support--feeback}{}\doxysubsection{\texorpdfstring{Support \& Feeback}{Support \& Feeback}}\label{index_support--feeback}
+Very welcome! Please prefer to create an issue in the Git\+Hub repository, specifically if you encounter issues or to request a feature. Contact me directly (see above) for any other feedback and questions. 

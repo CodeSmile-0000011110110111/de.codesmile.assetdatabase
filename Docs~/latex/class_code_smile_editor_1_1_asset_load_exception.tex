@@ -1,0 +1,94 @@
+\doxysubsection{Asset\+Load\+Exception Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_load_exception}{}\label{class_code_smile_editor_1_1_asset_load_exception}\index{AssetLoadException@{AssetLoadException}}
+
+
+Thrown in cases where loading an existing asset fails. That means the Asset\+Database returned null on loading. This happens in a few situations in Unity where the Asset\+Database is unavailable, such as in a static ctor.  
+
+
+
+
+Inheritance diagram for Asset\+Load\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_code_smile_editor_1_1_asset_load_exception__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Asset\+Load\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_code_smile_editor_1_1_asset_load_exception__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_load_exception_a14844af4b9e1ad1822b11d8e7a99b991_a14844af4b9e1ad1822b11d8e7a99b991}{Asset\+Load\+Exception}} (String message)
+\begin{DoxyCompactList}\small\item\em Instantiates exception with message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_load_exception_a19e920f646406abb17bf92089cd69b8f_a19e920f646406abb17bf92089cd69b8f}{Asset\+Load\+Exception}} (String message, Exception inner\+Exception)
+\begin{DoxyCompactList}\small\item\em Instantiates exception with message and inner exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Thrown in cases where loading an existing asset fails. That means the Asset\+Database returned null on loading. This happens in a few situations in Unity where the Asset\+Database is unavailable, such as in a static ctor. 
+
+Definition at line \mbox{\hyperlink{_asset_load_exception_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_asset_load_exception_8cs_source}{Asset\+Load\+Exception.\+cs}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_load_exception_a14844af4b9e1ad1822b11d8e7a99b991_a14844af4b9e1ad1822b11d8e7a99b991}\label{class_code_smile_editor_1_1_asset_load_exception_a14844af4b9e1ad1822b11d8e7a99b991_a14844af4b9e1ad1822b11d8e7a99b991} 
+\index{AssetLoadException@{AssetLoadException}!AssetLoadException@{AssetLoadException}}
+\index{AssetLoadException@{AssetLoadException}!AssetLoadException@{AssetLoadException}}
+\doxyparagraph{\texorpdfstring{AssetLoadException()}{AssetLoadException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_load_exception}{Asset\+Load\+Exception}} (\begin{DoxyParamCaption}\item[{String}]{message }\end{DoxyParamCaption})}
+
+
+
+Instantiates exception with message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Exception message\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_asset_load_exception_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_asset_load_exception_8cs_source}{Asset\+Load\+Exception.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(message)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_load_exception_a19e920f646406abb17bf92089cd69b8f_a19e920f646406abb17bf92089cd69b8f}\label{class_code_smile_editor_1_1_asset_load_exception_a19e920f646406abb17bf92089cd69b8f_a19e920f646406abb17bf92089cd69b8f} 
+\index{AssetLoadException@{AssetLoadException}!AssetLoadException@{AssetLoadException}}
+\index{AssetLoadException@{AssetLoadException}!AssetLoadException@{AssetLoadException}}
+\doxyparagraph{\texorpdfstring{AssetLoadException()}{AssetLoadException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_load_exception}{Asset\+Load\+Exception}} (\begin{DoxyParamCaption}\item[{String}]{message,  }\item[{Exception}]{inner\+Exception }\end{DoxyParamCaption})}
+
+
+
+Instantiates exception with message and inner exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Exception message\\
+\hline
+{\em inner\+Exception} & Inner exception that is rethrown\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_asset_load_exception_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_asset_load_exception_8cs_source}{Asset\+Load\+Exception.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(message,\ innerException)\ \{\}}
+
+\end{DoxyCode}

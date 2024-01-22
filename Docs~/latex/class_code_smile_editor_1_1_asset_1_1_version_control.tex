@@ -1,0 +1,640 @@
+\doxysubsection{Asset.\+Version\+Control Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control}{}\label{class_code_smile_editor_1_1_asset_1_1_version_control}\index{Asset.VersionControl@{Asset.VersionControl}}
+
+
+Groups version control related functionality.  
+
+
+
+
+Collaboration diagram for Asset.\+Version\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_code_smile_editor_1_1_asset_1_1_version_control__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a7f6bbb0782e7f7635706b0e0bc921341_a7f6bbb0782e7f7635706b0e0bc921341}{Can\+Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} Object asset, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Returns true if the asset can be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a2e5d0d18f7ef51ec5ea8a79689584125_a2e5d0d18f7ef51ec5ea8a79689584125}{Can\+Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]} assets, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Can\+Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Returns true if the asset can be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a805c285250d01e10b7eafe7f8bea9f3b_a805c285250d01e10b7eafe7f8bea9f3b}{Can\+Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_ac136cd1d20cf4aacbca01dd9d23f4d22_ac136cd1d20cf4aacbca01dd9d23f4d22}{Can\+Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Is\+Editable}} (\mbox{[}Not\+Null\mbox{]} Object asset, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Returns true if the asset file is open for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_ad8a9e3f4c51382aa26b9de11e0f9d0a6_ad8a9e3f4c51382aa26b9de11e0f9d0a6}{Is\+Editable}} (\mbox{[}Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]} assets, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests if the assets can be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a01231010fea0f9fbcadb4708e84c668a_a01231010fea0f9fbcadb4708e84c668a}{Is\+Editable}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests if the assets can be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_ad786f63df78897c77c7b158140e97ded_ad786f63df78897c77c7b158140e97ded}{Is\+Editable}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Tests if the assets can be opened for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a98a4620e539f0cf83a99cb54b154be49_a98a4620e539f0cf83a99cb54b154be49}{Is\+Meta\+Editable}} (\mbox{[}Not\+Null\mbox{]} Object asset, Status\+Query\+Options options=Default\+Status\+Query\+Option)
+\begin{DoxyCompactList}\small\item\em Returns true if the meta file is open for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Tries to open the path for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_ab13913c709a6e8bc08412828d8ce86af_ab13913c709a6e8bc08412828d8ce86af}{Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths)
+\begin{DoxyCompactList}\small\item\em Tries to open multiple paths for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a0418e950cb362718e024a62216d057dc_a0418e950cb362718e024a62216d057dc}{Make\+Editable}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths)
+\begin{DoxyCompactList}\small\item\em Tries to open multiple paths for editing in the version control system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_ad298d4e4fcf5043ab4d20e64bce3617f_ad298d4e4fcf5043ab4d20e64bce3617f}{Make\+Editable\+Interactive}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, String prompt=null)
+\begin{DoxyCompactList}\small\item\em Tries to open multiple paths for editing in the version control system. Shows a prompt to the user unless the editor is in batch operation mode. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a8eac8f1fdbd0e9009799ceeb46dc6b5c_a8eac8f1fdbd0e9009799ceeb46dc6b5c}{Make\+Editable\+Interactive}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths, out List$<$ String $>$ not\+Editable\+Paths, String prompt=null)
+\begin{DoxyCompactList}\small\item\em Tries to open multiple paths for editing in the version control system. Shows a prompt to the user unless the editor is in batch operation mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups version control related functionality. 
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a7f6bbb0782e7f7635706b0e0bc921341_a7f6bbb0782e7f7635706b0e0bc921341}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a7f6bbb0782e7f7635706b0e0bc921341_a7f6bbb0782e7f7635706b0e0bc921341} 
+\index{Asset.VersionControl@{Asset.VersionControl}!CanMakeEditable@{CanMakeEditable}}
+\index{CanMakeEditable@{CanMakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{CanMakeEditable()}{CanMakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily static Boolean Can\+Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the asset can be opened for editing in the version control system. 
+
+If this method returns false, \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message()} returns the error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the path can be opened for editing, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Make\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html}{\texttt{ Asset\+Database.\+Can\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{CanMakeEditable}}(Path.Get(asset),\ options);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00039}{Asset.\+Version\+Control.\+Can\+Make\+Editable()}}, and \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_smile_editor_1_1_asset_1_1_version_control_a7f6bbb0782e7f7635706b0e0bc921341_a7f6bbb0782e7f7635706b0e0bc921341_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a2e5d0d18f7ef51ec5ea8a79689584125_a2e5d0d18f7ef51ec5ea8a79689584125}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a2e5d0d18f7ef51ec5ea8a79689584125_a2e5d0d18f7ef51ec5ea8a79689584125} 
+\index{Asset.VersionControl@{Asset.VersionControl}!CanMakeEditable@{CanMakeEditable}}
+\index{CanMakeEditable@{CanMakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{CanMakeEditable()}{CanMakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily static void Can\+Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]}}]{assets,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. 
+
+To get a failure message query each individual path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets} & Instances of assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that cannot be opened for editing. List is empty if all can be opened.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Make\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html}{\texttt{ Asset\+Database.\+Can\+Open\+For\+Edit}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9} 
+\index{Asset.VersionControl@{Asset.VersionControl}!CanMakeEditable@{CanMakeEditable}}
+\index{CanMakeEditable@{CanMakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{CanMakeEditable()}{CanMakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily static Boolean Can\+Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the asset can be opened for editing in the version control system. 
+
+If this method returns false, \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message()} returns the error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the path can be opened for editing, false otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Make\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html}{\texttt{ Asset\+Database.\+Can\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ canOpen\ =\ AssetDatabase.CanOpenForEdit(path,\ out\ var\ message,\ options);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (canOpen\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(message);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ canOpen;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00066}{Asset.\+Version\+Control.\+Can\+Make\+Editable()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a805c285250d01e10b7eafe7f8bea9f3b_a805c285250d01e10b7eafe7f8bea9f3b}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a805c285250d01e10b7eafe7f8bea9f3b_a805c285250d01e10b7eafe7f8bea9f3b} 
+\index{Asset.VersionControl@{Asset.VersionControl}!CanMakeEditable@{CanMakeEditable}}
+\index{CanMakeEditable@{CanMakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{CanMakeEditable()}{CanMakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily static void Can\+Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. 
+
+To get a failure message query each individual path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that cannot be opened for editing. List is empty if all can be opened.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Make\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html}{\texttt{ Asset\+Database.\+Can\+Open\+For\+Edit}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_ac136cd1d20cf4aacbca01dd9d23f4d22_ac136cd1d20cf4aacbca01dd9d23f4d22}\label{class_code_smile_editor_1_1_asset_1_1_version_control_ac136cd1d20cf4aacbca01dd9d23f4d22_ac136cd1d20cf4aacbca01dd9d23f4d22} 
+\index{Asset.VersionControl@{Asset.VersionControl}!CanMakeEditable@{CanMakeEditable}}
+\index{CanMakeEditable@{CanMakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{CanMakeEditable()}{CanMakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily static void Can\+Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests which assets can be made editable and provides a list of paths that cannot be opened for editing in the version control system. 
+
+To get a failure message query each individual path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Instances of assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that cannot be opened for editing. List is empty if all can be opened.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Make\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenForEdit.html}{\texttt{ Asset\+Database.\+Can\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00111}{111}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ notEditablePaths\ =\ \textcolor{keyword}{new}\ List<String>();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CanOpenForEdit(paths,\ notEditablePaths,\ options);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339} 
+\index{Asset.VersionControl@{Asset.VersionControl}!IsEditable@{IsEditable}}
+\index{IsEditable@{IsEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{IsEditable()}{IsEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static Boolean Is\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the asset file is open for editing in the version control system. 
+
+If this method returns false, \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message()} returns the error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a98a4620e539f0cf83a99cb54b154be49_a98a4620e539f0cf83a99cb54b154be49}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Meta\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html}{\texttt{ Asset\+Database.\+Is\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00182}{182}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isOpen\ =\ AssetDatabase.IsOpenForEdit(asset,\ out\ var\ message,\ options);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOpen\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(message);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOpen;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_ad8a9e3f4c51382aa26b9de11e0f9d0a6_ad8a9e3f4c51382aa26b9de11e0f9d0a6}\label{class_code_smile_editor_1_1_asset_1_1_version_control_ad8a9e3f4c51382aa26b9de11e0f9d0a6_ad8a9e3f4c51382aa26b9de11e0f9d0a6} 
+\index{Asset.VersionControl@{Asset.VersionControl}!IsEditable@{IsEditable}}
+\index{IsEditable@{IsEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{IsEditable()}{IsEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static void Is\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]}}]{assets,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the assets can be opened for editing in the version control system. 
+
+To get an error message query each failed path individually.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets} & Instances of assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html}{\texttt{ Asset\+Database.\+Is\+Open\+For\+Edit}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a01231010fea0f9fbcadb4708e84c668a_a01231010fea0f9fbcadb4708e84c668a}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a01231010fea0f9fbcadb4708e84c668a_a01231010fea0f9fbcadb4708e84c668a} 
+\index{Asset.VersionControl@{Asset.VersionControl}!IsEditable@{IsEditable}}
+\index{IsEditable@{IsEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{IsEditable()}{IsEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static void Is\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the assets can be opened for editing in the version control system. 
+
+To get an error message query each failed path individually.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html}{\texttt{ Asset\+Database.\+Is\+Open\+For\+Edit}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_ad786f63df78897c77c7b158140e97ded_ad786f63df78897c77c7b158140e97ded}\label{class_code_smile_editor_1_1_asset_1_1_version_control_ad786f63df78897c77c7b158140e97ded_ad786f63df78897c77c7b158140e97ded} 
+\index{Asset.VersionControl@{Asset.VersionControl}!IsEditable@{IsEditable}}
+\index{IsEditable@{IsEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{IsEditable()}{IsEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static void Is\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the assets can be opened for editing in the version control system. 
+
+To get an error message query each failed path individually.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsOpenForEdit.html}{\texttt{ Asset\+Database.\+Is\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00223}{223}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ notEditablePaths\ =\ \textcolor{keyword}{new}\ List<String>();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.IsOpenForEdit(paths,\ notEditablePaths,\ options);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a98a4620e539f0cf83a99cb54b154be49_a98a4620e539f0cf83a99cb54b154be49}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a98a4620e539f0cf83a99cb54b154be49_a98a4620e539f0cf83a99cb54b154be49} 
+\index{Asset.VersionControl@{Asset.VersionControl}!IsMetaEditable@{IsMetaEditable}}
+\index{IsMetaEditable@{IsMetaEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{IsMetaEditable()}{IsMetaEditable()}}
+{\footnotesize\ttfamily static Boolean Is\+Meta\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset,  }\item[{Status\+Query\+Options}]{options = {\ttfamily DefaultStatusQueryOption} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the meta file is open for editing in the version control system. 
+
+If this method returns false, \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message()} returns the error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/StatusQueryOptions.html}{\texttt{ Status\+Query\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a14fd4d4a0447ac1dacde2ae694c39339_a14fd4d4a0447ac1dacde2ae694c39339}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Is\+Editable}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsMetaFileOpenForEdit.html}{\texttt{ Asset\+Database.\+Is\+Meta\+File\+Open\+For\+Edit}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00156}{156}} of file \mbox{\hyperlink{_asset_8_version_control_8cs_source}{Asset.\+Version\+Control.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isOpen\ =\ AssetDatabase.IsMetaFileOpenForEdit(asset,\ out\ var\ message,\ options);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOpen\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(message);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isOpen;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a43dd5490eaead3d1d8e0b72879e5d2f8_a43dd5490eaead3d1d8e0b72879e5d2f8} 
+\index{Asset.VersionControl@{Asset.VersionControl}!MakeEditable@{MakeEditable}}
+\index{MakeEditable@{MakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{MakeEditable()}{MakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static Boolean Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tries to open the path for editing in the version control system. 
+
+Use \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} to get an error message if this method returns false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the path is now editable, false if at least one failed to open.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html}{\texttt{ Asset\+Database.\+Make\+Editable}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_ab13913c709a6e8bc08412828d8ce86af_ab13913c709a6e8bc08412828d8ce86af}\label{class_code_smile_editor_1_1_asset_1_1_version_control_ab13913c709a6e8bc08412828d8ce86af_ab13913c709a6e8bc08412828d8ce86af} 
+\index{Asset.VersionControl@{Asset.VersionControl}!MakeEditable@{MakeEditable}}
+\index{MakeEditable@{MakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{MakeEditable()}{MakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static Boolean Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tries to open multiple paths for editing in the version control system. 
+
+Use \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} to get an error message for individual paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the path is now editable, false if at least one failed to open.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html}{\texttt{ Asset\+Database.\+Make\+Editable}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a0418e950cb362718e024a62216d057dc_a0418e950cb362718e024a62216d057dc}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a0418e950cb362718e024a62216d057dc_a0418e950cb362718e024a62216d057dc} 
+\index{Asset.VersionControl@{Asset.VersionControl}!MakeEditable@{MakeEditable}}
+\index{MakeEditable@{MakeEditable}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{MakeEditable()}{MakeEditable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static Boolean Make\+Editable (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tries to open multiple paths for editing in the version control system. 
+
+Use \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} to get an error message for individual paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the paths are now editable, false if at least one failed to open.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html}{\texttt{ Asset\+Database.\+Make\+Editable}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_ad298d4e4fcf5043ab4d20e64bce3617f_ad298d4e4fcf5043ab4d20e64bce3617f}\label{class_code_smile_editor_1_1_asset_1_1_version_control_ad298d4e4fcf5043ab4d20e64bce3617f_ad298d4e4fcf5043ab4d20e64bce3617f} 
+\index{Asset.VersionControl@{Asset.VersionControl}!MakeEditableInteractive@{MakeEditableInteractive}}
+\index{MakeEditableInteractive@{MakeEditableInteractive}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{MakeEditableInteractive()}{MakeEditableInteractive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Boolean Make\+Editable\+Interactive (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{String}]{prompt = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tries to open multiple paths for editing in the version control system. Shows a prompt to the user unless the editor is in batch operation mode. 
+
+Use \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} to get an error message for individual paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+{\em prompt} & A message for the interactive dialog or null to use the default message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the paths are now editable, false if at least one failed to open.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html}{\texttt{ Asset\+Database.\+Make\+Editable}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_version_control_a8eac8f1fdbd0e9009799ceeb46dc6b5c_a8eac8f1fdbd0e9009799ceeb46dc6b5c}\label{class_code_smile_editor_1_1_asset_1_1_version_control_a8eac8f1fdbd0e9009799ceeb46dc6b5c_a8eac8f1fdbd0e9009799ceeb46dc6b5c} 
+\index{Asset.VersionControl@{Asset.VersionControl}!MakeEditableInteractive@{MakeEditableInteractive}}
+\index{MakeEditableInteractive@{MakeEditableInteractive}!Asset.VersionControl@{Asset.VersionControl}}
+\doxyparagraph{\texorpdfstring{MakeEditableInteractive()}{MakeEditableInteractive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Boolean Make\+Editable\+Interactive (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{out List$<$ String $>$}]{not\+Editable\+Paths,  }\item[{String}]{prompt = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tries to open multiple paths for editing in the version control system. Shows a prompt to the user unless the editor is in batch operation mode. 
+
+Use \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} to get an error message for individual paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em not\+Editable\+Paths} & List of paths that are not editable. Is empty if all paths are editable.\\
+\hline
+{\em prompt} & A message for the interactive dialog or null to use the default message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the paths are now editable, false if at least one failed to open.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MakeEditable.html}{\texttt{ Asset\+Database.\+Make\+Editable}} 
+\end{DoxyItemize}

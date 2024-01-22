@@ -1,0 +1,630 @@
+\doxysubsection{Asset.\+Importer Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_importer}{}\label{class_code_smile_editor_1_1_asset_1_1_importer}\index{Asset.Importer@{Asset.Importer}}
+
+
+Groups all Asset\+Importer related functionality.  
+
+
+
+
+Collaboration diagram for Asset.\+Importer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_code_smile_editor_1_1_asset_1_1_importer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a1a9a83a1db886ceb61eecb0933d27f30_a1a9a83a1db886ceb61eecb0933d27f30}{Apply\+Settings}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Writes any unsaved changes of the given asset\textquotesingle{}s importer to disk. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df}{Clear\+Override}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Clears an Asset\+Importer override for the specified asset. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86}{Get\+Active}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer type used for the given asset. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a357d4eb1c100686c1c135b3b1eb2aa70_a357d4eb1c100686c1c135b3b1eb2aa70}{Get\+Active}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer type used for the given asset. \end{DoxyCompactList}\item 
+static Type\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2}{Get\+Active}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer types used for the given assets. \end{DoxyCompactList}\item 
+static Type\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ac0bb98eb8d643f17f30448075c4e91bb_ac0bb98eb8d643f17f30448075c4e91bb}{Get\+Active}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer types used for the given assets. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a728bec89f163cf82119c37e0c73dfc0d_a728bec89f163cf82119c37e0c73dfc0d}{Get\+Active}} (GUID guid)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer type used for the given asset. \end{DoxyCompactList}\item 
+static Type\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a80fd54a4f3cc505e2e9a42b4ca924656_a80fd54a4f3cc505e2e9a42b4ca924656}{Get\+Active}} (Read\+Only\+Span$<$ GUID $>$ guids)
+\begin{DoxyCompactList}\small\item\em Gets the active Asset\+Importer types used for the given assets. \end{DoxyCompactList}\item 
+static Type\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9}{Get\+Available}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Gets the available Asset\+Importer types for assets of this kind. \end{DoxyCompactList}\item 
+static Type\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aee616cbd3cbe9e7b8256aed74fe20254_aee616cbd3cbe9e7b8256aed74fe20254}{Get\+Available}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Gets the available Asset\+Importer types for assets of this kind. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9}{Get\+Default}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Returns an asset\textquotesingle{}s default importer type. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Get\+Default}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns an asset\textquotesingle{}s default importer type. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63}{Get\+Override}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Returns an asset\textquotesingle{}s overridden importer type. \end{DoxyCompactList}\item 
+static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Get\+Override}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns an asset\textquotesingle{}s overridden importer type. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_abf047cc58c6e0a054b319bb93fb9ae5d_abf047cc58c6e0a054b319bb93fb9ae5d}{Is\+Overridden}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns true if the Asset\+Importer type for this asset has been overridden. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{Set\+Override$<$ T $>$}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Sets the custom Asset\+Importer to use for the specified asset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups all Asset\+Importer related functionality. 
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a1a9a83a1db886ceb61eecb0933d27f30_a1a9a83a1db886ceb61eecb0933d27f30}\label{class_code_smile_editor_1_1_asset_1_1_importer_a1a9a83a1db886ceb61eecb0933d27f30_a1a9a83a1db886ceb61eecb0933d27f30} 
+\index{Asset.Importer@{Asset.Importer}!ApplySettings@{ApplySettings}}
+\index{ApplySettings@{ApplySettings}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{ApplySettings()}{ApplySettings()}}
+{\footnotesize\ttfamily static void Apply\+Settings (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes any unsaved changes of the given asset\textquotesingle{}s importer to disk. 
+
+This is mainly used to force the Cache\+Server/\+Accelerator to import the asset. It does so without user interaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.WriteImportSettingsIfDirty.html}{\texttt{ Asset\+Database.\+Write\+Import\+Settings\+If\+Dirty}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df}\label{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df} 
+\index{Asset.Importer@{Asset.Importer}!ClearOverride@{ClearOverride}}
+\index{ClearOverride@{ClearOverride}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{ClearOverride()}{ClearOverride()}}
+{\footnotesize\ttfamily static void Clear\+Override (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clears an Asset\+Importer override for the specified asset. 
+
+The asset will then use the default importer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Set\+Override$<$\+T$>$}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html}{\texttt{ Asset\+Database.\+Clear\+Importer\+Override}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86}\label{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily static Type Get\+Active (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer type used for the given asset. 
+
+Available in Unity 2022.\+2 or newer. In previous versions throws a Not\+Supported\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer type in use for the specified asset.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Type}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a357d4eb1c100686c1c135b3b1eb2aa70_a357d4eb1c100686c1c135b3b1eb2aa70}\label{class_code_smile_editor_1_1_asset_1_1_importer_a357d4eb1c100686c1c135b3b1eb2aa70_a357d4eb1c100686c1c135b3b1eb2aa70} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static Type Get\+Active (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer type used for the given asset. 
+
+Available in Unity 2022.\+2 or newer. In previous versions throws a Not\+Supported\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer type in use for the specified asset.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Type}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER }}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterType(path);}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterType\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ null"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2}\label{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily static Type\mbox{[}$\,$\mbox{]} Get\+Active (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer types used for the given assets. 
+
+Available in Unity 2022.\+2 or newer. Throws Not\+Supported\+Exception in earlier versions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to asset files.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer types in use for the specified assets.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Types}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_ac0bb98eb8d643f17f30448075c4e91bb_ac0bb98eb8d643f17f30448075c4e91bb}\label{class_code_smile_editor_1_1_asset_1_1_importer_ac0bb98eb8d643f17f30448075c4e91bb_ac0bb98eb8d643f17f30448075c4e91bb} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static Type\mbox{[}$\,$\mbox{]} Get\+Active (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer types used for the given assets. 
+
+Available in Unity 2022.\+2 or newer. Throws Not\+Supported\+Exception in earlier versions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to asset files.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer types in use for the specified assets.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Types}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00103}{103}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER }}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterTypes(paths);}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}GetImporterTypes\ not\ available\ in\ this\ Unity\ version"{}});}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a728bec89f163cf82119c37e0c73dfc0d_a728bec89f163cf82119c37e0c73dfc0d}\label{class_code_smile_editor_1_1_asset_1_1_importer_a728bec89f163cf82119c37e0c73dfc0d_a728bec89f163cf82119c37e0c73dfc0d} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily static Type Get\+Active (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer type used for the given asset. 
+
+Available in Unity 2022.\+2 or newer. In previous versions throws a Not\+Supported\+Exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em guid} & GUID of an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer type in use for the specified asset.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Type}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER }}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterType(guid);}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterType\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ null"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a80fd54a4f3cc505e2e9a42b4ca924656_a80fd54a4f3cc505e2e9a42b4ca924656}\label{class_code_smile_editor_1_1_asset_1_1_importer_a80fd54a4f3cc505e2e9a42b4ca924656_a80fd54a4f3cc505e2e9a42b4ca924656} 
+\index{Asset.Importer@{Asset.Importer}!GetActive@{GetActive}}
+\index{GetActive@{GetActive}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetActive()}{GetActive()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static Type\mbox{[}$\,$\mbox{]} Get\+Active (\begin{DoxyParamCaption}\item[{Read\+Only\+Span$<$ GUID $>$}]{guids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the active Asset\+Importer types used for the given assets. 
+
+Available in Unity 2022.\+2 or newer. Throws Not\+Supported\+Exception in earlier versions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em guids} & GUIDs to asset files.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Asset\+Importer types in use for the specified assets.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterTypes.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Types}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00124}{124}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER }}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterTypes(guids);}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterTypes\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ empty\ array"{}});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Type[0];}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9}\label{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9} 
+\index{Asset.Importer@{Asset.Importer}!GetAvailable@{GetAvailable}}
+\index{GetAvailable@{GetAvailable}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetAvailable()}{GetAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Type\mbox{[}$\,$\mbox{]} Get\+Available (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the available Asset\+Importer types for assets of this kind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Asset\+Importer types that handle importing assets of the same kind as the given asset file.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html}{\texttt{ Asset\+Database.\+Get\+Available\+Importers}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_aee616cbd3cbe9e7b8256aed74fe20254_aee616cbd3cbe9e7b8256aed74fe20254}\label{class_code_smile_editor_1_1_asset_1_1_importer_aee616cbd3cbe9e7b8256aed74fe20254_aee616cbd3cbe9e7b8256aed74fe20254} 
+\index{Asset.Importer@{Asset.Importer}!GetAvailable@{GetAvailable}}
+\index{GetAvailable@{GetAvailable}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetAvailable()}{GetAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Type\mbox{[}$\,$\mbox{]} Get\+Available (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the available Asset\+Importer types for assets of this kind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Asset\+Importer types that handle importing assets of the same kind as the given asset file.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAvailableImporters.html}{\texttt{ Asset\+Database.\+Get\+Available\+Importers}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00143}{143}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER }}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetAvailableImporters(path);}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetAvailableImporterTypes(path);}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9}\label{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9} 
+\index{Asset.Importer@{Asset.Importer}!GetDefault@{GetDefault}}
+\index{GetDefault@{GetDefault}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetDefault()}{GetDefault()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Type Get\+Default (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an asset\textquotesingle{}s default importer type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & An asset instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of the default importer for assets of this kind.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html}{\texttt{ Asset\+Database.\+Get\+Default\+Importer}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}\label{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d} 
+\index{Asset.Importer@{Asset.Importer}!GetDefault@{GetDefault}}
+\index{GetDefault@{GetDefault}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetDefault()}{GetDefault()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Type Get\+Default (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an asset\textquotesingle{}s default importer type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of the default importer for assets of this kind.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html}{\texttt{ Asset\+Database.\+Get\+Default\+Importer}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00173}{173}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER }}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetDefaultImporter(path);}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}GetDefaultImporter\ is\ not\ available\ in\ this\ Unity\ version"{}});}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63}\label{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63} 
+\index{Asset.Importer@{Asset.Importer}!GetOverride@{GetOverride}}
+\index{GetOverride@{GetOverride}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetOverride()}{GetOverride()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Type Get\+Override (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an asset\textquotesingle{}s overridden importer type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & An asset instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The overridden Asset\+Importer type or null if there is no overridden importer.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Set\+Override$<$\+T$>$}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Override}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}\label{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512} 
+\index{Asset.Importer@{Asset.Importer}!GetOverride@{GetOverride}}
+\index{GetOverride@{GetOverride}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{GetOverride()}{GetOverride()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Type Get\+Override (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an asset\textquotesingle{}s overridden importer type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The overridden Asset\+Importer type or null if there is no overridden importer.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Set\+Override$<$\+T$>$}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterOverride.html}{\texttt{ Asset\+Database.\+Get\+Importer\+Override}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_abf047cc58c6e0a054b319bb93fb9ae5d_abf047cc58c6e0a054b319bb93fb9ae5d}\label{class_code_smile_editor_1_1_asset_1_1_importer_abf047cc58c6e0a054b319bb93fb9ae5d_abf047cc58c6e0a054b319bb93fb9ae5d} 
+\index{Asset.Importer@{Asset.Importer}!IsOverridden@{IsOverridden}}
+\index{IsOverridden@{IsOverridden}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{IsOverridden()}{IsOverridden()}}
+{\footnotesize\ttfamily static Boolean Is\+Overridden (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the Asset\+Importer type for this asset has been overridden. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the importer for the asset is overriden, false if it uses the default importer.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Set\+Override$<$\+T$>$}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDefaultImporter.html}{\texttt{ Asset\+Database.\+Get\+Default\+Importer}}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearImporterOverride.html}{\texttt{ Asset\+Database.\+Clear\+Importer\+Override}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}\label{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7} 
+\index{Asset.Importer@{Asset.Importer}!SetOverride$<$ T $>$@{SetOverride$<$ T $>$}}
+\index{SetOverride$<$ T $>$@{SetOverride$<$ T $>$}!Asset.Importer@{Asset.Importer}}
+\doxyparagraph{\texorpdfstring{SetOverride$<$ T $>$()}{SetOverride< T >()}}
+{\footnotesize\ttfamily static void Set\+Override$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the custom Asset\+Importer to use for the specified asset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type derived from Asset\+Importer. Note\+: in Unity 2021.\+3 T is Scripted\+Importer.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Clear\+Override}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Override}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{Code\+Smile\+Editor.\+Asset.\+Importer.\+Get\+Default}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SetImporterOverride.html}{\texttt{ Asset\+Database.\+Set\+Importer\+Override}} 
+\end{DoxyItemize}\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em Unity\+Editor.\+Asset\+Importers.\+Scripted\+Importer}]\end{description}
+\end{Desc}
+
+
+Definition at line \mbox{\hyperlink{_asset_8_importer_8cs_source_l00232}{232}} of file \mbox{\hyperlink{_asset_8_importer_8cs_source}{Asset.\+Importer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ AssetImporter}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ T\ :\ UnityEditor.AssetImporters.ScriptedImporter}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetImporterOverride<T>(path);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

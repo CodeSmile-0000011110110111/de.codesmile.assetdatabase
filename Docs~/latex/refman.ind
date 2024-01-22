@@ -1,0 +1,624 @@
+\begin{theindex}
+
+  \item {ActiveImporter}
+    \subitem {Asset}, \hyperpage{38}
+  \item {Add}
+    \subitem {Asset.Label}, \hyperpage{110}
+    \subitem {Asset.SubAsset}, \hyperpage{154}
+  \item {AddLabel}
+    \subitem {Asset}, \hyperpage{19}
+  \item {AddLabels}
+    \subitem {Asset}, \hyperpage{19}
+  \item {Address}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{60}
+  \item {AddSubAsset}
+    \subitem {Asset}, \hyperpage{19}
+  \item {All}
+    \subitem {Asset.Bundle}, \hyperpage{50}
+  \item {AllowAutoRefresh}
+    \subitem {Asset.Database}, \hyperpage{52}
+  \item {ApplySettings}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{59}
+    \subitem {Asset.Importer}, \hyperpage{100}
+  \item {Asset}, \hyperpage{10}
+    \subitem {ActiveImporter}, \hyperpage{38}
+    \subitem {AddLabel}, \hyperpage{19}
+    \subitem {AddLabels}, \hyperpage{19}
+    \subitem {AddSubAsset}, \hyperpage{19}
+    \subitem {Asset}, \hyperpage{15--18}
+    \subitem {AssetPath}, \hyperpage{38}
+    \subitem {AvailableImporters}, \hyperpage{38}
+    \subitem {CanMove}, \hyperpage{20}
+    \subitem {CanOpenInEditor}, \hyperpage{20}
+    \subitem {ClearLabels}, \hyperpage{21}
+    \subitem {DefaultImporter}, \hyperpage{38}
+    \subitem {Delete}, \hyperpage{21}
+    \subitem {Dependencies}, \hyperpage{39}
+    \subitem {DirectDependencies}, \hyperpage{39}
+    \subitem {Duplicate}, \hyperpage{22}
+    \subitem {ExportPackage}, \hyperpage{22}
+    \subitem {FileId}, \hyperpage{39}
+    \subitem {ForceSave}, \hyperpage{23}
+    \subitem {GetFileId}, \hyperpage{23}
+    \subitem {GetGuid}, \hyperpage{23}
+    \subitem {GetGuidAndFileId}, \hyperpage{24}
+    \subitem {GetIcon}, \hyperpage{25}
+    \subitem {GetLastErrorMessage}, \hyperpage{26}
+    \subitem {GetMain$<$ T $>$}, \hyperpage{27}
+    \subitem {GetMainType}, \hyperpage{27, 28}
+    \subitem {GetSubType}, \hyperpage{29}
+    \subitem {Guid}, \hyperpage{40}
+    \subitem {Icon}, \hyperpage{40}
+    \subitem {IsDeleted}, \hyperpage{40}
+    \subitem {IsForeign}, \hyperpage{40}
+    \subitem {IsImporterOverridden}, \hyperpage{41}
+    \subitem {IsNative}, \hyperpage{41}
+    \subitem {IsScene}, \hyperpage{41}
+    \subitem {Labels}, \hyperpage{42}
+    \subitem {Load$<$ T $>$}, \hyperpage{29}
+    \subitem {MainObject}, \hyperpage{42}
+    \subitem {MainObjectType}, \hyperpage{42}
+    \subitem {MetaPath}, \hyperpage{43}
+    \subitem {Move}, \hyperpage{30}
+    \subitem {OpenExternal}, \hyperpage{31}
+    \subitem {operator Asset}, \hyperpage{31, 32}
+    \subitem {operator Object}, \hyperpage{33}
+    \subitem {OwningBundle}, \hyperpage{43}
+    \subitem {OwningBundleVariant}, \hyperpage{43}
+    \subitem {RemoveSubAsset}, \hyperpage{33}
+    \subitem {Rename}, \hyperpage{33}
+    \subitem {Save}, \hyperpage{34}
+    \subitem {SaveAs}, \hyperpage{34}
+    \subitem {SaveAsNew}, \hyperpage{35}
+    \subitem {SetDirty}, \hyperpage{36}
+    \subitem {SetLabels}, \hyperpage{36}
+    \subitem {SubAssets}, \hyperpage{44}
+    \subitem {Trash}, \hyperpage{37}
+    \subitem {VisibleSubAssets}, \hyperpage{44}
+  \item {Asset.Bundle}, \hyperpage{45}
+    \subitem {All}, \hyperpage{50}
+    \subitem {ForceRemove}, \hyperpage{46}
+    \subitem {GetAllDependencies}, \hyperpage{46}
+    \subitem {GetAllPaths}, \hyperpage{47}
+    \subitem {GetDirectDependencies}, \hyperpage{47}
+    \subitem {GetOwningBundle}, \hyperpage{48}
+    \subitem {GetOwningBundleVariant}, \hyperpage{48}
+    \subitem {GetPaths}, \hyperpage{49}
+    \subitem {Remove}, \hyperpage{49}
+    \subitem {RemoveUnused}, \hyperpage{50}
+    \subitem {Unused}, \hyperpage{50}
+  \item {Asset.Database}, \hyperpage{51}
+    \subitem {AllowAutoRefresh}, \hyperpage{52}
+    \subitem {Contains}, \hyperpage{52, 53}
+    \subitem {DesiredWorkerCount}, \hyperpage{57}
+    \subitem {DirectoryMonitoring}, \hyperpage{57}
+    \subitem {DisallowAutoRefresh}, \hyperpage{53}
+    \subitem {ImportAll}, \hyperpage{53}
+    \subitem {ReleaseFileHandles}, \hyperpage{55}
+    \subitem {SaveAll}, \hyperpage{55}
+    \subitem {UpgradeAllAssetSerializationVersions}, \hyperpage{55}
+    \subitem {UpgradeAssetSerializationVersion}, \hyperpage{55, 56}
+  \item {Asset.Database.CacheServer}, \hyperpage{58}
+    \subitem {Address}, \hyperpage{60}
+    \subitem {ApplySettings}, \hyperpage{59}
+    \subitem {CanConnect}, \hyperpage{59}
+    \subitem {Connected}, \hyperpage{60}
+    \subitem {ConnectedAddress}, \hyperpage{61}
+    \subitem {Disconnect}, \hyperpage{60}
+    \subitem {DownloadsAllowed}, \hyperpage{61}
+    \subitem {Enabled}, \hyperpage{61}
+    \subitem {NamespacePrefix}, \hyperpage{62}
+    \subitem {Port}, \hyperpage{62}
+    \subitem {ResetReconnectTimer}, \hyperpage{60}
+    \subitem {UploadsAllowed}, \hyperpage{62}
+  \item {Asset.Dependency}, \hyperpage{63}
+    \subitem {GetAll}, \hyperpage{64}
+    \subitem {GetDirect}, \hyperpage{65}
+    \subitem {GetHash}, \hyperpage{66}
+    \subitem {Register}, \hyperpage{67}
+    \subitem {Unregister}, \hyperpage{67}
+  \item {Asset.File}, \hyperpage{68}
+    \subitem {BatchEditing}, \hyperpage{71}
+    \subitem {CanMove}, \hyperpage{71}
+    \subitem {CanOpenInEditor}, \hyperpage{72}
+    \subitem {Copy}, \hyperpage{73}
+    \subitem {CopyAsNew}, \hyperpage{74}
+    \subitem {Create}, \hyperpage{74--76}
+    \subitem {CreateAsNew}, \hyperpage{76, 77}
+    \subitem {CreateOrLoad$<$ T $>$}, \hyperpage{78}
+    \subitem {Delete}, \hyperpage{79, 80}
+    \subitem {Find}, \hyperpage{81}
+    \subitem {FindGuids}, \hyperpage{82}
+    \subitem {FindPaths}, \hyperpage{82}
+    \subitem {ForceSave}, \hyperpage{83}
+    \subitem {Import}, \hyperpage{83--85}
+    \subitem {ImportAndLoad$<$ T $>$}, \hyperpage{85}
+    \subitem {Load$<$ T $>$}, \hyperpage{86}
+    \subitem {LoadAsync}, \hyperpage{87}
+    \subitem {LoadMain$<$ T $>$}, \hyperpage{88, 89}
+    \subitem {LoadOrCreate$<$ T $>$}, \hyperpage{90}
+    \subitem {Move}, \hyperpage{91}
+    \subitem {OpenExternal}, \hyperpage{92, 93}
+    \subitem {PathsNotDeleted}, \hyperpage{98}
+    \subitem {Rename}, \hyperpage{93}
+    \subitem {Save}, \hyperpage{94, 95}
+    \subitem {Trash}, \hyperpage{95--97}
+  \item {Asset.Importer}, \hyperpage{98}
+    \subitem {ApplySettings}, \hyperpage{100}
+    \subitem {ClearOverride}, \hyperpage{100}
+    \subitem {GetActive}, \hyperpage{101--104}
+    \subitem {GetAvailable}, \hyperpage{104, 105}
+    \subitem {GetDefault}, \hyperpage{105, 106}
+    \subitem {GetOverride}, \hyperpage{106, 107}
+    \subitem {IsOverridden}, \hyperpage{107}
+    \subitem {SetOverride$<$ T $>$}, \hyperpage{108}
+  \item {Asset.Label}, \hyperpage{109}
+    \subitem {Add}, \hyperpage{110}
+    \subitem {ClearAll}, \hyperpage{111}
+    \subitem {GetAll}, \hyperpage{112}
+    \subitem {SetAll}, \hyperpage{114}
+  \item {Asset.Package}, \hyperpage{115}
+    \subitem {Export}, \hyperpage{115, 116}
+    \subitem {Import}, \hyperpage{117}
+    \subitem {ImportInteractive}, \hyperpage{117}
+  \item {Asset.Path}, \hyperpage{118}
+    \subitem {AssetPath}, \hyperpage{142}
+    \subitem {CreateFolders}, \hyperpage{125}
+    \subitem {Equals}, \hyperpage{127, 128}
+    \subitem {Exists}, \hyperpage{142}
+    \subitem {ExistsInFileSystem}, \hyperpage{142}
+    \subitem {Extension}, \hyperpage{143}
+    \subitem {FileExists}, \hyperpage{129}
+    \subitem {FileName}, \hyperpage{143}
+    \subitem {FileNameWithoutExtension}, \hyperpage{143}
+    \subitem {FolderExists}, \hyperpage{130}
+    \subitem {FolderPath}, \hyperpage{144}
+    \subitem {FromMeta}, \hyperpage{130}
+    \subitem {FullAssetsPath}, \hyperpage{144}
+    \subitem {FullLibraryPath}, \hyperpage{144}
+    \subitem {FullLogsPath}, \hyperpage{145}
+    \subitem {FullPackagesPath}, \hyperpage{145}
+    \subitem {FullPath}, \hyperpage{145}
+    \subitem {FullProjectPath}, \hyperpage{145}
+    \subitem {FullProjectSettingsPath}, \hyperpage{145}
+    \subitem {FullProjectTempPath}, \hyperpage{146}
+    \subitem {FullUserSettingsPath}, \hyperpage{146}
+    \subitem {Get}, \hyperpage{131--133}
+    \subitem {GetGuid}, \hyperpage{133}
+    \subitem {GetHashCode}, \hyperpage{134}
+    \subitem {GetScene}, \hyperpage{134}
+    \subitem {GetSubFolders}, \hyperpage{135}
+    \subitem {Guid}, \hyperpage{146}
+    \subitem {IsValid}, \hyperpage{135}
+    \subitem {MetaPath}, \hyperpage{146}
+    \subitem {OpenExternal}, \hyperpage{136}
+    \subitem {operator Path}, \hyperpage{136}
+    \subitem {operator String}, \hyperpage{137}
+    \subitem {operator!=}, \hyperpage{137, 138}
+    \subitem {operator==}, \hyperpage{138, 139}
+    \subitem {Path}, \hyperpage{123, 124}
+    \subitem {Rename}, \hyperpage{140}
+    \subitem {SubFolders}, \hyperpage{147}
+    \subitem {ToMeta}, \hyperpage{140}
+    \subitem {ToString}, \hyperpage{140}
+    \subitem {ToStrings}, \hyperpage{141}
+    \subitem {UniqueFilePath}, \hyperpage{147}
+    \subitem {UniquifyFileName}, \hyperpage{141}
+  \item {Asset.Status}, \hyperpage{148}
+    \subitem {IsForeign}, \hyperpage{149}
+    \subitem {IsImported}, \hyperpage{149, 150}
+    \subitem {IsLoaded}, \hyperpage{150}
+    \subitem {IsMain}, \hyperpage{151}
+    \subitem {IsNative}, \hyperpage{151}
+    \subitem {IsScene}, \hyperpage{152}
+    \subitem {IsSub}, \hyperpage{152}
+  \item {Asset.SubAsset}, \hyperpage{153}
+    \subitem {Add}, \hyperpage{154}
+    \subitem {Extract}, \hyperpage{154}
+    \subitem {LoadAll}, \hyperpage{155}
+    \subitem {LoadVisible}, \hyperpage{155}
+    \subitem {Remove}, \hyperpage{156}
+    \subitem {SetMain}, \hyperpage{157}
+  \item {Asset.VersionControl}, \hyperpage{158}
+    \subitem {CanMakeEditable}, \hyperpage{160--163}
+    \subitem {IsEditable}, \hyperpage{163--165}
+    \subitem {IsMetaEditable}, \hyperpage{166}
+    \subitem {MakeEditable}, \hyperpage{166, 167}
+    \subitem {MakeEditableInteractive}, \hyperpage{168}
+  \item {AssetLoadException}, \hyperpage{169}
+    \subitem {AssetLoadException}, \hyperpage{171}
+  \item {AssetPath}
+    \subitem {Asset}, \hyperpage{38}
+    \subitem {Asset.Path}, \hyperpage{142}
+  \item {AvailableImporters}
+    \subitem {Asset}, \hyperpage{38}
+
+  \indexspace
+
+  \item {BatchEditing}
+    \subitem {Asset.File}, \hyperpage{71}
+
+  \indexspace
+
+  \item {CanConnect}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{59}
+  \item {CanMakeEditable}
+    \subitem {Asset.VersionControl}, \hyperpage{160--163}
+  \item {CanMove}
+    \subitem {Asset}, \hyperpage{20}
+    \subitem {Asset.File}, \hyperpage{71}
+  \item {CanOpenInEditor}
+    \subitem {Asset}, \hyperpage{20}
+    \subitem {Asset.File}, \hyperpage{72}
+  \item {Change Log}, \hyperpage{5}
+  \item {ClearAll}
+    \subitem {Asset.Label}, \hyperpage{111}
+  \item {ClearLabels}
+    \subitem {Asset}, \hyperpage{21}
+  \item {ClearOverride}
+    \subitem {Asset.Importer}, \hyperpage{100}
+  \item {CodeSmile AssetDatabase}, \hyperpage{1}
+  \item {CodeSmile Packages -\/ Getting Started}, \hyperpage{8}
+  \item {CodeSmileEditor}, \hyperpage{10}
+  \item {Connected}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{60}
+  \item {ConnectedAddress}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{61}
+  \item {Contains}
+    \subitem {Asset.Database}, \hyperpage{52, 53}
+  \item {Copy}
+    \subitem {Asset.File}, \hyperpage{73}
+  \item {CopyAsNew}
+    \subitem {Asset.File}, \hyperpage{74}
+  \item {Create}
+    \subitem {Asset.File}, \hyperpage{74--76}
+  \item {CreateAsNew}
+    \subitem {Asset.File}, \hyperpage{76, 77}
+  \item {CreateFolders}
+    \subitem {Asset.Path}, \hyperpage{125}
+  \item {CreateOrLoad$<$ T $>$}
+    \subitem {Asset.File}, \hyperpage{78}
+
+  \indexspace
+
+  \item {DefaultImporter}
+    \subitem {Asset}, \hyperpage{38}
+  \item {Delete}
+    \subitem {Asset}, \hyperpage{21}
+    \subitem {Asset.File}, \hyperpage{79, 80}
+  \item {Dependencies}
+    \subitem {Asset}, \hyperpage{39}
+  \item {DesiredWorkerCount}
+    \subitem {Asset.Database}, \hyperpage{57}
+  \item {DirectDependencies}
+    \subitem {Asset}, \hyperpage{39}
+  \item {DirectoryMonitoring}
+    \subitem {Asset.Database}, \hyperpage{57}
+  \item {DisallowAutoRefresh}
+    \subitem {Asset.Database}, \hyperpage{53}
+  \item {Disconnect}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{60}
+  \item {DownloadsAllowed}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{61}
+  \item {Duplicate}
+    \subitem {Asset}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Enabled}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{61}
+  \item {Equals}
+    \subitem {Asset.Path}, \hyperpage{127, 128}
+  \item {Exists}
+    \subitem {Asset.Path}, \hyperpage{142}
+  \item {ExistsInFileSystem}
+    \subitem {Asset.Path}, \hyperpage{142}
+  \item {Export}
+    \subitem {Asset.Package}, \hyperpage{115, 116}
+  \item {ExportPackage}
+    \subitem {Asset}, \hyperpage{22}
+  \item {Extension}
+    \subitem {Asset.Path}, \hyperpage{143}
+  \item {Extract}
+    \subitem {Asset.SubAsset}, \hyperpage{154}
+
+  \indexspace
+
+  \item {FileExists}
+    \subitem {Asset.Path}, \hyperpage{129}
+  \item {FileId}
+    \subitem {Asset}, \hyperpage{39}
+  \item {FileName}
+    \subitem {Asset.Path}, \hyperpage{143}
+  \item {FileNameWithoutExtension}
+    \subitem {Asset.Path}, \hyperpage{143}
+  \item {Find}
+    \subitem {Asset.File}, \hyperpage{81}
+  \item {FindGuids}
+    \subitem {Asset.File}, \hyperpage{82}
+  \item {FindPaths}
+    \subitem {Asset.File}, \hyperpage{82}
+  \item {FolderExists}
+    \subitem {Asset.Path}, \hyperpage{130}
+  \item {FolderPath}
+    \subitem {Asset.Path}, \hyperpage{144}
+  \item {ForceRemove}
+    \subitem {Asset.Bundle}, \hyperpage{46}
+  \item {ForceSave}
+    \subitem {Asset}, \hyperpage{23}
+    \subitem {Asset.File}, \hyperpage{83}
+  \item {FromMeta}
+    \subitem {Asset.Path}, \hyperpage{130}
+  \item {FullAssetsPath}
+    \subitem {Asset.Path}, \hyperpage{144}
+  \item {FullLibraryPath}
+    \subitem {Asset.Path}, \hyperpage{144}
+  \item {FullLogsPath}
+    \subitem {Asset.Path}, \hyperpage{145}
+  \item {FullPackagesPath}
+    \subitem {Asset.Path}, \hyperpage{145}
+  \item {FullPath}
+    \subitem {Asset.Path}, \hyperpage{145}
+  \item {FullProjectPath}
+    \subitem {Asset.Path}, \hyperpage{145}
+  \item {FullProjectSettingsPath}
+    \subitem {Asset.Path}, \hyperpage{145}
+  \item {FullProjectTempPath}
+    \subitem {Asset.Path}, \hyperpage{146}
+  \item {FullUserSettingsPath}
+    \subitem {Asset.Path}, \hyperpage{146}
+
+  \indexspace
+
+  \item {Get}
+    \subitem {Asset.Path}, \hyperpage{131--133}
+  \item {GetActive}
+    \subitem {Asset.Importer}, \hyperpage{101--104}
+  \item {GetAll}
+    \subitem {Asset.Dependency}, \hyperpage{64}
+    \subitem {Asset.Label}, \hyperpage{112}
+  \item {GetAllDependencies}
+    \subitem {Asset.Bundle}, \hyperpage{46}
+  \item {GetAllPaths}
+    \subitem {Asset.Bundle}, \hyperpage{47}
+  \item {GetAvailable}
+    \subitem {Asset.Importer}, \hyperpage{104, 105}
+  \item {GetDefault}
+    \subitem {Asset.Importer}, \hyperpage{105, 106}
+  \item {GetDirect}
+    \subitem {Asset.Dependency}, \hyperpage{65}
+  \item {GetDirectDependencies}
+    \subitem {Asset.Bundle}, \hyperpage{47}
+  \item {GetFileId}
+    \subitem {Asset}, \hyperpage{23}
+  \item {GetGuid}
+    \subitem {Asset}, \hyperpage{23}
+    \subitem {Asset.Path}, \hyperpage{133}
+  \item {GetGuidAndFileId}
+    \subitem {Asset}, \hyperpage{24}
+  \item {GetHash}
+    \subitem {Asset.Dependency}, \hyperpage{66}
+  \item {GetHashCode}
+    \subitem {Asset.Path}, \hyperpage{134}
+  \item {GetIcon}
+    \subitem {Asset}, \hyperpage{25}
+  \item {GetLastErrorMessage}
+    \subitem {Asset}, \hyperpage{26}
+  \item {GetMain$<$ T $>$}
+    \subitem {Asset}, \hyperpage{27}
+  \item {GetMainType}
+    \subitem {Asset}, \hyperpage{27, 28}
+  \item {GetOverride}
+    \subitem {Asset.Importer}, \hyperpage{106, 107}
+  \item {GetOwningBundle}
+    \subitem {Asset.Bundle}, \hyperpage{48}
+  \item {GetOwningBundleVariant}
+    \subitem {Asset.Bundle}, \hyperpage{48}
+  \item {GetPaths}
+    \subitem {Asset.Bundle}, \hyperpage{49}
+  \item {GetScene}
+    \subitem {Asset.Path}, \hyperpage{134}
+  \item {GetSubFolders}
+    \subitem {Asset.Path}, \hyperpage{135}
+  \item {GetSubType}
+    \subitem {Asset}, \hyperpage{29}
+  \item {Guid}
+    \subitem {Asset}, \hyperpage{40}
+    \subitem {Asset.Path}, \hyperpage{146}
+
+  \indexspace
+
+  \item {Icon}
+    \subitem {Asset}, \hyperpage{40}
+  \item {Import}
+    \subitem {Asset.File}, \hyperpage{83--85}
+    \subitem {Asset.Package}, \hyperpage{117}
+  \item {ImportAll}
+    \subitem {Asset.Database}, \hyperpage{53}
+  \item {ImportAndLoad$<$ T $>$}
+    \subitem {Asset.File}, \hyperpage{85}
+  \item {ImportInteractive}
+    \subitem {Asset.Package}, \hyperpage{117}
+  \item {IsDeleted}
+    \subitem {Asset}, \hyperpage{40}
+  \item {IsEditable}
+    \subitem {Asset.VersionControl}, \hyperpage{163--165}
+  \item {IsForeign}
+    \subitem {Asset}, \hyperpage{40}
+    \subitem {Asset.Status}, \hyperpage{149}
+  \item {IsImported}
+    \subitem {Asset.Status}, \hyperpage{149, 150}
+  \item {IsImporterOverridden}
+    \subitem {Asset}, \hyperpage{41}
+  \item {IsLoaded}
+    \subitem {Asset.Status}, \hyperpage{150}
+  \item {IsMain}
+    \subitem {Asset.Status}, \hyperpage{151}
+  \item {IsMetaEditable}
+    \subitem {Asset.VersionControl}, \hyperpage{166}
+  \item {IsNative}
+    \subitem {Asset}, \hyperpage{41}
+    \subitem {Asset.Status}, \hyperpage{151}
+  \item {IsOverridden}
+    \subitem {Asset.Importer}, \hyperpage{107}
+  \item {IsScene}
+    \subitem {Asset}, \hyperpage{41}
+    \subitem {Asset.Status}, \hyperpage{152}
+  \item {IsSub}
+    \subitem {Asset.Status}, \hyperpage{152}
+  \item {IsValid}
+    \subitem {Asset.Path}, \hyperpage{135}
+
+  \indexspace
+
+  \item {Labels}
+    \subitem {Asset}, \hyperpage{42}
+  \item {Load$<$ T $>$}
+    \subitem {Asset}, \hyperpage{29}
+    \subitem {Asset.File}, \hyperpage{86}
+  \item {LoadAll}
+    \subitem {Asset.SubAsset}, \hyperpage{155}
+  \item {LoadAsync}
+    \subitem {Asset.File}, \hyperpage{87}
+  \item {LoadMain$<$ T $>$}
+    \subitem {Asset.File}, \hyperpage{88, 89}
+  \item {LoadOrCreate$<$ T $>$}
+    \subitem {Asset.File}, \hyperpage{90}
+  \item {LoadVisible}
+    \subitem {Asset.SubAsset}, \hyperpage{155}
+
+  \indexspace
+
+  \item {MainObject}
+    \subitem {Asset}, \hyperpage{42}
+  \item {MainObjectType}
+    \subitem {Asset}, \hyperpage{42}
+  \item {MakeEditable}
+    \subitem {Asset.VersionControl}, \hyperpage{166, 167}
+  \item {MakeEditableInteractive}
+    \subitem {Asset.VersionControl}, \hyperpage{168}
+  \item {MetaPath}
+    \subitem {Asset}, \hyperpage{43}
+    \subitem {Asset.Path}, \hyperpage{146}
+  \item {Move}
+    \subitem {Asset}, \hyperpage{30}
+    \subitem {Asset.File}, \hyperpage{91}
+
+  \indexspace
+
+  \item {NamespacePrefix}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{62}
+
+  \indexspace
+
+  \item {OpenExternal}
+    \subitem {Asset}, \hyperpage{31}
+    \subitem {Asset.File}, \hyperpage{92, 93}
+    \subitem {Asset.Path}, \hyperpage{136}
+  \item {operator Asset}
+    \subitem {Asset}, \hyperpage{31, 32}
+  \item {operator Object}
+    \subitem {Asset}, \hyperpage{33}
+  \item {operator Path}
+    \subitem {Asset.Path}, \hyperpage{136}
+  \item {operator String}
+    \subitem {Asset.Path}, \hyperpage{137}
+  \item {operator!=}
+    \subitem {Asset.Path}, \hyperpage{137, 138}
+  \item {operator==}
+    \subitem {Asset.Path}, \hyperpage{138, 139}
+  \item {OwningBundle}
+    \subitem {Asset}, \hyperpage{43}
+  \item {OwningBundleVariant}
+    \subitem {Asset}, \hyperpage{43}
+
+  \indexspace
+
+  \item {Path}
+    \subitem {Asset.Path}, \hyperpage{123, 124}
+  \item {PathsNotDeleted}
+    \subitem {Asset.File}, \hyperpage{98}
+  \item {Port}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{62}
+
+  \indexspace
+
+  \item {Register}
+    \subitem {Asset.Dependency}, \hyperpage{67}
+  \item {ReleaseFileHandles}
+    \subitem {Asset.Database}, \hyperpage{55}
+  \item {Remove}
+    \subitem {Asset.Bundle}, \hyperpage{49}
+    \subitem {Asset.SubAsset}, \hyperpage{156}
+  \item {RemoveSubAsset}
+    \subitem {Asset}, \hyperpage{33}
+  \item {RemoveUnused}
+    \subitem {Asset.Bundle}, \hyperpage{50}
+  \item {Rename}
+    \subitem {Asset}, \hyperpage{33}
+    \subitem {Asset.File}, \hyperpage{93}
+    \subitem {Asset.Path}, \hyperpage{140}
+  \item {ResetReconnectTimer}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{60}
+
+  \indexspace
+
+  \item {Save}
+    \subitem {Asset}, \hyperpage{34}
+    \subitem {Asset.File}, \hyperpage{94, 95}
+  \item {SaveAll}
+    \subitem {Asset.Database}, \hyperpage{55}
+  \item {SaveAs}
+    \subitem {Asset}, \hyperpage{34}
+  \item {SaveAsNew}
+    \subitem {Asset}, \hyperpage{35}
+  \item {SetAll}
+    \subitem {Asset.Label}, \hyperpage{114}
+  \item {SetDirty}
+    \subitem {Asset}, \hyperpage{36}
+  \item {SetLabels}
+    \subitem {Asset}, \hyperpage{36}
+  \item {SetMain}
+    \subitem {Asset.SubAsset}, \hyperpage{157}
+  \item {SetOverride$<$ T $>$}
+    \subitem {Asset.Importer}, \hyperpage{108}
+  \item {SubAssets}
+    \subitem {Asset}, \hyperpage{44}
+  \item {SubFolders}
+    \subitem {Asset.Path}, \hyperpage{147}
+
+  \indexspace
+
+  \item {ToMeta}
+    \subitem {Asset.Path}, \hyperpage{140}
+  \item {ToString}
+    \subitem {Asset.Path}, \hyperpage{140}
+  \item {ToStrings}
+    \subitem {Asset.Path}, \hyperpage{141}
+  \item {Trash}
+    \subitem {Asset}, \hyperpage{37}
+    \subitem {Asset.File}, \hyperpage{95--97}
+
+  \indexspace
+
+  \item {UniqueFilePath}
+    \subitem {Asset.Path}, \hyperpage{147}
+  \item {UniquifyFileName}
+    \subitem {Asset.Path}, \hyperpage{141}
+  \item {Unregister}
+    \subitem {Asset.Dependency}, \hyperpage{67}
+  \item {Unused}
+    \subitem {Asset.Bundle}, \hyperpage{50}
+  \item {UpgradeAllAssetSerializationVersions}
+    \subitem {Asset.Database}, \hyperpage{55}
+  \item {UpgradeAssetSerializationVersion}
+    \subitem {Asset.Database}, \hyperpage{55, 56}
+  \item {UploadsAllowed}
+    \subitem {Asset.Database.CacheServer}, \hyperpage{62}
+
+  \indexspace
+
+  \item {VisibleSubAssets}
+    \subitem {Asset}, \hyperpage{44}
+
+\end{theindex}

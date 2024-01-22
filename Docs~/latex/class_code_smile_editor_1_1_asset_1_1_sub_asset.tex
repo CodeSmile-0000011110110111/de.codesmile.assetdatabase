@@ -1,0 +1,319 @@
+\doxysubsection{Asset.\+Sub\+Asset Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset}{}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset}\index{Asset.SubAsset@{Asset.SubAsset}}
+
+
+Groups all Sub-\/\+Asset related functionality.  
+
+
+
+
+Collaboration diagram for Asset.\+Sub\+Asset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_code_smile_editor_1_1_asset_1_1_sub_asset__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a651286de3f2c9fef50eb5720f0a1b3a8_a651286de3f2c9fef50eb5720f0a1b3a8}{Add}} (\mbox{[}Not\+Null\mbox{]} Object sub\+Asset\+Instance, \mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Adds an object as sub-\/asset to the asset. This change is implicitly saved to disk. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_aba5beee6f12d0eed16af62bd8e96d6e6_aba5beee6f12d0eed16af62bd8e96d6e6}{Extract}} (\mbox{[}Not\+Null\mbox{]} Object sub\+Asset, \mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} destination\+Path)
+\begin{DoxyCompactList}\small\item\em Extracts a sub-\/object of an asset as an asset of its own. \end{DoxyCompactList}\item 
+static Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a5a074e1dfad018aec7956375a8cf6099_a5a074e1dfad018aec7956375a8cf6099}{Load\+All}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Loads all sub-\/asset objects of an asset. \end{DoxyCompactList}\item 
+static Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_aa1295ba7d9693917c8af65241aa0d3ae_aa1295ba7d9693917c8af65241aa0d3ae}{Load\+Visible}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Loads only the visible (representation) sub-\/asset objects of an asset. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_af2517f14782bec5f449da4bc4937cf8c_af2517f14782bec5f449da4bc4937cf8c}{Remove}} (\mbox{[}Not\+Null\mbox{]} Object sub\+Asset)
+\begin{DoxyCompactList}\small\item\em Removes a sub-\/object from the asset it is contained in. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476_a61bfe373deb21386f749d2f947da5476}{Set\+Main}} (\mbox{[}Not\+Null\mbox{]} Object sub\+Asset, \mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Sets (changes) an asset\textquotesingle{}s \textquotesingle{}main\textquotesingle{} object to one of its sub-\/assets. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519_ac4fb08375dcad548d850eec212582519}{Set\+Main}} (\mbox{[}Not\+Null\mbox{]} Object sub\+Asset, \mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Sets (changes) an asset\textquotesingle{}s \textquotesingle{}main\textquotesingle{} object to one of its sub-\/assets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups all Sub-\/\+Asset related functionality. 
+
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_a651286de3f2c9fef50eb5720f0a1b3a8_a651286de3f2c9fef50eb5720f0a1b3a8}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_a651286de3f2c9fef50eb5720f0a1b3a8_a651286de3f2c9fef50eb5720f0a1b3a8} 
+\index{Asset.SubAsset@{Asset.SubAsset}!Add@{Add}}
+\index{Add@{Add}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily static void Add (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{sub\+Asset\+Instance,  }\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds an object as sub-\/asset to the asset. This change is implicitly saved to disk. 
+
+You do NOT need to call Save() afterwards.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+Asset\+Instance} & The object to add as a sub-\/asset. It must not already be an asset.\\
+\hline
+{\em asset} & Instance of an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_af2517f14782bec5f449da4bc4937cf8c_af2517f14782bec5f449da4bc4937cf8c}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Remove}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AddObjectToAsset.html}{\texttt{ Asset\+Database.\+Add\+Object\+To\+Asset}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(subAssetInstance,\ nameof(subAssetInstance));}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.SubObjectIsGameObject(subAssetInstance);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(subAssetInstance);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetWithAssetExtension(asset);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.AddObjectToAsset(subAssetInstance,\ asset);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_aba5beee6f12d0eed16af62bd8e96d6e6_aba5beee6f12d0eed16af62bd8e96d6e6}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_aba5beee6f12d0eed16af62bd8e96d6e6_aba5beee6f12d0eed16af62bd8e96d6e6} 
+\index{Asset.SubAsset@{Asset.SubAsset}!Extract@{Extract}}
+\index{Extract@{Extract}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{Extract()}{Extract()}}
+{\footnotesize\ttfamily static Boolean Extract (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{sub\+Asset,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extracts a sub-\/object of an asset as an asset of its own. 
+
+This is the same as dragging a sub-\/asset outside the containing asset in the project view. For example an animation or material dragged from a FBX asset. 
+
+Only visible sub assets are extractable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+Asset} & Instance of a sub-\/asset.\\
+\hline
+{\em destination\+Path} & Path to the extracted asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if extraction succeeded. False otherwise, in that case \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} provides the error message. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_af2517f14782bec5f449da4bc4937cf8c_af2517f14782bec5f449da4bc4937cf8c}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Remove}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExtractAsset.html}{\texttt{ Asset\+Database.\+Extract\+Asset}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(subAsset,\ nameof(subAsset));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(destinationPath,\ nameof(destinationPath));}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Succeeded(AssetDatabase.ExtractAsset(subAsset,\ destinationPath));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_a5a074e1dfad018aec7956375a8cf6099_a5a074e1dfad018aec7956375a8cf6099}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_a5a074e1dfad018aec7956375a8cf6099_a5a074e1dfad018aec7956375a8cf6099} 
+\index{Asset.SubAsset@{Asset.SubAsset}!LoadAll@{LoadAll}}
+\index{LoadAll@{LoadAll}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{LoadAll()}{LoadAll()}}
+{\footnotesize\ttfamily static Object\mbox{[}$\,$\mbox{]} Load\+All (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads all sub-\/asset objects of an asset. 
+
+Whether the main object is included in this list depends on the type of asset. 
+
+CAUTION\+: Calling this on scene assets is not supported (error messages in console). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All sub-\/assets of the asset, possibly excluding the main asset. Or an empty array if load failed or there are no sub-\/assets and the asset type does not include the main type in the sub-\/assets list. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_aa1295ba7d9693917c8af65241aa0d3ae_aa1295ba7d9693917c8af65241aa0d3ae}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Load\+Visible}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetsAtPath.html}{\texttt{ Asset\+Database.\+Load\+All\+Assets\+At\+Path}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_aa1295ba7d9693917c8af65241aa0d3ae_aa1295ba7d9693917c8af65241aa0d3ae}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_aa1295ba7d9693917c8af65241aa0d3ae_aa1295ba7d9693917c8af65241aa0d3ae} 
+\index{Asset.SubAsset@{Asset.SubAsset}!LoadVisible@{LoadVisible}}
+\index{LoadVisible@{LoadVisible}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{LoadVisible()}{LoadVisible()}}
+{\footnotesize\ttfamily static Object\mbox{[}$\,$\mbox{]} Load\+Visible (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads only the visible (representation) sub-\/asset objects of an asset. 
+
+The visible representations are those sub-\/assets you see in the project view when an asset is expandable like a folder. 
+
+Does not include the main asset.
+
+CAUTION\+: Calling this on scene assets is not supported (error messages in console). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All visible sub-\/assets of the asset, excluding the main asset. Or an empty array if load failed or there are no sub-\/assets. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a5a074e1dfad018aec7956375a8cf6099_a5a074e1dfad018aec7956375a8cf6099}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Load\+All}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAllAssetRepresentationsAtPath.html}{\texttt{ Asset\+Database.\+Load\+All\+Asset\+Representations\+At\+Path}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_af2517f14782bec5f449da4bc4937cf8c_af2517f14782bec5f449da4bc4937cf8c}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_af2517f14782bec5f449da4bc4937cf8c_af2517f14782bec5f449da4bc4937cf8c} 
+\index{Asset.SubAsset@{Asset.SubAsset}!Remove@{Remove}}
+\index{Remove@{Remove}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily static void Remove (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{sub\+Asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a sub-\/object from the asset it is contained in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+Asset} & Instance of a sub-\/asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a651286de3f2c9fef50eb5720f0a1b3a8_a651286de3f2c9fef50eb5720f0a1b3a8}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Add}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html}{\texttt{ Asset\+Database.\+Remove\+Object\+From\+Asset}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(subAsset,\ nameof(subAsset));}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.RemoveObjectFromAsset(subAsset);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476_a61bfe373deb21386f749d2f947da5476}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476_a61bfe373deb21386f749d2f947da5476} 
+\index{Asset.SubAsset@{Asset.SubAsset}!SetMain@{SetMain}}
+\index{SetMain@{SetMain}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{SetMain()}{SetMain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Set\+Main (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{sub\+Asset,  }\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets (changes) an asset\textquotesingle{}s \textquotesingle{}main\textquotesingle{} object to one of its sub-\/assets. 
+
+Automatically imports the asset after changing the main type so that the change takes immediate effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+Asset} & Instance of a sub-\/asset. Must be a sub-\/asset of the asset.\\
+\hline
+{\em asset} & Instance of the asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_a2e6860cd8479a284c3c81f4377ed100a_a2e6860cd8479a284c3c81f4377ed100a}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Main}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_ac715a31d20c073c37844f5d8839496cd_ac715a31d20c073c37844f5d8839496cd}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Sub}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html}{\texttt{ Asset\+Database.\+Set\+Main\+Object}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519_ac4fb08375dcad548d850eec212582519}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519_ac4fb08375dcad548d850eec212582519} 
+\index{Asset.SubAsset@{Asset.SubAsset}!SetMain@{SetMain}}
+\index{SetMain@{SetMain}!Asset.SubAsset@{Asset.SubAsset}}
+\doxyparagraph{\texorpdfstring{SetMain()}{SetMain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Set\+Main (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{sub\+Asset,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets (changes) an asset\textquotesingle{}s \textquotesingle{}main\textquotesingle{} object to one of its sub-\/assets. 
+
+Automatically imports the asset after changing the main type so that the change takes immediate effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sub\+Asset} & Instance of a sub-\/asset. Must be a sub-\/asset of the asset.\\
+\hline
+{\em path} & Path to the asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_a2e6860cd8479a284c3c81f4377ed100a_a2e6860cd8479a284c3c81f4377ed100a}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Main}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_ac715a31d20c073c37844f5d8839496cd_ac715a31d20c073c37844f5d8839496cd}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Sub}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html}{\texttt{ Asset\+Database.\+Set\+Main\+Object}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00097}{97}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetMainObject(subAsset,\ path);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Import(path);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00275}{Asset.\+File.\+Import()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519_ac4fb08375dcad548d850eec212582519_cgraph}
+\end{center}
+\end{figure}

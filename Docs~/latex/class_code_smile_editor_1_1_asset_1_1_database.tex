@@ -1,0 +1,401 @@
+\doxysubsection{Asset.\+Database Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_database}{}\label{class_code_smile_editor_1_1_asset_1_1_database}\index{Asset.Database@{Asset.Database}}
+
+
+Groups all asset database functionality.  
+
+
+
+
+Collaboration diagram for Asset.\+Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_code_smile_editor_1_1_asset_1_1_database__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_1_1_cache_server}{Cache\+Server}}
+\begin{DoxyCompactList}\small\item\em Groups Cache\+Server (Accelerator) related functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a_a4f2683df249d67e506e9f2d9d9fe2b5a}{Allow\+Auto\+Refresh}} ()
+\begin{DoxyCompactList}\small\item\em Will allow Unity to automatically import assets. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_aebd60455d5568e8715f48750a2a15710_aebd60455d5568e8715f48750a2a15710}{Contains}} (Int32 instance\+Id)
+\begin{DoxyCompactList}\small\item\em Tests if the asset is in the database. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a9f98188e77af88fa79da70d1765765ff_a9f98188e77af88fa79da70d1765765ff}{Contains}} (Object instance)
+\begin{DoxyCompactList}\small\item\em Tests if the asset is in the database. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c_adb25c0a19eaf845815b001486373db4c}{Disallow\+Auto\+Refresh}} ()
+\begin{DoxyCompactList}\small\item\em Will stop Unity from automatically importing assets. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318_a7c993d64861e62fbdcff3700690b2318}{Import\+All}} (Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Scans for {\bfseries{external}} file system modifications and updates the Database accordingly. Prefer to use \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Code\+Smile\+Editor.\+Asset.\+File.\+Import} within \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}. {\bfseries{CAUTION}}\+: Import\+All (\textquotesingle{}Refresh\textquotesingle{}) unloads unused resources. This can degrade editor performance! \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_afa24e66e009892bc1032c64f512f349d_afa24e66e009892bc1032c64f512f349d}{Release\+File\+Handles}} ()
+\begin{DoxyCompactList}\small\item\em Releases any cached file handles that Unity holds. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_af4aa665fc0bbfcf9f076d5da1457b2c4_af4aa665fc0bbfcf9f076d5da1457b2c4}{Save\+All}} ()
+\begin{DoxyCompactList}\small\item\em Saves all unsaved (dirty) assets. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a3006ad7769d5ba3b477a5c153f20dd27_a3006ad7769d5ba3b477a5c153f20dd27}{Upgrade\+All\+Asset\+Serialization\+Versions}} ()
+\begin{DoxyCompactList}\small\item\em Updates all native asset files to reflect any changes in serialization in the current editor version. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a0bdd680cb405e96d92b6a7af338ad27f_a0bdd680cb405e96d92b6a7af338ad27f}{Upgrade\+Asset\+Serialization\+Version}} (\mbox{[}Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$ paths, Force\+Reserialize\+Assets\+Options options=Force\+Reserialize\+Assets\+Options.\+Reserialize\+Assets\+And\+Metadata)
+\begin{DoxyCompactList}\small\item\em Updates all native asset files to reflect any changes in serialization in the current editor version. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a94a77b56376fbb7f52ba2bece53f45b7_a94a77b56376fbb7f52ba2bece53f45b7}{Upgrade\+Asset\+Serialization\+Version}} (\mbox{[}Not\+Null\mbox{]} IEnumerable$<$ String $>$ paths, Force\+Reserialize\+Assets\+Options options=Force\+Reserialize\+Assets\+Options.\+Reserialize\+Assets\+And\+Metadata)
+\begin{DoxyCompactList}\small\item\em Updates all native asset files to reflect any changes in serialization in the current editor version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Int32 \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a46c1f775624b940edb495a5c2b08583c_a46c1f775624b940edb495a5c2b08583c}{Desired\+Worker\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the desired worker count. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_database_a6190225c177bf52f95b2cdbcb99ccc2a_a6190225c177bf52f95b2cdbcb99ccc2a}{Directory\+Monitoring}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns whether directory monitoring is enabled in Preferences. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups all asset database functionality. 
+
+Turns out there isn\textquotesingle{}t actually that much that is \textquotesingle{}database\textquotesingle{} related after all.
+
+Definition at line \mbox{\hyperlink{_asset_8_database_8_cache_server_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_asset_8_database_8_cache_server_8cs_source}{Asset.\+Database.\+Cache\+Server.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a_a4f2683df249d67e506e9f2d9d9fe2b5a}\label{class_code_smile_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a_a4f2683df249d67e506e9f2d9d9fe2b5a} 
+\index{Asset.Database@{Asset.Database}!AllowAutoRefresh@{AllowAutoRefresh}}
+\index{AllowAutoRefresh@{AllowAutoRefresh}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{AllowAutoRefresh()}{AllowAutoRefresh()}}
+{\footnotesize\ttfamily static void Allow\+Auto\+Refresh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Will allow Unity to automatically import assets. 
+
+This has no effect if Preferences =\texorpdfstring{$>$}{>} Asset Pipeline =\texorpdfstring{$>$}{>} Auto Refresh is disabled. 
+
+Must be called in pair with \doxylink{class_code_smile_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c_adb25c0a19eaf845815b001486373db4c}{Code\+Smile\+Editor.\+Asset.\+Database.\+Disallow\+Auto\+Refresh}. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c_adb25c0a19eaf845815b001486373db4c}{Code\+Smile\+Editor.\+Asset.\+Database.\+Disallow\+Auto\+Refresh}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AllowAutoRefresh.html}{\texttt{ Asset\+Database.\+Allow\+Auto\+Refresh}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_aebd60455d5568e8715f48750a2a15710_aebd60455d5568e8715f48750a2a15710}\label{class_code_smile_editor_1_1_asset_1_1_database_aebd60455d5568e8715f48750a2a15710_aebd60455d5568e8715f48750a2a15710} 
+\index{Asset.Database@{Asset.Database}!Contains@{Contains}}
+\index{Contains@{Contains}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Boolean Contains (\begin{DoxyParamCaption}\item[{Int32}]{instance\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the asset is in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+Id} & The instance ID of an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the asset is imported. Returns false if the asset is not in the database.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html}{\texttt{ Asset\+Database.\+Contains}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a9f98188e77af88fa79da70d1765765ff_a9f98188e77af88fa79da70d1765765ff}\label{class_code_smile_editor_1_1_asset_1_1_database_a9f98188e77af88fa79da70d1765765ff_a9f98188e77af88fa79da70d1765765ff} 
+\index{Asset.Database@{Asset.Database}!Contains@{Contains}}
+\index{Contains@{Contains}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Boolean Contains (\begin{DoxyParamCaption}\item[{Object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the asset is in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & Instance to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the asset is imported. Returns false if the asset is not in the database, or if obj is null.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html}{\texttt{ Asset\+Database.\+Contains}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c_adb25c0a19eaf845815b001486373db4c}\label{class_code_smile_editor_1_1_asset_1_1_database_adb25c0a19eaf845815b001486373db4c_adb25c0a19eaf845815b001486373db4c} 
+\index{Asset.Database@{Asset.Database}!DisallowAutoRefresh@{DisallowAutoRefresh}}
+\index{DisallowAutoRefresh@{DisallowAutoRefresh}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{DisallowAutoRefresh()}{DisallowAutoRefresh()}}
+{\footnotesize\ttfamily static void Disallow\+Auto\+Refresh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Will stop Unity from automatically importing assets. 
+
+Must be called in pair with \doxylink{class_code_smile_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a_a4f2683df249d67e506e9f2d9d9fe2b5a}{Code\+Smile\+Editor.\+Asset.\+Database.\+Allow\+Auto\+Refresh}. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_database_a4f2683df249d67e506e9f2d9d9fe2b5a_a4f2683df249d67e506e9f2d9d9fe2b5a}{Code\+Smile\+Editor.\+Asset.\+Database.\+Allow\+Auto\+Refresh}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DisallowAutoRefresh.html}{\texttt{ Asset\+Database.\+Disallow\+Auto\+Refresh}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318_a7c993d64861e62fbdcff3700690b2318}\label{class_code_smile_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318_a7c993d64861e62fbdcff3700690b2318} 
+\index{Asset.Database@{Asset.Database}!ImportAll@{ImportAll}}
+\index{ImportAll@{ImportAll}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{ImportAll()}{ImportAll()}}
+{\footnotesize\ttfamily static void Import\+All (\begin{DoxyParamCaption}\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Scans for {\bfseries{external}} file system modifications and updates the Database accordingly. Prefer to use \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Code\+Smile\+Editor.\+Asset.\+File.\+Import} within \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}. {\bfseries{CAUTION}}\+: Import\+All (\textquotesingle{}Refresh\textquotesingle{}) unloads unused resources. This can degrade editor performance! 
+
+For best performance, prefer to use \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a_a39290f9fb99198f7df818bc5cafb0e1a}{Code\+Smile\+Editor.\+Asset.\+File.\+Import(\+String\mbox{[}$\,$\mbox{]},\+Import\+Asset\+Options)} to import multiple assets in a batch operation. 
+
+When to call Import\+All (same as Asset\+Database.\+Refresh)\+:
+\begin{DoxyItemize}
+\item After System.\+IO.\+File/\+Directory or similar methods modified files/folders in the project.
+\item After running an external process that possibly modified files/folders in the project. There is no need to call Import\+All / \textquotesingle{}Refresh\textquotesingle{} in any other situation! 
+\end{DoxyItemize}
+
+Modified means the following\+:
+\begin{DoxyItemize}
+\item Create a file / folder
+\item Delete or trash a file / folder
+\item Move or rename a file / folder
+\item Change a file\textquotesingle{}s contents
+\item Change attributes of a file/folder 
+\end{DoxyItemize}
+
+History\+: I believe there was a time around Unity 3.\+x-\/ish where the Editor did not have an "{}auto refresh"{} feature, so calling \textquotesingle{}Asset\+Database.\+Refresh\textquotesingle{} after any Asset\+Database operation was common. This seems to have stuck, even though it is no longer required. \textquotesingle{}Refresh\textquotesingle{} remains over-\/used with no thought given to its necessity or performance implications. 
+
+Any file operation done VIA the Asset\+Database these days does {\bfseries{not}} require an Asset\+Database refresh! Only file operations that bypass the Asset\+Database require importing affected files. In most cases you know which files are affects, so import them individually. Everyone will thank you for the effort! 
+
+{\bfseries{CAUTION\+:}} Since this method unloads \textquotesingle{}unused\textquotesingle{} assets, any unloaded asset will have to be reloaded when accessed again. Worst case scenario\+: An editor script that indiscriminately calls this method after common editor operations, such as selection change events, can severely degrade Editor performance! 
+
+Further reading for the curious\+: \href{https://docs.unity3d.com/Manual/AssetDatabaseRefreshing.html}{\texttt{ Asset\+Database Refreshing}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a_a39290f9fb99198f7df818bc5cafb0e1a}{Code\+Smile\+Editor.\+Asset.\+File.\+Import(\+String\mbox{[}$\,$\mbox{]},\+Import\+Asset\+Options)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.Refresh.html}{\texttt{ Asset\+Database.\+Refresh}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_afa24e66e009892bc1032c64f512f349d_afa24e66e009892bc1032c64f512f349d}\label{class_code_smile_editor_1_1_asset_1_1_database_afa24e66e009892bc1032c64f512f349d_afa24e66e009892bc1032c64f512f349d} 
+\index{Asset.Database@{Asset.Database}!ReleaseFileHandles@{ReleaseFileHandles}}
+\index{ReleaseFileHandles@{ReleaseFileHandles}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{ReleaseFileHandles()}{ReleaseFileHandles()}}
+{\footnotesize\ttfamily static void Release\+File\+Handles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Releases any cached file handles that Unity holds. 
+
+May be required to allow external asset or meta file modifications to operate without causing access exceptions. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ReleaseCachedFileHandles.html}{\texttt{ Asset\+Database.\+Release\+Cached\+File\+Handles}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_af4aa665fc0bbfcf9f076d5da1457b2c4_af4aa665fc0bbfcf9f076d5da1457b2c4}\label{class_code_smile_editor_1_1_asset_1_1_database_af4aa665fc0bbfcf9f076d5da1457b2c4_af4aa665fc0bbfcf9f076d5da1457b2c4} 
+\index{Asset.Database@{Asset.Database}!SaveAll@{SaveAll}}
+\index{SaveAll@{SaveAll}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{SaveAll()}{SaveAll()}}
+{\footnotesize\ttfamily static void Save\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Saves all unsaved (dirty) assets. 
+
+CAUTION\+: Consider that a user generally does NOT want an editor script to \textquotesingle{}randomly\textquotesingle{} save all unsaved assets! Use only where absolutely appropriate, otherwise prefer to use \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{Code\+Smile\+Editor.\+Asset.\+File.\+Save} to explicitly save each modified asset. Preferably do so within a \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing} operation. Just be nice to fellow Editor users. ;) 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{Code\+Smile\+Editor.\+Asset.\+File.\+Save}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{Code\+Smile\+Editor.\+Asset.\+File.\+Force\+Save}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssets.html}{\texttt{ Asset\+Database.\+Save\+Assets}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a3006ad7769d5ba3b477a5c153f20dd27_a3006ad7769d5ba3b477a5c153f20dd27}\label{class_code_smile_editor_1_1_asset_1_1_database_a3006ad7769d5ba3b477a5c153f20dd27_a3006ad7769d5ba3b477a5c153f20dd27} 
+\index{Asset.Database@{Asset.Database}!UpgradeAllAssetSerializationVersions@{UpgradeAllAssetSerializationVersions}}
+\index{UpgradeAllAssetSerializationVersions@{UpgradeAllAssetSerializationVersions}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{UpgradeAllAssetSerializationVersions()}{UpgradeAllAssetSerializationVersions()}}
+{\footnotesize\ttfamily static void Upgrade\+All\+Asset\+Serialization\+Versions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates all native asset files to reflect any changes in serialization in the current editor version. 
+
+Use this after upgrading Unity Editor versions and you want to make sure all native assets are serialized to the current serialization format. Depending on whether Unity made changes to the serialization format this may change between none to all native assets, including .meta files. Use with caution when working with source control\+: discuss implications with the team / tech lead. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item Upgrade\+Asset\+Serialization\+Version
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html}{\texttt{ Asset\+Database.\+Force\+Reserialize\+Assets}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a0bdd680cb405e96d92b6a7af338ad27f_a0bdd680cb405e96d92b6a7af338ad27f}\label{class_code_smile_editor_1_1_asset_1_1_database_a0bdd680cb405e96d92b6a7af338ad27f_a0bdd680cb405e96d92b6a7af338ad27f} 
+\index{Asset.Database@{Asset.Database}!UpgradeAssetSerializationVersion@{UpgradeAssetSerializationVersion}}
+\index{UpgradeAssetSerializationVersion@{UpgradeAssetSerializationVersion}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{UpgradeAssetSerializationVersion()}{UpgradeAssetSerializationVersion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Upgrade\+Asset\+Serialization\+Version (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths,  }\item[{Force\+Reserialize\+Assets\+Options}]{options = {\ttfamily ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates all native asset files to reflect any changes in serialization in the current editor version. 
+
+Use this after upgrading Unity Editor versions and you want to make sure all native assets are serialized to the current serialization format. Depending on whether Unity made changes to the serialization format this may change between none to all native assets. Use with caution when working with source control\+: discuss implications with the team / tech lead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets to reserialize to the current serialization version.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html}{\texttt{ Force\+Reserialize\+Assets\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item Upgrade\+All\+Asset\+Serialization\+Versions
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html}{\texttt{ Asset\+Database.\+Force\+Reserialize\+Assets}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a94a77b56376fbb7f52ba2bece53f45b7_a94a77b56376fbb7f52ba2bece53f45b7}\label{class_code_smile_editor_1_1_asset_1_1_database_a94a77b56376fbb7f52ba2bece53f45b7_a94a77b56376fbb7f52ba2bece53f45b7} 
+\index{Asset.Database@{Asset.Database}!UpgradeAssetSerializationVersion@{UpgradeAssetSerializationVersion}}
+\index{UpgradeAssetSerializationVersion@{UpgradeAssetSerializationVersion}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{UpgradeAssetSerializationVersion()}{UpgradeAssetSerializationVersion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Upgrade\+Asset\+Serialization\+Version (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ String $>$}]{paths,  }\item[{Force\+Reserialize\+Assets\+Options}]{options = {\ttfamily ForceReserializeAssetsOptions.ReserializeAssetsAndMetadata} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates all native asset files to reflect any changes in serialization in the current editor version. 
+
+Use this after upgrading Unity Editor versions and you want to make sure all native assets are serialized to the current serialization format. Depending on whether Unity made changes to the serialization format this may change between none to all native assets. Use with caution when working with source control\+: discuss implications with the team / tech lead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets to reserialize to the current serialization version.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ForceReserializeAssetsOptions.html}{\texttt{ Force\+Reserialize\+Assets\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item Upgrade\+All\+Asset\+Serialization\+Versions
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceReserializeAssets.html}{\texttt{ Asset\+Database.\+Force\+Reserialize\+Assets}} 
+\end{DoxyItemize}
+
+\doxysubsubsection{Property Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a46c1f775624b940edb495a5c2b08583c_a46c1f775624b940edb495a5c2b08583c}\label{class_code_smile_editor_1_1_asset_1_1_database_a46c1f775624b940edb495a5c2b08583c_a46c1f775624b940edb495a5c2b08583c} 
+\index{Asset.Database@{Asset.Database}!DesiredWorkerCount@{DesiredWorkerCount}}
+\index{DesiredWorkerCount@{DesiredWorkerCount}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{DesiredWorkerCount}{DesiredWorkerCount}}
+{\footnotesize\ttfamily Int32 Desired\+Worker\+Count\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the desired worker count. 
+
+Setting the worked count calls Force\+To\+Desired\+Worker\+Count() to ensure the worker count is updated. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DesiredWorkerCount.html}{\texttt{ Asset\+Database.\+Desired\+Worker\+Count}}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ForceToDesiredWorkerCount.html}{\texttt{ Asset\+Database.\+Force\+To\+Desired\+Worker\+Count}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_database_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_asset_8_database_8cs_source}{Asset.\+Database.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ AssetDatabase.DesiredWorkerCount;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.DesiredWorkerCount\ =\ value;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ForceToDesiredWorkerCount();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_database_a6190225c177bf52f95b2cdbcb99ccc2a_a6190225c177bf52f95b2cdbcb99ccc2a}\label{class_code_smile_editor_1_1_asset_1_1_database_a6190225c177bf52f95b2cdbcb99ccc2a_a6190225c177bf52f95b2cdbcb99ccc2a} 
+\index{Asset.Database@{Asset.Database}!DirectoryMonitoring@{DirectoryMonitoring}}
+\index{DirectoryMonitoring@{DirectoryMonitoring}!Asset.Database@{Asset.Database}}
+\doxyparagraph{\texorpdfstring{DirectoryMonitoring}{DirectoryMonitoring}}
+{\footnotesize\ttfamily Boolean Directory\+Monitoring\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Returns whether directory monitoring is enabled in Preferences. 
+
+Directory\+Monitoring is automatically disabled when symlinks are used in the project. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.IsDirectoryMonitoringEnabled.html}{\texttt{ Asset\+Database.\+Is\+Directory\+Monitoring\+Enabled}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_database_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_asset_8_database_8cs_source}{Asset.\+Database.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ AssetDatabase.IsDirectoryMonitoringEnabled();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ EditorPrefs.SetBool(\textcolor{stringliteral}{"{}DirectoryMonitoring"{}},\ value);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,343 @@
+\doxysubsection{Asset.\+Bundle Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle}{}\label{class_code_smile_editor_1_1_asset_1_1_bundle}\index{Asset.Bundle@{Asset.Bundle}}
+
+
+Groups all asset bundle related functionality.  
+
+
+
+
+Collaboration diagram for Asset.\+Bundle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_code_smile_editor_1_1_asset_1_1_bundle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a7393007e2bfa2a7dafd3e6bf47115f53_a7393007e2bfa2a7dafd3e6bf47115f53}{Force\+Remove}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name)
+\begin{DoxyCompactList}\small\item\em Removes a specific asset bundle by name. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_ae45aacadca51b6d99273ef60c47523f3_ae45aacadca51b6d99273ef60c47523f3}{Get\+All\+Dependencies}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name)
+\begin{DoxyCompactList}\small\item\em Returns all bundle names that the given asset bundle depends on, directly or indirectly (recursive). \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a92f937447af1b0ac29f167b8d5de21e0_a92f937447af1b0ac29f167b8d5de21e0}{Get\+All\+Paths}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name)
+\begin{DoxyCompactList}\small\item\em Returns all asset paths that are part of a given asset bundle. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a86ace93f7ce9f411e2994177f4cc60c2_a86ace93f7ce9f411e2994177f4cc60c2}{Get\+Direct\+Dependencies}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name)
+\begin{DoxyCompactList}\small\item\em Returns the bundle names that the given asset bundle directly depends on. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a17c3d7ba18536daa627d478d36aa7d95_a17c3d7ba18536daa627d478d36aa7d95}{Get\+Owning\+Bundle}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the bundle name that contains the asset path. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a51999ea1e987b932993409830b86bad3_a51999ea1e987b932993409830b86bad3}{Get\+Owning\+Bundle\+Variant}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the bundle variant name that contains the asset path. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_aa5dd51c1b0b63b4552afdd78da4e2e81_aa5dd51c1b0b63b4552afdd78da4e2e81}{Get\+Paths}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name, \mbox{[}Not\+Null\mbox{]} String asset\+Name)
+\begin{DoxyCompactList}\small\item\em Returns the asset paths in a given asset bundle that matches an asset name. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_afda9d0ade24a5ad0d52c2f2f1a7bc86a_afda9d0ade24a5ad0d52c2f2f1a7bc86a}{Remove}} (\mbox{[}Not\+Null\mbox{]} String bundle\+Name)
+\begin{DoxyCompactList}\small\item\em Removes a specific asset bundle by name. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a08d9f8415b580743cbd887fb5d66aba0_a08d9f8415b580743cbd887fb5d66aba0}{Remove\+Unused}} ()
+\begin{DoxyCompactList}\small\item\em Removes all unused asset bundles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a7a491f4df9b8c6216b664e600b7ab0e3_a7a491f4df9b8c6216b664e600b7ab0e3}{All}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns all asset bundle names. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc_a096ba8fe96373ca1cdf4edf80991a6cc}{Unused}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns all unused asset bundle names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups all asset bundle related functionality. 
+
+Note\+: Unity recommends to use the Addressables package to manage Bundles rather than through code. 
+
+Definition at line \mbox{\hyperlink{_asset_8_bundle_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_asset_8_bundle_8cs_source}{Asset.\+Bundle.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a7393007e2bfa2a7dafd3e6bf47115f53_a7393007e2bfa2a7dafd3e6bf47115f53}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a7393007e2bfa2a7dafd3e6bf47115f53_a7393007e2bfa2a7dafd3e6bf47115f53} 
+\index{Asset.Bundle@{Asset.Bundle}!ForceRemove@{ForceRemove}}
+\index{ForceRemove@{ForceRemove}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{ForceRemove()}{ForceRemove()}}
+{\footnotesize\ttfamily static void Force\+Remove (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a specific asset bundle by name. 
+
+CAUTION\+: The bundle is removed even if it is currently in use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_afda9d0ade24a5ad0d52c2f2f1a7bc86a_afda9d0ade24a5ad0d52c2f2f1a7bc86a}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Remove}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html}{\texttt{ Asset\+Database.\+Remove\+Asset\+Bundle\+Name}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_ae45aacadca51b6d99273ef60c47523f3_ae45aacadca51b6d99273ef60c47523f3}\label{class_code_smile_editor_1_1_asset_1_1_bundle_ae45aacadca51b6d99273ef60c47523f3_ae45aacadca51b6d99273ef60c47523f3} 
+\index{Asset.Bundle@{Asset.Bundle}!GetAllDependencies@{GetAllDependencies}}
+\index{GetAllDependencies@{GetAllDependencies}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetAllDependencies()}{GetAllDependencies()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get\+All\+Dependencies (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns all bundle names that the given asset bundle depends on, directly or indirectly (recursive). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Directly dependent asset bundle names or an empty array if there are no direct dependencies.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_ae45aacadca51b6d99273ef60c47523f3_ae45aacadca51b6d99273ef60c47523f3}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+All\+Dependencies}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Bundle\+Dependencies}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a92f937447af1b0ac29f167b8d5de21e0_a92f937447af1b0ac29f167b8d5de21e0}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a92f937447af1b0ac29f167b8d5de21e0_a92f937447af1b0ac29f167b8d5de21e0} 
+\index{Asset.Bundle@{Asset.Bundle}!GetAllPaths@{GetAllPaths}}
+\index{GetAllPaths@{GetAllPaths}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetAllPaths()}{GetAllPaths()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get\+All\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns all asset paths that are part of a given asset bundle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The paths to assets belonging to this bundle. Is empty if no assets belong to the bundle.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_aa5dd51c1b0b63b4552afdd78da4e2e81_aa5dd51c1b0b63b4552afdd78da4e2e81}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+Paths}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundle.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Paths\+From\+Asset\+Bundle}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a86ace93f7ce9f411e2994177f4cc60c2_a86ace93f7ce9f411e2994177f4cc60c2}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a86ace93f7ce9f411e2994177f4cc60c2_a86ace93f7ce9f411e2994177f4cc60c2} 
+\index{Asset.Bundle@{Asset.Bundle}!GetDirectDependencies@{GetDirectDependencies}}
+\index{GetDirectDependencies@{GetDirectDependencies}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetDirectDependencies()}{GetDirectDependencies()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get\+Direct\+Dependencies (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the bundle names that the given asset bundle directly depends on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Directly dependent asset bundle names or an empty array if there are no direct dependencies.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_ae45aacadca51b6d99273ef60c47523f3_ae45aacadca51b6d99273ef60c47523f3}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+All\+Dependencies}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetBundleDependencies.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Bundle\+Dependencies}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a17c3d7ba18536daa627d478d36aa7d95_a17c3d7ba18536daa627d478d36aa7d95}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a17c3d7ba18536daa627d478d36aa7d95_a17c3d7ba18536daa627d478d36aa7d95} 
+\index{Asset.Bundle@{Asset.Bundle}!GetOwningBundle@{GetOwningBundle}}
+\index{GetOwningBundle@{GetOwningBundle}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetOwningBundle()}{GetOwningBundle()}}
+{\footnotesize\ttfamily static String Get\+Owning\+Bundle (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the bundle name that contains the asset path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the bundle this asset belongs to. Empty string if the asset path does not belong to an asset bundle. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a51999ea1e987b932993409830b86bad3_a51999ea1e987b932993409830b86bad3}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+Owning\+Bundle\+Variant}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleName.html}{\texttt{ Asset\+Database.\+Get\+Implicit\+Asset\+Bundle\+Name}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a51999ea1e987b932993409830b86bad3_a51999ea1e987b932993409830b86bad3}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a51999ea1e987b932993409830b86bad3_a51999ea1e987b932993409830b86bad3} 
+\index{Asset.Bundle@{Asset.Bundle}!GetOwningBundleVariant@{GetOwningBundleVariant}}
+\index{GetOwningBundleVariant@{GetOwningBundleVariant}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetOwningBundleVariant()}{GetOwningBundleVariant()}}
+{\footnotesize\ttfamily static String Get\+Owning\+Bundle\+Variant (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the bundle variant name that contains the asset path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the bundle variant this asset belongs to. Empty string if the asset path does not belong to an asset bundle. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a17c3d7ba18536daa627d478d36aa7d95_a17c3d7ba18536daa627d478d36aa7d95}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+Owning\+Bundle}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImplicitAssetBundleVariantName.html}{\texttt{ Asset\+Database.\+Get\+Implicit\+Asset\+Bundle\+Variant\+Name}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_aa5dd51c1b0b63b4552afdd78da4e2e81_aa5dd51c1b0b63b4552afdd78da4e2e81}\label{class_code_smile_editor_1_1_asset_1_1_bundle_aa5dd51c1b0b63b4552afdd78da4e2e81_aa5dd51c1b0b63b4552afdd78da4e2e81} 
+\index{Asset.Bundle@{Asset.Bundle}!GetPaths@{GetPaths}}
+\index{GetPaths@{GetPaths}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{GetPaths()}{GetPaths()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{asset\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the asset paths in a given asset bundle that matches an asset name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle.\\
+\hline
+{\em asset\+Name} & Filter string that asset name needs to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The paths to assets whose name matches the filter string. Empty string if there are no matches.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a92f937447af1b0ac29f167b8d5de21e0_a92f937447af1b0ac29f167b8d5de21e0}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Get\+All\+Paths}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Paths\+From\+Asset\+Bundle\+And\+Asset\+Name}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_afda9d0ade24a5ad0d52c2f2f1a7bc86a_afda9d0ade24a5ad0d52c2f2f1a7bc86a}\label{class_code_smile_editor_1_1_asset_1_1_bundle_afda9d0ade24a5ad0d52c2f2f1a7bc86a_afda9d0ade24a5ad0d52c2f2f1a7bc86a} 
+\index{Asset.Bundle@{Asset.Bundle}!Remove@{Remove}}
+\index{Remove@{Remove}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily static void Remove (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{bundle\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a specific asset bundle by name. 
+
+If the bundle is currently in use, it will NOT be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle\+Name} & Name of the asset bundle to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a7393007e2bfa2a7dafd3e6bf47115f53_a7393007e2bfa2a7dafd3e6bf47115f53}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Force\+Remove}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveAssetBundleName.html}{\texttt{ Asset\+Database.\+Remove\+Asset\+Bundle\+Name}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a08d9f8415b580743cbd887fb5d66aba0_a08d9f8415b580743cbd887fb5d66aba0}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a08d9f8415b580743cbd887fb5d66aba0_a08d9f8415b580743cbd887fb5d66aba0} 
+\index{Asset.Bundle@{Asset.Bundle}!RemoveUnused@{RemoveUnused}}
+\index{RemoveUnused@{RemoveUnused}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{RemoveUnused()}{RemoveUnused()}}
+{\footnotesize\ttfamily static void Remove\+Unused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes all unused asset bundles. 
+
+Returns all unused asset bundle names.
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc_a096ba8fe96373ca1cdf4edf80991a6cc}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Unused}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveUnusedAssetBundleNames.html}{\texttt{ Asset\+Database.\+Remove\+Unused\+Asset\+Bundle\+Names}} 
+\end{DoxyItemize}
+
+\doxysubsubsection{Property Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a7a491f4df9b8c6216b664e600b7ab0e3_a7a491f4df9b8c6216b664e600b7ab0e3}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a7a491f4df9b8c6216b664e600b7ab0e3_a7a491f4df9b8c6216b664e600b7ab0e3} 
+\index{Asset.Bundle@{Asset.Bundle}!All@{All}}
+\index{All@{All}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{All}{All}}
+{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} All\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns all asset bundle names. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc_a096ba8fe96373ca1cdf4edf80991a6cc}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+Unused}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAllAssetBundleNames.html}{\texttt{ Asset\+Database.\+Get\+All\+Asset\+Bundle\+Names}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_bundle_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_asset_8_bundle_8cs_source}{Asset.\+Bundle.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc_a096ba8fe96373ca1cdf4edf80991a6cc}\label{class_code_smile_editor_1_1_asset_1_1_bundle_a096ba8fe96373ca1cdf4edf80991a6cc_a096ba8fe96373ca1cdf4edf80991a6cc} 
+\index{Asset.Bundle@{Asset.Bundle}!Unused@{Unused}}
+\index{Unused@{Unused}!Asset.Bundle@{Asset.Bundle}}
+\doxyparagraph{\texorpdfstring{Unused}{Unused}}
+{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} Unused\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns all unused asset bundle names. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_bundle_a7a491f4df9b8c6216b664e600b7ab0e3_a7a491f4df9b8c6216b664e600b7ab0e3}{Code\+Smile\+Editor.\+Asset.\+Bundle.\+All}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetUnusedAssetBundleNames.html}{\texttt{ Asset\+Database.\+Get\+Unused\+Asset\+Bundle\+Names}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_bundle_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_asset_8_bundle_8cs_source}{Asset.\+Bundle.\+cs}}.
+
