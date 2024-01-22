@@ -1,0 +1,117 @@
+\doxysubsection{Asset.\+Importer.\+cs}
+\hypertarget{_asset_8_importer_8cs_source}{}\label{_asset_8_importer_8cs_source}\index{P:/de.codesmile.assetdatabase/Editor/Asset.Importer.cs@{P:/de.codesmile.assetdatabase/Editor/Asset.Importer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2023\ Steffen\ Itterheim}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00002}00002\ \textcolor{comment}{//\ Refer\ to\ included\ LICENSE\ file\ for\ terms\ and\ conditions.}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics.CodeAnalysis;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Object\ =\ UnityEngine.Object;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_code_smile_editor}{CodeSmileEditor}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{sealed}\ \textcolor{keyword}{partial\ class\ }Asset}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00017}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer}{Importer}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00031}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a357d4eb1c100686c1c135b3b1eb2aa70_a357d4eb1c100686c1c135b3b1eb2aa70}{00031}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a357d4eb1c100686c1c135b3b1eb2aa70_a357d4eb1c100686c1c135b3b1eb2aa70}{GetActive}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00033}00033\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterType(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00035}00035\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterType\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ null"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00053}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a728bec89f163cf82119c37e0c73dfc0d_a728bec89f163cf82119c37e0c73dfc0d}{00053}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a728bec89f163cf82119c37e0c73dfc0d_a728bec89f163cf82119c37e0c73dfc0d}{GetActive}}(GUID\ guid)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00055}00055\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterType(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00057}00057\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterType\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ null"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00060}00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00075}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86}{00075}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86}{GetActive}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a5f0b2c4e6ed271387f7c924aa88e7d86_a5f0b2c4e6ed271387f7c924aa88e7d86}{GetActive}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{GetGuid}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00089}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2}{00089}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2}{GetActive}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ paths)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad8916acf5622365b4fc9bfdbd7d64ba2_ad8916acf5622365b4fc9bfdbd7d64ba2}{GetActive}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(paths));}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00103}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ac0bb98eb8d643f17f30448075c4e91bb_ac0bb98eb8d643f17f30448075c4e91bb}{00103}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ac0bb98eb8d643f17f30448075c4e91bb_ac0bb98eb8d643f17f30448075c4e91bb}{GetActive}}([NotNull]\ String[]\ paths)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00105}00105\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterTypes(paths);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00107}00107\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}GetImporterTypes\ not\ available\ in\ this\ Unity\ version"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00109}00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00124}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a80fd54a4f3cc505e2e9a42b4ca924656_a80fd54a4f3cc505e2e9a42b4ca924656}{00124}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a80fd54a4f3cc505e2e9a42b4ca924656_a80fd54a4f3cc505e2e9a42b4ca924656}{GetActive}}(ReadOnlySpan<GUID>\ guids)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00126}00126\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetImporterTypes(guids);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00128}00128\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEngine.Debug.LogWarning(\textcolor{stringliteral}{"{}GetImporterTypes\ not\ available\ in\ this\ Unity\ version\ -\/\ returning\ empty\ array"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Type[0];}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00131}00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00143}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aee616cbd3cbe9e7b8256aed74fe20254_aee616cbd3cbe9e7b8256aed74fe20254}{00143}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aee616cbd3cbe9e7b8256aed74fe20254_aee616cbd3cbe9e7b8256aed74fe20254}{GetAvailable}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00145}00145\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetAvailableImporters(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00147}00147\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetAvailableImporterTypes(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00161}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9}{00161}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9}{GetAvailable}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_aa6e8b1b03c3aa82d03d45c885bf795b9_aa6e8b1b03c3aa82d03d45c885bf795b9}{GetAvailable}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00173}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{00173}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{GetDefault}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00175}00175\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetDefaultImporter(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00177}00177\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}GetDefaultImporter\ is\ not\ available\ in\ this\ Unity\ version"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00179}00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00192}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9}{00192}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9}{GetDefault}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a88db6e9742be35bd23b068b28850b0d9_a88db6e9742be35bd23b068b28850b0d9}{GetDefault}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00205}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{00205}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{GetOverride}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetImporterOverride(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00218}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63}{00218}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63}{GetOverride}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a9662ee14bf9f8ee4a25ceb8017c00c63_a9662ee14bf9f8ee4a25ceb8017c00c63}{GetOverride}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00232}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{00232}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_adc9eeee37a0d895ad4f37e583288e2e7_adc9eeee37a0d895ad4f37e583288e2e7}{SetOverride<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00233}00233\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ T\ :\ AssetImporter}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00235}00235\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ T\ :\ UnityEditor.AssetImporters.ScriptedImporter}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00237}00237\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetImporterOverride<T>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00254}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df}{00254}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad3ff923faecf93e9371b98d6217be0df_ad3ff923faecf93e9371b98d6217be0df}{ClearOverride}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.ClearImporterOverride(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00270}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_abf047cc58c6e0a054b319bb93fb9ae5d_abf047cc58c6e0a054b319bb93fb9ae5d}{00270}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_abf047cc58c6e0a054b319bb93fb9ae5d_abf047cc58c6e0a054b319bb93fb9ae5d}{IsOverridden}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a19ff837d74e7666438a7938cf0f7126d_a19ff837d74e7666438a7938cf0f7126d}{GetDefault}}(path)\ !=\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_ad5caea48acd697af0a7787ebcb643512_ad5caea48acd697af0a7787ebcb643512}{GetOverride}}(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00285}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a1a9a83a1db886ceb61eecb0933d27f30_a1a9a83a1db886ceb61eecb0933d27f30}{00285}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer_a1a9a83a1db886ceb61eecb0933d27f30_a1a9a83a1db886ceb61eecb0933d27f30}{ApplySettings}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.WriteImportSettingsIfDirty(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetImporterOverride([NotNull]\ Type\ value,\ [NotNull]\ String\ assetPath)}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ methodName\ =\ \textcolor{stringliteral}{"{}SetImporterOverride"{}};}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ bindingFlags\ =\ BindingFlags.Public\ |\ BindingFlags.Static;}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ methodInfo\ =\ typeof(AssetDatabase).GetMethod(methodName,\ bindingFlags).MakeGenericMethod(value);}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ methodInfo.Invoke(\textcolor{keyword}{null},\ \textcolor{keyword}{new}\ System.Object[]\ \{\ assetPath\ \});}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00295}00295\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_importer_8cs_source_l00296}00296\ \}}
+
+\end{DoxyCode}

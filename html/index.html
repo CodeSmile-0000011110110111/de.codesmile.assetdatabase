@@ -110,27 +110,14 @@ But .. why?</h1>
 <p>For every task there is a single call and you are DONE!</p>
 <p>The structure and naming is intended to be EXTREMELY simple to find your way around and then to call the appropriate method with fewer parameters, with names that speak for themselves.</p>
 <p>No longer do you need to wonder what a 'valid folder' might be. Or ponder what it means to 'force reserialize all assets'.</p>
-<p>Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is <b>NOT</b> needed. (Hint: almost every time.)</p>
+<p>Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is indeed <b>required</b>. (Hint: almost never!)</p>
 <p>Or just being confused, once again, about whether you need to use <code>AssetDatabase.GetTextMetaFilePathFromAssetPath</code> or <code>AssetDatabase.GetAssetPathFromTextMetaFilePath</code>. Or the unholy trinity: <code>AssetPath.AssetPathToGUID</code>~<code>AssetPath.GUIDFromAssetPath</code>~<code>AssetPath.GUIDToAssetPath</code>.</p>
-<h1><a class="anchor" id="i-dont-trust-this-"></a>
-I don't trust this ..</h1>
-<p>The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!</p>
-<p>It is also extensively unit TESTED to be correct.</p>
-<p>And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand <b>why</b> my code works.</p>
-<h1><a class="anchor" id="what-about-support"></a>
-What about support?</h1>
-<p><a href="https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html" target="_blank">The documentation</a> is more complete with more details and caveats mentioned than Unity's.</p>
-<p>And if there's anything out of the ordinary, open an issue or <a href="mailto:steffen@steffenitterheim.de">contact me</a>. I also have a <a href="https://discord.gg/JN3Jz8qkeV" target="_blank">Discord channel</a>.</p>
 <h1><a class="anchor" id="example-code-snippets"></a>
 Example Code Snippets</h1>
 <p><code>Asset data = "Assets/Folder/Data.asset";</code> // Load an asset from its path</p>
 <p><code>data.ForceSave();</code> // mark asset as dirty and save it</p>
 <p><code>data.AddSubAsset(subData);</code> // Add a sub-asset (implicitly saved)</p>
 <p><code>data.ActiveImporter = typeof(MyDataImporter);</code> // Change asset's importer</p>
-<p><code>data.ExportPackage("I:/leveldata.unitypackage");</code> // Export as .unitypackage</p>
-<p><code>var dataObject = data.MainObject;</code> // Get asset's UnityEngine.Object instance</p>
-<p><code>var levelData = data.GetAs&lt;LevelData&gt;();</code> // Get it as specific type (may be null)</p>
-<p><code>var levelData = (LevelData)data;</code> // Cast to a type (may throw)</p>
 <p><code>var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");</code> // Create (overwrite) asset from string</p>
 <p><code>var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");</code> // Create new asset from byte[]</p>
 <p><code>var asset = new Asset(bytes, "Assets/Folder/Data.asset");</code> // Same as above using Asset ctor</p>
@@ -143,12 +130,34 @@ Example Code Snippets</h1>
 <li>Load the new asset file</li>
 </ul>
 <p><code>var actualPath = asset.AssetPath;</code> // Filename might have changed, eg "Data (3).asset"</p>
+<p><code>asset.ExportPackage("I:/leveldata.unitypackage");</code> // Export as .unitypackage</p>
+<p><code>var obj = asset.MainObject;</code> // Get asset's UnityEngine.Object instance</p>
+<p><code>var levelData = asset.GetAs&lt;LevelData&gt;();</code> // Get it as specific type (may be null)</p>
+<p><code>var levelData = (LevelData)asset;</code> // Cast to a type (may throw)</p>
 <p><code>var subAssets = asset.SubAssets;</code> // Do I need to keep explaining these calls?</p>
 <p><code>var assetDupe = asset.Duplicate();</code> // Because you need a duplicate ..</p>
 <p><code>assetDupe.Delete();</code> // .. but then decided you don't.</p>
 <p><code>var newAsset = asset.SaveAsNew("Assets/Elsewhere/Daydah.asset");</code> // Now you want a copy?</p>
 <p><code>newAsset.Trash();</code> // Okay. Either you're bored or excited to work with the AssetDatabase for the first time EVER. :)</p>
+<p><code>Asset.File.BatchEditing(() =&gt; { /* mass file IO */ });</code> // Speed up calling many Asset.File.* methods (loop)</p>
+<p><code>Asset.File.Import(paths);</code> // Mass import of paths, batched internally</p>
 <p><code>var msg = Asset.GetLastErrorMessage();</code> // A file operation failed? Show this!</p>
+<h1><a class="anchor" id="i-dont-trust-this-"></a>
+I don't trust this ..</h1>
+<p>The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!</p>
+<p>It is also extensively unit TESTED to be correct.</p>
+<p>And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand <b>why</b> my code works.</p>
+<h1><a class="anchor" id="what-about-support"></a>
+What about support?</h1>
+<p><a href="https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html" target="_blank">The documentation</a> is more complete with more details and caveats mentioned than Unity's.</p>
+<p>And if there's anything out of the ordinary, open an issue or <a href="mailto:steffen@steffenitterheim.de">contact me</a>. I also have a <a href="https://discord.gg/JN3Jz8qkeV" target="_blank">Discord channel</a>.</p>
+<h1><a class="anchor" id="wheres-refresh"></a>
+Where's Refresh?</h1>
+<p>I did mention you don't need it, right? ;)</p>
+<p>But if you do, here's Waldo: <code>Asset.Database.ImportAll();</code></p>
+<p>Caution: This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts).</p>
+<p>Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use. You can imagine how this has a negative impact on editor performance.</p>
+<p>Since Refresh() has been excessively overused I decided to name it closer to what it actually does.</p>
 <h1><a class="anchor" id="documentation"></a>
 Documentation</h1>
 <ul>

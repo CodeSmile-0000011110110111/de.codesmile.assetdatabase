@@ -1,0 +1,117 @@
+\doxysection{Change Log}
+\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g}{}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g}\index{Change Log@{Change Log}}
+\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_change-log}%
+\Hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_change-log}%
+ \hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v183---jan-22-2024}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+3 -\/ Jan 22, 2024}{v1.\+8.\+3 -\/ Jan 22, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v183---jan-22-2024}
+
+\begin{DoxyItemize}
+\item Importer tests\+: disable some tests in 2021.\+3 because the method is not available
+\item Rename test\+: log warning in 2021.\+3 to mention that the following warning is expected
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v182---dec-26-2023}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+2 -\/ Dec 26, 2023}{v1.\+8.\+2 -\/ Dec 26, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v182---dec-26-2023}
+
+\begin{DoxyItemize}
+\item updated README and API docs
+\item removed extra call to Import\+If\+Not\+Imported in method chain
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v181---dec-21-2023}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+1 -\/ Dec 21, 2023}{v1.\+8.\+1 -\/ Dec 21, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v181---dec-21-2023}
+
+\begin{DoxyItemize}
+\item added Available\+Importers property
+\item added missing Asset.\+Importer, Asset.\+Path and Asset.\+File.\+Create tests
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v180---dec-09-2023}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+0 -\/ Dec 09, 2023}{v1.\+8.\+0 -\/ Dec 09, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v180---dec-09-2023}
+
+\begin{DoxyItemize}
+\item renamed Force\+Reserialize\+Assets to Upgrade\+Asset\+Serialization\+Version and
+\item renamed Force\+Reserialize\+All\+Assets to Upgrade\+All\+Asset\+Serialization\+Versions (\texorpdfstring{$\ast$}{*})
+\end{DoxyItemize}
+
+(\texorpdfstring{$\ast$}{*}) To provide more rationale\+: I saw a user\textquotesingle{}s script where the user helplessly threw in the usual candidates due to some issue, but this also included "{}\+Force\+Reserialize\+Assets"{} That\textquotesingle{}s when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for\+: upgrading the version of serialized assets.\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}{}\doxyparagraph{\texorpdfstring{v1.\+7.\+1 -\/ Dec 05, 2023}{v1.\+7.\+1 -\/ Dec 05, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}
+
+\begin{DoxyItemize}
+\item rename package to de.\+codesmile.\+assetdabase (removed the \textquotesingle{}editor\textquotesingle{} part)
+\item Asset.\+File.\+Delete avoids unnecessary warning message from Unity if path.\+Exists is false
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v170---dec-03-2023}{}\doxyparagraph{\texorpdfstring{v1.\+7.\+0 -\/ Dec 03, 2023}{v1.\+7.\+0 -\/ Dec 03, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v170---dec-03-2023}
+
+\begin{DoxyItemize}
+\item Import() throws if file does not exist
+\item added setter to Active\+Importer property
+\item removed Set\+Active\+Importer\+To\+Default and Set\+Active\+Importer methods
+\item added \mbox{[}Not\+Null\mbox{]} attributes
+\item code cleanup
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v160---nov-30-2023}{}\doxyparagraph{\texorpdfstring{v1.\+6.\+0 -\/ Nov 30, 2023}{v1.\+6.\+0 -\/ Nov 30, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v160---nov-30-2023}
+
+\begin{DoxyItemize}
+\item changed namespace from Code\+Smile.\+Editor.\texorpdfstring{$\ast$}{*} to \doxylink{namespace_code_smile_editor}{Code\+Smile\+Editor}.\texorpdfstring{$\ast$}{*}
+\item new Asset(\+Path) now auto-\/imports assets that exist on disk but not in DB
+\item changed load methods to import assets that exist on disk but not in DB
+\item added create asset from string (ctor and Asset.\+Create)
+\item added create asset from byte\mbox{[}\mbox{]} (ctor and Asset.\+Create)
+\item added Import\+And\+Load$<$\+T$>$
+\item added Import(\+Path\mbox{[}$\,$\mbox{]}) to batch-\/import multiple assets
+\item added Is\+Imported(\+Path)
+\item added setter to Directory\+Monitoring
+\item added Database.\+Contains back and redirected Status.\+Is\+Imported (same)
+\item added paths to all important subfolders (eg Packages, Library, ..)
+\item split Create into Create and Create\+As\+New
+\item split Copy into Copy and Copy\+As\+New
+\item renamed Copy instance method to Save\+As and Save\+As\+New
+\item renamed Failed\+To\+Delete\+Paths to Paths\+Not\+Deleted
+\item renamed To\+Asset\+Paths(\+Object\mbox{[}$\,$\mbox{]}) to Get(\+Object\mbox{[}$\,$\mbox{]})
+\item fixed compile errors in some Unity versions
+\item Get\+Icon returns Texture2D
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v141---nov-24-2023}{}\doxyparagraph{\texorpdfstring{v1.\+4.\+1 -\/ Nov 24, 2023}{v1.\+4.\+1 -\/ Nov 24, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v141---nov-24-2023}
+
+\begin{DoxyItemize}
+\item added static Get\+Main\+Type(guid)
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v140---nov-24-2023}{}\doxyparagraph{\texorpdfstring{v1.\+4.\+0 -\/ Nov 24, 2023}{v1.\+4.\+0 -\/ Nov 24, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v140---nov-24-2023}
+
+\begin{DoxyItemize}
+\item added static Get\+Sub\+Type
+\item renamed Status Is\+Foreign\+Asset to Is\+Foreign
+\item renamed Status Is\+Native\+Asset to Is\+Native
+\item renamed Database Directory\+Monitoring\+Enabled to Directory\+Monitoring
+\item renamed Dependency Set to Register
+\item renamed Dependency Remove to Unregister
+\item renamed Importer Save\+Settings to Apply\+Settings
+\item renamed Path Open\+Folder to Open\+External
+\item renamed Path Uniquify\+Filename to Uniquify\+File\+Name (camel case)
+\item removed various Exclude\+From\+Code\+Coverage attributes, added comment with reason to the remaining ones
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v131---nov-24-2023}{}\doxyparagraph{\texorpdfstring{v1.\+3.\+1 -\/ Nov 24, 2023}{v1.\+3.\+1 -\/ Nov 24, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v131---nov-24-2023}
+
+\begin{DoxyItemize}
+\item added several \textquotesingle{}Object\textquotesingle{} getters to methods with only \textquotesingle{}Path\textquotesingle{} parameters
+\item added static Get\+Guid method
+\item added static Get\+Guid\+And\+File\+Id method
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v130---nov-23-2023}{}\doxyparagraph{\texorpdfstring{v1.\+3.\+0 -\/ Nov 23, 2023}{v1.\+3.\+0 -\/ Nov 23, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v130---nov-23-2023}
+
+\begin{DoxyItemize}
+\item Fixed all technical documentation issues.
+\item Create\+Folders now internalized the assumption that the last part of a path, if it contains no extension, is also a folder.
+\item Removed Folder\+Path\+Assumptive
+\item Folder\+Path does not throw but returns null if called on a root folder path ie "{}\+Assets"{}.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v121---nov-22-2023}{}\doxyparagraph{\texorpdfstring{v1.\+2.\+1 -\/ Nov 22, 2023}{v1.\+2.\+1 -\/ Nov 22, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v121---nov-22-2023}
+
+\begin{DoxyItemize}
+\item Fixed compile error in Unity 2021.\+3.
+\item Tested in all minor Unity versions from 2021.\+3 through 2023.\+3.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v120---nov-22-2023}{}\doxyparagraph{\texorpdfstring{v1.\+2.\+0 -\/ Nov 22, 2023}{v1.\+2.\+0 -\/ Nov 22, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v120---nov-22-2023}
+
+\begin{DoxyItemize}
+\item First release that\textquotesingle{}s nearly complete. Redesign for 99\% of all Asset\+Database methods.
+\item Major refactoring of API Design.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v114---nov-13-2023}{}\doxyparagraph{\texorpdfstring{v1.\+1.\+4 -\/ Nov 13, 2023}{v1.\+1.\+4 -\/ Nov 13, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v114---nov-13-2023}
+
+\begin{DoxyItemize}
+\item Fixed a compile error in Unity 2021.\+3.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v113---nov-12-2023}{}\doxyparagraph{\texorpdfstring{v1.\+1.\+3 -\/ Nov 12, 2023}{v1.\+1.\+3 -\/ Nov 12, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v113---nov-12-2023}
+
+\begin{DoxyItemize}
+\item Documentation added and updated.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v110---nov-10-2023}{}\doxyparagraph{\texorpdfstring{v1.\+1.\+0 -\/ Nov 10, 2023}{v1.\+1.\+0 -\/ Nov 10, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v110---nov-10-2023}
+
+\begin{DoxyItemize}
+\item Mainly refactoring.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v100---nov-9-2023}{}\doxyparagraph{\texorpdfstring{v1.\+0.\+0 -\/ Nov 9, 2023}{v1.\+0.\+0 -\/ Nov 9, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v100---nov-9-2023}
+
+\begin{DoxyItemize}
+\item First release 
+\end{DoxyItemize}

@@ -27,15 +27,17 @@ var NAVTREE =
   [ "CodeSmile AssetDatabase", "index.html", [
     [ "Who needs this?", "index.html#who-needs-this", null ],
     [ "But .. why?", "index.html#but--why", null ],
+    [ "Example Code Snippets", "index.html#example-code-snippets", null ],
     [ "I don't trust this ..", "index.html#i-dont-trust-this-", null ],
     [ "What about support?", "index.html#what-about-support", null ],
-    [ "Example Code Snippets", "index.html#example-code-snippets", null ],
+    [ "Where's Refresh?", "index.html#wheres-refresh", null ],
     [ "Documentation", "index.html#documentation", null ],
     [ "Installation", "index.html#installation", null ],
     [ "Requirements", "index.html#requirements", null ],
     [ "GPL License", "index.html#gpl-license", null ],
     [ "Support & Feeback", "index.html#support--feeback", null ],
     [ "Change Log", "md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
+    [ "CodeSmile Packages - Getting Started", "md__p_1_2de_8codesmile_8assetdatabase_2_g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],

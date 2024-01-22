@@ -1,0 +1,51 @@
+\doxysubsection{Asset.\+Label.\+cs}
+\hypertarget{_asset_8_label_8cs_source}{}\label{_asset_8_label_8cs_source}\index{P:/de.codesmile.assetdatabase/Editor/Asset.Label.cs@{P:/de.codesmile.assetdatabase/Editor/Asset.Label.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2023\ Steffen\ Itterheim}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00002}00002\ \textcolor{comment}{//\ Refer\ to\ included\ LICENSE\ file\ for\ terms\ and\ conditions.}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics.CodeAnalysis;}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Object\ =\ UnityEngine.Object;}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_code_smile_editor}{CodeSmileEditor}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{sealed}\ \textcolor{keyword}{partial\ class\ }Asset}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00017}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label}{Label}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00029}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a4418d3b1b76b6577c27d30a67b4f9ebf_a4418d3b1b76b6577c27d30a67b4f9ebf}{00029}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a4418d3b1b76b6577c27d30a67b4f9ebf_a4418d3b1b76b6577c27d30a67b4f9ebf}{GetAll}}([NotNull]\ Object\ asset)\ =>\ AssetDatabase.GetLabels(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00041}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_af12ef27390e185dc2458c579d4a20aa2_af12ef27390e185dc2458c579d4a20aa2}{00041}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_af12ef27390e185dc2458c579d4a20aa2_af12ef27390e185dc2458c579d4a20aa2}{GetAll}}(GUID\ guid)\ =>\ AssetDatabase.GetLabels(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00053}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a82888b12b37f839fbabcb62e8fe169af_a82888b12b37f839fbabcb62e8fe169af}{00053}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a82888b12b37f839fbabcb62e8fe169af_a82888b12b37f839fbabcb62e8fe169af}{SetAll}}([NotNull]\ Object\ asset,\ [NotNull]\ String[]\ labels)}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(labels,\ nameof(labels));}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetLabels(asset,\ labels);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00071}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_ad2dd0c24ca248dac498e168471c296ae_ad2dd0c24ca248dac498e168471c296ae}{00071}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_ad2dd0c24ca248dac498e168471c296ae_ad2dd0c24ca248dac498e168471c296ae}{Add}}([NotNull]\ Object\ asset,\ [NotNull]\ String\ label)}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ existingLabels\ =\ \textcolor{keyword}{new}\ List<String>(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a4418d3b1b76b6577c27d30a67b4f9ebf_a4418d3b1b76b6577c27d30a67b4f9ebf}{GetAll}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existingLabels.Add(label);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetLabels(asset,\ existingLabels.ToArray());}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00088}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a0db1d630d411ce9b9afaab8893ca433c_a0db1d630d411ce9b9afaab8893ca433c}{00088}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a0db1d630d411ce9b9afaab8893ca433c_a0db1d630d411ce9b9afaab8893ca433c}{Add}}([NotNull]\ Object\ asset,\ [NotNull]\ String[]\ labels)}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ existingLabels\ =\ \textcolor{keyword}{new}\ List<String>(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_a4418d3b1b76b6577c27d30a67b4f9ebf_a4418d3b1b76b6577c27d30a67b4f9ebf}{GetAll}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existingLabels.AddRange(labels);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetLabels(asset,\ existingLabels.ToArray());}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00104}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_ad0347f47f2f71137fe48133c157904ff_ad0347f47f2f71137fe48133c157904ff}{00104}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label_ad0347f47f2f71137fe48133c157904ff_ad0347f47f2f71137fe48133c157904ff}{ClearAll}}([NotNull]\ Object\ asset)\ =>\ AssetDatabase.ClearLabels(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_label_8cs_source_l00107}00107\ \}}
+
+\end{DoxyCode}

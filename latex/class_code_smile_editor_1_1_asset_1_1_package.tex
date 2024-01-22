@@ -1,0 +1,228 @@
+\doxysubsection{Asset.\+Package Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_package}{}\label{class_code_smile_editor_1_1_asset_1_1_package}\index{Asset.Package@{Asset.Package}}
+
+
+Groups import/export functionality for \href{https://docs.unity3d.com/Manual/AssetPackages.html}{\texttt{ .unitypackage files}} (Asset Packages).  
+
+
+
+
+Collaboration diagram for Asset.\+Package\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_code_smile_editor_1_1_asset_1_1_package__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package_aa1e7a86c8e5db3200570af6809a69f2a_aa1e7a86c8e5db3200570af6809a69f2a}{Export}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} asset\+Path, \mbox{[}Not\+Null\mbox{]} String package\+Path, Export\+Package\+Options options=Export\+Package\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Exports the asset and its dependencies to a .unitypackage file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package_a379ffb8db80b0c38b681a7580cd55e4c_a379ffb8db80b0c38b681a7580cd55e4c}{Export}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} asset\+Paths, \mbox{[}Not\+Null\mbox{]} String package\+Path, Export\+Package\+Options options=Export\+Package\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Exports multiple assets and their dependencies to the package\+Path file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package_a52bfc150210997b319e205ebd13e87a8_a52bfc150210997b319e205ebd13e87a8}{Export}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} asset\+Paths, \mbox{[}Not\+Null\mbox{]} String package\+Path, Export\+Package\+Options options=Export\+Package\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Exports multiple assets and their dependencies to the package\+Path file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package_ac41a72ed18bd8c2d23212f32791b0a2a_ac41a72ed18bd8c2d23212f32791b0a2a}{Import}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} package\+Path)
+\begin{DoxyCompactList}\small\item\em Silently imports a .unitypackage file at the given path. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package_a99d2e4c6e164f99d46f0da6cb23d9aa9_a99d2e4c6e164f99d46f0da6cb23d9aa9}{Import\+Interactive}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} package\+Path)
+\begin{DoxyCompactList}\small\item\em Imports a .unitypackage file at the given path interactively. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Groups import/export functionality for \href{https://docs.unity3d.com/Manual/AssetPackages.html}{\texttt{ .unitypackage files}} (Asset Packages). 
+
+Does not contain Package Manager (npm packages) functionality. 
+
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_aa1e7a86c8e5db3200570af6809a69f2a_aa1e7a86c8e5db3200570af6809a69f2a}\label{class_code_smile_editor_1_1_asset_1_1_package_aa1e7a86c8e5db3200570af6809a69f2a_aa1e7a86c8e5db3200570af6809a69f2a} 
+\index{Asset.Package@{Asset.Package}!Export@{Export}}
+\index{Export@{Export}!Asset.Package@{Asset.Package}}
+\doxyparagraph{\texorpdfstring{Export()}{Export()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Export (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{asset\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{package\+Path,  }\item[{Export\+Package\+Options}]{options = {\ttfamily ExportPackageOptions\+:\+:Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exports the asset and its dependencies to a .unitypackage file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset\+Path} & The asset to export.\\
+\hline
+{\em package\+Path} & Path to file with the .unitypackage extension.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html}{\texttt{ Export\+Package\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_package_a52bfc150210997b319e205ebd13e87a8_a52bfc150210997b319e205ebd13e87a8}{Code\+Smile\+Editor.\+Asset.\+Package.\+Export(\+String\mbox{[}$\,$\mbox{]},\+String,\+Export\+Package\+Options)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html}{\texttt{ Asset\+Database.\+Export\+Package}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ExportPackage(assetPath,\ packagePath,\ options);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_a379ffb8db80b0c38b681a7580cd55e4c_a379ffb8db80b0c38b681a7580cd55e4c}\label{class_code_smile_editor_1_1_asset_1_1_package_a379ffb8db80b0c38b681a7580cd55e4c_a379ffb8db80b0c38b681a7580cd55e4c} 
+\index{Asset.Package@{Asset.Package}!Export@{Export}}
+\index{Export@{Export}!Asset.Package@{Asset.Package}}
+\doxyparagraph{\texorpdfstring{Export()}{Export()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Export (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{asset\+Paths,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{package\+Path,  }\item[{Export\+Package\+Options}]{options = {\ttfamily ExportPackageOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exports multiple assets and their dependencies to the package\+Path file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset\+Paths} & The assets to export.\\
+\hline
+{\em package\+Path} & Path to file with the .unitypackage extension.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html}{\texttt{ Export\+Package\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_package_aa1e7a86c8e5db3200570af6809a69f2a_aa1e7a86c8e5db3200570af6809a69f2a}{Code\+Smile\+Editor.\+Asset.\+Package.\+Export(\+Code\+Smile\+Editor.\+Asset.\+Path,\+String,\+Export\+Package\+Options)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html}{\texttt{ Asset\+Database.\+Export\+Package}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_a52bfc150210997b319e205ebd13e87a8_a52bfc150210997b319e205ebd13e87a8}\label{class_code_smile_editor_1_1_asset_1_1_package_a52bfc150210997b319e205ebd13e87a8_a52bfc150210997b319e205ebd13e87a8} 
+\index{Asset.Package@{Asset.Package}!Export@{Export}}
+\index{Export@{Export}!Asset.Package@{Asset.Package}}
+\doxyparagraph{\texorpdfstring{Export()}{Export()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void Export (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{asset\+Paths,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{package\+Path,  }\item[{Export\+Package\+Options}]{options = {\ttfamily ExportPackageOptions\+:\+:Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exports multiple assets and their dependencies to the package\+Path file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset\+Paths} & The assets to export.\\
+\hline
+{\em package\+Path} & Path to file with the .unitypackage extension.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html}{\texttt{ Export\+Package\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_package_aa1e7a86c8e5db3200570af6809a69f2a_aa1e7a86c8e5db3200570af6809a69f2a}{Code\+Smile\+Editor.\+Asset.\+Package.\+Export(\+Code\+Smile\+Editor.\+Asset.\+Path,\+String,\+Export\+Package\+Options)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html}{\texttt{ Asset\+Database.\+Export\+Package}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00107}{107}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ExportPackage(assetPaths,\ packagePath,\ options);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_ac41a72ed18bd8c2d23212f32791b0a2a_ac41a72ed18bd8c2d23212f32791b0a2a}\label{class_code_smile_editor_1_1_asset_1_1_package_ac41a72ed18bd8c2d23212f32791b0a2a_ac41a72ed18bd8c2d23212f32791b0a2a} 
+\index{Asset.Package@{Asset.Package}!Import@{Import}}
+\index{Import@{Import}!Asset.Package@{Asset.Package}}
+\doxyparagraph{\texorpdfstring{Import()}{Import()}}
+{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{package\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Silently imports a .unitypackage file at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em package\+Path} & Path to file with the .unitypackage extension.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_package_a99d2e4c6e164f99d46f0da6cb23d9aa9_a99d2e4c6e164f99d46f0da6cb23d9aa9}{Code\+Smile\+Editor.\+Asset.\+Package.\+Import\+Interactive}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html}{\texttt{ Asset\+Database.\+Import\+Package}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportPackage(packagePath,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_a99d2e4c6e164f99d46f0da6cb23d9aa9_a99d2e4c6e164f99d46f0da6cb23d9aa9}\label{class_code_smile_editor_1_1_asset_1_1_package_a99d2e4c6e164f99d46f0da6cb23d9aa9_a99d2e4c6e164f99d46f0da6cb23d9aa9} 
+\index{Asset.Package@{Asset.Package}!ImportInteractive@{ImportInteractive}}
+\index{ImportInteractive@{ImportInteractive}!Asset.Package@{Asset.Package}}
+\doxyparagraph{\texorpdfstring{ImportInteractive()}{ImportInteractive()}}
+{\footnotesize\ttfamily static void Import\+Interactive (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{package\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Imports a .unitypackage file at the given path interactively. 
+
+Shows the import package dialogue to the user before importing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em package\+Path} & Path to file with the .unitypackage extension.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_package_ac41a72ed18bd8c2d23212f32791b0a2a_ac41a72ed18bd8c2d23212f32791b0a2a}{Code\+Smile\+Editor.\+Asset.\+Package.\+Import}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html}{\texttt{ Asset\+Database.\+Import\+Package}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportPackage(packagePath,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

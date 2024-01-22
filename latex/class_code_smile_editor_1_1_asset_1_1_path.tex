@@ -1,0 +1,1744 @@
+\doxysubsection{Asset.\+Path Class Reference}
+\hypertarget{class_code_smile_editor_1_1_asset_1_1_path}{}\label{class_code_smile_editor_1_1_asset_1_1_path}\index{Asset.Path@{Asset.Path}}
+
+
+Represents a relative path to an asset file or folder, typically under \textquotesingle{}Assets\textquotesingle{} or \textquotesingle{}Packages\textquotesingle{}.  
+
+
+
+
+Inheritance diagram for Asset.\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_code_smile_editor_1_1_asset_1_1_path__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Asset.\+Path\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_code_smile_editor_1_1_asset_1_1_path__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a3d0d7574b95b19be03fdfd90e6c628e2_a3d0d7574b95b19be03fdfd90e6c628e2}{Path}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Creates an asset path from an asset instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ab81690d1d82ddd90548e3d804b5afa29_ab81690d1d82ddd90548e3d804b5afa29}{Path}} (\mbox{[}Not\+Null\mbox{]} String folder\+Path, \mbox{[}Not\+Null\mbox{]} String file\+Name, \mbox{[}Not\+Null\mbox{]} String extension=Default\+Extension)
+\begin{DoxyCompactList}\small\item\em Creates an asset path by combining folder path, file name and extension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a14cdcaf6215972759787431b363f763c_a14cdcaf6215972759787431b363f763c}{Path}} (\mbox{[}Not\+Null\mbox{]} String full\+Or\+Relative\+Path)
+\begin{DoxyCompactList}\small\item\em Creates an asset path from either an absolute or relative path. \end{DoxyCompactList}\item 
+GUID \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41_a707c1a8b6f6fab6ad12485008e38ce41}{Create\+Folders}} ()
+\begin{DoxyCompactList}\small\item\em Creates the folders in the path recursively. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3}{Equals}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} other)
+\begin{DoxyCompactList}\small\item\em Tests another path for equality. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a7fe15db208e12203a2ddd105a60446a0_a7fe15db208e12203a2ddd105a60446a0}{Equals}} (String other)
+\begin{DoxyCompactList}\small\item\em Tests another path for equality. \end{DoxyCompactList}\item 
+override Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a37cffbb9ed1db3b0e77664ad01b6fd01_a37cffbb9ed1db3b0e77664ad01b6fd01}{Equals}} (System.\+Object obj)
+\begin{DoxyCompactList}\small\item\em Tests path for equality with an object. \end{DoxyCompactList}\item 
+override Int32 \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ab86e9330a2bab918bbad0e2cbadb58a8_ab86e9330a2bab918bbad0e2cbadb58a8}{Get\+Hash\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Returns the internal path string\textquotesingle{}s hash code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_abb6aabf6ef3879246a9410a4b03cff6a_abb6aabf6ef3879246a9410a4b03cff6a}{Open\+External}} ()
+\begin{DoxyCompactList}\small\item\em Opens the folder externally, for example File Explorer (Windows) or Finder (Mac). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ab20dbdb9f71c4595e668cf0cb5f5ad7c_ab20dbdb9f71c4595e668cf0cb5f5ad7c}{Rename}} (String new\+File\+Or\+Folder\+Name)
+\begin{DoxyCompactList}\small\item\em Renames the last element of the \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path} instance. \end{DoxyCompactList}\item 
+override String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a012fbb0f39e57c0a44ec83dd408fcda3_a012fbb0f39e57c0a44ec83dd408fcda3}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns the relative path as string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static GUID \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55_aa30592adbaf54202ead85cd483107e55}{Create\+Folders}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Creates any missing folders in the path. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f}{File\+Exists}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Tests if the given file exists in the file system. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}{Folder\+Exists}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Tests if the given folder exists in the file system. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a18298002ca84eab9c56ac238dedc53e8_a18298002ca84eab9c56ac238dedc53e8}{From\+Meta}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the asset\textquotesingle{}s file path from a .meta file path. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}} (\mbox{[}Not\+Null\mbox{]} Object asset)
+\begin{DoxyCompactList}\small\item\em Gets the relative path of an asset. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54_a7b337848207b6bc5aebde6ae18e18d54}{Get}} (\mbox{[}Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]} assets)
+\begin{DoxyCompactList}\small\item\em Converts an array of asset instances to their asset paths. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_afc3f6187881696bfef4a6ab5f09539fe_afc3f6187881696bfef4a6ab5f09539fe}{Get}} (GUID guid)
+\begin{DoxyCompactList}\small\item\em Gets the relative path of an asset. \end{DoxyCompactList}\item 
+static GUID \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a942d35c4445bef86b8675fa4ee8893ee_a942d35c4445bef86b8675fa4ee8893ee}{Get\+Guid}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Asset\+Path\+To\+GUIDOptions options=Asset\+Path\+To\+GUIDOptions.\+Include\+Recently\+Deleted\+Assets)
+\begin{DoxyCompactList}\small\item\em Returns the GUID for an asset path. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ac408187e90e22a29a6c0bf20a0306532_ac408187e90e22a29a6c0bf20a0306532}{Get\+Scene}} (\mbox{[}Not\+Null\mbox{]} Object instance\+Or\+Asset)
+\begin{DoxyCompactList}\small\item\em Returns the scene\textquotesingle{}s path if the object is instantiated in a scene, otherwise returns the object\textquotesingle{}s path. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a2d28ed0af9ce1a5b78cfea13d920fbf6_a2d28ed0af9ce1a5b78cfea13d920fbf6}{Get\+Sub\+Folders}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the names of all subfolders in the path. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_afe4dd70515ffc4868599918fc76c32b9_afe4dd70515ffc4868599918fc76c32b9}{Is\+Valid}} (\mbox{[}Not\+Null\mbox{]} String path)
+\begin{DoxyCompactList}\small\item\em Returns true if the provided path is valid. \end{DoxyCompactList}\item 
+static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a8f41e9c71f0bf56b0fe80ef591334128_a8f41e9c71f0bf56b0fe80ef591334128}{operator Path}} (String path)
+\begin{DoxyCompactList}\small\item\em Implicit conversion to Path from a string. \end{DoxyCompactList}\item 
+static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a294e1f7dac5c8247c2f32d50653ff2f6_a294e1f7dac5c8247c2f32d50653ff2f6}{operator String}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Implicit conversion to string. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a0a26f18bf392e944599d94a316d0dd9c_a0a26f18bf392e944599d94a316d0dd9c}{operator!=}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path1, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path2)
+\begin{DoxyCompactList}\small\item\em Tests two path instances for inequality. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a4061b79c8350f444d3691461e0f94e95_a4061b79c8350f444d3691461e0f94e95}{operator!=}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path1, System.\+Object other)
+\begin{DoxyCompactList}\small\item\em Tests for inequality with an object. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aeada9e1217349c548458a8b0ac2d1fca_aeada9e1217349c548458a8b0ac2d1fca}{operator!=}} (System.\+Object other, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Tests for inequality with an object. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aba3e55bf4914578717ffd4ec9707c29f_aba3e55bf4914578717ffd4ec9707c29f}{operator==}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path1, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path2)
+\begin{DoxyCompactList}\small\item\em Tests two path instances for equality. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ad65aa0fe0b7d3cd28b1d33eeac3548cd_ad65aa0fe0b7d3cd28b1d33eeac3548cd}{operator==}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path1, System.\+Object other)
+\begin{DoxyCompactList}\small\item\em Tests for equality with an object. \end{DoxyCompactList}\item 
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a66235cf211f3a38e4149fa48fc685f67_a66235cf211f3a38e4149fa48fc685f67}{operator==}} (System.\+Object other, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Tests for equality with an object. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3_af4219b5ed1497e66fd495b412688ecf3}{To\+Meta}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the .meta file path for an asset path. \end{DoxyCompactList}\item 
+static String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{To\+Strings}} (\mbox{[}Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$ paths)
+\begin{DoxyCompactList}\small\item\em Converts an IEnumerable collection of Path instances to a string array. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a90bc7d03e89ae59ba4653ff9109f0fec_a90bc7d03e89ae59ba4653ff9109f0fec}{Uniquify\+File\+Name}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
+\begin{DoxyCompactList}\small\item\em Returns the path altered with a numbering if an asset already exists (and is imported) at the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e}{Asset\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the path to the asset file if the path represents a .meta file. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}{Exists}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true if the path exists in the Asset\+Database. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a60c6f10f04d962b32a6563c6b842b81c_a60c6f10f04d962b32a6563c6b842b81c}{Exists\+In\+File\+System}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true if the path exists in the file system. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5}{Extension}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the extension of the path. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a}{File\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the file name with extension. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197}{File\+Name\+Without\+Extension}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the file name without extension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a86fde1a385ff90d8002ae30a7c39cab9_a86fde1a385ff90d8002ae30a7c39cab9}{Folder\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the relative path to the directory the file or folder is in. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_abd29565587282b14cb265fb107ae0093_abd29565587282b14cb265fb107ae0093}{Full\+Assets\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Assets} subfolder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a005a32c04a661e398af4f2a6f866242a_a005a32c04a661e398af4f2a6f866242a}{Full\+Library\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Library} subfolder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a6724fa2743590cd1a81b41b61102e7fe_a6724fa2743590cd1a81b41b61102e7fe}{Full\+Logs\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Logs} subfolder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ad031047c157ca34623ef3d8794c321a4_ad031047c157ca34623ef3d8794c321a4}{Full\+Packages\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Packages} subfolder. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_af15b23e15a17c04d3a45a054a18d6443_af15b23e15a17c04d3a45a054a18d6443}{Full\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the full (absolute) path with forward slashes as separators. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a3a4a27e26891e69d91d724cdf661656e_a3a4a27e26891e69d91d724cdf661656e}{Full\+Project\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s root folder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ac7167ec9e63c61ff6a42a820af23747c_ac7167ec9e63c61ff6a42a820af23747c}{Full\+Project\+Settings\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Project\+Settings} subfolder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a77508ff7f04d30b6160f254e53adbeb6_a77508ff7f04d30b6160f254e53adbeb6}{Full\+Project\+Temp\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily Temp} subfolder. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a2fcfa4fd2c52adca3fa729bf78e72d3b_a2fcfa4fd2c52adca3fa729bf78e72d3b}{Full\+User\+Settings\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the absolute path to the project\textquotesingle{}s {\ttfamily User\+Settings} subfolder. \end{DoxyCompactList}\item 
+GUID \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c}{Guid}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the GUID for the path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df}{Meta\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the path to the .meta file if the path is an asset file or folder. \end{DoxyCompactList}\item 
+String\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f_a0247c4e1ee282e42b31b89c70bebe85f}{Sub\+Folders}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the names of all folders in a path to a folder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a095641cd17b35305e83b4dcee0704e0b_a095641cd17b35305e83b4dcee0704e0b}{Unique\+File\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the path altered with a numbering if an asset already exists (and is imported) at the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Represents a relative path to an asset file or folder, typically under \textquotesingle{}Assets\textquotesingle{} or \textquotesingle{}Packages\textquotesingle{}. 
+
+
+\begin{DoxyItemize}
+\item Guards against inconsistencies like invalid paths (not under project root), illegal characters, etc.
+\item Converts path separators to forward slashes for compatibility with OS X, Linux
+\item Converts absolute paths to relative paths
+\item Implicitly convertible to/from string eg "{}use it like a string path"{}
+\item Provides quick access to File I/O tasks like\+: get file\textquotesingle{}s folder, extension, full path, exists, meta file, etc. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a14cdcaf6215972759787431b363f763c_a14cdcaf6215972759787431b363f763c}\label{class_code_smile_editor_1_1_asset_1_1_path_a14cdcaf6215972759787431b363f763c_a14cdcaf6215972759787431b363f763c} 
+\index{Asset.Path@{Asset.Path}!Path@{Path}}
+\index{Path@{Path}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{full\+Or\+Relative\+Path }\end{DoxyParamCaption})}
+
+
+
+Creates an asset path from either an absolute or relative path. 
+
+When passing an absolute path, it is required that the absolute path starts with the project\textquotesingle{}s root folder. This safeguards against accidentally using an absolute path from a different project. 
+
+A path can also point to other locations in the project root folder where assets may be stored. The allowed subfolders (case insensitive) are\+:
+\begin{DoxyItemize}
+\item Assets
+\item Library
+\item Logs
+\item Packages
+\item Project\+Settings
+\item Temp
+\item User\+Settings 
+\end{DoxyItemize}
+
+Example input path\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C:\(\backslash\)Users\(\backslash\)Urso\ Clever\(\backslash\)Untiy\ Porjects\(\backslash\)Firts\ Projcet\(\backslash\)Assets\(\backslash\)something\(\backslash\)file.asset}
+
+\end{DoxyCode}
+ Results in\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Assets/something/file.asset}
+
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em full\+Or\+Relative\+Path} & Relative or absolute path to an asset file or folder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path(\+String,\+String,\+String)}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path(\+Object)} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00223}{223}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NullOrWhitespace(fullOrRelativePath,\ nameof(fullOrRelativePath));}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_RelativePath\ =\ ToRelative(fullOrRelativePath.ToForwardSlashes());}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ab81690d1d82ddd90548e3d804b5afa29_ab81690d1d82ddd90548e3d804b5afa29}\label{class_code_smile_editor_1_1_asset_1_1_path_ab81690d1d82ddd90548e3d804b5afa29_ab81690d1d82ddd90548e3d804b5afa29} 
+\index{Asset.Path@{Asset.Path}!Path@{Path}}
+\index{Path@{Path}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{folder\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{file\+Name,  }\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{extension = {\ttfamily DefaultExtension} }\end{DoxyParamCaption})}
+
+
+
+Creates an asset path by combining folder path, file name and extension. 
+
+The default extension is "{}.\+asset"{}. Note that Asset\+Importers rely on file extensions.
+
+Example parameters\+: {\ttfamily "{}\textbackslash{}\+Assets\textbackslash{}\+Some/\+Sub\textbackslash{}\+Dir"{}, "{}\+New File"{}, "{}\+My\+Ext"{}} 
+
+Resulting path\+: {\ttfamily "{}\+Assets/\+Some/\+Sub/\+Dir/\+New File.\+myext"{}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Path} & Absolute or relative path to a folder. Leading/trailing path separators are trimmed. \\
+\hline
+{\em file\+Name} & Name of the file without extension. Must not contain path separators.\\
+\hline
+{\em extension} & Extension of the file (default\+: \textquotesingle{}asset\textquotesingle{}). Leading dots will be trimmed. Extension will be lowercase. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path(\+String)} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00251}{251}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NullOrWhitespace(folderPath,\ nameof(folderPath));}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NullOrWhitespace(fileName,\ nameof(fileName));}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NullOrWhitespace(extension,\ nameof(extension));}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ContainsPathSeparators(fileName,\ nameof(fileName));}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ relativeDir\ =\ ToRelative(folderPath.ToForwardSlashes());}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_RelativePath\ =\ \$\textcolor{stringliteral}{"{}\{relativeDir\}/\{fileName\}.\{extension.TrimStart('.').ToLower()\}"{}};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a3d0d7574b95b19be03fdfd90e6c628e2_a3d0d7574b95b19be03fdfd90e6c628e2}\label{class_code_smile_editor_1_1_asset_1_1_path_a3d0d7574b95b19be03fdfd90e6c628e2_a3d0d7574b95b19be03fdfd90e6c628e2} 
+\index{Asset.Path@{Asset.Path}!Path@{Path}}
+\index{Path@{Path}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})}
+
+
+
+Creates an asset path from an asset instance. 
+
+Throws exception if asset is not an asset on disk.
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path(\+String)} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00270}{270}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotInDatabase(asset);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_RelativePath\ =\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_code_smile_editor_1_1_asset_1_1_path_a3d0d7574b95b19be03fdfd90e6c628e2_a3d0d7574b95b19be03fdfd90e6c628e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsubsection{Member Function Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41_a707c1a8b6f6fab6ad12485008e38ce41}\label{class_code_smile_editor_1_1_asset_1_1_path_a707c1a8b6f6fab6ad12485008e38ce41_a707c1a8b6f6fab6ad12485008e38ce41} 
+\index{Asset.Path@{Asset.Path}!CreateFolders@{CreateFolders}}
+\index{CreateFolders@{CreateFolders}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{CreateFolders()}{CreateFolders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily GUID Create\+Folders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the folders in the path recursively. 
+
+The \doxylink{class_code_smile_editor_1_1_asset_1_1_file}{Code\+Smile\+Editor.\+Asset.\+File} write operations use this internally to create any missing folders, so you do not need to call this yourself in those cases. 
+
+Path may point to a file. It is assumed that if the last element of the path contains a dot it has an extension and is therefore a file. 
+
+\begin{DoxyReturn}{Returns}
+The GUID of the deepest (last) folder in the path.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55_aa30592adbaf54202ead85cd483107e55}{Code\+Smile\+Editor.\+Asset.\+Path.\+Create\+Folders(\+Code\+Smile\+Editor.\+Asset.\+Path)} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55_aa30592adbaf54202ead85cd483107e55}\label{class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55_aa30592adbaf54202ead85cd483107e55} 
+\index{Asset.Path@{Asset.Path}!CreateFolders@{CreateFolders}}
+\index{CreateFolders@{CreateFolders}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{CreateFolders()}{CreateFolders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static GUID Create\+Folders (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates any missing folders in the path. 
+
+Unlike Asset\+Database.\+Create\+Folder this creates the entire path in one go rather than each folder one by one.
+
+Path may point to either a file or folder. If the last path element has an extension it is considered a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to a file or folder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GUID of the deepest (last) folder in the path.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateFolder.html}{\texttt{ Asset\+Database.\+Create\+Folder}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00254}{254}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.PathIsNotValid(path);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f}{FileExists}}(path))}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path.FolderPath.Guid;}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ last\ part\ has\ an\ extension\ we\ assume\ the\ path\ points\ to\ a\ file}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isPresumablyFilePath\ =\ String.IsNullOrEmpty(path.Extension)\ ==\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ folderPath\ =\ isPresumablyFilePath\ ?\ path.FolderPath\ :\ path;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}{FolderExists}}(folderPath))}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ folderPath.Guid;}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ folderNames\ =\ ((String)folderPath).Split(\textcolor{keyword}{new}[]\ \{\ \textcolor{charliteral}{'/'}\ \});}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ folderGuid\ =\ GuidForExistingPath(folderNames[0]);\ \textcolor{comment}{//\ first\ is\ "{}Assets"{}}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ partialPath\ =\ folderNames[0];}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 1;\ i\ <\ folderNames.Length;\ i++)}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ partialPath\ +=\ \$\textcolor{stringliteral}{"{}/\{folderNames[i]\}"{}};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}{FolderExists}}(partialPath))}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ folderGuid\ =\ GuidForExistingPath(partialPath);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ folderGuid\ =\ CreateSubFolder(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(folderGuid),\ folderNames[i]);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ folderGuid;}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f}{Asset.\+Path.\+File\+Exists()}}, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}{Asset.\+Path.\+Folder\+Exists()}}, and \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55_aa30592adbaf54202ead85cd483107e55_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3}\label{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3} 
+\index{Asset.Path@{Asset.Path}!Equals@{Equals}}
+\index{Equals@{Equals}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Boolean Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Tests another path for equality. 
+
+They are equal if their internal relative path strings are equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A path instance or null.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this path equals the other path. False otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00284}{284}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(other,\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(\textcolor{keyword}{this},\ other))}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_RelativePath.Equals(other.m\_RelativePath);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_asset_8_path_8cs_source_l00430}{Asset.\+Path.\+Equals()}}, and \mbox{\hyperlink{_asset_8_path_8cs_source_l00323}{Asset.\+Path.\+operator==()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a7fe15db208e12203a2ddd105a60446a0_a7fe15db208e12203a2ddd105a60446a0}\label{class_code_smile_editor_1_1_asset_1_1_path_a7fe15db208e12203a2ddd105a60446a0_a7fe15db208e12203a2ddd105a60446a0} 
+\index{Asset.Path@{Asset.Path}!Equals@{Equals}}
+\index{Equals@{Equals}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Boolean Equals (\begin{DoxyParamCaption}\item[{String}]{other }\end{DoxyParamCaption})}
+
+
+
+Tests another path for equality. 
+
+They are equal if their internal relative path strings are equal.
+
+The string is elevated to a Path instance, and then compared.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A path string or null.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this path equals the other path. False otherwise.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a37cffbb9ed1db3b0e77664ad01b6fd01_a37cffbb9ed1db3b0e77664ad01b6fd01}\label{class_code_smile_editor_1_1_asset_1_1_path_a37cffbb9ed1db3b0e77664ad01b6fd01_a37cffbb9ed1db3b0e77664ad01b6fd01} 
+\index{Asset.Path@{Asset.Path}!Equals@{Equals}}
+\index{Equals@{Equals}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily override Boolean Equals (\begin{DoxyParamCaption}\item[{System\+::\+Object}]{obj }\end{DoxyParamCaption})}
+
+
+
+Tests path for equality with an object. 
+
+If the object is a Path or String will use the respective Equals method for these types. In all other cases returns false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the path equals the input string or Path. False otherwise or if input is neither string nor Path.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00430}{430}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ Path\ path)}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3}{Equals}}(path);}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ String\ str)}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a16e59bfb7ec5500d91fa1e8baaed7ec3_a16e59bfb7ec5500d91fa1e8baaed7ec3}{Equals}}(str);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_path_8cs_source_l00284}{Asset.\+Path.\+Equals()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_code_smile_editor_1_1_asset_1_1_path_a37cffbb9ed1db3b0e77664ad01b6fd01_a37cffbb9ed1db3b0e77664ad01b6fd01_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f}\label{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f} 
+\index{Asset.Path@{Asset.Path}!FileExists@{FileExists}}
+\index{FileExists@{FileExists}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FileExists()}{FileExists()}}
+{\footnotesize\ttfamily static Boolean File\+Exists (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the given file exists in the file system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to a file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file exists in the file system. False otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}{Code\+Smile\+Editor.\+Asset.\+Path.\+Folder\+Exists} 
+\end{DoxyItemize}
+
+Referenced by \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00254}{Asset.\+Path.\+Create\+Folders()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c}\label{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c} 
+\index{Asset.Path@{Asset.Path}!FolderExists@{FolderExists}}
+\index{FolderExists@{FolderExists}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FolderExists()}{FolderExists()}}
+{\footnotesize\ttfamily static Boolean Folder\+Exists (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests if the given folder exists in the file system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to a folder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the folder exists in the file system. False otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f_ae2e7b500cc4d1f97b7c6051181aa833f}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Exists} 
+\end{DoxyItemize}
+
+Referenced by \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00254}{Asset.\+Path.\+Create\+Folders()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_code_smile_editor_1_1_asset_1_1_path_a18386e05fe0620f7baaa0c21543f455c_a18386e05fe0620f7baaa0c21543f455c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a18298002ca84eab9c56ac238dedc53e8_a18298002ca84eab9c56ac238dedc53e8}\label{class_code_smile_editor_1_1_asset_1_1_path_a18298002ca84eab9c56ac238dedc53e8_a18298002ca84eab9c56ac238dedc53e8} 
+\index{Asset.Path@{Asset.Path}!FromMeta@{FromMeta}}
+\index{FromMeta@{FromMeta}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FromMeta()}{FromMeta()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} From\+Meta (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the asset\textquotesingle{}s file path from a .meta file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to a .meta file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding path to an asset file or folder.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3_af4219b5ed1497e66fd495b412688ecf3}{Code\+Smile\+Editor.\+Asset.\+Path.\+To\+Meta}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Path\+From\+Text\+Meta\+File\+Path}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}\label{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8} 
+\index{Asset.Path@{Asset.Path}!Get@{Get}}
+\index{Get@{Get}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Get (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the relative path of an asset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asset} & Instance of an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relative path to the asset file, or null if the object is not an asset.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_afc3f6187881696bfef4a6ab5f09539fe_afc3f6187881696bfef4a6ab5f09539fe}{Code\+Smile\+Editor.\+Asset.\+Path.\+Get(\+GUID)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{80}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ AssetDatabase.GetAssetPath(asset);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(path)\ ?\ null\ :\ (Path)path;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_asset_8_path_8cs_source_l00270}{Asset.\+Path.\+Path()}}, \mbox{\hyperlink{_asset_8_version_control_8cs_source_l00066}{Asset.\+Version\+Control.\+Can\+Make\+Editable()}}, \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00254}{Asset.\+Path.\+Create\+Folders()}}, \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00114}{Asset.\+Path.\+Get()}}, \mbox{\hyperlink{_asset_8_static_8cs_source_l00042}{Asset.\+Get\+Main\+Type()}}, and \mbox{\hyperlink{_asset_8_file_8cs_source_l00440}{Asset.\+File.\+Load\+Main$<$ T $>$()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54_a7b337848207b6bc5aebde6ae18e18d54}\label{class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54_a7b337848207b6bc5aebde6ae18e18d54} 
+\index{Asset.Path@{Asset.Path}!Get@{Get}}
+\index{Get@{Get}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object\mbox{[}$\,$\mbox{]}}]{assets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts an array of asset instances to their asset paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assets} & Asset instances.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of paths for each input object. The returned array has the same size. Items can be null if the input object was either null or not an asset. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Code\+Smile\+Editor.\+Asset.\+Path.\+Get(\+Object)}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00114}{114}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(assets,\ nameof(assets));}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ objectCount\ =\ assets.Length;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ paths\ =\ \textcolor{keyword}{new}\ String[objectCount];}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ objectCount;\ i++)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ paths[i]\ =\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(assets[i]);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ paths;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54_a7b337848207b6bc5aebde6ae18e18d54_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_afc3f6187881696bfef4a6ab5f09539fe_afc3f6187881696bfef4a6ab5f09539fe}\label{class_code_smile_editor_1_1_asset_1_1_path_afc3f6187881696bfef4a6ab5f09539fe_afc3f6187881696bfef4a6ab5f09539fe} 
+\index{Asset.Path@{Asset.Path}!Get@{Get}}
+\index{Get@{Get}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Get (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the relative path of an asset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em guid} & GUID of an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relative path to the asset file, or null if the object is not an asset.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Code\+Smile\+Editor.\+Asset.\+Path.\+Get(\+Object)}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54_a7b337848207b6bc5aebde6ae18e18d54}{Code\+Smile\+Editor.\+Asset.\+Path.\+Get(\+Object\mbox{[}$\,$\mbox{]})}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00096}{96}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ AssetDatabase.GUIDToAssetPath(guid);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(path)\ ?\ null\ :\ (Path)path;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a942d35c4445bef86b8675fa4ee8893ee_a942d35c4445bef86b8675fa4ee8893ee}\label{class_code_smile_editor_1_1_asset_1_1_path_a942d35c4445bef86b8675fa4ee8893ee_a942d35c4445bef86b8675fa4ee8893ee} 
+\index{Asset.Path@{Asset.Path}!GetGuid@{GetGuid}}
+\index{GetGuid@{GetGuid}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{GetGuid()}{GetGuid()}}
+{\footnotesize\ttfamily static GUID Get\+Guid (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Asset\+Path\+To\+GUIDOptions}]{options = {\ttfamily AssetPathToGUIDOptions.IncludeRecentlyDeletedAssets} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the GUID for an asset path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/AssetPathToGUIDOptions.html}{\texttt{ Asset\+Path\+To\+GUIDOptions}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GUID of the asset or an empty GUID if the path does not exist in the database.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}{Code\+Smile\+Editor.\+Asset.\+Path.\+Exists}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html}{\texttt{ Asset\+Database.\+Asset\+Path\+To\+GUID}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ab86e9330a2bab918bbad0e2cbadb58a8_ab86e9330a2bab918bbad0e2cbadb58a8}\label{class_code_smile_editor_1_1_asset_1_1_path_ab86e9330a2bab918bbad0e2cbadb58a8_ab86e9330a2bab918bbad0e2cbadb58a8} 
+\index{Asset.Path@{Asset.Path}!GetHashCode@{GetHashCode}}
+\index{GetHashCode@{GetHashCode}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{GetHashCode()}{GetHashCode()}}
+{\footnotesize\ttfamily override Int32 Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the internal path string\textquotesingle{}s hash code. 
+
+\begin{DoxyReturn}{Returns}
+The hash code of the relative path string.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ac408187e90e22a29a6c0bf20a0306532_ac408187e90e22a29a6c0bf20a0306532}\label{class_code_smile_editor_1_1_asset_1_1_path_ac408187e90e22a29a6c0bf20a0306532_ac408187e90e22a29a6c0bf20a0306532} 
+\index{Asset.Path@{Asset.Path}!GetScene@{GetScene}}
+\index{GetScene@{GetScene}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{GetScene()}{GetScene()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Get\+Scene (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance\+Or\+Asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the scene\textquotesingle{}s path if the object is instantiated in a scene, otherwise returns the object\textquotesingle{}s path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+Or\+Asset} & An object instance or asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scene path if the object is an instance in the scene. Otherwise the asset\textquotesingle{}s path.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetOrScenePath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Or\+Scene\+Path}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a2d28ed0af9ce1a5b78cfea13d920fbf6_a2d28ed0af9ce1a5b78cfea13d920fbf6}\label{class_code_smile_editor_1_1_asset_1_1_path_a2d28ed0af9ce1a5b78cfea13d920fbf6_a2d28ed0af9ce1a5b78cfea13d920fbf6} 
+\index{Asset.Path@{Asset.Path}!GetSubFolders@{GetSubFolders}}
+\index{GetSubFolders@{GetSubFolders}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{GetSubFolders()}{GetSubFolders()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Get\+Sub\+Folders (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the names of all subfolders in the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to a folder.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Names of each subfolder in the path. Empty array if there are no subfolders or the path points to a file.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html}{\texttt{ Asset\+Database.\+Get\+Sub\+Folders}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_afe4dd70515ffc4868599918fc76c32b9_afe4dd70515ffc4868599918fc76c32b9}\label{class_code_smile_editor_1_1_asset_1_1_path_afe4dd70515ffc4868599918fc76c32b9_afe4dd70515ffc4868599918fc76c32b9} 
+\index{Asset.Path@{Asset.Path}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily static Boolean Is\+Valid (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns true if the provided path is valid. 
+
+If this returns false \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} contains the error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String representation of an absolute or relative path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is a valid path and contains no illegal characters for a path or file, and isn\textquotesingle{}t too long. False in all other cases. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00194}{194}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ isValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ System.IO\ will\ throw\ for\ most\ illegal\ chars,\ plus\ some\ extra\ checks}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ fileName\ =\ System.IO.Path.GetFileName(path);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ folderName\ =\ System.IO.Path.GetDirectoryName(path);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ folder\ name\ for\ some\ chars\ that\ System.IO\ allows\ in\ GetDirectoryName}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ testIllegalChars\ =\ \textcolor{keyword}{new}\ Func<Char,\ Boolean>(c\ =>\ c\ ==\ \textcolor{charliteral}{'*'}\ ||\ c\ ==\ \textcolor{charliteral}{'?'}\ ||\ c\ ==\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ folderName.Any(testIllegalChars)\ ==\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValid)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ filename\ for\ some\ chars\ that\ System.IO\ allows\ in\ GetFileName}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileName\ =\ path.Substring(folderName.Length,\ path.Length\ -\/\ folderName.Length);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ fileName.Any(testIllegalChars)\ ==\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ ex)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(\$\textcolor{stringliteral}{"{}\{ex.Message\}\ =>\ \(\backslash\)"{}\{path\}\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isValid;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_abb6aabf6ef3879246a9410a4b03cff6a_abb6aabf6ef3879246a9410a4b03cff6a}\label{class_code_smile_editor_1_1_asset_1_1_path_abb6aabf6ef3879246a9410a4b03cff6a_abb6aabf6ef3879246a9410a4b03cff6a} 
+\index{Asset.Path@{Asset.Path}!OpenExternal@{OpenExternal}}
+\index{OpenExternal@{OpenExternal}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{OpenExternal()}{OpenExternal()}}
+{\footnotesize\ttfamily void Open\+External (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Opens the folder externally, for example File Explorer (Windows) or Finder (Mac). 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/Application.OpenURL.html}{\texttt{ Application.\+Open\+URL}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a8f41e9c71f0bf56b0fe80ef591334128_a8f41e9c71f0bf56b0fe80ef591334128}\label{class_code_smile_editor_1_1_asset_1_1_path_a8f41e9c71f0bf56b0fe80ef591334128_a8f41e9c71f0bf56b0fe80ef591334128} 
+\index{Asset.Path@{Asset.Path}!operator Path@{operator Path}}
+\index{operator Path@{operator Path}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator Path()}{operator Path()}}
+{\footnotesize\ttfamily static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implicit conversion to Path from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Input string path. Path may be absolute or relative.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Relative path as string.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a294e1f7dac5c8247c2f32d50653ff2f6_a294e1f7dac5c8247c2f32d50653ff2f6}\label{class_code_smile_editor_1_1_asset_1_1_path_a294e1f7dac5c8247c2f32d50653ff2f6_a294e1f7dac5c8247c2f32d50653ff2f6} 
+\index{Asset.Path@{Asset.Path}!operator String@{operator String}}
+\index{operator String@{operator String}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator String()}{operator String()}}
+{\footnotesize\ttfamily static implicit operator String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implicit conversion to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Input path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Relative path as string.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a0a26f18bf392e944599d94a316d0dd9c_a0a26f18bf392e944599d94a316d0dd9c}\label{class_code_smile_editor_1_1_asset_1_1_path_a0a26f18bf392e944599d94a316d0dd9c_a0a26f18bf392e944599d94a316d0dd9c} 
+\index{Asset.Path@{Asset.Path}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static Boolean operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path1,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests two path instances for inequality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & A Path.\\
+\hline
+{\em path2} & Another path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a4061b79c8350f444d3691461e0f94e95_a4061b79c8350f444d3691461e0f94e95}\label{class_code_smile_editor_1_1_asset_1_1_path_a4061b79c8350f444d3691461e0f94e95_a4061b79c8350f444d3691461e0f94e95} 
+\index{Asset.Path@{Asset.Path}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static Boolean operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path1,  }\item[{System.\+Object}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests for inequality with an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & A Path.\\
+\hline
+{\em other} & Any instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_aeada9e1217349c548458a8b0ac2d1fca_aeada9e1217349c548458a8b0ac2d1fca}\label{class_code_smile_editor_1_1_asset_1_1_path_aeada9e1217349c548458a8b0ac2d1fca_aeada9e1217349c548458a8b0ac2d1fca} 
+\index{Asset.Path@{Asset.Path}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static Boolean operator!= (\begin{DoxyParamCaption}\item[{System.\+Object}]{other,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests for inequality with an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Any instance.\\
+\hline
+{\em path} & A Path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_aba3e55bf4914578717ffd4ec9707c29f_aba3e55bf4914578717ffd4ec9707c29f}\label{class_code_smile_editor_1_1_asset_1_1_path_aba3e55bf4914578717ffd4ec9707c29f_aba3e55bf4914578717ffd4ec9707c29f} 
+\index{Asset.Path@{Asset.Path}!operator==@{operator==}}
+\index{operator==@{operator==}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static Boolean operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path1,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests two path instances for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & A Path.\\
+\hline
+{\em path2} & Another path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both paths point to the same location. False otherwise.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00323}{323}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(path1,\ path2))}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(path1,\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(path2,\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path1.Equals(path2);}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_asset_8_path_8cs_source_l00284}{Asset.\+Path.\+Equals()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_code_smile_editor_1_1_asset_1_1_path_aba3e55bf4914578717ffd4ec9707c29f_aba3e55bf4914578717ffd4ec9707c29f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ad65aa0fe0b7d3cd28b1d33eeac3548cd_ad65aa0fe0b7d3cd28b1d33eeac3548cd}\label{class_code_smile_editor_1_1_asset_1_1_path_ad65aa0fe0b7d3cd28b1d33eeac3548cd_ad65aa0fe0b7d3cd28b1d33eeac3548cd} 
+\index{Asset.Path@{Asset.Path}!operator==@{operator==}}
+\index{operator==@{operator==}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static Boolean operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path1,  }\item[{System.\+Object}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests for equality with an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & A Path.\\
+\hline
+{\em other} & Any instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both paths point to the same location. False otherwise.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a66235cf211f3a38e4149fa48fc685f67_a66235cf211f3a38e4149fa48fc685f67}\label{class_code_smile_editor_1_1_asset_1_1_path_a66235cf211f3a38e4149fa48fc685f67_a66235cf211f3a38e4149fa48fc685f67} 
+\index{Asset.Path@{Asset.Path}!operator==@{operator==}}
+\index{operator==@{operator==}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static Boolean operator== (\begin{DoxyParamCaption}\item[{System.\+Object}]{other,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tests for equality with an object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Any instance.\\
+\hline
+{\em path} & A Path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both paths point to the same location. False otherwise.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ab20dbdb9f71c4595e668cf0cb5f5ad7c_ab20dbdb9f71c4595e668cf0cb5f5ad7c}\label{class_code_smile_editor_1_1_asset_1_1_path_ab20dbdb9f71c4595e668cf0cb5f5ad7c_ab20dbdb9f71c4595e668cf0cb5f5ad7c} 
+\index{Asset.Path@{Asset.Path}!Rename@{Rename}}
+\index{Rename@{Rename}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Rename()}{Rename()}}
+{\footnotesize\ttfamily void Rename (\begin{DoxyParamCaption}\item[{String}]{new\+File\+Or\+Folder\+Name }\end{DoxyParamCaption})}
+
+
+
+Renames the last element of the \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Code\+Smile\+Editor.\+Asset.\+Path} instance. 
+
+NOTE\+: This does {\bfseries{not}} rename a file/folder on disk! It renames the Path instance.
+
+When renaming a file you must specifiy the new filename with extension.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+File\+Or\+Folder\+Name} & Name of a folder or file with extension. Does nothing if input is null or empty.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00391}{391}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String.IsNullOrEmpty(newFileOrFolderName)\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_RelativePath\ =\ \$\textcolor{stringliteral}{"{}\{FolderPath\}/\{System.IO.Path.GetFileName(newFileOrFolderName)\}"{}};}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3_af4219b5ed1497e66fd495b412688ecf3}\label{class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3_af4219b5ed1497e66fd495b412688ecf3} 
+\index{Asset.Path@{Asset.Path}!ToMeta@{ToMeta}}
+\index{ToMeta@{ToMeta}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{ToMeta()}{ToMeta()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} To\+Meta (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the .meta file path for an asset path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to an asset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding .meta file path.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a18298002ca84eab9c56ac238dedc53e8_a18298002ca84eab9c56ac238dedc53e8}{Code\+Smile\+Editor.\+Asset.\+Path.\+From\+Meta}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html}{\texttt{ Asset\+Database.\+Get\+Text\+Meta\+File\+Path\+From\+Asset\+Path}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a012fbb0f39e57c0a44ec83dd408fcda3_a012fbb0f39e57c0a44ec83dd408fcda3}\label{class_code_smile_editor_1_1_asset_1_1_path_a012fbb0f39e57c0a44ec83dd408fcda3_a012fbb0f39e57c0a44ec83dd408fcda3} 
+\index{Asset.Path@{Asset.Path}!ToString@{ToString}}
+\index{ToString@{ToString}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily override String To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the relative path as string. 
+
+Same as implicit string conversion.
+
+\begin{DoxyReturn}{Returns}
+The relative path as a string.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}\label{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d} 
+\index{Asset.Path@{Asset.Path}!ToStrings@{ToStrings}}
+\index{ToStrings@{ToStrings}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{ToStrings()}{ToStrings()}}
+{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} To\+Strings (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts an IEnumerable collection of Path instances to a string array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Input paths.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Relative paths as strings.
+\end{DoxyReturn}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a90bc7d03e89ae59ba4653ff9109f0fec_a90bc7d03e89ae59ba4653ff9109f0fec}\label{class_code_smile_editor_1_1_asset_1_1_path_a90bc7d03e89ae59ba4653ff9109f0fec_a90bc7d03e89ae59ba4653ff9109f0fec} 
+\index{Asset.Path@{Asset.Path}!UniquifyFileName@{UniquifyFileName}}
+\index{UniquifyFileName@{UniquifyFileName}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{UniquifyFileName()}{UniquifyFileName()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Uniquify\+File\+Name (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the path altered with a numbering if an asset already exists (and is imported) at the path. 
+
+See also\+: Project Settings =\texorpdfstring{$>$}{>} Editor =\texorpdfstring{$>$}{>} Numbering Scheme 
+
+PS\+: "{}\+Uniquify"{} is a proper english verb. It means "{}to make unique"{}. Methods carrying this verb are commonly found in SQL database APIs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The input path.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path possibly altered with a number in the last path element.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html}{\texttt{ Asset\+Database.\+Generate\+Unique\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00314}{314}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ uniquePath\ =\ AssetDatabase.GenerateUniqueAssetPath(path);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(uniquePath)\ ?\ path\ :\ uniquePath;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Property Documentation}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e}\label{class_code_smile_editor_1_1_asset_1_1_path_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e} 
+\index{Asset.Path@{Asset.Path}!AssetPath@{AssetPath}}
+\index{AssetPath@{AssetPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{AssetPath}{AssetPath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Asset\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the path to the asset file if the path represents a .meta file. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df}{Code\+Smile\+Editor.\+Asset.\+Path.\+Meta\+Path}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a18298002ca84eab9c56ac238dedc53e8_a18298002ca84eab9c56ac238dedc53e8}{Code\+Smile\+Editor.\+Asset.\+Path.\+From\+Meta}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetAssetPathFromTextMetaFilePath.html}{\texttt{ Asset\+Database.\+Get\+Asset\+Path\+From\+Text\+Meta\+File\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00108}{108}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}\label{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea} 
+\index{Asset.Path@{Asset.Path}!Exists@{Exists}}
+\index{Exists@{Exists}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Exists}{Exists}}
+{\footnotesize\ttfamily Boolean Exists\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true if the path exists in the Asset\+Database. 
+
+This may still return true for asset files that have been deleted externally if those changes have not been imported via \doxylink{class_code_smile_editor_1_1_asset_1_1_database_a7c993d64861e62fbdcff3700690b2318_a7c993d64861e62fbdcff3700690b2318}{Code\+Smile\+Editor.\+Asset.\+Database.\+Import\+All}. 
+
+In Unity 2023.\+2 or newer uses the new Asset\+Path\+Exists method. In earlier versions Asset\+Path\+To\+GUID is used.
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a60c6f10f04d962b32a6563c6b842b81c_a60c6f10f04d962b32a6563c6b842b81c}{Code\+Smile\+Editor.\+Asset.\+Path.\+Exists\+In\+File\+System}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_afcaefd0248a5d2a59a833699fb4f1d51_afcaefd0248a5d2a59a833699fb4f1d51}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Imported}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathExists.html}{\texttt{ Asset\+Database.\+Asset\+Path\+Exists}}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html}{\texttt{ Asset\+Database.\+Asset\+Path\+To\+GUID}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER }}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.AssetPathExists(m\_RelativePath);}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.AssetPathToGUID(m\_RelativePath,\ AssetPathToGUIDOptions.OnlyExistingAssets).Length\ >\ 0;}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a60c6f10f04d962b32a6563c6b842b81c_a60c6f10f04d962b32a6563c6b842b81c}\label{class_code_smile_editor_1_1_asset_1_1_path_a60c6f10f04d962b32a6563c6b842b81c_a60c6f10f04d962b32a6563c6b842b81c} 
+\index{Asset.Path@{Asset.Path}!ExistsInFileSystem@{ExistsInFileSystem}}
+\index{ExistsInFileSystem@{ExistsInFileSystem}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{ExistsInFileSystem}{ExistsInFileSystem}}
+{\footnotesize\ttfamily Boolean Exists\+In\+File\+System\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true if the path exists in the file system. 
+
+This checks for physical existance of a file or folder using the System.\+IO methods. It may return true where \doxylink{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}{Code\+Smile\+Editor.\+Asset.\+Path.\+Exists} returns false. 
+
+In such a case this may indicate that the asset has been created but not yet imported. The corresponding status check is\+: \doxylink{class_code_smile_editor_1_1_asset_1_1_status_afcaefd0248a5d2a59a833699fb4f1d51_afcaefd0248a5d2a59a833699fb4f1d51}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Imported}. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}{Code\+Smile\+Editor.\+Asset.\+Path.\+Exists}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_status_afcaefd0248a5d2a59a833699fb4f1d51_afcaefd0248a5d2a59a833699fb4f1d51}{Code\+Smile\+Editor.\+Asset.\+Status.\+Is\+Imported} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5}\label{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5} 
+\index{Asset.Path@{Asset.Path}!Extension@{Extension}}
+\index{Extension@{Extension}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Extension}{Extension}}
+{\footnotesize\ttfamily String Extension\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the extension of the path. 
+
+\begin{DoxyReturn}{Returns}
+The extension with a leading dot (eg \textquotesingle{}.txt\textquotesingle{}) or an empty string if there is no extension.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name\+Without\+Extension} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00118}{118}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a}\label{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a} 
+\index{Asset.Path@{Asset.Path}!FileName@{FileName}}
+\index{FileName@{FileName}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FileName}{FileName}}
+{\footnotesize\ttfamily String File\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the file name with extension. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5}{Code\+Smile\+Editor.\+Asset.\+Path.\+Extension}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name\+Without\+Extension} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00128}{128}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197}\label{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197} 
+\index{Asset.Path@{Asset.Path}!FileNameWithoutExtension@{FileNameWithoutExtension}}
+\index{FileNameWithoutExtension@{FileNameWithoutExtension}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FileNameWithoutExtension}{FileNameWithoutExtension}}
+{\footnotesize\ttfamily String File\+Name\+Without\+Extension\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the file name without extension. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5}{Code\+Smile\+Editor.\+Asset.\+Path.\+Extension}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00138}{138}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a86fde1a385ff90d8002ae30a7c39cab9_a86fde1a385ff90d8002ae30a7c39cab9}\label{class_code_smile_editor_1_1_asset_1_1_path_a86fde1a385ff90d8002ae30a7c39cab9_a86fde1a385ff90d8002ae30a7c39cab9} 
+\index{Asset.Path@{Asset.Path}!FolderPath@{FolderPath}}
+\index{FolderPath@{FolderPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FolderPath}{FolderPath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Folder\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the relative path to the directory the file or folder is in. 
+
+\begin{DoxyReturn}{Returns}
+The parent folder of the file or folder. Returns null if it\textquotesingle{}s the root path eg "{}\+Assets"{}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a5066dd8adab56e4ea54fe46b9db3bd9a_a5066dd8adab56e4ea54fe46b9db3bd9a}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a3693da5482c390a2146fe9dc6d38b197_a3693da5482c390a2146fe9dc6d38b197}{Code\+Smile\+Editor.\+Asset.\+Path.\+File\+Name\+Without\+Extension}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a66d760f8140181f272630b4f226a56c5_a66d760f8140181f272630b4f226a56c5}{Code\+Smile\+Editor.\+Asset.\+Path.\+Extension} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00172}{172}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ dirName\ =\ System.IO.Path.GetDirectoryName(m\_RelativePath);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(dirName)\ ?\ null\ :\ dirName;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_abd29565587282b14cb265fb107ae0093_abd29565587282b14cb265fb107ae0093}\label{class_code_smile_editor_1_1_asset_1_1_path_abd29565587282b14cb265fb107ae0093_abd29565587282b14cb265fb107ae0093} 
+\index{Asset.Path@{Asset.Path}!FullAssetsPath@{FullAssetsPath}}
+\index{FullAssetsPath@{FullAssetsPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullAssetsPath}{FullAssetsPath}}
+{\footnotesize\ttfamily String Full\+Assets\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Assets} subfolder. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/ScriptReference/Application-dataPath.html}{\texttt{ Application.\+data\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a005a32c04a661e398af4f2a6f866242a_a005a32c04a661e398af4f2a6f866242a}\label{class_code_smile_editor_1_1_asset_1_1_path_a005a32c04a661e398af4f2a6f866242a_a005a32c04a661e398af4f2a6f866242a} 
+\index{Asset.Path@{Asset.Path}!FullLibraryPath@{FullLibraryPath}}
+\index{FullLibraryPath@{FullLibraryPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullLibraryPath}{FullLibraryPath}}
+{\footnotesize\ttfamily String Full\+Library\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Library} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a6724fa2743590cd1a81b41b61102e7fe_a6724fa2743590cd1a81b41b61102e7fe}\label{class_code_smile_editor_1_1_asset_1_1_path_a6724fa2743590cd1a81b41b61102e7fe_a6724fa2743590cd1a81b41b61102e7fe} 
+\index{Asset.Path@{Asset.Path}!FullLogsPath@{FullLogsPath}}
+\index{FullLogsPath@{FullLogsPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullLogsPath}{FullLogsPath}}
+{\footnotesize\ttfamily String Full\+Logs\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Logs} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ad031047c157ca34623ef3d8794c321a4_ad031047c157ca34623ef3d8794c321a4}\label{class_code_smile_editor_1_1_asset_1_1_path_ad031047c157ca34623ef3d8794c321a4_ad031047c157ca34623ef3d8794c321a4} 
+\index{Asset.Path@{Asset.Path}!FullPackagesPath@{FullPackagesPath}}
+\index{FullPackagesPath@{FullPackagesPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullPackagesPath}{FullPackagesPath}}
+{\footnotesize\ttfamily String Full\+Packages\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Packages} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_af15b23e15a17c04d3a45a054a18d6443_af15b23e15a17c04d3a45a054a18d6443}\label{class_code_smile_editor_1_1_asset_1_1_path_af15b23e15a17c04d3a45a054a18d6443_af15b23e15a17c04d3a45a054a18d6443} 
+\index{Asset.Path@{Asset.Path}!FullPath@{FullPath}}
+\index{FullPath@{FullPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullPath}{FullPath}}
+{\footnotesize\ttfamily String Full\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the full (absolute) path with forward slashes as separators. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a86fde1a385ff90d8002ae30a7c39cab9_a86fde1a385ff90d8002ae30a7c39cab9}{Code\+Smile\+Editor.\+Asset.\+Path.\+Folder\+Path} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00146}{146}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a3a4a27e26891e69d91d724cdf661656e_a3a4a27e26891e69d91d724cdf661656e}\label{class_code_smile_editor_1_1_asset_1_1_path_a3a4a27e26891e69d91d724cdf661656e_a3a4a27e26891e69d91d724cdf661656e} 
+\index{Asset.Path@{Asset.Path}!FullProjectPath@{FullProjectPath}}
+\index{FullProjectPath@{FullProjectPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullProjectPath}{FullProjectPath}}
+{\footnotesize\ttfamily String Full\+Project\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s root folder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_ac7167ec9e63c61ff6a42a820af23747c_ac7167ec9e63c61ff6a42a820af23747c}\label{class_code_smile_editor_1_1_asset_1_1_path_ac7167ec9e63c61ff6a42a820af23747c_ac7167ec9e63c61ff6a42a820af23747c} 
+\index{Asset.Path@{Asset.Path}!FullProjectSettingsPath@{FullProjectSettingsPath}}
+\index{FullProjectSettingsPath@{FullProjectSettingsPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullProjectSettingsPath}{FullProjectSettingsPath}}
+{\footnotesize\ttfamily String Full\+Project\+Settings\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Project\+Settings} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a77508ff7f04d30b6160f254e53adbeb6_a77508ff7f04d30b6160f254e53adbeb6}\label{class_code_smile_editor_1_1_asset_1_1_path_a77508ff7f04d30b6160f254e53adbeb6_a77508ff7f04d30b6160f254e53adbeb6} 
+\index{Asset.Path@{Asset.Path}!FullProjectTempPath@{FullProjectTempPath}}
+\index{FullProjectTempPath@{FullProjectTempPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullProjectTempPath}{FullProjectTempPath}}
+{\footnotesize\ttfamily String Full\+Project\+Temp\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily Temp} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a2fcfa4fd2c52adca3fa729bf78e72d3b_a2fcfa4fd2c52adca3fa729bf78e72d3b}\label{class_code_smile_editor_1_1_asset_1_1_path_a2fcfa4fd2c52adca3fa729bf78e72d3b_a2fcfa4fd2c52adca3fa729bf78e72d3b} 
+\index{Asset.Path@{Asset.Path}!FullUserSettingsPath@{FullUserSettingsPath}}
+\index{FullUserSettingsPath@{FullUserSettingsPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{FullUserSettingsPath}{FullUserSettingsPath}}
+{\footnotesize\ttfamily String Full\+User\+Settings\+Path\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Returns the absolute path to the project\textquotesingle{}s {\ttfamily User\+Settings} subfolder. 
+
+
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_asset_8_path_8_static_8cs_source}{Asset.\+Path.\+Static.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c}\label{class_code_smile_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c} 
+\index{Asset.Path@{Asset.Path}!Guid@{Guid}}
+\index{Guid@{Guid}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{Guid}{Guid}}
+{\footnotesize\ttfamily GUID Guid\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the GUID for the path. 
+
+\begin{DoxyReturn}{Returns}
+The GUID for the asset at the path, or an empty GUID if the asset does not exist in the database.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_abd65d5ceb97d69f280079d5bfa8c75ea_abd65d5ceb97d69f280079d5bfa8c75ea}{Code\+Smile\+Editor.\+Asset.\+Path.\+Exists}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.AssetPathToGUID.html}{\texttt{ Asset\+Database.\+Asset\+Path\+To\+GUID}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df}\label{class_code_smile_editor_1_1_asset_1_1_path_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df} 
+\index{Asset.Path@{Asset.Path}!MetaPath@{MetaPath}}
+\index{MetaPath@{MetaPath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{MetaPath}{MetaPath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Meta\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the path to the .meta file if the path is an asset file or folder. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e}{Code\+Smile\+Editor.\+Asset.\+Path.\+Asset\+Path}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_af4219b5ed1497e66fd495b412688ecf3_af4219b5ed1497e66fd495b412688ecf3}{Code\+Smile\+Editor.\+Asset.\+Path.\+To\+Meta}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTextMetaFilePathFromAssetPath.html}{\texttt{ Asset\+Database.\+Get\+Text\+Meta\+File\+Path\+From\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00096}{96}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f_a0247c4e1ee282e42b31b89c70bebe85f}\label{class_code_smile_editor_1_1_asset_1_1_path_a0247c4e1ee282e42b31b89c70bebe85f_a0247c4e1ee282e42b31b89c70bebe85f} 
+\index{Asset.Path@{Asset.Path}!SubFolders@{SubFolders}}
+\index{SubFolders@{SubFolders}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{SubFolders}{SubFolders}}
+{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} Sub\+Folders\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the names of all folders in a path to a folder. 
+
+If the path points to a file this returns an empty array. Use Code\+Smile\+Editor.\+Asset.\+Path.\+Folder\+Path.\+Sub\+Folders in this case to first get the file\textquotesingle{}s folder. 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a2d28ed0af9ce1a5b78cfea13d920fbf6_a2d28ed0af9ce1a5b78cfea13d920fbf6}{Code\+Smile\+Editor.\+Asset.\+Path.\+Get\+Sub\+Folders}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetSubFolders.html}{\texttt{ Asset\+Database.\+Get\+Sub\+Folders}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00161}{161}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_path_a095641cd17b35305e83b4dcee0704e0b_a095641cd17b35305e83b4dcee0704e0b}\label{class_code_smile_editor_1_1_asset_1_1_path_a095641cd17b35305e83b4dcee0704e0b_a095641cd17b35305e83b4dcee0704e0b} 
+\index{Asset.Path@{Asset.Path}!UniqueFilePath@{UniqueFilePath}}
+\index{UniqueFilePath@{UniqueFilePath}!Asset.Path@{Asset.Path}}
+\doxyparagraph{\texorpdfstring{UniqueFilePath}{UniqueFilePath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Unique\+File\+Path\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the path altered with a numbering if an asset already exists (and is imported) at the path. 
+
+See also\+: Project Settings =\texorpdfstring{$>$}{>} Editor =\texorpdfstring{$>$}{>} Numbering Scheme 
+
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_path_a90bc7d03e89ae59ba4653ff9109f0fec_a90bc7d03e89ae59ba4653ff9109f0fec}{Code\+Smile\+Editor.\+Asset.\+Path.\+Uniquify\+File\+Name}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GenerateUniqueAssetPath.html}{\texttt{ Asset\+Database.\+Generate\+Unique\+Asset\+Path}} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{_asset_8_path_8cs_source_l00192}{192}} of file \mbox{\hyperlink{_asset_8_path_8cs_source}{Asset.\+Path.\+cs}}.
+
