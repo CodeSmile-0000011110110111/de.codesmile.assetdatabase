@@ -94,11 +94,11 @@ I did mention you don't need it, right? ;)
 
 But if you do, here's Waldo: `Asset.Database.ImportAll();`
 
-This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts). 
+Caution: This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts). 
 
 Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use. You can imagine how this has a negative impact on editor performance.
 
-So if you work with a SINGLE asset (or many in a loop) use the singular Save & Import methods, NOT SaveAllAssets. Likewise, if you modify an asset through AssetDatabase methods, you do **NOT** need to call Refresh(). Ever!
+Since Refresh() has been excessively overused I decided to name it closer to what it actually does.
 
 ## Documentation
 
@@ -124,17 +124,26 @@ This package is currently not available on OpenUPM.
 
 Sorry, I will not backport to 2020 or older due to extensive use of C# 9 features.
 
-## GPL License
+## Licenses
 
-This software is licensed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you publish that uses this software requires the entire work to be published as open source software under the same GPL 3.0 license.
+This software is dual-licensed.
 
-This software will also be available on the Unity Asset Store under the Asset Store EULA.
+### FREE => GPL License
+The free GitHub version is distributed under the GNU General Public License v3.0 (GPL 3.0). The main implication is that any work you publish that uses this software requires the entire work to be published as open source software under the same GPL 3.0 license.
+
+### PAID => Unity Asset Store EULA
+The paid version is available on the Unity Asset Store (UAS) and licensed under the Asset Store EULA. Users who purchased this software can, at any time, also download the software from GitHub and use it under the terms and conditions of the Asset Store EULA.
+
+### Custom License
 
 If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!
 
 - Steffen aka CodeSmile
-- [Email](mailto:steffen@steffenitterheim.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
+- [Email](mailto:steffen@codesmile.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
 
 ## Support & Feeback
 
-Very welcome! Please prefer to create an issue in the GitHub repository, specifically if you encounter issues or to request a feature. Contact me directly (see above) for any other feedback and questions.
+Very welcome!
+
+If you have an issue or feature request please create an issue in the GitHub repository. 
+Contact me directly (see above) for any other feedback and questions.

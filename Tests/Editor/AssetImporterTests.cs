@@ -1,30 +1,14 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
-using System;
-using UnityEditor;
 using UnityEditor.AssetImporters;
-using UnityEngine;
 
 namespace CodeSmileEditor.Tests
 {
 	public class AssetImporterTests : AssetTestBase
 	{
-		[Test] public void ActiveImporter_AssignOverride_ReturnsOverride()
-		{
-			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
-			var asset = new Asset("no content", path, true);
-
-			asset.ActiveImporter = typeof(TestImporter);
-
-			// ".test" has no default importer, so the first importer becomes the default
-			Assert.False(asset.IsImporterOverridden);
-			Assert.NotZero(asset.AvailableImporters.Length);
-			Assert.AreEqual(typeof(TestImporter), asset.ActiveImporter);
-		}
-
 		[Test] public void ActiveImporter_OBJAssignOverride_ReturnsOverride()
 		{
 			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.overrideobj"); // note the extension
@@ -33,29 +17,6 @@ namespace CodeSmileEditor.Tests
 			asset.ActiveImporter = typeof(ObjTestOverrideImporter);
 
 			Assert.AreEqual(typeof(ObjTestOverrideImporter), asset.ActiveImporter);
-		}
-
-		[Test] public void Importer_GetAvailable_NotEmpty()
-		{
-			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
-			var asset = new Asset("no content", path, true);
-
-			Assert.NotZero(asset.AvailableImporters.Length);
-			Assert.NotNull(asset.DefaultImporter);
-		}
-
-		[Test] public void ActiveImporter_AssignNull_ReturnsDefault()
-		{
-			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
-			var asset = new Asset("no content", path, true);
-
-			var defaultImporter = asset.DefaultImporter;
-
-			asset.ActiveImporter = typeof(TestImporter);
-			asset.ActiveImporter = null;
-
-			Assert.NotNull(defaultImporter);
-			Assert.AreEqual(defaultImporter, asset.ActiveImporter);
 		}
 
 		[ScriptedImporter(1, "test")]
@@ -84,5 +45,51 @@ namespace CodeSmileEditor.Tests
 		{
 			public override void OnImportAsset(AssetImportContext ctx) {}
 		}
+
+#if UNITY_2022_1_OR_NEWER
+		[Test] public void Importer_GetAvailable_NotEmpty()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
+			var asset = new Asset("no content", path, true);
+
+			Assert.NotZero(asset.AvailableImporters.Length);
+			Assert.NotNull(asset.DefaultImporter);
+		}
+
+		[Test] public void ActiveImporter_AssignOverride_ReturnsOverride()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
+			var asset = new Asset("no content", path, true);
+
+			asset.ActiveImporter = typeof(TestImporter);
+
+			// ".test" has no default importer, so the first importer becomes the default
+			Assert.False(asset.IsImporterOverridden);
+			Assert.NotZero(asset.AvailableImporters.Length);
+			Assert.AreEqual(typeof(TestImporter), asset.ActiveImporter);
+		}
+
+		[Test] public void ActiveImporter_AssignNull_ReturnsDefault()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
+			var asset = new Asset("no content", path, true);
+
+			var defaultImporter = asset.DefaultImporter;
+
+			asset.ActiveImporter = typeof(TestImporter);
+			asset.ActiveImporter = null;
+
+			Assert.NotNull(defaultImporter);
+			Assert.AreEqual(defaultImporter, asset.ActiveImporter);
+		}
+#else
+		[Test] public void DefaultImporter_Unity2021_ThrowsNotSupportedException()
+		{
+			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
+			var asset = new Asset("no content", path, true);
+
+			Assert.Throws<System.NotSupportedException>(() => _ = asset.DefaultImporter);
+		}
+#endif
 	}
 }

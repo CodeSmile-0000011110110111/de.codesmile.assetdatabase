@@ -1,5 +1,10 @@
 # Change Log
 
+#### v1.8.3 - Jan 22, 2024
+
+- Importer tests: disable some tests in 2021.3 because the method is not available
+- Rename test: log warning in 2021.3 to mention that the following warning is expected
+
 #### v1.8.2 - Dec 26, 2023
 
 - updated README and API docs

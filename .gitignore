@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# doxygen pdf file
+refman.pdf
+refman.pdf.meta
+MANUAL.pdf
+MANUAL.pdf.meta

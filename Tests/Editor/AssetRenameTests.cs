@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmileEditor.Tests.Helper;
@@ -60,8 +60,12 @@ namespace CodeSmileEditor.Tests
 		[Test] public void Rename_DifferentExtension_RetainsOriginalExtension()
 		{
 			var asset = CreateTestAsset(TestAssetPath);
-
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.ext");
+
+#if UNITY_2021_3_OR_NEWER && !UNITY_2022_1_OR_NEWER
+			UnityEngine.Debug.LogWarning($"{nameof(Rename_DifferentExtension_RetainsOriginalExtension)} expected warning in Unity 2021.3: "+
+				$"\"Main Object Name '..' does not match filename '..'\"");
+#endif
 			var success = asset.Rename("NewName.ext");
 
 			Assert.IsEmpty(Asset.GetLastErrorMessage());
