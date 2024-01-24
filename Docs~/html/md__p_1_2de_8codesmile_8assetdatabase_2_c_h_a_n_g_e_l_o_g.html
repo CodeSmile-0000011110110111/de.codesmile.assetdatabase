@@ -109,7 +109,7 @@ v1.8.3 - Jan 22, 2024</h3>
 v1.8.2 - Dec 26, 2023</h3>
 <ul>
 <li>updated README and API docs</li>
-<li>removed extra call to ImportIfNotImported in method chain</li>
+<li>removed extra call to "ImportIfNotImported" in load asset method chain</li>
 </ul>
 <h3><a class="anchor" id="v181---dec-21-2023"></a>
 v1.8.1 - Dec 21, 2023</h3>
@@ -123,7 +123,7 @@ v1.8.0 - Dec 09, 2023</h3>
 <li>renamed ForceReserializeAssets to UpgradeAssetSerializationVersion and</li>
 <li>renamed ForceReserializeAllAssets to UpgradeAllAssetSerializationVersions (*)</li>
 </ul>
-<p>(*) To provide more rationale: I saw a user's script where the user helplessly threw in the usual candidates due to some issue, but this also included "ForceReserializeAssets" That's when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for: upgrading the version of serialized assets.</p>
+<p>(*) To provide more rationale: I saw a user's script where the user helplessly threw in the usual candidates due to some issue, but this also included "ForceReserializeAssets". That's when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for: upgrading the version (format) of serialized assets when you change editor versions and you want version control not polluting these upgrades in individual future commits.</p>
 <h3><a class="anchor" id="v171---dec-05-2023"></a>
 v1.7.1 - Dec 05, 2023</h3>
 <ul>

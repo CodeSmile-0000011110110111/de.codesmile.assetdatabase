@@ -1,128 +1,107 @@
 # CodeSmile AssetDatabase
 
-It's Unity's age-old AssetDatabase - in clean code form! It will make you smile. :)
+Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, resulting in concise code that prevents disasters.
 
-## Who needs this?
+### Bam, now it is! :)
 
-I do! ![CodeSmile Icon](Media~/steffen%20portrait%20codesmile%20logo%20larger%20top-left-64x62.png) Actually, I WANTED it. :)
+## Why did I create this?
 
-I spent a great deal of time to make AssetDatabase tasks dead simple for a layperson.
+The AssetDatabase is [heavily fragmented into verbosely named, losely related static methods](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) with inconsistent signatures and varying side-effects. It's functional, but it's design is fundamentally broken (absent), leading to terrible code written against it.
 
-And anyone who doesn't want to be bothered with how all of this assetcrapbase works and what all the edge-cases and side-effects could be, might be, and really just want to have this working and move on!
+Developers commonly employ a trial-and-error approach. Trivial tasks take much longer than estimated. Edge-cases remain to be discovered later. There is a real risk of data loss due to a simple mistake. Cargo-cult and copy-pasta programming needlessly degrade editor performance.
 
-## But .. why?
+You'll find such bad examples even in popular Asset Store tools used by big game studios! 
 
-Unload your mind. Put yourself at ease.
+A clean start with a modern API is the best way to solve these issues, speed up developing editor tools, ensure scripts are devoid of edge-cases and will not fail on any editor platform.
 
-For every task there is a single call and you are DONE!
+That is what **CodeSmile AssetDatabase** provides.
 
-The structure and naming is intended to be EXTREMELY simple to find your way around and then to call the appropriate method with fewer parameters, with names that speak for themselves. 
+## Main Features
 
-No longer do you need to wonder what a 'valid folder' might be. Or ponder what it means to 'force reserialize all assets'. 
+The main class is `CodeSmileEditor.Asset` which provides a static API but it's also instantiable. 
 
-Let alone the ubiquitous 'SaveAllAssets' followed by 'Refresh' - are you calling that in your scripts? 99% chance you just put it there out of habit. You never gave it any thought. You have no idea what it really does. Not even that it can cripple editor performance. Or when calling it is indeed **required**. (Hint: almost never!)
+The Asset instance provides access to asset-specific operations and alleviates you from managing separate state (eg asset path, GUID, sub assets, etc). 
 
-Or just being confused, once again, about whether you need to use `AssetDatabase.GetTextMetaFilePathFromAssetPath` or `AssetDatabase.GetAssetPathFromTextMetaFilePath`. Or the unholy trinity: `AssetPath.AssetPathToGUID`~`AssetPath.GUIDFromAssetPath`~`AssetPath.GUIDToAssetPath`.
+The `CodeSmileEditor.Asset.Path` handles asset paths, ensures they are relative and compatible across editor platforms, validates correctness in regards to file system and assets, and provides all path operations and representations (.meta, full path, etc).
+
+Unity's AssetDatabase and existing scripts using it are NOT altered or affected in any way.
+
+BONUS: [Asset Inspector](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetinspector) - view and inspect every (!) detail of selected assets. It also [serves as a showcase](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetinspector/blob/main/Editor/AssetInspector.cs) for CodeSmile AssetDatabase.
+
+There's a whole lot more so be sure to explore and discover!
 
 ## Example Code Snippets
 
-`Asset data = "Assets/Folder/Data.asset";` // Load an asset from its path
+Load and Create assets:
+- `Asset asset = "Assets/Folder/Data.asset";`
+- `var asset = new Asset(bytes, "Assets/Folder/Data.asset");`
+- `var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");`
+- `var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");`
 
-`data.ForceSave();` // mark asset as dirty and save it
+Notice the hands-free, does-what-you-need approach.
 
-`data.AddSubAsset(subData);` // Add a sub-asset (implicitly saved)
+What's not noticable here is that any non-existing folder in the path is automatically created. Countless asset scripts fail the first time a user gets to try it out. I know YOU know it! You read this far! ;)
 
-`data.ActiveImporter = typeof(MyDataImporter);` // Change asset's importer
+Other file operations:
+- `asset.ForceSave();`
+- `var assetDupe = asset.Duplicate();`
+- `assetDupe.Delete();`
+- `var copy = asset.SaveAsNew("Assets/Elsewhere/Dada.asset");`
 
-`var obj = Asset.File.Create(str, "Assets/Folder/Data.asset");` // Create (overwrite) asset from string
+Type conversion:
+- `var obj = asset.MainObject;`
+- `var levelData = asset.GetAs<LevelData>();`
+- `var levelData = (LevelData)asset;`
 
-`var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");` // Create new asset from byte[]
+Asset.Path examples:
+- `var path = new Asset.Path(@"C:\MyProjects\FudniteClone\Assets\my.asset");`
+- `path.CreateFolders();`
+- `var absolutePath = path.FullPath;`
 
-`var asset = new Asset(bytes, "Assets/Folder/Data.asset");` // Same as above using Asset ctor
+Performance:
+- `Asset.File.BatchEditing(() => { /* mass file IO */ });`
+- `Asset.File.Import(paths);`
 
-The 'create' methods above cover EVERY ASPECT and edge-cases:
-- Error checking (null arguments, path validation, ..)
-- Create non-existing folders of the path
-- Generate a unique filename (unless overwriting)
-- Write the string/bytes to file
-- Import the new asset file
-- Load the new asset file
+Work with Sub-Assets:
+- `asset.AddSubAsset(subData);`
+- `var subAssets = asset.SubAssets;`
 
-`var actualPath = asset.AssetPath;` // Filename might have changed, eg "Data (3).asset"
+You'll commonly get or set dependencies, importers, labels, paths, asset bundles, etc. via instance properties.
 
-`asset.ExportPackage("I:/leveldata.unitypackage");` // Export as .unitypackage
+Complete:
+- `asset.ExportPackage("I:/leveldata.unitypackage");`
+- `asset.ActiveImporter = typeof(MyDataImporter);`
+- `Asset.Database.ImportAll();` // Hint: this is "Refresh()"
 
-`var obj = asset.MainObject;` // Get asset's UnityEngine.Object instance
+You'll also find Cache Server, Version Control, etc. in well-defined, logical places.
 
-`var levelData = asset.GetAs<LevelData>();` // Get it as specific type (may be null)
+Error Handling:
+- `var msg = Asset.GetLastErrorMessage();` // A file operation failed? Check the error string
 
-`var levelData = (LevelData)asset;` // Cast to a type (may throw)
+Exceptions are also thrown for malformed input to make the API more resilient and reliable, rather than calls silently failing or printing unhelpful console logs.
 
-`var subAssets = asset.SubAssets;` // Do I need to keep explaining these calls?
+## Documentation & Support
 
-`var assetDupe = asset.Duplicate();` // Because you need a duplicate ..
+The [API documentation](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html) is more complete with more details and caveats mentioned than Unity's. Of course you'll find these snippets right in your IDE as tooltips.
 
-`assetDupe.Delete();` // .. but then decided you don't.
+The [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) helps experienced developers find what each AssetDatabase method maps to in the CodeSmileEditor.Asset class.
 
-`var newAsset = asset.SaveAsNew("Assets/Elsewhere/Daydah.asset");` // Now you want a copy?
+If there's anything out of the ordinary, [report an issue](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/issues) or [contact me](mailto:steffen@codesmile.de). I also have a [Discord channel](https://discord.gg/JN3Jz8qkeV).
 
-`newAsset.Trash();` // Okay. Either you're bored or excited to work with the AssetDatabase for the first time EVER. :)
-
-`Asset.File.BatchEditing(() => { /* mass file IO */ });` // Speed up calling many Asset.File.* methods (loop)
-
-`Asset.File.Import(paths);` // Mass import of paths, batched internally
-
-`var msg = Asset.GetLastErrorMessage();` // A file operation failed? Show this!
-
-## I don't trust this ..
-
-The implementation is utmost CORRECT - there are no unnecessary, performance-degrading calls such as 'Refresh' and 'SaveAllAssets' littered throughout like you'll find in most editor scripts - unfortunately even in popular assets/libraries!
-
-It is also extensively unit TESTED to be correct. 
-
-And I happen to love correct, clean code. Most developers move on when their code works. I cannot move on until I understand **why** my code works.
-
-## What about support?
-
-[The documentation](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html) is more complete with more details and caveats mentioned than Unity's. 
-
-And if there's anything out of the ordinary, open an issue or [contact me](mailto:steffen@steffenitterheim.de). I also have a [Discord channel](https://discord.gg/JN3Jz8qkeV).
-
-## Where's Refresh?
-
-I did mention you don't need it, right? ;)
-
-But if you do, here's Waldo: `Asset.Database.ImportAll();`
-
-Caution: This is an expensive (!) database operation in that it scans the ENTIRE "Assets" tree and tests ALL (!) files for changes made EXTERNALLY (eg System.IO methods, bash scripts). 
-
-Refresh also unloads all unused (cached) resources, forcing them to be reloaded from disk on the next use. You can imagine how this has a negative impact on editor performance.
-
-Since Refresh() has been excessively overused I decided to name it closer to what it actually does.
-
-## Documentation
-
-- [Scripting API Reference](https://codesmile-0000011110110111.github.io/de.codesmile.assetdatabase/html/index.html)
-- [Transition Guide](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) (AssetDatabase method mapping)
-- [Changelog](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase/blob/main/CHANGELOG.md)
-
+You can get the most up-to-date version on the [CodeSmile AssetDatabase GitHub repository](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase).
 
 ## Installation
 
-This software is a Unity Package Manager 'npm package'.
+This software is a Unity Package Manager 'npm package' available on GitHub (GPL License) or the Unity Asset Store (UAS EULA).
 
 - Open Window => Package Manager in Unity Editor
 - Choose "Install package from git URL..."
 - Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.editor.assetdatabase.git`
 
-This package is currently not available on OpenUPM.
-
 ## Requirements
 
 - Unity 2021.3.3f1 or newer (*)
 - A smile :)
-
-Sorry, I will not backport to 2020 or older due to extensive use of C# 9 features.
 
 ## Licenses
 
@@ -134,16 +113,44 @@ The free GitHub version is distributed under the GNU General Public License v3.0
 ### PAID => Unity Asset Store EULA
 The paid version is available on the Unity Asset Store (UAS) and licensed under the Asset Store EULA. Users who purchased this software can, at any time, also download the software from GitHub and use it under the terms and conditions of the Asset Store EULA.
 
-### Custom License
+## What to expect from me?
 
-If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!
+I care. A lot.
 
-- Steffen aka CodeSmile
-- [Email](mailto:steffen@codesmile.de) / [Discord](https://discord.gg/JN3Jz8qkeV)
+- The API has been designed to be concise, approachable, elegant, consistent, explorable, complete and whole lot more buzzwords - except they actually mean something to me.
 
-## Support & Feeback
+I work obsessively.
+
+- All AssetDatabase methods are included.
+- The Asset Inspector window lets you inspect every detail of selected assets in the project.
+
+I follow best practices.
+
+- Included are extensive test cases, the file I/O operations specifically have 100% test coverage. The tests also serve to instruct by example.
+
+I like to share knowledge.
+
+- The documentation is exhaustive, well structured, and contains more information than what you'll find in Unity's manual and script reference.
+
+I'm also deeply honest. And I trust you.
+
+- Admittedly, a very fringe method that returns a NativeArray has been omitted to avoid having to depend on com.unity.collections. Just so you know.
+- You can [demo the project on GitHub](https://github.com/CodeSmile-0000011110110111/de.codesmile.assetdatabase) where it's available for free but released under the terms of the GNU GPL 3.0.
+
+I support you.
+
+- [Contact me](mailto:steffen@codesmile.de) if you have any issues or feature requests. I'm also available for tutoring developers about Unity best practices and general contract work.
+- You'll also [find me actively supporting](https://forum.unity.com/members/codesmile.602581/) users on the Unity Forums.
+
+## Support, Feeback, Inquiries
 
 Very welcome!
 
-If you have an issue or feature request please create an issue in the GitHub repository. 
-Contact me directly (see above) for any other feedback and questions.
+If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!
+
+I'm also available for tutoring developers about Unity best practices and general contract work.
+
+If you like this asset and want to support my work please favorite, rate and review this asset! It helps a lot to bubble up in the search algorithm.
+
+- Steffen aka CodeSmile
+- [Email](mailto:steffen@codesmile.de) / [Website](https://codesmile.de) / [GitHub](https://github.com/CodeSmile-0000011110110111) / [Discord](https://discord.gg/JN3Jz8qkeV) / [Unity Assets](https://assetstore.unity.com/publishers/60108)
