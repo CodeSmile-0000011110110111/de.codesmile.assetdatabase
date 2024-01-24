@@ -1,5 +1,10 @@
 # Change Log
 
+#### v1.8.4 - Jan 24, 2024
+
+- added asset lifetime sample script
+- updated documentation
+
 #### v1.8.3 - Jan 22, 2024
 
 - Importer tests: disable some tests in 2021.3 because the method is not available

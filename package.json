@@ -1,8 +1,8 @@
 {
   "name": "de.codesmile.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
-  "description": "Accessible 'clean code' version of Unity's ~20 year old AssetDatabase class and related functionality.\n\nPublished under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Custom licensing for Asset Publishers & Sponsors (<a href=\"mailto:steffen@steffenitterheim.de\">contact me</a>)\n- Asset Store Terms and EULA for most other uses",
-  "version": "1.8.3",
+  "description": "The AssetDatabase in enjoyable, consistent, concise, convenient, comprehensible, safe, documented form.\n\nAvailable under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Asset Store Terms and EULA for commercial use",
+  "version": "1.8.4",
   "unity": "2021.3",
   "unityRelease": "3f1",
   "author": {
@@ -16,5 +16,12 @@
   "dependencies": {
     "com.unity.test-framework": "1.4.1"
   },
-  "relatedPackages": {}
+  "relatedPackages": {},
+  "samples": [
+    {
+      "displayName": "Create and Delete Asset",
+      "description": "Basic asset lifetime example.",
+      "path": "Samples~/CreateAndDelete"
+    }
+  ]
 }

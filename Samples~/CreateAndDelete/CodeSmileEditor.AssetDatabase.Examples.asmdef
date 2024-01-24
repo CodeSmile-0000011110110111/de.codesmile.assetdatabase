@@ -1,0 +1,18 @@
+{
+    "name": "CodeSmileEditor.AssetDatabase.Examples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:38cc5939e6694a64d8d6ea3aaca03495"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
