@@ -32,7 +32,7 @@
   <td id="projectalign">
    <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.8</span>
    </div>
-   <div id="projectbrief">Clean and accessible version of Unity&#39;s ~20 year old AssetDatabase.</div>
+   <div id="projectbrief">Unity&#39;s AssetDatabase in enjoyable, consistent, concise, convenient, comprehensible, safe, documented form.</div>
   </td>
  </tr>
  </tbody>
@@ -125,7 +125,7 @@ Example Code Snippets</h1>
 <li><code>var obj = Asset.File.CreateAsNew(bytes, "Assets/Folder/Data.asset");</code></li>
 </ul>
 <p>Notice the hands-free, does-what-you-need approach.</p>
-<p>What's not noticable here is that any non-existing folder in the path is automatically created. Countless asset scripts fail the first time a user gets to try it out. I know YOU know it! You read this far! ;)</p>
+<p>What's not noticable here is that any non-existing folder in the path is automatically created. Countless asset scripts fail the first time an actual user runs it. I know YOU know it! You read this far! ;)</p>
 <p>Other file operations:</p><ul>
 <li><code>asset.ForceSave();</code></li>
 <li><code>var assetDupe = asset.Duplicate();</code></li>
@@ -134,7 +134,7 @@ Example Code Snippets</h1>
 </ul>
 <p>Type conversion:</p><ul>
 <li><code>var obj = asset.MainObject;</code></li>
-<li><code>var levelData = asset.GetAs&lt;LevelData&gt;();</code></li>
+<li><code>var levelData = asset.GetMain&lt;LevelData&gt;();</code></li>
 <li><code>var levelData = (LevelData)asset;</code></li>
 </ul>
 <p>Asset.Path examples:</p><ul>
