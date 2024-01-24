@@ -11,7 +11,7 @@
 
 \begin{DoxyItemize}
 \item updated README and API docs
-\item removed extra call to Import\+If\+Not\+Imported in method chain
+\item removed extra call to "{}\+Import\+If\+Not\+Imported"{} in load asset method chain
 \end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v181---dec-21-2023}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+1 -\/ Dec 21, 2023}{v1.\+8.\+1 -\/ Dec 21, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v181---dec-21-2023}
 
 \begin{DoxyItemize}
@@ -24,7 +24,7 @@
 \item renamed Force\+Reserialize\+All\+Assets to Upgrade\+All\+Asset\+Serialization\+Versions (\texorpdfstring{$\ast$}{*})
 \end{DoxyItemize}
 
-(\texorpdfstring{$\ast$}{*}) To provide more rationale\+: I saw a user\textquotesingle{}s script where the user helplessly threw in the usual candidates due to some issue, but this also included "{}\+Force\+Reserialize\+Assets"{} That\textquotesingle{}s when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for\+: upgrading the version of serialized assets.\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}{}\doxyparagraph{\texorpdfstring{v1.\+7.\+1 -\/ Dec 05, 2023}{v1.\+7.\+1 -\/ Dec 05, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}
+(\texorpdfstring{$\ast$}{*}) To provide more rationale\+: I saw a user\textquotesingle{}s script where the user helplessly threw in the usual candidates due to some issue, but this also included "{}\+Force\+Reserialize\+Assets"{}. That\textquotesingle{}s when I realized the name of the method only describes what it does internally but not its intent respectively what it should be used for\+: upgrading the version (format) of serialized assets when you change editor versions and you want version control not polluting these upgrades in individual future commits.\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}{}\doxyparagraph{\texorpdfstring{v1.\+7.\+1 -\/ Dec 05, 2023}{v1.\+7.\+1 -\/ Dec 05, 2023}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v171---dec-05-2023}
 
 \begin{DoxyItemize}
 \item rename package to de.\+codesmile.\+assetdabase (removed the \textquotesingle{}editor\textquotesingle{} part)

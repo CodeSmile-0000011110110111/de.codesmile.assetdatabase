@@ -8,3 +8,5 @@ if "%~1"=="clean" (
 
 REM run doxygen with the doxyfile in the same folder
 "C:\Program Files\doxygen\bin\doxygen.exe"
+
+call create-pdf-manual.bat
