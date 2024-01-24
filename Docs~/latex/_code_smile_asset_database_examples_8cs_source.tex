@@ -1,0 +1,42 @@
+\doxysubsection{Code\+Smile\+Asset\+Database\+Examples.\+cs}
+\hypertarget{_code_smile_asset_database_examples_8cs_source}{}\label{_code_smile_asset_database_examples_8cs_source}\index{P:/de.codesmile.assetdatabase/Samples\texorpdfstring{$\sim$}{\string~}/CreateAndDelete/CodeSmileAssetDatabaseExamples.cs@{P:/de.codesmile.assetdatabase/Samples\texorpdfstring{$\sim$}{\string~}/CreateAndDelete/CodeSmileAssetDatabaseExamples.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2024\ Steffen\ Itterheim}}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00002}00002\ \textcolor{comment}{//\ Refer\ to\ included\ LICENSE\ file\ for\ terms\ and\ conditions.}}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_code_smile_editor}{CodeSmileEditor}};}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEditor;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00010}\mbox{\hyperlink{class_code_smile_asset_database_examples}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_code_smile_asset_database_examples}{CodeSmileAssetDatabaseExamples}}}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{const}\ String\ TestFolder\ =\ \textcolor{stringliteral}{"{}Assets/\_sub\_folder\_"{}};}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00019}00019\ \ \ \ \ [MenuItem(\textcolor{stringliteral}{"{}Window/CodeSmile/AssetDatabase\ Examples/Create\ and\ Delete\ Asset"{}})]}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CreateAndDeleteAsset()}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ var\ path\ =\ \$\textcolor{stringliteral}{"{}\{TestFolder\}/TestAsset.asset"{}};}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ var\ asset\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}}(ScriptableObject.CreateInstance<\mbox{\hyperlink{class_test_asset}{TestAsset}}>(),\ path);}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ var\ instance\ =\ asset.MainObject;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ assetPath\ =\ asset.AssetPath;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Asset\ '\{instance\}'\ created\ at\ '\{assetPath\}'"{}});}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ message\ =\ asset.GetMain<\mbox{\hyperlink{class_test_asset}{TestAsset}}>().Message;}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Asset\ says:\ '\{message\}'"{}});}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ asset.Delete();}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Asset\ deleted:\ \{asset.IsDeleted\}"{}});}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ folder\ is\ an\ asset,\ too!}}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ folder\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}}(TestFolder);}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ folder.Delete();}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Testfolder\ removed:\ \{!Directory.Exists(TestFolder)\}"{}});}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_code_smile_asset_database_examples_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

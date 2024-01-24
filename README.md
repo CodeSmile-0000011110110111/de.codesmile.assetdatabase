@@ -50,7 +50,7 @@ Other file operations:
 
 Type conversion:
 - `var obj = asset.MainObject;`
-- `var levelData = asset.GetAs<LevelData>();`
+- `var levelData = asset.GetMain<LevelData>();`
 - `var levelData = (LevelData)asset;`
 
 Asset.Path examples:
