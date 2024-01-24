@@ -40,7 +40,7 @@ Load and Create assets:
 
 Notice the hands-free, does-what-you-need approach.
 
-What's not noticable here is that any non-existing folder in the path is automatically created. Countless asset scripts fail the first time a user gets to try it out. I know YOU know it! You read this far! ;)
+What's not noticable here is that any non-existing folder in the path is automatically created. Countless asset scripts fail the first time an actual user runs it. I know YOU know it! You read this far! ;)
 
 Other file operations:
 - `asset.ForceSave();`
