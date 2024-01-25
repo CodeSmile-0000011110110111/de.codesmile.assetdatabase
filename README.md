@@ -1,8 +1,8 @@
 # CodeSmile AssetDatabase
 
-Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, resulting in concise code that prevents disasters.
+Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, prevents disasters, and results in concise code.
 
-### Bam, now it is! :)
+### Bam, here it is! :)
 
 ## Why did I create this?
 
@@ -12,9 +12,9 @@ Developers commonly employ a trial-and-error approach. Trivial tasks take much l
 
 You'll find such bad examples even in popular Asset Store tools used by big game studios! 
 
-A clean start with a modern API is the best way to solve these issues, speed up developing editor tools, ensure scripts are devoid of edge-cases and will not fail on any editor platform.
+A clean start with a consistent API is the best way to solve these issues, speed up development of editor tools, ensure scripts will not fail for users or other editor platforms.
 
-That is what **CodeSmile AssetDatabase** provides.
+Write fail-safe, readable, concise, efficient asset scripts in less time. That is what **CodeSmile AssetDatabase** provides.
 
 ## Main Features
 
@@ -148,7 +148,7 @@ Very welcome!
 
 If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!
 
-I'm also available for tutoring developers about Unity best practices and general contract work.
+I'm available for consultation, tutoring best practices, sharing my experience and other contract work.
 
 If you like this asset and want to support my work please favorite, rate and review this asset! It helps a lot to bubble up in the search algorithm.
 
