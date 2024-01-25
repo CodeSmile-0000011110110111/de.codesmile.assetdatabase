@@ -53,5 +53,18 @@ namespace CodeSmileEditor.Tests
 			Assert.False(Asset.Status.IsImported(deletedObj));
 			Assert.False(TestAssetPath.ExistsInFileSystem);
 		}
+
+		[Test] public void DeleteStatic_DeleteAndCreateThenDeleteAgain_FileDeleted()
+		{
+			var obj = CreateTestAssetObject(TestAssetPath);
+			Asset.File.Delete(obj);
+
+			obj = CreateTestAssetObject(TestAssetPath);
+			Asset.File.Delete(obj);
+
+			Assert.False(TestAssetPath.ExistsInFileSystem);
+			Assert.False(Asset.Status.IsImported(obj));
+		}
+
 	}
 }
