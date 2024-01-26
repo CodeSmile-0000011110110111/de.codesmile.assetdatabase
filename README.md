@@ -10,6 +10,8 @@ The AssetDatabase is [heavily fragmented into verbosely named, losely related st
 
 Developers commonly employ a trial-and-error approach. Trivial tasks take much longer than estimated. Edge-cases remain to be discovered later. There is a real risk of data loss due to a simple mistake. Cargo-cult and copy-pasta programming needlessly degrade editor performance.
 
+That's what most editor tools are based on, unfortunately.
+
 You'll find such bad examples even in popular Asset Store tools used by big game studios! 
 
 A clean start with a consistent API is the best way to solve these issues, speed up development of editor tools, ensure scripts will not fail for users or other editor platforms.
