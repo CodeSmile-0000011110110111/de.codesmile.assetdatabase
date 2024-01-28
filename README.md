@@ -1,8 +1,10 @@
-# CodeSmile AssetDatabase
+# [CodeSmile AssetDatabase](https://assetstore.unity.com/packages/slug/270771)
 
 Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, prevents disasters, and results in concise code.
 
 ### Bam, here it is! :)
+
+Click the image to watch the video:
 
 [![Watch Intro](https://img.youtube.com/vi/kJn9ncvGdac/0.jpg)](https://www.youtube.com/watch?v=kJn9ncvGdac)
 
@@ -82,7 +84,7 @@ Complete:
 You'll also find Cache Server, Version Control, etc. in well-defined, logical places.
 
 Error Handling:
-- `var msg = Asset.GetLastErrorMessage();` // A file operation failed? Check the error string
+- `var msg = Asset.GetLastErrorMessage();`
 
 Exceptions are also thrown for malformed input to make the API more resilient and reliable, rather than calls silently failing or printing unhelpful console logs.
 
