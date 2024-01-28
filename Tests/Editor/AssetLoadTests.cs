@@ -97,21 +97,18 @@ namespace CodeSmileEditor.Tests
 		{
 			CreateTestAssetObject(TestAssetPath);
 
-			// NOTE: I could not use Asset.BatchEditing here due to throwing an exception in an Action callback
-			// causing the TestRunner progress bar to be stuck at 'Perform Undo' stage.
-			try
+			Asset.File.BatchEditing(() =>
 			{
-				AssetDatabase.StartAssetEditing();
-
-				// import while ADB is 'paused' is not possible!
-				// this will make the asset 'unloadable' => Load returns null
 				Asset.File.Import(TestAssetPath, ImportAssetOptions.ForceUpdate);
+
+				// import while ADB is 'paused' gets queued, thus the asset cannot be loaded here
+				// internally the asset is instantly removed from the assetdatabase
+				// loading the queued-for-import asset in the same batch-edit block returns null
 				Assert.Null(Asset.File.LoadMain<Object>(TestAssetPath));
-			}
-			finally
-			{
-				AssetDatabase.StopAssetEditing();
-			}
+			});
+
+			// after batch editing, import has run and we can load the asset
+			Assert.NotNull(Asset.File.LoadMain<Object>(TestAssetPath));
 		}
 
 		[ExcludeFromCodeCoverage]

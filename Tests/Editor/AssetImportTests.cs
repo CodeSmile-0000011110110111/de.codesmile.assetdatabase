@@ -14,6 +14,7 @@ namespace CodeSmileEditor.Tests
 		{
 			var testPath = DeleteAfterTest("Assets/file.txt");
 			File.WriteAllText(testPath, "<for no eyes only>");
+
 			Assert.DoesNotThrow(() => new Asset(testPath));
 		}
 
@@ -23,6 +24,7 @@ namespace CodeSmileEditor.Tests
 			File.WriteAllText(testPath, "<for no eyes only>");
 			Asset.File.Import(testPath);
 			Assert.DoesNotThrow(() => new Asset(testPath));
+
 			var asset = new Asset(testPath);
 
 			// 'externally' delete the file and it's meta
@@ -32,7 +34,7 @@ namespace CodeSmileEditor.Tests
 			Assert.Throws<FileNotFoundException>(() => Asset.File.Import(testPath)); // import fail: file does not exist
 			Assert.True(Asset.Status.IsImported(asset.MainObject)); // it's still in the database
 
-			Asset.Database.ImportAll();
+			Asset.Database.ImportAll(); // "Refresh"
 
 			Assert.False(Asset.Status.IsImported(asset.MainObject)); // now it's gone
 		}
@@ -45,7 +47,7 @@ namespace CodeSmileEditor.Tests
 			File.WriteAllText(testPath, "test file contents are irrelevant");
 			Assert.DoesNotThrow(() => new Asset(testPath)); // does not throw, asset auto-imported
 
-			Asset.Database.ImportAll();
+			Asset.Database.ImportAll(); // "Refresh"
 
 			Assert.DoesNotThrow(() => new Asset(testPath));
 			DeleteAfterTest(new Asset(testPath));

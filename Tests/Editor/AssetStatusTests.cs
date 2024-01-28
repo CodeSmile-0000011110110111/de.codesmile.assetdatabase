@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor.Tests
 {
-	public class AssetDatabaseTests : AssetTestBase
+	public class AssetStatusTests : AssetTestBase
 	{
 		[Test] public void IsImported_NullObject_False() => Assert.IsFalse(Asset.Status.IsImported((Object)null));
 
