@@ -8,7 +8,7 @@ Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consisten
 
 ## Why did I create this?
 
-The AssetDatabase is [heavily fragmented into verbosely named, losely related static methods](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) with inconsistent signatures and varying side-effects. It's functional, but it's design is fundamentally broken (absent), leading to terrible code written against it.
+The AssetDatabase is [heavily fragmented into verbosely named, losely related static methods](https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing) with inconsistent signatures and varying side-effects. It's functional, but it's design is fundamentally broken (absent), leading to [terrible code written against it](https://www.youtube.com/watch?v=GQBWJOR3EsQ).
 
 Developers commonly employ a trial-and-error approach. Trivial tasks take much longer than estimated. Edge-cases remain to be discovered later. There is a real risk of data loss due to a simple mistake. Cargo-cult and copy-pasta programming needlessly degrade editor performance.
 
