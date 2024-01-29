@@ -80,10 +80,9 @@ Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00058}{58}} o
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.SubObjectIsGameObject(subAssetInstance);}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(subAssetInstance);}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetWithAssetExtension(asset);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.AddObjectToAsset(subAssetInstance,\ asset);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.AddObjectToAsset(subAssetInstance,\ asset);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_aba5beee6f12d0eed16af62bd8e96d6e6_aba5beee6f12d0eed16af62bd8e96d6e6}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_aba5beee6f12d0eed16af62bd8e96d6e6_aba5beee6f12d0eed16af62bd8e96d6e6} 
@@ -223,15 +222,15 @@ Removes a sub-\/object from the asset it is contained in.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RemoveObjectFromAsset.html}{\texttt{ Asset\+Database.\+Remove\+Object\+From\+Asset}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(subAsset,\ nameof(subAsset));}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.RemoveObjectFromAsset(subAsset);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(subAsset,\ nameof(subAsset));}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.RemoveObjectFromAsset(subAsset);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476_a61bfe373deb21386f749d2f947da5476}\label{class_code_smile_editor_1_1_asset_1_1_sub_asset_a61bfe373deb21386f749d2f947da5476_a61bfe373deb21386f749d2f947da5476} 
@@ -294,19 +293,19 @@ Automatically imports the asset after changing the main type so that the change 
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SetMainObject.html}{\texttt{ Asset\+Database.\+Set\+Main\+Object}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00097}{97}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00096}{96}} of file \mbox{\hyperlink{_asset_8_sub_asset_8cs_source}{Asset.\+Sub\+Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetMainObject(subAsset,\ path);}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Import(path);}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetMainObject(subAsset,\ path);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Import(path);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_asset_8_file_8cs_source_l00275}{Asset.\+File.\+Import()}}.
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00271}{Asset.\+File.\+Import()}}.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]

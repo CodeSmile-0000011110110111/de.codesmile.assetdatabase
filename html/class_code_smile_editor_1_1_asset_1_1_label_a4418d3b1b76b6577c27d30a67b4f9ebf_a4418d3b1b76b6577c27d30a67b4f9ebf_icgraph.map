@@ -1,7 +1,9 @@
 <map id="GetAll" name="GetAll">
-<area shape="rect" id="Node000001" title="Returns an asset&#39;s labels." alt="" coords="98,31,155,57"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_label_ad2dd0c24ca248dac498e168471c296ae.html#ad2dd0c24ca248dac498e168471c296ae" title="Adds a single label to an asset&#39;s list of labels." alt="" coords="5,5,50,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,36,49,27,51,22,84,30"/>
-<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_label_a0db1d630d411ce9b9afaab8893ca433c.html#a0db1d630d411ce9b9afaab8893ca433c" title="Adds several labels to an asset&#39;s list of labels." alt="" coords="5,56,50,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,58,51,66,49,61,82,52"/>
+<area shape="rect" id="Node000001" title="Returns an asset&#39;s labels." alt="" coords="121,56,178,83"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_label_ad2dd0c24ca248dac498e168471c296ae.html#ad2dd0c24ca248dac498e168471c296ae" title="Adds a single label to an asset&#39;s list of labels." alt="" coords="17,5,61,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,52,60,31,63,26,108,47"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_label_a0db1d630d411ce9b9afaab8893ca433c.html#a0db1d630d411ce9b9afaab8893ca433c" title="Adds several labels to an asset&#39;s list of labels." alt="" coords="17,56,61,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,72,62,72,62,67,105,67"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_editor_1_1_asset_1_1_label_a8779550c9894264310e4aff424a898d1.html#a8779550c9894264310e4aff424a898d1" title="Removes a label from an asset. Does nothing if the label doesn&#39;t exist." alt="" coords="5,107,73,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,91,71,109,69,104,105,86"/>
 </map>

@@ -25,19 +25,7 @@
 var NAVTREE =
 [
   [ "CodeSmile AssetDatabase", "index.html", [
-    [ "Why did I create this?", "index.html#why-did-i-create-this", null ],
-    [ "Main Features", "index.html#main-features", null ],
-    [ "Example Code Snippets", "index.html#example-code-snippets", null ],
-    [ "Documentation & Support", "index.html#documentation--support", null ],
-    [ "Installation", "index.html#installation", null ],
-    [ "Requirements", "index.html#requirements", null ],
-    [ "Licenses", "index.html#licenses", [
-      [ "Bam, now it is! :)", "index.html#bam-now-it-is-", null ],
-      [ "FREE => GPL License", "index.html#free--gpl-license", null ],
-      [ "PAID => Unity Asset Store EULA", "index.html#paid--unity-asset-store-eula", null ]
-    ] ],
-    [ "What to expect from me?", "index.html#what-to-expect-from-me", null ],
-    [ "Support, Feeback, Inquiries", "index.html#support-feeback-inquiries", null ],
+    [ "<a href=\"https://assetstore.unity.com/packages/slug/270771\" target=\"_blank\" >CodeSmile AssetDatabase</a>", "index.html", "index" ],
     [ "Change Log", "md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
     [ "CodeSmile Packages - Getting Started", "md__p_1_2de_8codesmile_8assetdatabase_2_g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html", null ],
     [ "Classes", "annotated.html", [
@@ -55,7 +43,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d.html#ab39ec1f49ab79e8ae84c6a53a2458f2d"
+"class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178.html#a972ef43bcee036e2009fc9af10173178"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

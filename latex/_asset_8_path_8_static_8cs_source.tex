@@ -2,7 +2,7 @@
 \hypertarget{_asset_8_path_8_static_8cs_source}{}\label{_asset_8_path_8_static_8cs_source}\index{P:/de.codesmile.assetdatabase/Editor/Asset.Path.Static.cs@{P:/de.codesmile.assetdatabase/Editor/Asset.Path.Static.cs}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2023\ Steffen\ Itterheim}}
+\DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2024\ Steffen\ Itterheim}}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00002}00002\ \textcolor{comment}{//\ Refer\ to\ included\ LICENSE\ file\ for\ terms\ and\ conditions.}}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00003}00003\ }
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
@@ -156,7 +156,7 @@
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(uniquePath)\ ?\ path\ :\ uniquePath;}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00319}00319\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00325}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{00325}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ paths.Cast<String>().ToArray();}
+\DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00325}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{00325}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ paths.Select(path\ =>\ (String)path).ToArray();}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00326}00326\ }
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ UniquifyAsNeeded([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Boolean\ overwriteExisting)\ =>}
 \DoxyCodeLine{\Hypertarget{_asset_8_path_8_static_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overwriteExisting\ ?\ path\ :\ path.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a095641cd17b35305e83b4dcee0704e0b_a095641cd17b35305e83b4dcee0704e0b}{UniqueFilePath}};}
