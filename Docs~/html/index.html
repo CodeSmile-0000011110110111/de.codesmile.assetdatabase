@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CodeSmile AssetDatabase: CodeSmile AssetDatabase</title>
+<title>CodeSmile AssetDatabase: &lt;a href=&quot;https://assetstore.unity.com/packages/slug/270771&quot; target=&quot;_blank&quot; &gt;CodeSmile AssetDatabase&lt;/a&gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,19 +95,24 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">CodeSmile AssetDatabase </div></div>
+  <div class="headertitle"><div class="title"><a href="https://assetstore.unity.com/packages/slug/270771" target="_blank">CodeSmile AssetDatabase</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e"></a> Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, resulting in concise code that prevents disasters.</p>
-<h2><a class="anchor" id="bam-now-it-is-"></a>
-Bam, now it is! :)</h2>
+<div class="textblock"><p><a class="anchor" id="md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e"></a> Imagine Unity's AssetDatabase were self-explanatory, enjoyable to use, consistent in design and behaviour, well documented, prevents disasters, and results in concise code.</p>
+<h2><a class="anchor" id="bam-here-it-is-"></a>
+Bam, here it is! :)</h2>
+<p>Click the image to watch the video:</p>
+<p><a href="https://www.youtube.com/watch?v=kJn9ncvGdac" target="_blank"><img src="https://img.youtube.com/vi/kJn9ncvGdac/0.jpg" alt="Watch Intro" class="inline"/></a></p>
+<h1><a class="anchor" id="get-it-on-the-asset-storehttpsassetstoreunitycompackagesslug270771"></a>
+<a href="https://assetstore.unity.com/packages/slug/270771" target="_blank">Get it on the Asset Store</a></h1>
 <h1><a class="anchor" id="why-did-i-create-this"></a>
 Why did I create this?</h1>
-<p>The AssetDatabase is <a href="https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing" target="_blank">heavily fragmented into verbosely named, losely related static methods</a> with inconsistent signatures and varying side-effects. It's functional, but it's design is fundamentally broken (absent), leading to terrible code written against it.</p>
+<p>The AssetDatabase is <a href="https://docs.google.com/spreadsheets/d/134BEPXTx3z80snNAF3Gafgq3j5kEhmFzFBKT_z1s6Rw/edit?usp=sharing" target="_blank">heavily fragmented into verbosely named, losely related static methods</a> with inconsistent signatures and varying side-effects. It's functional, but it's design is fundamentally broken (absent), leading to <a href="https://www.youtube.com/watch?v=GQBWJOR3EsQ" target="_blank">terrible code written against it</a>.</p>
 <p>Developers commonly employ a trial-and-error approach. Trivial tasks take much longer than estimated. Edge-cases remain to be discovered later. There is a real risk of data loss due to a simple mistake. Cargo-cult and copy-pasta programming needlessly degrade editor performance.</p>
+<p>That's what most editor tools are based on, unfortunately.</p>
 <p>You'll find such bad examples even in popular Asset Store tools used by big game studios!</p>
-<p>A clean start with a modern API is the best way to solve these issues, speed up developing editor tools, ensure scripts are devoid of edge-cases and will not fail on any editor platform.</p>
-<p>That is what <b>CodeSmile AssetDatabase</b> provides.</p>
+<p>A clean start with a consistent API is the best way to solve these issues, speed up development of editor tools, ensure scripts will not fail for users or other editor platforms.</p>
+<p>Write fail-safe, readable, concise, efficient asset scripts in less time. That is what <b>CodeSmile AssetDatabase</b> provides.</p>
 <h1><a class="anchor" id="main-features"></a>
 Main Features</h1>
 <p>The main class is <code><a class="el" href="class_code_smile_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmileEditor.Asset</a></code> which provides a static API but it's also instantiable.</p>
@@ -158,7 +163,7 @@ Example Code Snippets</h1>
 </ul>
 <p>You'll also find Cache Server, Version Control, etc. in well-defined, logical places.</p>
 <p>Error Handling:</p><ul>
-<li><code>var msg = Asset.GetLastErrorMessage();</code> // A file operation failed? Check the error string</li>
+<li><code>var msg = Asset.GetLastErrorMessage();</code></li>
 </ul>
 <p>Exceptions are also thrown for malformed input to make the API more resilient and reliable, rather than calls silently failing or printing unhelpful console logs.</p>
 <h1><a class="anchor" id="documentation--support"></a>
@@ -223,7 +228,7 @@ What to expect from me?</h1>
 Support, Feeback, Inquiries</h1>
 <p>Very welcome!</p>
 <p>If you wish to license this software under different terms, for example to create Asset Store tools, please contact me!</p>
-<p>I'm also available for tutoring developers about Unity best practices and general contract work.</p>
+<p>I'm available for consultation, tutoring best practices, sharing my experience and other contract work.</p>
 <p>If you like this asset and want to support my work please favorite, rate and review this asset! It helps a lot to bubble up in the search algorithm.</p>
 <ul>
 <li>Steffen aka CodeSmile</li>

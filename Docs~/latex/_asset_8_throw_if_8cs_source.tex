@@ -131,38 +131,31 @@
 \DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}sub\ assets\ must\ not\ be\ of\ type\ GameObject:\ \{subObject\}"{}});}
 \DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ NotAnAssetWithAssetExtension(UnityEngine.Object\ assetObject)}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ExtensionIsNotUnityPackage(Path\ path)}
 \DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ Path.Get(assetObject);}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.Extension.Equals(\textcolor{stringliteral}{"{}.asset"{}})\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}sub\ assets\ only\ supported\ with\ '.asset'\ extension:\ \{path\}"{}});}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ExtensionIsNotUnityPackage(Path\ path)}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.Extension.ToLower().Equals(\textcolor{stringliteral}{"{}.unitypackage"{}})\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}file\ does\ not\ have\ .unitypackage\ extension:\ \{path\}"{}});}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SourceAndDestPathAreEqual(Path\ sourcePath,\ Path\ destinationPath)}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath.Equals(destinationPath))}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}source\ and\ destination\ path\ are\ equal:\ \{sourcePath\}"{}});}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00151}00151\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*public\ static\ void\ NotAnAsset(UnityEngine.Object\ obj)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00153}00153\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00154}00154\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (Database.Contains(obj)\ ==\ false)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00155}00155\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ ArgumentException(\$"{}\{obj\}\ is\ not\ an\ asset\ file"{});}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00156}00156\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00157}00157\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00158}00158\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ public\ static\ void\ NotAnAsset(Int32\ instanceId)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00159}00159\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00160}00160\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (Database.Contains(instanceId)\ ==\ false)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00161}00161\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ ArgumentException(\$"{}\{instanceId\}\ is\ not\ an\ asset\ instance\ ID"{});}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00162}00162\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00164}00164\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.Extension.ToLower().Equals(\textcolor{stringliteral}{"{}.unitypackage"{}})\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}file\ does\ not\ have\ .unitypackage\ extension:\ \{path\}"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SourceAndDestPathAreEqual(Path\ sourcePath,\ Path\ destinationPath)}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath.Equals(destinationPath))}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}source\ and\ destination\ path\ are\ equal:\ \{sourcePath\}"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*public\ static\ void\ NotAnAsset(UnityEngine.Object\ obj)}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00146}00146\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00147}00147\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (Database.Contains(obj)\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00148}00148\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ ArgumentException(\$"{}\{obj\}\ is\ not\ an\ asset\ file"{});}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00149}00149\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00150}00150\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00151}00151\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ public\ static\ void\ NotAnAsset(Int32\ instanceId)}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00152}00152\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00153}00153\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (Database.Contains(instanceId)\ ==\ false)}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00154}00154\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ new\ ArgumentException(\$"{}\{instanceId\}\ is\ not\ an\ asset\ instance\ ID"{});}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00155}00155\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_throw_if_8cs_source_l00158}00158\ \}}
 
 \end{DoxyCode}

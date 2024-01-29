@@ -7,7 +7,8 @@ Replacement implementation for Unity\textquotesingle{}s {\itshape massive} Asset
 
 
 
-Collaboration diagram for Asset\+:\nopagebreak
+Collaboration diagram for Asset\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -84,6 +85,8 @@ Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d
 \begin{DoxyCompactList}\small\item\em Moves asset to destination path. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9}{Open\+External}} (Int32 line\+Number=-\/1, Int32 column\+Number=-\/1)
 \begin{DoxyCompactList}\small\item\em Opens the asset in the external (associated) application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178}{Remove\+Label}} (String label)
+\begin{DoxyCompactList}\small\item\em Removes a label from an asset. Does nothing if the label doesn\textquotesingle{}t exist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}{Remove\+Sub\+Asset}} (Object sub\+Asset)
 \begin{DoxyCompactList}\small\item\em Removes an object from the asset\textquotesingle{}s sub-\/objects. \end{DoxyCompactList}\item 
 Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675}{Rename}} (String new\+File\+Name)
@@ -227,18 +230,18 @@ Writes the data to a file, then imports the file and loads the asset object.
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path,bool)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00104}{104}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1}\label{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1} 
@@ -278,18 +281,18 @@ Creates an asset file from a string.
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path,\+Boolean)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00129}{129}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326}\label{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326} 
@@ -333,19 +336,19 @@ The object must not already be an asset file (throws exception).
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path,\+Boolean)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00096}{96}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00158}{158}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(asset);}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ File.CreateInternal(asset,\ path);}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(asset);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ File.CreateInternal(asset,\ path);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730}\label{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730} 
@@ -587,6 +590,7 @@ Removes all labels from the asset.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178}{Code\+Smile\+Editor.\+Asset.\+Remove\+Label}
 \item \doxylink{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}{Code\+Smile\+Editor.\+Asset.\+Add\+Label}
 \item \doxylink{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}{Code\+Smile\+Editor.\+Asset.\+Add\+Labels}
 \item \doxylink{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}{Code\+Smile\+Editor.\+Asset.\+Set\+Labels} 
@@ -615,17 +619,17 @@ If successful, returns the former Main\+Object. It is no longer an asset but sti
 \item \doxylink{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a}{Code\+Smile\+Editor.\+Asset.\+Trash} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00442}{442}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00440}{440}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Delete(m\_AssetPath))}
-\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
-\DoxyCodeLine{00447\ }
-\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
-\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Delete(m\_AssetPath))}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1155,24 +1159,24 @@ True if moving the asset will be successful, false otherwise.
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00350}{350}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00349}{349}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Move(m\_AssetPath,\ destinationPath))}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00357\ }
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Move(m\_AssetPath,\ destinationPath))}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_asset_8_file_8cs_source_l00633}{Asset.\+File.\+Move()}}.
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00649}{Asset.\+File.\+Move()}}.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -1331,7 +1335,30 @@ Implicit conversion to Unity\+Engine.\+Object.
 \begin{DoxyReturn}{Returns}
 The asset\textquotesingle{}s Main\+Object property.
 \end{DoxyReturn}
-\Hypertarget{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}\label{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd} 
+\Hypertarget{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178}\label{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178} 
+\index{Asset@{Asset}!RemoveLabel@{RemoveLabel}}
+\index{RemoveLabel@{RemoveLabel}!Asset@{Asset}}
+\doxyparagraph{\texorpdfstring{RemoveLabel()}{RemoveLabel()}}
+{\footnotesize\ttfamily void Remove\+Label (\begin{DoxyParamCaption}\item[{String}]{label }\end{DoxyParamCaption})}
+
+
+
+Removes a label from an asset. Does nothing if the label doesn\textquotesingle{}t exist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & Label to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f}{Code\+Smile\+Editor.\+Asset.\+Clear\+Labels} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}\label{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd} 
 \index{Asset@{Asset}!RemoveSubAsset@{RemoveSubAsset}}
 \index{RemoveSubAsset@{RemoveSubAsset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{RemoveSubAsset()}{RemoveSubAsset()}}
@@ -1400,19 +1427,19 @@ True if the rename succeeded. The Asset\+Path property will be updated according
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00391}{391}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00390}{390}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Rename(m\_AssetPath,\ newFileName))}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00398\ }
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Rename(m\_AssetPath,\ newFileName))}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1478,7 +1505,7 @@ The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00274}{Asset.\+Save\+As\+New()}}.
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00273}{Asset.\+Save\+As\+New()}}.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -1519,15 +1546,15 @@ The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00274}{274}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00273}{273}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{SaveAs}}(path.UniqueFilePath);}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{SaveAs}}(path.UniqueFilePath);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1609,17 +1636,17 @@ If successful, returns the former Main\+Object. It is no longer an asset but sti
 \item \doxylink{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf}{Code\+Smile\+Editor.\+Asset.\+Delete} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00465}{465}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00463}{463}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
-\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Trash(m\_AssetPath))}
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
-\DoxyCodeLine{00470\ }
-\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
-\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Trash(m\_AssetPath))}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 

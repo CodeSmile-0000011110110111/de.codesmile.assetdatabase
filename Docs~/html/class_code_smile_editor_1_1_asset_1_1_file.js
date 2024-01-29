@@ -19,6 +19,7 @@ var class_code_smile_editor_1_1_asset_1_1_file =
     [ "Delete", "class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529.html#a5a01eb8f2adc1117b9df394acbe3c529", null ],
     [ "Find", "class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852.html#a9824149809d0caf6b7853241fe518852", null ],
     [ "FindGuids", "class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30.html#a6a20df93ae9409f4216c6f98cf334c30", null ],
+    [ "FindPaths", "class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80.html#a3e3543e7c5f85939c0a53e5e0a95fb80", null ],
     [ "FindPaths", "class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8.html#aeb2b5afda3ab0df2521ff86e9d7c80b8", null ],
     [ "ForceSave", "class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6.html#af8f67d95622e7afce379eaa04c82eaf6", null ],
     [ "Import", "class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97.html#ae11a13bfe131ec8b20a5a5667e75ec97", null ],

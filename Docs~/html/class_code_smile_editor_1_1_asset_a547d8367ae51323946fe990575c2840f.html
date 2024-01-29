@@ -142,15 +142,15 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_a547d8367ae51323946f
 <li><a class="el" href="class_code_smile_editor_1_1_asset.html" title="Replacement implementation for Unity&#39;s massive AssetDatabase class with a cleaner interface and more ...">CodeSmileEditor.Asset(Object,CodeSmileEditor.Asset.Path,bool)</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00042">42</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
-<div class="line"><span class="lineno">   44</span>            ThrowIf.ArgumentIsNull(contents, nameof(contents));</div>
-<div class="line"><span class="lineno">   45</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>            path = Path.UniquifyAsNeeded(path, overwriteExisting);</div>
-<div class="line"><span class="lineno">   48</span>            var asset = File.CreateInternal(contents, path);</div>
-<div class="line"><span class="lineno">   49</span>            InitWithMainObject(asset);</div>
-<div class="line"><span class="lineno">   50</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8cs_source.html#l00104">104</a> of file <a class="el" href="_asset_8cs_source.html">Asset.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            ThrowIf.ArgumentIsNull(contents, nameof(contents));</div>
+<div class="line"><span class="lineno">  107</span>            ThrowIf.ArgumentIsNull(path, nameof(path));</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>            path = Path.UniquifyAsNeeded(path, overwriteExisting);</div>
+<div class="line"><span class="lineno">  110</span>            var asset = File.CreateInternal(contents, path);</div>
+<div class="line"><span class="lineno">  111</span>            InitWithMainObject(asset);</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,0 +1,5 @@
+<map id="SetAll" name="SetAll">
+<area shape="rect" id="Node000001" title="Sets an asset&#39;s labels. Replaces any existing labels." alt="" coords="121,5,177,32"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_label_a8779550c9894264310e4aff424a898d1.html#a8779550c9894264310e4aff424a898d1" title="Removes a label from an asset. Does nothing if the label doesn&#39;t exist." alt="" coords="5,5,73,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,21,73,21,73,16,105,16"/>
+</map>

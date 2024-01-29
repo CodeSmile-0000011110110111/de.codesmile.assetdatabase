@@ -45,6 +45,7 @@ var class_code_smile_editor_1_1_asset =
     [ "operator Asset", "class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0.html#a23920865dfc0888bc17dc618ab30cbe0", null ],
     [ "operator Asset", "class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d.html#aa01a879ca0793e3def47211f4d8d338d", null ],
     [ "operator Object", "class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1.html#ae36538faed7f7dd4bd6d2a42867bbee1", null ],
+    [ "RemoveLabel", "class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178.html#a972ef43bcee036e2009fc9af10173178", null ],
     [ "RemoveSubAsset", "class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd.html#ae1e3a3de65cb69b8ac09a0e10f2dbabd", null ],
     [ "Rename", "class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675.html#a28fe22006383d71d5b564df4a46b2675", null ],
     [ "Save", "class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33.html#a5df140c1ee51aadf7fe88ce3fb9cac33", null ],
