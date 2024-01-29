@@ -1,5 +1,12 @@
 # Change Log
 
+#### v1.8.5 - Jan 29, 2024
+
+- added Asset.File.FindPaths overload accepting Path[]
+- added Asset.Label.GetAll overload accepting Path
+- added Asset.Label.Remove and Asset().RemoveLabel
+- removed add sub-asset check for ".asset" extension. Turns out you can also add subassets to a .mesh extension asset and there may be others.
+
 #### v1.8.4 - Jan 24, 2024
 
 - added asset lifetime sample script

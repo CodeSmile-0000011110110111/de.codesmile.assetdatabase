@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Button text="Create Demo Assets" name="CreateButton" style="background-color: rgb(17, 94, 0); font-size: 24px;" />
+    <ui:Button text="Duplicate all" name="DuplicateButton" style="background-color: rgb(17, 94, 0); font-size: 24px;" />
+    <ui:Button text="Duplicate all (batched)" name="DuplicateBatchedButton" style="background-color: rgb(17, 94, 0); font-size: 24px;" />
+    <ui:Button text="Delete All Demo Assets" name="DeleteAllButton" style="background-color: rgb(137, 42, 42); font-size: 24px;" />
+    <ui:Button text="Delete Demo Assets Path" name="DeletePathButton" style="background-color: rgb(137, 42, 42); font-size: 24px;" />
+</ui:UXML>

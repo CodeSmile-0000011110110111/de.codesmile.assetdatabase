@@ -1,9 +1,10 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -27,6 +28,18 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
 			/// </seealso>
 			public static String[] GetAll([NotNull] Object asset) => AssetDatabase.GetLabels(asset);
+
+			/// <summary>
+			///     Returns an asset's labels.
+			/// </summary>
+			/// <param name="path">Path to an asset.</param>
+			/// <returns>The labels of the asset or an empty array.</returns>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Label.Add" />
+			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetLabels.html">AssetDatabase.GetLabels</a>
+			/// </seealso>
+			public static String[] GetAll([NotNull] Path path) => AssetDatabase.GetLabels(path.Guid);
 
 			/// <summary>
 			///     Returns an asset's labels.
@@ -97,11 +110,27 @@ namespace CodeSmileEditor
 			/// </summary>
 			/// <param name="asset">Instance of an asset.</param>
 			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Label.Remove" />
 			///     - <see cref="CodeSmileEditor.Asset.Label.GetAll" />
 			///     - <see cref="CodeSmileEditor.Asset.Label.SetAll" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ClearLabels.html">AssetDatabase.ClearLabels</a>
 			/// </seealso>
 			public static void ClearAll([NotNull] Object asset) => AssetDatabase.ClearLabels(asset);
+
+			/// <summary>
+			///     Removes a label from an asset. Does nothing if the label doesn't exist.
+			/// </summary>
+			/// <param name="asset">Instance of an asset.</param>
+			/// <param name="label">Label to remove.</param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Label.ClearAll" />
+			/// </seealso>
+			public static void Remove(Object asset, String label)
+			{
+				var labels = GetAll(asset).ToList();
+				labels.Remove(label);
+				SetAll(asset, labels.ToArray());
+			}
 		}
 	}
 }

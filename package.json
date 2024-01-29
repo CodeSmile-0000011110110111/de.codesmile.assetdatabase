@@ -2,7 +2,7 @@
   "name": "de.codesmile.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
   "description": "The AssetDatabase in enjoyable, consistent, concise, convenient, comprehensible, safe, documented form.\n\nAvailable under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Asset Store Terms and EULA for commercial use",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "unity": "2021.3",
   "unityRelease": "3f1",
   "author": {
@@ -19,9 +19,14 @@
   "relatedPackages": {},
   "samples": [
     {
-      "displayName": "Create and Delete Asset",
-      "description": "Basic asset lifetime example.",
+      "displayName": "Create and Delete Asset Simple Demo",
+      "description": "Basic asset lifetime example (see Window => CodeSmile => AssetDatabase Examples).",
       "path": "Samples~/CreateAndDelete"
+    },
+    {
+      "displayName": "Asset Workflow Demo with GUI",
+      "description": "Complex example of asset create, add subasset, modify labels, save, delete, batch editing with a simple GUI (see Window => CodeSmile => AssetDatabase Examples).",
+      "path": "Samples~/AssetWorkflowWithGUI"
     }
   ]
 }

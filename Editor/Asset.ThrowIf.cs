@@ -130,13 +130,6 @@ namespace CodeSmileEditor
 					throw new ArgumentException($"sub assets must not be of type GameObject: {subObject}");
 			}
 
-			public static void NotAnAssetWithAssetExtension(UnityEngine.Object assetObject)
-			{
-				var path = Path.Get(assetObject);
-				if (path.Extension.Equals(".asset") == false)
-					throw new ArgumentException("sub assets only supported with '.asset' extension: {path}");
-			}
-
 			public static void ExtensionIsNotUnityPackage(Path path)
 			{
 				if (path.Extension.ToLower().Equals(".unitypackage") == false)

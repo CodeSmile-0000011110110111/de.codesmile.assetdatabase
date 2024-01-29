@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
@@ -61,6 +61,8 @@ namespace CodeSmileEditor
 			/// <remarks>
 			///     CAUTION:
 			///     - Importing an asset and subsequently trying to load the asset within the callback will return null.
+			///     - For that reason you cannot create new Asset instances or call methods that create Asset instances, such as Copy,
+			///     during batch editing.
 			///     - When 'externally' modifying files and importing those, consider the above implication. You need to defer loading
 			///     and working with these objects. Calling BatchEditing twice is good practice (first modify & import, then load the
 			///     assets).
@@ -98,8 +100,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(String,CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object Create([NotNull] Byte[] contents, [NotNull] Path path) =>
-				CreateInternal(contents, path);
+			public static Object Create([NotNull] Byte[] contents, [NotNull] Path path) => CreateInternal(contents, path);
 
 			/// <summary>
 			///     Writes the byte array to disk, then imports and loads the asset. Generates a unique file name
@@ -114,8 +115,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(String,CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew([NotNull] Byte[] contents, [NotNull] Path path) =>
-				CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] Byte[] contents, [NotNull] Path path) => CreateInternal(contents, path.UniqueFilePath);
 
 			/// <summary>
 			///     Writes the string to disk, then imports and loads the asset. Overwrites any existing file.
@@ -129,8 +129,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Byte[],CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.Create(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object Create([NotNull] String contents, [NotNull] Path path) =>
-				CreateInternal(contents, path);
+			public static Object Create([NotNull] String contents, [NotNull] Path path) => CreateInternal(contents, path);
 
 			/// <summary>
 			///     Writes the string to disk, then imports and loads the asset. Generates a unique file name
@@ -145,8 +144,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Byte[],CodeSmileEditor.Asset.Path)" />
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateAsNew(Object,CodeSmileEditor.Asset.Path)" />
 			/// </seealso>
-			public static Object CreateAsNew([NotNull] String contents, [NotNull] Path path) =>
-				CreateInternal(contents, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] String contents, [NotNull] Path path) => CreateInternal(contents, path.UniqueFilePath);
 
 			/// <summary>
 			///     Writes the object to disk. Overwrites any existing file.
@@ -162,8 +160,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateOrLoad{T}" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object Create([NotNull] Object instance, [NotNull] Path path) =>
-				CreateInternal(instance, path);
+			public static Object Create([NotNull] Object instance, [NotNull] Path path) => CreateInternal(instance, path);
 
 			/// <summary>
 			///     Writes the object to disk. Generates a unique file name if an asset exists at the path.
@@ -179,8 +176,7 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.File.CreateOrLoad{T}" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>
 			/// </seealso>
-			public static Object CreateAsNew([NotNull] Object instance, [NotNull] Path path) =>
-				CreateInternal(instance, path.UniqueFilePath);
+			public static Object CreateAsNew([NotNull] Object instance, [NotNull] Path path) => CreateInternal(instance, path.UniqueFilePath);
 
 			/// <summary>
 			///     Loads or creates an asset at path.
@@ -339,13 +335,12 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
 			public static void
-				Import([NotNull] String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
-				BatchEditing(
-					() =>
-					{
-						foreach (var path in paths)
-							AssetDatabase.ImportAsset(path, options);
-					});
+				Import([NotNull] String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) => BatchEditing(
+				() =>
+				{
+					foreach (var path in paths)
+						AssetDatabase.ImportAsset(path, options);
+				});
 
 			/// <summary>
 			///     Loads an asset at path.
@@ -491,10 +486,9 @@ namespace CodeSmileEditor
 			///     </a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static String[] Find([NotNull] String filter, String[] searchInFolders = null) =>
-				searchInFolders == null
-					? AssetDatabase.FindAssets(filter)
-					: AssetDatabase.FindAssets(filter, searchInFolders);
+			public static String[] Find([NotNull] String filter, String[] searchInFolders = null) => searchInFolders == null
+				? AssetDatabase.FindAssets(filter)
+				: AssetDatabase.FindAssets(filter, searchInFolders);
 
 			/// <summary>
 			///     Finds asset GUIDs by the given filter criteria.
@@ -526,8 +520,7 @@ namespace CodeSmileEditor
 			/// <remarks>Converts the list of string guids from CodeSmileEditor.Asset.File.Find to actual Paths.</remarks>
 			/// <param name="filter">A search filter string.</param>
 			/// <param name="searchInFolders">
-			///     A list of folders to recursively search for files. Limiting the searched folders speeds
-			///     up Find.
+			///     A list of folders to recursively search for files. Limiting the searched folders speeds up Find.
 			/// </param>
 			/// <returns>An Path array. Empty array if there were no search results.</returns>
 			/// <seealso cref="">
@@ -543,6 +536,29 @@ namespace CodeSmileEditor
 			[ExcludeFromCodeCoverage] // simple relay
 			public static Path[] FindPaths([NotNull] String filter, String[] searchInFolders = null) =>
 				Find(filter, searchInFolders).Select(guid => Path.Get(new GUID(guid))).ToArray();
+
+			/// <summary>
+			///     Finds asset paths by the given filter criteria.
+			/// </summary>
+			/// <remarks>Converts the list of string guids from CodeSmileEditor.Asset.File.Find to actual Paths.</remarks>
+			/// <param name="filter">A search filter string.</param>
+			/// <param name="searchInFolders">
+			///     A list of folder paths to recursively search for files. Limiting the searched folders speeds up Find.
+			/// </param>
+			/// <returns>An Path array. Empty array if there were no search results.</returns>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.File.Find" />
+			///     - <see cref="CodeSmileEditor.Asset.File.FindGuids" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html">AssetDatabase.FindAssets</a>
+			///     -
+			///     <a href="https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/">
+			///         Search Filter
+			///         String Examples
+			///     </a>
+			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
+			public static Path[] FindPaths([NotNull] String filter, Path[] searchInFolders = null) =>
+				FindPaths(filter, Path.ToStrings(searchInFolders));
 
 			/// <summary>
 			///     Copies an asset from source to destination path. Overwrites any existing assets.
@@ -656,8 +672,8 @@ namespace CodeSmileEditor
 			///     - <see cref="CodeSmileEditor.Asset.GetLastErrorMessage" />
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.RenameAsset.html">AssetDatabase.RenameAsset</a>
 			/// </seealso>
-			public static Boolean Rename([NotNull] Path path, String newFileName) =>
-				String.IsNullOrEmpty(newFileName) == false && Succeeded(AssetDatabase.RenameAsset(path, newFileName));
+			public static Boolean Rename([NotNull] Path path, String newFileName) => String.IsNullOrEmpty(newFileName) == false &&
+			                                                                         Succeeded(AssetDatabase.RenameAsset(path, newFileName));
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
@@ -671,8 +687,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean CanOpenInEditor([NotNull] Object instance) =>
-				CanOpenInEditor(instance.GetInstanceID());
+			public static Boolean CanOpenInEditor([NotNull] Object instance) => CanOpenInEditor(instance.GetInstanceID());
 
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.

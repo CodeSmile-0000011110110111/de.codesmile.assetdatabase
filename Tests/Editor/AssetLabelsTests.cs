@@ -1,10 +1,11 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEditor;
 using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
@@ -137,6 +138,53 @@ namespace CodeSmileEditor.Tests
 			Assert.Contains("two", asset.Labels);
 			Assert.Contains("three", asset.Labels);
 			Assert.Contains("four", asset.Labels);
+		}
+
+		[Test] public void RemoveLabel_NoLabels_DoesNothing()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+
+			asset.RemoveLabel("wut");
+
+			Assert.IsEmpty(asset.Labels);
+		}
+
+		[Test] public void RemoveLabel_OnlyLabel_LabelsAreEmpty()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			asset.Labels = new[] { "the one and only" };
+
+			asset.RemoveLabel("the one and only");
+
+			Assert.IsEmpty(asset.Labels);
+		}
+
+		[Test] public void RemoveLabel_ThatDoesNotExist_LeavesLabelsUnchanged()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			var labels = new[] { "one", "two", "three" };
+			asset.Labels = labels;
+
+			asset.RemoveLabel("????");
+
+			Assert.True(asset.Labels.Length == 3);
+			Assert.Contains("one", asset.Labels);
+			Assert.Contains("two", asset.Labels);
+			Assert.Contains("three", asset.Labels);
+		}
+
+		[Test] public void RemoveLabel_ThatExists_RemovesTheLabel()
+		{
+			var asset = CreateTestAsset(TestAssetPath);
+			var labels = new[] { "one", "two", "three" };
+			asset.Labels = labels;
+
+			asset.RemoveLabel("two");
+
+			Assert.True(asset.Labels.Length == 2);
+			Assert.False(asset.Labels.Contains("two"));
+			Assert.Contains("one", asset.Labels);
+			Assert.Contains("three", asset.Labels);
 		}
 	}
 }

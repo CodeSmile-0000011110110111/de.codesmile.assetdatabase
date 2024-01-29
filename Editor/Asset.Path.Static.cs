@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
@@ -322,7 +322,7 @@ namespace CodeSmileEditor
 			/// </summary>
 			/// <param name="paths">Input paths.</param>
 			/// <returns>Relative paths as strings.</returns>
-			public static String[] ToStrings([NotNull] IEnumerable<Path> paths) => paths.Cast<String>().ToArray();
+			public static String[] ToStrings([NotNull] IEnumerable<Path> paths) => paths.Select(path => (String)path).ToArray();
 
 			internal static Path UniquifyAsNeeded([NotNull] Path path, Boolean overwriteExisting) =>
 				overwriteExisting ? path : path.UniqueFilePath;

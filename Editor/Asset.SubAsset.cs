@@ -61,7 +61,6 @@ namespace CodeSmileEditor
 				ThrowIf.SubObjectIsGameObject(subAssetInstance);
 				ThrowIf.AlreadyAnAsset(subAssetInstance);
 				ThrowIf.ArgumentIsNull(asset, nameof(asset));
-				ThrowIf.NotAnAssetWithAssetExtension(asset);
 
 				AssetDatabase.AddObjectToAsset(subAssetInstance, asset);
 			}

@@ -1,11 +1,10 @@
-﻿// Copyright (C) 2021-2023 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using UnityEditor;
-using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor
@@ -20,6 +19,69 @@ namespace CodeSmileEditor
 	{
 		private Path m_AssetPath;
 		private Object m_MainObject;
+
+		/// <summary>
+		///     Implicit conversion to UnityEngine.Object.
+		/// </summary>
+		/// <param name="asset">The main object of the asset.</param>
+		/// <example>
+		///     <code>
+		///  Object obj = asset; // implicit conversion
+		/// 		</code>
+		/// </example>
+		/// <returns>The asset's MainObject property.</returns>
+		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
+
+		/// <summary>
+		///     Implicit conversion of UnityEngine.Object to an Asset.
+		/// </summary>
+		/// <remarks>Throws exception if obj is not an asset object.</remarks>
+		/// <param name="asset">Existing asset reference.</param>
+		/// <returns>An asset instance or null if obj is null.</returns>
+		/// <example>
+		///     <code>
+		///  Asset asset = obj; // implicit conversion: Object to Asset
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(Object asset) => asset != null ? new Asset(asset) : null;
+
+		/// <summary>
+		///     Implicit conversion of Asset.Path to an Asset instance.
+		/// </summary>
+		/// <param name="path">Path to an asset file.</param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		///  Asset asset = new Path("Assets/folder/file.asset");
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
+
+		/// <summary>
+		///     Implicit conversion of string path to an asset instance.
+		/// </summary>
+		/// <param name="path">Path to an asset file.</param>
+		/// <returns>An asset instance or null if path is null.</returns>
+		/// <example>
+		///     <code>
+		///  // this imports & loads the asset, neat ey? :)
+		///  Asset asset = "Assets/Folder/MyAsset.asset";
+		/// 		</code>
+		/// </example>
+		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
+
+		/// <summary>
+		///     Implicit conversion of GUID to an asset instance.
+		/// </summary>
+		/// <param name="guid">An asset instance.</param>
+		/// <returns>An asset instance or null if guid is empty.</returns>
+		/// <example>
+		///     <code>
+		/// // loads the asset
+		/// Asset asset = guid;
+		/// </code>
+		/// </example>
+		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
 		[ExcludeFromCodeCoverage] private Asset() {} // disallow parameterless ctor
 
@@ -138,69 +200,6 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset(GUID)" />
 		/// </seealso>
 		public Asset(Object asset) => InitWithMainObject(asset);
-
-		/// <summary>
-		///     Implicit conversion to UnityEngine.Object.
-		/// </summary>
-		/// <param name="asset">The main object of the asset.</param>
-		/// <example>
-		///     <code>
-		///  Object obj = asset; // implicit conversion
-		/// 		</code>
-		/// </example>
-		/// <returns>The asset's MainObject property.</returns>
-		public static implicit operator Object(Asset asset) => asset != null ? asset.MainObject : null;
-
-		/// <summary>
-		///     Implicit conversion of UnityEngine.Object to an Asset.
-		/// </summary>
-		/// <remarks>Throws exception if obj is not an asset object.</remarks>
-		/// <param name="asset">Existing asset reference.</param>
-		/// <returns>An asset instance or null if obj is null.</returns>
-		/// <example>
-		///     <code>
-		///  Asset asset = obj; // implicit conversion: Object to Asset
-		/// 		</code>
-		/// </example>
-		public static implicit operator Asset(Object asset) => asset != null ? new Asset(asset) : null;
-
-		/// <summary>
-		///     Implicit conversion of Asset.Path to an Asset instance.
-		/// </summary>
-		/// <param name="path">Path to an asset file.</param>
-		/// <returns>An asset instance or null if path is null.</returns>
-		/// <example>
-		///     <code>
-		///  Asset asset = new Path("Assets/folder/file.asset");
-		/// 		</code>
-		/// </example>
-		public static implicit operator Asset(Path path) => path != null ? new Asset(path) : null;
-
-		/// <summary>
-		///     Implicit conversion of string path to an asset instance.
-		/// </summary>
-		/// <param name="path">Path to an asset file.</param>
-		/// <returns>An asset instance or null if path is null.</returns>
-		/// <example>
-		///     <code>
-		///  // this imports & loads the asset, neat ey? :)
-		///  Asset asset = "Assets/Folder/MyAsset.asset";
-		/// 		</code>
-		/// </example>
-		public static implicit operator Asset(String path) => (Path)path; // implicit forward to Asset(Path)
-
-		/// <summary>
-		///     Implicit conversion of GUID to an asset instance.
-		/// </summary>
-		/// <param name="guid">An asset instance.</param>
-		/// <returns>An asset instance or null if guid is empty.</returns>
-		/// <example>
-		///     <code>
-		/// // loads the asset
-		/// Asset asset = guid;
-		/// </code>
-		/// </example>
-		public static implicit operator Asset(GUID guid) => guid.Empty() == false ? new Asset(guid) : null;
 
 		/// <summary>
 		///     Gets the main object cast to T.
@@ -422,8 +421,7 @@ namespace CodeSmileEditor
 		/// <param name="lineNumber">Line number to highlight. Support depends on application. Default: -1</param>
 		/// <param name="columnNumber">Column/character number to highlight. Support depends on application. Default: -1</param>
 		[ExcludeFromCodeCoverage] // cannot be tested
-		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) =>
-			File.OpenExternal(m_MainObject, lineNumber, columnNumber);
+		public void OpenExternal(Int32 lineNumber = -1, Int32 columnNumber = -1) => File.OpenExternal(m_MainObject, lineNumber, columnNumber);
 
 		/// <summary>
 		///     Deletes the asset file.
@@ -487,11 +485,21 @@ namespace CodeSmileEditor
 		///     Removes all labels from the asset.
 		/// </summary>
 		/// <seealso cref="">
+		///     - <see cref="CodeSmileEditor.Asset.RemoveLabel" />
 		///     - <see cref="CodeSmileEditor.Asset.AddLabel" />
 		///     - <see cref="CodeSmileEditor.Asset.AddLabels" />
 		///     - <see cref="CodeSmileEditor.Asset.SetLabels" />
 		/// </seealso>
 		public void ClearLabels() => Label.ClearAll(m_MainObject);
+
+		/// <summary>
+		///     Removes a label from an asset. Does nothing if the label doesn't exist.
+		/// </summary>
+		/// <param name="label">Label to remove.</param>
+		/// <seealso cref="">
+		///     - <see cref="CodeSmileEditor.Asset.ClearLabels" />
+		/// </seealso>
+		public void RemoveLabel(String label) => Label.Remove(m_MainObject, label);
 
 		/// <summary>
 		///     Adds a label to the asset.
