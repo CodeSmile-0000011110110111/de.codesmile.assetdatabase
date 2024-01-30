@@ -1,69 +1,20 @@
-// Copyright (C) 2021-2024 Steffen Itterheim
+﻿// Copyright (C) 2021-2024 Steffen Itterheim
 // Refer to included LICENSE file for terms and conditions.
 
 using CodeSmile_AssetDatabase_Demo;
 using CodeSmileEditor;
-using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
+public partial class AssetDemoWindow
 {
-	private static readonly Asset.Path DemoAssetsPath = "Assets/CodeSmile AssetDatabase Demo Assets/Sample Assets";
-
-	[SerializeField] private VisualTreeAsset m_VisualTreeAsset;
-
-	[MenuItem("Window/CodeSmile/AssetDatabase Examples/Workflow Demo", priority = 2999)]
-	public static void ShowAssetDatabaseDemoWindow()
-	{
-		var wnd = GetWindow<CodeSmileAssetDatabaseDemoWindow>();
-		wnd.titleContent = new GUIContent("CodeSmile AssetDatabase Demo");
-	}
-
-	public void CreateGUI()
-	{
-		var uiBuilderDocument = m_VisualTreeAsset.Instantiate();
-		rootVisualElement.Add(uiBuilderDocument);
-
-		RegisterCallbacks(true);
-	}
-
-	private void OnDestroy() => RegisterCallbacks(false);
-
-	private void RegisterCallbacks(Boolean register)
-	{
-		var createButton = rootVisualElement.Q<Button>("CreateButton");
-		var duplicateButton = rootVisualElement.Q<Button>("DuplicateButton");
-		var duplicateBatchedButton = rootVisualElement.Q<Button>("DuplicateBatchedButton");
-		var deleteAllButton = rootVisualElement.Q<Button>("DeleteAllButton");
-		var deletePathButton = rootVisualElement.Q<Button>("DeletePathButton");
-
-		if (register)
-		{
-			createButton.clicked += OnCreateButtonClicked;
-			duplicateButton.clicked += OnDuplicateButtonClicked;
-			duplicateBatchedButton.clicked += OnDuplicateBatchedButtonClicked;
-			deleteAllButton.clicked += OnDeleteAllButtonClicked;
-			deletePathButton.clicked += OnDeletePathButtonClicked;
-		}
-		else
-		{
-			createButton.clicked -= OnCreateButtonClicked;
-			duplicateButton.clicked -= OnDuplicateButtonClicked;
-			duplicateBatchedButton.clicked -= OnDuplicateBatchedButtonClicked;
-			deleteAllButton.clicked -= OnDeleteAllButtonClicked;
-			deletePathButton.clicked -= OnDeletePathButtonClicked;
-		}
-	}
-
-	private void OnCreateButtonClicked()
+	private void OnCreateButtonClicked_CodeSmile()
 	{
 		var numberOfAssets = 32;
 		for (var i = 0; i < numberOfAssets; i++)
 		{
-			// Let's assume we've generated a wonderful mesh together with an impressive material using a beautiful texture and some scripting
+			// Let's assume we've generated a wonderful mesh together with
+			// an impressive material using a beautiful texture and some scripting
 			var mesh = new Mesh();
 			mesh.name = "A Mesh, that couldn't be any meshier even if it were a net";
 			var texture = new Texture2D(128, 128);
@@ -76,28 +27,31 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 			var scriptableObject = CreateInstance<TestAssetSO>();
 			scriptableObject.name = "A script, which is quaranteed 99.9999997% bug-free!";
 
-			// Now we create an asset and stuff it all in there (just for illustration purposes - this asset is totally useless)
+			// Now we create an asset and stuff it all in there for illustration purposes
 			// Note: meshes require the .mesh extension
-			var assetPath = $"{DemoAssetsPath}/Mesh #{i}-{Time.realtimeSinceStartupAsDouble:F3}.mesh";
+			var createTime = $"{Time.realtimeSinceStartupAsDouble:F3}";
+			var assetPath = $"{DemoAssetsPath}/Mesh #{i}-{createTime}.mesh";
+
 			var createdAsset = new Asset(mesh, assetPath);
 			createdAsset.AddSubAsset(texture);
 			createdAsset.AddSubAsset(material);
 			createdAsset.AddSubAsset(animation);
 			createdAsset.AddSubAsset(scriptableObject);
 			createdAsset.AddLabels(new[] { "CodeSmile AssetDatabase", "New-Shiny-DemoAsset" });
-			createdAsset.Save(); // save is needed to write sub assets and labels to disk - creating the asset by itself does NOT need saving
+			// save is needed only to write the post-creation changes (added sub-assets & labels)
+			createdAsset.Save();
 		}
 	}
 
-	private void OnDuplicateButtonClicked()
+	private void OnDuplicateButtonClicked_CodeSmile()
 	{
 		// delete the existing duplicates
-		var dupePaths = Asset.File.FindPaths("l:No-SubAssets-DemoAsset", new[] { DemoAssetsPath });
+		var dupePaths = Asset.File.FindPaths("l:No-SubAssets-DemoAsset", SearchPath);
 		foreach (var dupePath in dupePaths)
 			Asset.File.Delete(dupePath);
 
 		// duplicate assets with sub assets
-		var assetPaths = Asset.File.FindPaths("l:New-Shiny-DemoAsset", new[] { DemoAssetsPath });
+		var assetPaths = Asset.File.FindPaths("l:New-Shiny-DemoAsset", SearchPath);
 		foreach (var assetPath in assetPaths)
 		{
 			var sourceAsset = new Asset(assetPath);
@@ -106,7 +60,8 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 			if (sourceAsset.VisibleSubAssets.Length > 0)
 			{
 				// create a duplicate
-				var dupePath = $"{DemoAssetsPath}/{assetPath.FileNameWithoutExtension} no sub-assets.mesh";
+				var filenameNoExt = assetPath.FileNameWithoutExtension;
+				var dupePath = $"{DemoAssetsPath}/{filenameNoExt} no sub-assets.mesh";
 				var dupeAsset = sourceAsset.SaveAsNew(dupePath);
 
 				// remove sub-assets from dupe
@@ -114,7 +69,7 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 					dupeAsset.RemoveSubAsset(subAsset);
 
 				// tag and save the dupe
-				dupeAsset.AddLabels(sourceAsset.Labels);
+				dupeAsset.Labels = sourceAsset.Labels; // restore source labels
 				dupeAsset.RemoveLabel("New-Shiny-DemoAsset");
 				dupeAsset.AddLabel("No-SubAssets-DemoAsset");
 				dupeAsset.Save();
@@ -122,7 +77,7 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 		}
 	}
 
-	private void OnDuplicateBatchedButtonClicked()
+	private void OnDuplicateBatchedButtonClicked_CodeSmile()
 	{
 		// NOTE: it is common to split batched asset operations in multiple discrete steps due to the fact that
 		// during batch operations the AssetDatabase does not update its internal state. Any asset that gets
@@ -133,7 +88,8 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 		// delete any existing duplicates
 		Asset.File.BatchEditing(() =>
 		{
-			var existingDupePaths = Asset.File.FindPaths("l:No-SubAssets-DemoAsset", new[] { DemoAssetsPath });
+			var existingDupePaths =
+				Asset.File.FindPaths("l:No-SubAssets-DemoAsset", SearchPath);
 			foreach (var dupePath in existingDupePaths)
 				Asset.File.Delete(dupePath);
 		});
@@ -143,7 +99,7 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 		var dupePaths = new List<Asset.Path>();
 		Asset.File.BatchEditing(() =>
 		{
-			var assetPaths = Asset.File.FindPaths("l:New-Shiny-DemoAsset", new[] { DemoAssetsPath });
+			var assetPaths = Asset.File.FindPaths("l:New-Shiny-DemoAsset", SearchPath);
 			for (var i = 0; i < assetPaths.Length; i++)
 			{
 				var sourcePath = assetPaths[i];
@@ -152,11 +108,11 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 				if (Asset.SubAsset.LoadVisible(sourcePath).Length > 0)
 				{
 					var suffix = "no sub-assets";
-					var dupePath = new Asset.Path($"{DemoAssetsPath}/{sourcePath.FileNameWithoutExtension} {suffix}.mesh");
-
+					var filenameNoExt = sourcePath.FileNameWithoutExtension;
+					Asset.Path dupePath = $"{DemoAssetsPath}/{filenameNoExt} {suffix}.mesh";
 					Asset.File.CopyAsNew(sourcePath, dupePath);
 
-					// cannot load newly created assets during batch editing => must defer following operations
+					// must defer loading created assets to post-batchediting
 					sourcePaths.Add(sourcePath);
 					dupePaths.Add(dupePath);
 				}
@@ -174,7 +130,7 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 				foreach (var subAsset in dupeAsset.VisibleSubAssets)
 					dupeAsset.RemoveSubAsset(subAsset);
 
-				dupeAsset.AddLabels(Asset.Label.GetAll(sourcePaths[i]));
+				dupeAsset.Labels = Asset.Label.GetAll(sourcePaths[i]); // restore source labels
 				dupeAsset.RemoveLabel("New-Shiny-DemoAsset");
 				dupeAsset.AddLabel("No-SubAssets-DemoAsset");
 				dupeAsset.Save();
@@ -182,19 +138,17 @@ public class CodeSmileAssetDatabaseDemoWindow : EditorWindow
 		});
 	}
 
-	private void OnDeleteAllButtonClicked()
+	private void OnDeleteAllButtonClicked_CodeSmile()
 	{
 		// Uses only the static API as we don't need to work with an Asset instance here
-
-		var folders = new[] { DemoAssetsPath };
-		var paths = Asset.File.FindPaths("l:New-Shiny-DemoAsset l:No-SubAssets-DemoAsset", folders);
-
+		var allDemoAssetsFilter = "l:New-Shiny-DemoAsset l:No-SubAssets-DemoAsset";
+		var paths = Asset.File.FindPaths(allDemoAssetsFilter, SearchPath);
 		Asset.File.Delete(paths);
 	}
 
-	private void OnDeletePathButtonClicked()
+	private void OnDeletePathButtonClicked_CodeSmile()
 	{
-		OnDeleteAllButtonClicked();
+		OnDeleteAllButtonClicked_CodeSmile();
 
 		// also delete the subfolder and its parent folder
 		Asset.File.Delete(DemoAssetsPath);

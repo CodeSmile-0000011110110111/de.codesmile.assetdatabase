@@ -1,5 +1,5 @@
 {
-    "name": "CodeSmileEditor.AssetDatabase.Sample",
+    "name": "CodeSmileEditor.AssetDatabase.Demo",
     "rootNamespace": "",
     "references": [
         "GUID:38cc5939e6694a64d8d6ea3aaca03495"

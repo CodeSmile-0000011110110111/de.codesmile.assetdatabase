@@ -1,10 +1,15 @@
 # Change Log
 
+#### v1.8.6 - Jan 30, 2024
+
+- added Sample: Asset Workflow with GUI. Allows selecting between CodeSmile and Unity API. Unity API code is 33% more lines/characters, with folder creation hardcoded.
+
 #### v1.8.5 - Jan 29, 2024
 
 - added Asset.File.FindPaths overload accepting Path[]
 - added Asset.Label.GetAll overload accepting Path
 - added Asset.Label.Remove and Asset().RemoveLabel
+- fixed invalid cast exception (Asset.Path[] to string[])
 - removed add sub-asset check for ".asset" extension. Turns out you can also add subassets to a .mesh extension asset and there may be others.
 
 #### v1.8.4 - Jan 24, 2024
