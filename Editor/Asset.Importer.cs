@@ -72,7 +72,7 @@ namespace CodeSmileEditor
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetImporterType.html">AssetDatabase.GetImporterType</a>
 			/// </seealso>
-			public static Type GetActive([NotNull] Object asset) => GetActive(GetGuid(asset));
+			public static Type GetActive([NotNull] Object asset) => GetActive(File.GetGuid(asset));
 
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.

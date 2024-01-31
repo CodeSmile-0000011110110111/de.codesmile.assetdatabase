@@ -50,7 +50,7 @@ namespace CodeSmileEditor
 		/// <seealso cref="">
 		///     - <see cref="CodeSmileEditor.Asset.GetMainType(CodeSmileEditor.Asset.Path)" />
 		/// </seealso>
-		public Type MainObjectType => GetMainType(m_AssetPath);
+		public Type MainObjectType => File.GetMainType(m_AssetPath);
 
 		/// <summary>
 		///     Returns the path to the asset (file or folder).
@@ -84,7 +84,7 @@ namespace CodeSmileEditor
 		///     - <see cref="CodeSmileEditor.Asset.Guid" />
 		/// </seealso>
 		[ExcludeFromCodeCoverage] // simple relay
-		public Int64 FileId => GetFileId(m_MainObject);
+		public Int64 FileId => File.GetFileId(m_MainObject);
 
 		/// <summary>
 		///     Returns the icon texture associated with the asset type.

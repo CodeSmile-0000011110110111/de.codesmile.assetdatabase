@@ -2,7 +2,7 @@
   "name": "de.codesmile.assetdatabase",
   "displayName": "CodeSmile AssetDatabase",
   "description": "The AssetDatabase in enjoyable, consistent, concise, convenient, comprehensible, safe, documented form.\n\nAvailable under multiple licenses:\n- GPL 3.0 for personal & educational use\n- Asset Store Terms and EULA for commercial use",
-  "version": "1.8.6",
+  "version": "1.9.0",
   "unity": "2021.3",
   "unityRelease": "3f1",
   "author": {

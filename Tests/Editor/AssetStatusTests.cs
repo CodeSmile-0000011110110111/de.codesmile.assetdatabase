@@ -22,6 +22,6 @@ namespace CodeSmileEditor.Tests
 		[Test] public void IsImported_ExistingPath_True() =>
 			Assert.IsTrue(Asset.Status.IsImported(CreateTestAsset(TestAssetPath).AssetPath));
 
-		[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.GetMainType((String)TestAssetPath));
+		[Test] public void GetMainType_NullPath_False() => Assert.Null(Asset.File.GetMainType((String)TestAssetPath));
 	}
 }

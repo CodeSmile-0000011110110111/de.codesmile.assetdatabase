@@ -1,5 +1,15 @@
 # Change Log
 
+#### v1.9.0 - Jan 31, 2024
+
+- API Changes: These static methods have been MOVED from **Asset** to **Asset.File**:
+  - GetMainType
+  - GetSubType
+  - GetGuid
+  - GetFileId
+  - GetGuidAndFileId
+- Rationale: These methods hindered API discovery via auto-completion by cluttering the Asset namespace, and they truly belong to the File API since they query asset file attributes.
+
 #### v1.8.6 - Jan 30, 2024
 
 - added Sample: Asset Workflow with GUI. Allows selecting between CodeSmile and Unity API. Unity API code is 33% more lines/characters, with folder creation hardcoded.

@@ -74,7 +74,7 @@ namespace CodeSmileEditor.Tests
 			Assert.NotNull(loaded);
 			Assert.AreEqual(obj, loaded);
 			Assert.AreEqual(obj.GetType(), loaded.GetType());
-			Assert.AreEqual(obj.GetType(), Asset.GetMainType((String)TestAssetPath));
+			Assert.AreEqual(obj.GetType(), Asset.File.GetMainType((String)TestAssetPath));
 		}
 
 		[Test] public void LoadMainStatic_TypeMismatch_ReturnsNull()
