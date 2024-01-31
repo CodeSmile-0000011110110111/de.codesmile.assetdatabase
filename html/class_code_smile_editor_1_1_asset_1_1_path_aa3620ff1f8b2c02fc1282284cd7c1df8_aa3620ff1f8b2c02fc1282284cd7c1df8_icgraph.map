@@ -1,15 +1,15 @@
 <map id="Get" name="Get">
 <area shape="rect" id="Node000001" title="Gets the relative path of an asset." alt="" coords="258,148,300,175"/>
 <area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_path_a3d0d7574b95b19be03fdfd90e6c628e2.html#a3d0d7574b95b19be03fdfd90e6c628e2" title="Creates an asset path from an asset instance." alt="" coords="83,5,132,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,135,244,89,228,66,208,46,190,36,170,29,132,22,133,17,171,23,192,31,211,42,232,62,249,86,271,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,134,244,88,228,65,208,46,190,36,170,29,132,22,133,17,171,23,192,31,211,42,232,62,249,86,271,132"/>
 <area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_version_control_a7f6bbb0782e7f7635706b0e0bc921341.html#a7f6bbb0782e7f7635706b0e0bc921341" title="Returns true if the asset can be opened for editing in the version control system." alt="" coords="5,56,210,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,141,208,113,183,102,185,97,211,108,253,136"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,140,208,113,183,102,185,97,211,108,252,136"/>
 <area shape="rect" id="Node000004" href="$class_code_smile_editor_1_1_asset_1_1_path_aa30592adbaf54202ead85cd483107e55.html#aa30592adbaf54202ead85cd483107e55" title="Creates any missing folders in the path." alt="" coords="56,123,159,149"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,159,159,146,160,141,243,154"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,159,159,146,160,141,243,153"/>
 <area shape="rect" id="Node000005" href="$class_code_smile_editor_1_1_asset_1_1_path_a7b337848207b6bc5aebde6ae18e18d54.html#a7b337848207b6bc5aebde6ae18e18d54" title="Converts an array of asset instances to their asset paths." alt="" coords="86,173,129,200"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="243,169,129,186,128,181,243,164"/>
-<area shape="rect" id="Node000006" href="$class_code_smile_editor_1_1_asset_a82b0bb0beb5f5422951631789bca4256.html#a82b0bb0beb5f5422951631789bca4256" title="Returns the type of the main asset for the GUID." alt="" coords="17,224,198,267"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="253,186,211,214,185,226,183,221,208,210,250,182"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="243,169,129,186,128,181,242,164"/>
+<area shape="rect" id="Node000006" href="$class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256.html#a82b0bb0beb5f5422951631789bca4256" title="Returns the type of the main asset for the GUID." alt="" coords="15,224,200,267"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="252,187,211,214,185,226,183,221,208,210,249,182"/>
 <area shape="rect" id="Node000007" href="$class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088.html#a9702d12ef27f2d0dfd1f8201fbb37088" title="Loads the main (root) asset object for the GUID." alt="" coords="15,291,200,333"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="271,190,248,236,232,260,211,281,194,292,191,288,208,277,228,257,244,233,266,187"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="270,191,248,237,232,260,211,281,194,292,191,288,208,277,227,257,243,234,266,188"/>
 </map>

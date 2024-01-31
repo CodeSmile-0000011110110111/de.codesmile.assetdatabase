@@ -2,12 +2,29 @@
 \hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g}{}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g}\index{Change Log@{Change Log}}
 \label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_change-log}%
 \Hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_change-log}%
- \hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v185---jan-29-2024}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+5 -\/ Jan 29, 2024}{v1.\+8.\+5 -\/ Jan 29, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v185---jan-29-2024}
+ \hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v190---jan-31-2024}{}\doxyparagraph{\texorpdfstring{v1.\+9.\+0 -\/ Jan 31, 2024}{v1.\+9.\+0 -\/ Jan 31, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v190---jan-31-2024}
+
+\begin{DoxyItemize}
+\item API Changes\+: These static methods have been MOVED from {\bfseries{Asset}} to {\bfseries{Asset.\+File}}\+:
+\begin{DoxyItemize}
+\item Get\+Main\+Type
+\item Get\+Sub\+Type
+\item Get\+Guid
+\item Get\+File\+Id
+\item Get\+Guid\+And\+File\+Id
+\end{DoxyItemize}
+\item Rationale\+: These methods hindered API discovery via auto-\/completion by cluttering the Asset namespace, and they truly belong to the File API since they query asset file attributes.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v186---jan-30-2024}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+6 -\/ Jan 30, 2024}{v1.\+8.\+6 -\/ Jan 30, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v186---jan-30-2024}
+
+\begin{DoxyItemize}
+\item added Sample\+: Asset Workflow with GUI. Allows selecting between Code\+Smile and Unity API. Unity API code is 33\% more lines/characters, with folder creation hardcoded.
+\end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v185---jan-29-2024}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+5 -\/ Jan 29, 2024}{v1.\+8.\+5 -\/ Jan 29, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v185---jan-29-2024}
 
 \begin{DoxyItemize}
 \item added Asset.\+File.\+Find\+Paths overload accepting Path\mbox{[}\mbox{]}
 \item added Asset.\+Label.\+Get\+All overload accepting Path
 \item added Asset.\+Label.\+Remove and Asset().Remove\+Label
+\item fixed invalid cast exception (Asset.\+Path\mbox{[}\mbox{]} to string\mbox{[}\mbox{]})
 \item removed add sub-\/asset check for "{}.\+asset"{} extension. Turns out you can also add subassets to a .mesh extension asset and there may be others.
 \end{DoxyItemize}\hypertarget{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v184---jan-24-2024}{}\doxyparagraph{\texorpdfstring{v1.\+8.\+4 -\/ Jan 24, 2024}{v1.\+8.\+4 -\/ Jan 24, 2024}}\label{md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g_v184---jan-24-2024}
 

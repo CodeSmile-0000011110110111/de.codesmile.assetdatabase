@@ -30,7 +30,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="steffen portrait codesmile logo larger top-left-64x62.png"/></td>
   <td id="projectalign">
-   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.8</span>
+   <div id="projectname">CodeSmile AssetDatabase<span id="projectnumber">&#160;1.9</span>
    </div>
    <div id="projectbrief">Unity&#39;s AssetDatabase in enjoyable, consistent, concise, convenient, comprehensible, safe, documented form.</div>
   </td>
@@ -99,12 +99,31 @@ $(function(){initNavTree('md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="change-log"></a> </p>
+<h3><a class="anchor" id="v190---jan-31-2024"></a>
+v1.9.0 - Jan 31, 2024</h3>
+<ul>
+<li>API Changes: These static methods have been MOVED from <b>Asset</b> to <b>Asset.File</b>:<ul>
+<li>GetMainType</li>
+<li>GetSubType</li>
+<li>GetGuid</li>
+<li>GetFileId</li>
+<li>GetGuidAndFileId</li>
+</ul>
+</li>
+<li>Rationale: These methods hindered API discovery via auto-completion by cluttering the Asset namespace, and they truly belong to the File API since they query asset file attributes.</li>
+</ul>
+<h3><a class="anchor" id="v186---jan-30-2024"></a>
+v1.8.6 - Jan 30, 2024</h3>
+<ul>
+<li>added Sample: Asset Workflow with GUI. Allows selecting between CodeSmile and Unity API. Unity API code is 33% more lines/characters, with folder creation hardcoded.</li>
+</ul>
 <h3><a class="anchor" id="v185---jan-29-2024"></a>
 v1.8.5 - Jan 29, 2024</h3>
 <ul>
 <li>added Asset.File.FindPaths overload accepting Path[]</li>
 <li>added Asset.Label.GetAll overload accepting Path</li>
 <li>added Asset.Label.Remove and Asset().RemoveLabel</li>
+<li>fixed invalid cast exception (Asset.Path[] to string[])</li>
 <li>removed add sub-asset check for ".asset" extension. Turns out you can also add subassets to a .mesh extension asset and there may be others.</li>
 </ul>
 <h3><a class="anchor" id="v184---jan-24-2024"></a>
