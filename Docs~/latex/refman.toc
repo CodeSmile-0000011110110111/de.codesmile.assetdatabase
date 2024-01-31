@@ -14,346 +14,348 @@
 \contentsline {subsection}{\numberline {1.9}What to expect from me?}{5}{subsection.1.9}%
 \contentsline {subsection}{\numberline {1.10}Support, Feeback, Inquiries}{5}{subsection.1.10}%
 \contentsline {section}{\numberline {2}Change Log}{6}{section.2}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}5 -\/ Jan 29, 2024}{6}{section*.1}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4 -\/ Jan 24, 2024}{6}{section*.2}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3 -\/ Jan 22, 2024}{6}{section*.3}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2 -\/ Dec 26, 2023}{6}{section*.4}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Dec 21, 2023}{6}{section*.5}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Dec 09, 2023}{6}{section*.6}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Dec 05, 2023}{7}{section*.7}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Dec 03, 2023}{7}{section*.8}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}6.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 30, 2023}{7}{section*.9}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 24, 2023}{7}{section*.10}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 24, 2023}{8}{section*.11}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 24, 2023}{8}{section*.12}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 23, 2023}{8}{section*.13}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 22, 2023}{8}{section*.14}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 22, 2023}{8}{section*.15}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4 -\/ Nov 13, 2023}{8}{section*.16}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3 -\/ Nov 12, 2023}{9}{section*.17}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 10, 2023}{9}{section*.18}%
-\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 9, 2023}{9}{section*.19}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}9.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Jan 31, 2024}{6}{section*.1}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}6 -\/ Jan 30, 2024}{6}{section*.2}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}5 -\/ Jan 29, 2024}{6}{section*.3}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4 -\/ Jan 24, 2024}{6}{section*.4}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3 -\/ Jan 22, 2024}{6}{section*.5}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2 -\/ Dec 26, 2023}{6}{section*.6}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Dec 21, 2023}{7}{section*.7}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}8.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Dec 09, 2023}{7}{section*.8}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Dec 05, 2023}{7}{section*.9}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Dec 03, 2023}{7}{section*.10}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}6.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 30, 2023}{7}{section*.11}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 24, 2023}{8}{section*.12}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 24, 2023}{8}{section*.13}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 24, 2023}{8}{section*.14}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 23, 2023}{8}{section*.15}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1 -\/ Nov 22, 2023}{9}{section*.16}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 22, 2023}{9}{section*.17}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}4 -\/ Nov 13, 2023}{9}{section*.18}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}3 -\/ Nov 12, 2023}{9}{section*.19}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 10, 2023}{9}{section*.20}%
+\contentsline {paragraph}{v1.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}0 -\/ Nov 9, 2023}{9}{section*.21}%
 \contentsline {section}{\numberline {3}Code\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Smile Packages -\/ Getting Started}{9}{section.3}%
-\contentsline {section}{\numberline {4}Hierarchical Index}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Class Hierarchy}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Hierarchical Index}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Class Hierarchy}{10}{subsection.4.1}%
 \contentsline {section}{\numberline {5}Class Index}{10}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Class List}{10}{subsection.5.1}%
 \contentsline {section}{\numberline {6}Namespace Documentation}{11}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Code\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Smile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Editor Namespace Reference}{11}{subsection.6.1}%
-\contentsline {section}{\numberline {7}Class Documentation}{11}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Asset Class Reference}{11}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Class Documentation}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Asset Class Reference}{12}{subsection.7.1}%
 \contentsline {subsubsection}{\numberline {7.1.1}Detailed Description}{16}{subsubsection.7.1.1}%
 \contentsline {subsubsection}{\numberline {7.1.2}Constructor \& Destructor Documentation}{16}{subsubsection.7.1.2}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{16}{section*.26}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{17}{section*.27}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{17}{section*.28}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{18}{section*.29}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{19}{section*.30}%
-\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{19}{section*.31}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{16}{section*.28}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{17}{section*.29}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{17}{section*.30}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{18}{section*.31}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{19}{section*.32}%
+\contentsline {paragraph}{Asset()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{20}{section*.33}%
 \contentsline {subsubsection}{\numberline {7.1.3}Member Function Documentation}{20}{subsubsection.7.1.3}%
-\contentsline {paragraph}{AddLabel()}{20}{section*.32}%
-\contentsline {paragraph}{AddLabels()}{20}{section*.33}%
-\contentsline {paragraph}{AddSubAsset()}{20}{section*.34}%
-\contentsline {paragraph}{CanMove()}{21}{section*.35}%
-\contentsline {paragraph}{CanOpenInEditor()}{21}{section*.36}%
-\contentsline {paragraph}{ClearLabels()}{22}{section*.37}%
-\contentsline {paragraph}{Delete()}{22}{section*.38}%
-\contentsline {paragraph}{Duplicate()}{23}{section*.40}%
-\contentsline {paragraph}{ExportPackage()}{23}{section*.41}%
-\contentsline {paragraph}{ForceSave()}{24}{section*.42}%
-\contentsline {paragraph}{GetFileId()}{24}{section*.43}%
-\contentsline {paragraph}{GetGuid()}{25}{section*.44}%
-\contentsline {paragraph}{GetGuidAndFileId()}{25}{section*.45}%
-\contentsline {paragraph}{GetIcon()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{26}{section*.46}%
-\contentsline {paragraph}{GetIcon()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{26}{section*.47}%
-\contentsline {paragraph}{GetLastErrorMessage()}{27}{section*.48}%
-\contentsline {paragraph}{GetMain$<$ T $>$()}{28}{section*.51}%
-\contentsline {paragraph}{GetMainType()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{28}{section*.52}%
-\contentsline {paragraph}{GetMainType()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{section*.54}%
-\contentsline {paragraph}{GetSubType()}{30}{section*.56}%
-\contentsline {paragraph}{Load$<$ T $>$()}{30}{section*.57}%
-\contentsline {paragraph}{Move()}{31}{section*.58}%
-\contentsline {paragraph}{OpenExternal()}{32}{section*.60}%
-\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{32}{section*.61}%
-\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{33}{section*.62}%
-\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{33}{section*.63}%
-\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{33}{section*.64}%
-\contentsline {paragraph}{operator Object()}{34}{section*.65}%
-\contentsline {paragraph}{RemoveLabel()}{34}{section*.66}%
-\contentsline {paragraph}{RemoveSubAsset()}{34}{section*.67}%
-\contentsline {paragraph}{Rename()}{35}{section*.68}%
-\contentsline {paragraph}{Save()}{36}{section*.70}%
-\contentsline {paragraph}{SaveAs()}{36}{section*.71}%
-\contentsline {paragraph}{SaveAsNew()}{37}{section*.73}%
-\contentsline {paragraph}{SetDirty()}{38}{section*.75}%
-\contentsline {paragraph}{SetLabels()}{38}{section*.76}%
-\contentsline {paragraph}{Trash()}{39}{section*.77}%
-\contentsline {subsubsection}{\numberline {7.1.4}Property Documentation}{39}{subsubsection.7.1.4}%
-\contentsline {paragraph}{ActiveImporter}{39}{section*.79}%
-\contentsline {paragraph}{AssetPath}{40}{section*.80}%
-\contentsline {paragraph}{AvailableImporters}{40}{section*.81}%
-\contentsline {paragraph}{DefaultImporter}{41}{section*.82}%
-\contentsline {paragraph}{Dependencies}{41}{section*.83}%
-\contentsline {paragraph}{DirectDependencies}{41}{section*.84}%
-\contentsline {paragraph}{FileId}{42}{section*.85}%
-\contentsline {paragraph}{Guid}{42}{section*.86}%
-\contentsline {paragraph}{Icon}{42}{section*.87}%
-\contentsline {paragraph}{IsDeleted}{42}{section*.88}%
-\contentsline {paragraph}{IsForeign}{43}{section*.89}%
-\contentsline {paragraph}{IsImporterOverridden}{43}{section*.90}%
-\contentsline {paragraph}{IsNative}{43}{section*.91}%
-\contentsline {paragraph}{IsScene}{44}{section*.92}%
-\contentsline {paragraph}{Labels}{44}{section*.93}%
-\contentsline {paragraph}{MainObject}{44}{section*.94}%
-\contentsline {paragraph}{MainObjectType}{45}{section*.95}%
-\contentsline {paragraph}{MetaPath}{45}{section*.96}%
-\contentsline {paragraph}{OwningBundle}{45}{section*.97}%
-\contentsline {paragraph}{OwningBundleVariant}{46}{section*.98}%
-\contentsline {paragraph}{SubAssets}{46}{section*.99}%
-\contentsline {paragraph}{VisibleSubAssets}{46}{section*.100}%
-\contentsline {subsection}{\numberline {7.2}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bundle Class Reference}{47}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Detailed Description}{48}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Member Function Documentation}{48}{subsubsection.7.2.2}%
-\contentsline {paragraph}{ForceRemove()}{48}{section*.104}%
-\contentsline {paragraph}{GetAllDependencies()}{48}{section*.105}%
-\contentsline {paragraph}{GetAllPaths()}{49}{section*.106}%
-\contentsline {paragraph}{GetDirectDependencies()}{49}{section*.107}%
-\contentsline {paragraph}{GetOwningBundle()}{50}{section*.108}%
-\contentsline {paragraph}{GetOwningBundleVariant()}{50}{section*.109}%
-\contentsline {paragraph}{GetPaths()}{51}{section*.110}%
-\contentsline {paragraph}{Remove()}{51}{section*.111}%
-\contentsline {paragraph}{RemoveUnused()}{52}{section*.112}%
-\contentsline {subsubsection}{\numberline {7.2.3}Property Documentation}{52}{subsubsection.7.2.3}%
-\contentsline {paragraph}{All}{52}{section*.113}%
-\contentsline {paragraph}{Unused}{52}{section*.114}%
-\contentsline {subsection}{\numberline {7.3}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Database Class Reference}{53}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}Detailed Description}{54}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Member Function Documentation}{54}{subsubsection.7.3.2}%
-\contentsline {paragraph}{AllowAutoRefresh()}{54}{section*.119}%
-\contentsline {paragraph}{Contains()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{54}{section*.120}%
-\contentsline {paragraph}{Contains()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{55}{section*.121}%
-\contentsline {paragraph}{DisallowAutoRefresh()}{55}{section*.122}%
-\contentsline {paragraph}{ImportAll()}{56}{section*.123}%
-\contentsline {paragraph}{ReleaseFileHandles()}{57}{section*.124}%
-\contentsline {paragraph}{SaveAll()}{57}{section*.125}%
-\contentsline {paragraph}{UpgradeAllAssetSerializationVersions()}{57}{section*.126}%
-\contentsline {paragraph}{UpgradeAssetSerializationVersion()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{58}{section*.127}%
-\contentsline {paragraph}{UpgradeAssetSerializationVersion()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{58}{section*.128}%
-\contentsline {subsubsection}{\numberline {7.3.3}Property Documentation}{59}{subsubsection.7.3.3}%
-\contentsline {paragraph}{DesiredWorkerCount}{59}{section*.129}%
-\contentsline {paragraph}{DirectoryMonitoring}{59}{section*.130}%
-\contentsline {subsection}{\numberline {7.4}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Database.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cache\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server Class Reference}{60}{subsection.7.4}%
-\contentsline {subsubsection}{\numberline {7.4.1}Detailed Description}{61}{subsubsection.7.4.1}%
-\contentsline {subsubsection}{\numberline {7.4.2}Member Function Documentation}{61}{subsubsection.7.4.2}%
-\contentsline {paragraph}{ApplySettings()}{61}{section*.134}%
-\contentsline {paragraph}{CanConnect()}{61}{section*.135}%
-\contentsline {paragraph}{Disconnect()}{62}{section*.136}%
-\contentsline {paragraph}{ResetReconnectTimer()}{62}{section*.137}%
-\contentsline {subsubsection}{\numberline {7.4.3}Property Documentation}{62}{subsubsection.7.4.3}%
-\contentsline {paragraph}{Address}{62}{section*.138}%
-\contentsline {paragraph}{Connected}{63}{section*.139}%
-\contentsline {paragraph}{ConnectedAddress}{63}{section*.140}%
-\contentsline {paragraph}{DownloadsAllowed}{63}{section*.141}%
-\contentsline {paragraph}{Enabled}{64}{section*.142}%
-\contentsline {paragraph}{NamespacePrefix}{64}{section*.143}%
-\contentsline {paragraph}{Port}{64}{section*.144}%
-\contentsline {paragraph}{UploadsAllowed}{65}{section*.145}%
-\contentsline {subsection}{\numberline {7.5}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dependency Class Reference}{65}{subsection.7.5}%
-\contentsline {subsubsection}{\numberline {7.5.1}Detailed Description}{66}{subsubsection.7.5.1}%
-\contentsline {subsubsection}{\numberline {7.5.2}Member Function Documentation}{66}{subsubsection.7.5.2}%
-\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{66}{section*.148}%
-\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{66}{section*.149}%
-\contentsline {paragraph}{GetDirect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{67}{section*.150}%
-\contentsline {paragraph}{GetDirect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{67}{section*.151}%
-\contentsline {paragraph}{GetHash()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{section*.152}%
-\contentsline {paragraph}{GetHash()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{section*.153}%
-\contentsline {paragraph}{Register()}{69}{section*.154}%
-\contentsline {paragraph}{Unregister()}{69}{section*.155}%
-\contentsline {subsection}{\numberline {7.6}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File Class Reference}{70}{subsection.7.6}%
-\contentsline {subsubsection}{\numberline {7.6.1}Detailed Description}{73}{subsubsection.7.6.1}%
-\contentsline {subsubsection}{\numberline {7.6.2}Member Function Documentation}{73}{subsubsection.7.6.2}%
-\contentsline {paragraph}{BatchEditing()}{73}{section*.160}%
-\contentsline {paragraph}{CanMove()}{74}{section*.161}%
-\contentsline {paragraph}{CanOpenInEditor()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{74}{section*.162}%
-\contentsline {paragraph}{CanOpenInEditor()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{75}{section*.163}%
-\contentsline {paragraph}{Copy()}{75}{section*.164}%
-\contentsline {paragraph}{CopyAsNew()}{76}{section*.165}%
-\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{77}{section*.166}%
-\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{77}{section*.168}%
-\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{78}{section*.169}%
-\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{79}{section*.170}%
-\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{79}{section*.171}%
-\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{80}{section*.172}%
-\contentsline {paragraph}{CreateOrLoad$<$ T $>$()}{80}{section*.173}%
-\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{81}{section*.174}%
-\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{82}{section*.175}%
-\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{82}{section*.176}%
-\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{83}{section*.177}%
-\contentsline {paragraph}{Find()}{83}{section*.179}%
-\contentsline {paragraph}{FindGuids()}{84}{section*.180}%
-\contentsline {paragraph}{FindPaths()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{85}{section*.181}%
-\contentsline {paragraph}{FindPaths()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{85}{section*.182}%
-\contentsline {paragraph}{ForceSave()}{86}{section*.183}%
-\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{86}{section*.184}%
-\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{87}{section*.186}%
-\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{88}{section*.187}%
-\contentsline {paragraph}{ImportAndLoad$<$ T $>$()}{88}{section*.188}%
-\contentsline {paragraph}{Load$<$ T $>$()}{89}{section*.190}%
-\contentsline {paragraph}{LoadAsync()}{90}{section*.191}%
-\contentsline {paragraph}{LoadMain$<$ T $>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{91}{section*.192}%
-\contentsline {paragraph}{LoadMain$<$ T $>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{92}{section*.193}%
-\contentsline {paragraph}{LoadOrCreate$<$ T $>$()}{93}{section*.195}%
-\contentsline {paragraph}{Move()}{94}{section*.197}%
-\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{95}{section*.199}%
-\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{96}{section*.200}%
-\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{96}{section*.201}%
-\contentsline {paragraph}{Rename()}{97}{section*.202}%
-\contentsline {paragraph}{Save()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{97}{section*.204}%
-\contentsline {paragraph}{Save()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{98}{section*.205}%
-\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{98}{section*.206}%
-\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{99}{section*.207}%
-\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{99}{section*.208}%
-\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{100}{section*.209}%
+\contentsline {paragraph}{AddLabel()}{20}{section*.34}%
+\contentsline {paragraph}{AddLabels()}{21}{section*.35}%
+\contentsline {paragraph}{AddSubAsset()}{21}{section*.36}%
+\contentsline {paragraph}{CanMove()}{22}{section*.37}%
+\contentsline {paragraph}{CanOpenInEditor()}{22}{section*.38}%
+\contentsline {paragraph}{ClearLabels()}{23}{section*.39}%
+\contentsline {paragraph}{Delete()}{23}{section*.40}%
+\contentsline {paragraph}{Duplicate()}{24}{section*.42}%
+\contentsline {paragraph}{ExportPackage()}{24}{section*.43}%
+\contentsline {paragraph}{ForceSave()}{24}{section*.44}%
+\contentsline {paragraph}{GetIcon()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{24}{section*.45}%
+\contentsline {paragraph}{GetIcon()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{25}{section*.46}%
+\contentsline {paragraph}{GetLastErrorMessage()}{25}{section*.47}%
+\contentsline {paragraph}{GetMain$<$ T $>$()}{26}{section*.50}%
+\contentsline {paragraph}{Load$<$ T $>$()}{27}{section*.51}%
+\contentsline {paragraph}{Move()}{27}{section*.52}%
+\contentsline {paragraph}{OpenExternal()}{28}{section*.54}%
+\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{29}{section*.55}%
+\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{29}{section*.56}%
+\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{29}{section*.57}%
+\contentsline {paragraph}{operator Asset()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{30}{section*.58}%
+\contentsline {paragraph}{operator Object()}{30}{section*.59}%
+\contentsline {paragraph}{RemoveLabel()}{30}{section*.60}%
+\contentsline {paragraph}{RemoveSubAsset()}{31}{section*.61}%
+\contentsline {paragraph}{Rename()}{31}{section*.62}%
+\contentsline {paragraph}{Save()}{32}{section*.64}%
+\contentsline {paragraph}{SaveAs()}{32}{section*.65}%
+\contentsline {paragraph}{SaveAsNew()}{33}{section*.67}%
+\contentsline {paragraph}{SetDirty()}{34}{section*.69}%
+\contentsline {paragraph}{SetLabels()}{34}{section*.70}%
+\contentsline {paragraph}{Trash()}{35}{section*.71}%
+\contentsline {subsubsection}{\numberline {7.1.4}Property Documentation}{36}{subsubsection.7.1.4}%
+\contentsline {paragraph}{ActiveImporter}{36}{section*.73}%
+\contentsline {paragraph}{AssetPath}{36}{section*.74}%
+\contentsline {paragraph}{AvailableImporters}{36}{section*.75}%
+\contentsline {paragraph}{DefaultImporter}{37}{section*.76}%
+\contentsline {paragraph}{Dependencies}{37}{section*.77}%
+\contentsline {paragraph}{DirectDependencies}{37}{section*.78}%
+\contentsline {paragraph}{FileId}{38}{section*.79}%
+\contentsline {paragraph}{Guid}{38}{section*.80}%
+\contentsline {paragraph}{Icon}{38}{section*.81}%
+\contentsline {paragraph}{IsDeleted}{38}{section*.82}%
+\contentsline {paragraph}{IsForeign}{39}{section*.83}%
+\contentsline {paragraph}{IsImporterOverridden}{39}{section*.84}%
+\contentsline {paragraph}{IsNative}{39}{section*.85}%
+\contentsline {paragraph}{IsScene}{40}{section*.86}%
+\contentsline {paragraph}{Labels}{40}{section*.87}%
+\contentsline {paragraph}{MainObject}{40}{section*.88}%
+\contentsline {paragraph}{MainObjectType}{41}{section*.89}%
+\contentsline {paragraph}{MetaPath}{41}{section*.90}%
+\contentsline {paragraph}{OwningBundle}{41}{section*.91}%
+\contentsline {paragraph}{OwningBundleVariant}{42}{section*.92}%
+\contentsline {paragraph}{SubAssets}{42}{section*.93}%
+\contentsline {paragraph}{VisibleSubAssets}{42}{section*.94}%
+\contentsline {subsection}{\numberline {7.2}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bundle Class Reference}{43}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Detailed Description}{44}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Member Function Documentation}{44}{subsubsection.7.2.2}%
+\contentsline {paragraph}{ForceRemove()}{44}{section*.98}%
+\contentsline {paragraph}{GetAllDependencies()}{44}{section*.99}%
+\contentsline {paragraph}{GetAllPaths()}{45}{section*.100}%
+\contentsline {paragraph}{GetDirectDependencies()}{45}{section*.101}%
+\contentsline {paragraph}{GetOwningBundle()}{46}{section*.102}%
+\contentsline {paragraph}{GetOwningBundleVariant()}{46}{section*.103}%
+\contentsline {paragraph}{GetPaths()}{47}{section*.104}%
+\contentsline {paragraph}{Remove()}{47}{section*.105}%
+\contentsline {paragraph}{RemoveUnused()}{48}{section*.106}%
+\contentsline {subsubsection}{\numberline {7.2.3}Property Documentation}{48}{subsubsection.7.2.3}%
+\contentsline {paragraph}{All}{48}{section*.107}%
+\contentsline {paragraph}{Unused}{48}{section*.108}%
+\contentsline {subsection}{\numberline {7.3}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Database Class Reference}{49}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Detailed Description}{50}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Member Function Documentation}{50}{subsubsection.7.3.2}%
+\contentsline {paragraph}{AllowAutoRefresh()}{50}{section*.113}%
+\contentsline {paragraph}{Contains()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{50}{section*.114}%
+\contentsline {paragraph}{Contains()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{51}{section*.115}%
+\contentsline {paragraph}{DisallowAutoRefresh()}{51}{section*.116}%
+\contentsline {paragraph}{ImportAll()}{52}{section*.117}%
+\contentsline {paragraph}{ReleaseFileHandles()}{53}{section*.118}%
+\contentsline {paragraph}{SaveAll()}{53}{section*.119}%
+\contentsline {paragraph}{UpgradeAllAssetSerializationVersions()}{53}{section*.120}%
+\contentsline {paragraph}{UpgradeAssetSerializationVersion()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{54}{section*.121}%
+\contentsline {paragraph}{UpgradeAssetSerializationVersion()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{54}{section*.122}%
+\contentsline {subsubsection}{\numberline {7.3.3}Property Documentation}{55}{subsubsection.7.3.3}%
+\contentsline {paragraph}{DesiredWorkerCount}{55}{section*.123}%
+\contentsline {paragraph}{DirectoryMonitoring}{55}{section*.124}%
+\contentsline {subsection}{\numberline {7.4}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Database.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cache\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server Class Reference}{56}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Detailed Description}{57}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Member Function Documentation}{57}{subsubsection.7.4.2}%
+\contentsline {paragraph}{ApplySettings()}{57}{section*.128}%
+\contentsline {paragraph}{CanConnect()}{57}{section*.129}%
+\contentsline {paragraph}{Disconnect()}{58}{section*.130}%
+\contentsline {paragraph}{ResetReconnectTimer()}{58}{section*.131}%
+\contentsline {subsubsection}{\numberline {7.4.3}Property Documentation}{58}{subsubsection.7.4.3}%
+\contentsline {paragraph}{Address}{58}{section*.132}%
+\contentsline {paragraph}{Connected}{59}{section*.133}%
+\contentsline {paragraph}{ConnectedAddress}{59}{section*.134}%
+\contentsline {paragraph}{DownloadsAllowed}{59}{section*.135}%
+\contentsline {paragraph}{Enabled}{60}{section*.136}%
+\contentsline {paragraph}{NamespacePrefix}{60}{section*.137}%
+\contentsline {paragraph}{Port}{60}{section*.138}%
+\contentsline {paragraph}{UploadsAllowed}{61}{section*.139}%
+\contentsline {subsection}{\numberline {7.5}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dependency Class Reference}{61}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Detailed Description}{62}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}Member Function Documentation}{62}{subsubsection.7.5.2}%
+\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{62}{section*.142}%
+\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{62}{section*.143}%
+\contentsline {paragraph}{GetDirect()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{63}{section*.144}%
+\contentsline {paragraph}{GetDirect()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{63}{section*.145}%
+\contentsline {paragraph}{GetHash()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{64}{section*.146}%
+\contentsline {paragraph}{GetHash()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{64}{section*.147}%
+\contentsline {paragraph}{Register()}{65}{section*.148}%
+\contentsline {paragraph}{Unregister()}{65}{section*.149}%
+\contentsline {subsection}{\numberline {7.6}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File Class Reference}{66}{subsection.7.6}%
+\contentsline {subsubsection}{\numberline {7.6.1}Detailed Description}{69}{subsubsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.2}Member Function Documentation}{69}{subsubsection.7.6.2}%
+\contentsline {paragraph}{BatchEditing()}{69}{section*.154}%
+\contentsline {paragraph}{CanMove()}{70}{section*.155}%
+\contentsline {paragraph}{CanOpenInEditor()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{70}{section*.156}%
+\contentsline {paragraph}{CanOpenInEditor()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{71}{section*.157}%
+\contentsline {paragraph}{Copy()}{71}{section*.158}%
+\contentsline {paragraph}{CopyAsNew()}{72}{section*.159}%
+\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{73}{section*.160}%
+\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{73}{section*.162}%
+\contentsline {paragraph}{Create()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{74}{section*.163}%
+\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{75}{section*.164}%
+\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{75}{section*.165}%
+\contentsline {paragraph}{CreateAsNew()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{76}{section*.166}%
+\contentsline {paragraph}{CreateOrLoad$<$ T $>$()}{76}{section*.167}%
+\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{77}{section*.168}%
+\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{78}{section*.169}%
+\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{78}{section*.170}%
+\contentsline {paragraph}{Delete()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{79}{section*.171}%
+\contentsline {paragraph}{Find()}{79}{section*.173}%
+\contentsline {paragraph}{FindGuids()}{80}{section*.174}%
+\contentsline {paragraph}{FindPaths()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{81}{section*.175}%
+\contentsline {paragraph}{FindPaths()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{section*.176}%
+\contentsline {paragraph}{ForceSave()}{82}{section*.177}%
+\contentsline {paragraph}{GetFileId()}{82}{section*.178}%
+\contentsline {paragraph}{GetGuid()}{83}{section*.179}%
+\contentsline {paragraph}{GetGuidAndFileId()}{84}{section*.180}%
+\contentsline {paragraph}{GetMainType()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{84}{section*.181}%
+\contentsline {paragraph}{GetMainType()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{85}{section*.183}%
+\contentsline {paragraph}{GetSubType()}{86}{section*.185}%
+\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{86}{section*.186}%
+\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{87}{section*.188}%
+\contentsline {paragraph}{Import()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{88}{section*.189}%
+\contentsline {paragraph}{ImportAndLoad$<$ T $>$()}{88}{section*.190}%
+\contentsline {paragraph}{Load$<$ T $>$()}{89}{section*.192}%
+\contentsline {paragraph}{LoadAsync()}{90}{section*.193}%
+\contentsline {paragraph}{LoadMain$<$ T $>$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{91}{section*.194}%
+\contentsline {paragraph}{LoadMain$<$ T $>$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{92}{section*.195}%
+\contentsline {paragraph}{LoadOrCreate$<$ T $>$()}{93}{section*.197}%
+\contentsline {paragraph}{Move()}{94}{section*.199}%
+\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{95}{section*.201}%
+\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{96}{section*.202}%
+\contentsline {paragraph}{OpenExternal()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{96}{section*.203}%
+\contentsline {paragraph}{Rename()}{97}{section*.204}%
+\contentsline {paragraph}{Save()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{97}{section*.206}%
+\contentsline {paragraph}{Save()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{98}{section*.207}%
+\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{98}{section*.208}%
+\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{99}{section*.209}%
+\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{99}{section*.210}%
+\contentsline {paragraph}{Trash()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{100}{section*.211}%
 \contentsline {subsubsection}{\numberline {7.6.3}Property Documentation}{101}{subsubsection.7.6.3}%
-\contentsline {paragraph}{PathsNotDeleted}{101}{section*.211}%
+\contentsline {paragraph}{PathsNotDeleted}{101}{section*.213}%
 \contentsline {subsection}{\numberline {7.7}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Importer Class Reference}{101}{subsection.7.7}%
 \contentsline {subsubsection}{\numberline {7.7.1}Detailed Description}{103}{subsubsection.7.7.1}%
 \contentsline {subsubsection}{\numberline {7.7.2}Member Function Documentation}{103}{subsubsection.7.7.2}%
-\contentsline {paragraph}{ApplySettings()}{103}{section*.214}%
-\contentsline {paragraph}{ClearOverride()}{103}{section*.215}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{104}{section*.216}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{104}{section*.217}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{105}{section*.218}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{106}{section*.219}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{106}{section*.220}%
-\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{107}{section*.221}%
-\contentsline {paragraph}{GetAvailable()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{108}{section*.222}%
-\contentsline {paragraph}{GetAvailable()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{108}{section*.223}%
-\contentsline {paragraph}{GetDefault()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{109}{section*.224}%
-\contentsline {paragraph}{GetDefault()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{109}{section*.225}%
-\contentsline {paragraph}{GetOverride()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{110}{section*.226}%
-\contentsline {paragraph}{GetOverride()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{110}{section*.227}%
-\contentsline {paragraph}{IsOverridden()}{111}{section*.228}%
-\contentsline {paragraph}{SetOverride$<$ T $>$()}{111}{section*.229}%
+\contentsline {paragraph}{ApplySettings()}{103}{section*.216}%
+\contentsline {paragraph}{ClearOverride()}{103}{section*.217}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{104}{section*.218}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{104}{section*.219}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{105}{section*.220}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{106}{section*.221}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{106}{section*.222}%
+\contentsline {paragraph}{GetActive()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{107}{section*.223}%
+\contentsline {paragraph}{GetAvailable()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{108}{section*.224}%
+\contentsline {paragraph}{GetAvailable()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{108}{section*.225}%
+\contentsline {paragraph}{GetDefault()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{109}{section*.226}%
+\contentsline {paragraph}{GetDefault()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{109}{section*.227}%
+\contentsline {paragraph}{GetOverride()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{110}{section*.228}%
+\contentsline {paragraph}{GetOverride()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{110}{section*.229}%
+\contentsline {paragraph}{IsOverridden()}{111}{section*.230}%
+\contentsline {paragraph}{SetOverride$<$ T $>$()}{111}{section*.231}%
 \contentsline {subsection}{\numberline {7.8}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Label Class Reference}{112}{subsection.7.8}%
 \contentsline {subsubsection}{\numberline {7.8.1}Detailed Description}{113}{subsubsection.7.8.1}%
 \contentsline {subsubsection}{\numberline {7.8.2}Member Function Documentation}{113}{subsubsection.7.8.2}%
-\contentsline {paragraph}{Add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{113}{section*.232}%
-\contentsline {paragraph}{Add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{114}{section*.234}%
-\contentsline {paragraph}{ClearAll()}{115}{section*.236}%
-\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{115}{section*.237}%
-\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{116}{section*.239}%
-\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{116}{section*.240}%
-\contentsline {paragraph}{Remove()}{117}{section*.241}%
-\contentsline {paragraph}{SetAll()}{118}{section*.243}%
+\contentsline {paragraph}{Add()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{113}{section*.234}%
+\contentsline {paragraph}{Add()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{114}{section*.236}%
+\contentsline {paragraph}{ClearAll()}{115}{section*.238}%
+\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{115}{section*.239}%
+\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{116}{section*.241}%
+\contentsline {paragraph}{GetAll()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{116}{section*.242}%
+\contentsline {paragraph}{Remove()}{117}{section*.243}%
+\contentsline {paragraph}{SetAll()}{118}{section*.245}%
 \contentsline {subsection}{\numberline {7.9}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Package Class Reference}{119}{subsection.7.9}%
 \contentsline {subsubsection}{\numberline {7.9.1}Detailed Description}{119}{subsubsection.7.9.1}%
 \contentsline {subsubsection}{\numberline {7.9.2}Member Function Documentation}{119}{subsubsection.7.9.2}%
-\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{119}{section*.247}%
-\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{120}{section*.248}%
-\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{120}{section*.249}%
-\contentsline {paragraph}{Import()}{121}{section*.250}%
-\contentsline {paragraph}{ImportInteractive()}{121}{section*.251}%
+\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{119}{section*.249}%
+\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{120}{section*.250}%
+\contentsline {paragraph}{Export()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{120}{section*.251}%
+\contentsline {paragraph}{Import()}{121}{section*.252}%
+\contentsline {paragraph}{ImportInteractive()}{121}{section*.253}%
 \contentsline {subsection}{\numberline {7.10}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Path Class Reference}{122}{subsection.7.10}%
 \contentsline {subsubsection}{\numberline {7.10.1}Detailed Description}{127}{subsubsection.7.10.1}%
 \contentsline {subsubsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{127}{subsubsection.7.10.2}%
-\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{127}{section*.257}%
-\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{128}{section*.258}%
-\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{129}{section*.259}%
+\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{127}{section*.259}%
+\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{128}{section*.260}%
+\contentsline {paragraph}{Path()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{129}{section*.261}%
 \contentsline {subsubsection}{\numberline {7.10.3}Member Function Documentation}{129}{subsubsection.7.10.3}%
-\contentsline {paragraph}{CreateFolders()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{129}{section*.261}%
-\contentsline {paragraph}{CreateFolders()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{130}{section*.262}%
-\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{131}{section*.264}%
-\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{132}{section*.266}%
-\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{132}{section*.267}%
-\contentsline {paragraph}{FileExists()}{133}{section*.269}%
-\contentsline {paragraph}{FolderExists()}{134}{section*.271}%
-\contentsline {paragraph}{FromMeta()}{134}{section*.273}%
-\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{135}{section*.274}%
-\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{136}{section*.276}%
-\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{137}{section*.278}%
-\contentsline {paragraph}{GetGuid()}{138}{section*.279}%
-\contentsline {paragraph}{GetHashCode()}{138}{section*.280}%
-\contentsline {paragraph}{GetScene()}{138}{section*.281}%
-\contentsline {paragraph}{GetSubFolders()}{139}{section*.282}%
-\contentsline {paragraph}{IsValid()}{139}{section*.283}%
-\contentsline {paragraph}{OpenExternal()}{140}{section*.284}%
-\contentsline {paragraph}{operator Path()}{140}{section*.285}%
-\contentsline {paragraph}{operator String()}{141}{section*.286}%
-\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{141}{section*.287}%
-\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{141}{section*.288}%
-\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{142}{section*.289}%
-\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{142}{section*.290}%
-\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{143}{section*.292}%
-\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{143}{section*.293}%
-\contentsline {paragraph}{Rename()}{144}{section*.294}%
-\contentsline {paragraph}{ToMeta()}{144}{section*.295}%
-\contentsline {paragraph}{ToString()}{145}{section*.296}%
-\contentsline {paragraph}{ToStrings()}{145}{section*.297}%
-\contentsline {paragraph}{UniquifyFileName()}{145}{section*.298}%
+\contentsline {paragraph}{CreateFolders()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{129}{section*.263}%
+\contentsline {paragraph}{CreateFolders()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{130}{section*.264}%
+\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{131}{section*.266}%
+\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{132}{section*.268}%
+\contentsline {paragraph}{Equals()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{132}{section*.269}%
+\contentsline {paragraph}{FileExists()}{133}{section*.271}%
+\contentsline {paragraph}{FolderExists()}{134}{section*.273}%
+\contentsline {paragraph}{FromMeta()}{134}{section*.275}%
+\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{135}{section*.276}%
+\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{136}{section*.278}%
+\contentsline {paragraph}{Get()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{137}{section*.280}%
+\contentsline {paragraph}{GetGuid()}{138}{section*.281}%
+\contentsline {paragraph}{GetHashCode()}{138}{section*.282}%
+\contentsline {paragraph}{GetScene()}{138}{section*.283}%
+\contentsline {paragraph}{GetSubFolders()}{139}{section*.284}%
+\contentsline {paragraph}{IsValid()}{139}{section*.285}%
+\contentsline {paragraph}{OpenExternal()}{140}{section*.286}%
+\contentsline {paragraph}{operator Path()}{140}{section*.287}%
+\contentsline {paragraph}{operator String()}{141}{section*.288}%
+\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{141}{section*.289}%
+\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{141}{section*.290}%
+\contentsline {paragraph}{operator"!=()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{142}{section*.291}%
+\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{142}{section*.292}%
+\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{143}{section*.294}%
+\contentsline {paragraph}{operator==()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{143}{section*.295}%
+\contentsline {paragraph}{Rename()}{144}{section*.296}%
+\contentsline {paragraph}{ToMeta()}{144}{section*.297}%
+\contentsline {paragraph}{ToString()}{145}{section*.298}%
+\contentsline {paragraph}{ToStrings()}{145}{section*.299}%
+\contentsline {paragraph}{UniquifyFileName()}{145}{section*.300}%
 \contentsline {subsubsection}{\numberline {7.10.4}Property Documentation}{146}{subsubsection.7.10.4}%
-\contentsline {paragraph}{AssetPath}{146}{section*.299}%
-\contentsline {paragraph}{Exists}{146}{section*.300}%
-\contentsline {paragraph}{ExistsInFileSystem}{147}{section*.301}%
-\contentsline {paragraph}{Extension}{147}{section*.302}%
-\contentsline {paragraph}{FileName}{147}{section*.303}%
-\contentsline {paragraph}{FileNameWithoutExtension}{148}{section*.304}%
-\contentsline {paragraph}{FolderPath}{148}{section*.305}%
-\contentsline {paragraph}{FullAssetsPath}{148}{section*.306}%
-\contentsline {paragraph}{FullLibraryPath}{149}{section*.307}%
-\contentsline {paragraph}{FullLogsPath}{149}{section*.308}%
-\contentsline {paragraph}{FullPackagesPath}{149}{section*.309}%
-\contentsline {paragraph}{FullPath}{149}{section*.310}%
-\contentsline {paragraph}{FullProjectPath}{149}{section*.311}%
-\contentsline {paragraph}{FullProjectSettingsPath}{150}{section*.312}%
-\contentsline {paragraph}{FullProjectTempPath}{150}{section*.313}%
-\contentsline {paragraph}{FullUserSettingsPath}{150}{section*.314}%
-\contentsline {paragraph}{Guid}{150}{section*.315}%
-\contentsline {paragraph}{MetaPath}{151}{section*.316}%
-\contentsline {paragraph}{SubFolders}{151}{section*.317}%
-\contentsline {paragraph}{UniqueFilePath}{151}{section*.318}%
+\contentsline {paragraph}{AssetPath}{146}{section*.301}%
+\contentsline {paragraph}{Exists}{146}{section*.302}%
+\contentsline {paragraph}{ExistsInFileSystem}{147}{section*.303}%
+\contentsline {paragraph}{Extension}{147}{section*.304}%
+\contentsline {paragraph}{FileName}{147}{section*.305}%
+\contentsline {paragraph}{FileNameWithoutExtension}{148}{section*.306}%
+\contentsline {paragraph}{FolderPath}{148}{section*.307}%
+\contentsline {paragraph}{FullAssetsPath}{148}{section*.308}%
+\contentsline {paragraph}{FullLibraryPath}{149}{section*.309}%
+\contentsline {paragraph}{FullLogsPath}{149}{section*.310}%
+\contentsline {paragraph}{FullPackagesPath}{149}{section*.311}%
+\contentsline {paragraph}{FullPath}{149}{section*.312}%
+\contentsline {paragraph}{FullProjectPath}{149}{section*.313}%
+\contentsline {paragraph}{FullProjectSettingsPath}{150}{section*.314}%
+\contentsline {paragraph}{FullProjectTempPath}{150}{section*.315}%
+\contentsline {paragraph}{FullUserSettingsPath}{150}{section*.316}%
+\contentsline {paragraph}{Guid}{150}{section*.317}%
+\contentsline {paragraph}{MetaPath}{151}{section*.318}%
+\contentsline {paragraph}{SubFolders}{151}{section*.319}%
+\contentsline {paragraph}{UniqueFilePath}{151}{section*.320}%
 \contentsline {subsection}{\numberline {7.11}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status Class Reference}{152}{subsection.7.11}%
 \contentsline {subsubsection}{\numberline {7.11.1}Detailed Description}{152}{subsubsection.7.11.1}%
 \contentsline {subsubsection}{\numberline {7.11.2}Member Function Documentation}{153}{subsubsection.7.11.2}%
-\contentsline {paragraph}{IsForeign()}{153}{section*.321}%
-\contentsline {paragraph}{IsImported()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{153}{section*.322}%
-\contentsline {paragraph}{IsImported()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{154}{section*.323}%
-\contentsline {paragraph}{IsLoaded()}{154}{section*.324}%
-\contentsline {paragraph}{IsMain()}{155}{section*.325}%
-\contentsline {paragraph}{IsNative()}{155}{section*.326}%
-\contentsline {paragraph}{IsScene()}{156}{section*.327}%
-\contentsline {paragraph}{IsSub()}{156}{section*.328}%
+\contentsline {paragraph}{IsForeign()}{153}{section*.323}%
+\contentsline {paragraph}{IsImported()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{153}{section*.324}%
+\contentsline {paragraph}{IsImported()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{154}{section*.325}%
+\contentsline {paragraph}{IsLoaded()}{154}{section*.326}%
+\contentsline {paragraph}{IsMain()}{155}{section*.327}%
+\contentsline {paragraph}{IsNative()}{155}{section*.328}%
+\contentsline {paragraph}{IsScene()}{156}{section*.329}%
+\contentsline {paragraph}{IsSub()}{156}{section*.330}%
 \contentsline {subsection}{\numberline {7.12}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sub\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Asset Class Reference}{157}{subsection.7.12}%
 \contentsline {subsubsection}{\numberline {7.12.1}Detailed Description}{158}{subsubsection.7.12.1}%
 \contentsline {subsubsection}{\numberline {7.12.2}Member Function Documentation}{158}{subsubsection.7.12.2}%
-\contentsline {paragraph}{Add()}{158}{section*.331}%
-\contentsline {paragraph}{Extract()}{158}{section*.332}%
-\contentsline {paragraph}{LoadAll()}{159}{section*.333}%
-\contentsline {paragraph}{LoadVisible()}{160}{section*.334}%
-\contentsline {paragraph}{Remove()}{160}{section*.335}%
-\contentsline {paragraph}{SetMain()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{161}{section*.336}%
-\contentsline {paragraph}{SetMain()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{161}{section*.337}%
+\contentsline {paragraph}{Add()}{158}{section*.333}%
+\contentsline {paragraph}{Extract()}{158}{section*.334}%
+\contentsline {paragraph}{LoadAll()}{159}{section*.335}%
+\contentsline {paragraph}{LoadVisible()}{160}{section*.336}%
+\contentsline {paragraph}{Remove()}{160}{section*.337}%
+\contentsline {paragraph}{SetMain()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{161}{section*.338}%
+\contentsline {paragraph}{SetMain()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{161}{section*.339}%
 \contentsline {subsection}{\numberline {7.13}Asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Version\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{162}{subsection.7.13}%
 \contentsline {subsubsection}{\numberline {7.13.1}Detailed Description}{163}{subsubsection.7.13.1}%
 \contentsline {subsubsection}{\numberline {7.13.2}Member Function Documentation}{164}{subsubsection.7.13.2}%
-\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{164}{section*.341}%
-\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{165}{section*.343}%
-\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{165}{section*.344}%
-\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{166}{section*.346}%
-\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{167}{section*.347}%
-\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{167}{section*.348}%
-\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{168}{section*.349}%
-\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{169}{section*.350}%
-\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{169}{section*.351}%
-\contentsline {paragraph}{IsMetaEditable()}{170}{section*.352}%
-\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{170}{section*.353}%
-\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{171}{section*.354}%
-\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{171}{section*.355}%
-\contentsline {paragraph}{MakeEditableInteractive()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{172}{section*.356}%
-\contentsline {paragraph}{MakeEditableInteractive()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{173}{section*.357}%
+\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{164}{section*.343}%
+\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{165}{section*.345}%
+\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{165}{section*.346}%
+\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{166}{section*.348}%
+\contentsline {paragraph}{CanMakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{167}{section*.349}%
+\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{167}{section*.350}%
+\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{168}{section*.351}%
+\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{169}{section*.352}%
+\contentsline {paragraph}{IsEditable()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{169}{section*.353}%
+\contentsline {paragraph}{IsMetaEditable()}{170}{section*.354}%
+\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{170}{section*.355}%
+\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{171}{section*.356}%
+\contentsline {paragraph}{MakeEditable()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{171}{section*.357}%
+\contentsline {paragraph}{MakeEditableInteractive()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{172}{section*.358}%
+\contentsline {paragraph}{MakeEditableInteractive()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{173}{section*.359}%
 \contentsline {subsection}{\numberline {7.14}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Load\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception Class Reference}{173}{subsection.7.14}%
 \contentsline {subsubsection}{\numberline {7.14.1}Detailed Description}{175}{subsubsection.7.14.1}%
 \contentsline {subsubsection}{\numberline {7.14.2}Constructor \& Destructor Documentation}{175}{subsubsection.7.14.2}%
-\contentsline {paragraph}{AssetLoadException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{175}{section*.361}%
-\contentsline {paragraph}{AssetLoadException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{175}{section*.362}%
-\contentsline {section}{Index}{177}{section*.363}%
+\contentsline {paragraph}{AssetLoadException()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{175}{section*.363}%
+\contentsline {paragraph}{AssetLoadException()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{175}{section*.364}%
+\contentsline {section}{Index}{177}{section*.365}%

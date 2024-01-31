@@ -17,74 +17,25 @@
 \DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00013}00013\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ String\ s\_LastErrorMessage\ =\ String.Empty;}
 \DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00025}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetMainAssetTypeAtPath(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00042}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{GetMainType}}(GUID\ guid)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00044}00044\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ It's\ also\ available\ in\ 2022.2\ but\ not\ in\ the\ early\ patch\ versions\ (eg\ 7f1\ onwards)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00046}00046\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(guid));}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00048}00048\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00062}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{GetSubType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int64\ fileId)\ =>\ AssetDatabase.GetTypeFromPathAndFileID(path,\ fileId);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ValueTuple\ makes\ doxygen\ accept\ it\ as\ documented,\ see:\ https://github.com/doxygen/doxygen/issues/9618}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00080}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ValueTuple<GUID,\ Int64>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{GetGuidAndFileId}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00103}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{00103}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUID\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{GetGuid}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00107}00107\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{new}\ GUID();}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00126}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{00126}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Int64\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{GetFileId}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00145}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}{00145}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Texture2D\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}{GetIcon}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetCachedIcon(path)\ as\ Texture2D;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00146}00146\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00156}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{00156}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Texture2D\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{GetIcon}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{GetIcon}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00157}00157\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00172}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{00172}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{GetLastErrorMessage}}()\ =>\ s\_LastErrorMessage;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00173}00173\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetLastErrorMessage(String\ message)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ s\_LastErrorMessage\ =\ message\ !=\ \textcolor{keyword}{null}\ ?\ message\ :\ String.Empty;}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00176}00176\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ Boolean\ Succeeded(String\ possibleErrorMessage)}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(possibleErrorMessage);}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{GetLastErrorMessage}}());}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00182}00182\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00183}00183\ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00027}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Texture2D\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}{GetIcon}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetCachedIcon(path)\ as\ Texture2D;}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00038}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Texture2D\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{GetIcon}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{GetIcon}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00054}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{GetLastErrorMessage}}()\ =>\ s\_LastErrorMessage;}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetLastErrorMessage(String\ message)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ s\_LastErrorMessage\ =\ message\ !=\ \textcolor{keyword}{null}\ ?\ message\ :\ String.Empty;}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ Boolean\ Succeeded(String\ possibleErrorMessage)}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(possibleErrorMessage);}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.IsNullOrEmpty(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{GetLastErrorMessage}}());}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_static_8cs_source_l00065}00065\ \}}
 
 \end{DoxyCode}
