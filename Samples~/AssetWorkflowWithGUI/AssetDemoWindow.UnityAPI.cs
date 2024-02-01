@@ -42,6 +42,7 @@ public partial class AssetDemoWindow
 				AssetDatabase.CreateFolder(parentFolder, "Sample Assets"); // hardcoded!
 
 			var createTime = $"{Time.realtimeSinceStartupAsDouble:F3}";
+			createTime = createTime.Replace(".", "-").Replace(",", "-");
 			var assetPath = $"{DemoAssetsPath}/Mesh #{i}-{createTime}.mesh";
 
 			AssetDatabase.CreateAsset(mesh, assetPath);
@@ -147,7 +148,15 @@ public partial class AssetDemoWindow
 					var filenameNoExt = Path.GetFileNameWithoutExtension(sourcePath);
 					var dupePath = $"{DemoAssetsPath}/{filenameNoExt} {suffix}.mesh";
 					dupePath = AssetDatabase.GenerateUniqueAssetPath(dupePath);
+#if UNITY_2022_1_OR_NEWER
 					AssetDatabase.CopyAsset(sourcePath, dupePath);
+#else
+					// in Unity 2021 we have to load, clone and create instead
+					// because object and file name have to match (likely a bug in that version)
+					var original = AssetDatabase.LoadAssetAtPath<Object>(sourcePath);
+					var copy = Instantiate(original);
+					AssetDatabase.CreateAsset(copy, dupePath);
+#endif
 
 					// must defer loading created assets to post-batchediting
 					sourcePaths.Add(sourcePath);

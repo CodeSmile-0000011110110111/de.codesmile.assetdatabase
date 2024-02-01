@@ -30,6 +30,7 @@ public partial class AssetDemoWindow
 			// Now we create an asset and stuff it all in there for illustration purposes
 			// Note: meshes require the .mesh extension
 			var createTime = $"{Time.realtimeSinceStartupAsDouble:F3}";
+			createTime = createTime.Replace(".", "-").Replace(",", "-");
 			var assetPath = $"{DemoAssetsPath}/Mesh #{i}-{createTime}.mesh";
 
 			var createdAsset = new Asset(mesh, assetPath);
@@ -60,8 +61,8 @@ public partial class AssetDemoWindow
 			if (sourceAsset.VisibleSubAssets.Length > 0)
 			{
 				// create a duplicate
-				var filenameNoExt = assetPath.FileNameWithoutExtension;
-				var dupePath = $"{DemoAssetsPath}/{filenameNoExt} no sub-assets.mesh";
+				var filenameNoExt = $"{assetPath.FileNameWithoutExtension} no sub-assets";
+				var dupePath = $"{DemoAssetsPath}/{filenameNoExt}.mesh";
 				var dupeAsset = sourceAsset.SaveAsNew(dupePath);
 
 				// remove sub-assets from dupe
