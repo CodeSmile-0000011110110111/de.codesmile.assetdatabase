@@ -318,8 +318,8 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
 			public static void
-				Import([NotNull] Path[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
-				Import(Path.ToStrings(paths), options);
+				Import([NotNull] IEnumerable<Path> paths, ImportAssetOptions options = ImportAssetOptions.Default) =>
+				Import(Path.ToStrings(paths.ToArray()), options);
 
 			/// <summary>
 			///     Imports multiple paths that were created or modified 'externally'.
@@ -335,7 +335,7 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html">AssetDatabase.ImportAsset</a>
 			/// </seealso>
 			public static void
-				Import([NotNull] String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) => BatchEditing(
+				Import([NotNull] IEnumerable<string> paths, ImportAssetOptions options = ImportAssetOptions.Default) => BatchEditing(
 				() =>
 				{
 					foreach (var path in paths)
