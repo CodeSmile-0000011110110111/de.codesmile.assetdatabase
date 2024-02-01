@@ -1,6 +1,6 @@
 # Change Log
 
-#### v1.9.0 - Jan 31, 2024
+#### v1.9.1 - Feb 01, 2024
 
 - API Changes: These static methods have been MOVED from **Asset** to **Asset.File**:
   - GetMainType
@@ -8,7 +8,10 @@
   - GetGuid
   - GetFileId
   - GetGuidAndFileId
-- Rationale: These methods hindered API discovery via auto-completion by cluttering the Asset namespace, and they truly belong to the File API since they query asset file attributes.
+  - Rationale: These methods hindered API discovery via auto-completion by cluttering the Asset namespace, and they truly belong to the File API since they query asset file attributes.
+- Fixed: 2021.3 shows warning when copying (duplicate, save as new) an asset, complaining that filename must match asset object name. This is likely a bug in Unity.
+- Fixed the same 2021.3 issue in workflow sample. Also required importing batched asset after copying them.
+- Asset.File.Import takes IEnumerable as input (not just array)
 
 #### v1.8.6 - Jan 30, 2024
 
