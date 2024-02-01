@@ -198,11 +198,11 @@ $(function(){initNavTree('_asset_8_file_8cs_source.html',''); initResizable(); }
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                where T : Object =&gt; Load&lt;T&gt;(path);</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            public static <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_code_smile_editor_1_1_asset_1_1_file_ae3c1d18d1f26557851b440b5704d2188.html#ae3c1d18d1f26557851b440b5704d2188">  321</a></span>                Import([NotNull] <a class="code hl_class" href="class_code_smile_editor_1_1_asset_1_1_path.html">Path</a>[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =&gt;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                Import(<a class="code hl_class" href="class_code_smile_editor_1_1_asset_1_1_path.html">Path</a>.ToStrings(paths), options);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d.html#af2ccad52b2993c46962c3dea1c2ef54d">  321</a></span>                Import([NotNull] IEnumerable&lt;<a class="code hl_class" href="class_code_smile_editor_1_1_asset_1_1_path.html">Path</a>&gt; paths, ImportAssetOptions options = ImportAssetOptions.Default) =&gt;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                Import(<a class="code hl_class" href="class_code_smile_editor_1_1_asset_1_1_path.html">Path</a>.ToStrings(paths.ToArray()), options);</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            public static <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a.html#a39290f9fb99198f7df818bc5cafb0e1a">  338</a></span>                Import([NotNull] String[] paths, ImportAssetOptions options = ImportAssetOptions.Default) =&gt; <a class="code hl_function" href="class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2.html#ab0082c2158f7de6376b26a75827bd7a2">BatchEditing</a>(</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0.html#aff6427c4b634d2e4ff4d23995a3319f0">  338</a></span>                Import([NotNull] IEnumerable&lt;<span class="keywordtype">string</span>&gt; paths, ImportAssetOptions options = ImportAssetOptions.Default) =&gt; <a class="code hl_function" href="class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2.html#ab0082c2158f7de6376b26a75827bd7a2">BatchEditing</a>(</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                () =&gt;</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                {</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                    <span class="keywordflow">foreach</span> (var path <span class="keywordflow">in</span> paths)</div>
@@ -455,38 +455,47 @@ $(function(){initNavTree('_asset_8_file_8cs_source.html',''); initResizable(); }
 <div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span> </div>
 <div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>                destinationPath.CreateFolders();</div>
 <div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span> </div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>                var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);</div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>                SetLastErrorMessage(success ? String.Empty : $<span class="stringliteral">&quot;failed to copy {sourcePath} to {destinationPath}&quot;</span>);</div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>                <span class="keywordflow">return</span> success;</div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>            }</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span> </div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>            <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveInternal([NotNull] Object asset, Boolean forceSave = <span class="keyword">false</span>)</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>            {</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>                ThrowIf.ArgumentIsNull(asset, nameof(asset));</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>                ThrowIf.NotInDatabase(asset);</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span> </div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>                <span class="keywordflow">if</span> (forceSave)</div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>                    EditorUtility.SetDirty(asset);</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span> </div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>                AssetDatabase.SaveAssetIfDirty(asset);</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>            }</div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span> </div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ImportIfNotImported([NotNull] Path path,</div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>                ImportAssetOptions options = ImportAssetOptions.Default)</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>            {</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>                <span class="comment">// Not in database but on disk? =&gt; Import path</span></div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>                <span class="comment">// Cannot determine if existing file has been updated though.</span></div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>                <span class="keywordflow">if</span> (path.Exists == <span class="keyword">false</span> &amp;&amp; path.ExistsInFileSystem)</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>                    <a class="code hl_function" href="class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97.html#ae11a13bfe131ec8b20a5a5667e75ec97">Import</a>(path, options);</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span><span class="preprocessor">#if UNITY_2022_1_OR_NEWER</span></div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>                var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>                SetLastErrorMessage(success ? String.Empty : $<span class="stringliteral">&quot;failed to copy {sourcePath} to {destinationPath}&quot;</span>);</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>                <span class="keywordflow">return</span> success;</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>                <span class="comment">// in Unity 2021 we have to load, clone and create instead</span></div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>                <span class="comment">// because object and file name have to match (likely a bug in that version)</span></div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>                var original = LoadMain&lt;Object&gt;(sourcePath);</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>                var copy = Object.Instantiate(original);</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>                copy = <a class="code hl_function" href="class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222.html#a64bf135da6d9a9b8a5b59c50e839d222">Create</a>(copy, destinationPath);</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>                <span class="keywordflow">return</span> copy != <span class="keyword">null</span>;</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>            }</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span> </div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>            <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveInternal([NotNull] Object asset, Boolean forceSave = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>            {</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>                ThrowIf.ArgumentIsNull(asset, nameof(asset));</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>                ThrowIf.NotInDatabase(asset);</div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span> </div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>                <span class="keywordflow">if</span> (forceSave)</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>                    EditorUtility.SetDirty(asset);</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span> </div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>                AssetDatabase.SaveAssetIfDirty(asset);</div>
 <div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>            }</div>
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span> </div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span><span class="preprocessor">#if !UNITY_2022_2_OR_NEWER </span><span class="comment">// dummy for LoadAsync in earlier versions</span></div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>            <span class="keyword">public</span> <span class="keyword">class </span>AssetDatabaseLoadOperation {}</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>        }</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>            <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ImportIfNotImported([NotNull] Path path,</div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>                ImportAssetOptions options = ImportAssetOptions.Default)</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>            {</div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>                <span class="comment">// Not in database but on disk? =&gt; Import path</span></div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>                <span class="comment">// Cannot determine if existing file has been updated though.</span></div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>                <span class="keywordflow">if</span> (path.Exists == <span class="keyword">false</span> &amp;&amp; path.ExistsInFileSystem)</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>                    <a class="code hl_function" href="class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97.html#ae11a13bfe131ec8b20a5a5667e75ec97">Import</a>(path, options);</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>            }</div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span> </div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span><span class="preprocessor">#if !UNITY_2022_2_OR_NEWER </span><span class="comment">// dummy for LoadAsync in earlier versions</span></div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>            <span class="keyword">public</span> <span class="keyword">class </span>AssetDatabaseLoadOperation {}</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>        }</div>
 </div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>    }</div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>}</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>    }</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>}</div>
 <div class="ttc" id="aclass_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_html_a009c655c2959b1ccd6b5a94a6da261e4"><div class="ttname"><a href="class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4.html#a009c655c2959b1ccd6b5a94a6da261e4">CodeSmileEditor.Asset.File.OpenExternal</a></div><div class="ttdeci">static void OpenExternal(Int32 instanceId, Int32 lineNumber=-1, Int32 columnNumber=-1)</div><div class="ttdoc">Opens the asset in the application associated with the file's extension.</div></div>
 <div class="ttc" id="aclass_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_html_a02854122d4449e39feb8c1dfdc8bd537"><div class="ttname"><a href="class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537.html#a02854122d4449e39feb8c1dfdc8bd537">CodeSmileEditor.Asset.File.PathsNotDeleted</a></div><div class="ttdeci">static IList&lt; String &gt; PathsNotDeleted</div><div class="ttdoc">The paths that failed to be deleted or trashed. Is an empty list if no failure occured on the last ca...</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Asset.File.cs:46</a></div></div>
 <div class="ttc" id="aclass_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_html_a07847a761e01e0d2fdd91c3cf6db50d2"><div class="ttname"><a href="class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2.html#a07847a761e01e0d2fdd91c3cf6db50d2">CodeSmileEditor.Asset.File.Save</a></div><div class="ttdeci">static void Save([NotNull] Object asset)</div><div class="ttdoc">Saves the object to disk if it is dirty.</div></div>

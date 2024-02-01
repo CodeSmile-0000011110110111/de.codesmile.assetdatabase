@@ -78,12 +78,12 @@ static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0
 \begin{DoxyCompactList}\small\item\em Returns the type of the main asset for the GUID. \end{DoxyCompactList}\item 
 static Type \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{Get\+Sub\+Type}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Int64 file\+Id)
 \begin{DoxyCompactList}\small\item\em Gets the type of a sub asset by the main asset\textquotesingle{}s path and the local file ID of the sub-\/asset. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}{Import}} (\mbox{[}Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$ paths, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}{Import}} (\mbox{[}Not\+Null\mbox{]} IEnumerable$<$ string $>$ paths, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
+\begin{DoxyCompactList}\small\item\em Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
 \begin{DoxyCompactList}\small\item\em Imports a file at a given path that was created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae3c1d18d1f26557851b440b5704d2188_ae3c1d18d1f26557851b440b5704d2188}{Import}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} paths, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
-\begin{DoxyCompactList}\small\item\em Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a_a39290f9fb99198f7df818bc5cafb0e1a}{Import}} (\mbox{[}Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]} paths, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
-\begin{DoxyCompactList}\small\item\em Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. \end{DoxyCompactList}\item 
 static T \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{Import\+And\+Load$<$ T $>$}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Import\+Asset\+Options options=Import\+Asset\+Options.\+Default)
 \begin{DoxyCompactList}\small\item\em Imports a file at a given path that was created or modified \textquotesingle{}externally\textquotesingle{}, then loads and returns the asset object. See \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Code\+Smile\+Editor.\+Asset.\+File.\+Import} for more info. \end{DoxyCompactList}\item 
 static T \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{Load$<$ T $>$}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
@@ -1143,10 +1143,66 @@ Type of the Sub\+Asset, or null.
 
 \begin{DoxyItemize}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html}{\texttt{ Asset\+Database.\+Get\+Type\+From\+Path\+And\+File\+ID}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}\label{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}\label{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d} 
 \index{Asset.File@{Asset.File}!Import@{Import}}
 \index{Import@{Import}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. 
+
+Internally runs Batch\+Editing to batch the import operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}\label{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0} 
+\index{Asset.File@{Asset.File}!Import@{Import}}
+\index{Import@{Import}!Asset.File@{Asset.File}}
+\doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ string $>$}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. 
+
+Internally runs Batch\+Editing to batch the import operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & Paths to assets.\\
+\hline
+{\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+
+
+
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
+\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}\label{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97} 
+\index{Asset.File@{Asset.File}!Import@{Import}}
+\index{Import@{Import}!Asset.File@{Asset.File}}
+\doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions\+:\+:Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
@@ -1202,63 +1258,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=297pt]{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ae3c1d18d1f26557851b440b5704d2188_ae3c1d18d1f26557851b440b5704d2188}\label{class_code_smile_editor_1_1_asset_1_1_file_ae3c1d18d1f26557851b440b5704d2188_ae3c1d18d1f26557851b440b5704d2188} 
-\index{Asset.File@{Asset.File}!Import@{Import}}
-\index{Import@{Import}!Asset.File@{Asset.File}}
-\doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. 
-
-Internally runs Batch\+Editing to batch the import operations.
-
-
-\begin{DoxyParams}{Parameters}
-{\em paths} & Paths to assets.\\
-\hline
-{\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-
-
-
-\end{DoxySeeAlso}
-
-\begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
-\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a_a39290f9fb99198f7df818bc5cafb0e1a}\label{class_code_smile_editor_1_1_asset_1_1_file_a39290f9fb99198f7df818bc5cafb0e1a_a39290f9fb99198f7df818bc5cafb0e1a} 
-\index{Asset.File@{Asset.File}!Import@{Import}}
-\index{Import@{Import}!Asset.File@{Asset.File}}
-\doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String\mbox{[}$\,$\mbox{]}}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Imports multiple paths that were created or modified \textquotesingle{}externally\textquotesingle{}. Externally refers to any means other than Asset\+Database methods such as System.\+IO or batch scripts. 
-
-Internally runs Batch\+Editing to batch the import operations.
-
-
-\begin{DoxyParams}{Parameters}
-{\em paths} & Paths to assets.\\
-\hline
-{\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-
-
-
-\end{DoxySeeAlso}
-
-\begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
-\item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}\label{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0} 
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}\label{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0} 
 \index{Asset.File@{Asset.File}!ImportAndLoad$<$ T $>$@{ImportAndLoad$<$ T $>$}}
 \index{ImportAndLoad$<$ T $>$@{ImportAndLoad$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{ImportAndLoad$<$ T $>$()}{ImportAndLoad< T >()}}
