@@ -38,7 +38,7 @@ namespace CodeSmileEditor.Tests
 			Assert.AreEqual(String.Empty, Asset.GetLastErrorMessage());
 		}
 
-		[Test] public void CopyNoOverwriteStatic_OntoItself_CreatesCopy()
+		[Test] public void CopyAsNewStatic_OntoItself_CreatesDuplicate()
 		{
 			var asset = CreateTestAsset(TestAssetPath);
 			var expectedCopyPath = DeleteAfterTest(Asset.Path.UniquifyFileName(asset.AssetPath));
@@ -49,9 +49,19 @@ namespace CodeSmileEditor.Tests
 			Assert.True(expectedCopyPath.Exists);
 		}
 
-		[Test] public void CopyNoOverwrite_OntoItself_CreatesCopy()
+		[Test] public void SaveAsNew_OntoItself_CreatesDuplicate()
 		{
 			var asset = CreateTestAsset(TestAssetPath);
+
+			var assetCopy = DeleteAfterTest(asset.SaveAsNew(asset.AssetPath));
+
+			Assert.NotNull(assetCopy);
+			Assert.AreNotEqual(asset, assetCopy);
+		}
+
+		[Test] public void SaveAsNew_WithSubAssetsOntoItself_CreatesDuplicate()
+		{
+			var asset = CreateTestAssetWithSubAsset(TestAssetPath);
 
 			var assetCopy = DeleteAfterTest(asset.SaveAsNew(asset.AssetPath));
 

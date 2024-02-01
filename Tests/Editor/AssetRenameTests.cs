@@ -62,9 +62,9 @@ namespace CodeSmileEditor.Tests
 			var asset = CreateTestAsset(TestAssetPath);
 			var newPath = DeleteAfterTest((Asset.Path)"Assets/NewName.ext");
 
-#if UNITY_2021_3_OR_NEWER && !UNITY_2022_1_OR_NEWER
+#if !UNITY_2022_1_OR_NEWER
 			UnityEngine.Debug.LogWarning($"{nameof(Rename_DifferentExtension_RetainsOriginalExtension)} expected warning in Unity 2021.3: "+
-				$"\"Main Object Name '..' does not match filename '..'\"");
+				$"\"Main Object Name '<name>' does not match filename '<name>'\"");
 #endif
 			var success = asset.Rename("NewName.ext");
 

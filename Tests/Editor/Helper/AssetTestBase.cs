@@ -94,6 +94,21 @@ namespace CodeSmileEditor.Tests.Helper
 		protected Object CreateTestAssetObject(String path) =>
 			DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path));
 
-		protected Asset CreateTestAsset(String path) => new(DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path)));
+		protected Asset CreateTestAsset(String path)
+		{
+			return new Asset(DeleteAfterTest(Asset.File.Create(Instantiate.ExampleSO(), path)));
+		}
+		protected Asset CreateTestAssetWithSubAsset(String path)
+		{
+			var assetObject = Asset.File.Create(Instantiate.ExampleSO(), path);
+			var sub1 = Instantiate.ExampleSO();
+			var sub2 = Instantiate.ExampleSO();
+			sub1.name = "1st sub-asset";
+			sub2.name = "2nd sub-asset";
+			Asset.SubAsset.Add(sub1, assetObject);
+			Asset.SubAsset.Add(sub2, assetObject);
+			Asset.File.Save(assetObject);
+			return new Asset(DeleteAfterTest(assetObject));
+		}
 	}
 }
