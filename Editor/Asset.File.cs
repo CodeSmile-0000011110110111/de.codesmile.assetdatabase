@@ -1048,9 +1048,18 @@ namespace CodeSmileEditor
 
 				destinationPath.CreateFolders();
 
+#if UNITY_2022_1_OR_NEWER
 				var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);
 				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {destinationPath}");
 				return success;
+#else
+				// in Unity 2021 we have to load, clone and create instead
+				// because object and file name have to match (likely a bug in that version)
+				var original = LoadMain<Object>(sourcePath);
+				var copy = Object.Instantiate(original);
+				copy = Create(copy, destinationPath);
+				return copy != null;
+#endif
 			}
 
 			private static void SaveInternal([NotNull] Object asset, Boolean forceSave = false)
