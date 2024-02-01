@@ -120,6 +120,9 @@ public partial class AssetDemoWindow
 			}
 		});
 
+		// this is internally batched
+		Asset.File.Import(dupePaths);
+
 		// remove the subassets and modify the labels
 		Asset.File.BatchEditing(() =>
 		{

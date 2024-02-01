@@ -169,6 +169,18 @@ public partial class AssetDemoWindow
 			AssetDatabase.StopAssetEditing();
 		}
 
+		// import the duplicates
+		try
+		{
+			AssetDatabase.StartAssetEditing();
+			foreach (var path in dupePaths)
+				AssetDatabase.ImportAsset(path);
+		}
+		finally
+		{
+			AssetDatabase.StopAssetEditing();
+		}
+
 		// remove the subassets and modify the labels
 		try
 		{
