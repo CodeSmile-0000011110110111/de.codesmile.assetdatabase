@@ -5,6 +5,7 @@ using CodeSmileEditor.Tests.Helper;
 using NUnit.Framework;
 using System;
 using System.Text;
+using UnityEditor;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
@@ -146,6 +147,23 @@ namespace CodeSmileEditor.Tests
 
 			Assert.True(Asset.Status.IsImported(path));
 			Assert.True(obj is ThemeStyleSheet);
+		}
+
+		// Verifying a theory that creating a new folder and subsequently creating an asset within
+		// does not actually require to import the new folder.
+		[Test] public void CreateStatic_InCreatedButNotImportedDirectory_CreatesAssetAndFolderIsImported()
+		{
+			Assert.False(System.IO.Directory.Exists(TestSubFolderPath));
+			System.IO.Directory.CreateDirectory(TestSubFolderPath);
+
+			var assetPath = TestSubFolderPath + "/test-so.asset";
+			var so = Instantiate.ExampleSO();
+
+			AssetDatabase.CreateAsset(so, assetPath);
+
+			Assert.True(Asset.Path.FileExists(assetPath));
+			Assert.True(Asset.Status.IsImported(TestSubFolderPath));
+			Assert.True(Asset.Status.IsImported(assetPath));
 		}
 	}
 }
