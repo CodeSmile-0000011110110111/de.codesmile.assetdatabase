@@ -26,7 +26,7 @@ var searchData=
   ['getscene_23',['GetScene',['../class_code_smile_editor_1_1_asset_1_1_path_ac408187e90e22a29a6c0bf20a0306532.html#ac408187e90e22a29a6c0bf20a0306532',1,'CodeSmileEditor::Asset::Path']]],
   ['getsubfolders_24',['GetSubFolders',['../class_code_smile_editor_1_1_asset_1_1_path_a2d28ed0af9ce1a5b78cfea13d920fbf6.html#a2d28ed0af9ce1a5b78cfea13d920fbf6',1,'CodeSmileEditor::Asset::Path']]],
   ['getsubtype_25',['GetSubType',['../class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca.html#ab9e60595a8cc5748f38f91b3ed83aeca',1,'CodeSmileEditor::Asset::File']]],
-  ['getting_20started_26',['CodeSmile Packages - Getting Started',['../md__p_1_2de_8codesmile_8assetdatabase_2_g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html',1,'']]],
+  ['getting_20started_26',['CodeSmile Packages - Getting Started',['../md__g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html',1,'']]],
   ['gpl_20license_27',['FREE =&gt; GPL License',['../index.html#free--gpl-license',1,'']]],
   ['guid_28',['Guid',['../class_code_smile_editor_1_1_asset_1_1_path_a66a3fc7176ae79e7e9ee85df99c5ff7c.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmileEditor.Asset.Path.Guid'],['../class_code_smile_editor_1_1_asset_a66a3fc7176ae79e7e9ee85df99c5ff7c.html#a66a3fc7176ae79e7e9ee85df99c5ff7c',1,'CodeSmileEditor.Asset.Guid']]]
 ];

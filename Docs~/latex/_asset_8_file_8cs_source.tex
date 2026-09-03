@@ -1,5 +1,5 @@
 \doxysubsection{Asset.\+File.\+cs}
-\hypertarget{_asset_8_file_8cs_source}{}\label{_asset_8_file_8cs_source}\index{P:/de.codesmile.assetdatabase/Editor/Asset.File.cs@{P:/de.codesmile.assetdatabase/Editor/Asset.File.cs}}
+\hypertarget{_asset_8_file_8cs_source}{}\label{_asset_8_file_8cs_source}\index{Editor/Asset.File.cs@{Editor/Asset.File.cs}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (C)\ 2021-\/2024\ Steffen\ Itterheim}}
@@ -11,359 +11,374 @@
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Linq;}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Text;}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }UnityEditor;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Object\ =\ UnityEngine.Object;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_code_smile_editor}{CodeSmileEditor}}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00013}00013\ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ This\ file\ contains\ asset\ 'file\ operations'\ related\ method\ groups,\ in\ that\ order:}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ Create}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Save}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Import}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ Load}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Find}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Copy}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Move}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Rename}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Open}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Delete}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Trash}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{sealed}\ \textcolor{keyword}{partial\ class\ }Asset}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00028}00028\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00032}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file}{File}}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ List<String>\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ trivial}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00046}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{00046}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ IList<String>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{PathsNotDeleted}}\ =>\ s\_PathsNotDeleted;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00077}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{00077}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{BatchEditing}}([NotNull]\ Action\ massAssetFileEditAction)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartAssetEditing();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ massAssetFileEditAction?.Invoke();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopAssetEditing();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00010}00010\ \textcolor{comment}{//\ UnityEngine\ is\ imported\ for\ the\ GUID\ type,\ which\ is\ declared\ in\ UnityEditor\ up\ to\ Unity}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00011}00011\ \textcolor{comment}{//\ 6000.3\ and\ in\ UnityEngine\ from\ Unity\ 6000.4\ on\ (no\ Unity\ version\ declares\ both),\ and\ for}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00012}00012\ \textcolor{comment}{//\ the\ EntityId\ type\ that\ replaces\ the\ integer\ instance\ ID\ overloads\ from\ Unity\ 6000.3\ on.}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00014}00014\ \textcolor{keyword}{using\ }Object\ =\ UnityEngine.Object;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00016}00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_code_smile_editor}{CodeSmileEditor}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ This\ file\ contains\ asset\ 'file\ operations'\ related\ method\ groups,\ in\ that\ order:}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Create}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Save}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Import}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Load}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Find}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Copy}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Move}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Rename}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Open}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Delete}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Trash}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{sealed}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00036}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file}{File}}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ List<String>\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ trivial}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00050}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{00050}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ IList<String>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{PathsNotDeleted}}\ =>\ s\_PathsNotDeleted;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00081}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{00081}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{BatchEditing}}([NotNull]\ Action\ massAssetFileEditAction)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartAssetEditing();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ massAssetFileEditAction?.Invoke();}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00103}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{00103}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}([NotNull]\ Byte[]\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00118}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{00118}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{CreateAsNew}}([NotNull]\ Byte[]\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path.UniqueFilePath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00132}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{00132}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{Create}}([NotNull]\ String\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00147}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{00147}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{CreateAsNew}}([NotNull]\ String\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path.UniqueFilePath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00148}00148\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00163}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{00163}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{Create}}([NotNull]\ Object\ instance,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(instance,\ path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00164}00164\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00179}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{00179}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{CreateAsNew}}([NotNull]\ Object\ instance,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(instance,\ path.UniqueFilePath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00180}00180\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00199}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{00199}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{CreateOrLoad<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ [NotNull]\ Func<T>\ getInstance)\ where\ T\ :\ Object\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LoadOrCreate(path,\ getInstance);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00201}00201\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00214}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{00214}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{Save}}([NotNull]\ Object\ asset)\ =>\ SaveInternal(asset);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00215}00215\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00234}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{00234}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{ForceSave}}([NotNull]\ Object\ asset)\ =>\ SaveInternal(asset,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00235}00235\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00245}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}{00245}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}{Save}}(GUID\ guid)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00251}00251\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00271}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{00271}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00275}00275\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00278}00278\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00303}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{00303}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{ImportAndLoad<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ T\ :\ Object\ =>\ Load<T>(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00306}00306\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ public\ static\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00321}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}{00321}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Import([NotNull]\ IEnumerable<\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}>\ paths,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Import(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.ToStrings(paths.ToArray()),\ options);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00323}00323\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ public\ static\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00338}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}{00338}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Import([NotNull]\ IEnumerable<\textcolor{keywordtype}{string}>\ paths,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{BatchEditing}}(}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ path\ \textcolor{keywordflow}{in}\ paths)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00344}00344\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00366}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{00366}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec}{Load<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ where\ T\ :\ Object}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00369}00369\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadAssetAtPath<T>(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopAssetEditing();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00107}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{00107}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}([NotNull]\ Byte[]\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00122}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{00122}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{CreateAsNew}}([NotNull]\ Byte[]\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path.UniqueFilePath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00136}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{00136}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{Create}}([NotNull]\ String\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00151}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{00151}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{CreateAsNew}}([NotNull]\ String\ contents,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(contents,\ path.UniqueFilePath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00167}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{00167}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{Create}}([NotNull]\ Object\ instance,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(instance,\ path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00183}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{00183}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Object\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{CreateAsNew}}([NotNull]\ Object\ instance,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ CreateInternal(instance,\ path.UniqueFilePath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00203}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{00203}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{CreateOrLoad<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ [NotNull]\ Func<T>\ getInstance)\ where\ T\ :\ Object\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LoadOrCreate(path,\ getInstance);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00218}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{00218}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{Save}}([NotNull]\ Object\ asset)\ =>\ SaveInternal(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00238}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{00238}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{ForceSave}}([NotNull]\ Object\ asset)\ =>\ SaveInternal(asset,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00249}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}{00249}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}{Save}}(GUID\ guid)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00275}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{00275}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00307}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{00307}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{ImportAndLoad<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ T\ :\ Object\ =>\ Load<T>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ public\ static\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00325}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}{00325}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}([NotNull]\ IEnumerable<\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}>\ paths,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.ToStrings(paths.ToArray()),\ options);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ public\ static\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00342}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}{00342}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}([NotNull]\ IEnumerable<\textcolor{keywordtype}{string}>\ paths,\ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{BatchEditing}}(}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ()\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ path\ \textcolor{keywordflow}{in}\ paths)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00370}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{00370}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec}{Load<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ where\ T\ :\ Object}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00373}00373\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00388}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{00388}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{LoadOrCreate<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ [NotNull]\ Func<T>\ getInstance)\ where\ T\ :\ Object}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.ExistsInFileSystem\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}(getInstance.Invoke(),\ path)\ as\ T;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00392}00392\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{ImportAndLoad<T>}}(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00395}00395\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00411}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}{00411}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ LoadMain<T>([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ where\ T\ :\ Object}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00415}00415\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadMainAssetAtPath(path)\ as\ T;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadAssetAtPath<T>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00392}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{00392}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{LoadOrCreate<T>}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ [NotNull]\ Func<T>\ getInstance)\ where\ T\ :\ Object}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.ExistsInFileSystem\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}(getInstance.Invoke(),\ path)\ as\ T;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{ImportAndLoad<T>}}(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00415}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}{00415}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ LoadMain<T>([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ where\ T\ :\ Object}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00419}00419\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00435}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088}{00435}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ LoadMain<T>(GUID\ guid)\ where\ T\ :\ Object}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00438}00438\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadMain<T>(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00443}00443\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00460}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}{00460}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ AssetDatabaseLoadOperation\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}{LoadAsync}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int64\ localFileId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00462}00462\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadObjectAsync(path,\ localFileId);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00464}00464\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}AssetDatabase.LoadObjectAsync\ not\ available\ in\ this\ editor\ version"{}});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00466}00466\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00468}00468\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00489}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{00489}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>\ searchInFolders\ ==\ \textcolor{keyword}{null}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ AssetDatabase.FindAssets(filter)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ AssetDatabase.FindAssets(filter,\ searchInFolders);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00492}00492\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00514}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{00514}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUID[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{FindGuids}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}(filter,\ searchInFolders).Select(guid\ =>\ \textcolor{keyword}{new}\ GUID(guid)).ToArray();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00516}00516\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00537}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{00537}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{FindPaths}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}(filter,\ searchInFolders).Select(guid\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(\textcolor{keyword}{new}\ GUID(guid))).ToArray();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00539}00539\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00560}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}{00560}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}{FindPaths}}([NotNull]\ String\ filter,\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{FindPaths}}(filter,\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(searchInFolders));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00562}00562\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00580}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{00580}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{Copy}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CopyInternal(sourcePath,\ destinationPath,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00582}00582\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00601}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}{00601}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}{CopyAsNew}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CopyInternal(sourcePath,\ destinationPath.UniqueFilePath,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00603}00603\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00623}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}{00623}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}{CanMove}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath\ ==\ \textcolor{keyword}{null}\ ||\ destinationPath\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00627}00627\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath,\ destinationPath));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00630}00630\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00649}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}{00649}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}{Move}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath\ ==\ \textcolor{keyword}{null}\ ||\ destinationPath\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00653}00653\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destinationPath.CreateFolders();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Succeeded(AssetDatabase.MoveAsset(sourcePath,\ destinationPath));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00657}00657\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00675}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{00675}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{Rename}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ String\ newFileName)\ =>\ String.IsNullOrEmpty(newFileName)\ ==\ \textcolor{keyword}{false}\ \&\&}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Succeeded(AssetDatabase.RenameAsset(path,\ newFileName));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00677}00677\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00690}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{00690}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{CanOpenInEditor}}([NotNull]\ Object\ instance)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{CanOpenInEditor}}(instance.GetInstanceID());}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00691}00691\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00704}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d}{00704}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d}{CanOpenInEditor}}(Int32\ instanceId)\ =>\ AssetDatabase.CanOpenAssetInEditor(instanceId);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00705}00705\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00720}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{00720}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{OpenExternal}}([NotNull]\ Object\ asset,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00721}00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset(asset,\ lineNumber,\ columnNumber);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00722}00722\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00737}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_a009c655c2959b1ccd6b5a94a6da261e4}{00737}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_a009c655c2959b1ccd6b5a94a6da261e4}{OpenExternal}}(Int32\ instanceId,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset(instanceId,\ lineNumber,\ columnNumber);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00739}00739\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00753}00753\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00754}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}{00754}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}{OpenExternal}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00755}00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{OpenExternal}}(Load<Object>(path),\ lineNumber,\ columnNumber);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00756}00756\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00768}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{00768}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{Delete}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ path.Exists\ prevents\ Unity\ from\ spitting\ out\ an\ unnecessary\ warning\ message}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00770}00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ !=\ \textcolor{keyword}{null}\ \&\&\ path.Exists\ \&\&\ AssetDatabase.DeleteAsset(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00771}00771\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00783}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{00783}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{Delete}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{Delete}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00784}00784\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00798}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{00798}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{Delete}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{Delete}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(paths));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00799}00799\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00813}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{00813}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{Delete}}([NotNull]\ IEnumerable<String>\ paths)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00814}00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.DeleteAssets(paths.ToArray(),\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}\ List<String>());}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00815}00815\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00831}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}{00831}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}{Trash}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ path\ !=\ \textcolor{keyword}{null}\ \&\&\ AssetDatabase.MoveAssetToTrash(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00832}00832\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00848}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{00848}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Trash}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Trash}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00849}00849\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00864}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{00864}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{Trash}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{Trash}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(paths));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00865}00865\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00880}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{00880}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{Trash}}([NotNull]\ IEnumerable<String>\ paths)\ =>}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00881}00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.MoveAssetsToTrash(paths.ToArray(),\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}\ List<String>());}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00882}00882\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00892}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{00892}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetMainAssetTypeAtPath(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00893}00893\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00908}00908\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00909}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{00909}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{GetMainType}}(GUID\ guid)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00910}00910\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00911}00911\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ It's\ also\ available\ in\ 2022.2\ but\ not\ in\ the\ early\ patch\ versions\ (eg\ 7f1\ onwards)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00912}00912\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00913}00913\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00914}00914\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(guid));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00915}00915\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00916}00916\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00917}00917\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00928}00928\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00929}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{00929}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{GetSubType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int64\ fileId)\ =>\ AssetDatabase.GetTypeFromPathAndFileID(path,\ fileId);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00930}00930\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00945}00945\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00946}00946\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ValueTuple\ makes\ doxygen\ accept\ it\ as\ documented,\ see:\ https://github.com/doxygen/doxygen/issues/9618}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00947}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{00947}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ValueTuple<GUID,\ Int64>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{GetGuidAndFileId}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00948}00948\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00949}00949\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00950}00950\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadMainAssetAtPath(path)\ as\ T;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00439}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088}{00439}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ LoadMain<T>(GUID\ guid)\ where\ T\ :\ Object}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadMain<T>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00463}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}{00463}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ AssetDatabaseLoadOperation\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}{LoadAsync}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int64\ localFileId)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadObjectAsync(path,\ localFileId);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00488}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{00488}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>\ searchInFolders\ ==\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ AssetDatabase.FindAssets(filter)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ AssetDatabase.FindAssets(filter,\ searchInFolders);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00513}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{00513}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUID[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{FindGuids}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}(filter,\ searchInFolders).Select(guid\ =>\ \textcolor{keyword}{new}\ GUID(guid)).ToArray();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00515}00515\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00536}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{00536}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{FindPaths}}([NotNull]\ String\ filter,\ String[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}{Find}}(filter,\ searchInFolders).Select(guid\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(\textcolor{keyword}{new}\ GUID(guid))).ToArray();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00559}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}{00559}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}{FindPaths}}([NotNull]\ String\ filter,\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}[]\ searchInFolders\ =\ \textcolor{keyword}{null})\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{FindPaths}}(filter,\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(searchInFolders));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00561}00561\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00579}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{00579}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{Copy}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CopyInternal(sourcePath,\ destinationPath,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00581}00581\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00600}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}{00600}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}{CopyAsNew}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CopyInternal(sourcePath,\ destinationPath.UniqueFilePath,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00602}00602\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00622}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}{00622}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}{CanMove}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath\ ==\ \textcolor{keyword}{null}\ ||\ destinationPath\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00626}00626\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Succeeded(AssetDatabase.ValidateMoveAsset(sourcePath,\ destinationPath));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00629}00629\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00648}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}{00648}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}{Move}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ sourcePath,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ destinationPath)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sourcePath\ ==\ \textcolor{keyword}{null}\ ||\ destinationPath\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00652}00652\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00653}00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destinationPath.CreateFolders();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Succeeded(AssetDatabase.MoveAsset(sourcePath,\ destinationPath));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00656}00656\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00674}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{00674}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{Rename}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ String\ newFileName)\ =>\ String.IsNullOrEmpty(newFileName)\ ==\ \textcolor{keyword}{false}\ \&\&}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Succeeded(AssetDatabase.RenameAsset(path,\ newFileName));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00676}00676\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00689}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{00689}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{CanOpenInEditor}}([NotNull]\ Object\ instance)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00690}00690\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CanOpenAssetInEditor(instance.GetEntityId());}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00692}00692\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882}{CanOpenInEditor}}(instance.GetInstanceID());}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00694}00694\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00695}00695\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00696}00696\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_4\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00713}00713\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00714}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af6f6713216d8d3cfae70e327a62452da_af6f6713216d8d3cfae70e327a62452da}{00714}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af6f6713216d8d3cfae70e327a62452da_af6f6713216d8d3cfae70e327a62452da}{CanOpenInEditor}}(EntityId\ entityId)\ =>\ AssetDatabase.CanOpenAssetInEditor(entityId);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00715}00715\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00728}00728\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882}{CanOpenInEditor}}(Int32\ instanceId)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00729}00729\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CanOpenAssetInEditor((EntityId)instanceId);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00731}00731\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00732}00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CanOpenAssetInEditor(instanceId);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00733}00733\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00734}00734\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00749}00749\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00750}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{00750}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{OpenExternal}}([NotNull]\ Object\ asset,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00751}00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset(asset,\ lineNumber,\ columnNumber);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00752}00752\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00753}00753\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_4\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00772}00772\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00773}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6f7ace7c578b12c4590ef72daf4ddf32_a6f7ace7c578b12c4590ef72daf4ddf32}{00773}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6f7ace7c578b12c4590ef72daf4ddf32_a6f7ace7c578b12c4590ef72daf4ddf32}{OpenExternal}}(EntityId\ entityId,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset(entityId,\ lineNumber,\ columnNumber);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00775}00775\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00789}00789\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00790}00790\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{OpenExternal}}(Int32\ instanceId,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00791}00791\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_3\_OR\_NEWER}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00792}00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset((EntityId)instanceId,\ lineNumber,\ columnNumber);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00793}00793\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00794}00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.OpenAsset(instanceId,\ lineNumber,\ columnNumber);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00795}00795\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00796}00796\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00797}00797\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ cannot\ be\ tested}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00812}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}{00812}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}{OpenExternal}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int32\ lineNumber\ =\ -\/1,\ Int32\ columnNumber\ =\ -\/1)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00813}00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{OpenExternal}}(Load<Object>(path),\ lineNumber,\ columnNumber);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00814}00814\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00826}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{00826}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{Delete}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00827}00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ path.Exists\ prevents\ Unity\ from\ spitting\ out\ an\ unnecessary\ warning\ message}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00828}00828\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ !=\ \textcolor{keyword}{null}\ \&\&\ path.Exists\ \&\&\ AssetDatabase.DeleteAsset(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00829}00829\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00841}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{00841}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{Delete}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}{Delete}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00842}00842\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00856}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{00856}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{Delete}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}{Delete}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(paths));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00857}00857\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00871}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{00871}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{Delete}}([NotNull]\ IEnumerable<String>\ paths)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00872}00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.DeleteAssets(paths.ToArray(),\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}\ List<String>());}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00873}00873\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00889}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}{00889}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}{Trash}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ path\ !=\ \textcolor{keyword}{null}\ \&\&\ AssetDatabase.MoveAssetToTrash(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00890}00890\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00906}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{00906}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Trash}}([NotNull]\ Object\ asset)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Trash}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00907}00907\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00922}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{00922}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{Trash}}([NotNull]\ IEnumerable<Path>\ paths)\ =>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}{Trash}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_a698b564cc49ed111277f35dac618252d_a698b564cc49ed111277f35dac618252d}{ToStrings}}(paths));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00923}00923\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00938}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{00938}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Boolean\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{Trash}}([NotNull]\ IEnumerable<String>\ paths)\ =>}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00939}00939\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.MoveAssetsToTrash(paths.ToArray(),\ s\_PathsNotDeleted\ =\ \textcolor{keyword}{new}\ List<String>());}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00940}00940\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00950}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{00950}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)\ =>\ AssetDatabase.GetMainAssetTypeAtPath(path);}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00951}00951\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00952}00952\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00953}00953\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00954}00954\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00955}00955\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00956}00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00957}00957\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00958}00958\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00970}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{00970}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUID\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{GetGuid}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00971}00971\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00972}00972\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00973}00973\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00965}00965\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00966}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{00966}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}{GetMainType}}(GUID\ guid)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00967}00967\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00968}00968\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ below\ 2023.2\ the\ type\ is\ obtained\ from\ the\ path\ the\ GUID\ resolves\ to}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00969}00969\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00970}00970\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00971}00971\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}(\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}.\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path_aa3620ff1f8b2c02fc1282284cd7c1df8_aa3620ff1f8b2c02fc1282284cd7c1df8}{Get}}(guid));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00972}00972\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00973}00973\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00974}00974\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00975}00975\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00976}00976\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00977}00977\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00978}00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00979}00979\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{new}\ GUID();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00980}00980\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00981}00981\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00993}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{00993}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Int64\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{GetFileId}}([NotNull]\ Object\ asset)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00994}00994\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00995}00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00996}00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00997}00997\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00998}00998\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00999}00999\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01000}01000\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01001}01001\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00985}00985\ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ simple\ relay}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00986}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{00986}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Type\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}{GetSubType}}([NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path,\ Int64\ fileId)\ =>\ AssetDatabase.GetTypeFromPathAndFileID(path,\ fileId);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l00987}00987\ }
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01002}01002\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01003}01003\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Internal\ on\ purpose:\ use\ Asset.File.BatchEditing(Action)\ instead}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01004}01004\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ untestable}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01005}01005\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ StartAssetEditing()\ =>\ AssetDatabase.StartAssetEditing();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01006}01006\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01007}01007\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Internal\ on\ purpose:\ use\ Asset.File.BatchEditing(Action)\ instead}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01008}01008\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ untestable}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01009}01009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ StopAssetEditing()\ =>\ AssetDatabase.StopAssetEditing();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01010}01010\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01011}01011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ Byte[]\ bytes,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01012}01012\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01013}01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(bytes,\ nameof(bytes));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01014}01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01015}01015\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01016}01016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01017}01017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.IO.File.WriteAllBytes(path,\ bytes);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01018}01018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ImportAndLoad<Object>(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01019}01019\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01020}01020\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01021}01021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ String\ contents,\ [NotNull]\ Path\ path)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01022}01022\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01023}01023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01024}01024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01025}01025\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01026}01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01027}01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.IO.File.WriteAllText(path,\ contents,\ Encoding.UTF8);\ \textcolor{comment}{//\ string\ assets\ ought\ to\ be\ UTF8}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01028}01028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ImportAndLoad<Object>(path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01029}01029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01030}01030\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01031}01031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ Object\ instance,\ [NotNull]\ Path\ path)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01032}01032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01033}01033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(instance,\ nameof(instance));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01034}01034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01035}01035\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01036}01036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01037}01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CreateAsset(instance,\ path);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01038}01038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01039}01039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01003}01003\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ValueTuple\ makes\ doxygen\ accept\ it\ as\ documented,\ see:\ https://github.com/doxygen/doxygen/issues/9618}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01004}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{01004}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ValueTuple<GUID,\ Int64>\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}{GetGuidAndFileId}}([NotNull]\ Object\ asset)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01005}01005\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01006}01006\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01007}01007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01008}01008\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01009}01009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01010}01010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01011}01011\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01012}01012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01013}01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01014}01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01015}01015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01016}01016\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01028}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{01028}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GUID\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}{GetGuid}}([NotNull]\ Object\ asset)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01029}01029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01030}01030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01031}01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01032}01032\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01033}01033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01034}01034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01035}01035\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01036}01036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01037}01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01038}01038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{new}\ GUID();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01039}01039\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01040}01040\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01041}01041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Boolean\ CopyInternal([NotNull]\ Path\ sourcePath,\ [NotNull]\ Path\ destinationPath,}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01042}01042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Boolean\ overwriteExisting)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01043}01043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01044}01044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(sourcePath,\ nameof(sourcePath));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01045}01045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(destinationPath,\ nameof(destinationPath));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01046}01046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AssetPathNotInDatabase(sourcePath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01047}01047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.SourceAndDestPathAreEqual(sourcePath,\ destinationPath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01048}01048\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01049}01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destinationPath.CreateFolders();}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01050}01050\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01051}01051\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_1\_OR\_NEWER}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01052}01052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ success\ =\ AssetDatabase.CopyAsset(sourcePath,\ destinationPath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01053}01053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(success\ ?\ String.Empty\ :\ \$\textcolor{stringliteral}{"{}failed\ to\ copy\ \{sourcePath\}\ to\ \{destinationPath\}"{}});}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01054}01054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01055}01055\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01056}01056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ Unity\ 2021\ we\ have\ to\ load,\ clone\ and\ create\ instead}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01057}01057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ because\ object\ and\ file\ name\ have\ to\ match\ (likely\ a\ bug\ in\ that\ version)}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01058}01058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ original\ =\ LoadMain<Object>(sourcePath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01059}01059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ copy\ =\ Object.Instantiate(original);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01060}01060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ copy\ =\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}(copy,\ destinationPath);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01061}01061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ copy\ !=\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01062}01062\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01063}01063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01064}01064\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01065}01065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SaveInternal([NotNull]\ Object\ asset,\ Boolean\ forceSave\ =\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01066}01066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01067}01067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01068}01068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotInDatabase(asset);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01069}01069\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01070}01070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (forceSave)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01071}01071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.SetDirty(asset);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01072}01072\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01073}01073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(asset);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01074}01074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01052}\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{01052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Int64\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}{GetFileId}}([NotNull]\ Object\ asset)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01053}01053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01054}01054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01055}01055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01056}01056\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01057}01057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01058}01058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01059}01059\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01060}01060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01061}01061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01062}01062\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01063}01063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Internal\ on\ purpose:\ use\ Asset.File.BatchEditing(Action)\ instead}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01064}01064\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ untestable}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01065}01065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ StartAssetEditing()\ =>\ AssetDatabase.StartAssetEditing();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01066}01066\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01067}01067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Internal\ on\ purpose:\ use\ Asset.File.BatchEditing(Action)\ instead}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01068}01068\ \ \ \ \ \ \ \ \ \ \ \ \ [ExcludeFromCodeCoverage]\ \textcolor{comment}{//\ untestable}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01069}01069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ StopAssetEditing()\ =>\ AssetDatabase.StopAssetEditing();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01070}01070\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01071}01071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ Byte[]\ bytes,\ [NotNull]\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01072}01072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01073}01073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(bytes,\ nameof(bytes));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01074}01074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
 \DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01075}01075\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01076}01076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ImportIfNotImported([NotNull]\ Path\ path,}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01077}01077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01078}01078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01079}01079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ in\ database\ but\ on\ disk?\ =>\ Import\ path}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01080}01080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cannot\ determine\ if\ existing\ file\ has\ been\ updated\ though.}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01081}01081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.Exists\ ==\ \textcolor{keyword}{false}\ \&\&\ path.ExistsInFileSystem)}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01082}01082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}(path,\ options);}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01083}01083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01084}01084\ }
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01085}01085\ \textcolor{preprocessor}{\#if\ !UNITY\_2022\_2\_OR\_NEWER\ }\textcolor{comment}{//\ dummy\ for\ LoadAsync\ in\ earlier\ versions}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01086}01086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }AssetDatabaseLoadOperation\ \{\}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01087}01087\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01088}01088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01089}01089\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01090}01090\ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01076}01076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01077}01077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.IO.File.WriteAllBytes(path,\ bytes);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01078}01078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ImportAndLoad<Object>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01079}01079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01080}01080\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01081}01081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ String\ contents,\ [NotNull]\ Path\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01082}01082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01083}01083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01084}01084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01085}01085\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01086}01086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01087}01087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.IO.File.WriteAllText(path,\ contents,\ Encoding.UTF8);\ \textcolor{comment}{//\ string\ assets\ ought\ to\ be\ UTF8}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01088}01088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ImportAndLoad<Object>(path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01089}01089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01090}01090\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01091}01091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Object\ CreateInternal([NotNull]\ Object\ instance,\ [NotNull]\ Path\ path)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01092}01092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01093}01093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(instance,\ nameof(instance));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01094}01094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01095}01095\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01096}01096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path.CreateFolders();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01097}01097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.CreateAsset(instance,\ path);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01098}01098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01099}01099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01100}01100\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01101}01101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{static}\ Boolean\ CopyInternal([NotNull]\ Path\ sourcePath,\ [NotNull]\ Path\ destinationPath,}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01102}01102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Boolean\ overwriteExisting)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01103}01103\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01104}01104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(sourcePath,\ nameof(sourcePath));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01105}01105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(destinationPath,\ nameof(destinationPath));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01106}01106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AssetPathNotInDatabase(sourcePath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01107}01107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.SourceAndDestPathAreEqual(sourcePath,\ destinationPath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01108}01108\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01109}01109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destinationPath.CreateFolders();}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01110}01110\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01111}01111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ success\ =\ AssetDatabase.CopyAsset(sourcePath,\ destinationPath);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01112}01112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLastErrorMessage(success\ ?\ String.Empty\ :\ \$\textcolor{stringliteral}{"{}failed\ to\ copy\ \{sourcePath\}\ to\ \{destinationPath\}"{}});}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01113}01113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01114}01114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01115}01115\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01116}01116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SaveInternal([NotNull]\ Object\ asset,\ Boolean\ forceSave\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01117}01117\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01118}01118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01119}01119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotInDatabase(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01120}01120\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01121}01121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (forceSave)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01122}01122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EditorUtility.SetDirty(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01123}01123\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01124}01124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(asset);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01125}01125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01126}01126\ }
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01127}01127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ImportIfNotImported([NotNull]\ Path\ path,}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01128}01128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportAssetOptions\ options\ =\ ImportAssetOptions.Default)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01129}01129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01130}01130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ in\ database\ but\ on\ disk?\ =>\ Import\ path}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01131}01131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cannot\ determine\ if\ existing\ file\ has\ been\ updated\ though.}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01132}01132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.Exists\ ==\ \textcolor{keyword}{false}\ \&\&\ path.ExistsInFileSystem)}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01133}01133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}{Import}}(path,\ options);}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01134}01134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01135}01135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01136}01136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_asset_8_file_8cs_source_l01137}01137\ \}}
 
 \end{DoxyCode}

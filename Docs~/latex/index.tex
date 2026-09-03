@@ -1,8 +1,10 @@
 \doxysection{\texorpdfstring{$<$}{<}a href="{}https\+://assetstore.\+unity.\+com/packages/slug/270771"{} target="{}\+\_\+blank"{} \texorpdfstring{$>$}{>}Code\+Smile Asset\+Database\texorpdfstring{$<$}{<}/a\texorpdfstring{$>$}{>}}
 \hypertarget{index}{}\label{index}\index{$<$a href="{}https://assetstore.unity.com/packages/slug/270771"{} target="{}\_blank"{} $>$CodeSmile AssetDatabase$<$/a$>$@{$<$a href=""https://assetstore.unity.com/packages/slug/270771"" target=""\_blank"" $>$CodeSmile AssetDatabase$<$/a$>$}}
-\label{index_md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e}%
-\Hypertarget{index_md__p_1_2de_8codesmile_8assetdatabase_2_r_e_a_d_m_e}%
- Imagine Unity\textquotesingle{}s Asset\+Database were self-\/explanatory, enjoyable to use, consistent in design and behaviour, well documented, prevents disasters, and results in concise code.\hypertarget{index_bam-here-it-is-}{}\doxysubsubsection{\texorpdfstring{Bam, here it is! \+:)}{Bam, here it is! \+:)}}\label{index_bam-here-it-is-}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+Imagine Unity\textquotesingle{}s Asset\+Database were self-\/explanatory, enjoyable to use, consistent in design and behaviour, well documented, prevents disasters, and results in concise code.\hypertarget{index_bam-here-it-is-}{}\doxysubsubsection{\texorpdfstring{Bam, here it is! \+:)}{Bam, here it is! \+:)}}\label{index_bam-here-it-is-}
 Click the image to watch the video\+:
 
 \href{https://www.youtube.com/watch?v=kJn9ncvGdac}{\texttt{ }}\hypertarget{index_get-it-on-the-asset-storehttpsassetstoreunitycompackagesslug270771}{}\doxysubsection{\texorpdfstring{\href{https://assetstore.unity.com/packages/slug/270771}{\texttt{ Get it on the Asset Store}}}{\href{https://assetstore.unity.com/packages/slug/270771}{\texttt{ Get it on the Asset Store}}}}\label{index_get-it-on-the-asset-storehttpsassetstoreunitycompackagesslug270771}
@@ -109,9 +111,13 @@ This software is a Unity Package Manager \textquotesingle{}npm package\textquote
 \end{DoxyItemize}\hypertarget{index_requirements}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{index_requirements}
 
 \begin{DoxyItemize}
-\item Unity 2021.\+3.\+3f1 or newer (\texorpdfstring{$\ast$}{*})
+\item Unity 2022.\+3.\+62f3 or newer
 \item A smile \+:)
-\end{DoxyItemize}\hypertarget{index_licenses}{}\doxysubsection{\texorpdfstring{Licenses}{Licenses}}\label{index_licenses}
+\end{DoxyItemize}
+
+On Unity 6000.\+4 and newer, {\ttfamily Asset.\+Database.\+Contains}, {\ttfamily Asset.\+File.\+Can\+Open\+In\+Editor} and {\ttfamily Asset.\+File.\+Open\+External} take a {\ttfamily Unity\+Engine.\+Entity\+Id} where they took an {\ttfamily Int32} instance ID before, because Unity deprecated integer instance IDs in 6000.\+4 and removed them in 6000.\+5. Their {\ttfamily Object} overloads are unchanged in every version, as is the {\ttfamily Asset.\+Path} overload of {\ttfamily Asset.\+File.\+Open\+External}. {\ttfamily Asset.\+Database.\+Contains} and {\ttfamily Asset.\+File.\+Can\+Open\+In\+Editor} have no {\ttfamily Asset.\+Path} overload.
+
+On Unity 6000.\+6 and newer, {\ttfamily Asset.\+Package.\+Export} and {\ttfamily Asset().Export\+Package} accept an optional trailing {\ttfamily owner\+Org\+Id}, the organization ID Unity uses as the exported package\textquotesingle{}s signing organization (Unity Cloud dashboard, Administration =\texorpdfstring{$>$}{>} Settings). Omitting it exports exactly as before. The parameter does not exist below Unity 6000.\+6, where Unity cannot honour it.\hypertarget{index_licenses}{}\doxysubsection{\texorpdfstring{Licenses}{Licenses}}\label{index_licenses}
 This software is dual-\/licensed.\hypertarget{index_free--gpl-license}{}\doxysubsubsection{\texorpdfstring{FREE =\texorpdfstring{$>$}{>} GPL License}{FREE =\texorpdfstring{$>$}{>} GPL License}}\label{index_free--gpl-license}
 The free Git\+Hub version is distributed under the GNU General Public License v3.\+0 (GPL 3.\+0). The main implication is that any work you publish that uses this software requires the entire work to be published as open source software under the same GPL 3.\+0 license.\hypertarget{index_paid--unity-asset-store-eula}{}\doxysubsubsection{\texorpdfstring{PAID =\texorpdfstring{$>$}{>} Unity Asset Store EULA}{PAID =\texorpdfstring{$>$}{>} Unity Asset Store EULA}}\label{index_paid--unity-asset-store-eula}
 The paid version is available on the Unity Asset Store (UAS) and licensed under the Asset Store EULA. Users who purchased this software can, at any time, also download the software from Git\+Hub and use it under the terms and conditions of the Asset Store EULA.\hypertarget{index_what-to-expect-from-me}{}\doxysubsection{\texorpdfstring{What to expect from me?}{What to expect from me?}}\label{index_what-to-expect-from-me}

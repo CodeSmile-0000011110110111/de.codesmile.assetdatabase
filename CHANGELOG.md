@@ -18,20 +18,29 @@
   What your code has to do on Unity 6000.4 and newer: replace `someObject.GetInstanceID()` with
   `someObject.GetEntityId()` and pass that. Unity deprecated `GetInstanceID` in 6000.4 and removed
   it in 6000.5, so the integer these methods used to accept can no longer be obtained there.
-  The overloads that take an asset `Object` or an `Asset.Path` are unchanged in every version and
-  need no edit.
+  The overloads that take an asset `Object` are unchanged in every version and need no edit, as is
+  the `Asset.Path` overload of `Asset.File.OpenExternal`. `Asset.Database.Contains` and
+  `Asset.File.CanOpenInEditor` have no `Asset.Path` overload.
 - Fixed: the deprecation warnings Unity 6000.3 and 6000.4 raise for the integer instance ID APIs.
   On 6000.3 the `Int32` signatures are kept and the value is converted to `EntityId` internally;
   from 6000.4 the `Int32` signatures are gone, which is what removes the last warnings.
 - Fixed: deprecation warnings in Unity 6000.6 and newer, where `AssetDatabase.ImportPackage` and
   `AssetDatabase.ExportPackage` are deprecated in favour of `UnityEditor.AssetPackage.Package`.
+- **Added in Unity 6000.6 and newer only:** the three `Asset.Package.Export` overloads and the
+  `Asset().ExportPackage` instance method take an optional trailing `ownerOrgId`. Unity uses it as
+  the exported package's signing organization; the Organization ID is in the Unity Cloud dashboard
+  under Administration => Settings. Omitting it preserves the previous behaviour exactly. The
+  parameter does not exist in Unity 2022.3 up to and including 6000.5, because Unity cannot honour
+  it there. Existing calls compile unchanged in every version.
 - Fixed: `Asset.SubAsset.SetMain` and the `Asset.MainObject` setter did not take effect in Unity
   6000.7. `AssetDatabase.SetMainObject` only records which object should become the main one on the
   next import; it does not write the asset file. From Unity 6000.7 on, the import that follows
   re-reads the old main object from disk and the change is lost. The asset is now saved between the
   two calls, which is correct in every supported version.
-- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`, which made the shipped
-  editor assembly reference the test framework for no reason.
+- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`. The directive emitted no
+  assembly reference; it only resolved because `Editor/CodeSmileEditor.AssetDatabase.asmdef` sets
+  `overrideReferences` to false, so Unity auto-references every precompiled assembly. Removing it
+  means the package no longer fails to compile in a project without the test framework.
 
 #### v1.9.1 - Feb 01, 2024
 

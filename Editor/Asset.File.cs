@@ -965,7 +965,7 @@ namespace CodeSmileEditor
 		[ExcludeFromCodeCoverage] // simple relay
 		public static Type GetMainType(GUID guid)
 		{
-#if UNITY_2023_2_OR_NEWER // It's also available in 2022.2 but not in the early patch versions (eg 7f1 onwards)
+#if UNITY_2023_2_OR_NEWER // below 2023.2 the type is obtained from the path the GUID resolves to
 			return AssetDatabase.GetMainAssetTypeFromGUID(guid);
 #else
 			return GetMainType(Path.Get(guid));

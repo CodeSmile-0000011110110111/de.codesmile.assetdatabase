@@ -114,7 +114,14 @@ This software is a Unity Package Manager 'npm package' available on GitHub (GPL 
 On Unity 6000.4 and newer, `Asset.Database.Contains`, `Asset.File.CanOpenInEditor` and
 `Asset.File.OpenExternal` take a `UnityEngine.EntityId` where they took an `Int32` instance ID
 before, because Unity deprecated integer instance IDs in 6000.4 and removed them in 6000.5.
-Their `Object` and `Asset.Path` overloads are unchanged in every version.
+Their `Object` overloads are unchanged in every version, as is the `Asset.Path` overload of
+`Asset.File.OpenExternal`. `Asset.Database.Contains` and `Asset.File.CanOpenInEditor` have no
+`Asset.Path` overload.
+
+On Unity 6000.6 and newer, `Asset.Package.Export` and `Asset().ExportPackage` accept an optional
+trailing `ownerOrgId`, the organization ID Unity uses as the exported package's signing
+organization (Unity Cloud dashboard, Administration => Settings). Omitting it exports exactly as
+before. The parameter does not exist below Unity 6000.6, where Unity cannot honour it.
 
 ## Licenses
 
