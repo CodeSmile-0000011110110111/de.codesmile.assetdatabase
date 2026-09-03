@@ -11,15 +11,25 @@
   instance ID overloads of `AssetDatabase.Contains`, `AssetDatabase.CanOpenAssetInEditor` and
   `AssetDatabase.OpenAsset`, removed `Object.GetInstanceID`, and removed the conversions between
   `Int32` and `EntityId`.
-- API change in Unity 6000.5 and newer only: `Asset.Database.Contains`, `Asset.File.CanOpenInEditor`
-  and `Asset.File.OpenExternal` take a `UnityEngine.EntityId` instead of an `Int32` instance ID.
-  Below Unity 6000.5 they still take an `Int32` and are unchanged. Unity 6000.5 offers no supported
-  way to obtain or convert an integer instance ID, so the `Int32` form cannot be called there.
-- Fixed: deprecation warnings in Unity 6000.3 and 6000.4, where the same integer instance ID APIs
-  are deprecated but not yet removed. There the `Int32` signatures are kept and the value is
-  converted to `EntityId` internally.
+- **API change in Unity 6000.4 and newer only:** `Asset.Database.Contains`,
+  `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` take a `UnityEngine.EntityId` instead
+  of an `Int32` instance ID. In Unity 2022.3 up to and including 6000.3 they still take an `Int32`
+  and are unchanged.
+  What your code has to do on Unity 6000.4 and newer: replace `someObject.GetInstanceID()` with
+  `someObject.GetEntityId()` and pass that. Unity deprecated `GetInstanceID` in 6000.4 and removed
+  it in 6000.5, so the integer these methods used to accept can no longer be obtained there.
+  The overloads that take an asset `Object` or an `Asset.Path` are unchanged in every version and
+  need no edit.
+- Fixed: the deprecation warnings Unity 6000.3 and 6000.4 raise for the integer instance ID APIs.
+  On 6000.3 the `Int32` signatures are kept and the value is converted to `EntityId` internally;
+  from 6000.4 the `Int32` signatures are gone, which is what removes the last warnings.
 - Fixed: deprecation warnings in Unity 6000.6 and newer, where `AssetDatabase.ImportPackage` and
   `AssetDatabase.ExportPackage` are deprecated in favour of `UnityEditor.AssetPackage.Package`.
+- Fixed: `Asset.SubAsset.SetMain` and the `Asset.MainObject` setter did not take effect in Unity
+  6000.7. `AssetDatabase.SetMainObject` only records which object should become the main one on the
+  next import; it does not write the asset file. From Unity 6000.7 on, the import that follows
+  re-reads the old main object from disk and the change is lost. The asset is now saved between the
+  two calls, which is correct in every supported version.
 - Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`, which made the shipped
   editor assembly reference the test framework for no reason.
 

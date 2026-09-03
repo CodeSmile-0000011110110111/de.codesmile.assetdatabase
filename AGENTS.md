@@ -26,12 +26,18 @@ against the editor in question, not by reading release notes. The ones present n
 
 - `UNITY_2023_2_OR_NEWER` in `Asset.Path.cs` and `Asset.File.cs`: `AssetDatabase.AssetPathExists`
   and `AssetDatabase.GetMainAssetTypeFromGUID`.
-- `UNITY_6000_3_OR_NEWER`, `UNITY_6000_5_OR_NEWER` in `Asset.Database.cs`, `Asset.File.cs` and
+- `UNITY_6000_3_OR_NEWER`, `UNITY_6000_4_OR_NEWER` in `Asset.Database.cs`, `Asset.File.cs` and
   `Tests/Editor/Helper/Instantiate.cs`: Unity deprecated the integer instance ID APIs in 6000.3,
-  deprecated the `Int32`/`EntityId` conversions in 6000.4, and turned all of them into compile
-  errors in 6000.5.
+  deprecated `Object.GetInstanceID` and the `Int32`/`EntityId` conversions in 6000.4, and turned all
+  of them into compile errors in 6000.5. The public `Int32` parameter of `Asset.Database.Contains`,
+  `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` therefore becomes an `EntityId` from
+  6000.4 on; 6000.3 keeps the `Int32` and converts internally.
 - `UNITY_6000_6_OR_NEWER` in `Asset.Package.cs`: `AssetDatabase.ImportPackage` and
   `AssetDatabase.ExportPackage` were deprecated in favour of `UnityEditor.AssetPackage.Package`.
+
+`Asset.SubAsset.SetMain` saves the asset between `AssetDatabase.SetMainObject` and the import it
+does afterwards. That save is load-bearing from Unity 6000.7 on, where importing without it
+re-reads the old main object from disk; do not remove it as redundant.
 
 Two Unity type moves have no conditional and must not grow one: the `GUID` struct is declared in
 `UnityEditor` up to Unity 6000.3 and in `UnityEngine` from 6000.4 on, and no Unity version

@@ -111,6 +111,11 @@ This software is a Unity Package Manager 'npm package' available on GitHub (GPL 
 - Unity 2022.3.62f3 or newer
 - A smile :)
 
+On Unity 6000.4 and newer, `Asset.Database.Contains`, `Asset.File.CanOpenInEditor` and
+`Asset.File.OpenExternal` take a `UnityEngine.EntityId` where they took an `Int32` instance ID
+before, because Unity deprecated integer instance IDs in 6000.4 and removed them in 6000.5.
+Their `Object` and `Asset.Path` overloads are unchanged in every version.
+
 ## Licenses
 
 This software is dual-licensed.

@@ -693,15 +693,15 @@ namespace CodeSmileEditor
 				CanOpenInEditor(instance.GetInstanceID());
 #endif
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
 			/// </summary>
 			/// <remarks>Throws an exception if entityId is not an asset but an in-memory instance.</remarks>
 			/// <remarks>
-			///     Unity 6000.5 removed the integer instance ID overloads of the AssetDatabase and left
-			///     no supported way to turn an integer instance ID into an EntityId, so from that version
-			///     on this method takes an EntityId.
+			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
+			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of an asset object.</param>
 			/// <returns>True if Unity can open assets of this type. False if it cannot or if entityId is not an asset.</returns>
@@ -750,7 +750,7 @@ namespace CodeSmileEditor
 			public static void OpenExternal([NotNull] Object asset, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(asset, lineNumber, columnNumber);
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
 			/// <summary>
 			///     Opens the asset in the application associated with the file's extension.
 			/// </summary>
@@ -758,9 +758,9 @@ namespace CodeSmileEditor
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </remarks>
 			/// <remarks>
-			///     Unity 6000.5 removed the integer instance ID overloads of the AssetDatabase and left
-			///     no supported way to turn an integer instance ID into an EntityId, so from that version
-			///     on this method takes an EntityId.
+			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
+			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of the asset to open externally.</param>
 			/// <param name="lineNumber">Optional line number to highlight. Depends on application support.</param>

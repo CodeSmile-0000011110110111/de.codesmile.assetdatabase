@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 // UnityEngine is imported for the EntityId type, which replaces the integer instance ID
-// overloads that Unity deprecated in 6000.3 and removed in 6000.5.
+// overloads that Unity deprecated in 6000.3 and 6000.4 and removed in 6000.5.
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -70,14 +70,14 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Boolean Contains(Object instance) => instance != null ? AssetDatabase.Contains(instance) : false;
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
 			/// <summary>
 			///     Tests if the asset is in the database.
 			/// </summary>
 			/// <remarks>
-			///     Unity 6000.5 removed the integer instance ID overloads of the AssetDatabase and left
-			///     no supported way to turn an integer instance ID into an EntityId, so from that version
-			///     on this method takes an EntityId.
+			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
+			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of an asset.</param>
 			/// <returns>Returns true if the asset is imported. Returns false if the asset is not in the database.</returns>
