@@ -32,8 +32,11 @@ against the editor in question, not by reading release notes. The ones present n
   of them into compile errors in 6000.5. The public `Int32` parameter of `Asset.Database.Contains`,
   `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` therefore becomes an `EntityId` from
   6000.4 on; 6000.3 keeps the `Int32` and converts internally.
-- `UNITY_6000_6_OR_NEWER` in `Asset.Package.cs`: `AssetDatabase.ImportPackage` and
+- `UNITY_6000_6_OR_NEWER` in `Asset.Package.cs` and `Asset.cs`: `AssetDatabase.ImportPackage` and
   `AssetDatabase.ExportPackage` were deprecated in favour of `UnityEditor.AssetPackage.Package`.
+  It also gates a public parameter, the optional trailing `ownerOrgId` on the three
+  `Asset.Package.Export` overloads and on `Asset.ExportPackage`. That parameter must not exist
+  below 6000.6, where Unity cannot honour it.
 
 `Asset.SubAsset.SetMain` saves the asset between `AssetDatabase.SetMainObject` and the import it
 does afterwards. That save is load-bearing from Unity 6000.7 on, where importing without it

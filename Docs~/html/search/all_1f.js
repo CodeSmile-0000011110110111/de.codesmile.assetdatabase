@@ -21,7 +21,6 @@ var searchData=
   ['v1_208_205_20jan_2029_202024_18',['v1.8.5 - Jan 29, 2024',['../md__c_h_a_n_g_e_l_o_g.html#v185---jan-29-2024',1,'']]],
   ['v1_208_206_20jan_2030_202024_19',['v1.8.6 - Jan 30, 2024',['../md__c_h_a_n_g_e_l_o_g.html#v186---jan-30-2024',1,'']]],
   ['v1_209_201_20feb_2001_202024_20',['v1.9.1 - Feb 01, 2024',['../md__c_h_a_n_g_e_l_o_g.html#v191---feb-01-2024',1,'']]],
-  ['version_20conditionals_21',['Unity version conditionals',['../md__a_g_e_n_t_s.html#unity-version-conditionals',1,'']]],
-  ['versioncontrol_22',['VersionControl',['../class_code_smile_editor_1_1_asset_1_1_version_control.html',1,'CodeSmileEditor::Asset']]],
-  ['visiblesubassets_23',['VisibleSubAssets',['../class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000.html#ace611059f2ab296e1be5b51d33617000',1,'CodeSmileEditor::Asset']]]
+  ['versioncontrol_21',['VersionControl',['../class_code_smile_editor_1_1_asset_1_1_version_control.html',1,'CodeSmileEditor::Asset']]],
+  ['visiblesubassets_22',['VisibleSubAssets',['../class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000.html#ace611059f2ab296e1be5b51d33617000',1,'CodeSmileEditor::Asset']]]
 ];

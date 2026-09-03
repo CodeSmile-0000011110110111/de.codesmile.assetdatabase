@@ -26,14 +26,7 @@ var NAVTREE =
 [
   [ "CodeSmile AssetDatabase", "index.html", [
     [ "<a href=\"https://assetstore.unity.com/packages/slug/270771\" target=\"_blank\" >CodeSmile AssetDatabase</a>", "index.html", "index" ],
-    [ "Project agent memory", "md__a_g_e_n_t_s.html", [
-      [ "What this is", "md__a_g_e_n_t_s.html#what-this-is", null ],
-      [ "Building and testing", "md__a_g_e_n_t_s.html#building-and-testing", null ],
-      [ "Unity version conditionals", "md__a_g_e_n_t_s.html#unity-version-conditionals", null ],
-      [ "Maintaining this file", "md__a_g_e_n_t_s.html#maintaining-this-file", null ]
-    ] ],
     [ "Change Log", "md__c_h_a_n_g_e_l_o_g.html", null ],
-    [ "CLAUDE", "claude.html", null ],
     [ "CodeSmile Packages - Getting Started", "md__g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
