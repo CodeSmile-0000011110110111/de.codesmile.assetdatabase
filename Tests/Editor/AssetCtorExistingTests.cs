@@ -6,6 +6,9 @@ using NUnit.Framework;
 using System;
 using System.IO;
 using UnityEditor;
+// UnityEngine is imported for the GUID type: it is declared in UnityEditor up to Unity
+// 6000.3 and in UnityEngine from Unity 6000.4 on. No Unity version declares both.
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor.Tests

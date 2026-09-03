@@ -1,5 +1,28 @@
 # Change Log
 
+#### Unreleased
+
+- Minimum Unity version raised from 2021.3.3f1 to 2022.3.62f3. Every code path that only existed
+  for Unity 2021.3 or 2022.1/2022.2 has been removed, in the package, the tests and the samples.
+- Fixed: the package did not compile in Unity 6000.4 or newer, because Unity moved the `GUID` type
+  from the `UnityEditor` namespace to `UnityEngine`. The files that use `GUID` now import both
+  namespaces; no Unity version declares the type in both, so the type resolves in either.
+- Fixed: the package did not compile in Unity 6000.5 or newer, because Unity removed the integer
+  instance ID overloads of `AssetDatabase.Contains`, `AssetDatabase.CanOpenAssetInEditor` and
+  `AssetDatabase.OpenAsset`, removed `Object.GetInstanceID`, and removed the conversions between
+  `Int32` and `EntityId`.
+- API change in Unity 6000.5 and newer only: `Asset.Database.Contains`, `Asset.File.CanOpenInEditor`
+  and `Asset.File.OpenExternal` take a `UnityEngine.EntityId` instead of an `Int32` instance ID.
+  Below Unity 6000.5 they still take an `Int32` and are unchanged. Unity 6000.5 offers no supported
+  way to obtain or convert an integer instance ID, so the `Int32` form cannot be called there.
+- Fixed: deprecation warnings in Unity 6000.3 and 6000.4, where the same integer instance ID APIs
+  are deprecated but not yet removed. There the `Int32` signatures are kept and the value is
+  converted to `EntityId` internally.
+- Fixed: deprecation warnings in Unity 6000.6 and newer, where `AssetDatabase.ImportPackage` and
+  `AssetDatabase.ExportPackage` are deprecated in favour of `UnityEditor.AssetPackage.Package`.
+- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`, which made the shipped
+  editor assembly reference the test framework for no reason.
+
 #### v1.9.1 - Feb 01, 2024
 
 - API Changes: These static methods have been MOVED from **Asset** to **Asset.File**:

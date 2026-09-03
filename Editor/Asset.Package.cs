@@ -4,6 +4,11 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
+#if UNITY_6000_6_OR_NEWER
+// Unity 6000.6 made AssetDatabase.ImportPackage and AssetDatabase.ExportPackage obsolete and
+// replaced them with UnityEditor.AssetPackage.Package.
+using UnityEditor.AssetPackage;
+#endif
 
 namespace CodeSmileEditor
 {
@@ -32,7 +37,11 @@ namespace CodeSmileEditor
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
+#if UNITY_6000_6_OR_NEWER
+				UnityEditor.AssetPackage.Package.Import(packagePath, false);
+#else
 				AssetDatabase.ImportPackage(packagePath, false);
+#endif
 			}
 
 			/// <summary>
@@ -50,7 +59,11 @@ namespace CodeSmileEditor
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
+#if UNITY_6000_6_OR_NEWER
+				UnityEditor.AssetPackage.Package.Import(packagePath, true);
+#else
 				AssetDatabase.ImportPackage(packagePath, true);
+#endif
 			}
 
 			/// <summary>
@@ -71,7 +84,11 @@ namespace CodeSmileEditor
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
+#if UNITY_6000_6_OR_NEWER
+				UnityEditor.AssetPackage.Package.Export(new ExportPackageParameters(assetPath, packagePath, null, options));
+#else
 				AssetDatabase.ExportPackage(assetPath, packagePath, options);
+#endif
 			}
 
 			/// <summary>
@@ -109,7 +126,11 @@ namespace CodeSmileEditor
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
+#if UNITY_6000_6_OR_NEWER
+				UnityEditor.AssetPackage.Package.Export(new ExportPackageParameters(assetPaths, packagePath, null, options));
+#else
 				AssetDatabase.ExportPackage(assetPaths, packagePath, options);
+#endif
 			}
 		}
 	}

@@ -7,6 +7,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using UnityEditor;
+// UnityEngine is imported for the GUID type, which is declared in UnityEditor up to Unity
+// 6000.3 and in UnityEngine from Unity 6000.4 on (no Unity version declares both), and for
+// the EntityId type that replaces the integer instance ID overloads from Unity 6000.3 on.
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor
@@ -444,7 +448,6 @@ namespace CodeSmileEditor
 			/// <summary>
 			///     Loads an object and its dependencies asynchronously.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="path">The path to an asset file.</param>
 			/// <param name="localFileId">The local file ID of the (sub) asset. I'm sorry but this is what Unity requires.</param>
 			/// <returns>
@@ -459,11 +462,7 @@ namespace CodeSmileEditor
 			[ExcludeFromCodeCoverage] // simple relay
 			public static AssetDatabaseLoadOperation LoadAsync([NotNull] Path path, Int64 localFileId)
 			{
-#if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.LoadObjectAsync(path, localFileId);
-#else
-				throw new NotSupportedException("AssetDatabase.LoadObjectAsync not available in this editor version");
-#endif
 			}
 
 			/// <summary>
@@ -687,8 +686,33 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean CanOpenInEditor([NotNull] Object instance) => CanOpenInEditor(instance.GetInstanceID());
+			public static Boolean CanOpenInEditor([NotNull] Object instance) =>
+#if UNITY_6000_3_OR_NEWER
+				AssetDatabase.CanOpenAssetInEditor(instance.GetEntityId());
+#else
+				CanOpenInEditor(instance.GetInstanceID());
+#endif
 
+#if UNITY_6000_5_OR_NEWER
+			/// <summary>
+			///     Returns true if the given object can be opened (edited) by the Unity editor.
+			/// </summary>
+			/// <remarks>Throws an exception if entityId is not an asset but an in-memory instance.</remarks>
+			/// <remarks>
+			///     Unity 6000.5 removed the integer instance ID overloads of the AssetDatabase and left
+			///     no supported way to turn an integer instance ID into an EntityId, so from that version
+			///     on this method takes an EntityId.
+			/// </remarks>
+			/// <param name="entityId">The EntityId of an asset object.</param>
+			/// <returns>True if Unity can open assets of this type. False if it cannot or if entityId is not an asset.</returns>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.File.OpenExternal" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
+			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
+			public static Boolean CanOpenInEditor(EntityId entityId) => AssetDatabase.CanOpenAssetInEditor(entityId);
+#else
 			/// <summary>
 			///     Returns true if the given object can be opened (edited) by the Unity editor.
 			/// </summary>
@@ -701,7 +725,13 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html">AssetDatabase.CanOpenAssetInEditor</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean CanOpenInEditor(Int32 instanceId) => AssetDatabase.CanOpenAssetInEditor(instanceId);
+			public static Boolean CanOpenInEditor(Int32 instanceId) =>
+#if UNITY_6000_3_OR_NEWER
+				AssetDatabase.CanOpenAssetInEditor((EntityId)instanceId);
+#else
+				AssetDatabase.CanOpenAssetInEditor(instanceId);
+#endif
+#endif
 
 			/// <summary>
 			///     Opens the asset in the application associated with the file's extension.
@@ -720,6 +750,29 @@ namespace CodeSmileEditor
 			public static void OpenExternal([NotNull] Object asset, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
 				AssetDatabase.OpenAsset(asset, lineNumber, columnNumber);
 
+#if UNITY_6000_5_OR_NEWER
+			/// <summary>
+			///     Opens the asset in the application associated with the file's extension.
+			/// </summary>
+			/// <remarks>
+			///     Optional line and column numbers can be specified for text files and applications that support this.
+			/// </remarks>
+			/// <remarks>
+			///     Unity 6000.5 removed the integer instance ID overloads of the AssetDatabase and left
+			///     no supported way to turn an integer instance ID into an EntityId, so from that version
+			///     on this method takes an EntityId.
+			/// </remarks>
+			/// <param name="entityId">The EntityId of the asset to open externally.</param>
+			/// <param name="lineNumber">Optional line number to highlight. Depends on application support.</param>
+			/// <param name="columnNumber">Optional column/character number to highlight. Depends on application support.</param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.File.CanOpenInEditor(UnityEngine.EntityId)" />
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html">AssetDatabase.OpenAsset</a>
+			/// </seealso>
+			[ExcludeFromCodeCoverage] // cannot be tested
+			public static void OpenExternal(EntityId entityId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+				AssetDatabase.OpenAsset(entityId, lineNumber, columnNumber);
+#else
 			/// <summary>
 			///     Opens the asset in the application associated with the file's extension.
 			/// </summary>
@@ -735,7 +788,12 @@ namespace CodeSmileEditor
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // cannot be tested
 			public static void OpenExternal(Int32 instanceId, Int32 lineNumber = -1, Int32 columnNumber = -1) =>
+#if UNITY_6000_3_OR_NEWER
+				AssetDatabase.OpenAsset((EntityId)instanceId, lineNumber, columnNumber);
+#else
 				AssetDatabase.OpenAsset(instanceId, lineNumber, columnNumber);
+#endif
+#endif
 
 			/// <summary>
 			///     Opens the asset in the application associated with the file's extension.
@@ -895,8 +953,7 @@ namespace CodeSmileEditor
 		///     Returns the type of the main asset for the GUID.
 		/// </summary>
 		/// <remarks>
-		///     In Unity 2023.2 it uses AssetDatabase.GetMainAssetTypeFromGUID.
-		///     The method exists in 2022.2 but not in the early patch versions 0f1 through 6f1.
+		///     In Unity 2023.2 or newer it uses AssetDatabase.GetMainAssetTypeFromGUID.
 		///     In earlier versions the type is obtained from the path's GUID.
 		/// </remarks>
 		/// <param name="guid">Guid of an asset.</param>
@@ -949,7 +1006,8 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return (new GUID(), 0L);
 
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
+			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? (new GUID(guid), localId)
@@ -972,7 +1030,8 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return new GUID();
 
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
+			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? new GUID(guid)
@@ -995,7 +1054,8 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return 0L;
 
-			// explicit variable + assign because Unity 2021 has both long and int variants of the TryGetGUID* method
+			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
+			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var _, out localId) ? localId : 0L;
 		}
@@ -1048,18 +1108,9 @@ namespace CodeSmileEditor
 
 				destinationPath.CreateFolders();
 
-#if UNITY_2022_1_OR_NEWER
 				var success = AssetDatabase.CopyAsset(sourcePath, destinationPath);
 				SetLastErrorMessage(success ? String.Empty : $"failed to copy {sourcePath} to {destinationPath}");
 				return success;
-#else
-				// in Unity 2021 we have to load, clone and create instead
-				// because object and file name have to match (likely a bug in that version)
-				var original = LoadMain<Object>(sourcePath);
-				var copy = Object.Instantiate(original);
-				copy = Create(copy, destinationPath);
-				return copy != null;
-#endif
 			}
 
 			private static void SaveInternal([NotNull] Object asset, Boolean forceSave = false)
@@ -1081,10 +1132,6 @@ namespace CodeSmileEditor
 				if (path.Exists == false && path.ExistsInFileSystem)
 					Import(path, options);
 			}
-
-#if !UNITY_2022_2_OR_NEWER // dummy for LoadAsync in earlier versions
-			public class AssetDatabaseLoadOperation {}
-#endif
 		}
 	}
 }

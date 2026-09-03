@@ -108,7 +108,7 @@ This software is a Unity Package Manager 'npm package' available on GitHub (GPL 
 
 ## Requirements
 
-- Unity 2021.3.3f1 or newer (*)
+- Unity 2022.3.62f3 or newer
 - A smile :)
 
 ## Licenses

@@ -11,7 +11,13 @@ namespace CodeSmileEditor.Tests.Helper
 		{
 			var so = ScriptableObject.CreateInstance<ExampleSO>();
 			so.Text = so.GetType().AssemblyQualifiedName;
+#if UNITY_6000_3_OR_NEWER
+			// Unity deprecated GetInstanceID and the EntityId-to-int conversion in favour of EntityId.
+			// EntityId.GetHashCode is the supported way to get an Int32 that identifies the instance.
+			so.InstanceId = so.GetEntityId().GetHashCode();
+#else
 			so.InstanceId = so.GetInstanceID();
+#endif
 			so.Ref = so;
 			return so;
 		}
@@ -20,7 +26,13 @@ namespace CodeSmileEditor.Tests.Helper
 		{
 			var so = ScriptableObject.CreateInstance<DifferentExampleSO>();
 			so.Text = so.GetType().AssemblyQualifiedName;
+#if UNITY_6000_3_OR_NEWER
+			// Unity deprecated GetInstanceID and the EntityId-to-int conversion in favour of EntityId.
+			// EntityId.GetHashCode is the supported way to get an Int32 that identifies the instance.
+			so.InstanceId = so.GetEntityId().GetHashCode();
+#else
 			so.InstanceId = so.GetInstanceID();
+#endif
 			return so;
 		}
 	}
