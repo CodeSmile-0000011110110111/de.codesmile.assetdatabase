@@ -66,6 +66,11 @@ namespace CodeSmileEditor
 #endif
 			}
 
+			// Both branches are duplicated in full on purpose. A preprocessor directive inside a run of ///
+			// lines, or between a doc comment and the declaration it documents, ends that comment for the C#
+			// compiler and drops the <summary>, so the conditional must wrap whole members, never parts of a
+			// doc comment.
+#if UNITY_6000_6_OR_NEWER
 			/// <summary>
 			///     Exports the asset and its dependencies to a .unitypackage file.
 			/// </summary>
@@ -74,39 +79,49 @@ namespace CodeSmileEditor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
-#if UNITY_6000_6_OR_NEWER
 			/// <param name="ownerOrgId">
 			///     The organization ID Unity associates with the exported package as its signing organization.
 			///     The Organization ID is in the Unity Cloud dashboard under Administration => Settings.
 			///     Available in Unity 6000.6 and newer. Leaving it null exports exactly as before.
 			/// </param>
-#endif
 			/// <seealso cref="">
-#if UNITY_6000_6_OR_NEWER
 			///     - <see cref="CodeSmileEditor.Asset.Package.Export(String[],String,ExportPackageOptions,String)" />
-#else
-			///     - <see cref="CodeSmileEditor.Asset.Package.Export(String[],String,ExportPackageOptions)" />
-#endif
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
 			public static void Export([NotNull] Path assetPath, [NotNull] String packagePath,
-				ExportPackageOptions options = ExportPackageOptions.Default
-#if UNITY_6000_6_OR_NEWER
-				, String ownerOrgId = null
-#endif
-			)
+				ExportPackageOptions options = ExportPackageOptions.Default, String ownerOrgId = null)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
-#if UNITY_6000_6_OR_NEWER
 				UnityEditor.AssetPackage.Package.Export(new ExportPackageParameters(
 					assetPathName: assetPath, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));
-#else
-				AssetDatabase.ExportPackage(assetPath, packagePath, options);
-#endif
 			}
+#else
+			/// <summary>
+			///     Exports the asset and its dependencies to a .unitypackage file.
+			/// </summary>
+			/// <param name="assetPath">The asset to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(String[],String,ExportPackageOptions)" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
+			public static void Export([NotNull] Path assetPath, [NotNull] String packagePath,
+				ExportPackageOptions options = ExportPackageOptions.Default)
+			{
+				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
+				AssetDatabase.ExportPackage(assetPath, packagePath, options);
+			}
+#endif
+
+			// Duplicated in full on purpose, for the reason given above the first Export overload.
+#if UNITY_6000_6_OR_NEWER
 			/// <summary>
 			///     Exports multiple assets and their dependencies to the packagePath file.
 			/// </summary>
@@ -115,36 +130,22 @@ namespace CodeSmileEditor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
-#if UNITY_6000_6_OR_NEWER
 			/// <param name="ownerOrgId">
 			///     The organization ID Unity associates with the exported package as its signing organization.
 			///     The Organization ID is in the Unity Cloud dashboard under Administration => Settings.
 			///     Available in Unity 6000.6 and newer. Leaving it null exports exactly as before.
 			/// </param>
-#endif
 			/// <seealso cref="">
-#if UNITY_6000_6_OR_NEWER
 			///     -
 			///     <see
 			///         cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions,String)" />
-#else
-			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
-#endif
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
 			public static void Export([NotNull] Path[] assetPaths, [NotNull] String packagePath,
-				ExportPackageOptions options = ExportPackageOptions.Default
-#if UNITY_6000_6_OR_NEWER
-				, String ownerOrgId = null
-#endif
-			) =>
-#if UNITY_6000_6_OR_NEWER
+				ExportPackageOptions options = ExportPackageOptions.Default, String ownerOrgId = null) =>
 				Export(Path.ToStrings(assetPaths), packagePath, options, ownerOrgId);
 #else
-				Export(Path.ToStrings(assetPaths), packagePath, options);
-#endif
-
 			/// <summary>
 			///     Exports multiple assets and their dependencies to the packagePath file.
 			/// </summary>
@@ -153,40 +154,68 @@ namespace CodeSmileEditor
 			/// <param name="options">
 			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 			/// </param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
+			public static void Export([NotNull] Path[] assetPaths, [NotNull] String packagePath,
+				ExportPackageOptions options = ExportPackageOptions.Default) =>
+				Export(Path.ToStrings(assetPaths), packagePath, options);
+#endif
+
+			// Duplicated in full on purpose, for the reason given above the first Export overload.
 #if UNITY_6000_6_OR_NEWER
+			/// <summary>
+			///     Exports multiple assets and their dependencies to the packagePath file.
+			/// </summary>
+			/// <param name="assetPaths">The assets to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
 			/// <param name="ownerOrgId">
 			///     The organization ID Unity associates with the exported package as its signing organization.
 			///     The Organization ID is in the Unity Cloud dashboard under Administration => Settings.
 			///     Available in Unity 6000.6 and newer. Leaving it null exports exactly as before.
 			/// </param>
-#endif
 			/// <seealso cref="">
-#if UNITY_6000_6_OR_NEWER
 			///     -
 			///     <see
 			///         cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions,String)" />
-#else
-			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
-#endif
 			///     -
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
 			/// </seealso>
 			public static void Export([NotNull] String[] assetPaths, [NotNull] String packagePath,
-				ExportPackageOptions options = ExportPackageOptions.Default
-#if UNITY_6000_6_OR_NEWER
-				, String ownerOrgId = null
-#endif
-			)
+				ExportPackageOptions options = ExportPackageOptions.Default, String ownerOrgId = null)
 			{
 				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
 
-#if UNITY_6000_6_OR_NEWER
 				UnityEditor.AssetPackage.Package.Export(new ExportPackageParameters(
 					assetPathNames: assetPaths, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));
-#else
-				AssetDatabase.ExportPackage(assetPaths, packagePath, options);
-#endif
 			}
+#else
+			/// <summary>
+			///     Exports multiple assets and their dependencies to the packagePath file.
+			/// </summary>
+			/// <param name="assetPaths">The assets to export.</param>
+			/// <param name="packagePath">Path to file with the .unitypackage extension.</param>
+			/// <param name="options">
+			///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+			/// </param>
+			/// <seealso cref="">
+			///     - <see cref="CodeSmileEditor.Asset.Package.Export(CodeSmileEditor.Asset.Path,String,ExportPackageOptions)" />
+			///     -
+			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a>
+			/// </seealso>
+			public static void Export([NotNull] String[] assetPaths, [NotNull] String packagePath,
+				ExportPackageOptions options = ExportPackageOptions.Default)
+			{
+				ThrowIf.ExtensionIsNotUnityPackage(packagePath);
+
+				AssetDatabase.ExportPackage(assetPaths, packagePath, options);
+			}
+#endif
 		}
 	}
 }

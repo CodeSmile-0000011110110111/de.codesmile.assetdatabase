@@ -153,17 +153,13 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_package_ab73da59
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00174">174</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>            {</div>
-<div class="line"><span class="lineno">  181</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span><span class="preprocessor">#if UNITY_6000_6_OR_NEWER</span></div>
-<div class="line"><span class="lineno">  184</span>                UnityEditor.AssetPackage.Package.Export(<span class="keyword">new</span> ExportPackageParameters(</div>
-<div class="line"><span class="lineno">  185</span>                    assetPathNames: assetPaths, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));</div>
-<div class="line"><span class="lineno">  186</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  187</span>                AssetDatabase.ExportPackage(assetPaths, packagePath, options);</div>
-<div class="line"><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  189</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00189">189</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>            {</div>
+<div class="line"><span class="lineno">  192</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>                UnityEditor.AssetPackage.Package.Export(<span class="keyword">new</span> ExportPackageParameters(</div>
+<div class="line"><span class="lineno">  195</span>                    assetPathNames: assetPaths, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));</div>
+<div class="line"><span class="lineno">  196</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

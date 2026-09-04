@@ -38,6 +38,14 @@ against the editor in question, not by reading release notes. The ones present n
   `Asset.Package.Export` overloads and on `Asset.ExportPackage`. That parameter must not exist
   below 6000.6, where Unity cannot honour it.
 
+Those four `ownerOrgId` members duplicate their whole XML doc comment, signature and body in both
+branches on purpose, and the duplication must not be collapsed. A preprocessor directive inside a
+run of `///` lines, or between a doc comment and the declaration it documents, terminates that
+comment for the C# compiler: Roslyn then keeps only the last block and silently drops the
+`<summary>`. Wrapping a whole, well-formed XML element in the conditional does not avoid this, so
+the conditional must wrap entire members. Doxygen is unaffected either way, which is why the
+generated pages cannot be used to check this.
+
 `Asset.SubAsset.SetMain` saves the asset between `AssetDatabase.SetMainObject` and the import it
 does afterwards. That save is load-bearing from Unity 6000.7 on, where importing without it
 re-reads the old main object from disk; do not remove it as redundant.

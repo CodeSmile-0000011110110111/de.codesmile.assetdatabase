@@ -528,6 +528,11 @@ namespace CodeSmileEditor
 		/// </seealso>
 		public void AddLabels(String[] labels) => Label.Add(m_MainObject, labels);
 
+		// Both branches are duplicated in full on purpose. A preprocessor directive inside a run of ///
+		// lines, or between a doc comment and the declaration it documents, ends that comment for the C#
+		// compiler and drops the <summary>, so the conditional must wrap whole members, never parts of a
+		// doc comment.
+#if UNITY_6000_6_OR_NEWER
 		/// <summary>
 		///     Exports this asset and its dependencies as a .unitypackage.
 		/// </summary>
@@ -538,22 +543,27 @@ namespace CodeSmileEditor
 		/// <param name="options">
 		///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
 		/// </param>
-#if UNITY_6000_6_OR_NEWER
 		/// <param name="ownerOrgId">
 		///     The organization ID Unity associates with the exported package as its signing organization.
 		///     The Organization ID is in the Unity Cloud dashboard under Administration => Settings.
 		///     Available in Unity 6000.6 and newer. Leaving it null exports exactly as before.
 		/// </param>
-#endif
 		[ExcludeFromCodeCoverage] // simple relay
-		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default
-#if UNITY_6000_6_OR_NEWER
-			, String ownerOrgId = null
-#endif
-		) =>
-#if UNITY_6000_6_OR_NEWER
-			Package.Export(m_AssetPath, packagePath, options, ownerOrgId);
+		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default,
+			String ownerOrgId = null) => Package.Export(m_AssetPath, packagePath, options, ownerOrgId);
 #else
+		/// <summary>
+		///     Exports this asset and its dependencies as a .unitypackage.
+		/// </summary>
+		/// <param name="packagePath">
+		///     Full path to a .unitypackage file. May point to any location on the file system
+		///     as long as the user has write permissions there.
+		/// </param>
+		/// <param name="options">
+		///     <a href="https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html">ExportPackageOptions</a>
+		/// </param>
+		[ExcludeFromCodeCoverage] // simple relay
+		public void ExportPackage(String packagePath, ExportPackageOptions options = ExportPackageOptions.Default) =>
 			Package.Export(m_AssetPath, packagePath, options);
 #endif
 
