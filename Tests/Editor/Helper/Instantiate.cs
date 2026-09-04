@@ -12,8 +12,10 @@ namespace CodeSmileEditor.Tests.Helper
 			var so = ScriptableObject.CreateInstance<ExampleSO>();
 			so.Text = so.GetType().AssemblyQualifiedName;
 #if UNITY_6000_3_OR_NEWER
-			// Unity deprecated GetInstanceID and the EntityId-to-int conversion in favour of EntityId.
-			// EntityId.GetHashCode is the supported way to get an Int32 that identifies the instance.
+			// InstanceId is arbitrary test payload: it only gives the ScriptableObject some serialized
+			// content and is never read by any test. Unity deprecated GetInstanceID and the
+			// EntityId-to-int conversion, so EntityId.GetHashCode is used merely as a convenient Int32.
+			// It is not an identity and must not be compared as one.
 			so.InstanceId = so.GetEntityId().GetHashCode();
 #else
 			so.InstanceId = so.GetInstanceID();
@@ -27,8 +29,10 @@ namespace CodeSmileEditor.Tests.Helper
 			var so = ScriptableObject.CreateInstance<DifferentExampleSO>();
 			so.Text = so.GetType().AssemblyQualifiedName;
 #if UNITY_6000_3_OR_NEWER
-			// Unity deprecated GetInstanceID and the EntityId-to-int conversion in favour of EntityId.
-			// EntityId.GetHashCode is the supported way to get an Int32 that identifies the instance.
+			// InstanceId is arbitrary test payload: it only gives the ScriptableObject some serialized
+			// content and is never read by any test. Unity deprecated GetInstanceID and the
+			// EntityId-to-int conversion, so EntityId.GetHashCode is used merely as a convenient Int32.
+			// It is not an identity and must not be compared as one.
 			so.InstanceId = so.GetEntityId().GetHashCode();
 #else
 			so.InstanceId = so.GetInstanceID();
