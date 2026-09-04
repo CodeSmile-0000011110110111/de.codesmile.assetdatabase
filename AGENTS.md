@@ -51,13 +51,29 @@ the conditional must wrap entire members. Doxygen is unaffected either way, whic
 generated pages cannot be used to check this.
 
 `Asset.SubAsset.SetMain` saves the asset between `AssetDatabase.SetMainObject` and the import it
-does afterwards. That save is load-bearing from Unity 6000.7 on, where importing without it
+does afterwards. That save is load-bearing on 6000.7.0a5 and 6000.7.0a6, where importing without it
 re-reads the old main object from disk; do not remove it as redundant.
 
 Two Unity type moves have no conditional and must not grow one: the `GUID` struct is declared in
-`UnityEditor` up to Unity 6000.3 and in `UnityEngine` from 6000.4 on, and no Unity version
-declares it in both. The files that use `GUID` therefore import both namespaces and let the
-compiler resolve it. Removing either `using` breaks one half of the supported range.
+`UnityEditor` up to Unity 6000.3 and in `UnityEngine` from 6000.4 on, and neither namespace
+declared it in both on any of the nine editors tested. The files that use `GUID` therefore import
+both namespaces and let the compiler resolve it. Removing either `using` breaks one half of the
+supported range.
+
+## Version claims name the editor they were measured on
+
+A statement about Unity version behaviour in this package's documentation names the editor version
+it was measured on, or it is not made. Not "recent versions", not a range inferred from two
+endpoints, not a version taken from release notes without a local run. The nine editors run in this
+task are 2022.3.62f3, 6000.0.83f1, 6000.3.6f1, 6000.3.23f1, 6000.4.11f1, 6000.5.10f1, 6000.6.0f1,
+6000.7.0a5 and 6000.7.0a6; 6000.1 and 6000.2 are not installed and nothing about them is known.
+Three corrections produced this rule, each a claim stated more precisely than the evidence allowed:
+a false claim that Unity removed the integer instance ID APIs in 6000.5 when it marked them
+obsolete as an error and they still exist in the assemblies; a lumped "obsolete as a warning in
+6000.3 and 6000.4" that was wrong for `Object.GetInstanceID`, which carries no obsolete attribute on
+6000.3.23f1; and a warning-phase claim about `EditorUtility.InstanceIDToObject`, an API this package
+never calls. When in doubt, weaken the claim to what was measured or drop it, rather than restating
+it more vaguely and leaving it just as unsupported.
 
 ## Maintaining this file
 

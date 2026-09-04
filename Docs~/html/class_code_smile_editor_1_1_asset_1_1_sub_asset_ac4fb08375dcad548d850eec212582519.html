@@ -148,14 +148,14 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb0
 <div class="line"><span class="lineno">  101</span>                AssetDatabase.SetMainObject(subAsset, path);</div>
 <div class="line"><span class="lineno">  102</span> </div>
 <div class="line"><span class="lineno">  103</span>                <span class="comment">// SetMainObject only records which object should become the main one on the next import,</span></div>
-<div class="line"><span class="lineno">  104</span>                <span class="comment">// it does not write the asset file. From Unity 6000.7 on, importing without saving first</span></div>
-<div class="line"><span class="lineno">  105</span>                <span class="comment">// re-reads the old main object from disk and the change is lost. Saving the asset before</span></div>
-<div class="line"><span class="lineno">  106</span>                <span class="comment">// the import makes the change take effect in every supported version.</span></div>
+<div class="line"><span class="lineno">  104</span>                <span class="comment">// it does not write the asset file. On Unity 6000.7.0a5 and 6000.7.0a6, importing without</span></div>
+<div class="line"><span class="lineno">  105</span>                <span class="comment">// saving first re-reads the old main object from disk and the change is lost. Saving the</span></div>
+<div class="line"><span class="lineno">  106</span>                <span class="comment">// asset before the import makes the change take effect on all nine editors tested.</span></div>
 <div class="line"><span class="lineno">  107</span>                AssetDatabase.SaveAssetIfDirty(subAsset);</div>
 <div class="line"><span class="lineno">  108</span>                File.Import(path);</div>
 <div class="line"><span class="lineno">  109</span>            }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00275">Asset.File.Import()</a>.</p>
+<p class="reference">References <a class="el" href="_asset_8_file_8cs_source.html#l00276">Asset.File.Import()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">

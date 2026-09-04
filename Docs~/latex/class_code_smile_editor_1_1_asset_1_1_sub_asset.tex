@@ -301,9 +301,9 @@ Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00099}{99}} o
 \DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SetMainObject(subAsset,\ path);}
 \DoxyCodeLine{00102\ }
 \DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SetMainObject\ only\ records\ which\ object\ should\ become\ the\ main\ one\ on\ the\ next\ import,}}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ does\ not\ write\ the\ asset\ file.\ From\ Unity\ 6000.7\ on,\ importing\ without\ saving\ first}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ re-\/reads\ the\ old\ main\ object\ from\ disk\ and\ the\ change\ is\ lost.\ Saving\ the\ asset\ before}}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ import\ makes\ the\ change\ take\ effect\ in\ every\ supported\ version.}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ does\ not\ write\ the\ asset\ file.\ On\ Unity\ 6000.7.0a5\ and\ 6000.7.0a6,\ importing\ without}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ saving\ first\ re-\/reads\ the\ old\ main\ object\ from\ disk\ and\ the\ change\ is\ lost.\ Saving\ the}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ asset\ before\ the\ import\ makes\ the\ change\ take\ effect\ on\ all\ nine\ editors\ tested.}}
 \DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(subAsset);}
 \DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Import(path);}
 \DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -311,7 +311,7 @@ Definition at line \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00099}{99}} o
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_asset_8_file_8cs_source_l00275}{Asset.\+File.\+Import()}}.
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00276}{Asset.\+File.\+Import()}}.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]

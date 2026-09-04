@@ -136,16 +136,16 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_package_ac41a72e
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportPackage.html">AssetDatabase.ImportPackage</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00036">36</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>            {</div>
-<div class="line"><span class="lineno">   38</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span><span class="preprocessor">#if UNITY_6000_6_OR_NEWER</span></div>
-<div class="line"><span class="lineno">   41</span>                UnityEditor.AssetPackage.Package.Import(packagePath, interactive: <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   42</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   43</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   45</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00038">38</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>            {</div>
+<div class="line"><span class="lineno">   40</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span><span class="preprocessor">#if UNITY_6000_6_OR_NEWER</span></div>
+<div class="line"><span class="lineno">   43</span>                UnityEditor.AssetPackage.Package.Import(packagePath, interactive: <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   45</span>                AssetDatabase.ImportPackage(packagePath, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   47</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

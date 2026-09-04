@@ -101,9 +101,9 @@ namespace CodeSmileEditor
 				AssetDatabase.SetMainObject(subAsset, path);
 
 				// SetMainObject only records which object should become the main one on the next import,
-				// it does not write the asset file. From Unity 6000.7 on, importing without saving first
-				// re-reads the old main object from disk and the change is lost. Saving the asset before
-				// the import makes the change take effect in every supported version.
+				// it does not write the asset file. On Unity 6000.7.0a5 and 6000.7.0a6, importing without
+				// saving first re-reads the old main object from disk and the change is lost. Saving the
+				// asset before the import makes the change take effect on all nine editors tested.
 				AssetDatabase.SaveAssetIfDirty(subAsset);
 				File.Import(path);
 			}

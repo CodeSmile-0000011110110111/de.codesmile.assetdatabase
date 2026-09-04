@@ -5,8 +5,10 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 #if UNITY_6000_6_OR_NEWER
-// Unity 6000.6 made AssetDatabase.ImportPackage and AssetDatabase.ExportPackage obsolete and
-// replaced them with UnityEditor.AssetPackage.Package.
+// AssetDatabase.ImportPackage and AssetDatabase.ExportPackage carry no obsolete attribute on
+// 6000.5.10f1 and are obsolete as a warning on 6000.6.0f1, replaced by
+// UnityEditor.AssetPackage.Package, which is absent through 6000.5.10f1 and present on 6000.6.0f1
+// and 6000.7.0a6.
 using UnityEditor.AssetPackage;
 #endif
 

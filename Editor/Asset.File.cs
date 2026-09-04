@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using UnityEditor;
 // UnityEngine is imported for the GUID type, which is declared in UnityEditor up to Unity
-// 6000.3 and in UnityEngine from Unity 6000.4 on (no Unity version declares both), and for
-// the EntityId type that replaces the integer instance ID overloads from Unity 6000.3 on.
+// 6000.3 and in UnityEngine from Unity 6000.4 on (neither namespace declared it in both on any of
+// the nine editors tested), and for the EntityId type that replaces the integer instance ID
+// overloads from Unity 6000.3 on.
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -699,10 +700,11 @@ namespace CodeSmileEditor
 			/// </summary>
 			/// <remarks>Throws an exception if entityId is not an asset but an in-memory instance.</remarks>
 			/// <remarks>
-			///     Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and 6000.4 and
-			///     as an error in 6000.5. They still exist in the assemblies but can no longer be called, and
-			///     no non-obsolete way to turn an integer instance ID into an EntityId remains, so from
-			///     Unity 6000.4 on this method takes an EntityId.
+			///     Unity marked the AssetDatabase integer instance ID overloads obsolete as a warning on
+			///     6000.3.23f1 and 6000.4.11f1 and as an error on 6000.5.10f1, and Object.GetInstanceID as a
+			///     warning on 6000.4.11f1 and an error on 6000.5.10f1. They still exist in the assemblies but
+			///     can no longer be called, and no non-obsolete way to turn an integer instance ID into an
+			///     EntityId remains, so from Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of an asset object.</param>
 			/// <returns>True if Unity can open assets of this type. False if it cannot or if entityId is not an asset.</returns>
@@ -759,10 +761,11 @@ namespace CodeSmileEditor
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </remarks>
 			/// <remarks>
-			///     Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and 6000.4 and
-			///     as an error in 6000.5. They still exist in the assemblies but can no longer be called, and
-			///     no non-obsolete way to turn an integer instance ID into an EntityId remains, so from
-			///     Unity 6000.4 on this method takes an EntityId.
+			///     Unity marked the AssetDatabase integer instance ID overloads obsolete as a warning on
+			///     6000.3.23f1 and 6000.4.11f1 and as an error on 6000.5.10f1, and Object.GetInstanceID as a
+			///     warning on 6000.4.11f1 and an error on 6000.5.10f1. They still exist in the assemblies but
+			///     can no longer be called, and no non-obsolete way to turn an integer instance ID into an
+			///     EntityId remains, so from Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of the asset to open externally.</param>
 			/// <param name="lineNumber">Optional line number to highlight. Depends on application support.</param>
@@ -1008,8 +1011,9 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return (new GUID(), 0L);
 
-			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
-			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
+			// explicit variable + assign because TryGetGUIDAndLocalFileIdentifier has both an Int64 and an
+			// Int32 overload on 2022.3.62f3 and only the Int64 form on 6000.6.0f1 and 6000.7.0a6; the
+			// declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? (new GUID(guid), localId)
@@ -1032,8 +1036,9 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return new GUID();
 
-			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
-			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
+			// explicit variable + assign because TryGetGUIDAndLocalFileIdentifier has both an Int64 and an
+			// Int32 overload on 2022.3.62f3 and only the Int64 form on 6000.6.0f1 and 6000.7.0a6; the
+			// declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)
 				? new GUID(guid)
@@ -1056,8 +1061,9 @@ namespace CodeSmileEditor
 			if (asset == null)
 				return 0L;
 
-			// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has
-			// both an Int64 and an Int32 overload; the declared type selects the Int64 one
+			// explicit variable + assign because TryGetGUIDAndLocalFileIdentifier has both an Int64 and an
+			// Int32 overload on 2022.3.62f3 and only the Int64 form on 6000.6.0f1 and 6000.7.0a6; the
+			// declared type selects the Int64 one
 			var localId = Int64.MaxValue;
 			return AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var _, out localId) ? localId : 0L;
 		}

@@ -137,14 +137,14 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html">AssetDatabase.GetMainAssetTypeFromGUID</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00968">968</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  969</span>        {</div>
-<div class="line"><span class="lineno">  970</span><span class="preprocessor">#if UNITY_2023_2_OR_NEWER </span><span class="comment">// below 2023.2 the type is obtained from the path the GUID resolves to</span></div>
-<div class="line"><span class="lineno">  971</span>            <span class="keywordflow">return</span> AssetDatabase.GetMainAssetTypeFromGUID(guid);</div>
-<div class="line"><span class="lineno">  972</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  973</span>            <span class="keywordflow">return</span> GetMainType(Path.Get(guid));</div>
-<div class="line"><span class="lineno">  974</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  975</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l00971">971</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  972</span>        {</div>
+<div class="line"><span class="lineno">  973</span><span class="preprocessor">#if UNITY_2023_2_OR_NEWER </span><span class="comment">// below 2023.2 the type is obtained from the path the GUID resolves to</span></div>
+<div class="line"><span class="lineno">  974</span>            <span class="keywordflow">return</span> AssetDatabase.GetMainAssetTypeFromGUID(guid);</div>
+<div class="line"><span class="lineno">  975</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  976</span>            <span class="keywordflow">return</span> GetMainType(Path.Get(guid));</div>
+<div class="line"><span class="lineno">  977</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  978</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_asset_8_path_8_static_8cs_source.html#l00080">Asset.Path.Get()</a>, and <a class="el" href="class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba.html#a3192f3d24b4397b10f50ef366ee3feba">GetMainType()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
