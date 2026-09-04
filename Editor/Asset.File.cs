@@ -699,8 +699,9 @@ namespace CodeSmileEditor
 			/// </summary>
 			/// <remarks>Throws an exception if entityId is not an asset but an in-memory instance.</remarks>
 			/// <remarks>
-			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
-			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and 6000.4 and
+			///     as an error in 6000.5. They still exist in the assemblies but can no longer be called, and
+			///     no non-obsolete way to turn an integer instance ID into an EntityId remains, so from
 			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of an asset object.</param>
@@ -758,8 +759,9 @@ namespace CodeSmileEditor
 			///     Optional line and column numbers can be specified for text files and applications that support this.
 			/// </remarks>
 			/// <remarks>
-			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
-			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and 6000.4 and
+			///     as an error in 6000.5. They still exist in the assemblies but can no longer be called, and
+			///     no non-obsolete way to turn an integer instance ID into an EntityId remains, so from
 			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of the asset to open externally.</param>

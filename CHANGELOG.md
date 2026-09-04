@@ -7,17 +7,21 @@
 - Fixed: the package did not compile in Unity 6000.4 or newer, because Unity moved the `GUID` type
   from the `UnityEditor` namespace to `UnityEngine`. The files that use `GUID` now import both
   namespaces; no Unity version declares the type in both, so the type resolves in either.
-- Fixed: the package did not compile in Unity 6000.5 or newer, because Unity removed the integer
+- Fixed: the package did not compile in Unity 6000.5 or newer, because Unity marked the integer
   instance ID overloads of `AssetDatabase.Contains`, `AssetDatabase.CanOpenAssetInEditor` and
-  `AssetDatabase.OpenAsset`, removed `Object.GetInstanceID`, and removed the conversions between
-  `Int32` and `EntityId`.
+  `AssetDatabase.OpenAsset`, along with `Object.GetInstanceID` and
+  `EditorUtility.InstanceIDToObject`, obsolete as an error in 6000.5; they were obsolete as a
+  warning in 6000.3 and 6000.4. Nothing was removed: all of them still exist in the assemblies,
+  and calling them is a compile error rather than a missing member. The `Int32` to `EntityId`
+  conversion stays a warning in 6000.5 and becomes an error in 6000.6.
 - **API change in Unity 6000.4 and newer only:** `Asset.Database.Contains`,
   `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` take a `UnityEngine.EntityId` instead
   of an `Int32` instance ID. In Unity 2022.3 up to and including 6000.3 they still take an `Int32`
   and are unchanged.
   What your code has to do on Unity 6000.4 and newer: replace `someObject.GetInstanceID()` with
-  `someObject.GetEntityId()` and pass that. Unity deprecated `GetInstanceID` in 6000.4 and removed
-  it in 6000.5, so the integer these methods used to accept can no longer be obtained there.
+  `someObject.GetEntityId()` and pass that. Unity marked `GetInstanceID` obsolete as a warning in
+  6000.4 and as an error in 6000.5, so from 6000.5 the integer these methods used to accept can no
+  longer be obtained without a compile error.
   The overloads that take an asset `Object` are unchanged in every version and need no edit, as is
   the `Asset.Path` overload of `Asset.File.OpenExternal`. `Asset.Database.Contains` and
   `Asset.File.CanOpenInEditor` have no `Asset.Path` overload.

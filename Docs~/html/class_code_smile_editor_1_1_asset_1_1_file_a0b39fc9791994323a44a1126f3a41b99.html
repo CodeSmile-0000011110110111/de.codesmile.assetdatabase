@@ -137,18 +137,18 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html">AssetDatabase.TryGetGUIDAndLocalFileIdentifier</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l01004">1004</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1005</span>        {</div>
-<div class="line"><span class="lineno"> 1006</span>            <span class="keywordflow">if</span> (asset == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno"> 1007</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> GUID(), 0L);</div>
-<div class="line"><span class="lineno"> 1008</span> </div>
-<div class="line"><span class="lineno"> 1009</span>            <span class="comment">// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has</span></div>
-<div class="line"><span class="lineno"> 1010</span>            <span class="comment">// both an Int64 and an Int32 overload; the declared type selects the Int64 one</span></div>
-<div class="line"><span class="lineno"> 1011</span>            var localId = Int64.MaxValue;</div>
-<div class="line"><span class="lineno"> 1012</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)</div>
-<div class="line"><span class="lineno"> 1013</span>                ? (<span class="keyword">new</span> GUID(guid), localId)</div>
-<div class="line"><span class="lineno"> 1014</span>                : (new GUID(), 0L);</div>
-<div class="line"><span class="lineno"> 1015</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_file_8cs_source.html#l01006">1006</a> of file <a class="el" href="_asset_8_file_8cs_source.html">Asset.File.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1007</span>        {</div>
+<div class="line"><span class="lineno"> 1008</span>            <span class="keywordflow">if</span> (asset == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno"> 1009</span>                <span class="keywordflow">return</span> (<span class="keyword">new</span> GUID(), 0L);</div>
+<div class="line"><span class="lineno"> 1010</span> </div>
+<div class="line"><span class="lineno"> 1011</span>            <span class="comment">// explicit variable + assign because up to Unity 2022.3 TryGetGUIDAndLocalFileIdentifier has</span></div>
+<div class="line"><span class="lineno"> 1012</span>            <span class="comment">// both an Int64 and an Int32 overload; the declared type selects the Int64 one</span></div>
+<div class="line"><span class="lineno"> 1013</span>            var localId = Int64.MaxValue;</div>
+<div class="line"><span class="lineno"> 1014</span>            <span class="keywordflow">return</span> AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out var guid, out localId)</div>
+<div class="line"><span class="lineno"> 1015</span>                ? (<span class="keyword">new</span> GUID(guid), localId)</div>
+<div class="line"><span class="lineno"> 1016</span>                : (new GUID(), 0L);</div>
+<div class="line"><span class="lineno"> 1017</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

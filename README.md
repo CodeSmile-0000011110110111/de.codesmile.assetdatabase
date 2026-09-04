@@ -113,7 +113,8 @@ This software is a Unity Package Manager 'npm package' available on GitHub (GPL 
 
 On Unity 6000.4 and newer, `Asset.Database.Contains`, `Asset.File.CanOpenInEditor` and
 `Asset.File.OpenExternal` take a `UnityEngine.EntityId` where they took an `Int32` instance ID
-before, because Unity deprecated integer instance IDs in 6000.4 and removed them in 6000.5.
+before, because Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and
+6000.4 and as an error in 6000.5. They still exist in the assemblies but can no longer be called.
 Their `Object` overloads are unchanged in every version, as is the `Asset.Path` overload of
 `Asset.File.OpenExternal`. `Asset.Database.Contains` and `Asset.File.CanOpenInEditor` have no
 `Asset.Path` overload.

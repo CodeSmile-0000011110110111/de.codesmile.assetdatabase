@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
-// UnityEngine is imported for the EntityId type, which replaces the integer instance ID
-// overloads that Unity deprecated in 6000.3 and 6000.4 and removed in 6000.5.
+// UnityEngine is imported for the EntityId type, which replaces the integer instance ID overloads
+// that Unity marked obsolete as a warning in 6000.3 and 6000.4 and as an error in 6000.5.
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -75,8 +75,9 @@ namespace CodeSmileEditor
 			///     Tests if the asset is in the database.
 			/// </summary>
 			/// <remarks>
-			///     Unity deprecated the integer instance ID APIs in 6000.4 and removed them in 6000.5,
-			///     leaving no supported way to turn an integer instance ID into an EntityId, so from
+			///     Unity marked the integer instance ID APIs obsolete as a warning in 6000.3 and 6000.4 and
+			///     as an error in 6000.5. They still exist in the assemblies but can no longer be called, and
+			///     no non-obsolete way to turn an integer instance ID into an EntityId remains, so from
 			///     Unity 6000.4 on this method takes an EntityId.
 			/// </remarks>
 			/// <param name="entityId">The EntityId of an asset.</param>

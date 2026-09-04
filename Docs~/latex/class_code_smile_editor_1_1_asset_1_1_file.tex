@@ -282,7 +282,7 @@ Returns true if the given object can be opened (edited) by the Unity editor.
 
 Throws an exception if entity\+Id is not an asset but an in-\/memory instance.
 
-Unity deprecated the integer instance ID APIs in 6000.\+4 and removed them in 6000.\+5, leaving no supported way to turn an integer instance ID into an Entity\+Id, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
+Unity marked the integer instance ID APIs obsolete as a warning in 6000.\+3 and 6000.\+4 and as an error in 6000.\+5. They still exist in the assemblies but can no longer be called, and no non-\/obsolete way to turn an integer instance ID into an Entity\+Id remains, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -925,19 +925,19 @@ The local file\+ID or 0 if obj is null or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01052}{1052}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01054}{1054}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
-\DoxyCodeLine{01056\ }
-\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
-\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
-\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
-\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
+\DoxyCodeLine{01058\ }
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}\index{Asset.File@{Asset.File}!GetGuid@{GetGuid}}
@@ -970,21 +970,21 @@ The GUID of the asset. Returns empty GUID if the asset is null or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01028}{1028}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01030}{1030}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01029\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
-\DoxyCodeLine{01032\ }
-\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
-\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
-\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
-\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ new\ GUID();}
-\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
+\DoxyCodeLine{01034\ }
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ new\ GUID();}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}\index{Asset.File@{Asset.File}!GetGuidAndFileId@{GetGuidAndFileId}}
@@ -1020,21 +1020,21 @@ The GUID and local \doxylink{class_code_smile_editor_1_1_asset_1_1_file}{File} I
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01004}{1004}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01006}{1006}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
-\DoxyCodeLine{01008\ }
-\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
-\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
-\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
-\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (new\ GUID(),\ 0L);}
-\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
+\DoxyCodeLine{01010\ }
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ up\ to\ Unity\ 2022.3\ TryGetGUIDAndLocalFileIdentifier\ has}}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ both\ an\ Int64\ and\ an\ Int32\ overload;\ the\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (new\ GUID(),\ 0L);}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}\index{Asset.File@{Asset.File}!GetMainType@{GetMainType}}
@@ -1063,7 +1063,7 @@ Type of the asset. Null if the path does not exist.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html}{\texttt{ Asset\+Database.\+Get\+Main\+Asset\+Type\+At\+Path}} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00966}{Get\+Main\+Type()}}.
+Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00968}{Get\+Main\+Type()}}.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -1102,17 +1102,17 @@ Type of the asset. Null if the guid is not known or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html}{\texttt{ Asset\+Database.\+Get\+Main\+Asset\+Type\+From\+GUID}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00966}{966}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00968}{968}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00968\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ below\ 2023.2\ the\ type\ is\ obtained\ from\ the\ path\ the\ GUID\ resolves\ to}}
-\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
-\DoxyCodeLine{00970\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetMainType(Path.Get(guid));}
-\DoxyCodeLine{00972\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00970\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ below\ 2023.2\ the\ type\ is\ obtained\ from\ the\ path\ the\ GUID\ resolves\ to}}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
+\DoxyCodeLine{00972\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetMainType(Path.Get(guid));}
+\DoxyCodeLine{00974\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1777,7 +1777,7 @@ Opens the asset in the application associated with the file\textquotesingle{}s e
 
 Optional line and column numbers can be specified for text files and applications that support this. 
 
-Unity deprecated the integer instance ID APIs in 6000.\+4 and removed them in 6000.\+5, leaving no supported way to turn an integer instance ID into an Entity\+Id, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
+Unity marked the integer instance ID APIs obsolete as a warning in 6000.\+3 and 6000.\+4 and as an error in 6000.\+5. They still exist in the assemblies but can no longer be called, and no non-\/obsolete way to turn an integer instance ID into an Entity\+Id remains, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
 
 
 \begin{DoxyParams}{Parameters}

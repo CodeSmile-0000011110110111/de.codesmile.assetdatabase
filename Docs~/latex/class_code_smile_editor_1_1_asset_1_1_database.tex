@@ -94,7 +94,7 @@ static Boolean Contains (\begin{DoxyParamCaption}\item[{Entity\+Id}]{entity\+Id}
 
 Tests if the asset is in the database. 
 
-Unity deprecated the integer instance ID APIs in 6000.\+4 and removed them in 6000.\+5, leaving no supported way to turn an integer instance ID into an Entity\+Id, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
+Unity marked the integer instance ID APIs obsolete as a warning in 6000.\+3 and 6000.\+4 and as an error in 6000.\+5. They still exist in the assemblies but can no longer be called, and no non-\/obsolete way to turn an integer instance ID into an Entity\+Id remains, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
 
 
 \begin{DoxyParams}{Parameters}

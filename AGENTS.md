@@ -27,9 +27,13 @@ against the editor in question, not by reading release notes. The ones present n
 - `UNITY_2023_2_OR_NEWER` in `Asset.Path.cs` and `Asset.File.cs`: `AssetDatabase.AssetPathExists`
   and `AssetDatabase.GetMainAssetTypeFromGUID`.
 - `UNITY_6000_3_OR_NEWER`, `UNITY_6000_4_OR_NEWER` in `Asset.Database.cs`, `Asset.File.cs` and
-  `Tests/Editor/Helper/Instantiate.cs`: Unity deprecated the integer instance ID APIs in 6000.3,
-  deprecated `Object.GetInstanceID` and the `Int32`/`EntityId` conversions in 6000.4, and turned all
-  of them into compile errors in 6000.5. The public `Int32` parameter of `Asset.Database.Contains`,
+  `Tests/Editor/Helper/Instantiate.cs`: Unity marked the integer instance ID APIs obsolete as a
+  warning in 6000.3, added `Object.GetInstanceID` and the `Int32`/`EntityId` conversions to that in
+  6000.4, and made them errors in 6000.5 — except the `Int32` to `EntityId` conversion, which stays
+  a warning in 6000.5 and only becomes an error in 6000.6. Nothing was removed in any version;
+  every one of these members still exists in the assemblies, measured by reading the
+  `ObsoleteAttribute` blobs out of the installed editors. The public `Int32` parameter of
+  `Asset.Database.Contains`,
   `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` therefore becomes an `EntityId` from
   6000.4 on; 6000.3 keeps the `Int32` and converts internally.
 - `UNITY_6000_6_OR_NEWER` in `Asset.Package.cs` and `Asset.cs`: `AssetDatabase.ImportPackage` and
