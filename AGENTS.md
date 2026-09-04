@@ -27,17 +27,19 @@ against the editor in question, not by reading release notes. The ones present n
 - `UNITY_2023_2_OR_NEWER` in `Asset.Path.cs` and `Asset.File.cs`: `AssetDatabase.AssetPathExists`
   and `AssetDatabase.GetMainAssetTypeFromGUID`.
 - `UNITY_6000_3_OR_NEWER`, `UNITY_6000_4_OR_NEWER` in `Asset.Database.cs`, `Asset.File.cs` and
-  `Tests/Editor/Helper/Instantiate.cs`: Unity marked the integer instance ID APIs obsolete as a
-  warning in 6000.3, added `Object.GetInstanceID` and the `Int32`/`EntityId` conversions to that in
-  6000.4, and made them errors in 6000.5 — except the `Int32` to `EntityId` conversion, which stays
-  a warning in 6000.5 and only becomes an error in 6000.6. Nothing was removed in any version;
-  every one of these members still exists in the assemblies, measured by reading the
-  `ObsoleteAttribute` blobs out of the installed editors. The public `Int32` parameter of
-  `Asset.Database.Contains`,
-  `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` therefore becomes an `EntityId` from
-  6000.4 on; 6000.3 keeps the `Int32` and converts internally.
+  `Tests/Editor/Helper/Instantiate.cs`. Measured by reading the `ObsoleteAttribute` blobs out of the
+  installed editors: the `AssetDatabase` integer instance ID overloads are obsolete as a warning on
+  6000.3.23f1 and 6000.4.11f1 and as an error on 6000.5.10f1. `Object.GetInstanceID` carries no
+  obsolete attribute on 6000.3.23f1, is a warning on 6000.4.11f1 and an error on 6000.5.10f1. The
+  `Int32` to `EntityId` conversion carries no obsolete attribute on 6000.3.6f1 or 6000.3.23f1, is a
+  warning on 6000.4.11f1, and is an error on 6000.6.0f1. Nothing was removed in any version; every
+  one of these members still exists in the assemblies. The public `Int32` parameter of
+  `Asset.Database.Contains`, `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` therefore
+  becomes an `EntityId` from 6000.4 on; 6000.3 keeps the `Int32` and converts internally.
 - `UNITY_6000_6_OR_NEWER` in `Asset.Package.cs` and `Asset.cs`: `AssetDatabase.ImportPackage` and
-  `AssetDatabase.ExportPackage` were deprecated in favour of `UnityEditor.AssetPackage.Package`.
+  `AssetDatabase.ExportPackage` carry no obsolete attribute on 6000.5.10f1 and are obsolete as a
+  warning on 6000.6.0f1, replaced by `UnityEditor.AssetPackage.Package`, which is absent through
+  6000.5.10f1 and present on 6000.6.0f1 and 6000.7.0a6.
   It also gates a public parameter, the optional trailing `ownerOrgId` on the three
   `Asset.Package.Export` overloads and on `Asset.ExportPackage`. That parameter must not exist
   below 6000.6, where Unity cannot honour it.
