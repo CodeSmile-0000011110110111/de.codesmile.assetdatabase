@@ -51,10 +51,10 @@
   without an intervening save produced the new main object on 2022.3.62f3 and 6000.6.0f1, and left
   the old main object on 6000.7.0a5 and 6000.7.0a6. The asset is now saved between the two calls,
   which is correct on all nine editors tested.
-- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`. The directive emitted no
-  assembly reference; it only resolved because `Editor/CodeSmileEditor.AssetDatabase.asmdef` sets
-  `overrideReferences` to false, so Unity auto-references every precompiled assembly. Removing it
-  means the package no longer fails to compile in a project without the test framework.
+- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`. Nothing in the file used
+  the test framework, so the directive was misleading; it only resolved because
+  `Editor/CodeSmileEditor.AssetDatabase.asmdef` sets `overrideReferences` to false, so Unity
+  auto-references every precompiled assembly.
 
 #### v1.9.1 - Feb 01, 2024
 

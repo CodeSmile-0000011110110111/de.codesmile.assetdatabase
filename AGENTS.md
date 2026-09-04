@@ -62,20 +62,28 @@ declared it in both on any of the nine editors tested. The files that use `GUID`
 both namespaces and let the compiler resolve it. Removing either `using` breaks one half of the
 supported range.
 
-## Version claims name the editor they were measured on
+## Claims name their evidence
 
-A statement about Unity version behaviour in this package's documentation names the editor version
-it was measured on, or it is not made. Not "recent versions", not a range inferred from two
-endpoints, not a version taken from release notes without a local run. The nine editors run in this
-task are 2022.3.62f3, 6000.0.83f1, 6000.3.6f1, 6000.3.23f1, 6000.4.11f1, 6000.5.10f1, 6000.6.0f1,
-6000.7.0a5 and 6000.7.0a6; 6000.1 and 6000.2 are not installed and nothing about them is known.
-Three corrections produced this rule, each a claim stated more precisely than the evidence allowed:
-a false claim that Unity removed the integer instance ID APIs in 6000.5 when it marked them
-obsolete as an error and they still exist in the assemblies; a lumped "obsolete as a warning in
-6000.3 and 6000.4" that was wrong for `Object.GetInstanceID`, which carries no obsolete attribute on
-6000.3.23f1; and a warning-phase claim about `EditorUtility.InstanceIDToObject`, an API this package
-never calls. When in doubt, weaken the claim to what was measured or drop it, rather than restating
-it more vaguely and leaving it just as unsupported.
+A statement in this package's documentation about what it does, does not do, requires, or no longer
+requires names the evidence - a measurement, a file and line, or a named run - or it is not made.
+This includes a consequence adopted from a code review finding, which must be checked against the
+repository before it is written down: a review finding is evidence, not a verified claim.
+
+The concrete instance of that rule: a statement about Unity version behaviour names the editor
+version it was measured on. Not "recent versions", not a range inferred from two endpoints, not a
+version taken from release notes without a local run. The nine editors run in this task are
+2022.3.62f3, 6000.0.83f1, 6000.3.6f1, 6000.3.23f1, 6000.4.11f1, 6000.5.10f1, 6000.6.0f1, 6000.7.0a5
+and 6000.7.0a6; 6000.1 and 6000.2 are not installed and nothing about them is known.
+
+Four corrections to this package's text produced the rule: a false claim that Unity removed the
+integer instance ID APIs in 6000.5, when it marked them obsolete as an error and they still exist in
+the assemblies; a lumped warning-phase version that was wrong for `Object.GetInstanceID`, which
+carries no obsolete attribute on 6000.3.23f1 and first warns on 6000.4.11f1; an unmeasured
+warning-phase claim about `EditorUtility.InstanceIDToObject`, an API this package never calls; and a
+claim that removing an unused `using NUnit.Framework;` stopped the package failing to compile in a
+project without the test framework, contradicted by the `com.unity.test-framework` dependency
+`package.json` declares. When in doubt, weaken the claim to what was measured or drop it, rather
+than restating it more vaguely and leaving it just as unsupported.
 
 ## Maintaining this file
 
