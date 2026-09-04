@@ -153,13 +153,17 @@ $(function(){initNavTree('class_code_smile_editor_1_1_asset_1_1_package_aecf2fa7
 <li><a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html">AssetDatabase.ExportPackage</a> </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00088">88</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>            {</div>
-<div class="line"><span class="lineno">   91</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>                UnityEditor.AssetPackage.Package.Export(<span class="keyword">new</span> ExportPackageParameters(</div>
-<div class="line"><span class="lineno">   94</span>                    assetPathName: assetPath, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));</div>
-<div class="line"><span class="lineno">   95</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="_asset_8_package_8cs_source.html#l00093">93</a> of file <a class="el" href="_asset_8_package_8cs_source.html">Asset.Package.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>            {</div>
+<div class="line"><span class="lineno">  100</span>                ThrowIf.ExtensionIsNotUnityPackage(packagePath);</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">#if UNITY_6000_6_OR_NEWER</span></div>
+<div class="line"><span class="lineno">  103</span>                UnityEditor.AssetPackage.Package.Export(<span class="keyword">new</span> ExportPackageParameters(</div>
+<div class="line"><span class="lineno">  104</span>                    assetPathName: assetPath, fileName: packagePath, ownerOrgId: ownerOrgId, flags: options));</div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  106</span>                AssetDatabase.ExportPackage(assetPath, packagePath, options);</div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  108</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>

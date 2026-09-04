@@ -7,8 +7,7 @@ Groups import/export functionality for \href{https://docs.unity3d.com/Manual/Ass
 
 
 
-Collaboration diagram for Asset.\+Package\+:
-\nopagebreak
+Collaboration diagram for Asset.\+Package\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -72,16 +71,20 @@ Exports the asset and its dependencies to a .unitypackage file.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html}{\texttt{ Asset\+Database.\+Export\+Package}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Export(\textcolor{keyword}{new}\ ExportPackageParameters(}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPathName:\ assetPath,\ fileName:\ packagePath,\ ownerOrgId:\ ownerOrgId,\ flags:\ options));}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_6\_OR\_NEWER}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Export(\textcolor{keyword}{new}\ ExportPackageParameters(}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPathName:\ assetPath,\ fileName:\ packagePath,\ ownerOrgId:\ ownerOrgId,\ flags:\ options));}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ExportPackage(assetPath,\ packagePath,\ options);}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_a26a5588b1c5082575e505b2e0143fd5d_a26a5588b1c5082575e505b2e0143fd5d}\index{Asset.Package@{Asset.Package}!Export@{Export}}
@@ -146,16 +149,20 @@ Exports multiple assets and their dependencies to the package\+Path file.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html}{\texttt{ Asset\+Database.\+Export\+Package}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00183}{183}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00174}{174}} of file \mbox{\hyperlink{_asset_8_package_8cs_source}{Asset.\+Package.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
-\DoxyCodeLine{00187\ }
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Export(\textcolor{keyword}{new}\ ExportPackageParameters(}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPathNames:\ assetPaths,\ fileName:\ packagePath,\ ownerOrgId:\ ownerOrgId,\ flags:\ options));}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_6\_OR\_NEWER}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Export(\textcolor{keyword}{new}\ ExportPackageParameters(}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetPathNames:\ assetPaths,\ fileName:\ packagePath,\ ownerOrgId:\ ownerOrgId,\ flags:\ options));}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ExportPackage(assetPaths,\ packagePath,\ options);}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_code_smile_editor_1_1_asset_1_1_package_ac41a72ed18bd8c2d23212f32791b0a2a_ac41a72ed18bd8c2d23212f32791b0a2a}\index{Asset.Package@{Asset.Package}!Import@{Import}}
@@ -192,7 +199,7 @@ Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00036}{36}} of 
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
 \DoxyCodeLine{00039\ }
 \DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_6\_OR\_NEWER}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Import(packagePath,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Import(packagePath,\ interactive:\ \textcolor{keyword}{false});}
 \DoxyCodeLine{00042\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportPackage(packagePath,\ \textcolor{keyword}{false});}
 \DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
@@ -235,7 +242,7 @@ Definition at line \mbox{\hyperlink{_asset_8_package_8cs_source_l00058}{58}} of 
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ExtensionIsNotUnityPackage(packagePath);}
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00062\ \textcolor{preprocessor}{\#if\ UNITY\_6000\_6\_OR\_NEWER}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Import(packagePath,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UnityEditor.AssetPackage.Package.Import(packagePath,\ interactive:\ \textcolor{keyword}{true});}
 \DoxyCodeLine{00064\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportPackage(packagePath,\ \textcolor{keyword}{true});}
 \DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
