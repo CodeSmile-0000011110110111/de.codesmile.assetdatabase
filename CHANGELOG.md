@@ -1,6 +1,6 @@
 # Change Log
 
-#### Unreleased
+#### v1.10.0 - Sep 05, 2026
 
 - Minimum Unity version raised from 2021.3.3f1 to 2022.3.62f3. Every code path that only existed
   for Unity 2021.3 or 2022.1/2022.2 has been removed, in the package, the tests and the samples.
