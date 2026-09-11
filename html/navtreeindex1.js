@@ -1,10 +1,10 @@
 var NAVTREEINDEX1 =
 {
-"class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d.html#a91f88014dec2b3bff50d35f595e6409d":[3,0,0,0,67],
 "class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178.html#a972ef43bcee036e2009fc9af10173178":[3,0,0,0,39],
 "class_code_smile_editor_1_1_asset_a993540e3a2141abe3463b2a75655f931.html#a993540e3a2141abe3463b2a75655f931":[3,0,0,0,60],
 "class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a.html#a9ff25b59d227ab5d89fdabafffb9876a":[3,0,0,0,47],
 "class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d.html#aa01a879ca0793e3def47211f4d8d338d":[3,0,0,0,37],
+"class_code_smile_editor_1_1_asset_aa21d04a98438b6296989d9b34b295d7a.html#aa21d04a98438b6296989d9b34b295d7a":[3,0,0,0,25],
 "class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d.html#ab39ec1f49ab79e8ae84c6a53a2458f2d":[3,0,0,0,63],
 "class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2.html#ac028cbad5fe3dab688c9dff304f80ad2":[3,0,0,0,27],
 "class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882.html#ac1b2c03d50954442d3462c97a5dc8882":[3,0,0,0,21],
@@ -83,7 +83,7 @@ var NAVTREEINDEX1 =
 "index.html#support-feeback-inquiries":[0,9],
 "index.html#what-to-expect-from-me":[0,8],
 "index.html#why-did-i-create-this":[0,1],
-"md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html":[1],
-"md__p_1_2de_8codesmile_8assetdatabase_2_g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html":[2],
+"md__c_h_a_n_g_e_l_o_g.html":[1],
+"md__g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html":[2],
 "pages.html":[]
 };

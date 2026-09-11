@@ -2,12 +2,13 @@
 \hypertarget{class_code_smile_editor_1_1_asset}{}\label{class_code_smile_editor_1_1_asset}\index{Asset@{Asset}}
 
 
-Replacement implementation for Unity\textquotesingle{}s {\itshape massive} Asset\+Database class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with Unity\+Engine.\+Object. In fact, Asset is essentially a wrapper around the asset\textquotesingle{}s Unity\+Engine.\+Object (see\+: Main\+Object).  
+Replacement implementation for Unity\textquotesingle{}s {\itshape massive} Asset\+Database class with a cleaner interface and more error checking. \doxylink{class_code_smile_editor_1_1_asset}{Asset} is instantiable so you can work with assets like you do with Unity\+Engine.\+Object. In fact, \doxylink{class_code_smile_editor_1_1_asset}{Asset} is essentially a wrapper around the asset\textquotesingle{}s Unity\+Engine.\+Object (see\+: Main\+Object).  
 
 
 
 
-Collaboration diagram for Asset\+:\nopagebreak
+Collaboration diagram for Asset\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +31,7 @@ class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_importer}{Importer}
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_label}{Label}}
 \begin{DoxyCompactList}\small\item\em Groups all asset label related static methods. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_package}{Package}}
-\begin{DoxyCompactList}\small\item\em Groups import/export functionality for \href{https://docs.unity3d.com/Manual/AssetPackages.html}{\texttt{ .unitypackage files}} (Asset Packages). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Groups import/export functionality for \href{https://docs.unity3d.com/Manual/AssetPackages.html}{\texttt{ .unitypackage files}} (\doxylink{class_code_smile_editor_1_1_asset}{Asset} Packages). \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}
 \begin{DoxyCompactList}\small\item\em Represents a relative path to an asset file or folder, typically under \textquotesingle{}Assets\textquotesingle{} or \textquotesingle{}Packages\textquotesingle{}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_status}{Status}}
@@ -38,7 +39,7 @@ class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_status}{Status}}
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_sub_asset}{Sub\+Asset}}
 \begin{DoxyCompactList}\small\item\em Groups all Sub-\/\+Asset related functionality. \end{DoxyCompactList}\item 
 class {\bfseries Throw\+If}
-\begin{DoxyCompactList}\small\item\em Contains error-\/ and sanity-\/checking methods for the entire Asset group of classes. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Contains error-\/ and sanity-\/checking methods for the entire \doxylink{class_code_smile_editor_1_1_asset}{Asset} group of classes. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_version_control}{Version\+Control}}
 \begin{DoxyCompactList}\small\item\em Groups version control related functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsubsection*{Public Member Functions}
@@ -72,7 +73,7 @@ Object \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98
 \begin{DoxyCompactList}\small\item\em Deletes the asset file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a_ad06bce954d9c1e05d9f53e0274a9f85a}{Duplicate}} ()
 \begin{DoxyCompactList}\small\item\em Creates a duplicate of the asset with a new, unique file name. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a6e9b9cc6eb629d6e34d6ea90088e0148_a6e9b9cc6eb629d6e34d6ea90088e0148}{Export\+Package}} (String package\+Path, Export\+Package\+Options options=Export\+Package\+Options.\+Default)
+void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_aa21d04a98438b6296989d9b34b295d7a_aa21d04a98438b6296989d9b34b295d7a}{Export\+Package}} (String package\+Path, Export\+Package\+Options options=Export\+Package\+Options.\+Default, String owner\+Org\+Id=null)
 \begin{DoxyCompactList}\small\item\em Exports this asset and its dependencies as a .unitypackage. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}{Force\+Save}} ()
 \begin{DoxyCompactList}\small\item\em Saves the asset to disk, regardless of whether it is marked as \textquotesingle{}dirty\textquotesingle{}. \end{DoxyCompactList}\item 
@@ -114,9 +115,9 @@ static String \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2
 static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ae41aa018507db1deffb10096f33e3bb6_ae41aa018507db1deffb10096f33e3bb6}{operator Asset}} (GUID guid)
 \begin{DoxyCompactList}\small\item\em Implicit conversion of GUID to an asset instance. \end{DoxyCompactList}\item 
 static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac84df38322545eff4fb610f424420751_ac84df38322545eff4fb610f424420751}{operator Asset}} (Object asset)
-\begin{DoxyCompactList}\small\item\em Implicit conversion of Unity\+Engine.\+Object to an Asset. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Implicit conversion of Unity\+Engine.\+Object to an \doxylink{class_code_smile_editor_1_1_asset}{Asset}. \end{DoxyCompactList}\item 
 static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0_a23920865dfc0888bc17dc618ab30cbe0}{operator Asset}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path)
-\begin{DoxyCompactList}\small\item\em Implicit conversion of Asset.\+Path to an Asset instance. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Implicit conversion of \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Asset.\+Path} to an \doxylink{class_code_smile_editor_1_1_asset}{Asset} instance. \end{DoxyCompactList}\item 
 static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d_aa01a879ca0793e3def47211f4d8d338d}{operator Asset}} (String path)
 \begin{DoxyCompactList}\small\item\em Implicit conversion of string path to an asset instance. \end{DoxyCompactList}\item 
 static implicit \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1_ae36538faed7f7dd4bd6d2a42867bbee1}{operator Object}} (\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} asset)
@@ -171,18 +172,18 @@ Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_ac
 
 
 \doxysubsubsection{Detailed Description}
-Replacement implementation for Unity\textquotesingle{}s {\itshape massive} Asset\+Database class with a cleaner interface and more error checking. Asset is instantiable so you can work with assets like you do with Unity\+Engine.\+Object. In fact, Asset is essentially a wrapper around the asset\textquotesingle{}s Unity\+Engine.\+Object (see\+: Main\+Object). 
+Replacement implementation for Unity\textquotesingle{}s {\itshape massive} Asset\+Database class with a cleaner interface and more error checking. \doxylink{class_code_smile_editor_1_1_asset}{Asset} is instantiable so you can work with assets like you do with Unity\+Engine.\+Object. In fact, \doxylink{class_code_smile_editor_1_1_asset}{Asset} is essentially a wrapper around the asset\textquotesingle{}s Unity\+Engine.\+Object (see\+: Main\+Object). 
 
 Definition at line \mbox{\hyperlink{_asset_8_bundle_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_asset_8_bundle_8cs_source}{Asset.\+Bundle.\+cs}}.
 
 
 
 \doxysubsubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_code_smile_editor_1_1_asset_a547d8367ae51323946fe990575c2840f_a547d8367ae51323946fe990575c2840f}\label{class_code_smile_editor_1_1_asset_a547d8367ae51323946fe990575c2840f_a547d8367ae51323946fe990575c2840f} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a547d8367ae51323946fe990575c2840f_a547d8367ae51323946fe990575c2840f}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Byte\mbox{[}$\,$\mbox{]}}]{contents,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Boolean}]{overwrite\+Existing = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a547d8367ae51323946fe990575c2840f_a547d8367ae51323946fe990575c2840f} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Byte\mbox{[}$\,$\mbox{]}}]{contents}{, }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Boolean}]{overwrite\+Existing}{ = {\ttfamily false}}\end{DoxyParamCaption})}
 
 
 
@@ -194,7 +195,7 @@ Writes the data to a file, then imports the file and loads the asset object.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The data to save as an asset file.\\
 \hline
-{\em path} & Path where to save the new asset file, with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} where to save the new asset file, with extension.\\
 \hline
 {\em overwrite\+Existing} & If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique filename (default). \\
 \hline
@@ -217,25 +218,25 @@ Writes the data to a file, then imports the file and loads the asset object.
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path,bool)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00104}{104}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00108}{108}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1}\label{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{String}]{contents,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Boolean}]{overwrite\+Existing = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a8f0fe59560dc52244f4af7d3875bdea1_a8f0fe59560dc52244f4af7d3875bdea1} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{String}]{contents}{, }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Boolean}]{overwrite\+Existing}{ = {\ttfamily false}}\end{DoxyParamCaption})}
 
 
 
@@ -245,7 +246,7 @@ Creates an asset file from a string.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The string to save as an asset file.\\
 \hline
-{\em path} & Path where to save the new asset file, with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} where to save the new asset file, with extension.\\
 \hline
 {\em overwrite\+Existing} & If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique filename (default). \\
 \hline
@@ -268,25 +269,25 @@ Creates an asset file from a string.
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path,\+Boolean)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00129}{129}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00133}{133}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(contents,\ nameof(contents));}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ var\ asset\ =\ File.CreateInternal(contents,\ path);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326}\label{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Boolean}]{overwrite\+Existing = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac6a1f3eb995796ea388c01daf3f30326_ac6a1f3eb995796ea388c01daf3f30326} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset}{, }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Boolean}]{overwrite\+Existing}{ = {\ttfamily false}}\end{DoxyParamCaption})}
 
 
 
@@ -298,7 +299,7 @@ The object must not already be an asset file (throws exception).
 \begin{DoxyParams}{Parameters}
 {\em asset} & The instance to create as an asset file.\\
 \hline
-{\em path} & Path where to save the new asset file, with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} where to save the new asset file, with extension.\\
 \hline
 {\em overwrite\+Existing} & If true, will overwrite any existing asset at path. Otherwise does not overwrite but generates a unique filename (default). \\
 \hline
@@ -323,26 +324,26 @@ The object must not already be an asset file (throws exception).
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path,\+Boolean)} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00158}{158}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00162}{162}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(asset);}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ File.CreateInternal(asset,\ path);}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(asset,\ nameof(asset));}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.AlreadyAnAsset(asset);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ Path.UniquifyAsNeeded(path,\ overwriteExisting);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ File.CreateInternal(asset,\ path);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ InitWithMainObject(asset);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730}\label{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a2139e47981f864d23cbf802ceeadb730_a2139e47981f864d23cbf802ceeadb730} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})}
 
 
 
@@ -350,7 +351,7 @@ Loads the asset at path.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an existing asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an existing asset.\\
 \hline
 \end{DoxyParams}
 
@@ -369,11 +370,11 @@ Loads the asset at path.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object)}
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+GUID)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1b9aaba05c3acd1f57830883c53c0f1c_a1b9aaba05c3acd1f57830883c53c0f1c}\label{class_code_smile_editor_1_1_asset_a1b9aaba05c3acd1f57830883c53c0f1c_a1b9aaba05c3acd1f57830883c53c0f1c} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1b9aaba05c3acd1f57830883c53c0f1c_a1b9aaba05c3acd1f57830883c53c0f1c}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{GUID}]{asset\+Guid }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a1b9aaba05c3acd1f57830883c53c0f1c_a1b9aaba05c3acd1f57830883c53c0f1c} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{GUID}]{asset\+Guid}{}\end{DoxyParamCaption})}
 
 
 
@@ -398,11 +399,11 @@ Loads the asset using its GUID.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Object)}
 \item \doxylink{class_code_smile_editor_1_1_asset}{Code\+Smile\+Editor.\+Asset(\+Code\+Smile\+Editor.\+Asset.\+Path)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1c606a7df96ba8897ce11d53af1e5c62_a1c606a7df96ba8897ce11d53af1e5c62}\label{class_code_smile_editor_1_1_asset_a1c606a7df96ba8897ce11d53af1e5c62_a1c606a7df96ba8897ce11d53af1e5c62} 
-\index{Asset@{Asset}!Asset@{Asset}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1c606a7df96ba8897ce11d53af1e5c62_a1c606a7df96ba8897ce11d53af1e5c62}\index{Asset@{Asset}!Asset@{Asset}}
 \index{Asset@{Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Asset()}{Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a1c606a7df96ba8897ce11d53af1e5c62_a1c606a7df96ba8897ce11d53af1e5c62} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset}{}\end{DoxyParamCaption})}
 
 
 
@@ -432,11 +433,11 @@ Uses an existing asset reference.
 \end{DoxyItemize}
 
 \doxysubsubsection{Member Function Documentation}
-\Hypertarget{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}\label{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a} 
-\index{Asset@{Asset}!AddLabel@{AddLabel}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}\index{Asset@{Asset}!AddLabel@{AddLabel}}
 \index{AddLabel@{AddLabel}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{AddLabel()}{AddLabel()}}
-{\footnotesize\ttfamily void Add\+Label (\begin{DoxyParamCaption}\item[{String}]{label }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a} 
+void Add\+Label (\begin{DoxyParamCaption}\item[{String}]{label}{}\end{DoxyParamCaption})}
 
 
 
@@ -458,11 +459,11 @@ When setting multiple labels use \doxylink{class_code_smile_editor_1_1_asset_a67
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}{Code\+Smile\+Editor.\+Asset.\+Add\+Labels}
 \item \doxylink{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}{Code\+Smile\+Editor.\+Asset.\+Set\+Labels} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}\label{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5} 
-\index{Asset@{Asset}!AddLabels@{AddLabels}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}\index{Asset@{Asset}!AddLabels@{AddLabels}}
 \index{AddLabels@{AddLabels}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{AddLabels()}{AddLabels()}}
-{\footnotesize\ttfamily void Add\+Labels (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{labels }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5} 
+void Add\+Labels (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{labels}{}\end{DoxyParamCaption})}
 
 
 
@@ -482,17 +483,17 @@ Adds several labels to the asset.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}{Code\+Smile\+Editor.\+Asset.\+Add\+Label}
 \item \doxylink{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}{Code\+Smile\+Editor.\+Asset.\+Set\+Labels} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a7adbbe2c45d2f0188f60917a3d870946_a7adbbe2c45d2f0188f60917a3d870946}\label{class_code_smile_editor_1_1_asset_a7adbbe2c45d2f0188f60917a3d870946_a7adbbe2c45d2f0188f60917a3d870946} 
-\index{Asset@{Asset}!AddSubAsset@{AddSubAsset}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a7adbbe2c45d2f0188f60917a3d870946_a7adbbe2c45d2f0188f60917a3d870946}\index{Asset@{Asset}!AddSubAsset@{AddSubAsset}}
 \index{AddSubAsset@{AddSubAsset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{AddSubAsset()}{AddSubAsset()}}
-{\footnotesize\ttfamily void Add\+Sub\+Asset (\begin{DoxyParamCaption}\item[{Object}]{instance }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a7adbbe2c45d2f0188f60917a3d870946_a7adbbe2c45d2f0188f60917a3d870946} 
+void Add\+Sub\+Asset (\begin{DoxyParamCaption}\item[{Object}]{instance}{}\end{DoxyParamCaption})}
 
 
 
 Adds an object as a sub-\/object to the asset. The object must not already be an asset. 
 
-This implicitly saves the change to disk -\/ you do NOT need to call Save() afterwards.
+This implicitly saves the change to disk -\/ you do NOT need to call \doxylink{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}{Save()} afterwards.
 
 
 \begin{DoxyParams}{Parameters}
@@ -508,11 +509,11 @@ This implicitly saves the change to disk -\/ you do NOT need to call Save() afte
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}{Code\+Smile\+Editor.\+Asset.\+Remove\+Sub\+Asset}
 \item \doxylink{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389}{Code\+Smile\+Editor.\+Asset.\+Sub\+Assets} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323}\label{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323} 
-\index{Asset@{Asset}!CanMove@{CanMove}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323}\index{Asset@{Asset}!CanMove@{CanMove}}
 \index{CanMove@{CanMove}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{CanMove()}{CanMove()}}
-{\footnotesize\ttfamily Boolean Can\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323} 
+Boolean Can\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})}
 
 
 
@@ -537,11 +538,35 @@ True if moving the asset will be successful, false otherwise.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8}{Code\+Smile\+Editor.\+Asset.\+Move}
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882}\label{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882} 
-\index{Asset@{Asset}!CanOpenInEditor@{CanOpenInEditor}}
+\end{DoxyItemize}
+
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323}{Can\+Move()}}.
+
+
+
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323}{Can\+Move()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{class_code_smile_editor_1_1_asset_a31854cee2c427159e4ff866257872323_a31854cee2c427159e4ff866257872323_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882}\index{Asset@{Asset}!CanOpenInEditor@{CanOpenInEditor}}
 \index{CanOpenInEditor@{CanOpenInEditor}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{CanOpenInEditor()}{CanOpenInEditor()}}
-{\footnotesize\ttfamily Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac1b2c03d50954442d3462c97a5dc8882_ac1b2c03d50954442d3462c97a5dc8882} 
+Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -560,11 +585,11 @@ True if the editor can edit this asset type.
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9}{Code\+Smile\+Editor.\+Asset.\+Open\+External} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f}\label{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f} 
-\index{Asset@{Asset}!ClearLabels@{ClearLabels}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f}\index{Asset@{Asset}!ClearLabels@{ClearLabels}}
 \index{ClearLabels@{ClearLabels}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{ClearLabels()}{ClearLabels()}}
-{\footnotesize\ttfamily void Clear\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f} 
+void Clear\+Labels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -581,11 +606,11 @@ Removes all labels from the asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}{Code\+Smile\+Editor.\+Asset.\+Add\+Label}
 \item \doxylink{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}{Code\+Smile\+Editor.\+Asset.\+Add\+Labels}
 \item \doxylink{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}{Code\+Smile\+Editor.\+Asset.\+Set\+Labels} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf}\label{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf} 
-\index{Asset@{Asset}!Delete@{Delete}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf}\index{Asset@{Asset}!Delete@{Delete}}
 \index{Delete@{Delete}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Delete()}{Delete()}}
-{\footnotesize\ttfamily Object Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf} 
+Object Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -606,35 +631,36 @@ If successful, returns the former Main\+Object. It is no longer an asset but sti
 \item \doxylink{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a}{Code\+Smile\+Editor.\+Asset.\+Trash} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00440}{440}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00444}{444}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Delete(m\_AssetPath))}
-\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
-\DoxyCodeLine{00445\ }
-\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
-\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Delete(m\_AssetPath))}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{Asset.\+File.\+Delete()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=299pt]{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a_ad06bce954d9c1e05d9f53e0274a9f85a}\label{class_code_smile_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a_ad06bce954d9c1e05d9f53e0274a9f85a} 
-\index{Asset@{Asset}!Duplicate@{Duplicate}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a_ad06bce954d9c1e05d9f53e0274a9f85a}\index{Asset@{Asset}!Duplicate@{Duplicate}}
 \index{Duplicate@{Duplicate}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Duplicate()}{Duplicate()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Duplicate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ad06bce954d9c1e05d9f53e0274a9f85a_ad06bce954d9c1e05d9f53e0274a9f85a} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Duplicate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -655,11 +681,11 @@ Creates a duplicate of the asset with a new, unique file name.
 \begin{DoxyReturn}{Returns}
 The asset instance of the duplicate.
 \end{DoxyReturn}
-\Hypertarget{class_code_smile_editor_1_1_asset_a6e9b9cc6eb629d6e34d6ea90088e0148_a6e9b9cc6eb629d6e34d6ea90088e0148}\label{class_code_smile_editor_1_1_asset_a6e9b9cc6eb629d6e34d6ea90088e0148_a6e9b9cc6eb629d6e34d6ea90088e0148} 
-\index{Asset@{Asset}!ExportPackage@{ExportPackage}}
+\Hypertarget{class_code_smile_editor_1_1_asset_aa21d04a98438b6296989d9b34b295d7a_aa21d04a98438b6296989d9b34b295d7a}\index{Asset@{Asset}!ExportPackage@{ExportPackage}}
 \index{ExportPackage@{ExportPackage}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{ExportPackage()}{ExportPackage()}}
-{\footnotesize\ttfamily void Export\+Package (\begin{DoxyParamCaption}\item[{String}]{package\+Path,  }\item[{Export\+Package\+Options}]{options = {\ttfamily ExportPackageOptions.Default} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_aa21d04a98438b6296989d9b34b295d7a_aa21d04a98438b6296989d9b34b295d7a} 
+void Export\+Package (\begin{DoxyParamCaption}\item[{String}]{package\+Path}{, }\item[{Export\+Package\+Options}]{options}{ = {\ttfamily ExportPackageOptions.Default}, }\item[{String}]{owner\+Org\+Id}{ = {\ttfamily null}}\end{DoxyParamCaption})}
 
 
 
@@ -671,12 +697,14 @@ Exports this asset and its dependencies as a .unitypackage.
 \hline
 {\em options} & \href{https://docs.unity3d.com/ScriptReference/ExportPackageOptions.html}{\texttt{ Export\+Package\+Options}} \\
 \hline
+{\em owner\+Org\+Id} & The organization ID Unity associates with the exported package as its signing organization. The Organization ID is in the Unity Cloud dashboard under Administration =\texorpdfstring{$>$}{>} Settings. Available in Unity 6000.\+6 and newer. Leaving it null exports exactly as before. \\
+\hline
 \end{DoxyParams}
-\Hypertarget{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}\label{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b} 
-\index{Asset@{Asset}!ForceSave@{ForceSave}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}\index{Asset@{Asset}!ForceSave@{ForceSave}}
 \index{ForceSave@{ForceSave}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{ForceSave()}{ForceSave()}}
-{\footnotesize\ttfamily void Force\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b} 
+void Force\+Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -692,11 +720,35 @@ Force saving is achieved by flagging the object as dirty with \href{https://docs
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}{Code\+Smile\+Editor.\+Asset.\+Save()} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}\label{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2} 
-\index{Asset@{Asset}!GetIcon@{GetIcon}}
+\end{DoxyItemize}
+
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}{Force\+Save()}}.
+
+
+
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}{Force\+Save()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}\index{Asset@{Asset}!GetIcon@{GetIcon}}
 \index{GetIcon@{GetIcon}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{GetIcon()}{GetIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static Texture2D Get\+Icon (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2} 
+static Texture2D Get\+Icon (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -718,11 +770,11 @@ The object\textquotesingle{}s icon texture or null. If the obj is a sub-\/asset 
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}{Code\+Smile\+Editor.\+Asset.\+Get\+Icon(\+Code\+Smile\+Editor.\+Asset.\+Path)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}\label{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff} 
-\index{Asset@{Asset}!GetIcon@{GetIcon}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff}\index{Asset@{Asset}!GetIcon@{GetIcon}}
 \index{GetIcon@{GetIcon}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{GetIcon()}{GetIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static Texture2D Get\+Icon (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a8039d1c88de4736a9f3e706e224efdff_a8039d1c88de4736a9f3e706e224efdff} 
+static Texture2D Get\+Icon (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -730,7 +782,7 @@ Returns the icon associated with the asset type.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -744,11 +796,11 @@ The icon texture cast as Texture2D, or null.
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_ac028cbad5fe3dab688c9dff304f80ad2_ac028cbad5fe3dab688c9dff304f80ad2}{Code\+Smile\+Editor.\+Asset.\+Get\+Icon(\+Object)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}\label{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac} 
-\index{Asset@{Asset}!GetLastErrorMessage@{GetLastErrorMessage}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}\index{Asset@{Asset}!GetLastErrorMessage@{GetLastErrorMessage}}
 \index{GetLastErrorMessage@{GetLastErrorMessage}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{GetLastErrorMessage()}{GetLastErrorMessage()}}
-{\footnotesize\ttfamily static String Get\+Last\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac} 
+static String Get\+Last\+Error\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -774,31 +826,33 @@ The last error message or empty string if the last operation succeeded.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_version_control_a50c91ed4f4121561ad75f3f2efc38af9_a50c91ed4f4121561ad75f3f2efc38af9}{Code\+Smile\+Editor.\+Asset.\+Version\+Control.\+Can\+Make\+Editable} 
 \end{DoxyItemize}
 
-References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Asset.\+Get\+Last\+Error\+Message()}}.
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Get\+Last\+Error\+Message()}}.
 
 
 
-Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Asset.\+Get\+Last\+Error\+Message()}}.
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Get\+Last\+Error\+Message()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=191pt]{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=191pt]{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_a192accd4daaea8a0cf39c331b9fcb95c_a192accd4daaea8a0cf39c331b9fcb95c}\label{class_code_smile_editor_1_1_asset_a192accd4daaea8a0cf39c331b9fcb95c_a192accd4daaea8a0cf39c331b9fcb95c} 
-\index{Asset@{Asset}!GetMain$<$ T $>$@{GetMain$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a192accd4daaea8a0cf39c331b9fcb95c_a192accd4daaea8a0cf39c331b9fcb95c}\index{Asset@{Asset}!GetMain$<$ T $>$@{GetMain$<$ T $>$}}
 \index{GetMain$<$ T $>$@{GetMain$<$ T $>$}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{GetMain$<$ T $>$()}{GetMain< T >()}}
-{\footnotesize\ttfamily T Get\+Main$<$ T $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a192accd4daaea8a0cf39c331b9fcb95c_a192accd4daaea8a0cf39c331b9fcb95c} 
+T Get\+Main$<$ T $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -823,17 +877,17 @@ Returns Main\+Object cast to T or null if main object is not of type T.
 \item[Type Constraints]\begin{description}
 \item[{\em T} : {\em Object}]\end{description}
 \end{Desc}
-\Hypertarget{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec}\label{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec} 
-\index{Asset@{Asset}!Load$<$ T $>$@{Load$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec}\index{Asset@{Asset}!Load$<$ T $>$@{Load$<$ T $>$}}
 \index{Load$<$ T $>$@{Load$<$ T $>$}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Load$<$ T $>$()}{Load< T >()}}
-{\footnotesize\ttfamily T Load$<$ T $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a5d27be243c1f698cba116b768e3f65ec_a5d27be243c1f698cba116b768e3f65ec} 
+T Load$<$ T $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Loads a (sub) object from the asset identified by type. 
 
-To load the main object of the Asset instance use the \doxylink{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d}{Code\+Smile\+Editor.\+Asset.\+Main\+Object} property. 
+To load the main object of the \doxylink{class_code_smile_editor_1_1_asset}{Asset} instance use the \doxylink{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d}{Code\+Smile\+Editor.\+Asset.\+Main\+Object} property. 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -857,11 +911,11 @@ Returns the \textquotesingle{}first\textquotesingle{} asset of the type found.
 \item[Type Constraints]\begin{description}
 \item[{\em T} : {\em Object}]\end{description}
 \end{Desc}
-\Hypertarget{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8}\label{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8} 
-\index{Asset@{Asset}!Move@{Move}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8}\index{Asset@{Asset}!Move@{Move}}
 \index{Move@{Move}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Move()}{Move()}}
-{\footnotesize\ttfamily Boolean Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8} 
+Boolean Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})}
 
 
 
@@ -888,37 +942,50 @@ True if moving the asset will be successful, false otherwise.
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00349}{349}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00353}{353}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Move(m\_AssetPath,\ destinationPath))}
-\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00356\ }
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Move(m\_AssetPath,\ destinationPath))}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_asset_8_file_8cs_source_l00649}{Asset.\+File.\+Move()}}.
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00649}{Asset.\+File.\+Move()}}, and \mbox{\hyperlink{_asset_8cs_source_l00353}{Move()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00353}{Move()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=316pt]{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8_cgraph}
+\includegraphics[width=323pt]{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9}\label{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9} 
-\index{Asset@{Asset}!OpenExternal@{OpenExternal}}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=119pt]{class_code_smile_editor_1_1_asset_a45faf9fc17e3cb57b87d2ae09e4dd7f8_a45faf9fc17e3cb57b87d2ae09e4dd7f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9}\index{Asset@{Asset}!OpenExternal@{OpenExternal}}
 \index{OpenExternal@{OpenExternal}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{OpenExternal()}{OpenExternal()}}
-{\footnotesize\ttfamily void Open\+External (\begin{DoxyParamCaption}\item[{Int32}]{line\+Number = {\ttfamily -\/1},  }\item[{Int32}]{column\+Number = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a0666c1c07cd6e3eef35e058c2e09fdf9_a0666c1c07cd6e3eef35e058c2e09fdf9} 
+void Open\+External (\begin{DoxyParamCaption}\item[{Int32}]{line\+Number}{ = {\ttfamily -\/1}, }\item[{Int32}]{column\+Number}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
 
 
 
@@ -933,11 +1000,11 @@ Optional line and column numbers can be specified for text files and application
 {\em column\+Number} & Column/character number to highlight. Support depends on application. Default\+: -\/1\\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_code_smile_editor_1_1_asset_ae41aa018507db1deffb10096f33e3bb6_ae41aa018507db1deffb10096f33e3bb6}\label{class_code_smile_editor_1_1_asset_ae41aa018507db1deffb10096f33e3bb6_ae41aa018507db1deffb10096f33e3bb6} 
-\index{Asset@{Asset}!operator Asset@{operator Asset}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ae41aa018507db1deffb10096f33e3bb6_ae41aa018507db1deffb10096f33e3bb6}\index{Asset@{Asset}!operator Asset@{operator Asset}}
 \index{operator Asset@{operator Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{operator Asset()}{operator Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ae41aa018507db1deffb10096f33e3bb6_ae41aa018507db1deffb10096f33e3bb6} 
+static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{GUID}]{guid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -959,15 +1026,15 @@ An asset instance or null if guid is empty.
 \DoxyCodeLine{Asset\ asset\ =\ guid;}
 
 \end{DoxyCode}
- \Hypertarget{class_code_smile_editor_1_1_asset_ac84df38322545eff4fb610f424420751_ac84df38322545eff4fb610f424420751}\label{class_code_smile_editor_1_1_asset_ac84df38322545eff4fb610f424420751_ac84df38322545eff4fb610f424420751} 
-\index{Asset@{Asset}!operator Asset@{operator Asset}}
+ \Hypertarget{class_code_smile_editor_1_1_asset_ac84df38322545eff4fb610f424420751_ac84df38322545eff4fb610f424420751}\index{Asset@{Asset}!operator Asset@{operator Asset}}
 \index{operator Asset@{operator Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{operator Asset()}{operator Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac84df38322545eff4fb610f424420751_ac84df38322545eff4fb610f424420751} 
+static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Implicit conversion of Unity\+Engine.\+Object to an Asset. 
+Implicit conversion of Unity\+Engine.\+Object to an \doxylink{class_code_smile_editor_1_1_asset}{Asset}. 
 
 Throws exception if obj is not an asset object.
 
@@ -986,19 +1053,19 @@ An asset instance or null if obj is null.
 \DoxyCodeLine{Asset\ asset\ =\ obj;\ \textcolor{comment}{//\ implicit\ conversion:\ Object\ to\ Asset}}
 
 \end{DoxyCode}
- \Hypertarget{class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0_a23920865dfc0888bc17dc618ab30cbe0}\label{class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0_a23920865dfc0888bc17dc618ab30cbe0} 
-\index{Asset@{Asset}!operator Asset@{operator Asset}}
+ \Hypertarget{class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0_a23920865dfc0888bc17dc618ab30cbe0}\index{Asset@{Asset}!operator Asset@{operator Asset}}
 \index{operator Asset@{operator Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{operator Asset()}{operator Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a23920865dfc0888bc17dc618ab30cbe0_a23920865dfc0888bc17dc618ab30cbe0} 
+static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Implicit conversion of Asset.\+Path to an Asset instance. 
+Implicit conversion of \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Asset.\+Path} to an \doxylink{class_code_smile_editor_1_1_asset}{Asset} instance. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1008,14 +1075,14 @@ An asset instance or null if path is null.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Asset\ asset\ =\ \textcolor{keyword}{new}\ Path(\textcolor{stringliteral}{"{}Assets/folder/file.asset"{}});}
+\DoxyCodeLine{Asset\ asset\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}(\textcolor{stringliteral}{"{}Assets/folder/file.asset"{}});}
 
 \end{DoxyCode}
- \Hypertarget{class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d_aa01a879ca0793e3def47211f4d8d338d}\label{class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d_aa01a879ca0793e3def47211f4d8d338d} 
-\index{Asset@{Asset}!operator Asset@{operator Asset}}
+ \Hypertarget{class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d_aa01a879ca0793e3def47211f4d8d338d}\index{Asset@{Asset}!operator Asset@{operator Asset}}
 \index{operator Asset@{operator Asset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{operator Asset()}{operator Asset()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_aa01a879ca0793e3def47211f4d8d338d_aa01a879ca0793e3def47211f4d8d338d} 
+static implicit operator \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} (\begin{DoxyParamCaption}\item[{String}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1023,7 +1090,7 @@ Implicit conversion of string path to an asset instance.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1037,11 +1104,11 @@ An asset instance or null if path is null.
 \DoxyCodeLine{Asset\ asset\ =\ \textcolor{stringliteral}{"{}Assets/Folder/MyAsset.asset"{}};}
 
 \end{DoxyCode}
- \Hypertarget{class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1_ae36538faed7f7dd4bd6d2a42867bbee1}\label{class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1_ae36538faed7f7dd4bd6d2a42867bbee1} 
-\index{Asset@{Asset}!operator Object@{operator Object}}
+ \Hypertarget{class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1_ae36538faed7f7dd4bd6d2a42867bbee1}\index{Asset@{Asset}!operator Object@{operator Object}}
 \index{operator Object@{operator Object}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{operator Object()}{operator Object()}}
-{\footnotesize\ttfamily static implicit operator Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}}}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ae36538faed7f7dd4bd6d2a42867bbee1_ae36538faed7f7dd4bd6d2a42867bbee1} 
+static implicit operator Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}}}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1064,11 +1131,11 @@ Implicit conversion to Unity\+Engine.\+Object.
 \begin{DoxyReturn}{Returns}
 The asset\textquotesingle{}s Main\+Object property.
 \end{DoxyReturn}
-\Hypertarget{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178}\label{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178} 
-\index{Asset@{Asset}!RemoveLabel@{RemoveLabel}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178}\index{Asset@{Asset}!RemoveLabel@{RemoveLabel}}
 \index{RemoveLabel@{RemoveLabel}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{RemoveLabel()}{RemoveLabel()}}
-{\footnotesize\ttfamily void Remove\+Label (\begin{DoxyParamCaption}\item[{String}]{label }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178_a972ef43bcee036e2009fc9af10173178} 
+void Remove\+Label (\begin{DoxyParamCaption}\item[{String}]{label}{}\end{DoxyParamCaption})}
 
 
 
@@ -1076,7 +1143,7 @@ Removes a label from an asset. Does nothing if the label doesn\textquotesingle{}
 
 
 \begin{DoxyParams}{Parameters}
-{\em label} & Label to remove.\\
+{\em label} & \doxylink{class_code_smile_editor_1_1_asset_1_1_label}{Label} to remove.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -1087,11 +1154,11 @@ Removes a label from an asset. Does nothing if the label doesn\textquotesingle{}
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f}{Code\+Smile\+Editor.\+Asset.\+Clear\+Labels} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}\label{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd} 
-\index{Asset@{Asset}!RemoveSubAsset@{RemoveSubAsset}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd}\index{Asset@{Asset}!RemoveSubAsset@{RemoveSubAsset}}
 \index{RemoveSubAsset@{RemoveSubAsset}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{RemoveSubAsset()}{RemoveSubAsset()}}
-{\footnotesize\ttfamily void Remove\+Sub\+Asset (\begin{DoxyParamCaption}\item[{Object}]{sub\+Asset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ae1e3a3de65cb69b8ac09a0e10f2dbabd_ae1e3a3de65cb69b8ac09a0e10f2dbabd} 
+void Remove\+Sub\+Asset (\begin{DoxyParamCaption}\item[{Object}]{sub\+Asset}{}\end{DoxyParamCaption})}
 
 
 
@@ -1111,11 +1178,11 @@ Removes an object from the asset\textquotesingle{}s sub-\/objects.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a7adbbe2c45d2f0188f60917a3d870946_a7adbbe2c45d2f0188f60917a3d870946}{Code\+Smile\+Editor.\+Asset.\+Add\+Sub\+Asset}
 \item \doxylink{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389}{Code\+Smile\+Editor.\+Asset.\+Sub\+Assets} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675}\label{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675} 
-\index{Asset@{Asset}!Rename@{Rename}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675}\index{Asset@{Asset}!Rename@{Rename}}
 \index{Rename@{Rename}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Rename()}{Rename()}}
-{\footnotesize\ttfamily Boolean Rename (\begin{DoxyParamCaption}\item[{String}]{new\+File\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675} 
+Boolean Rename (\begin{DoxyParamCaption}\item[{String}]{new\+File\+Name}{}\end{DoxyParamCaption})}
 
 
 
@@ -1156,37 +1223,38 @@ True if the rename succeeded. The Asset\+Path property will be updated according
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00390}{390}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00394}{394}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Rename(m\_AssetPath,\ newFileName))}
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00397\ }
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Rename(m\_AssetPath,\ newFileName))}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetAssetPathFromObject();}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{Asset.\+File.\+Rename()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=307pt]{class_code_smile_editor_1_1_asset_a28fe22006383d71d5b564df4a46b2675_a28fe22006383d71d5b564df4a46b2675_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}\label{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33} 
-\index{Asset@{Asset}!Save@{Save}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}\index{Asset@{Asset}!Save@{Save}}
 \index{Save@{Save}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Save()}{Save()}}
-{\footnotesize\ttfamily void Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33} 
+void Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1202,11 +1270,35 @@ Not every change marks an object as \textquotesingle{}dirty\textquotesingle{}. I
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}{Code\+Smile\+Editor.\+Asset.\+Force\+Save()} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}\label{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119} 
-\index{Asset@{Asset}!SaveAs@{SaveAs}}
+\end{DoxyItemize}
+
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}{Save()}}.
+
+
+
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33}{Save()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=117pt]{class_code_smile_editor_1_1_asset_a5df140c1ee51aadf7fe88ce3fb9cac33_a5df140c1ee51aadf7fe88ce3fb9cac33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}\index{Asset@{Asset}!SaveAs@{SaveAs}}
 \index{SaveAs@{SaveAs}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{SaveAs()}{SaveAs()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Save\+As (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Save\+As (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})}
 
 
 
@@ -1220,7 +1312,7 @@ Will automatically create missing folders.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} to get the human readable error message. 
+The copy of the \doxylink{class_code_smile_editor_1_1_asset}{Asset} or null if copying failed. Use \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} to get the human readable error message. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -1234,20 +1326,33 @@ The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00273}{Asset.\+Save\+As\+New()}}.
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{Save\+As()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{Save\+As()}}, and \mbox{\hyperlink{_asset_8cs_source_l00277}{Save\+As\+New()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=233pt]{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0}\label{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0} 
-\index{Asset@{Asset}!SaveAsNew@{SaveAsNew}}
+\Hypertarget{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0}\index{Asset@{Asset}!SaveAsNew@{SaveAsNew}}
 \index{SaveAsNew@{SaveAsNew}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{SaveAsNew()}{SaveAsNew()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Save\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset}{Asset}} Save\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})}
 
 
 
@@ -1261,7 +1366,7 @@ Will automatically create missing folders.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} to get the human readable error message. 
+The copy of the \doxylink{class_code_smile_editor_1_1_asset}{Asset} or null if copying failed. Use \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} to get the human readable error message. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -1275,33 +1380,46 @@ The copy of the Asset or null if copying failed. Use \doxylink{class_code_smile_
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00273}{273}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00277}{277}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00276\ }
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{SaveAs}}(path.UniqueFilePath);}
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SaveAs(path.UniqueFilePath);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{Asset.\+Save\+As()}}.
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_a1c6432dab22d51bcf01bf6ad221e7119_a1c6432dab22d51bcf01bf6ad221e7119}{Save\+As()}}, and \mbox{\hyperlink{_asset_8cs_source_l00277}{Save\+As\+New()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00277}{Save\+As\+New()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=233pt]{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_ac9fdda28d3fb7be683439603387df920_ac9fdda28d3fb7be683439603387df920}\label{class_code_smile_editor_1_1_asset_ac9fdda28d3fb7be683439603387df920_ac9fdda28d3fb7be683439603387df920} 
-\index{Asset@{Asset}!SetDirty@{SetDirty}}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_code_smile_editor_1_1_asset_af23adc642520b7f00cb047865ef50ad0_af23adc642520b7f00cb047865ef50ad0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_ac9fdda28d3fb7be683439603387df920_ac9fdda28d3fb7be683439603387df920}\index{Asset@{Asset}!SetDirty@{SetDirty}}
 \index{SetDirty@{SetDirty}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{SetDirty()}{SetDirty()}}
-{\footnotesize\ttfamily void Set\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac9fdda28d3fb7be683439603387df920_ac9fdda28d3fb7be683439603387df920} 
+void Set\+Dirty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1315,11 +1433,11 @@ Marks the main object as dirty.
 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_a80bd55f3de91ab63e74b3f66c1d1dd4b_a80bd55f3de91ab63e74b3f66c1d1dd4b}{Code\+Smile\+Editor.\+Asset.\+Force\+Save} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}\label{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5} 
-\index{Asset@{Asset}!SetLabels@{SetLabels}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5}\index{Asset@{Asset}!SetLabels@{SetLabels}}
 \index{SetLabels@{SetLabels}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{SetLabels()}{SetLabels()}}
-{\footnotesize\ttfamily void Set\+Labels (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{labels }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af924398cf4176684f1c3bad2017f9ed5_af924398cf4176684f1c3bad2017f9ed5} 
+void Set\+Labels (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{labels}{}\end{DoxyParamCaption})}
 
 
 
@@ -1340,11 +1458,11 @@ Sets the asset\textquotesingle{}s labels, replacing all previously existing labe
 \item \doxylink{class_code_smile_editor_1_1_asset_a2ebda9df65a71b44245f958679cf302a_a2ebda9df65a71b44245f958679cf302a}{Code\+Smile\+Editor.\+Asset.\+Add\+Label}
 \item \doxylink{class_code_smile_editor_1_1_asset_a677d0e58f64014b9722f943987c6ece5_a677d0e58f64014b9722f943987c6ece5}{Code\+Smile\+Editor.\+Asset.\+Add\+Labels}
 \item \doxylink{class_code_smile_editor_1_1_asset_a1ec7cb3d4ed6edc811690f8855a7982f_a1ec7cb3d4ed6edc811690f8855a7982f}{Code\+Smile\+Editor.\+Asset.\+Clear\+Labels} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a}\label{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a} 
-\index{Asset@{Asset}!Trash@{Trash}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a}\index{Asset@{Asset}!Trash@{Trash}}
 \index{Trash@{Trash}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Trash()}{Trash()}}
-{\footnotesize\ttfamily Object Trash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a9ff25b59d227ab5d89fdabafffb9876a_a9ff25b59d227ab5d89fdabafffb9876a} 
+Object Trash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
@@ -1365,24 +1483,25 @@ If successful, returns the former Main\+Object. It is no longer an asset but sti
 \item \doxylink{class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf_af6ce8c8d3d810ae286e98e54aa360adf}{Code\+Smile\+Editor.\+Asset.\+Delete} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8cs_source_l00463}{463}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8cs_source_l00467}{467}} of file \mbox{\hyperlink{_asset_8cs_source}{Asset.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Trash(m\_AssetPath))}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
-\DoxyCodeLine{00468\ }
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
-\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ var\ mainObject\ =\ m\_MainObject;}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Trash(m\_AssetPath))}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InvalidateInstance();}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mainObject;}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}{Asset.\+File.\+Trash()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1392,11 +1511,11 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 \doxysubsubsection{Property Documentation}
-\Hypertarget{class_code_smile_editor_1_1_asset_a57983fe52530259a94425f11144dcf12_a57983fe52530259a94425f11144dcf12}\label{class_code_smile_editor_1_1_asset_a57983fe52530259a94425f11144dcf12_a57983fe52530259a94425f11144dcf12} 
-\index{Asset@{Asset}!ActiveImporter@{ActiveImporter}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a57983fe52530259a94425f11144dcf12_a57983fe52530259a94425f11144dcf12}\index{Asset@{Asset}!ActiveImporter@{ActiveImporter}}
 \index{ActiveImporter@{ActiveImporter}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{ActiveImporter}{ActiveImporter}}
-{\footnotesize\ttfamily Type Active\+Importer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a57983fe52530259a94425f11144dcf12_a57983fe52530259a94425f11144dcf12} 
+Type Active\+Importer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -1436,11 +1555,11 @@ Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00155}{155}}
 \DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e}\label{class_code_smile_editor_1_1_asset_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e} 
-\index{Asset@{Asset}!AssetPath@{AssetPath}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e}\index{Asset@{Asset}!AssetPath@{AssetPath}}
 \index{AssetPath@{AssetPath}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{AssetPath}{AssetPath}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Asset\+Path\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a54bbd4600c9787134d849c022cefe90e_a54bbd4600c9787134d849c022cefe90e} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Asset\+Path\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1458,11 +1577,11 @@ Returns the path to the asset (file or folder).
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00061}{61}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_afd494f6a711cc6e5683d95823c87f916_afd494f6a711cc6e5683d95823c87f916}\label{class_code_smile_editor_1_1_asset_afd494f6a711cc6e5683d95823c87f916_afd494f6a711cc6e5683d95823c87f916} 
-\index{Asset@{Asset}!AvailableImporters@{AvailableImporters}}
+\Hypertarget{class_code_smile_editor_1_1_asset_afd494f6a711cc6e5683d95823c87f916_afd494f6a711cc6e5683d95823c87f916}\index{Asset@{Asset}!AvailableImporters@{AvailableImporters}}
 \index{AvailableImporters@{AvailableImporters}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{AvailableImporters}{AvailableImporters}}
-{\footnotesize\ttfamily Type \mbox{[}$\,$\mbox{]} Available\+Importers\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_afd494f6a711cc6e5683d95823c87f916_afd494f6a711cc6e5683d95823c87f916} 
+Type \mbox{[}$\,$\mbox{]} Available\+Importers\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1480,11 +1599,11 @@ Returns the available importers for this asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00177}{177}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27_a171f2bcee950b6e79886c7507f9beb27}\label{class_code_smile_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27_a171f2bcee950b6e79886c7507f9beb27} 
-\index{Asset@{Asset}!DefaultImporter@{DefaultImporter}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27_a171f2bcee950b6e79886c7507f9beb27}\index{Asset@{Asset}!DefaultImporter@{DefaultImporter}}
 \index{DefaultImporter@{DefaultImporter}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{DefaultImporter}{DefaultImporter}}
-{\footnotesize\ttfamily Type Default\+Importer\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27_a171f2bcee950b6e79886c7507f9beb27} 
+Type Default\+Importer\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1502,11 +1621,11 @@ Returns the default Asset\+Importer type for this asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00144}{144}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_af2fc7a5ab674d2293e0c80bcceb709f6_af2fc7a5ab674d2293e0c80bcceb709f6}\label{class_code_smile_editor_1_1_asset_af2fc7a5ab674d2293e0c80bcceb709f6_af2fc7a5ab674d2293e0c80bcceb709f6} 
-\index{Asset@{Asset}!Dependencies@{Dependencies}}
+\Hypertarget{class_code_smile_editor_1_1_asset_af2fc7a5ab674d2293e0c80bcceb709f6_af2fc7a5ab674d2293e0c80bcceb709f6}\index{Asset@{Asset}!Dependencies@{Dependencies}}
 \index{Dependencies@{Dependencies}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Dependencies}{Dependencies}}
-{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} Dependencies\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af2fc7a5ab674d2293e0c80bcceb709f6_af2fc7a5ab674d2293e0c80bcceb709f6} 
+String \mbox{[}$\,$\mbox{]} Dependencies\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1527,11 +1646,11 @@ Returns paths to the dependent assets.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00135}{135}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a0ae61d10248f285be98d0bab84ca431e_a0ae61d10248f285be98d0bab84ca431e}\label{class_code_smile_editor_1_1_asset_a0ae61d10248f285be98d0bab84ca431e_a0ae61d10248f285be98d0bab84ca431e} 
-\index{Asset@{Asset}!DirectDependencies@{DirectDependencies}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a0ae61d10248f285be98d0bab84ca431e_a0ae61d10248f285be98d0bab84ca431e}\index{Asset@{Asset}!DirectDependencies@{DirectDependencies}}
 \index{DirectDependencies@{DirectDependencies}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{DirectDependencies}{DirectDependencies}}
-{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} Direct\+Dependencies\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a0ae61d10248f285be98d0bab84ca431e_a0ae61d10248f285be98d0bab84ca431e} 
+String \mbox{[}$\,$\mbox{]} Direct\+Dependencies\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1552,11 +1671,11 @@ Returns paths to the directly dependent assets.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00125}{125}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a2d3c3468bf091cc7260b4cdca91b4a55_a2d3c3468bf091cc7260b4cdca91b4a55}\label{class_code_smile_editor_1_1_asset_a2d3c3468bf091cc7260b4cdca91b4a55_a2d3c3468bf091cc7260b4cdca91b4a55} 
-\index{Asset@{Asset}!FileId@{FileId}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a2d3c3468bf091cc7260b4cdca91b4a55_a2d3c3468bf091cc7260b4cdca91b4a55}\index{Asset@{Asset}!FileId@{FileId}}
 \index{FileId@{FileId}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{FileId}{FileId}}
-{\footnotesize\ttfamily Int64 File\+Id\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a2d3c3468bf091cc7260b4cdca91b4a55_a2d3c3468bf091cc7260b4cdca91b4a55} 
+Int64 File\+Id\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1574,11 +1693,11 @@ Returns the local File\+ID of the asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00087}{87}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c}\label{class_code_smile_editor_1_1_asset_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c} 
-\index{Asset@{Asset}!Guid@{Guid}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c}\index{Asset@{Asset}!Guid@{Guid}}
 \index{Guid@{Guid}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Guid}{Guid}}
-{\footnotesize\ttfamily GUID Guid\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a66a3fc7176ae79e7e9ee85df99c5ff7c_a66a3fc7176ae79e7e9ee85df99c5ff7c} 
+GUID Guid\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1596,11 +1715,11 @@ Returns the asset\textquotesingle{}s GUID.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a68c0326ba0d934f74e65a06f805627e0_a68c0326ba0d934f74e65a06f805627e0}\label{class_code_smile_editor_1_1_asset_a68c0326ba0d934f74e65a06f805627e0_a68c0326ba0d934f74e65a06f805627e0} 
-\index{Asset@{Asset}!Icon@{Icon}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a68c0326ba0d934f74e65a06f805627e0_a68c0326ba0d934f74e65a06f805627e0}\index{Asset@{Asset}!Icon@{Icon}}
 \index{Icon@{Icon}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Icon}{Icon}}
-{\footnotesize\ttfamily Texture2D Icon\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a68c0326ba0d934f74e65a06f805627e0_a68c0326ba0d934f74e65a06f805627e0} 
+Texture2D Icon\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1610,11 +1729,11 @@ Returns the icon texture associated with the asset type.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_af3886ebc9167b6615000ad5835ded3d2_af3886ebc9167b6615000ad5835ded3d2}\label{class_code_smile_editor_1_1_asset_af3886ebc9167b6615000ad5835ded3d2_af3886ebc9167b6615000ad5835ded3d2} 
-\index{Asset@{Asset}!IsDeleted@{IsDeleted}}
+\Hypertarget{class_code_smile_editor_1_1_asset_af3886ebc9167b6615000ad5835ded3d2_af3886ebc9167b6615000ad5835ded3d2}\index{Asset@{Asset}!IsDeleted@{IsDeleted}}
 \index{IsDeleted@{IsDeleted}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{IsDeleted}{IsDeleted}}
-{\footnotesize\ttfamily Boolean Is\+Deleted\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af3886ebc9167b6615000ad5835ded3d2_af3886ebc9167b6615000ad5835ded3d2} 
+Boolean Is\+Deleted\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1633,11 +1752,11 @@ Returns true after the asset has been deleted.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00209}{209}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_ae1533f44e1d6a3921dcf9dc0c73e5721_ae1533f44e1d6a3921dcf9dc0c73e5721}\label{class_code_smile_editor_1_1_asset_ae1533f44e1d6a3921dcf9dc0c73e5721_ae1533f44e1d6a3921dcf9dc0c73e5721} 
-\index{Asset@{Asset}!IsForeign@{IsForeign}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ae1533f44e1d6a3921dcf9dc0c73e5721_ae1533f44e1d6a3921dcf9dc0c73e5721}\index{Asset@{Asset}!IsForeign@{IsForeign}}
 \index{IsForeign@{IsForeign}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{IsForeign}{IsForeign}}
-{\footnotesize\ttfamily Boolean Is\+Foreign\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ae1533f44e1d6a3921dcf9dc0c73e5721_ae1533f44e1d6a3921dcf9dc0c73e5721} 
+Boolean Is\+Foreign\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1659,11 +1778,11 @@ Returns whether this is a foreign asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00220}{220}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_ac3eef672ee8ea3c14524ee2a1d7fbfef_ac3eef672ee8ea3c14524ee2a1d7fbfef}\label{class_code_smile_editor_1_1_asset_ac3eef672ee8ea3c14524ee2a1d7fbfef_ac3eef672ee8ea3c14524ee2a1d7fbfef} 
-\index{Asset@{Asset}!IsImporterOverridden@{IsImporterOverridden}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ac3eef672ee8ea3c14524ee2a1d7fbfef_ac3eef672ee8ea3c14524ee2a1d7fbfef}\index{Asset@{Asset}!IsImporterOverridden@{IsImporterOverridden}}
 \index{IsImporterOverridden@{IsImporterOverridden}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{IsImporterOverridden}{IsImporterOverridden}}
-{\footnotesize\ttfamily Boolean Is\+Importer\+Overridden\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ac3eef672ee8ea3c14524ee2a1d7fbfef_ac3eef672ee8ea3c14524ee2a1d7fbfef} 
+Boolean Is\+Importer\+Overridden\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1684,11 +1803,11 @@ Returns true if the asset\textquotesingle{}s default Asset\+Importer type has be
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00188}{188}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a993540e3a2141abe3463b2a75655f931_a993540e3a2141abe3463b2a75655f931}\label{class_code_smile_editor_1_1_asset_a993540e3a2141abe3463b2a75655f931_a993540e3a2141abe3463b2a75655f931} 
-\index{Asset@{Asset}!IsNative@{IsNative}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a993540e3a2141abe3463b2a75655f931_a993540e3a2141abe3463b2a75655f931}\index{Asset@{Asset}!IsNative@{IsNative}}
 \index{IsNative@{IsNative}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{IsNative}{IsNative}}
-{\footnotesize\ttfamily Boolean Is\+Native\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a993540e3a2141abe3463b2a75655f931_a993540e3a2141abe3463b2a75655f931} 
+Boolean Is\+Native\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1710,11 +1829,11 @@ Returns whether this is a native asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00231}{231}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a16590be90618aaa5682dbdc597fd5223_a16590be90618aaa5682dbdc597fd5223}\label{class_code_smile_editor_1_1_asset_a16590be90618aaa5682dbdc597fd5223_a16590be90618aaa5682dbdc597fd5223} 
-\index{Asset@{Asset}!IsScene@{IsScene}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a16590be90618aaa5682dbdc597fd5223_a16590be90618aaa5682dbdc597fd5223}\index{Asset@{Asset}!IsScene@{IsScene}}
 \index{IsScene@{IsScene}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{IsScene}{IsScene}}
-{\footnotesize\ttfamily Boolean Is\+Scene\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a16590be90618aaa5682dbdc597fd5223_a16590be90618aaa5682dbdc597fd5223} 
+Boolean Is\+Scene\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1724,11 +1843,11 @@ Returns true if this is a scene asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00236}{236}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a537c910df9f9f5d24a916b70934f4de8_a537c910df9f9f5d24a916b70934f4de8}\label{class_code_smile_editor_1_1_asset_a537c910df9f9f5d24a916b70934f4de8_a537c910df9f9f5d24a916b70934f4de8} 
-\index{Asset@{Asset}!Labels@{Labels}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a537c910df9f9f5d24a916b70934f4de8_a537c910df9f9f5d24a916b70934f4de8}\index{Asset@{Asset}!Labels@{Labels}}
 \index{Labels@{Labels}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{Labels}{Labels}}
-{\footnotesize\ttfamily String \mbox{[}$\,$\mbox{]} Labels\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a537c910df9f9f5d24a916b70934f4de8_a537c910df9f9f5d24a916b70934f4de8} 
+String \mbox{[}$\,$\mbox{]} Labels\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -1754,11 +1873,11 @@ Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00196}{196}}
 \DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d}\label{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d} 
-\index{Asset@{Asset}!MainObject@{MainObject}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d}\index{Asset@{Asset}!MainObject@{MainObject}}
 \index{MainObject@{MainObject}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{MainObject}{MainObject}}
-{\footnotesize\ttfamily Object Main\+Object\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ab39ec1f49ab79e8ae84c6a53a2458f2d_ab39ec1f49ab79e8ae84c6a53a2458f2d} 
+Object Main\+Object\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -1801,7 +1920,7 @@ To cast the main object to a specific type you may simply cast the asset\+:
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset}
 \item Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Set\+Main(\+Unity\+Engine.\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)
 \item Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Set\+Main(\+Unity\+Engine.\+Object,\+Unity\+Engine.\+Object)
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)} 
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path) 
 \end{DoxyItemize}
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
@@ -1820,11 +1939,11 @@ Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00035}{35}} 
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_a15e35df5acbfe3751310d7fd241a6295_a15e35df5acbfe3751310d7fd241a6295}\label{class_code_smile_editor_1_1_asset_a15e35df5acbfe3751310d7fd241a6295_a15e35df5acbfe3751310d7fd241a6295} 
-\index{Asset@{Asset}!MainObjectType@{MainObjectType}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a15e35df5acbfe3751310d7fd241a6295_a15e35df5acbfe3751310d7fd241a6295}\index{Asset@{Asset}!MainObjectType@{MainObjectType}}
 \index{MainObjectType@{MainObjectType}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{MainObjectType}{MainObjectType}}
-{\footnotesize\ttfamily Type Main\+Object\+Type\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a15e35df5acbfe3751310d7fd241a6295_a15e35df5acbfe3751310d7fd241a6295} 
+Type Main\+Object\+Type\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1842,11 +1961,11 @@ Returns the type of the main asset at the given path.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df}\label{class_code_smile_editor_1_1_asset_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df} 
-\index{Asset@{Asset}!MetaPath@{MetaPath}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df}\index{Asset@{Asset}!MetaPath@{MetaPath}}
 \index{MetaPath@{MetaPath}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{MetaPath}{MetaPath}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Meta\+Path\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a0084f5ad8a13c505013748101a81b1df_a0084f5ad8a13c505013748101a81b1df} 
+\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} Meta\+Path\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1864,11 +1983,11 @@ Returns the path to the .meta file for the asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00070}{70}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_af8ffb2f0dfbb3585bd764056147d01b3_af8ffb2f0dfbb3585bd764056147d01b3}\label{class_code_smile_editor_1_1_asset_af8ffb2f0dfbb3585bd764056147d01b3_af8ffb2f0dfbb3585bd764056147d01b3} 
-\index{Asset@{Asset}!OwningBundle@{OwningBundle}}
+\Hypertarget{class_code_smile_editor_1_1_asset_af8ffb2f0dfbb3585bd764056147d01b3_af8ffb2f0dfbb3585bd764056147d01b3}\index{Asset@{Asset}!OwningBundle@{OwningBundle}}
 \index{OwningBundle@{OwningBundle}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{OwningBundle}{OwningBundle}}
-{\footnotesize\ttfamily String Owning\+Bundle\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_af8ffb2f0dfbb3585bd764056147d01b3_af8ffb2f0dfbb3585bd764056147d01b3} 
+String Owning\+Bundle\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1876,7 +1995,7 @@ Returns the bundle name the asset belongs to.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1894,11 +2013,11 @@ The bundle name or an empty string.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00104}{104}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d_a91f88014dec2b3bff50d35f595e6409d}\label{class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d_a91f88014dec2b3bff50d35f595e6409d} 
-\index{Asset@{Asset}!OwningBundleVariant@{OwningBundleVariant}}
+\Hypertarget{class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d_a91f88014dec2b3bff50d35f595e6409d}\index{Asset@{Asset}!OwningBundleVariant@{OwningBundleVariant}}
 \index{OwningBundleVariant@{OwningBundleVariant}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{OwningBundleVariant}{OwningBundleVariant}}
-{\footnotesize\ttfamily String Owning\+Bundle\+Variant\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d_a91f88014dec2b3bff50d35f595e6409d} 
+String Owning\+Bundle\+Variant\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1906,7 +2025,7 @@ Returns the bundle variant name the asset belongs to.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1924,11 +2043,11 @@ The bundle variant name or empty string.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00115}{115}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389}\label{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389} 
-\index{Asset@{Asset}!SubAssets@{SubAssets}}
+\Hypertarget{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389}\index{Asset@{Asset}!SubAssets@{SubAssets}}
 \index{SubAssets@{SubAssets}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{SubAssets}{SubAssets}}
-{\footnotesize\ttfamily Object \mbox{[}$\,$\mbox{]} Sub\+Assets\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_accd20b073ee732df08cf6ba0b9b8a389_accd20b073ee732df08cf6ba0b9b8a389} 
+Object \mbox{[}$\,$\mbox{]} Sub\+Assets\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -1948,11 +2067,11 @@ Whether the main object is included in this list depends on the type of asset.
 
 Definition at line \mbox{\hyperlink{_asset_8_properties_8cs_source_l00247}{247}} of file \mbox{\hyperlink{_asset_8_properties_8cs_source}{Asset.\+Properties.\+cs}}.
 
-\Hypertarget{class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000_ace611059f2ab296e1be5b51d33617000}\label{class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000_ace611059f2ab296e1be5b51d33617000} 
-\index{Asset@{Asset}!VisibleSubAssets@{VisibleSubAssets}}
+\Hypertarget{class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000_ace611059f2ab296e1be5b51d33617000}\index{Asset@{Asset}!VisibleSubAssets@{VisibleSubAssets}}
 \index{VisibleSubAssets@{VisibleSubAssets}!Asset@{Asset}}
 \doxyparagraph{\texorpdfstring{VisibleSubAssets}{VisibleSubAssets}}
-{\footnotesize\ttfamily Object \mbox{[}$\,$\mbox{]} Visible\+Sub\+Assets\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_ace611059f2ab296e1be5b51d33617000_ace611059f2ab296e1be5b51d33617000} 
+Object \mbox{[}$\,$\mbox{]} Visible\+Sub\+Assets\hspace{0.3cm}{\ttfamily [get]}}
 
 
 

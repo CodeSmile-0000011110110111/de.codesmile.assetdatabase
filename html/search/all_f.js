@@ -1,11 +1,11 @@
 var searchData=
 [
   ['database_0',['Database',['../class_code_smile_editor_1_1_asset_1_1_database.html',1,'CodeSmileEditor::Asset']]],
-  ['dec_2003_202023_1',['v1.7.0 - Dec 03, 2023',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v170---dec-03-2023',1,'']]],
-  ['dec_2005_202023_2',['v1.7.1 - Dec 05, 2023',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v171---dec-05-2023',1,'']]],
-  ['dec_2009_202023_3',['v1.8.0 - Dec 09, 2023',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v180---dec-09-2023',1,'']]],
-  ['dec_2021_202023_4',['v1.8.1 - Dec 21, 2023',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v181---dec-21-2023',1,'']]],
-  ['dec_2026_202023_5',['v1.8.2 - Dec 26, 2023',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v182---dec-26-2023',1,'']]],
+  ['dec_2003_202023_1',['v1.7.0 - Dec 03, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v170---dec-03-2023',1,'']]],
+  ['dec_2005_202023_2',['v1.7.1 - Dec 05, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v171---dec-05-2023',1,'']]],
+  ['dec_2009_202023_3',['v1.8.0 - Dec 09, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v180---dec-09-2023',1,'']]],
+  ['dec_2021_202023_4',['v1.8.1 - Dec 21, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v181---dec-21-2023',1,'']]],
+  ['dec_2026_202023_5',['v1.8.2 - Dec 26, 2023',['../md__c_h_a_n_g_e_l_o_g.html#v182---dec-26-2023',1,'']]],
   ['defaultimporter_6',['DefaultImporter',['../class_code_smile_editor_1_1_asset_a171f2bcee950b6e79886c7507f9beb27.html#a171f2bcee950b6e79886c7507f9beb27',1,'CodeSmileEditor::Asset']]],
   ['delete_7',['Delete',['../class_code_smile_editor_1_1_asset_af6ce8c8d3d810ae286e98e54aa360adf.html#af6ce8c8d3d810ae286e98e54aa360adf',1,'CodeSmileEditor.Asset.Delete()'],['../class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529.html#a5a01eb8f2adc1117b9df394acbe3c529',1,'CodeSmileEditor.Asset.File.Delete([NotNull] Path path)'],['../class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec.html#ac644ddb8e561a93366765ea0017771ec',1,'CodeSmileEditor.Asset.File.Delete([NotNull] Object asset)'],['../class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba.html#a0ee72382871919c7584e6962088c34ba',1,'CodeSmileEditor.Asset.File.Delete([NotNull] IEnumerable&lt; Path &gt; paths)'],['../class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06.html#a397f277ed8b22e8ee60662f7b8b3ef06',1,'CodeSmileEditor.Asset.File.Delete([NotNull] IEnumerable&lt; String &gt; paths)']]],
   ['dependencies_8',['Dependencies',['../class_code_smile_editor_1_1_asset_af2fc7a5ab674d2293e0c80bcceb709f6.html#af2fc7a5ab674d2293e0c80bcceb709f6',1,'CodeSmileEditor::Asset']]],

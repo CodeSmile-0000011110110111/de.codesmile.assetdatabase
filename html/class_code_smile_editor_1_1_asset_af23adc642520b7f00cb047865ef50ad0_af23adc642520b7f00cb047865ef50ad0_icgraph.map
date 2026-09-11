@@ -1,0 +1,4 @@
+<map id="SaveAsNew" name="SaveAsNew">
+<area shape="rect" id="Node000001" title="Saves a copy of the asset to a new path. Generates a unique file/folder name if path already exists." alt="" coords="5,29,96,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="64,15,59,10,50,8,42,10,37,14,36,20,39,28,34,30,31,20,33,12,40,5,51,3,62,5,68,12"/>
+</map>

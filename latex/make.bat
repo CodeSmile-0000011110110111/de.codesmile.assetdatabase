@@ -1,5 +1,5 @@
 pushd %~dp0
-if not %errorlevel% == 0 goto :end
+if not %errorlevel% == 0 goto :end1
 
 set ORG_LATEX_CMD=%LATEX_CMD%
 set ORG_MKIDX_CMD=%MKIDX_CMD%
@@ -16,10 +16,12 @@ del /s /f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.brf *.blg *.bbl
 
 
 %LATEX_CMD% %MANUAL_FILE%
+@if ERRORLEVEL 1 goto :error
 echo ----
 %MKIDX_CMD% %MANUAL_FILE%.idx
 echo ----
 %LATEX_CMD% %MANUAL_FILE%
+@if ERRORLEVEL 1 goto :error
 
 setlocal enabledelayedexpansion
 set count=%LATEX_COUNT%
@@ -34,12 +36,21 @@ if !count! EQU 0 goto :skip
 
 echo ----
 %LATEX_CMD% %MANUAL_FILE%
+@if ERRORLEVEL 1 goto :error
 goto :repeat
 :skip
 endlocal
 %MKIDX_CMD% %MANUAL_FILE%.idx
 %LATEX_CMD% %MANUAL_FILE%
+@if ERRORLEVEL 1 goto :error
 
+goto :end
+:error
+@echo ===============
+@echo Please consult %MANUAL_FILE%.log to see the error messages
+@echo ===============
+
+:end
 @REM reset environment
 popd
 set LATEX_CMD=%ORG_LATEX_CMD%
@@ -53,4 +64,4 @@ set ORG_MANUAL_FILE=
 set LATEX_COUNT=%ORG_LATEX_COUNT%
 set ORG_LATEX_COUNT=
 
-:end
+:end1
