@@ -1,5 +1,61 @@
 # Change Log
 
+#### v1.10.0 - Sep 05, 2026
+
+- Minimum Unity version raised from 2021.3.3f1 to 2022.3.62f3. Every code path that only existed
+  for Unity 2021.3 or 2022.1/2022.2 has been removed, in the package, the tests and the samples.
+- Fixed: a compile failure caused by Unity moving the `GUID` type from the `UnityEditor` namespace
+  to `UnityEngine`. `GUID` is in `UnityEditor` on 2022.3.62f3, 6000.0.83f1, 6000.3.6f1 and
+  6000.3.23f1, and in `UnityEngine` on 6000.4.11f1, 6000.5.10f1, 6000.6.0f1, 6000.7.0a5 and
+  6000.7.0a6. The resulting compile failure of the unmodified package was measured on 6000.6.0f1
+  and 6000.7.0a6, 12 CS0246 each; it was not measured on 6000.4.11f1 or 6000.5.10f1. The files that
+  use `GUID` now import both namespaces; neither namespace declared the type in both on any of the
+  nine editors tested, so the type resolves in either.
+- Fixed: the package did not compile on Unity 6000.5.10f1, because Unity marked the integer
+  instance ID overloads of `AssetDatabase.Contains`, `AssetDatabase.CanOpenAssetInEditor` and
+  `AssetDatabase.OpenAsset` obsolete as an error there; those three were obsolete as a warning on
+  6000.3.23f1 and 6000.4.11f1. `Object.GetInstanceID` follows a different schedule: it carries no
+  obsolete attribute on 6000.3.23f1, is obsolete as a warning on 6000.4.11f1, and is obsolete as an
+  error on 6000.5.10f1. The `Int32` to `EntityId` implicit conversion is not obsolete on 6000.3.6f1
+  or 6000.3.23f1, is obsolete as a warning on 6000.4.11f1, and is obsolete as an error on
+  6000.6.0f1. Nothing was removed: all of them still exist in the assemblies, and calling them is a
+  compile error rather than a missing member.
+- **API change in Unity 6000.4 and newer only:** `Asset.Database.Contains`,
+  `Asset.File.CanOpenInEditor` and `Asset.File.OpenExternal` take a `UnityEngine.EntityId` instead
+  of an `Int32` instance ID. In Unity 2022.3 up to and including 6000.3 they still take an `Int32`
+  and are unchanged.
+  What your code has to do on Unity 6000.4 and newer: replace `someObject.GetInstanceID()` with
+  `someObject.GetEntityId()` and pass that. Unity marked `GetInstanceID` obsolete as a warning on
+  6000.4.11f1 and as an error on 6000.5.10f1, so from 6000.5 the integer these methods used to
+  accept can no longer be obtained without a compile error.
+  The overloads that take an asset `Object` are unchanged in every version and need no edit, as is
+  the `Asset.Path` overload of `Asset.File.OpenExternal`. `Asset.Database.Contains` and
+  `Asset.File.CanOpenInEditor` have no `Asset.Path` overload.
+- Fixed: the deprecation warnings measured on 6000.3.23f1 and 6000.4.11f1 for the integer instance
+  ID APIs. On 6000.3 the `Int32` signatures are kept and the value is converted to `EntityId`
+  internally; from 6000.4 the `Int32` signatures are gone, which is what removes the last warnings.
+- Fixed: the deprecation warnings for `AssetDatabase.ImportPackage` and
+  `AssetDatabase.ExportPackage`, which carry no obsolete attribute on 6000.5.10f1 and are obsolete
+  as a warning on 6000.6.0f1, in favour of `UnityEditor.AssetPackage.Package`. That replacement type
+  is absent through 6000.5.10f1 and present on 6000.6.0f1 and 6000.7.0a6.
+- **Added in Unity 6000.6 and newer only:** the three `Asset.Package.Export` overloads and the
+  `Asset().ExportPackage` instance method take an optional trailing `ownerOrgId`. Unity uses it as
+  the exported package's signing organization; the Organization ID is in the Unity Cloud dashboard
+  under Administration => Settings. Omitting it preserves the previous behaviour exactly. The
+  parameter is gated on Unity 6000.6 and newer because Unity cannot honour it below that: Unity's
+  `ownerOrgId` export overloads are absent on 2022.3.62f3 and 6000.5.10f1 and present on 6000.6.0f1
+  and 6000.7.0a6. Existing calls compile unchanged in every version.
+- Fixed: `Asset.SubAsset.SetMain` and the `Asset.MainObject` setter did not take effect on Unity
+  6000.7.0a5 and 6000.7.0a6. `AssetDatabase.SetMainObject` only records which object should become
+  the main one on the next import; it does not write the asset file. Calling it and then importing
+  without an intervening save produced the new main object on 2022.3.62f3 and 6000.6.0f1, and left
+  the old main object on 6000.7.0a5 and 6000.7.0a6. The asset is now saved between the two calls,
+  which is correct on all nine editors tested.
+- Removed an unused `using NUnit.Framework;` from `Editor/Asset.Status.cs`. Nothing in the file used
+  the test framework, so the directive was misleading; it only resolved because
+  `Editor/CodeSmileEditor.AssetDatabase.asmdef` sets `overrideReferences` to false, so Unity
+  auto-references every precompiled assembly.
+
 #### v1.9.1 - Feb 01, 2024
 
 - API Changes: These static methods have been MOVED from **Asset** to **Asset.File**:

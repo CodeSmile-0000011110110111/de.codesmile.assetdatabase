@@ -26,8 +26,8 @@ var NAVTREE =
 [
   [ "CodeSmile AssetDatabase", "index.html", [
     [ "<a href=\"https://assetstore.unity.com/packages/slug/270771\" target=\"_blank\" >CodeSmile AssetDatabase</a>", "index.html", "index" ],
-    [ "Change Log", "md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html", null ],
-    [ "CodeSmile Packages - Getting Started", "md__p_1_2de_8codesmile_8assetdatabase_2_g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html", null ],
+    [ "Change Log", "md__c_h_a_n_g_e_l_o_g.html", null ],
+    [ "CodeSmile Packages - Getting Started", "md__g_e_t_t_i_n_g_01_s_t_a_r_t_e_d.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
@@ -43,8 +43,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_code_smile_editor_1_1_asset_a91f88014dec2b3bff50d35f595e6409d.html#a91f88014dec2b3bff50d35f595e6409d"
+"class_code_smile_editor_1_1_asset_a972ef43bcee036e2009fc9af10173178.html#a972ef43bcee036e2009fc9af10173178"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';

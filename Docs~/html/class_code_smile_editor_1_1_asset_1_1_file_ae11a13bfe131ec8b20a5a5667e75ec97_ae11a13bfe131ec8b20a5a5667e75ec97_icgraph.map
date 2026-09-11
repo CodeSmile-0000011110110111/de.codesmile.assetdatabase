@@ -1,5 +1,9 @@
 <map id="Import" name="Import">
-<area shape="rect" id="Node000001" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me..." alt="" coords="237,13,294,40"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519.html#ac4fb08375dcad548d850eec212582519" title="Sets (changes) an asset&#39;s &#39;main&#39; object to one of its sub&#45;assets." alt="" coords="5,5,189,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,29,189,29,189,24,221,24"/>
+<area shape="rect" id="Node000001" title="Imports a file at a given path that was created or modified &#39;externally&#39;. Externally refers to any me..." alt="" coords="237,56,294,83"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d.html#af2ccad52b2993c46962c3dea1c2ef54d" title="Imports multiple paths that were created or modified &#39;externally&#39;. Externally refers to any means oth..." alt="" coords="68,5,126,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,57,188,47,125,29,127,24,189,41,223,52"/>
+<area shape="rect" id="Node000003" href="$class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0.html#aff6427c4b634d2e4ff4d23995a3319f0" title="Imports multiple paths that were created or modified &#39;externally&#39;. Externally refers to any means oth..." alt="" coords="68,56,126,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,72,126,72,126,67,221,67"/>
+<area shape="rect" id="Node000004" href="$class_code_smile_editor_1_1_asset_1_1_sub_asset_ac4fb08375dcad548d850eec212582519.html#ac4fb08375dcad548d850eec212582519" title="Sets (changes) an asset&#39;s &#39;main&#39; object to one of its sub&#45;assets." alt="" coords="5,107,189,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="223,87,161,109,159,104,221,82"/>
 </map>

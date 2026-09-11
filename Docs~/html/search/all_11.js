@@ -1,7 +1,7 @@
 var searchData=
 [
   ['features_0',['Main Features',['../index.html#main-features',1,'']]],
-  ['feb_2001_202024_1',['v1.9.1 - Feb 01, 2024',['../md__p_1_2de_8codesmile_8assetdatabase_2_c_h_a_n_g_e_l_o_g.html#v191---feb-01-2024',1,'']]],
+  ['feb_2001_202024_1',['v1.9.1 - Feb 01, 2024',['../md__c_h_a_n_g_e_l_o_g.html#v191---feb-01-2024',1,'']]],
   ['feeback_20inquiries_2',['Support, Feeback, Inquiries',['../index.html#support-feeback-inquiries',1,'']]],
   ['file_3',['File',['../class_code_smile_editor_1_1_asset_1_1_file.html',1,'CodeSmileEditor::Asset']]],
   ['fileexists_4',['FileExists',['../class_code_smile_editor_1_1_asset_1_1_path_ae2e7b500cc4d1f97b7c6051181aa833f.html#ae2e7b500cc4d1f97b7c6051181aa833f',1,'CodeSmileEditor::Asset::Path']]],

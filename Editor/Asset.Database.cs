@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
+// UnityEngine is imported for the EntityId type, which replaces the integer instance ID overloads
+// that Unity marked obsolete as a warning on 6000.3.23f1 and 6000.4.11f1 and as an error on
+// 6000.5.10f1.
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor
@@ -67,6 +71,25 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Boolean Contains(Object instance) => instance != null ? AssetDatabase.Contains(instance) : false;
 
+#if UNITY_6000_4_OR_NEWER
+			/// <summary>
+			///     Tests if the asset is in the database.
+			/// </summary>
+			/// <remarks>
+			///     Unity marked the AssetDatabase integer instance ID overloads obsolete as a warning on
+			///     6000.3.23f1 and 6000.4.11f1 and as an error on 6000.5.10f1, and Object.GetInstanceID as a
+			///     warning on 6000.4.11f1 and an error on 6000.5.10f1. They still exist in the assemblies but
+			///     can no longer be called, and no non-obsolete way to turn an integer instance ID into an
+			///     EntityId remains, so from Unity 6000.4 on this method takes an EntityId.
+			/// </remarks>
+			/// <param name="entityId">The EntityId of an asset.</param>
+			/// <returns>Returns true if the asset is imported. Returns false if the asset is not in the database.</returns>
+			/// <seealso cref="">
+			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
+			/// </seealso>
+			[ExcludeFromCodeCoverage] // simple relay
+			public static Boolean Contains(EntityId entityId) => AssetDatabase.Contains(entityId);
+#else
 			/// <summary>
 			///     Tests if the asset is in the database.
 			/// </summary>
@@ -76,7 +99,13 @@ namespace CodeSmileEditor
 			///     - <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.Contains.html">AssetDatabase.Contains</a>
 			/// </seealso>
 			[ExcludeFromCodeCoverage] // simple relay
-			public static Boolean Contains(Int32 instanceId) => AssetDatabase.Contains(instanceId);
+			public static Boolean Contains(Int32 instanceId) =>
+#if UNITY_6000_3_OR_NEWER
+				AssetDatabase.Contains((EntityId)instanceId);
+#else
+				AssetDatabase.Contains(instanceId);
+#endif
+#endif
 
 			/// <summary>
 			///     Will allow Unity to automatically import assets.

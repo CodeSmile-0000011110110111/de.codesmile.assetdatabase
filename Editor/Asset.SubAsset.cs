@@ -84,7 +84,10 @@ namespace CodeSmileEditor
 			/// <summary>
 			///     Sets (changes) an asset's 'main' object to one of its sub-assets.
 			/// </summary>
-			/// <remarks> Automatically imports the asset after changing the main type so that the change takes immediate effect. </remarks>
+			/// <remarks>
+			///     Automatically saves and imports the asset after changing the main type so that the change
+			///     takes immediate effect.
+			/// </remarks>
 			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
 			/// <param name="path">Path to the asset file.</param>
 			/// <seealso cref="">
@@ -96,13 +99,22 @@ namespace CodeSmileEditor
 			public static void SetMain([NotNull] Object subAsset, [NotNull] Path path)
 			{
 				AssetDatabase.SetMainObject(subAsset, path);
+
+				// SetMainObject only records which object should become the main one on the next import,
+				// it does not write the asset file. On Unity 6000.7.0a5 and 6000.7.0a6, importing without
+				// saving first re-reads the old main object from disk and the change is lost. Saving the
+				// asset before the import makes the change take effect on all nine editors tested.
+				AssetDatabase.SaveAssetIfDirty(subAsset);
 				File.Import(path);
 			}
 
 			/// <summary>
 			///     Sets (changes) an asset's 'main' object to one of its sub-assets.
 			/// </summary>
-			/// <remarks> Automatically imports the asset after changing the main type so that the change takes immediate effect. </remarks>
+			/// <remarks>
+			///     Automatically saves and imports the asset after changing the main type so that the change
+			///     takes immediate effect.
+			/// </remarks>
 			/// <param name="subAsset">Instance of a sub-asset. Must be a sub-asset of the asset.</param>
 			/// <param name="asset">Instance of the asset.</param>
 			/// <seealso cref="">

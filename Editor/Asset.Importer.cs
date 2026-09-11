@@ -5,6 +5,10 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using UnityEditor;
+// UnityEngine is imported for the GUID type: it is declared in UnityEditor up to Unity
+// 6000.3 and in UnityEngine from Unity 6000.4 on. Neither namespace declared it in both on any
+// of the nine editors tested.
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CodeSmileEditor
@@ -19,7 +23,6 @@ namespace CodeSmileEditor
 			/// <summary>
 			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="path">Path to an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
 			/// <seealso cref="">
@@ -30,18 +33,12 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type GetActive([NotNull] Path path)
 			{
-#if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(path);
-#else
-				UnityEngine.Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
-				return null;
-#endif
 			}
 
 			/// <summary>
 			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="guid">GUID of an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
 			/// <seealso cref="">
@@ -52,18 +49,12 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type GetActive(GUID guid)
 			{
-#if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterType(guid);
-#else
-				UnityEngine.Debug.LogWarning("GetImporterType not available in this Unity version - returning null");
-				return null;
-#endif
 			}
 
 			/// <summary>
 			///     Gets the active AssetImporter type used for the given asset.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. In previous versions throws a NotSupportedException.</remarks>
 			/// <param name="asset">Instance of an asset file.</param>
 			/// <returns>The AssetImporter type in use for the specified asset.</returns>
 			/// <seealso cref="">
@@ -77,7 +68,6 @@ namespace CodeSmileEditor
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
 			/// <seealso cref="">
@@ -91,7 +81,6 @@ namespace CodeSmileEditor
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="paths">Paths to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
 			/// <seealso cref="">
@@ -102,17 +91,12 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type[] GetActive([NotNull] String[] paths)
 			{
-#if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(paths);
-#else
-				throw new NotSupportedException("GetImporterTypes not available in this Unity version");
-#endif
 			}
 
 			/// <summary>
 			///     Gets the active AssetImporter types used for the given assets.
 			/// </summary>
-			/// <remarks>Available in Unity 2022.2 or newer. Throws NotSupportedException in earlier versions.</remarks>
 			/// <param name="guids">GUIDs to asset files.</param>
 			/// <returns>The AssetImporter types in use for the specified assets.</returns>
 			/// <seealso cref="">
@@ -123,12 +107,7 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type[] GetActive(ReadOnlySpan<GUID> guids)
 			{
-#if UNITY_2022_2_OR_NEWER
 				return AssetDatabase.GetImporterTypes(guids);
-#else
-				UnityEngine.Debug.LogWarning("GetImporterTypes not available in this Unity version - returning empty array");
-				return new Type[0];
-#endif
 			}
 
 			/// <summary>
@@ -142,11 +121,7 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type[] GetAvailable([NotNull] Path path)
 			{
-#if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetAvailableImporters(path);
-#else
-				return AssetDatabase.GetAvailableImporterTypes(path);
-#endif
 			}
 
 			/// <summary>
@@ -172,11 +147,7 @@ namespace CodeSmileEditor
 			/// </seealso>
 			public static Type GetDefault([NotNull] Path path)
 			{
-#if UNITY_2022_1_OR_NEWER
 				return AssetDatabase.GetDefaultImporter(path);
-#else
-				throw new NotSupportedException("GetDefaultImporter is not available in this Unity version");
-#endif
 			}
 
 			/// <summary>
@@ -221,7 +192,7 @@ namespace CodeSmileEditor
 			///     Sets the custom AssetImporter to use for the specified asset.
 			/// </summary>
 			/// <param name="path">Path to an asset file.</param>
-			/// <typeparam name="T">Type derived from AssetImporter. Note: in Unity 2021.3 T is ScriptedImporter.</typeparam>
+			/// <typeparam name="T">Type derived from AssetImporter.</typeparam>
 			/// <seealso cref="">
 			///     - <see cref="CodeSmileEditor.Asset.Importer.ClearOverride" />
 			///     - <see cref="CodeSmileEditor.Asset.Importer.GetOverride" />
@@ -230,11 +201,7 @@ namespace CodeSmileEditor
 			///     <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.SetImporterOverride.html">AssetDatabase.SetImporterOverride</a>
 			/// </seealso>
 			public static void SetOverride<T>([NotNull] Path path)
-#if UNITY_2022_1_OR_NEWER
 				where T : AssetImporter
-#else
-				where T : UnityEditor.AssetImporters.ScriptedImporter
-#endif
 			{
 				AssetDatabase.SetImporterOverride<T>(path);
 			}

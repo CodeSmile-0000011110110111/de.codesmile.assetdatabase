@@ -46,7 +46,6 @@ namespace CodeSmileEditor.Tests
 			public override void OnImportAsset(AssetImportContext ctx) {}
 		}
 
-#if UNITY_2022_1_OR_NEWER
 		[Test] public void Importer_GetAvailable_NotEmpty()
 		{
 			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
@@ -82,14 +81,5 @@ namespace CodeSmileEditor.Tests
 			Assert.NotNull(defaultImporter);
 			Assert.AreEqual(defaultImporter, asset.ActiveImporter);
 		}
-#else
-		[Test] public void DefaultImporter_Unity2021_ThrowsNotSupportedException()
-		{
-			var path = DeleteAfterTest((Asset.Path)$"Assets/{TestAssetFileName}.test");
-			var asset = new Asset("no content", path, true);
-
-			Assert.Throws<System.NotSupportedException>(() => _ = asset.DefaultImporter);
-		}
-#endif
 	}
 }

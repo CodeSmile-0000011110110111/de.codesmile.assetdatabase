@@ -7,18 +7,14 @@ Groups file related operations.
 
 
 
-Collaboration diagram for Asset.\+File\+:\nopagebreak
+Collaboration diagram for Asset.\+File\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=180pt]{class_code_smile_editor_1_1_asset_1_1_file__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class {\bfseries Asset\+Database\+Load\+Operation}
-\end{DoxyCompactItemize}
 \doxysubsubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +24,7 @@ static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a2bdf
 \begin{DoxyCompactList}\small\item\em Tests if an asset can be moved to destination without moving the asset. \end{DoxyCompactList}\item 
 static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{Can\+Open\+In\+Editor}} (\mbox{[}Not\+Null\mbox{]} Object instance)
 \begin{DoxyCompactList}\small\item\em Returns true if the given object can be opened (edited) by the Unity editor. \end{DoxyCompactList}\item 
-static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d}{Can\+Open\+In\+Editor}} (Int32 instance\+Id)
+static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af6f6713216d8d3cfae70e327a62452da_af6f6713216d8d3cfae70e327a62452da}{Can\+Open\+In\+Editor}} (Entity\+Id entity\+Id)
 \begin{DoxyCompactList}\small\item\em Returns true if the given object can be opened (edited) by the Unity editor. \end{DoxyCompactList}\item 
 static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{Copy}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} source\+Path, \mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} destination\+Path)
 \begin{DoxyCompactList}\small\item\em Copies an asset from source to destination path. Overwrites any existing assets. \end{DoxyCompactList}\item 
@@ -102,7 +98,7 @@ static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74
 \begin{DoxyCompactList}\small\item\em Opens the asset in the application associated with the file\textquotesingle{}s extension. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}{Open\+External}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, Int32 line\+Number=-\/1, Int32 column\+Number=-\/1)
 \begin{DoxyCompactList}\small\item\em Opens the asset in the application associated with the file\textquotesingle{}s extension. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_a009c655c2959b1ccd6b5a94a6da261e4}{Open\+External}} (Int32 instance\+Id, Int32 line\+Number=-\/1, Int32 column\+Number=-\/1)
+static void \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a6f7ace7c578b12c4590ef72daf4ddf32_a6f7ace7c578b12c4590ef72daf4ddf32}{Open\+External}} (Entity\+Id entity\+Id, Int32 line\+Number=-\/1, Int32 column\+Number=-\/1)
 \begin{DoxyCompactList}\small\item\em Opens the asset in the application associated with the file\textquotesingle{}s extension. \end{DoxyCompactList}\item 
 static Boolean \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}{Rename}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} path, String new\+File\+Name)
 \begin{DoxyCompactList}\small\item\em Renames an asset\textquotesingle{}s file or folder name. \end{DoxyCompactList}\item 
@@ -128,16 +124,16 @@ static IList$<$ String $>$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_
 \doxysubsubsection{Detailed Description}
 Groups file related operations. 
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 
 \doxysubsubsection{Member Function Documentation}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}\label{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2} 
-\index{Asset.File@{Asset.File}!BatchEditing@{BatchEditing}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}\index{Asset.File@{Asset.File}!BatchEditing@{BatchEditing}}
 \index{BatchEditing@{BatchEditing}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{BatchEditing()}{BatchEditing()}}
-{\footnotesize\ttfamily static void Batch\+Editing (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Action}]{mass\+Asset\+File\+Edit\+Action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2} 
+static void Batch\+Editing (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Action}]{mass\+Asset\+File\+Edit\+Action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -150,7 +146,7 @@ The callback Action is safeguarded against exceptions leaving the Asset\+Databas
 CAUTION\+:
 \begin{DoxyItemize}
 \item Importing an asset and subsequently trying to load the asset within the callback will return null.
-\item For that reason you cannot create new Asset instances or call methods that create Asset instances, such as Copy, during batch editing.
+\item For that reason you cannot create new \doxylink{class_code_smile_editor_1_1_asset}{Asset} instances or call methods that create \doxylink{class_code_smile_editor_1_1_asset}{Asset} instances, such as Copy, during batch editing.
 \item When \textquotesingle{}externally\textquotesingle{} modifying files and importing those, consider the above implication. You need to defer loading and working with these objects. Calling Batch\+Editing twice is good practice (first modify \& import, then load the assets). 
 \end{DoxyItemize}
 
@@ -170,29 +166,41 @@ CAUTION\+:
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.StopAssetEditing.html}{\texttt{ Asset\+Database.\+Stop\+Asset\+Editing}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartAssetEditing();}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ massAssetFileEditAction?.Invoke();}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopAssetEditing();}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartAssetEditing();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ massAssetFileEditAction?.Invoke();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StopAssetEditing();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}\label{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa} 
-\index{Asset.File@{Asset.File}!CanMove@{CanMove}}
+
+
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}{Import()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa}\index{Asset.File@{Asset.File}!CanMove@{CanMove}}
 \index{CanMove@{CanMove}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CanMove()}{CanMove()}}
-{\footnotesize\ttfamily static Boolean Can\+Move (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a2bdf010d46d8dd5ea6420e4bdc75c9aa_a2bdf010d46d8dd5ea6420e4bdc75c9aa} 
+static Boolean Can\+Move (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -235,11 +243,11 @@ Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00623}{623}} of fi
 \DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}\label{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6} 
-\index{Asset.File@{Asset.File}!CanOpenInEditor@{CanOpenInEditor}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}\index{Asset.File@{Asset.File}!CanOpenInEditor@{CanOpenInEditor}}
 \index{CanOpenInEditor@{CanOpenInEditor}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CanOpenInEditor()}{CanOpenInEditor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6} 
+static Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -264,25 +272,27 @@ True if Unity can open assets of this type. False if it cannot or if obj is not 
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{Code\+Smile\+Editor.\+Asset.\+File.\+Open\+External}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html}{\texttt{ Asset\+Database.\+Can\+Open\+Asset\+In\+Editor}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d}\label{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d} 
-\index{Asset.File@{Asset.File}!CanOpenInEditor@{CanOpenInEditor}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af6f6713216d8d3cfae70e327a62452da_af6f6713216d8d3cfae70e327a62452da}\index{Asset.File@{Asset.File}!CanOpenInEditor@{CanOpenInEditor}}
 \index{CanOpenInEditor@{CanOpenInEditor}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CanOpenInEditor()}{CanOpenInEditor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}\item[{Int32}]{instance\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_af6f6713216d8d3cfae70e327a62452da_af6f6713216d8d3cfae70e327a62452da} 
+static Boolean Can\+Open\+In\+Editor (\begin{DoxyParamCaption}\item[{Entity\+Id}]{entity\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Returns true if the given object can be opened (edited) by the Unity editor. 
 
-Throws an exception if instance\+Id is not an asset but an in-\/memory instance.
+Throws an exception if entity\+Id is not an asset but an in-\/memory instance.
+
+Unity marked the Asset\+Database integer instance ID overloads obsolete as a warning on 6000.\+3.\+23f1 and 6000.\+4.\+11f1 and as an error on 6000.\+5.\+10f1, and Object.\+Get\+Instance\+ID as a warning on 6000.\+4.\+11f1 and an error on 6000.\+5.\+10f1. They still exist in the assemblies but can no longer be called, and no non-\/obsolete way to turn an integer instance ID into an Entity\+Id remains, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em instance\+Id} & The instance ID of an asset object.\\
+{\em entity\+Id} & The Entity\+Id of an asset object.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if Unity can open assets of this type. False if it cannot or if instance\+Id is not an asset.
+True if Unity can open assets of this type. False if it cannot or if entity\+Id is not an asset.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -293,11 +303,11 @@ True if Unity can open assets of this type. False if it cannot or if instance\+I
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}{Code\+Smile\+Editor.\+Asset.\+File.\+Open\+External}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CanOpenAssetInEditor.html}{\texttt{ Asset\+Database.\+Can\+Open\+Asset\+In\+Editor}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}\label{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96} 
-\index{Asset.File@{Asset.File}!Copy@{Copy}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}\index{Asset.File@{Asset.File}!Copy@{Copy}}
 \index{Copy@{Copy}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Copy()}{Copy()}}
-{\footnotesize\ttfamily static Boolean Copy (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96} 
+static Boolean Copy (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -309,7 +319,7 @@ Will create any missing destination folders automatically.
 \begin{DoxyParams}{Parameters}
 {\em source\+Path} & The source asset to copy.\\
 \hline
-{\em destination\+Path} & Path to destination file.\\
+{\em destination\+Path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to destination file.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -325,11 +335,11 @@ True if copying succeeded, false if it failed. Use \doxylink{class_code_smile_ed
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}{Code\+Smile\+Editor.\+Asset.\+File.\+Copy\+As\+New}
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html}{\texttt{ Asset\+Database.\+Copy\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}\label{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36} 
-\index{Asset.File@{Asset.File}!CopyAsNew@{CopyAsNew}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36}\index{Asset.File@{Asset.File}!CopyAsNew@{CopyAsNew}}
 \index{CopyAsNew@{CopyAsNew}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CopyAsNew()}{CopyAsNew()}}
-{\footnotesize\ttfamily static Boolean Copy\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a73e80cb6412abff44ed9c172f7f92e36_a73e80cb6412abff44ed9c172f7f92e36} 
+static Boolean Copy\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -341,7 +351,7 @@ Will create any missing destination folders automatically.
 \begin{DoxyParams}{Parameters}
 {\em source\+Path} & The source asset to copy.\\
 \hline
-{\em destination\+Path} & Path to destination file. Note that the actual file name may differ.\\
+{\em destination\+Path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to destination file. Note that the actual file name may differ.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -357,11 +367,11 @@ True if copying succeeded, false if it failed. Use \doxylink{class_code_smile_ed
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a68db67f53a3a2a6002b9922d2678bc96_a68db67f53a3a2a6002b9922d2678bc96}{Code\+Smile\+Editor.\+Asset.\+File.\+Copy}
 \item \doxylink{class_code_smile_editor_1_1_asset_af1aa2544ba26b2d2d71f6e7b68f18fac_af1aa2544ba26b2d2d71f6e7b68f18fac}{Code\+Smile\+Editor.\+Asset.\+Get\+Last\+Error\+Message}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CopyAsset.html}{\texttt{ Asset\+Database.\+Copy\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}\label{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222} 
-\index{Asset.File@{Asset.File}!Create@{Create}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}\index{Asset.File@{Asset.File}!Create@{Create}}
 \index{Create@{Create}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Byte\mbox{[}$\,$\mbox{]}}]{contents,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222} 
+static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Byte\mbox{[}$\,$\mbox{]}}]{contents}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -373,7 +383,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The bytes to write.\\
 \hline
-{\em path} & Path to a file with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -391,20 +401,21 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00388}{Asset.\+File.\+Load\+Or\+Create$<$ T $>$()}}.
+Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00393}{Load\+Or\+Create$<$ T $>$()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=260pt]{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}\label{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a} 
-\index{Asset.File@{Asset.File}!Create@{Create}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}\index{Asset.File@{Asset.File}!Create@{Create}}
 \index{Create@{Create}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a} 
+static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -416,7 +427,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em instance} & The object to save as an asset file.\\
 \hline
-{\em path} & Path to a file with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -432,13 +443,13 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+Or\+Load$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Create\+Or\+Load$<$\+T$>$
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html}{\texttt{ Asset\+Database.\+Create\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}\label{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2} 
-\index{Asset.File@{Asset.File}!Create@{Create}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}\index{Asset.File@{Asset.File}!Create@{Create}}
 \index{Create@{Create}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{contents,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2} 
+static Object Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{contents}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -450,7 +461,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The string to write.\\
 \hline
-{\em path} & Path to a file with extension.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -466,11 +477,11 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}\label{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7} 
-\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
 \index{CreateAsNew@{CreateAsNew}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CreateAsNew()}{CreateAsNew()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Byte\mbox{[}$\,$\mbox{]}}]{contents,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7} 
+static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Byte\mbox{[}$\,$\mbox{]}}]{contents}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -482,7 +493,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The bytes to write.\\
 \hline
-{\em path} & Path to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -498,11 +509,11 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}\label{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6} 
-\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
 \index{CreateAsNew@{CreateAsNew}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CreateAsNew()}{CreateAsNew()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6} 
+static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{instance}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -514,7 +525,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em instance} & The object to save as an asset file.\\
 \hline
-{\em path} & Path to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -530,13 +541,13 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_acfdbd887acb03dfdc27a2e7628055a8a_acfdbd887acb03dfdc27a2e7628055a8a}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+Or\+Load$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Create\+Or\+Load$<$\+T$>$
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html}{\texttt{ Asset\+Database.\+Create\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}\label{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d} 
-\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d}\index{Asset.File@{Asset.File}!CreateAsNew@{CreateAsNew}}
 \index{CreateAsNew@{CreateAsNew}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CreateAsNew()}{CreateAsNew()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{contents,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a709af33f201b4704e1919a289b93189d_a709af33f201b4704e1919a289b93189d} 
+static Object Create\+As\+New (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{contents}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -548,7 +559,7 @@ Creates missing folders in the destination path.
 \begin{DoxyParams}{Parameters}
 {\em contents} & The string to write.\\
 \hline
-{\em path} & Path to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to a file with extension. Note that the asset\textquotesingle{}s actual file name may differ.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -564,11 +575,11 @@ The newly created asset.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aceef508c424cb6d38e755ddd6bde4dd7_aceef508c424cb6d38e755ddd6bde4dd7}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a7fe77714391ee2e69e6b2b45fc97dff6_a7fe77714391ee2e69e6b2b45fc97dff6}{Code\+Smile\+Editor.\+Asset.\+File.\+Create\+As\+New(\+Object,\+Code\+Smile\+Editor.\+Asset.\+Path)} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}\label{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc} 
-\index{Asset.File@{Asset.File}!CreateOrLoad$<$ T $>$@{CreateOrLoad$<$ T $>$}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc}\index{Asset.File@{Asset.File}!CreateOrLoad$<$ T $>$@{CreateOrLoad$<$ T $>$}}
 \index{CreateOrLoad$<$ T $>$@{CreateOrLoad$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{CreateOrLoad$<$ T $>$()}{CreateOrLoad< T >()}}
-{\footnotesize\ttfamily static T Create\+Or\+Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} Func$<$ T $>$}]{get\+Instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a5ed30d6c3ba66e66db44c0d8490dcdfc_a5ed30d6c3ba66e66db44c0d8490dcdfc} 
+static T Create\+Or\+Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} Func$<$ T $>$}]{get\+Instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -578,7 +589,7 @@ Will first attempt to load the asset at path. If this fails, will create an asse
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 {\em get\+Instance} & Func that returns a Unity\+Engine.\+Object\\
 \hline
@@ -598,16 +609,16 @@ The loaded or created object of type T, or null if the object is not of type T. 
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$} 
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$ 
 \end{DoxyItemize}\begin{Desc}
 \item[Type Constraints]\begin{description}
 \item[{\em T} : {\em Object}]\end{description}
 \end{Desc}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}\label{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba} 
-\index{Asset.File@{Asset.File}!Delete@{Delete}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba}\index{Asset.File@{Asset.File}!Delete@{Delete}}
 \index{Delete@{Delete}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a0ee72382871919c7584e6962088c34ba_a0ee72382871919c7584e6962088c34ba} 
+static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -628,14 +639,14 @@ True if all assets where deleted, false if one or more failed to delete. On fail
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$)
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{Code\+Smile\+Editor.\+Asset.\+File.\+Paths\+Not\+Deleted}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html}{\texttt{ Asset\+Database.\+Delete\+Assets}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}\label{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06} 
-\index{Asset.File@{Asset.File}!Delete@{Delete}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}\index{Asset.File@{Asset.File}!Delete@{Delete}}
 \index{Delete@{Delete}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ String $>$}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06} 
+static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ String $>$}]{paths}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -656,14 +667,14 @@ True if all assets where deleted, false if one or more failed to delete. On fail
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$)
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{Code\+Smile\+Editor.\+Asset.\+File.\+Paths\+Not\+Deleted}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAssets.html}{\texttt{ Asset\+Database.\+Delete\+Assets}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}\label{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec} 
-\index{Asset.File@{Asset.File}!Delete@{Delete}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec}\index{Asset.File@{Asset.File}!Delete@{Delete}}
 \index{Delete@{Delete}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_ac644ddb8e561a93366765ea0017771ec_ac644ddb8e561a93366765ea0017771ec} 
+static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -689,11 +700,11 @@ True if the asset was deleted, false otherwise.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+Object)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html}{\texttt{ Asset\+Database.\+Delete\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}\label{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529} 
-\index{Asset.File@{Asset.File}!Delete@{Delete}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}\index{Asset.File@{Asset.File}!Delete@{Delete}}
 \index{Delete@{Delete}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529} 
+static Boolean Delete (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -721,20 +732,21 @@ True if the asset was deleted, false otherwise.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.DeleteAsset.html}{\texttt{ Asset\+Database.\+Delete\+Asset}} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00440}{Asset.\+Delete()}}.
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00444}{Asset.\+Delete()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=308pt]{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}\label{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852} 
-\index{Asset.File@{Asset.File}!Find@{Find}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852}\index{Asset.File@{Asset.File}!Find@{Find}}
 \index{Find@{Find}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Find()}{Find()}}
-{\footnotesize\ttfamily static String\mbox{[}$\,$\mbox{]} Find (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter,  }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a9824149809d0caf6b7853241fe518852_a9824149809d0caf6b7853241fe518852} 
+static String\mbox{[}$\,$\mbox{]} Find (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter}{, }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -761,11 +773,11 @@ An array of string GUIDs. Empty array if there were no search results.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{Code\+Smile\+Editor.\+Asset.\+File.\+Find\+Paths}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html}{\texttt{ Asset\+Database.\+Find\+Assets}}
 \item \href{https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/}{\texttt{ Search Filter String Examples }} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}\label{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30} 
-\index{Asset.File@{Asset.File}!FindGuids@{FindGuids}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}\index{Asset.File@{Asset.File}!FindGuids@{FindGuids}}
 \index{FindGuids@{FindGuids}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{FindGuids()}{FindGuids()}}
-{\footnotesize\ttfamily static GUID\mbox{[}$\,$\mbox{]} Find\+Guids (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter,  }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30} 
+static GUID\mbox{[}$\,$\mbox{]} Find\+Guids (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter}{, }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -794,11 +806,11 @@ An array of GUIDs. Empty array if there were no search results.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}{Code\+Smile\+Editor.\+Asset.\+File.\+Find\+Paths}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html}{\texttt{ Asset\+Database.\+Find\+Assets}}
 \item \href{https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/}{\texttt{ Search Filter String Examples }} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}\label{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80} 
-\index{Asset.File@{Asset.File}!FindPaths@{FindPaths}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80}\index{Asset.File@{Asset.File}!FindPaths@{FindPaths}}
 \index{FindPaths@{FindPaths}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{FindPaths()}{FindPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} Find\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter,  }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a3e3543e7c5f85939c0a53e5e0a95fb80_a3e3543e7c5f85939c0a53e5e0a95fb80} 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} Find\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter}{, }\item[{\mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -814,7 +826,7 @@ Converts the list of string guids from \doxylink{class_code_smile_editor_1_1_ass
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-An Path array. Empty array if there were no search results.
+An \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} array. Empty array if there were no search results.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -827,11 +839,11 @@ An Path array. Empty array if there were no search results.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{Code\+Smile\+Editor.\+Asset.\+File.\+Find\+Guids}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html}{\texttt{ Asset\+Database.\+Find\+Assets}}
 \item \href{https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/}{\texttt{ Search Filter String Examples }} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}\label{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8} 
-\index{Asset.File@{Asset.File}!FindPaths@{FindPaths}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8}\index{Asset.File@{Asset.File}!FindPaths@{FindPaths}}
 \index{FindPaths@{FindPaths}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{FindPaths()}{FindPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} Find\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter,  }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_aeb2b5afda3ab0df2521ff86e9d7c80b8_aeb2b5afda3ab0df2521ff86e9d7c80b8} 
+static \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}\mbox{[}$\,$\mbox{]} Find\+Paths (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} String}]{filter}{, }\item[{String\mbox{[}$\,$\mbox{]}}]{search\+In\+Folders}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -847,7 +859,7 @@ Converts the list of string guids from \doxylink{class_code_smile_editor_1_1_ass
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-An Path array. Empty array if there were no search results.
+An \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} array. Empty array if there were no search results.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -860,11 +872,11 @@ An Path array. Empty array if there were no search results.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a6a20df93ae9409f4216c6f98cf334c30_a6a20df93ae9409f4216c6f98cf334c30}{Code\+Smile\+Editor.\+Asset.\+File.\+Find\+Guids}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.FindAssets.html}{\texttt{ Asset\+Database.\+Find\+Assets}}
 \item \href{https://forum.unity.com/threads/please-document-assetdatabase-findassets-filters.964907/}{\texttt{ Search Filter String Examples }} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}\label{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6} 
-\index{Asset.File@{Asset.File}!ForceSave@{ForceSave}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}\index{Asset.File@{Asset.File}!ForceSave@{ForceSave}}
 \index{ForceSave@{ForceSave}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{ForceSave()}{ForceSave()}}
-{\footnotesize\ttfamily static void Force\+Save (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6} 
+static void Force\+Save (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -887,11 +899,11 @@ This should only be used if the asset doesn\textquotesingle{}t save otherwise, s
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{Code\+Smile\+Editor.\+Asset.\+File.\+Save}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html}{\texttt{ Asset\+Database.\+Save\+Asset\+If\+Dirty}}
 \item \href{https://docs.unity3d.com/ScriptReference/EditorUtility.SetDirty.html}{\texttt{ Editor\+Utility.\+Set\+Dirty}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}\label{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6} 
-\index{Asset.File@{Asset.File}!GetFileId@{GetFileId}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6}\index{Asset.File@{Asset.File}!GetFileId@{GetFileId}}
 \index{GetFileId@{GetFileId}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetFileId()}{GetFileId()}}
-{\footnotesize\ttfamily static Int64 Get\+File\+Id (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a2adfcc36a6b34de943aedfdd1db882f6_a2adfcc36a6b34de943aedfdd1db882f6} 
+static Int64 Get\+File\+Id (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -917,25 +929,27 @@ The local file\+ID or 0 if obj is null or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00993}{993}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01059}{1059}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
-\DoxyCodeLine{00997\ }
-\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
-\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0L;}
+\DoxyCodeLine{01063\ }
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ TryGetGUIDAndLocalFileIdentifier\ has\ both\ an\ Int64\ and\ an}}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Int32\ overload\ on\ 2022.3.62f3\ and\ only\ the\ Int64\ form\ on\ 6000.6.0f1\ and\ 6000.7.0a6;\ the}}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ \_,\ out\ localId)\ ?\ localId\ :\ 0L;}
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}\label{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8} 
-\index{Asset.File@{Asset.File}!GetGuid@{GetGuid}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8}\index{Asset.File@{Asset.File}!GetGuid@{GetGuid}}
 \index{GetGuid@{GetGuid}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetGuid()}{GetGuid()}}
-{\footnotesize\ttfamily static GUID Get\+Guid (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a856bd8735a17035cea08243c66e0eee8_a856bd8735a17035cea08243c66e0eee8} 
+static GUID Get\+Guid (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -961,27 +975,29 @@ The GUID of the asset. Returns empty GUID if the asset is null or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00970}{970}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01034}{1034}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
-\DoxyCodeLine{00974\ }
-\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
-\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ new\ GUID();}
-\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ GUID();}
+\DoxyCodeLine{01038\ }
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ TryGetGUIDAndLocalFileIdentifier\ has\ both\ an\ Int64\ and\ an}}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Int32\ overload\ on\ 2022.3.62f3\ and\ only\ the\ Int64\ form\ on\ 6000.6.0f1\ and\ 6000.7.0a6;\ the}}
+\DoxyCodeLine{01041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ GUID(guid)}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ new\ GUID();}
+\DoxyCodeLine{01046\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}\label{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99} 
-\index{Asset.File@{Asset.File}!GetGuidAndFileId@{GetGuidAndFileId}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99}\index{Asset.File@{Asset.File}!GetGuidAndFileId@{GetGuidAndFileId}}
 \index{GetGuidAndFileId@{GetGuidAndFileId}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetGuidAndFileId()}{GetGuidAndFileId()}}
-{\footnotesize\ttfamily static Value\+Tuple$<$ GUID, Int64 $>$ Get\+Guid\+And\+File\+Id (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a0b39fc9791994323a44a1126f3a41b99_a0b39fc9791994323a44a1126f3a41b99} 
+static Value\+Tuple$<$ GUID, Int64 $>$ Get\+Guid\+And\+File\+Id (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Example usage\+: 
 \begin{DoxyCode}{0}
@@ -996,7 +1012,7 @@ Example usage\+:
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is null or not an asset. 
+The GUID and local \doxylink{class_code_smile_editor_1_1_asset_1_1_file}{File} ID of the object. Returns an empty GUID and 0 if obj is null or not an asset. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -1010,33 +1026,35 @@ The GUID and local File ID of the object. Returns an empty GUID and 0 if obj is 
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.TryGetGUIDAndLocalFileIdentifier.html}{\texttt{ Asset\+Database.\+Try\+Get\+GUIDAnd\+Local\+File\+Identifier}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00947}{947}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l01009}{1009}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
-\DoxyCodeLine{00951\ }
-\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ Unity\ 2021\ has\ both\ long\ and\ int\ variants\ of\ the\ TryGetGUID*\ method}}
-\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
-\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
-\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
-\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (new\ GUID(),\ 0L);}
-\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asset\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{new}\ GUID(),\ 0L);}
+\DoxyCodeLine{01013\ }
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ variable\ +\ assign\ because\ TryGetGUIDAndLocalFileIdentifier\ has\ both\ an\ Int64\ and\ an}}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Int32\ overload\ on\ 2022.3.62f3\ and\ only\ the\ Int64\ form\ on\ 6000.6.0f1\ and\ 6000.7.0a6;\ the}}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ declared\ type\ selects\ the\ Int64\ one}}
+\DoxyCodeLine{01017\ \ \ \ \ \ \ \ \ \ \ \ \ var\ localId\ =\ Int64.MaxValue;}
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset,\ out\ var\ guid,\ out\ localId)}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\textcolor{keyword}{new}\ GUID(guid),\ localId)}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (new\ GUID(),\ 0L);}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}\label{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba} 
-\index{Asset.File@{Asset.File}!GetMainType@{GetMainType}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}\index{Asset.File@{Asset.File}!GetMainType@{GetMainType}}
 \index{GetMainType@{GetMainType}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetMainType()}{GetMainType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static Type Get\+Main\+Type (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba} 
+static Type Get\+Main\+Type (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Returns the type of the main asset at the path.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1052,26 +1070,27 @@ Type of the asset. Null if the path does not exist.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeAtPath.html}{\texttt{ Asset\+Database.\+Get\+Main\+Asset\+Type\+At\+Path}} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00909}{Asset.\+File.\+Get\+Main\+Type()}}.
+Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00971}{Get\+Main\+Type()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=264pt]{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}\label{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256} 
-\index{Asset.File@{Asset.File}!GetMainType@{GetMainType}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256}\index{Asset.File@{Asset.File}!GetMainType@{GetMainType}}
 \index{GetMainType@{GetMainType}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetMainType()}{GetMainType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static Type Get\+Main\+Type (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256} 
+static Type Get\+Main\+Type (\begin{DoxyParamCaption}\item[{GUID}]{guid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Returns the type of the main asset for the GUID. 
 
-In Unity 2023.\+2 it uses Asset\+Database.\+Get\+Main\+Asset\+Type\+From\+GUID. The method exists in 2022.\+2 but not in the early patch versions 0f1 through 6f1. In earlier versions the type is obtained from the path\textquotesingle{}s GUID. 
+In Unity 2023.\+2 or newer it uses Asset\+Database.\+Get\+Main\+Asset\+Type\+From\+GUID. In earlier versions the type is obtained from the path\textquotesingle{}s GUID. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -1091,35 +1110,36 @@ Type of the asset. Null if the guid is not known or not an asset.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetMainAssetTypeFromGUID.html}{\texttt{ Asset\+Database.\+Get\+Main\+Asset\+Type\+From\+GUID}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00909}{909}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00971}{971}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00911\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ It's\ also\ available\ in\ 2022.2\ but\ not\ in\ the\ early\ patch\ versions\ (eg\ 7f1\ onwards)}}
-\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
-\DoxyCodeLine{00913\ \textcolor{preprocessor}{\#else }}
-\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{GetMainType}}(Path.Get(guid));}
-\DoxyCodeLine{00915\ \textcolor{preprocessor}{\#endif }}
-\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00973\ \textcolor{preprocessor}{\#if\ UNITY\_2023\_2\_OR\_NEWER\ }\textcolor{comment}{//\ below\ 2023.2\ the\ type\ is\ obtained\ from\ the\ path\ the\ GUID\ resolves\ to}}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.GetMainAssetTypeFromGUID(guid);}
+\DoxyCodeLine{00975\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetMainType(Path.Get(guid));}
+\DoxyCodeLine{00977\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}, and \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{Asset.\+File.\+Get\+Main\+Type()}}.
+References \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}, and \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a3192f3d24b4397b10f50ef366ee3feba_a3192f3d24b4397b10f50ef366ee3feba}{Get\+Main\+Type()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=349pt]{class_code_smile_editor_1_1_asset_1_1_file_a82b0bb0beb5f5422951631789bca4256_a82b0bb0beb5f5422951631789bca4256_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}\label{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca} 
-\index{Asset.File@{Asset.File}!GetSubType@{GetSubType}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca}\index{Asset.File@{Asset.File}!GetSubType@{GetSubType}}
 \index{GetSubType@{GetSubType}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{GetSubType()}{GetSubType()}}
-{\footnotesize\ttfamily static Type Get\+Sub\+Type (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Int64}]{file\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_ab9e60595a8cc5748f38f91b3ed83aeca_ab9e60595a8cc5748f38f91b3ed83aeca} 
+static Type Get\+Sub\+Type (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Int64}]{file\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1127,13 +1147,13 @@ Gets the type of a sub asset by the main asset\textquotesingle{}s path and the l
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 {\em file\+Id} & Local file ID of the sub-\/asset.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Type of the Sub\+Asset, or null.
+Type of the \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset}{Sub\+Asset}, or null.
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 
@@ -1143,11 +1163,11 @@ Type of the Sub\+Asset, or null.
 
 \begin{DoxyItemize}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.GetTypeFromPathAndFileID.html}{\texttt{ Asset\+Database.\+Get\+Type\+From\+Path\+And\+File\+ID}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}\label{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d} 
-\index{Asset.File@{Asset.File}!Import@{Import}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}\index{Asset.File@{Asset.File}!Import@{Import}}
 \index{Import@{Import}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d} 
+static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths}{, }\item[{Import\+Asset\+Options}]{options}{ = {\ttfamily ImportAssetOptions.Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1171,11 +1191,23 @@ Internally runs Batch\+Editing to batch the import operations.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}\label{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0} 
-\index{Asset.File@{Asset.File}!Import@{Import}}
+\end{DoxyItemize}
+
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00276}{Import()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}\index{Asset.File@{Asset.File}!Import@{Import}}
 \index{Import@{Import}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ string $>$}]{paths,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0} 
+static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ string $>$}]{paths}{, }\item[{Import\+Asset\+Options}]{options}{ = {\ttfamily ImportAssetOptions.Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1199,11 +1231,23 @@ Internally runs Batch\+Editing to batch the import operations.
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_ab0082c2158f7de6376b26a75827bd7a2_ab0082c2158f7de6376b26a75827bd7a2}{Code\+Smile\+Editor.\+Asset.\+File.\+Batch\+Editing}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}\label{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97} 
-\index{Asset.File@{Asset.File}!Import@{Import}}
+\end{DoxyItemize}
+
+References \mbox{\hyperlink{_asset_8_file_8cs_source_l00082}{Batch\+Editing()}}, and \mbox{\hyperlink{_asset_8_file_8cs_source_l00276}{Import()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97}\index{Asset.File@{Asset.File}!Import@{Import}}
 \index{Import@{Import}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Import()}{Import()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions\+:\+:Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97} 
+static void Import (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Import\+Asset\+Options}]{options}{ = {\ttfamily ImportAssetOptions\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1217,7 +1261,7 @@ You may want to use the Create overloads that automatically create the file, the
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 {\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
 \hline
@@ -1229,40 +1273,41 @@ You may want to use the Create overloads that automatically create the file, the
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{Code\+Smile\+Editor.\+Asset.\+File.\+Import\+And\+Load$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Import\+And\+Load$<$\+T$>$
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00271}{271}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00276}{276}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
-\DoxyCodeLine{00275\ }
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
-\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.ImportAsset(path,\ options);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00096}{Asset.\+Sub\+Asset.\+Set\+Main()}}.
+Referenced by \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_af2ccad52b2993c46962c3dea1c2ef54d_af2ccad52b2993c46962c3dea1c2ef54d}{Import()}}, \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_aff6427c4b634d2e4ff4d23995a3319f0_aff6427c4b634d2e4ff4d23995a3319f0}{Import()}}, and \mbox{\hyperlink{_asset_8_sub_asset_8cs_source_l00099}{Asset.\+Sub\+Asset.\+Set\+Main()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=297pt]{class_code_smile_editor_1_1_asset_1_1_file_ae11a13bfe131ec8b20a5a5667e75ec97_ae11a13bfe131ec8b20a5a5667e75ec97_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}\label{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0} 
-\index{Asset.File@{Asset.File}!ImportAndLoad$<$ T $>$@{ImportAndLoad$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}\index{Asset.File@{Asset.File}!ImportAndLoad$<$ T $>$@{ImportAndLoad$<$ T $>$}}
 \index{ImportAndLoad$<$ T $>$@{ImportAndLoad$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{ImportAndLoad$<$ T $>$()}{ImportAndLoad< T >()}}
-{\footnotesize\ttfamily static T Import\+And\+Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Import\+Asset\+Options}]{options = {\ttfamily ImportAssetOptions.Default} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0} 
+static T Import\+And\+Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Import\+Asset\+Options}]{options}{ = {\ttfamily ImportAssetOptions.Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1276,7 +1321,7 @@ You may want to use the Create overloads that automatically create the file, the
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset.\\
 \hline
 {\em options} & \href{https://docs.unity3d.com/ScriptReference/ImportAssetOptions.html}{\texttt{ Import\+Asset\+Options}} \\
 \hline
@@ -1296,8 +1341,8 @@ The asset object, or null if the asset could not be loaded or is not of type T.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{Code\+Smile\+Editor.\+Asset.\+File.\+Import\+And\+Load$<$\+T$>$}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Import\+And\+Load$<$\+T$>$
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+Byte\mbox{[}$\,$\mbox{]},\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a57a28b554ce2ca500c6eeba3a17852b2_a57a28b554ce2ca500c6eeba3a17852b2}{Code\+Smile\+Editor.\+Asset.\+File.\+Create(\+String,\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.ImportAsset.html}{\texttt{ Asset\+Database.\+Import\+Asset}}
@@ -1308,20 +1353,21 @@ The asset object, or null if the asset could not be loaded or is not of type T.
 \end{Desc}
 
 
-Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00388}{Asset.\+File.\+Load\+Or\+Create$<$ T $>$()}}.
+Referenced by \mbox{\hyperlink{_asset_8_file_8cs_source_l00393}{Load\+Or\+Create$<$ T $>$()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=320pt]{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}\label{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7} 
-\index{Asset.File@{Asset.File}!Load$<$ T $>$@{Load$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}\index{Asset.File@{Asset.File}!Load$<$ T $>$@{Load$<$ T $>$}}
 \index{Load$<$ T $>$@{Load$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Load$<$ T $>$()}{Load< T >()}}
-{\footnotesize\ttfamily static T Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7} 
+static T Load$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1336,7 +1382,7 @@ Loads an asset at path.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 \end{DoxyParams}
 
@@ -1354,8 +1400,8 @@ The loaded asset object, or null if the asset does not exist or does not contain
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_aa1295ba7d9693917c8af65241aa0d3ae_aa1295ba7d9693917c8af65241aa0d3ae}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Load\+Visible}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_sub_asset_a5a074e1dfad018aec7956375a8cf6099_a5a074e1dfad018aec7956375a8cf6099}{Code\+Smile\+Editor.\+Asset.\+Sub\+Asset.\+Load\+All}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadAssetAtPath.html}{\texttt{ Asset\+Database.\+Load\+Asset\+At\+Path}} 
@@ -1365,30 +1411,28 @@ The loaded asset object, or null if the asset does not exist or does not contain
 \end{Desc}
 
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00366}{366}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00371}{371}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00369\ }
-\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadAssetAtPath<T>(path);}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadAssetAtPath<T>(path);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}\label{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050} 
-\index{Asset.File@{Asset.File}!LoadAsync@{LoadAsync}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050}\index{Asset.File@{Asset.File}!LoadAsync@{LoadAsync}}
 \index{LoadAsync@{LoadAsync}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{LoadAsync()}{LoadAsync()}}
-{\footnotesize\ttfamily static Asset\+Database\+Load\+Operation Load\+Async (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Int64}]{local\+File\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a1de889c18256fc25aa6f53507d448050_a1de889c18256fc25aa6f53507d448050} 
+static Asset\+Database\+Load\+Operation Load\+Async (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Int64}]{local\+File\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Loads an object and its dependencies asynchronously. 
-
-Available in Unity 2022.\+2 or newer. In previous versions throws a Not\+Supported\+Exception.
 
 
 \begin{DoxyParams}{Parameters}
@@ -1410,24 +1454,20 @@ An \href{https://docs.unity3d.com/ScriptReference/AssetDatabaseLoadOperation.htm
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadObjectAsync.html}{\texttt{ Asset\+Database.\+Load\+Object\+Async}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00460}{460}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00464}{464}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#if\ UNITY\_2022\_2\_OR\_NEWER }}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadObjectAsync(path,\ localFileId);}
-\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#else }}
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotSupportedException(\textcolor{stringliteral}{"{}AssetDatabase.LoadObjectAsync\ not\ available\ in\ this\ editor\ version"{}});}
-\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadObjectAsync(path,\ localFileId);}
 \DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}\label{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f} 
-\index{Asset.File@{Asset.File}!LoadMain$<$ T $>$@{LoadMain$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}\index{Asset.File@{Asset.File}!LoadMain$<$ T $>$@{LoadMain$<$ T $>$}}
 \index{LoadMain$<$ T $>$@{LoadMain$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{LoadMain$<$ T $>$()}{LoadMain< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static T Load\+Main$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f} 
+static T Load\+Main$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1440,7 +1480,7 @@ Loads the main (root) asset at the path.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 \end{DoxyParams}
 
@@ -1458,8 +1498,8 @@ The asset or null if the path does not exist.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html}{\texttt{ Asset\+Database.\+Load\+Main\+Asset\+At\+Path}} 
 \end{DoxyItemize}\begin{Desc}
 \item[Type Constraints]\begin{description}
@@ -1467,25 +1507,25 @@ The asset or null if the path does not exist.
 \end{Desc}
 
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00411}{411}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00416}{416}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
-\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
-\DoxyCodeLine{00415\ }
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadMainAssetAtPath(path)\ as\ T;}
-\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.ArgumentIsNull(path,\ nameof(path));}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.DoesNotExistInFileSystem(path);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AssetDatabase.LoadMainAssetAtPath(path)\ as\ T;}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088}\label{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088} 
-\index{Asset.File@{Asset.File}!LoadMain$<$ T $>$@{LoadMain$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088}\index{Asset.File@{Asset.File}!LoadMain$<$ T $>$@{LoadMain$<$ T $>$}}
 \index{LoadMain$<$ T $>$@{LoadMain$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{LoadMain$<$ T $>$()}{LoadMain< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static T Load\+Main$<$ T $>$ (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088} 
+static T Load\+Main$<$ T $>$ (\begin{DoxyParamCaption}\item[{GUID}]{guid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1516,8 +1556,8 @@ The asset object or null if the guid is not an asset guid.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8cc280e1c5ddde8511c2af5541365b3f_a8cc280e1c5ddde8511c2af5541365b3f}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}{Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Main$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load\+Or\+Create$<$\+T$>$
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.LoadMainAssetAtPath.html}{\texttt{ Asset\+Database.\+Load\+Main\+Asset\+At\+Path}} 
 \end{DoxyItemize}\begin{Desc}
 \item[Type Constraints]\begin{description}
@@ -1525,36 +1565,37 @@ The asset object or null if the guid is not an asset guid.
 \end{Desc}
 
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00435}{435}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00440}{440}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
-\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
-\DoxyCodeLine{00438\ }
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ Path.Get(guid);}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
-\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadMain<T>(path);}
-\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ path\ =\ Path.Get(guid);}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImportIfNotImported(path);}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadMain<T>(path);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 References \mbox{\hyperlink{_asset_8_path_8_static_8cs_source_l00080}{Asset.\+Path.\+Get()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_code_smile_editor_1_1_asset_1_1_file_a9702d12ef27f2d0dfd1f8201fbb37088_a9702d12ef27f2d0dfd1f8201fbb37088_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}\label{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281} 
-\index{Asset.File@{Asset.File}!LoadOrCreate$<$ T $>$@{LoadOrCreate$<$ T $>$}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281}\index{Asset.File@{Asset.File}!LoadOrCreate$<$ T $>$@{LoadOrCreate$<$ T $>$}}
 \index{LoadOrCreate$<$ T $>$@{LoadOrCreate$<$ T $>$}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{LoadOrCreate$<$ T $>$()}{LoadOrCreate< T >()}}
-{\footnotesize\ttfamily static T Load\+Or\+Create$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} Func$<$ T $>$}]{get\+Instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281} 
+static T Load\+Or\+Create$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} Func$<$ T $>$}]{get\+Instance}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1568,7 +1609,7 @@ Loads an asset at path or creates the asset if needed.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 {\em get\+Instance} & Method that returns an object instance. Invoked only if the asset needs to be created.\\
 \hline
@@ -1588,42 +1629,43 @@ The loaded or created asset.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a4f89e334c74903942522d0e0066d28b7_a4f89e334c74903942522d0e0066d28b7}{Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path)} 
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Load$<$\+T$>$(\+Code\+Smile\+Editor.\+Asset.\+Path) 
 \end{DoxyItemize}\begin{Desc}
 \item[Type Constraints]\begin{description}
 \item[{\em T} : {\em Object}]\end{description}
 \end{Desc}
 
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00388}{388}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00393}{393}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.ExistsInFileSystem\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create}}(getInstance.Invoke(),\ path)\ as\ T;}
-\DoxyCodeLine{00392\ }
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{ImportAndLoad<T>}}(path);}
-\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Object}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (path.ExistsInFileSystem\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Create(getInstance.Invoke(),\ path)\ as\ T;}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ImportAndLoad<T>(path);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Asset.\+File.\+Create()}}, and \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{Asset.\+File.\+Import\+And\+Load$<$ T $>$()}}.
+References \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a64bf135da6d9a9b8a5b59c50e839d222_a64bf135da6d9a9b8a5b59c50e839d222}{Create()}}, and \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_file_a4dc6aff1e32f03b26ec0e310fb4233c0_a4dc6aff1e32f03b26ec0e310fb4233c0}{Import\+And\+Load$<$ T $>$()}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=320pt]{class_code_smile_editor_1_1_asset_1_1_file_a8e86208ec0d709c8259baacdb5e70281_a8e86208ec0d709c8259baacdb5e70281_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}\label{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75} 
-\index{Asset.File@{Asset.File}!Move@{Move}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75}\index{Asset.File@{Asset.File}!Move@{Move}}
 \index{Move@{Move}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Move()}{Move()}}
-{\footnotesize\ttfamily static Boolean Move (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path,  }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75} 
+static Boolean Move (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{source\+Path}{, }\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{destination\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1669,20 +1711,21 @@ Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00649}{649}} of fi
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00349}{Asset.\+Move()}}.
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00353}{Asset.\+Move()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=297pt]{class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75_a996c0cfd9dbc6b65d0efec125ca6ec75_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}\label{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845} 
-\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845}\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
 \index{OpenExternal@{OpenExternal}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{OpenExternal()}{OpenExternal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily static void Open\+External (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset,  }\item[{Int32}]{line\+Number = {\ttfamily -\/1},  }\item[{Int32}]{column\+Number = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_aac35e74243833f4963e3cf8ab1a4f845_aac35e74243833f4963e3cf8ab1a4f845} 
+static void Open\+External (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{, }\item[{Int32}]{line\+Number}{ = {\ttfamily -\/1}, }\item[{Int32}]{column\+Number}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1708,11 +1751,11 @@ Optional line and column numbers can be specified for text files and application
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{Code\+Smile\+Editor.\+Asset.\+File.\+Can\+Open\+In\+Editor(\+Object)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html}{\texttt{ Asset\+Database.\+Open\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}\label{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9} 
-\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9}\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
 \index{OpenExternal@{OpenExternal}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{OpenExternal()}{OpenExternal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily static void Open\+External (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{Int32}]{line\+Number = {\ttfamily -\/1},  }\item[{Int32}]{column\+Number = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a0f433ac6de466ab7e094565c97af8db9_a0f433ac6de466ab7e094565c97af8db9} 
+static void Open\+External (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{Int32}]{line\+Number}{ = {\ttfamily -\/1}, }\item[{Int32}]{column\+Number}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1738,11 +1781,11 @@ Optional line and column numbers can be specified for text files and application
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a3d74dc290eb0f6815b0f1eac29c6c2e6_a3d74dc290eb0f6815b0f1eac29c6c2e6}{Code\+Smile\+Editor.\+Asset.\+File.\+Can\+Open\+In\+Editor(\+Object)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html}{\texttt{ Asset\+Database.\+Open\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_a009c655c2959b1ccd6b5a94a6da261e4}\label{class_code_smile_editor_1_1_asset_1_1_file_a009c655c2959b1ccd6b5a94a6da261e4_a009c655c2959b1ccd6b5a94a6da261e4} 
-\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a6f7ace7c578b12c4590ef72daf4ddf32_a6f7ace7c578b12c4590ef72daf4ddf32}\index{Asset.File@{Asset.File}!OpenExternal@{OpenExternal}}
 \index{OpenExternal@{OpenExternal}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{OpenExternal()}{OpenExternal()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily static void Open\+External (\begin{DoxyParamCaption}\item[{Int32}]{instance\+Id,  }\item[{Int32}]{line\+Number = {\ttfamily -\/1},  }\item[{Int32}]{column\+Number = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a6f7ace7c578b12c4590ef72daf4ddf32_a6f7ace7c578b12c4590ef72daf4ddf32} 
+static void Open\+External (\begin{DoxyParamCaption}\item[{Entity\+Id}]{entity\+Id}{, }\item[{Int32}]{line\+Number}{ = {\ttfamily -\/1}, }\item[{Int32}]{column\+Number}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1750,9 +1793,11 @@ Opens the asset in the application associated with the file\textquotesingle{}s e
 
 Optional line and column numbers can be specified for text files and applications that support this. 
 
+Unity marked the Asset\+Database integer instance ID overloads obsolete as a warning on 6000.\+3.\+23f1 and 6000.\+4.\+11f1 and as an error on 6000.\+5.\+10f1, and Object.\+Get\+Instance\+ID as a warning on 6000.\+4.\+11f1 and an error on 6000.\+5.\+10f1. They still exist in the assemblies but can no longer be called, and no non-\/obsolete way to turn an integer instance ID into an Entity\+Id remains, so from Unity 6000.\+4 on this method takes an Entity\+Id. 
+
 
 \begin{DoxyParams}{Parameters}
-{\em instance\+Id} & An instance ID of the asset to open externally.\\
+{\em entity\+Id} & The Entity\+Id of the asset to open externally.\\
 \hline
 {\em line\+Number} & Optional line number to highlight. Depends on application support.\\
 \hline
@@ -1766,13 +1811,13 @@ Optional line and column numbers can be specified for text files and application
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aabdb1dcc073e89416e72eccf3839ad1d_aabdb1dcc073e89416e72eccf3839ad1d}{Code\+Smile\+Editor.\+Asset.\+File.\+Can\+Open\+In\+Editor(\+Int32)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Can\+Open\+In\+Editor(\+Unity\+Engine.\+Entity\+Id)
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.OpenAsset.html}{\texttt{ Asset\+Database.\+Open\+Asset}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}\label{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab} 
-\index{Asset.File@{Asset.File}!Rename@{Rename}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab}\index{Asset.File@{Asset.File}!Rename@{Rename}}
 \index{Rename@{Rename}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Rename()}{Rename()}}
-{\footnotesize\ttfamily static Boolean Rename (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path,  }\item[{String}]{new\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab} 
+static Boolean Rename (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{, }\item[{String}]{new\+File\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1782,7 +1827,7 @@ Cannot be used to change a file\textquotesingle{}s extension. Use \doxylink{clas
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Path to an asset file.\\
+{\em path} & \doxylink{class_code_smile_editor_1_1_asset_1_1_path}{Path} to an asset file.\\
 \hline
 {\em new\+File\+Name} & The new file name without extension.\\
 \hline
@@ -1802,20 +1847,21 @@ True if the rename succeeded, false otherwise. On failure use \doxylink{class_co
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.RenameAsset.html}{\texttt{ Asset\+Database.\+Rename\+Asset}} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00390}{Asset.\+Rename()}}.
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00394}{Asset.\+Rename()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=324pt]{class_code_smile_editor_1_1_asset_1_1_file_a34bfcab396a4bfed873f01e8622033ab_a34bfcab396a4bfed873f01e8622033ab_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}\label{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2} 
-\index{Asset.File@{Asset.File}!Save@{Save}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}\index{Asset.File@{Asset.File}!Save@{Save}}
 \index{Save@{Save}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Save()}{Save()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static void Save (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2} 
+static void Save (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1837,11 +1883,11 @@ Depending on how changes were made you may have to use \doxylink{class_code_smil
 \begin{DoxyItemize}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_af8f67d95622e7afce379eaa04c82eaf6_af8f67d95622e7afce379eaa04c82eaf6}{Code\+Smile\+Editor.\+Asset.\+File.\+Force\+Save}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html}{\texttt{ Asset\+Database.\+Save\+Asset\+If\+Dirty}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}\label{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c} 
-\index{Asset.File@{Asset.File}!Save@{Save}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c}\index{Asset.File@{Asset.File}!Save@{Save}}
 \index{Save@{Save}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Save()}{Save()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static void Save (\begin{DoxyParamCaption}\item[{GUID}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a0d399890489ab279eb57b94b19f2d19c_a0d399890489ab279eb57b94b19f2d19c} 
+static void Save (\begin{DoxyParamCaption}\item[{GUID}]{guid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1859,26 +1905,26 @@ Saves any changes to the asset to disk, by GUID.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item File.\+Save
+\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a07847a761e01e0d2fdd91c3cf6db50d2_a07847a761e01e0d2fdd91c3cf6db50d2}{File.\+Save}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.SaveAssetIfDirty.html}{\texttt{ Asset\+Database.\+Save\+Asset\+If\+Dirty}} 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00245}{245}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00250}{250}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
-\DoxyCodeLine{00248\ }
-\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(guid);}
-\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIf.NotAnAssetGuid(guid);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AssetDatabase.SaveAssetIfDirty(guid);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}\label{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2} 
-\index{Asset.File@{Asset.File}!Trash@{Trash}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2}\index{Asset.File@{Asset.File}!Trash@{Trash}}
 \index{Trash@{Trash}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Trash()}{Trash()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a648bb9fbc03561bb60612a090b8317d2_a648bb9fbc03561bb60612a090b8317d2} 
+static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}} $>$}]{paths}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1899,14 +1945,14 @@ True if all assets where trashed, false if one or more failed to trash whose pat
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{Code\+Smile\+Editor.\+Asset.\+File.\+Paths\+Not\+Deleted}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetsToTrash.html}{\texttt{ Asset\+Database.\+Move\+Assets\+To\+Trash}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}\label{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee} 
-\index{Asset.File@{Asset.File}!Trash@{Trash}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}\index{Asset.File@{Asset.File}!Trash@{Trash}}
 \index{Trash@{Trash}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Trash()}{Trash()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ String $>$}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee} 
+static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} IEnumerable$<$ String $>$}]{paths}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1927,14 +1973,14 @@ True if all assets where trashed, false if one or more failed to trash whose pat
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)}
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}{Code\+Smile\+Editor.\+Asset.\+File.\+Paths\+Not\+Deleted}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetsToTrash.html}{\texttt{ Asset\+Database.\+Move\+Assets\+To\+Trash}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}\label{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808} 
-\index{Asset.File@{Asset.File}!Trash@{Trash}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}\index{Asset.File@{Asset.File}!Trash@{Trash}}
 \index{Trash@{Trash}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Trash()}{Trash()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808} 
+static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} Object}]{asset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1960,11 +2006,11 @@ True if the asset was trashed, false otherwise.
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5a01eb8f2adc1117b9df394acbe3c529_a5a01eb8f2adc1117b9df394acbe3c529}{Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+Code\+Smile\+Editor.\+Asset.\+Path)}
 \item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_aaecd043609a6fb930141fd2cf906b808_aaecd043609a6fb930141fd2cf906b808}{Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+Object)}
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html}{\texttt{ Asset\+Database.\+Move\+Asset\+To\+Trash}} 
-\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}\label{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177} 
-\index{Asset.File@{Asset.File}!Trash@{Trash}}
+\end{DoxyItemize}\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177}\index{Asset.File@{Asset.File}!Trash@{Trash}}
 \index{Trash@{Trash}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{Trash()}{Trash()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a7b0aaffab801a8597c60daff4bccb177_a7b0aaffab801a8597c60daff4bccb177} 
+static Boolean Trash (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_code_smile_editor_1_1_asset_1_1_path}{Path}}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1992,9 +2038,10 @@ True if the asset was trashed, false otherwise.
 \item \href{https://docs.unity3d.com/ScriptReference/AssetDatabase.MoveAssetToTrash.html}{\texttt{ Asset\+Database.\+Move\+Asset\+To\+Trash}} 
 \end{DoxyItemize}
 
-Referenced by \mbox{\hyperlink{_asset_8cs_source_l00463}{Asset.\+Trash()}}.
+Referenced by \mbox{\hyperlink{_asset_8cs_source_l00467}{Asset.\+Trash()}}.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -2004,11 +2051,11 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 \doxysubsubsection{Property Documentation}
-\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}\label{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537} 
-\index{Asset.File@{Asset.File}!PathsNotDeleted@{PathsNotDeleted}}
+\Hypertarget{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537}\index{Asset.File@{Asset.File}!PathsNotDeleted@{PathsNotDeleted}}
 \index{PathsNotDeleted@{PathsNotDeleted}!Asset.File@{Asset.File}}
 \doxyparagraph{\texorpdfstring{PathsNotDeleted}{PathsNotDeleted}}
-{\footnotesize\ttfamily IList$<$String$>$ Paths\+Not\+Deleted\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_code_smile_editor_1_1_asset_1_1_file_a02854122d4449e39feb8c1dfdc8bd537_a02854122d4449e39feb8c1dfdc8bd537} 
+IList$<$String$>$ Paths\+Not\+Deleted\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
 
 
 
@@ -2024,9 +2071,9 @@ The list of paths that could not be deleted, or an empty array.
 \end{DoxySeeAlso}
 
 \begin{DoxyItemize}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a397f277ed8b22e8ee60662f7b8b3ef06_a397f277ed8b22e8ee60662f7b8b3ef06}{Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)}
-\item \doxylink{class_code_smile_editor_1_1_asset_1_1_file_a5c0a13cf46027517d371dd2d3c49fdee_a5c0a13cf46027517d371dd2d3c49fdee}{Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$)} 
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Delete(\+IEnumerable$<$\+String$>$)
+\item Code\+Smile\+Editor.\+Asset.\+File.\+Trash(\+IEnumerable$<$\+String$>$) 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
+Definition at line \mbox{\hyperlink{_asset_8_file_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_asset_8_file_8cs_source}{Asset.\+File.\+cs}}.
 

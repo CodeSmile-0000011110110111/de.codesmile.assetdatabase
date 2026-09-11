@@ -1,5 +1,6 @@
 <map id="Move" name="Move">
-<area shape="rect" id="Node000001" title="Moves asset to destination path." alt="" coords="5,5,57,32"/>
-<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75.html#a996c0cfd9dbc6b65d0efec125ca6ec75" title="Moves an asset file to destination path." alt="" coords="105,5,320,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,16,90,16,90,21,57,21"/>
+<area shape="rect" id="Node000001" title="Moves asset to destination path." alt="" coords="14,29,66,56"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="12,33,4,23,6,12,18,5,40,3,66,7,76,16,72,20,63,11,40,8,20,10,10,15,9,21,16,30"/>
+<area shape="rect" id="Node000002" href="$class_code_smile_editor_1_1_asset_1_1_file_a996c0cfd9dbc6b65d0efec125ca6ec75.html#a996c0cfd9dbc6b65d0efec125ca6ec75" title="Moves an asset file to destination path." alt="" coords="114,29,329,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,40,98,40,98,45,66,45"/>
 </map>
